@@ -1,65 +1,159 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import Link from "next/link";
+import { useEffect } from "react";
+
+export default function HomePage() {
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector(".header");
+      if (header) {
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      {/* HEADER */}
+      <header className="header">
+        <Link href="/" className="logo">
+          <img src="/images/logo-handwritten.png" alt="The Live Now Club" className="logo-img" />
+        </Link>
+        <nav className="nav">
+          <Link href="/read">Read</Link>
+          <Link href="/navigate">Navigate</Link>
+          <Link href="/wonder">Wonder</Link>
+          <Link href="/make">Make</Link>
+        </nav>
+      </header>
+
+      {/* HERO */}
+      <section className="hero">
+        <div className="hero-image">
+          <img src="/images/hero-playa-faded.png" alt="" />
+        </div>
+
+        <div className="hero-content">
+          <p className="hero-tagline">A club for those who don't want to waste the time they have left</p>
+          <img src="/images/handwritten-question.png" alt="What would you do if you knew your time was short?" className="hero-handwritten" />
+          <a href="#join" className="btn btn--primary">Become a Member</a>
+        </div>
+      </section>
+
+      {/* MANIFESTO */}
+      <section className="manifesto">
+        <div className="manifesto-texture"></div>
+        <img src="/botanicals/botanical-02-bw.png" alt="" className="manifesto-botanical" />
+
+        <div className="manifesto-content">
+          <span className="section-label">The Manifesto</span>
+          <blockquote>
+            A space where<br />
+            <em>joy</em> and <em>mortality</em><br />
+            coexist.
+          </blockquote>
+          <p>
+            We write about life, navigate hard things together,<br />
+            and build tools for living fully.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <img src="/paint/paint-pink.png" alt="" className="manifesto-paint" />
+      </section>
+
+      {/* PILLARS */}
+      <section className="pillars">
+        <div className="pillars-texture"></div>
+
+        <div className="pillars-header">
+          <span className="pillars-label">Four Ways In</span>
         </div>
-      </main>
-    </div>
+
+        <div className="pillars-grid">
+          {/* READ */}
+          <Link href="/read" className="pillar" data-number="01">
+            <div className="pillar-inner">
+              <h3>Read</h3>
+              <p className="pillar-subtitle">Essays & Poetry</p>
+              <p className="pillar-desc">Writing on life, love, cancer, and the relentless pursuit of joy.</p>
+              <span className="pillar-arrow">→</span>
+            </div>
+          </Link>
+
+          {/* NAVIGATE */}
+          <Link href="/navigate" className="pillar" data-number="02">
+            <div className="pillar-inner">
+              <h3>Navigate</h3>
+              <p className="pillar-subtitle">Lou's Guide to Cancer</p>
+              <p className="pillar-desc">Everything I wish someone had told me.</p>
+              <span className="pillar-arrow">→</span>
+            </div>
+          </Link>
+
+          {/* WONDER */}
+          <Link href="/wonder" className="pillar pillar--wonder" data-number="03">
+            <div className="pillar-inner">
+              <h3>Wonder</h3>
+              <p className="pillar-subtitle">Exploring the Future</p>
+              <p className="pillar-desc">AI, post-scarcity, and the questions that keep me up at night.</p>
+              <span className="pillar-arrow">→</span>
+            </div>
+          </Link>
+
+          {/* MAKE */}
+          <Link href="/make" className="pillar" data-number="04">
+            <div className="pillar-inner">
+              <h3>Make</h3>
+              <p className="pillar-subtitle">Living a Creative Life</p>
+              <p className="pillar-desc">Tools to help you make things.</p>
+              <span className="pillar-arrow">→</span>
+            </div>
+          </Link>
+        </div>
+
+        <img src="/botanicals/botanical-01-bw.png" alt="" className="pillars-botanical" />
+      </section>
+
+      {/* JOIN */}
+      <section id="join" className="join">
+        <img src="/paint/paint-multi.png" alt="" className="join-paint" />
+        <img src="/botanicals/botanical-02-green.png" alt="" className="join-botanical" />
+
+        <div className="join-content">
+          <span className="join-label">Join Us</span>
+          <h2>Get the letters.</h2>
+          <p>Writings on living fully, delivered when the words arrive.</p>
+          <iframe
+            src="https://louiseireland.substack.com/embed"
+            width="100%"
+            height="150"
+            style={{ border: "none", background: "transparent", maxWidth: 480 }}
+            frameBorder="0"
+            scrolling="no"
+          />
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="footer">
+        <p className="footer-quote">"What if now is all we have?"</p>
+        <nav className="footer-nav">
+          <Link href="/read">Read</Link>
+          <Link href="/navigate">Navigate</Link>
+          <Link href="/wonder">Wonder</Link>
+          <Link href="/make">Make</Link>
+          <Link href="/about">About</Link>
+        </nav>
+        <p className="footer-copy">&copy; 2026 Louise Ireland</p>
+      </footer>
+    </>
   );
 }

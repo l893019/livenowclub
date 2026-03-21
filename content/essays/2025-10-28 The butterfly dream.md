@@ -1,0 +1,78 @@
+# The butterfly dream
+
+*A palindrome of life and death*
+
+*Originally published on Substack, October 2025*
+
+---
+
+**The butterfly dream**
+
+I dream the sleep that sleeps in me.
+The lie lies still.
+Awake within.
+
+Who dreams this dream?
+
+Within a wake.
+Still lies the lie.
+The sleep that sleeps in me dreams I.
+
+---
+
+I've been fixated on my dreams for the last few months. It's a new thing for me, a shift from me being afraid to going to bed, to me looking forward to exploring my dreamscape. Since March, I've cataloged my dreams every night I have them. It's incredible what the subconscious reveals. I've not found answers, per se, but better questions.
+
+My dreams have flowed, interconnected yet unique, in a narrative arc mirroring my physical one. Sometimes, I wonder if it isn't the other way around. The casualty gets slippery.
+
+I have much more to share on this topic, but I wanted to start by sharing some resources so you could join me in dreamland.
+
+"Once upon a time, I, Zhuang Zhou, dreamt I was a butterfly... fluttering hither and thither... Now I do not know whether I was then a man dreaming I was a butterfly, or whether I am now a butterfly dreaming I am a man" - Zhuangzi
+
+---
+
+## ORBITS
+*Core ideas and thinkers influencing me*
+
+**I Ching:**
+
+35 Progress (䷢) → 38 Opposition (䷥)
+
+A movement from radiant visibility to sacred friction.
+Progress is the image of the sun rising over the earth, outward expansion, recognition, and clarity. Yet its transformation to Opposition reminds us that light creates shadow; what's illuminated also reveals difference. True progress often calls forth divergence.
+
+Together, they speak to the tension between expression and individuation, how moving into our light can estrange us from what once felt familiar. The work is to stay centered while contrasts sharpen, to see conflict as the next threshold of growth.
+
+Mantra: "The brighter the light, the clearer the truth."
+
+**Books:**
+
+- Man and His Symbols - Carl Jung: One of my favorite books of all time. A map of the symbols that rise from the collective unconscious and guide us toward wholeness.
+
+- The Dream and the Underworld - James Hillman: Hillman reimagines dreams as mythic spaces to inhabit.
+
+- The Lathe of Heaven - Ursula K. Le Guin: A novel where dreams shape reality, and the cost of trying to control the unconscious becomes clear.
+
+- Gödel, Escher, Bach: An Eternal Golden Braid - Douglas Hofstadter: A labyrinth of mirrors linking mathematics, music, and mind. On recursion, pattern, and how self-awareness arises when a system turns to watch itself.
+
+---
+
+## GROUNDS
+*Practices that help me live now.*
+
+**My dream practice:**
+
+I start my day with 30-60 minutes of light therapy or daylight to regulate my system.
+
+Every night before I go to bed, I meditate using the Expand app from Monroe. It utilizes binaural audio, which I've found helps me go deeper into my subconscious. I would recommend starting with their 6-day Journey, 'Exploring Lucid Dreaming', to cleanse your mental state. I listen to 'Dream Sanctuary' or 'Restorative Sleep' every night.
+
+If I can wake up in the middle of the night, I listen to their 'Lucid Dreaming' meditation.
+
+First thing in the morning, I write down anything that I can remember about my dreams. I don't immediately try to put meaning into anything; I just want to pay attention to the symbols, the characters, the overall storyline, the location, etc.
+
+I analyze my overall dream arc utilizing ChatGPT.
+
+I let these symbols infiltrate my art and my mind.
+
+This question: Are you the dreamer or the dream?
+
+Much love to you all! Sweet dreams :)

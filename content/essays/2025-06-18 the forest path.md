@@ -1,0 +1,31 @@
+# the forest path
+
+*when we have to leave a part behind. a poem & a painting*
+
+*Originally published on Substack, June 2025*
+
+---
+
+God is in the light,
+but holier,
+maybe,
+in the green hush
+where it filters down
+dappled through
+veined leaves of
+stained glass.
+
+No bells here,
+only birds.
+A single crow calls
+one long note,
+and the forest answers
+by continuing to be.
+
+Somewhere behind you,
+your old life sighs
+and sits down.
+The leaves cover it softly
+like a prayer
+that doesn't need
+to be answered.

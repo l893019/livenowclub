@@ -1,0 +1,25 @@
+# How are you (after it all falls down)?
+
+*Originally published on Substack, May 2025*
+
+---
+
+I'm about as well as one could expect given the circumstances. It's funny. Now that I've had a minute to digest, all my emotions have compounded into a cathartic flood. In the moment, you're caught up in the action and your mind is distracted by fight or flight, but as the scene fades, the stillness is deafening. It's the chilling, unsettling silence after the Titanic sank, looking back on the disappearing shadow of a boat beneath the dark waves from the vantage point of a lifeboat that is days from shore. "And now what?"
+
+Grief pours in waves.
+
+Grief is unprocessed change. It clings to a past life, a past self, a past body, a past circumstance, fantasizing about all that was in lieu of what could be with an almost religious dedication. It surges out of me, and I gird myself against slipping down the dark self-indulgent path of 'why me', 'why this', 'why now'. How easy it would be to fall down into the indefinite sorrow. All that used to be feels so artificially bright compared to the unmarked path ahead, and brighter it seems the further distance I get - how quickly our memories edit out our past misgivings!
+
+Grief assumes finite action. It's an isolated incident of disaster. But our lives are interwoven, our actions infinite. And as in the Chinese parable of a farmer, "Bad luck brings good luck and good luck brings bad luck. This happens without end, and nobody can estimate it." Who am I to assume what lies ahead is worse? How do you quantify the goodness that could come from a horrific situation? Death begets life begets death. Autumn leaves fall to make room for spring buds. A wave of inevitable momentum guides all of us, and if we let it, life finds equilibrium.
+
+Grief stares into the darkness. Why does it take moments of near-death to reach clarity? It's the astronaut viewing Earth from space for the first time - this beautiful planet is all we have, this body is all I have, this life is all I have, why waste it? It's seeing the man-made pollution clouds clog the sky and sea versus the brilliance of nature as it is. Why do we overcomplicate it? We lean into the short-term satisfaction gleaned from listening to our minds and forget to ask the profound wisdom of our bodies. We believe we can play it better in this casino of life, but nature always wins.
+
+Grief is an emotion of the living. A few months ago, I sat in a Kyoto temple, underneath a ceiling clad in bloodstains from a battle, and could hear the dead screaming why. Why do we hold onto conflict? Why do we hold onto pain? Why do we hold onto grudges? Why do we hold onto regret? Why do we hold onto grief for a life that isn't ours? Life is too short, too fleeting, too beautiful to be burdened and weighed down by these dark despairs. How would you live knowing life is infinite, but your body is finite?
+
+Grief is love with nowhere to go. I cry because I care, because I miss you, this, all of it packaged neatly in an unmarked box I can't let go of. It's the force of emotion towards a planned future that no longer exists - the dispersion and disappearance of smoke as you blow out the candle. And you're left in that uneasy darkness - and now what?
+
+I know there's more you want to ask me, but you're being polite. Like what does it feel like to feel like you might die? And how do you go back to living once near the edge? When will you be back? What now? What's next? When do you hold onto hope-shaped grief, praying for a miracle? And when do you let it go to create space for something new?
+
+And I return to how we are all searching to get to our childlike selves, back to that innocence before the world shaped us, back to what we know is true for ourselves. I think about how we search for control as if we were lassoing the wind, fooled by false determination. I think about the Norns spinning their tapestry of fate, the woven and unbreakable thread between the time of birth and death, and the confidence it gave the Norsemen to leap unafraid in the face of certain destruction. I think about how birds are made primarily of air and what it must feel like to have that lightness of being. And I wonder how much we are weighed down by grief; if I unclasp it from my hands, can I leap into the darkness and fly?
+
+Memento mori, memento vivere. We all live to leave a legacy, but forget how quickly a snowglobe shakes everything back to dust. How strange to be anything at all, and stranger still to know that it all ends. The same silence that once deafened now holds infinite possibility, and in it, the same question - "And now what?".

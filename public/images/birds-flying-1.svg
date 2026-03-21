@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" fill="none" stroke="#3D2E24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Flock of birds in flight - loose, hand-drawn style -->
+
+  <!-- Bird 1 - large, foreground -->
+  <path d="M50 100 C70 85 90 80 120 90" />
+  <path d="M50 100 C70 115 90 120 120 110" />
+
+  <!-- Bird 2 -->
+  <path d="M140 70 C155 60 170 58 190 65" />
+  <path d="M140 70 C155 80 170 82 190 75" />
+
+  <!-- Bird 3 -->
+  <path d="M100 50 C112 42 124 40 140 46" />
+  <path d="M100 50 C112 58 124 60 140 54" />
+
+  <!-- Bird 4 - small, distant -->
+  <path d="M200 45 C208 40 216 39 226 43" />
+  <path d="M200 45 C208 50 216 51 226 47" />
+
+  <!-- Bird 5 -->
+  <path d="M170 120 C185 110 200 108 220 115" />
+  <path d="M170 120 C185 130 200 132 220 125" />
+
+  <!-- Bird 6 - tiny -->
+  <path d="M250 80 C256 76 262 75 270 78" />
+  <path d="M250 80 C256 84 262 85 270 82" />
+
+  <!-- Bird 7 -->
+  <path d="M80 140 C95 130 110 128 130 135" />
+  <path d="M80 140 C95 150 110 152 130 145" />
+</svg>

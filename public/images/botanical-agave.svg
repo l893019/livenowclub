@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" fill="none" stroke="#C4785A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Agave / Desert plant line drawing -->
+  <path d="M100 280 C100 250 95 220 100 190" />
+  <path d="M100 190 C85 170 70 150 60 120 C55 100 60 80 75 65" />
+  <path d="M100 190 C115 170 130 150 140 120 C145 100 140 80 125 65" />
+  <path d="M100 190 C90 160 80 130 85 95 C88 70 100 50 100 30" />
+  <path d="M100 190 C110 160 120 130 115 95 C112 70 100 50 100 30" />
+  <path d="M100 200 C80 185 60 175 40 170" />
+  <path d="M100 200 C120 185 140 175 160 170" />
+  <path d="M100 220 C75 210 50 205 30 210" />
+  <path d="M100 220 C125 210 150 205 170 210" />
+  <!-- Small decorative dots -->
+  <circle cx="75" cy="65" r="2" fill="#E84A8A" stroke="none" />
+  <circle cx="125" cy="65" r="2" fill="#E84A8A" stroke="none" />
+  <circle cx="100" cy="30" r="2" fill="#E84A8A" stroke="none" />
+</svg>

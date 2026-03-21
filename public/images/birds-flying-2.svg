@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" fill="none" stroke="#C4785A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Smaller flock - terracotta color -->
+
+  <!-- Bird 1 -->
+  <path d="M30 80 C45 68 60 65 80 74" />
+  <path d="M30 80 C45 92 60 95 80 86" />
+
+  <!-- Bird 2 -->
+  <path d="M90 50 C100 44 110 42 125 48" />
+  <path d="M90 50 C100 56 110 58 125 52" />
+
+  <!-- Bird 3 -->
+  <path d="M60 110 C72 102 84 100 100 106" />
+  <path d="M60 110 C72 118 84 120 100 114" />
+
+  <!-- Bird 4 -->
+  <path d="M130 90 C140 84 150 82 165 88" />
+  <path d="M130 90 C140 96 150 98 165 92" />
+
+  <!-- Bird 5 - small -->
+  <path d="M150 40 C156 36 162 35 170 38" />
+  <path d="M150 40 C156 44 162 45 170 42" />
+</svg>
