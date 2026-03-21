@@ -1041,6 +1041,55 @@ strong {
   color: var(--charcoal-light);
 }
 
+/* CANCER MEDITATIONS SERIES */
+.read-section--series {
+  background: var(--cream-dark);
+  max-width: none;
+  padding: var(--space-lg);
+}
+
+.meditations-series {
+  display: flex;
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.meditation-card {
+  flex: 0 0 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  background: white;
+  border: 1px solid rgba(0,0,0,0.08);
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.meditation-card:hover {
+  border-color: var(--pink);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.meditation-num {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--pink);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.meditation-title {
+  font-size: 0.8rem;
+  color: var(--charcoal-light);
+  line-height: 1.3;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .read-hero {
