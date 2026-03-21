@@ -22,11 +22,11 @@ export default function NavigatePage() {
         </div>
 
         <div className="guide-sections">
-          <a href="https://louiseireland.substack.com/p/expecting-the-unexpected" className="guide-card" target="_blank" rel="noopener noreferrer">
+          <a href="https://static1.squarespace.com/static/68baddbc65e901527cbfd30f/t/693ee015670f423dc00de98e/1765728277861/Expecting+the+Unexpected+LNC+VF.pdf" className="guide-card" target="_blank" rel="noopener noreferrer">
             <h3>Expecting the Unexpected</h3>
             <p>What I wish I had known before diagnosis.</p>
             <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", color: "var(--pink)" }}>
-              Read &rarr;
+              Download PDF &rarr;
             </span>
           </a>
 
