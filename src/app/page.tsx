@@ -69,6 +69,47 @@ export default function HomePage() {
         <img src="/paint/paint-pink.png" alt="" className="manifesto-paint" />
       </section>
 
+      {/* FEATURED WORK */}
+      <section className="featured">
+        <div className="featured-grid">
+          {/* Expecting the Unexpected */}
+          <a
+            href="https://static1.squarespace.com/static/68baddbc65e901527cbfd30f/t/693ee015670f423dc00de98e/1765728277861/Expecting+the+Unexpected+LNC+VF.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="featured-card featured-card--cancer"
+          >
+            <span className="featured-label">Navigate</span>
+            <h2 className="featured-title">Expecting the Unexpected</h2>
+            <p className="featured-quote">
+              "There isn't any easy way to say it, so I'll just say it: I have cancer."
+            </p>
+            <p className="featured-desc">
+              Everything I wish someone had told me before diagnosis. A guide for those walking through cancer.
+            </p>
+            <span className="featured-cta">Download the guide →</span>
+          </a>
+
+          {/* After Abundance */}
+          <a
+            href="https://after-abundance.netlify.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="featured-card featured-card--wonder"
+          >
+            <span className="featured-label">Wonder</span>
+            <h2 className="featured-title">After Abundance</h2>
+            <p className="featured-quote">
+              "What do we choose to do when machines can do everything?"
+            </p>
+            <p className="featured-desc">
+              What 200+ works of science fiction reveal about human purpose in a post-scarcity world.
+            </p>
+            <span className="featured-cta">Explore the research →</span>
+          </a>
+        </div>
+      </section>
+
       {/* PILLARS */}
       <section className="pillars">
         <div className="pillars-texture"></div>

@@ -319,6 +319,115 @@ strong {
 }
 
 /* ============================================
+   FEATURED WORK (Magazine Spread)
+   ============================================ */
+.featured {
+  padding: var(--space-xl) var(--space-lg);
+  background: var(--cream);
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--cream-dark);
+}
+
+.featured-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg);
+  background: white;
+  transition: all 0.3s ease;
+  min-height: 400px;
+}
+
+.featured-card:hover {
+  background: var(--cream);
+}
+
+.featured-card--cancer {
+  border-left: 4px solid var(--pink);
+}
+
+.featured-card--wonder {
+  border-left: 4px solid var(--teal);
+}
+
+.featured-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--charcoal-light);
+  margin-bottom: var(--space-sm);
+}
+
+.featured-card--cancer .featured-label {
+  color: var(--pink);
+}
+
+.featured-card--wonder .featured-label {
+  color: var(--teal);
+}
+
+.featured-title {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.01em;
+}
+
+.featured-quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--charcoal);
+  margin-bottom: var(--space-md);
+  flex-grow: 1;
+}
+
+.featured-desc {
+  font-size: 0.95rem;
+  color: var(--charcoal-light);
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+}
+
+.featured-cta {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--pink);
+  transition: transform 0.2s ease;
+}
+
+.featured-card--wonder .featured-cta {
+  color: var(--teal);
+}
+
+.featured-card:hover .featured-cta {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .featured {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-card {
+    min-height: auto;
+    padding: var(--space-md);
+  }
+}
+
+/* ============================================
    PILLARS
    ============================================ */
 .pillars {
