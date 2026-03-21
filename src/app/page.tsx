@@ -60,10 +60,6 @@ export default function HomePage() {
             <em>joy</em> and <em>mortality</em><br />
             coexist.
           </blockquote>
-          <p>
-            We write about life, navigate hard things together,<br />
-            and build tools for living fully.
-          </p>
         </div>
 
         <img src="/paint/paint-pink.png" alt="" className="manifesto-paint" />
