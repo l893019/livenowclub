@@ -55,108 +55,91 @@ export default function HomePage() {
 
         <div className="manifesto-content">
           <span className="section-label">The Manifesto</span>
-          <blockquote>
-            A space where<br />
-            <em>joy</em> and <em>mortality</em><br />
-            coexist.
-          </blockquote>
+          <p className="manifesto-text">
+            When I was first diagnosed, I joined countless cancer support groups. I quickly left them all. They served a purpose, but they felt heavy, airless. I've longed for a room of light.
+          </p>
+          <p className="manifesto-text">
+            I created The Live Now Club, because I want to create a place where <em>mortality</em> and <em>joy</em> sit side by side. A place for anyone willing to hold their horizon in view and live anyway.
+          </p>
         </div>
 
         <img src="/paint/paint-pink.png" alt="" className="manifesto-paint" />
       </section>
 
-      {/* FEATURED WORK */}
-      <section className="featured">
-        <div className="featured-grid">
+      {/* LATEST */}
+      <section className="latest">
+        <span className="section-label">Latest</span>
+
+        <div className="latest-grid">
+          {/* After Abundance - Hero Feature */}
+          <Link href="/wonder/essay" className="latest-hero">
+            <div className="latest-hero-image">
+              <img src="/images/after-abundance-preview.png" alt="" />
+            </div>
+            <div className="latest-hero-content">
+              <span className="latest-label">Research Essay</span>
+              <h2>After Abundance</h2>
+              <p className="latest-subtitle">On Learning & Human Purpose in the Age of AI</p>
+              <p className="latest-excerpt">
+                What do we choose to do when machines can do everything? What 200+ works of science fiction reveal about human purpose in a post-scarcity world.
+              </p>
+              <span className="latest-cta">Read the essay →</span>
+            </div>
+          </Link>
+
+          {/* Maybe */}
+          <Link href="/read/maybe" className="latest-card">
+            <span className="latest-label">Essay</span>
+            <h3>Maybe</h3>
+            <p className="latest-card-subtitle">On Learning to Hold It All Loosely</p>
+            <p className="latest-card-excerpt">
+              In a year full of difficult news, I finally, thankfully, have been graced with some good. My scans show no active cancer in my system.
+            </p>
+            <span className="latest-cta">Read →</span>
+          </Link>
+
           {/* Expecting the Unexpected */}
           <a
             href="https://static1.squarespace.com/static/68baddbc65e901527cbfd30f/t/693ee015670f423dc00de98e/1765728277861/Expecting+the+Unexpected+LNC+VF.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="featured-card featured-card--cancer"
+            className="latest-card"
           >
-            <span className="featured-label">Navigate</span>
-            <h2 className="featured-title">Expecting the Unexpected</h2>
-            <p className="featured-quote">
-              "There isn't any easy way to say it, so I'll just say it: I have cancer."
+            <span className="latest-label">Guide</span>
+            <h3>Expecting the Unexpected</h3>
+            <p className="latest-card-subtitle">Lou's Guide to Cancer</p>
+            <p className="latest-card-excerpt">
+              Everything I wish someone had told me before diagnosis. A practical guide for those walking through cancer.
             </p>
-            <p className="featured-desc">
-              Everything I wish someone had told me before diagnosis. A guide for those walking through cancer.
-            </p>
-            <span className="featured-cta">Download the guide →</span>
-          </a>
-
-          {/* After Abundance */}
-          <a
-            href="https://after-abundance.netlify.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="featured-card featured-card--wonder"
-          >
-            <span className="featured-label">Wonder</span>
-            <h2 className="featured-title">After Abundance</h2>
-            <p className="featured-quote">
-              "What do we choose to do when machines can do everything?"
-            </p>
-            <p className="featured-desc">
-              What 200+ works of science fiction reveal about human purpose in a post-scarcity world.
-            </p>
-            <span className="featured-cta">Explore the research →</span>
+            <span className="latest-cta">Download PDF →</span>
           </a>
         </div>
       </section>
 
-      {/* PILLARS */}
-      <section className="pillars">
-        <div className="pillars-texture"></div>
-
-        <div className="pillars-header">
-          <span className="pillars-label">Four Ways In</span>
-        </div>
-
-        <div className="pillars-grid">
-          {/* READ */}
-          <Link href="/read" className="pillar" data-number="01">
-            <div className="pillar-inner">
-              <h3>Read</h3>
-              <p className="pillar-subtitle">Essays & Poetry</p>
-              <p className="pillar-desc">Writing on life, love, cancer, and the relentless pursuit of joy.</p>
-              <span className="pillar-arrow">→</span>
-            </div>
+      {/* EXPLORE */}
+      <section className="explore">
+        <div className="explore-links">
+          <Link href="/read" className="explore-link">
+            <span className="explore-number">01</span>
+            <span className="explore-title">Read</span>
+            <span className="explore-desc">Essays & Poetry</span>
           </Link>
-
-          {/* NAVIGATE */}
-          <Link href="/navigate" className="pillar" data-number="02">
-            <div className="pillar-inner">
-              <h3>Navigate</h3>
-              <p className="pillar-subtitle">Lou's Guide to Cancer</p>
-              <p className="pillar-desc">Everything I wish someone had told me.</p>
-              <span className="pillar-arrow">→</span>
-            </div>
+          <Link href="/navigate" className="explore-link">
+            <span className="explore-number">02</span>
+            <span className="explore-title">Navigate</span>
+            <span className="explore-desc">Guide to Cancer</span>
           </Link>
-
-          {/* WONDER */}
-          <Link href="/wonder" className="pillar pillar--wonder" data-number="03">
-            <div className="pillar-inner">
-              <h3>Wonder</h3>
-              <p className="pillar-subtitle">Exploring the Future</p>
-              <p className="pillar-desc">AI, post-scarcity, and the questions that keep me up at night.</p>
-              <span className="pillar-arrow">→</span>
-            </div>
+          <Link href="/wonder" className="explore-link">
+            <span className="explore-number">03</span>
+            <span className="explore-title">Wonder</span>
+            <span className="explore-desc">Exploring the Future</span>
           </Link>
-
-          {/* MAKE */}
-          <Link href="/make" className="pillar" data-number="04">
-            <div className="pillar-inner">
-              <h3>Make</h3>
-              <p className="pillar-subtitle">Living a Creative Life</p>
-              <p className="pillar-desc">Tools to help you make things.</p>
-              <span className="pillar-arrow">→</span>
-            </div>
+          <Link href="/make" className="explore-link">
+            <span className="explore-number">04</span>
+            <span className="explore-title">Make</span>
+            <span className="explore-desc">Creative Tools</span>
           </Link>
         </div>
-
-        <img src="/botanicals/botanical-01-bw.png" alt="" className="pillars-botanical" />
       </section>
 
       {/* JOIN */}
