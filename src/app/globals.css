@@ -1626,6 +1626,20 @@ strong {
   opacity: 0.7;
 }
 
+.read-pathway--warm {
+  background: linear-gradient(135deg, #fff8f0 0%, #ffe8d6 100%);
+  max-width: none;
+}
+
+.read-pathway--warm .essay-card {
+  background: white;
+  border-color: rgba(232, 74, 138, 0.15);
+}
+
+.read-pathway--warm .essay-card:hover {
+  border-color: var(--pink);
+}
+
 .pathway-header {
   margin-bottom: var(--space-md);
 }

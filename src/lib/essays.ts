@@ -90,6 +90,12 @@ export const PATHWAYS: Pathway[] = [
     subtitle: "Because life is also beautiful.",
     essays: ["the-case-for-magical-thinking", "the-butterfly-dream", "life-is-not-empty", "august-triptych"],
   },
+  {
+    id: "self-love",
+    title: "Falling in Love with Yourself",
+    subtitle: "The most important relationship you'll ever have.",
+    essays: ["i-love-lou", "how-to-travel-alone", "on-friendship-and-couches", "reset-rebirth"],
+  },
 ];
 
 // Mood-based recommendations

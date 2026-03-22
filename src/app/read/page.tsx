@@ -171,6 +171,29 @@ export default function ReadPage() {
         </div>
       </section>
 
+      {/* Falling in Love with Yourself */}
+      <section className="read-pathway read-pathway--warm">
+        <div className="pathway-header">
+          <h2 className="read-section-title">{PATHWAYS[4].title}</h2>
+          <p className="read-section-subtitle">{PATHWAYS[4].subtitle}</p>
+        </div>
+        <div className="pathway-grid">
+          {getPathwayEssays("self-love").map((essay) => (
+            <Link key={essay.slug} href={`/read/${essay.slug}`} className="essay-card">
+              {essay.image && (
+                <div className="essay-card-image">
+                  <img src={essay.image} alt="" />
+                </div>
+              )}
+              <div className="essay-card-content">
+                <h3 className="essay-card-title">{essay.title}</h3>
+                <p className="essay-card-excerpt">{essay.excerpt}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* Recent */}
       <section className="read-pathway">
         <div className="pathway-header">
