@@ -292,3 +292,66 @@ export function getFeaturedEssay(): Essay | null {
   const essays = getAllEssays();
   return essays.find((e) => e.slug === "fixing-the-unfixable") || essays[0] || null;
 }
+
+// Cancer Guide pathways for /navigate
+export const CANCER_GUIDE: Pathway[] = [
+  {
+    id: "just-diagnosed",
+    title: "Just Diagnosed",
+    subtitle: "Everything I wish someone had told me at the start.",
+    essays: ["expecting-the-unexpected", "i-need-you-to-hold-my-hand", "embracing-free-fall"],
+  },
+  {
+    id: "cancer-meditations",
+    title: "Cancer Meditations",
+    subtitle: "A series written during treatment.",
+    essays: [
+      "cancer-meditations",
+      "cancer-meditations-ii",
+      "cancer-meditations-iii",
+      "cancer-meditations-iv",
+      "cancer-meditations-v",
+      "cancer-meditations-vi",
+    ],
+  },
+  {
+    id: "during-treatment",
+    title: "During Treatment",
+    subtitle: "Practical guidance for the hardest days.",
+    essays: [
+      "how-to-reset-your-nervous-system",
+      "consider-the-hospital-ceiling",
+      "when-it-all-falls-out",
+      "if-you-can-keep-your-head-about-you",
+    ],
+  },
+  {
+    id: "for-caregivers",
+    title: "For Caregivers",
+    subtitle: "How to support someone you love through this.",
+    essays: ["it-takes-a-village", "fixing-the-unfixable", "threads-of-survival"],
+  },
+  {
+    id: "finding-meaning",
+    title: "Finding Meaning",
+    subtitle: "Making sense of it all.",
+    essays: [
+      "the-crack-is-where-the-light-enters",
+      "the-case-for-magical-thinking",
+      "life-is-not-empty",
+      "the-starting-line",
+    ],
+  },
+];
+
+export function getCancerGuideEssays(pathwayId: string): Essay[] {
+  const pathway = CANCER_GUIDE.find((p) => p.id === pathwayId);
+  if (!pathway) return [];
+
+  const allEssays = getAllEssays();
+  return pathway.essays.map((slug) => allEssays.find((e) => e.slug === slug)).filter(Boolean) as Essay[];
+}
+
+export function getCancerEssays(): Essay[] {
+  return getAllEssays().filter((e) => e.tags.includes("cancer"));
+}

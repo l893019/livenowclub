@@ -42,25 +42,82 @@ export default function AllEssaysPage() {
         </nav>
       </header>
 
-      <div className="all-essays-page">
-        <Link href="/read" className="all-essays-back">
+      <div style={{
+        minHeight: '100vh',
+        background: '#faf6f1',
+        padding: '120px 24px 80px',
+        maxWidth: '800px',
+        margin: '0 auto'
+      }}>
+        <Link href="/read" style={{
+          display: 'inline-block',
+          fontFamily: '"JetBrains Mono", monospace',
+          fontSize: '12px',
+          letterSpacing: '0.1em',
+          textTransform: 'uppercase' as const,
+          color: 'rgba(45, 42, 38, 0.6)',
+          marginBottom: '48px'
+        }}>
           ← Back to Read
         </Link>
 
-        <header className="all-essays-header">
-          <h1>All Writing</h1>
-          <p>{essays.length} pieces</p>
+        <header style={{ marginBottom: '60px' }}>
+          <h1 style={{
+            fontSize: '3rem',
+            fontWeight: 500,
+            letterSpacing: '-0.02em',
+            color: '#1a1a1a',
+            marginBottom: '8px'
+          }}>All Writing</h1>
+          <p style={{
+            fontFamily: '"JetBrains Mono", monospace',
+            fontSize: '12px',
+            letterSpacing: '0.1em',
+            textTransform: 'uppercase' as const,
+            color: 'rgba(45, 42, 38, 0.5)'
+          }}>{essays.length} pieces</p>
         </header>
 
         {years.map((year) => (
-          <section key={year} className="all-essays-year">
-            <h2 className="year-label">{year}</h2>
-            <div className="year-essays">
+          <section key={year} style={{ marginBottom: '48px' }}>
+            <h2 style={{
+              fontFamily: '"JetBrains Mono", monospace',
+              fontSize: '14px',
+              fontWeight: 600,
+              letterSpacing: '0.1em',
+              color: '#e84a8a',
+              marginBottom: '16px',
+              paddingBottom: '8px',
+              borderBottom: '1px solid rgba(45, 42, 38, 0.1)'
+            }}>{year}</h2>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
               {essaysByYear[year].map((essay) => (
-                <Link key={essay.slug} href={`/read/${essay.slug}`} className="essay-row">
-                  <span className="essay-row-type">{essay.type}</span>
-                  <span className="essay-row-title">{essay.title}</span>
-                  <span className="essay-row-date">{formatDate(essay.date)}</span>
+                <Link key={essay.slug} href={`/read/${essay.slug}`} style={{
+                  display: 'grid',
+                  gridTemplateColumns: '80px 1fr auto',
+                  gap: '16px',
+                  alignItems: 'baseline',
+                  padding: '12px 0',
+                  borderBottom: '1px solid rgba(45, 42, 38, 0.05)'
+                }}>
+                  <span style={{
+                    fontFamily: '"JetBrains Mono", monospace',
+                    fontSize: '10px',
+                    letterSpacing: '0.1em',
+                    textTransform: 'uppercase' as const,
+                    color: 'rgba(45, 42, 38, 0.5)'
+                  }}>{essay.type}</span>
+                  <span style={{
+                    fontSize: '1rem',
+                    color: '#1a1a1a',
+                    fontWeight: 500
+                  }}>{essay.title}</span>
+                  <span style={{
+                    fontFamily: '"JetBrains Mono", monospace',
+                    fontSize: '11px',
+                    color: 'rgba(45, 42, 38, 0.4)',
+                    whiteSpace: 'nowrap'
+                  }}>{formatDate(essay.date)}</span>
                 </Link>
               ))}
             </div>
@@ -74,126 +131,6 @@ export default function AllEssaysPage() {
           Subscribe
         </a>
       </div>
-
-      <style jsx>{`
-        .all-essays-page {
-          min-height: 100vh;
-          background: #faf6f1;
-          padding: 120px 24px 80px;
-          max-width: 800px;
-          margin: 0 auto;
-        }
-
-        .all-essays-back {
-          display: inline-block;
-          font-family: "JetBrains Mono", monospace;
-          font-size: 12px;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          color: rgba(45, 42, 38, 0.6);
-          margin-bottom: 48px;
-          transition: color 0.2s;
-        }
-
-        .all-essays-back:hover {
-          color: #e84a8a;
-        }
-
-        .all-essays-header {
-          margin-bottom: 60px;
-        }
-
-        .all-essays-header h1 {
-          font-size: 3rem;
-          font-weight: 500;
-          letter-spacing: -0.02em;
-          color: #1a1a1a;
-          margin-bottom: 8px;
-        }
-
-        .all-essays-header p {
-          font-family: "JetBrains Mono", monospace;
-          font-size: 12px;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          color: rgba(45, 42, 38, 0.5);
-        }
-
-        .all-essays-year {
-          margin-bottom: 48px;
-        }
-
-        .year-label {
-          font-family: "JetBrains Mono", monospace;
-          font-size: 14px;
-          font-weight: 600;
-          letter-spacing: 0.1em;
-          color: #e84a8a;
-          margin-bottom: 16px;
-          padding-bottom: 8px;
-          border-bottom: 1px solid rgba(45, 42, 38, 0.1);
-        }
-
-        .year-essays {
-          display: flex;
-          flex-direction: column;
-          gap: 0;
-        }
-
-        .essay-row {
-          display: grid;
-          grid-template-columns: 80px 1fr auto;
-          gap: 16px;
-          align-items: baseline;
-          padding: 12px 0;
-          border-bottom: 1px solid rgba(45, 42, 38, 0.05);
-          transition: all 0.2s;
-        }
-
-        .essay-row:hover {
-          background: rgba(232, 74, 138, 0.05);
-          padding-left: 8px;
-          margin-left: -8px;
-          padding-right: 8px;
-          margin-right: -8px;
-        }
-
-        .essay-row-type {
-          font-family: "JetBrains Mono", monospace;
-          font-size: 10px;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          color: rgba(45, 42, 38, 0.5);
-        }
-
-        .essay-row-title {
-          font-size: 1rem;
-          color: #1a1a1a;
-          font-weight: 500;
-        }
-
-        .essay-row:hover .essay-row-title {
-          color: #e84a8a;
-        }
-
-        .essay-row-date {
-          font-family: "JetBrains Mono", monospace;
-          font-size: 11px;
-          color: rgba(45, 42, 38, 0.4);
-          white-space: nowrap;
-        }
-
-        @media (max-width: 600px) {
-          .essay-row {
-            grid-template-columns: 1fr;
-            gap: 4px;
-          }
-
-          .essay-row-date {
-            display: none;
-          }
-        }
-      `}</style>
     </>
   );
 }
