@@ -1,10 +1,26 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+type Essay = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  type: string;
+  image?: string;
+};
 
 export default function HomePage() {
+  const [recentEssays, setRecentEssays] = useState<Essay[]>([]);
+
   useEffect(() => {
+    // Fetch recent essays
+    fetch("/api/essays")
+      .then((res) => res.json())
+      .then((data) => setRecentEssays(data.slice(0, 6)))
+      .catch(() => {});
+
     const handleScroll = () => {
       const header = document.querySelector(".header");
       if (header) {
@@ -48,72 +64,54 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* MANIFESTO */}
-      <section className="manifesto">
-        <div className="manifesto-texture"></div>
-        <img src="/botanicals/botanical-02-bw.png" alt="" className="manifesto-botanical" />
-
-        <div className="manifesto-content">
-          <span className="section-label">The Manifesto</span>
-          <p className="manifesto-text">
-            When I was first diagnosed, I joined countless cancer support groups. I quickly left them all. They served a purpose, but they felt heavy, airless. I've longed for a room of light.
-          </p>
-          <p className="manifesto-text">
-            I created The Live Now Club, because I want to create a place where <em>mortality</em> and <em>joy</em> sit side by side. A place for anyone willing to hold their horizon in view and live anyway.
-          </p>
-        </div>
-
-        <img src="/paint/paint-pink.png" alt="" className="manifesto-paint" />
+      {/* FEATURED */}
+      <section className="featured-essay">
+        <Link href="/wonder/essay" className="featured-essay-card">
+          <div className="featured-essay-image">
+            <img src="/images/after-abundance-preview.png" alt="" />
+          </div>
+          <div className="featured-essay-content">
+            <span className="featured-essay-label">Featured</span>
+            <h2>After Abundance</h2>
+            <p className="featured-essay-subtitle">On Learning & Human Purpose in the Age of AI</p>
+            <p className="featured-essay-excerpt">
+              What do we choose to do when machines can do everything? What 200+ works of science fiction reveal about human purpose in a post-scarcity world.
+            </p>
+            <span className="featured-essay-cta">Read the essay →</span>
+          </div>
+        </Link>
       </section>
 
-      {/* LATEST */}
-      <section className="latest">
-        <span className="section-label">Latest</span>
-
-        <div className="latest-grid">
-          {/* After Abundance - Hero Feature */}
-          <Link href="/wonder/essay" className="latest-hero">
-            <div className="latest-hero-image">
-              <img src="/images/after-abundance-preview.png" alt="" />
-            </div>
-            <div className="latest-hero-content">
-              <span className="latest-label">Research Essay</span>
-              <h2>After Abundance</h2>
-              <p className="latest-subtitle">On Learning & Human Purpose in the Age of AI</p>
-              <p className="latest-excerpt">
-                What do we choose to do when machines can do everything? What 200+ works of science fiction reveal about human purpose in a post-scarcity world.
-              </p>
-              <span className="latest-cta">Read the essay →</span>
-            </div>
-          </Link>
-
-          {/* Maybe */}
-          <Link href="/read/maybe" className="latest-card">
-            <span className="latest-label">Essay</span>
-            <h3>Maybe</h3>
-            <p className="latest-card-subtitle">On Learning to Hold It All Loosely</p>
-            <p className="latest-card-excerpt">
-              In a year full of difficult news, I finally, thankfully, have been graced with some good. My scans show no active cancer in my system.
-            </p>
-            <span className="latest-cta">Read →</span>
-          </Link>
-
-          {/* Expecting the Unexpected */}
-          <a
-            href="https://static1.squarespace.com/static/68baddbc65e901527cbfd30f/t/693ee015670f423dc00de98e/1765728277861/Expecting+the+Unexpected+LNC+VF.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="latest-card"
-          >
-            <span className="latest-label">Guide</span>
-            <h3>Expecting the Unexpected</h3>
-            <p className="latest-card-subtitle">Lou's Guide to Cancer</p>
-            <p className="latest-card-excerpt">
-              Everything I wish someone had told me before diagnosis. A practical guide for those walking through cancer.
-            </p>
-            <span className="latest-cta">Download PDF →</span>
-          </a>
+      {/* RECENT WRITING */}
+      <section className="recent-writing">
+        <div className="recent-header">
+          <h2>Recent Writing</h2>
+          <Link href="/read/all" className="recent-browse">Browse all →</Link>
         </div>
+        <div className="recent-grid">
+          {recentEssays.map((essay) => (
+            <Link key={essay.slug} href={`/read/${essay.slug}`} className="recent-card">
+              {essay.image && (
+                <div className="recent-card-image">
+                  <img src={essay.image} alt="" />
+                </div>
+              )}
+              <div className="recent-card-content">
+                <span className="recent-card-type">{essay.type}</span>
+                <h3>{essay.title}</h3>
+                <p>{essay.excerpt}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* MANIFESTO QUOTE */}
+      <section className="manifesto-quote">
+        <blockquote>
+          "I created The Live Now Club as a place where <em>mortality</em> and <em>joy</em> sit side by side."
+        </blockquote>
+        <Link href="/about" className="manifesto-link">Read the full story →</Link>
       </section>
 
       {/* EXPLORE */}

@@ -1,10 +1,18 @@
-"use client";
-
 import Link from "next/link";
 import { CANCER_GUIDE, getCancerGuideEssays, getCancerEssays } from "@/lib/essays";
 
+export const metadata = {
+  title: "Lou's Guide to Cancer | The Live Now Club",
+  description: "Practical guidance for navigating cancer and supporting those who are.",
+};
+
 export default function NavigatePage() {
   const allCancerEssays = getCancerEssays();
+
+  const formatDate = (dateStr: string) => {
+    const date = new Date(dateStr);
+    return date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+  };
 
   return (
     <>
@@ -21,66 +29,174 @@ export default function NavigatePage() {
         </nav>
       </header>
 
-      <div className="navigate-page">
+      <div style={{
+        minHeight: '100vh',
+        background: '#faf6f1'
+      }}>
         {/* Hero */}
-        <section className="navigate-hero">
-          <span className="navigate-hero-label">Lou's Guide to Cancer</span>
-          <h1>Everything I wish someone had told me.</h1>
-          <p className="navigate-hero-subtitle">
+        <section style={{
+          padding: '160px 24px 80px',
+          maxWidth: '800px',
+          margin: '0 auto',
+          textAlign: 'center' as const
+        }}>
+          <span style={{
+            display: 'inline-block',
+            fontFamily: '"JetBrains Mono", monospace',
+            fontSize: '11px',
+            letterSpacing: '0.2em',
+            textTransform: 'uppercase' as const,
+            color: '#e84a8a',
+            marginBottom: '24px',
+            padding: '8px 16px',
+            border: '1px solid #e84a8a',
+            borderRadius: '20px'
+          }}>Lou's Guide to Cancer</span>
+          <h1 style={{
+            fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+            fontWeight: 500,
+            lineHeight: 1.1,
+            letterSpacing: '-0.02em',
+            color: '#1a1a1a',
+            marginBottom: '24px'
+          }}>Everything I wish someone had told me.</h1>
+          <p style={{
+            fontSize: '1.25rem',
+            lineHeight: 1.6,
+            color: 'rgba(45, 42, 38, 0.7)',
+            maxWidth: '600px',
+            margin: '0 auto'
+          }}>
             Practical guidance for navigating cancer and supporting those who are. Every piece here was written from the
             trenches.
           </p>
         </section>
 
         {/* Quick Links */}
-        <section className="navigate-quick">
-          <div className="quick-grid">
-            <Link href="#just-diagnosed" className="quick-card">
-              <span className="quick-icon">01</span>
-              <h3>Just Diagnosed</h3>
-              <p>Start here</p>
-            </Link>
-            <Link href="#during-treatment" className="quick-card">
-              <span className="quick-icon">02</span>
-              <h3>During Treatment</h3>
-              <p>Practical guidance</p>
-            </Link>
-            <Link href="#for-caregivers" className="quick-card">
-              <span className="quick-icon">03</span>
-              <h3>For Caregivers</h3>
-              <p>Supporting someone</p>
-            </Link>
-            <Link href="#finding-meaning" className="quick-card">
-              <span className="quick-icon">04</span>
-              <h3>Finding Meaning</h3>
-              <p>Making sense of it</p>
-            </Link>
+        <section style={{
+          padding: '0 24px 80px',
+          maxWidth: '1000px',
+          margin: '0 auto'
+        }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: '16px'
+          }}>
+            {[
+              { href: "#just-diagnosed", num: "01", title: "Just Diagnosed", sub: "Start here" },
+              { href: "#during-treatment", num: "02", title: "During Treatment", sub: "Practical guidance" },
+              { href: "#for-caregivers", num: "03", title: "For Caregivers", sub: "Supporting someone" },
+              { href: "#finding-meaning", num: "04", title: "Finding Meaning", sub: "Making sense of it" }
+            ].map((item) => (
+              <Link key={item.href} href={item.href} style={{
+                background: 'white',
+                border: '1px solid rgba(0, 0, 0, 0.06)',
+                padding: '24px',
+                textAlign: 'center' as const,
+                transition: 'all 0.2s'
+              }}>
+                <span style={{
+                  display: 'block',
+                  fontFamily: '"JetBrains Mono", monospace',
+                  fontSize: '24px',
+                  fontWeight: 600,
+                  color: '#e84a8a',
+                  marginBottom: '12px'
+                }}>{item.num}</span>
+                <h3 style={{
+                  fontSize: '1rem',
+                  fontWeight: 500,
+                  color: '#1a1a1a',
+                  marginBottom: '4px'
+                }}>{item.title}</h3>
+                <p style={{
+                  fontFamily: '"JetBrains Mono", monospace',
+                  fontSize: '11px',
+                  color: 'rgba(45, 42, 38, 0.5)',
+                  textTransform: 'uppercase' as const,
+                  letterSpacing: '0.05em'
+                }}>{item.sub}</p>
+              </Link>
+            ))}
           </div>
         </section>
 
         {/* Just Diagnosed - Featured */}
-        <section id="just-diagnosed" className="navigate-section navigate-section--featured">
-          <div className="section-header">
-            <span className="section-number">01</span>
-            <h2>{CANCER_GUIDE[0].title}</h2>
-            <p>{CANCER_GUIDE[0].subtitle}</p>
+        <section id="just-diagnosed" style={{
+          padding: '80px 24px',
+          background: 'white'
+        }}>
+          <div style={{ maxWidth: '900px', margin: '0 auto 40px' }}>
+            <span style={{
+              display: 'block',
+              fontFamily: '"JetBrains Mono", monospace',
+              fontSize: '12px',
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase' as const,
+              color: '#e84a8a',
+              marginBottom: '12px'
+            }}>01</span>
+            <h2 style={{
+              fontSize: '2rem',
+              fontWeight: 500,
+              letterSpacing: '-0.01em',
+              marginBottom: '8px'
+            }}>{CANCER_GUIDE[0].title}</h2>
+            <p style={{
+              fontSize: '1.125rem',
+              color: 'rgba(45, 42, 38, 0.7)'
+            }}>{CANCER_GUIDE[0].subtitle}</p>
           </div>
-          <div className="featured-grid">
+          <div style={{
+            maxWidth: '900px',
+            margin: '0 auto',
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '24px'
+          }}>
             {getCancerGuideEssays("just-diagnosed").map((essay, i) => (
               <Link
                 key={essay.slug}
                 href={`/read/${essay.slug}`}
-                className={`featured-card ${i === 0 ? "featured-card--primary" : ""}`}
+                style={{
+                  background: '#faf6f1',
+                  border: '1px solid rgba(0, 0, 0, 0.06)',
+                  overflow: 'hidden',
+                  transition: 'all 0.2s',
+                  ...(i === 0 ? { gridColumn: '1 / -1', display: 'grid', gridTemplateColumns: '1fr 1fr' } : {})
+                }}
               >
                 {essay.image && i === 0 && (
-                  <div className="featured-card-image">
-                    <img src={essay.image} alt="" />
+                  <div style={{ overflow: 'hidden' }}>
+                    <img src={essay.image} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                 )}
-                <div className="featured-card-content">
-                  <span className="featured-card-type">{essay.type}</span>
-                  <h3>{essay.title}</h3>
-                  <p>{essay.excerpt}</p>
+                <div style={{
+                  padding: '24px',
+                  ...(i === 0 ? { display: 'flex', flexDirection: 'column' as const, justifyContent: 'center' } : {})
+                }}>
+                  <span style={{
+                    display: 'block',
+                    fontFamily: '"JetBrains Mono", monospace',
+                    fontSize: '10px',
+                    letterSpacing: '0.1em',
+                    textTransform: 'uppercase' as const,
+                    color: '#e84a8a',
+                    marginBottom: '8px'
+                  }}>{essay.type}</span>
+                  <h3 style={{
+                    fontSize: i === 0 ? '1.75rem' : '1.25rem',
+                    fontWeight: 500,
+                    lineHeight: 1.3,
+                    color: '#1a1a1a',
+                    marginBottom: '8px'
+                  }}>{essay.title}</h3>
+                  <p style={{
+                    fontSize: '0.9rem',
+                    lineHeight: 1.5,
+                    color: 'rgba(45, 42, 38, 0.7)'
+                  }}>{essay.excerpt}</p>
                 </div>
               </Link>
             ))}
@@ -88,41 +204,128 @@ export default function NavigatePage() {
         </section>
 
         {/* Cancer Meditations */}
-        <section id="cancer-meditations" className="navigate-section navigate-section--dark">
-          <div className="section-header">
-            <span className="section-number">Series</span>
-            <h2>{CANCER_GUIDE[1].title}</h2>
-            <p>{CANCER_GUIDE[1].subtitle}</p>
+        <section id="cancer-meditations" style={{
+          padding: '80px 24px',
+          background: '#1a1a1a',
+          color: 'white'
+        }}>
+          <div style={{ maxWidth: '900px', margin: '0 auto 40px' }}>
+            <span style={{
+              display: 'block',
+              fontFamily: '"JetBrains Mono", monospace',
+              fontSize: '12px',
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase' as const,
+              color: '#e84a8a',
+              marginBottom: '12px'
+            }}>Series</span>
+            <h2 style={{
+              fontSize: '2rem',
+              fontWeight: 500,
+              letterSpacing: '-0.01em',
+              marginBottom: '8px',
+              color: 'white'
+            }}>{CANCER_GUIDE[1].title}</h2>
+            <p style={{
+              fontSize: '1.125rem',
+              color: 'rgba(255, 255, 255, 0.6)'
+            }}>{CANCER_GUIDE[1].subtitle}</p>
           </div>
-          <div className="meditations-scroll">
+          <div style={{
+            maxWidth: '900px',
+            margin: '0 auto',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '16px'
+          }}>
             {getCancerGuideEssays("cancer-meditations").map((essay, i) => (
-              <Link key={essay.slug} href={`/read/${essay.slug}`} className="meditation-card">
-                <span className="meditation-number">{String(i + 1).padStart(2, "0")}</span>
-                <h3>{essay.title}</h3>
-                <p className="meditation-excerpt">{essay.excerpt}</p>
+              <Link key={essay.slug} href={`/read/${essay.slug}`} style={{
+                background: 'rgba(255, 255, 255, 0.05)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                padding: '24px',
+                transition: 'all 0.2s'
+              }}>
+                <span style={{
+                  display: 'block',
+                  fontFamily: '"JetBrains Mono", monospace',
+                  fontSize: '32px',
+                  fontWeight: 600,
+                  color: '#e84a8a',
+                  marginBottom: '12px'
+                }}>{String(i + 1).padStart(2, "0")}</span>
+                <h3 style={{
+                  fontSize: '1rem',
+                  fontWeight: 500,
+                  color: 'white',
+                  marginBottom: '8px'
+                }}>{essay.title}</h3>
+                <p style={{
+                  fontSize: '0.85rem',
+                  lineHeight: 1.5,
+                  color: 'rgba(255, 255, 255, 0.6)'
+                }}>{essay.excerpt}</p>
               </Link>
             ))}
           </div>
         </section>
 
         {/* During Treatment */}
-        <section id="during-treatment" className="navigate-section">
-          <div className="section-header">
-            <span className="section-number">02</span>
-            <h2>{CANCER_GUIDE[2].title}</h2>
-            <p>{CANCER_GUIDE[2].subtitle}</p>
+        <section id="during-treatment" style={{
+          padding: '80px 24px',
+          background: '#faf6f1'
+        }}>
+          <div style={{ maxWidth: '900px', margin: '0 auto 40px' }}>
+            <span style={{
+              display: 'block',
+              fontFamily: '"JetBrains Mono", monospace',
+              fontSize: '12px',
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase' as const,
+              color: '#e84a8a',
+              marginBottom: '12px'
+            }}>02</span>
+            <h2 style={{
+              fontSize: '2rem',
+              fontWeight: 500,
+              letterSpacing: '-0.01em',
+              marginBottom: '8px'
+            }}>{CANCER_GUIDE[2].title}</h2>
+            <p style={{
+              fontSize: '1.125rem',
+              color: 'rgba(45, 42, 38, 0.7)'
+            }}>{CANCER_GUIDE[2].subtitle}</p>
           </div>
-          <div className="guide-grid">
+          <div style={{
+            maxWidth: '900px',
+            margin: '0 auto',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: '24px'
+          }}>
             {getCancerGuideEssays("during-treatment").map((essay) => (
-              <Link key={essay.slug} href={`/read/${essay.slug}`} className="guide-card">
+              <Link key={essay.slug} href={`/read/${essay.slug}`} style={{
+                background: 'white',
+                border: '1px solid rgba(0, 0, 0, 0.06)',
+                overflow: 'hidden',
+                transition: 'all 0.2s'
+              }}>
                 {essay.image && (
-                  <div className="guide-card-image">
-                    <img src={essay.image} alt="" />
+                  <div style={{ aspectRatio: '16/9', overflow: 'hidden' }}>
+                    <img src={essay.image} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                 )}
-                <div className="guide-card-content">
-                  <h3>{essay.title}</h3>
-                  <p>{essay.excerpt}</p>
+                <div style={{ padding: '20px' }}>
+                  <h3 style={{
+                    fontSize: '1.125rem',
+                    fontWeight: 500,
+                    color: '#1a1a1a',
+                    marginBottom: '8px'
+                  }}>{essay.title}</h3>
+                  <p style={{
+                    fontSize: '0.9rem',
+                    lineHeight: 1.5,
+                    color: 'rgba(45, 42, 38, 0.7)'
+                  }}>{essay.excerpt}</p>
                 </div>
               </Link>
             ))}
@@ -130,41 +333,125 @@ export default function NavigatePage() {
         </section>
 
         {/* For Caregivers */}
-        <section id="for-caregivers" className="navigate-section navigate-section--accent">
-          <div className="section-header">
-            <span className="section-number">03</span>
-            <h2>{CANCER_GUIDE[3].title}</h2>
-            <p>{CANCER_GUIDE[3].subtitle}</p>
+        <section id="for-caregivers" style={{
+          padding: '80px 24px',
+          background: 'linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%)'
+        }}>
+          <div style={{ maxWidth: '900px', margin: '0 auto 40px' }}>
+            <span style={{
+              display: 'block',
+              fontFamily: '"JetBrains Mono", monospace',
+              fontSize: '12px',
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase' as const,
+              color: '#e84a8a',
+              marginBottom: '12px'
+            }}>03</span>
+            <h2 style={{
+              fontSize: '2rem',
+              fontWeight: 500,
+              letterSpacing: '-0.01em',
+              marginBottom: '8px'
+            }}>{CANCER_GUIDE[3].title}</h2>
+            <p style={{
+              fontSize: '1.125rem',
+              color: 'rgba(45, 42, 38, 0.7)'
+            }}>{CANCER_GUIDE[3].subtitle}</p>
           </div>
-          <div className="caregiver-grid">
+          <div style={{
+            maxWidth: '900px',
+            margin: '0 auto',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '20px'
+          }}>
             {getCancerGuideEssays("for-caregivers").map((essay) => (
-              <Link key={essay.slug} href={`/read/${essay.slug}`} className="caregiver-card">
-                <h3>{essay.title}</h3>
-                <p>{essay.excerpt}</p>
-                <span className="caregiver-cta">Read this &rarr;</span>
+              <Link key={essay.slug} href={`/read/${essay.slug}`} style={{
+                background: 'white',
+                padding: '28px',
+                transition: 'all 0.2s'
+              }}>
+                <h3 style={{
+                  fontSize: '1.125rem',
+                  fontWeight: 500,
+                  color: '#1a1a1a',
+                  marginBottom: '12px'
+                }}>{essay.title}</h3>
+                <p style={{
+                  fontSize: '0.9rem',
+                  lineHeight: 1.5,
+                  color: 'rgba(45, 42, 38, 0.7)',
+                  marginBottom: '16px'
+                }}>{essay.excerpt}</p>
+                <span style={{
+                  fontFamily: '"JetBrains Mono", monospace',
+                  fontSize: '11px',
+                  letterSpacing: '0.05em',
+                  color: '#e84a8a',
+                  fontWeight: 500
+                }}>Read this &rarr;</span>
               </Link>
             ))}
           </div>
         </section>
 
         {/* Finding Meaning */}
-        <section id="finding-meaning" className="navigate-section">
-          <div className="section-header">
-            <span className="section-number">04</span>
-            <h2>{CANCER_GUIDE[4].title}</h2>
-            <p>{CANCER_GUIDE[4].subtitle}</p>
+        <section id="finding-meaning" style={{
+          padding: '80px 24px',
+          background: '#faf6f1'
+        }}>
+          <div style={{ maxWidth: '900px', margin: '0 auto 40px' }}>
+            <span style={{
+              display: 'block',
+              fontFamily: '"JetBrains Mono", monospace',
+              fontSize: '12px',
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase' as const,
+              color: '#e84a8a',
+              marginBottom: '12px'
+            }}>04</span>
+            <h2 style={{
+              fontSize: '2rem',
+              fontWeight: 500,
+              letterSpacing: '-0.01em',
+              marginBottom: '8px'
+            }}>{CANCER_GUIDE[4].title}</h2>
+            <p style={{
+              fontSize: '1.125rem',
+              color: 'rgba(45, 42, 38, 0.7)'
+            }}>{CANCER_GUIDE[4].subtitle}</p>
           </div>
-          <div className="guide-grid">
+          <div style={{
+            maxWidth: '900px',
+            margin: '0 auto',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: '24px'
+          }}>
             {getCancerGuideEssays("finding-meaning").map((essay) => (
-              <Link key={essay.slug} href={`/read/${essay.slug}`} className="guide-card">
+              <Link key={essay.slug} href={`/read/${essay.slug}`} style={{
+                background: 'white',
+                border: '1px solid rgba(0, 0, 0, 0.06)',
+                overflow: 'hidden',
+                transition: 'all 0.2s'
+              }}>
                 {essay.image && (
-                  <div className="guide-card-image">
-                    <img src={essay.image} alt="" />
+                  <div style={{ aspectRatio: '16/9', overflow: 'hidden' }}>
+                    <img src={essay.image} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                 )}
-                <div className="guide-card-content">
-                  <h3>{essay.title}</h3>
-                  <p>{essay.excerpt}</p>
+                <div style={{ padding: '20px' }}>
+                  <h3 style={{
+                    fontSize: '1.125rem',
+                    fontWeight: 500,
+                    color: '#1a1a1a',
+                    marginBottom: '8px'
+                  }}>{essay.title}</h3>
+                  <p style={{
+                    fontSize: '0.9rem',
+                    lineHeight: 1.5,
+                    color: 'rgba(45, 42, 38, 0.7)'
+                  }}>{essay.excerpt}</p>
                 </div>
               </Link>
             ))}
@@ -172,22 +459,60 @@ export default function NavigatePage() {
         </section>
 
         {/* Browse All Cancer Writing */}
-        <section className="navigate-browse">
-          <h2>All Cancer Writing</h2>
-          <p className="browse-count">{allCancerEssays.length} pieces</p>
-          <div className="browse-list">
+        <section style={{
+          padding: '80px 24px',
+          maxWidth: '800px',
+          margin: '0 auto'
+        }}>
+          <h2 style={{
+            fontSize: '1.5rem',
+            fontWeight: 500,
+            marginBottom: '8px'
+          }}>All Cancer Writing</h2>
+          <p style={{
+            fontFamily: '"JetBrains Mono", monospace',
+            fontSize: '12px',
+            color: 'rgba(45, 42, 38, 0.5)',
+            marginBottom: '24px'
+          }}>{allCancerEssays.length} pieces</p>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
             {allCancerEssays.map((essay) => (
-              <Link key={essay.slug} href={`/read/${essay.slug}`} className="browse-row">
-                <span className="browse-type">{essay.type}</span>
-                <span className="browse-title">{essay.title}</span>
+              <Link key={essay.slug} href={`/read/${essay.slug}`} style={{
+                display: 'grid',
+                gridTemplateColumns: '80px 1fr',
+                gap: '16px',
+                padding: '12px 0',
+                borderBottom: '1px solid rgba(45, 42, 38, 0.08)',
+                transition: 'all 0.2s'
+              }}>
+                <span style={{
+                  fontFamily: '"JetBrains Mono", monospace',
+                  fontSize: '10px',
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase' as const,
+                  color: 'rgba(45, 42, 38, 0.5)'
+                }}>{essay.type}</span>
+                <span style={{
+                  fontSize: '1rem',
+                  color: '#1a1a1a'
+                }}>{essay.title}</span>
               </Link>
             ))}
           </div>
         </section>
 
         {/* Footer CTA */}
-        <section className="navigate-footer">
-          <p>You're not alone in this.</p>
+        <section style={{
+          textAlign: 'center' as const,
+          padding: '80px 24px',
+          background: 'white',
+          borderTop: '1px solid rgba(45, 42, 38, 0.08)'
+        }}>
+          <p style={{
+            fontSize: '1.25rem',
+            color: 'rgba(45, 42, 38, 0.7)',
+            marginBottom: '24px'
+          }}>You're not alone in this.</p>
           <a
             href="https://louiseireland.substack.com/subscribe"
             target="_blank"
@@ -205,467 +530,6 @@ export default function NavigatePage() {
           Subscribe
         </a>
       </div>
-
-      <style jsx>{`
-        .navigate-page {
-          min-height: 100vh;
-          background: #faf6f1;
-        }
-
-        /* Hero */
-        .navigate-hero {
-          padding: 160px 24px 80px;
-          max-width: 800px;
-          margin: 0 auto;
-          text-align: center;
-        }
-
-        .navigate-hero-label {
-          display: inline-block;
-          font-family: "JetBrains Mono", monospace;
-          font-size: 11px;
-          letter-spacing: 0.2em;
-          text-transform: uppercase;
-          color: #e84a8a;
-          margin-bottom: 24px;
-          padding: 8px 16px;
-          border: 1px solid #e84a8a;
-          border-radius: 20px;
-        }
-
-        .navigate-hero h1 {
-          font-size: clamp(2.5rem, 5vw, 4rem);
-          font-weight: 500;
-          line-height: 1.1;
-          letter-spacing: -0.02em;
-          color: #1a1a1a;
-          margin-bottom: 24px;
-        }
-
-        .navigate-hero-subtitle {
-          font-size: 1.25rem;
-          line-height: 1.6;
-          color: rgba(45, 42, 38, 0.7);
-          max-width: 600px;
-          margin: 0 auto;
-        }
-
-        /* Quick Links */
-        .navigate-quick {
-          padding: 0 24px 80px;
-          max-width: 1000px;
-          margin: 0 auto;
-        }
-
-        .quick-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 16px;
-        }
-
-        .quick-card {
-          background: white;
-          border: 1px solid rgba(0, 0, 0, 0.06);
-          padding: 24px;
-          transition: all 0.2s;
-          text-align: center;
-        }
-
-        .quick-card:hover {
-          border-color: #e84a8a;
-          transform: translateY(-4px);
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-        }
-
-        .quick-icon {
-          display: block;
-          font-family: "JetBrains Mono", monospace;
-          font-size: 24px;
-          font-weight: 600;
-          color: #e84a8a;
-          margin-bottom: 12px;
-        }
-
-        .quick-card h3 {
-          font-size: 1rem;
-          font-weight: 500;
-          color: #1a1a1a;
-          margin-bottom: 4px;
-        }
-
-        .quick-card p {
-          font-family: "JetBrains Mono", monospace;
-          font-size: 11px;
-          color: rgba(45, 42, 38, 0.5);
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-        }
-
-        /* Section styles */
-        .navigate-section {
-          padding: 80px 24px;
-        }
-
-        .navigate-section--featured {
-          background: white;
-        }
-
-        .navigate-section--dark {
-          background: #1a1a1a;
-          color: white;
-        }
-
-        .navigate-section--accent {
-          background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
-        }
-
-        .section-header {
-          max-width: 900px;
-          margin: 0 auto 40px;
-        }
-
-        .section-number {
-          display: block;
-          font-family: "JetBrains Mono", monospace;
-          font-size: 12px;
-          letter-spacing: 0.15em;
-          text-transform: uppercase;
-          color: #e84a8a;
-          margin-bottom: 12px;
-        }
-
-        .navigate-section--dark .section-number {
-          color: #e84a8a;
-        }
-
-        .section-header h2 {
-          font-size: 2rem;
-          font-weight: 500;
-          letter-spacing: -0.01em;
-          margin-bottom: 8px;
-        }
-
-        .navigate-section--dark .section-header h2 {
-          color: white;
-        }
-
-        .section-header p {
-          font-size: 1.125rem;
-          color: rgba(45, 42, 38, 0.7);
-        }
-
-        .navigate-section--dark .section-header p {
-          color: rgba(255, 255, 255, 0.6);
-        }
-
-        /* Featured Grid */
-        .featured-grid {
-          max-width: 900px;
-          margin: 0 auto;
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 24px;
-        }
-
-        .featured-card {
-          background: #faf6f1;
-          border: 1px solid rgba(0, 0, 0, 0.06);
-          overflow: hidden;
-          transition: all 0.2s;
-        }
-
-        .featured-card:hover {
-          border-color: #e84a8a;
-          transform: translateY(-4px);
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-        }
-
-        .featured-card--primary {
-          grid-column: 1 / -1;
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-        }
-
-        .featured-card-image {
-          aspect-ratio: 16/10;
-          overflow: hidden;
-        }
-
-        .featured-card--primary .featured-card-image {
-          aspect-ratio: auto;
-        }
-
-        .featured-card-image img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        .featured-card-content {
-          padding: 24px;
-        }
-
-        .featured-card--primary .featured-card-content {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-        }
-
-        .featured-card-type {
-          display: block;
-          font-family: "JetBrains Mono", monospace;
-          font-size: 10px;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          color: #e84a8a;
-          margin-bottom: 8px;
-        }
-
-        .featured-card h3 {
-          font-size: 1.25rem;
-          font-weight: 500;
-          line-height: 1.3;
-          color: #1a1a1a;
-          margin-bottom: 8px;
-        }
-
-        .featured-card--primary h3 {
-          font-size: 1.75rem;
-        }
-
-        .featured-card p {
-          font-size: 0.9rem;
-          line-height: 1.5;
-          color: rgba(45, 42, 38, 0.7);
-        }
-
-        /* Meditations */
-        .meditations-scroll {
-          max-width: 900px;
-          margin: 0 auto;
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 16px;
-        }
-
-        .meditation-card {
-          background: rgba(255, 255, 255, 0.05);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          padding: 24px;
-          transition: all 0.2s;
-        }
-
-        .meditation-card:hover {
-          background: rgba(255, 255, 255, 0.1);
-          border-color: #e84a8a;
-        }
-
-        .meditation-number {
-          display: block;
-          font-family: "JetBrains Mono", monospace;
-          font-size: 32px;
-          font-weight: 600;
-          color: #e84a8a;
-          margin-bottom: 12px;
-        }
-
-        .meditation-card h3 {
-          font-size: 1rem;
-          font-weight: 500;
-          color: white;
-          margin-bottom: 8px;
-        }
-
-        .meditation-excerpt {
-          font-size: 0.85rem;
-          line-height: 1.5;
-          color: rgba(255, 255, 255, 0.6);
-        }
-
-        /* Guide Grid */
-        .guide-grid {
-          max-width: 900px;
-          margin: 0 auto;
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 24px;
-        }
-
-        .guide-card {
-          background: white;
-          border: 1px solid rgba(0, 0, 0, 0.06);
-          overflow: hidden;
-          transition: all 0.2s;
-        }
-
-        .guide-card:hover {
-          border-color: #e84a8a;
-          transform: translateY(-4px);
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-        }
-
-        .guide-card-image {
-          aspect-ratio: 16/9;
-          overflow: hidden;
-        }
-
-        .guide-card-image img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        .guide-card-content {
-          padding: 20px;
-        }
-
-        .guide-card h3 {
-          font-size: 1.125rem;
-          font-weight: 500;
-          color: #1a1a1a;
-          margin-bottom: 8px;
-        }
-
-        .guide-card p {
-          font-size: 0.9rem;
-          line-height: 1.5;
-          color: rgba(45, 42, 38, 0.7);
-        }
-
-        /* Caregiver Grid */
-        .caregiver-grid {
-          max-width: 900px;
-          margin: 0 auto;
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 20px;
-        }
-
-        .caregiver-card {
-          background: white;
-          padding: 28px;
-          transition: all 0.2s;
-        }
-
-        .caregiver-card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-        }
-
-        .caregiver-card h3 {
-          font-size: 1.125rem;
-          font-weight: 500;
-          color: #1a1a1a;
-          margin-bottom: 12px;
-        }
-
-        .caregiver-card p {
-          font-size: 0.9rem;
-          line-height: 1.5;
-          color: rgba(45, 42, 38, 0.7);
-          margin-bottom: 16px;
-        }
-
-        .caregiver-cta {
-          font-family: "JetBrains Mono", monospace;
-          font-size: 11px;
-          letter-spacing: 0.05em;
-          color: #e84a8a;
-          font-weight: 500;
-        }
-
-        /* Browse */
-        .navigate-browse {
-          padding: 80px 24px;
-          max-width: 800px;
-          margin: 0 auto;
-        }
-
-        .navigate-browse h2 {
-          font-size: 1.5rem;
-          font-weight: 500;
-          margin-bottom: 8px;
-        }
-
-        .browse-count {
-          font-family: "JetBrains Mono", monospace;
-          font-size: 12px;
-          color: rgba(45, 42, 38, 0.5);
-          margin-bottom: 24px;
-        }
-
-        .browse-list {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .browse-row {
-          display: grid;
-          grid-template-columns: 80px 1fr;
-          gap: 16px;
-          padding: 12px 0;
-          border-bottom: 1px solid rgba(45, 42, 38, 0.08);
-          transition: all 0.2s;
-        }
-
-        .browse-row:hover {
-          padding-left: 8px;
-        }
-
-        .browse-type {
-          font-family: "JetBrains Mono", monospace;
-          font-size: 10px;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          color: rgba(45, 42, 38, 0.5);
-        }
-
-        .browse-title {
-          font-size: 1rem;
-          color: #1a1a1a;
-        }
-
-        .browse-row:hover .browse-title {
-          color: #e84a8a;
-        }
-
-        /* Footer */
-        .navigate-footer {
-          text-align: center;
-          padding: 80px 24px;
-          background: white;
-          border-top: 1px solid rgba(45, 42, 38, 0.08);
-        }
-
-        .navigate-footer p {
-          font-size: 1.25rem;
-          color: rgba(45, 42, 38, 0.7);
-          margin-bottom: 24px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-          .quick-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
-
-          .featured-card--primary {
-            grid-template-columns: 1fr;
-          }
-
-          .meditations-scroll {
-            grid-template-columns: 1fr;
-          }
-
-          .guide-grid {
-            grid-template-columns: 1fr;
-          }
-
-          .caregiver-grid {
-            grid-template-columns: 1fr;
-          }
-        }
-      `}</style>
     </>
   );
 }
