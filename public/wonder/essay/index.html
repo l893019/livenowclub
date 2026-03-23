@@ -1267,10 +1267,22 @@
       position: absolute;
       font-family: var(--sans);
       font-size: 10px;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.3);
       z-index: 2;
+      pointer-events: none;
+    }
+
+    .scatter-quadrant-label.top-left { top: 24px; left: 50%; transform: translateX(-100%) translateX(-20px); text-align: right; }
+    .scatter-quadrant-label.top-right { top: 24px; right: 50%; transform: translateX(100%) translateX(20px); text-align: left; }
+    .scatter-quadrant-label.bottom-left { bottom: 24px; left: 50%; transform: translateX(-100%) translateX(-20px); text-align: right; }
+    .scatter-quadrant-label.bottom-right { bottom: 24px; right: 50%; transform: translateX(100%) translateX(20px); text-align: left; }
+
+    @media (max-width: 600px) {
+      .scatter-quadrant-label { font-size: 8px; letter-spacing: 0.05em; }
+      .scatter-quadrant-label.top-left, .scatter-quadrant-label.bottom-left { left: 16px; transform: none; }
+      .scatter-quadrant-label.top-right, .scatter-quadrant-label.bottom-right { right: 16px; transform: none; }
     }
 
     .scatter-y-axis {
@@ -1890,7 +1902,7 @@
     <div class="container-narrow">
       <div class="highlight-quote">
         <p>"In a properly automated and educated world, then, machines may prove to be the true humanizing influence. It may be that machines will do the work that makes life possible and that human beings will do all the other things that make life pleasant and worthwhile."</p>
-        <div class="attribution">Isaac Asimov, Whatever You Wish</div>
+        <div class="attribution">Isaac Asimov, Robot Visions</div>
       </div>
 
       <div class="highlight-quote">
@@ -1914,7 +1926,7 @@
         </div>
         <div class="tech-card">
           <h4>Phyles <span>(Stephenson)</span></h4>
-          <p>Voluntary tribes defined by shared values rather than geography. You join the worldview you believe in. Both reveal how quickly new hierarchies fill the vacuum.</p>
+          <p>Voluntary tribes organized around ethnicity, religion, or shared values rather than geography. You can choose your affiliation, though many inherit theirs. Both Phyles and Hives reveal how quickly new hierarchies fill the vacuum.</p>
         </div>
         <div class="tech-card">
           <h4>Sensayers <span>(Palmer)</span></h4>
@@ -2037,7 +2049,7 @@
         </div>
         <div class="tech-card" style="border-color: rgba(61,185,164,0.2);">
           <h4>Sedoretu <span style="color: var(--accent-teal);">(Le Guin)</span></h4>
-          <p>A four-person marriage uniting two kinship groups, a structure that distributes love, labor, and stability across more connections.</p>
+          <p>A four-person marriage structured around two social moieties (Morning and Evening), governing both relationships and labor distribution across more connections.</p>
         </div>
         <div class="tech-card" style="border-color: rgba(61,185,164,0.2);">
           <h4>Line Marriages <span style="color: var(--accent-teal);">(Heinlein)</span></h4>
@@ -2216,7 +2228,7 @@
           <div class="warning-item">
             <h4>AI could be indifferent to human values</h4>
             <p>The danger isn't that AI will hate us, it's that it might not notice us.</p>
-            <div class="author">Watts, Liu Cixin</div>
+            <div class="author">Watts (Blindsight)</div>
           </div>
         </div>
       </div>
@@ -2423,7 +2435,7 @@
         </div>
         <div class="methodology-item">
           <h4>Analysis Method</h4>
-          <p>Each work was analyzed for thematic content, worldview assumptions, and responses to abundance. Analysis combined close reading with systematic tagging across 21 dimensions.</p>
+          <p>Each work was analyzed for thematic content, worldview assumptions, and responses to abundance. Analysis combined close reading with systematic tagging across 12 dimensions.</p>
         </div>
         <div class="methodology-item">
           <h4>Visualization</h4>

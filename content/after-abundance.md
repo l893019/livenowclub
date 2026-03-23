@@ -94,7 +94,7 @@ In the 1950s, most science fiction assumed meaning was something to be found—i
 ### Quotes
 
 > "In a properly automated and educated world, then, machines may prove to be the true humanizing influence. It may be that machines will do the work that makes life possible and that human beings will do all the other things that make life pleasant and worthwhile."
-> — Isaac Asimov, Whatever You Wish
+> — Isaac Asimov, Robot Visions
 
 > "There are only two industries. This has always been true....There is the industry of things, and the industry of entertainment....After people have the things they need to live, everything else is entertainment. Everything."
 > — Neal Stephenson, The Diamond Age
@@ -105,7 +105,7 @@ In the 1950s, most science fiction assumed meaning was something to be found—i
 
 **Hives (Palmer):** Opt-in nations based on philosophy rather than geography; you join the worldview you believe in and can leave anytime.
 
-**Phyles (Stephenson):** Voluntary tribes defined by shared values rather than geography. You join the worldview you believe in. Both reveal how quickly new hierarchies fill the vacuum.
+**Phyles (Stephenson):** Voluntary tribes organized around ethnicity, religion, or shared values rather than geography. You can choose your affiliation, though many inherit theirs. Both Phyles and Hives reveal how quickly new hierarchies fill the vacuum.
 
 **Sensayers (Palmer):** Trained spiritual counselors who help individuals navigate meaning without pushing a specific faith. Society recognizing that meaning-making is skilled work requiring support.
 
@@ -158,7 +158,7 @@ Earlier science fiction found meaning in struggle, discovery, and transcendence.
 
 **Bash' (Palmer):** Chosen families formed around shared purpose rather than blood, raising children collectively.
 
-**Sedoretu (Le Guin):** A four-person marriage uniting two kinship groups, a structure that distributes love, labor, and stability across more connections.
+**Sedoretu (Le Guin):** A four-person marriage structured around two social moieties (Morning and Evening), governing both relationships and labor distribution across more connections.
 
 **Line Marriages (Heinlein):** Perpetual family structures that add new spouses over generations, never dissolving, accumulating wisdom and stability.
 
@@ -248,7 +248,7 @@ We fear the potential for tyranny caused by surveillance states, but comfort can
 — Vonnegut's Player Piano
 
 **AI could be indifferent to human values:** The danger isn't that AI will hate us, it's that it might not notice us.
-— Watts, Liu Cixin
+— Watts (Blindsight)
 
 ### Warning Cluster 3: Self
 
