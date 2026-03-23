@@ -11,16 +11,53 @@ type Essay = {
   image?: string;
 };
 
+// Static essay data for the homepage
+const RECENT_ESSAYS: Essay[] = [
+  {
+    slug: "expecting-the-unexpected",
+    title: "Expecting the Unexpected",
+    excerpt: "The call came on a Thursday.",
+    type: "essay",
+    image: "/images/expecting-the-unexpected.jpg"
+  },
+  {
+    slug: "maybe",
+    title: "Maybe",
+    excerpt: "Maybe you'll wake tomorrow to a world made new.",
+    type: "poem",
+    image: "/images/maybe.jpg"
+  },
+  {
+    slug: "the-case-for-magical-thinking",
+    title: "The Case for Magical Thinking",
+    excerpt: "What if belief itself has power?",
+    type: "essay",
+    image: "/images/the-case-for-magical-thinking.jpg"
+  },
+  {
+    slug: "i-love-lou",
+    title: "I Love Lou",
+    excerpt: "Learning to love the person I am.",
+    type: "essay"
+  },
+  {
+    slug: "cancer-meditations",
+    title: "Cancer Meditations",
+    excerpt: "Notes from the quiet hours of treatment.",
+    type: "meditation",
+    image: "/images/cancer-meditations-hero.jpg"
+  },
+  {
+    slug: "the-purge",
+    title: "The Purge",
+    excerpt: "On letting go of everything that no longer serves.",
+    type: "essay",
+    image: "/images/the-purge.jpg"
+  }
+];
+
 export default function HomePage() {
-  const [recentEssays, setRecentEssays] = useState<Essay[]>([]);
-
   useEffect(() => {
-    // Fetch recent essays
-    fetch("/api/essays")
-      .then((res) => res.json())
-      .then((data) => setRecentEssays(data.slice(0, 6)))
-      .catch(() => {});
-
     const handleScroll = () => {
       const header = document.querySelector(".header");
       if (header) {
@@ -89,7 +126,7 @@ export default function HomePage() {
           <Link href="/read/all" className="recent-browse">Browse all →</Link>
         </div>
         <div className="recent-grid">
-          {recentEssays.map((essay) => (
+          {RECENT_ESSAYS.map((essay) => (
             <Link key={essay.slug} href={`/read/${essay.slug}`} className="recent-card">
               {essay.image && (
                 <div className="recent-card-image">

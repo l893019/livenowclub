@@ -632,6 +632,29 @@
       display: flex;
       align-items: flex-start;
       justify-content: center;
+      word-break: break-word;
+      hyphens: auto;
+    }
+
+    @media (max-width: 500px) {
+      .immersive-chart {
+        gap: 8px;
+        padding: 0 4px;
+      }
+      .chart-grid .immersive-chart {
+        gap: 6px;
+      }
+      .bar-percent {
+        font-size: 1.4rem;
+      }
+      .bar-name {
+        font-size: 9px;
+        letter-spacing: 0;
+        min-height: 3em;
+      }
+      .immersive-bar {
+        min-width: 0;
+      }
     }
 
     /* Bottom sheet modal for book lists */
