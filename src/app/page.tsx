@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 // ============================================
 // HOMEPAGE CONTENT CONFIG
@@ -46,6 +47,8 @@ const RECENT = [
 // ============================================
 
 export default function HomePage() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector(".header");
@@ -70,10 +73,10 @@ export default function HomePage() {
           <img src="/images/logo-handwritten.png" alt="The Live Now Club" className="logo-img" />
         </Link>
         <nav className="nav">
-          <Link href="/read">Read</Link>
-          <Link href="/navigate">Navigate</Link>
-          <Link href="/wonder">Wonder</Link>
-          <Link href="/make">Make</Link>
+          <Link href="/read" className={pathname === "/read" ? "active" : ""}>Read</Link>
+          <Link href="/navigate" className={pathname === "/navigate" ? "active" : ""}>Navigate</Link>
+          <Link href="/wonder" className={pathname === "/wonder" ? "active" : ""}>Wonder</Link>
+          <Link href="/make" className={pathname === "/make" ? "active" : ""}>Make</Link>
         </nav>
       </header>
 
@@ -85,7 +88,7 @@ export default function HomePage() {
         <div className="hero-content">
           <p className="hero-tagline">A club for those who don't want to waste the time they have left</p>
           <img src="/images/handwritten-question.png" alt="What would you do if you knew your time was short?" className="hero-handwritten" />
-          <a href="#join" className="btn btn--primary">Become a Member</a>
+          <a href="#join" className="btn btn--primary">Join the Newsletter</a>
         </div>
       </section>
 
@@ -93,7 +96,7 @@ export default function HomePage() {
       <section className="featured">
         <Link href={`/${FEATURED.slug}`} className="featured-link">
           <div className="featured-image">
-            <img src={FEATURED.image} alt="" />
+            <img src={FEATURED.image} alt={`Featured: ${FEATURED.title}`} />
           </div>
           <div className="featured-text">
             <h2>{FEATURED.title}</h2>
@@ -111,7 +114,7 @@ export default function HomePage() {
           {/* Editor's Pick - larger */}
           <Link href={`/read/${EDITORS_PICK.slug}`} className="pick">
             <div className="pick-image">
-              <img src={EDITORS_PICK.image} alt="" />
+              <img src={EDITORS_PICK.image} alt={`Editor's Pick: ${EDITORS_PICK.title}`} />
             </div>
             <div className="pick-content">
               <span className="pick-label">✦ Editor's Pick</span>
@@ -126,7 +129,7 @@ export default function HomePage() {
             {RECENT.map((essay) => (
               <Link key={essay.slug} href={`/read/${essay.slug}`} className="recent-item">
                 <div className="recent-item-image">
-                  <img src={essay.image} alt="" />
+                  <img src={essay.image} alt={essay.title} />
                 </div>
                 <div className="recent-item-content">
                   <span className="recent-item-type">{essay.type}</span>

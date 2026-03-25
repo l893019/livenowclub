@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>After Abundance: When Purpose Is All We Have Left</title>
   <meta name="description" content="What more than 200 science fiction books reveal about meaning when scarcity ends.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="After Abundance: When Purpose Is All We Have Left">
+  <meta property="og:description" content="What 208 science fiction books reveal about meaning when scarcity ends. Connection doubled as the answer. Technology fear dropped 70%.">
+  <meta property="og:image" content="https://livenowclub.vercel.app/wonder/assets/landscapes/optimized/1.jpg">
+  <meta property="og:url" content="https://livenowclub.vercel.app/wonder/essay">
+  <meta property="og:type" content="article">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="After Abundance: When Purpose Is All We Have Left">
+  <meta name="twitter:description" content="What 208 sci-fi books reveal about meaning when scarcity ends.">
+  <meta name="twitter:image" content="https://livenowclub.vercel.app/wonder/assets/landscapes/optimized/1.jpg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -402,6 +416,15 @@
     .essay-content { max-width: 700px; }
 
     /* Drop cap removed for cleaner look */
+
+    /* ANIMATED COUNTERS */
+    .counter {
+      display: inline;
+    }
+
+    .counter.counting {
+      transition: none;
+    }
 
     /* BLOCKQUOTES */
     .blockquote {
@@ -1326,6 +1349,44 @@
       opacity: 1;
       z-index: 10;
       box-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+    }
+
+    /* Mobile: larger tap targets */
+    @media (max-width: 768px) {
+      .scatterplot-canvas {
+        height: 400px;
+        touch-action: pan-y pinch-zoom;
+      }
+      .scatter-dot {
+        width: 14px;
+        height: 14px;
+      }
+      .scatter-dot::before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: -8px;
+        right: -8px;
+        bottom: -8px;
+      }
+      .scatter-dot:active {
+        transform: scale(2);
+        opacity: 1;
+        z-index: 10;
+      }
+      .scatter-y-axis, .scatter-y-axis-bottom {
+        font-size: 9px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .scatterplot-canvas {
+        height: 350px;
+      }
+      .scatter-dot {
+        width: 12px;
+        height: 12px;
+      }
     }
 
     .scatter-axes {
@@ -2861,6 +2922,80 @@
     }, { threshold: 0.3 });
 
     document.querySelectorAll('.immersive-chart').forEach(chart => observer.observe(chart));
+
+    // ANIMATED COUNTERS
+    function animateCounter(element, target, duration = 1500) {
+      let start = 0;
+      const startTime = performance.now();
+
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(start + (target - start) * easeOut);
+
+        element.textContent = current;
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          element.textContent = target;
+        }
+      }
+
+      requestAnimationFrame(update);
+    }
+
+    // Find and animate key numbers
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.dataset.animated) {
+          entry.target.dataset.animated = 'true';
+          const target = parseInt(entry.target.dataset.target);
+          animateCounter(entry.target, target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    // Mark counters after DOM loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      // Find "208" or "200" in library heading
+      const libraryHeading = document.querySelector('.library-section h2');
+      if (libraryHeading) {
+        libraryHeading.innerHTML = libraryHeading.innerHTML.replace(
+          /(\d+)/,
+          '<span class="counter" data-target="$1">0</span>'
+        );
+        const counter = libraryHeading.querySelector('.counter');
+        if (counter) counterObserver.observe(counter);
+      }
+
+      // Animate bar percentages on scroll
+      document.querySelectorAll('.bar-percent').forEach(el => {
+        const text = el.textContent;
+        const num = parseInt(text);
+        if (!isNaN(num)) {
+          el.dataset.target = num;
+          el.textContent = '0%';
+          el.dataset.suffix = '%';
+
+          const barObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting && !entry.target.dataset.animated) {
+                entry.target.dataset.animated = 'true';
+                const target = parseInt(entry.target.dataset.target);
+                animateCounter(entry.target, target);
+                setTimeout(() => {
+                  entry.target.textContent = target + '%';
+                }, 1600);
+              }
+            });
+          }, { threshold: 0.3 });
+
+          barObserver.observe(el);
+        }
+      });
+    });
 
     // READING PROGRESS BAR
     const progressBar = document.getElementById('readingProgress');

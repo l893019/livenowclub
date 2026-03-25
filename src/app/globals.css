@@ -217,6 +217,21 @@ strong {
   color: var(--pink);
 }
 
+.nav a.active {
+  color: var(--pink);
+  position: relative;
+}
+
+.nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--pink);
+}
+
 /* ============================================
    HERO
    ============================================ */
@@ -872,7 +887,7 @@ strong {
    FOOTER
    ============================================ */
 .footer {
-  padding: var(--space-lg);
+  padding: var(--space-xl) var(--space-lg);
   background: var(--charcoal);
   text-align: center;
   color: var(--cream);
@@ -880,17 +895,20 @@ strong {
 
 .footer-quote {
   font-family: var(--font-sans);
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: var(--pink);
-  margin-bottom: var(--space-md);
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cream);
+  margin-bottom: var(--space-lg);
+  opacity: 0.9;
 }
 
 .footer-nav {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: var(--space-md);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
 .footer-nav a {
@@ -2151,11 +2169,16 @@ strong {
 
 .featured-link {
   display: block;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
 }
 
 .featured-link:hover {
   transform: translateY(-4px);
+}
+
+.featured-link:hover .featured-image {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 .featured-image {
@@ -2233,6 +2256,10 @@ strong {
   transform: translateY(-4px);
 }
 
+.pick:hover .pick-image {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
 .pick-image {
   aspect-ratio: 4/3;
   overflow: hidden;
@@ -2288,6 +2315,10 @@ strong {
 
 .recent-item:hover {
   transform: translateX(8px);
+}
+
+.recent-item:hover .recent-item-image {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .recent-item-image {
@@ -2394,6 +2425,31 @@ strong {
 }
 
 @media (max-width: 768px) {
+  .header {
+    padding: var(--space-sm);
+  }
+
+  .nav {
+    gap: var(--space-sm);
+  }
+
+  .nav a {
+    font-size: 0.75rem;
+  }
+
+  .hero {
+    min-height: 80vh;
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .hero-tagline {
+    font-size: 0.7rem;
+  }
+
+  .hero-handwritten {
+    max-width: 100%;
+  }
+
   .featured {
     padding: var(--space-md);
   }
@@ -2402,8 +2458,16 @@ strong {
     aspect-ratio: 16/10;
   }
 
+  .featured-text h2 {
+    font-size: 2rem;
+  }
+
   .worth-reading {
     padding: var(--space-md);
+  }
+
+  .pick-content h4 {
+    font-size: 1.25rem;
   }
 
   .manifesto-aside {
@@ -2412,5 +2476,61 @@ strong {
 
   .join-simple {
     padding: var(--space-lg) var(--space-md);
+  }
+
+  .footer {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .footer-nav {
+    gap: var(--space-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    gap: 0.75rem;
+  }
+
+  .nav a {
+    font-size: 0.65rem;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-content {
+    padding: 0 var(--space-sm);
+  }
+
+  .btn--primary {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .featured-text h2 {
+    font-size: 1.75rem;
+  }
+
+  .featured-subtitle {
+    font-size: 1rem;
+  }
+
+  .featured-excerpt {
+    font-size: 1rem;
+  }
+
+  .recent-item {
+    grid-template-columns: 100px 1fr;
+  }
+
+  .recent-item-content h4 {
+    font-size: 1rem;
+  }
+
+  .manifesto-aside blockquote {
+    font-size: 1.25rem;
+  }
+
+  .join-simple h2 {
+    font-size: 1.75rem;
   }
 }
