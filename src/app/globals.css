@@ -1970,7 +1970,7 @@ strong {
 }
 
 .essay-card-image {
-  aspect-ratio: 16/10;
+  aspect-ratio: 3/2;
   overflow: hidden;
 }
 
@@ -1986,30 +1986,34 @@ strong {
 }
 
 .essay-card-content {
-  padding: var(--space-md);
+  padding: var(--space-sm);
 }
 
 .read-editorial .essay-card-type {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--pink);
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .read-editorial .essay-card-title {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 500;
   line-height: 1.3;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .read-editorial .essay-card-excerpt {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: var(--charcoal-light);
-  line-height: 1.6;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .read-editorial .essay-card-date {
