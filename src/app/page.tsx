@@ -13,7 +13,7 @@ const FEATURED = {
   title: "After Abundance",
   subtitle: "On Learning & Human Purpose in the Age of AI",
   excerpt: "What do we choose to do when machines can do everything? What 200+ works of science fiction reveal about human purpose in a post-scarcity world.",
-  image: "/images/after-abundance-preview.png",
+  image: "/wonder/assets/Objects-v2/optimized/Sun_1.jpg",
 };
 
 // Editor's Pick - your handpicked recommendation

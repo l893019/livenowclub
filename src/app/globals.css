@@ -18,8 +18,8 @@
   --teal: #2D7A7A;
 
   /* Typography */
-  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: var(--font-mono), 'Menlo', monospace;
+  --font-sans: var(--font-space), 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: var(--font-jetbrains), 'JetBrains Mono', 'Menlo', monospace;
 
   /* Spacing */
   --space-sm: 1rem;
@@ -46,7 +46,8 @@ body {
   font-family: var(--font-sans);
   background: var(--cream);
   color: var(--charcoal);
-  line-height: 1.6;
+  font-weight: 300;
+  line-height: 1.75;
   overflow-x: hidden;
 }
 
