@@ -11,9 +11,9 @@ import { useEffect } from "react";
 const FEATURED = {
   slug: "wonder/essay",
   title: "After Abundance",
-  subtitle: "On Learning & Human Purpose in the Age of AI",
-  excerpt: "What do we choose to do when machines can do everything? What 200+ works of science fiction reveal about human purpose in a post-scarcity world.",
-  image: "/wonder/assets/Objects-v2/optimized/Sun_1.jpg",
+  subtitle: "When Purpose Is All We Have Left",
+  excerpt: "What more than 200 science fiction books reveal about meaning when scarcity ends.",
+  image: "/wonder/assets/landscapes/optimized/1.jpg",
 };
 
 // Editor's Pick - your handpicked recommendation
