@@ -1315,29 +1315,21 @@
       .scatter-quadrant-label.top-right, .scatter-quadrant-label.bottom-right { right: 16px; transform: none; }
     }
 
-    .scatter-y-axis {
+    .scatter-axis-label {
       position: absolute;
-      left: 16px;
-      top: 16px;
       font-family: var(--sans);
       font-size: 11px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: rgba(255,255,255,0.5);
       z-index: 20;
+      pointer-events: none;
     }
 
-    .scatter-y-axis-bottom {
-      position: absolute;
-      left: 16px;
-      bottom: 16px;
-      font-family: var(--sans);
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
-      z-index: 20;
-    }
+    .scatter-axis-label.top { top: 16px; left: 50%; transform: translateX(-50%); }
+    .scatter-axis-label.bottom { bottom: 16px; left: 50%; transform: translateX(-50%); }
+    .scatter-axis-label.left { left: 16px; top: 50%; transform: translateY(-50%) rotate(-90deg); transform-origin: center; }
+    .scatter-axis-label.right { right: 16px; top: 50%; transform: translateY(-50%) rotate(90deg); transform-origin: center; }
 
     .scatter-dot {
       position: absolute;
@@ -1381,9 +1373,9 @@
         opacity: 1;
         z-index: 10;
       }
-      .scatter-y-axis, .scatter-y-axis-bottom {
-        font-size: 9px;
-      }
+      .scatter-axis-label { font-size: 9px; }
+      .scatter-axis-label.left { left: 8px; }
+      .scatter-axis-label.right { right: 8px; }
     }
 
     @media (max-width: 480px) {
@@ -1394,17 +1386,6 @@
         width: 12px;
         height: 12px;
       }
-    }
-
-    .scatter-axes {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 16px;
-      font-family: var(--sans);
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-muted);
     }
 
     .theme-legend {
@@ -2580,16 +2561,16 @@
 
       <div class="scatterplot-container">
         <div class="scatterplot-canvas" id="scatterplot">
-          <div class="scatter-y-axis">Exhausted</div>
-          <div class="scatter-y-axis-bottom">Humanist</div>
+          <!-- Axis labels (all inside) -->
+          <div class="scatter-axis-label top">Transcendent</div>
+          <div class="scatter-axis-label bottom">Humanist</div>
+          <div class="scatter-axis-label left">Pessimistic</div>
+          <div class="scatter-axis-label right">Optimistic</div>
+          <!-- Quadrant labels -->
           <div class="scatter-quadrant-label top-left">Bleak Seekers</div>
           <div class="scatter-quadrant-label top-right">Transcendent Optimists</div>
           <div class="scatter-quadrant-label bottom-left">Reluctant Realists</div>
           <div class="scatter-quadrant-label bottom-right">Hopeful Humanists</div>
-        </div>
-        <div class="scatter-axes">
-          <span>Pessimistic</span>
-          <span>Optimistic</span>
         </div>
       </div>
 
