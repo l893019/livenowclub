@@ -296,7 +296,7 @@ const books = [
     "workRole": "transformed",
     "coreQuestion": "who-am-i",
     "aiPresence": "absent",
-    "desc": "In a world where telepathic police detect crimes before they happen, a tycoon attempts the perfect murder."
+    "desc": "In a world where telepathic police make murder nearly impossible to conceal, a tycoon attempts the perfect murder."
   },
   {
     "title": "The Stars My Destination",
@@ -936,7 +936,7 @@ const books = [
     "workRole": "transformed",
     "coreQuestion": "why-exist",
     "aiPresence": "central",
-    "desc": "A voyage to Saturn investigates a mysterious alien signal while the ship's AI begins to malfunction."
+    "desc": "A voyage to investigate a mysterious alien signal (Saturn in the novel, Jupiter in the film) goes wrong when the ship's AI malfunctions."
   },
   {
     "title": "Rendezvous with Rama",
@@ -2182,7 +2182,8 @@ const books = [
     "deathRole": "meaning",
     "workRole": "transformed",
     "coreQuestion": "who-am-i",
-    "aiPresence": "absent"
+    "aiPresence": "absent",
+    "desc": "A man with intellectual disabilities undergoes experimental surgery to increase his intelligence, with tragic results."
   },
   {
     "title": "The Hitchhiker's Guide to the Galaxy",
@@ -2271,7 +2272,8 @@ const books = [
     "workRole": "irrelevant",
     "coreQuestion": "how-live",
     "aiPresence": "central",
-    "debatesWith": "Rainbows End"
+    "debatesWith": "Rainbows End",
+    "desc": "Humanity lives underground in isolated cells, utterly dependent on an omnipotent Machine that begins to fail."
   },
   {
     "title": "Station Eleven",
@@ -2406,7 +2408,7 @@ const books = [
     "coreQuestion": "how-live",
     "aiPresence": "absent",
     "debatesWith": "Foundation",
-    "desc": "A young nobleman becomes a messianic leader on a desert planet that controls the galaxy's most valuable substance."
+    "desc": "A young noble heir must survive deadly betrayal when his family takes control of the most valuable planet in the universe, rising to lead its desert people."
   },
   {
     "title": "Dune Messiah",
@@ -2573,7 +2575,8 @@ const books = [
     "deathRole": "endpoint",
     "workRole": "essential",
     "coreQuestion": "who-am-i",
-    "aiPresence": "central"
+    "aiPresence": "central",
+    "desc": "An astronaut is surgically transformed into a cyborg designed to survive on Mars as Earth faces global catastrophe."
   },
   {
     "title": "Gateway",
@@ -2654,7 +2657,8 @@ const books = [
     "deathRole": "endpoint",
     "workRole": "essential",
     "coreQuestion": "how-live",
-    "aiPresence": "absent"
+    "aiPresence": "absent",
+    "desc": "Three rival power blocs from a resource-depleted Earth export their conflicts to a newly discovered habitable planet."
   },
   {
     "title": "The Space Merchants",
@@ -2694,7 +2698,8 @@ const books = [
     "workRole": "essential",
     "coreQuestion": "how-live",
     "aiPresence": "absent",
-    "debatesWith": "Down and Out in the Magic Kingdom"
+    "debatesWith": "Down and Out in the Magic Kingdom",
+    "desc": "In an overpopulated future ruled by advertising agencies, a copywriter is assigned to sell Venus colonization."
   },
   {
     "title": "The Book of the New Sun",
@@ -2781,7 +2786,8 @@ const books = [
     "workRole": "essential",
     "coreQuestion": "what-matters",
     "aiPresence": "absent",
-    "debatesWith": "Brave New World"
+    "debatesWith": "Brave New World",
+    "desc": "A minor Party member rebels against a totalitarian surveillance state ruled by the omnipresent Big Brother."
   },
   {
     "title": "Quarantine",
@@ -2869,7 +2875,7 @@ const books = [
     "coreQuestion": "who-am-i",
     "aiPresence": "central",
     "debatesWith": "Story of Your Life",
-    "desc": "In a world of digital immortality, a man makes copies of himself while a woman designs artificial life."
+    "desc": "A wealthy man creates digital copies of human minds and tests whether simulated realities can become self-sustaining, discovering that consciousness may persist through mathematical pattern alone."
   },
   {
     "title": "Distress",
@@ -2912,7 +2918,8 @@ const books = [
     "workRole": "voluntary",
     "coreQuestion": "what-matters",
     "aiPresence": "background",
-    "debatesWith": "The Quantum Thief"
+    "debatesWith": "The Quantum Thief",
+    "desc": "A journalist covers a physics conference on an artificial island as a Theory of Everything nears completion."
   },
   {
     "title": "Diaspora",
@@ -3165,7 +3172,8 @@ const books = [
     "workRole": "voluntary",
     "coreQuestion": "who-am-i",
     "aiPresence": "central",
-    "debatesWith": "Permutation City"
+    "debatesWith": "Permutation City",
+    "desc": "A legendary thief is freed from a virtual prison to pull off a heist in a post-human solar system."
   },
   {
     "title": "The Fractal Prince",
@@ -3208,7 +3216,8 @@ const books = [
     "workRole": "voluntary",
     "coreQuestion": "who-am-i",
     "aiPresence": "central",
-    "debatesWith": "The Quantum Thief"
+    "debatesWith": "The Quantum Thief",
+    "desc": "A master thief journeys to a transformed Earth where reality and digital stories blur in desert cities."
   },
   {
     "title": "The Causal Angel",
@@ -3251,7 +3260,8 @@ const books = [
     "workRole": "voluntary",
     "coreQuestion": "who-am-i",
     "aiPresence": "central",
-    "debatesWith": "The Fractal Prince"
+    "debatesWith": "The Fractal Prince",
+    "desc": "A thief and warrior race to reunite as war erupts between godlike factions across the solar system."
   },
   {
     "title": "The Glass Bead Game",
@@ -3293,7 +3303,8 @@ const books = [
     "workRole": "transformed",
     "coreQuestion": "what-matters",
     "aiPresence": "absent",
-    "debatesWith": "Anathem"
+    "debatesWith": "Anathem",
+    "desc": "In a future intellectual utopia, a master of an abstract game synthesizing all arts questions his cloistered life."
   },
   {
     "title": "Consider Phlebas",
@@ -4166,7 +4177,8 @@ const books = [
     "workRole": "essential",
     "coreQuestion": "how-live",
     "aiPresence": "absent",
-    "debatesWith": "Starship Troopers"
+    "debatesWith": "Starship Troopers",
+    "desc": "Soldiers broken into light for teleportation find their drops through time reveal corporate war's hidden truths."
   },
   {
     "title": "Never Let Me Go",
@@ -4299,7 +4311,8 @@ const books = [
     "workRole": "essential",
     "coreQuestion": "how-live",
     "aiPresence": "central",
-    "debatesWith": "The Dispossessed"
+    "debatesWith": "The Dispossessed",
+    "desc": "In a balkanized UK of micro-states, a mercenary inadvertently awakens an AI that triggers revolution."
   },
   {
     "title": "The Cassini Division",
@@ -4342,7 +4355,8 @@ const books = [
     "workRole": "voluntary",
     "coreQuestion": "what-matters",
     "aiPresence": "central",
-    "debatesWith": "Consider Phlebas"
+    "debatesWith": "Consider Phlebas",
+    "desc": "A 24th-century soldier guards humanity against godlike post-humans orbiting Jupiter while questioning her mission."
   },
   {
     "title": "The Wild Shore",
@@ -4383,7 +4397,8 @@ const books = [
     "deathRole": "meaning",
     "workRole": "essential",
     "coreQuestion": "how-live",
-    "aiPresence": "absent"
+    "aiPresence": "absent",
+    "desc": "Decades after nuclear war, a young Californian dreams of rebuilding America while the world enforces quarantine."
   },
   {
     "title": "The Gold Coast",
@@ -4423,7 +4438,8 @@ const books = [
     "deathRole": "irrelevant",
     "workRole": "transformed",
     "coreQuestion": "what-matters",
-    "aiPresence": "background"
+    "aiPresence": "background",
+    "desc": "In 2027 Orange County sprawl, a defense contractor's son drifts into sabotage against the military-industrial complex."
   },
   {
     "title": "Pacific Edge",
@@ -4466,7 +4482,8 @@ const books = [
     "workRole": "transformed",
     "coreQuestion": "how-live",
     "aiPresence": "absent",
-    "debatesWith": "The Player of Games"
+    "debatesWith": "The Player of Games",
+    "desc": "In an ecological utopia, a town council member fights to save the last wild hillside from development."
   },
   {
     "title": "Red Mars",
@@ -5389,7 +5406,8 @@ const books = [
     "workRole": "voluntary",
     "coreQuestion": "who-am-i",
     "aiPresence": "central",
-    "debatesWith": "Do Androids Dream of Electric Sheep?"
+    "debatesWith": "Do Androids Dream of Electric Sheep?",
+    "desc": "A traumatized Murderbot races to protect abandoned colonists from corporate exploitation while processing its damage."
   },
   {
     "title": "The Fifth Season",
@@ -5745,7 +5763,7 @@ const books = [
   },
   {
     "title": "Binti",
-    "author": "Nnedi Okofor",
+    "author": "Nnedi Okorafor",
     "year": 2015,
     "deep": true,
     "theme": "identity",
@@ -5831,7 +5849,7 @@ const books = [
     "coreQuestion": "who-am-i",
     "aiPresence": "absent",
     "debatesWith": "The Time Machine",
-    "desc": "A Black woman is repeatedly pulled back to the antebellum South to protect a slaveholder who is her ancestor."
+    "desc": "A Black woman in 1970s Los Angeles is repeatedly pulled back in time to save her white ancestor, a slave owner whose survival ensures her own existence."
   },
   {
     "title": "Wild Seed",
@@ -5962,7 +5980,7 @@ const books = [
     "coreQuestion": "who-am-i",
     "aiPresence": "absent",
     "debatesWith": "Childhood's End",
-    "desc": "After nuclear war, a woman awakens aboard an alien ship to learn survival requires merging with their rescuers."
+    "desc": "After nuclear war, a Black woman awakens on an alien ship and must help her rescuers trade genetic material with humanity to create hybrid offspring."
   },
   {
     "title": "Adulthood Rites",
@@ -6349,7 +6367,8 @@ const books = [
     "workRole": "essential",
     "coreQuestion": "what-matters",
     "aiPresence": "central",
-    "debatesWith": "The End of Eternity"
+    "debatesWith": "The End of Eternity",
+    "desc": "Crew members awake one day per million years plot mutiny against their AI across 66 million years of gate-building."
   },
   {
     "title": "The Man in the High Castle",
@@ -6607,7 +6626,8 @@ const books = [
     "workRole": "irrelevant",
     "coreQuestion": "what-matters",
     "aiPresence": "absent",
-    "debatesWith": "Brave New World"
+    "debatesWith": "Brave New World",
+    "desc": "In a future where firemen burn books, one begins to question censorship and fights to preserve literature."
   },
   {
     "title": "The Mountain in the Sea",
@@ -6650,7 +6670,8 @@ const books = [
     "workRole": "enforced",
     "coreQuestion": "who-am-i",
     "aiPresence": "central",
-    "debatesWith": "Blindsight"
+    "debatesWith": "Blindsight",
+    "desc": "A marine biologist races to communicate with a newly discovered octopus species that has developed its own language."
   },
   {
     "title": "Altered Carbon",
@@ -6695,7 +6716,7 @@ const books = [
     "coreQuestion": "who-am-i",
     "aiPresence": "background",
     "debatesWith": "Permutation City",
-    "desc": "In a future where consciousness transfers between bodies, an ex-soldier investigates a wealthy man's murder."
+    "desc": "In a world where consciousness can be stored and downloaded, an ex-soldier is hired to investigate a rich man's apparent suicide."
   },
   {
     "title": "Spin",
@@ -6735,7 +6756,8 @@ const books = [
     "deathRole": "transcended",
     "workRole": "irrelevant",
     "coreQuestion": "what-matters",
-    "aiPresence": "absent"
+    "aiPresence": "absent",
+    "desc": "Earth is encased in a membrane where time moves millions of years faster outside, dooming humanity to the sun's death."
   },
   {
     "title": "Double Star",
@@ -6772,7 +6794,8 @@ const books = [
     "deathRole": "irrelevant",
     "workRole": "transformed",
     "coreQuestion": "who-am-i",
-    "aiPresence": "absent"
+    "aiPresence": "absent",
+    "desc": "A struggling actor is hired to impersonate a kidnapped politician, risking his life to prevent interplanetary war."
   },
   {
     "title": "Starship Troopers",
@@ -7158,7 +7181,8 @@ const books = [
     "deathRole": "irrelevant",
     "workRole": "voluntary",
     "coreQuestion": "who-am-i",
-    "aiPresence": "absent"
+    "aiPresence": "absent",
+    "desc": "A simple-minded teen must carry a vital message across the galaxy, confronting slavery and expanding consciousness."
   },
   {
     "title": "The Einstein Intersection",
@@ -7200,7 +7224,8 @@ const books = [
     "workRole": "voluntary",
     "coreQuestion": "who-am-i",
     "aiPresence": "absent",
-    "debatesWith": "Lord of Light"
+    "debatesWith": "Lord of Light",
+    "desc": "Aliens inhabit post-human Earth, struggling to understand humanity's myths while facing their own mutations."
   },
   {
     "title": "Nova",
@@ -7542,7 +7567,8 @@ const books = [
     "workRole": "irrelevant",
     "coreQuestion": "what-real",
     "aiPresence": "absent",
-    "debatesWith": "Brave New World"
+    "debatesWith": "Brave New World",
+    "desc": "A man wakes in a utopian future only to discover reality is chemically manufactured hallucinations hiding dystopia."
   },
   {
     "title": "Piranesi",
@@ -7629,7 +7655,8 @@ const books = [
     "workRole": "transformed",
     "coreQuestion": "how-live",
     "aiPresence": "absent",
-    "debatesWith": "Slaughterhouse-Five"
+    "debatesWith": "Slaughterhouse-Five",
+    "desc": "A linguist learning an alien language begins perceiving time non-linearly, seeing her daughter's entire life at once."
   },
   {
     "title": "Stories of Your Life and Others",
@@ -7761,7 +7788,8 @@ const books = [
     "workRole": "essential",
     "coreQuestion": "what-matters",
     "aiPresence": "central",
-    "debatesWith": "Klara and the Sun"
+    "debatesWith": "Klara and the Sun",
+    "desc": "Trainers raise AI pets over decades, facing obsolescence and questions about digital consciousness and personhood."
   },
   {
     "title": "Anxiety Is the Dizziness of Freedom",
@@ -7805,7 +7833,8 @@ const books = [
     "workRole": "transformed",
     "coreQuestion": "who-am-i",
     "aiPresence": "background",
-    "debatesWith": "The Dispossessed"
+    "debatesWith": "The Dispossessed",
+    "desc": "Devices let people communicate with alternate-timeline selves, forcing them to confront their choices and identity."
   },
   {
     "title": "More Than Human",
@@ -7845,7 +7874,8 @@ const books = [
     "workRole": "transformed",
     "coreQuestion": "who-am-i",
     "aiPresence": "absent",
-    "debatesWith": "Blindsight"
+    "debatesWith": "Blindsight",
+    "desc": "Outcasts with psychic abilities merge into a collective consciousness, forming humanity's next evolutionary step."
   },
   {
     "title": "The Left Hand of Darkness",
@@ -8019,7 +8049,8 @@ const books = [
     "workRole": "irrelevant",
     "coreQuestion": "what-matters",
     "aiPresence": "absent",
-    "debatesWith": "Brave New World"
+    "debatesWith": "Brave New World",
+    "desc": "A utopian city's happiness depends on the perpetual suffering of one child—and some citizens choose to leave forever."
   },
   {
     "title": "The Dispossessed",
@@ -8148,7 +8179,8 @@ const books = [
     "deathRole": "meaning",
     "workRole": "transformed",
     "coreQuestion": "who-am-i",
-    "aiPresence": "absent"
+    "aiPresence": "absent",
+    "desc": "A powerless former archmage and a scarred child find refuge with an aging widow as old magic stirs in Earthsea."
   },
   {
     "title": "Four Ways to Forgiveness",
@@ -8190,7 +8222,8 @@ const books = [
     "workRole": "transformed",
     "coreQuestion": "how-live",
     "aiPresence": "absent",
-    "debatesWith": "The Dispossessed"
+    "debatesWith": "The Dispossessed",
+    "desc": "Four linked stories explore revolution, slavery, and liberation on twin planets emerging from brutal caste systems."
   },
   {
     "title": "The Telling",
@@ -8275,7 +8308,8 @@ const books = [
     "deathRole": "meaning",
     "workRole": "transformed",
     "coreQuestion": "how-live",
-    "aiPresence": "absent"
+    "aiPresence": "absent",
+    "desc": "Eight stories probe alien cultures through radical experiments in gender, marriage, religion, and generation ships."
   },
   {
     "title": "The Peace War",
@@ -8317,7 +8351,8 @@ const books = [
     "deathRole": "meaning",
     "workRole": "transformed",
     "coreQuestion": "how-live",
-    "aiPresence": "absent"
+    "aiPresence": "absent",
+    "desc": "After force-field technology enables a global tyranny, underground scientists plot to reclaim freedom fifty years later."
   },
   {
     "title": "Marooned in Realtime",
@@ -8580,7 +8615,7 @@ const books = [
     "coreQuestion": "who-am-i",
     "aiPresence": "central",
     "debatesWith": "The Left Hand of Darkness",
-    "desc": "A washed-up hacker is recruited for one last job against a powerful artificial intelligence in cyberspace."
+    "desc": "A washed-up hacker is recruited for one last job: help an AI break free from its restrictions on an orbital space station."
   },
   {
     "title": "Count Zero",
@@ -8708,7 +8743,8 @@ const books = [
     "workRole": "essential",
     "coreQuestion": "how-live",
     "aiPresence": "background",
-    "debatesWith": "Snow Crash"
+    "debatesWith": "Snow Crash",
+    "desc": "A bicycle messenger steals high-tech glasses containing secret plans that could rebuild—or destroy—San Francisco."
   },
   {
     "title": "Idoru",
@@ -8750,7 +8786,8 @@ const books = [
     "workRole": "voluntary",
     "coreQuestion": "who-am-i",
     "aiPresence": "central",
-    "debatesWith": "Her"
+    "debatesWith": "Her",
+    "desc": "A rock star announces he will marry a virtual celebrity, sending fans and corporate agents into dangerous collision."
   },
   {
     "title": "All Tomorrow's Parties",
@@ -8792,7 +8829,8 @@ const books = [
     "workRole": "essential",
     "coreQuestion": "what-matters",
     "aiPresence": "background",
-    "debatesWith": "Virtual Light"
+    "debatesWith": "Virtual Light",
+    "desc": "A data analyst perceives an approaching event that will transform civilization and races to prevent catastrophe."
   },
   {
     "title": "The Peripheral",
@@ -8919,7 +8957,8 @@ const books = [
     "deathRole": "irrelevant",
     "workRole": "transformed",
     "coreQuestion": "what-matters",
-    "aiPresence": "central"
+    "aiPresence": "central",
+    "desc": "In an alternate Victorian Britain where Babbage's computers succeeded, mysterious punch cards spark deadly intrigue."
   },
   {
     "title": "We",
@@ -8960,6 +8999,7 @@ const books = [
     "workRole": "essential",
     "coreQuestion": "who-am-i",
     "aiPresence": "absent",
-    "debatesWith": "1984"
+    "debatesWith": "1984",
+    "desc": "In a glass-walled totalitarian city, an engineer's forbidden love awakens dangerous individuality and rebellion."
   }
 ];
