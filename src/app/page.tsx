@@ -109,7 +109,7 @@ export default function HomePage() {
 
       {/* ALSO WORTH READING */}
       <section className="worth-reading">
-        <h3 className="section-label">Also Worth Reading</h3>
+        <h3 className="section-label">Keep Reading</h3>
         <div className="worth-reading-layout">
           {/* Editor's Pick - larger */}
           <Link href={`/read/${EDITORS_PICK.slug}`} className="pick">
@@ -146,17 +146,13 @@ export default function HomePage() {
 
       {/* MANIFESTO ASIDE */}
       <section className="manifesto-aside">
-        <blockquote>
-          "I created The Live Now Club as a place where <em>mortality</em> and <em>joy</em> sit side by side."
-        </blockquote>
-        <Link href="/about" className="text-link">Read the full story →</Link>
+        <p className="manifesto-statement"><em>Mortality</em> and <em>joy</em>, side by side.</p>
       </section>
 
       {/* JOIN */}
       <section id="join" className="join-simple">
         <div className="join-simple-content">
-          <h2>Get the letters.</h2>
-          <p>Writings on living fully, delivered when the words arrive.</p>
+          <h2>Join me.</h2>
           <iframe
             src="https://louiseireland.substack.com/embed"
             width="100%"
@@ -170,7 +166,7 @@ export default function HomePage() {
 
       {/* FOOTER */}
       <footer className="footer">
-        <p className="footer-quote">"What if now is all we have?"</p>
+        <p className="footer-quote">What if now is all we have?</p>
         <nav className="footer-nav">
           <Link href="/read">Read</Link>
           <Link href="/navigate">Navigate</Link>

@@ -24,7 +24,7 @@ export default function ReadPage() {
           <img src="/images/logo-handwritten.png" alt="The Live Now Club" className="logo-img" />
         </Link>
         <nav className="nav">
-          <Link href="/read">Read</Link>
+          <Link href="/read" className="active">Read</Link>
           <Link href="/navigate">Navigate</Link>
           <Link href="/wonder">Wonder</Link>
           <Link href="/make">Make</Link>

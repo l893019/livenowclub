@@ -23,7 +23,7 @@ export default function NavigatePage() {
         </Link>
         <nav className="nav">
           <Link href="/read">Read</Link>
-          <Link href="/navigate">Navigate</Link>
+          <Link href="/navigate" className="active">Navigate</Link>
           <Link href="/wonder">Wonder</Link>
           <Link href="/make">Make</Link>
         </nav>
