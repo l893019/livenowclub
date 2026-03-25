@@ -20,8 +20,8 @@ const FEATURED = {
 const EDITORS_PICK = {
   slug: "expecting-the-unexpected",
   title: "Expecting the Unexpected",
-  excerpt: "The call came on a Thursday. Everything I wish someone had told me when I was first diagnosed.",
-  type: "essay",
+  excerpt: "The guide I wish someone had handed me at the start. When I was first diagnosed, I didn't know what to ask, what to prepare for, or how to let people help me.",
+  type: "guide",
   image: "/images/expecting-the-unexpected.jpg",
 };
 
@@ -30,7 +30,7 @@ const RECENT = [
   {
     slug: "maybe",
     title: "Maybe",
-    type: "poem",
+    type: "essay",
     image: "/images/maybe.jpg",
   },
   {
