@@ -124,61 +124,6 @@
       height: 20px;
     }
 
-    /* SHARE BUTTONS ON CHARTS */
-    .chart-block {
-      position: relative;
-    }
-
-    .chart-share {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      display: flex;
-      gap: 8px;
-      opacity: 0;
-      transition: opacity 0.2s ease;
-      z-index: 10;
-    }
-
-    .chart-block:hover .chart-share {
-      opacity: 1;
-    }
-
-    .chart-share button {
-      width: 32px;
-      height: 32px;
-      border: none;
-      border-radius: 6px;
-      background: rgba(232,23,138,0.15);
-      color: var(--accent-pink);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s ease;
-    }
-
-    .chart-share button:hover {
-      background: var(--accent-pink);
-      color: white;
-    }
-
-    .chart-share button svg {
-      width: 16px;
-      height: 16px;
-    }
-
-    .chart-share .copied {
-      background: var(--accent-teal) !important;
-      color: white !important;
-    }
-
-    @media (max-width: 768px) {
-      .chart-share {
-        opacity: 1;
-      }
-    }
-
     /* STICKY ACT INDICATOR (MOBILE) */
     .act-indicator {
       position: fixed;
@@ -3188,46 +3133,6 @@
       }
     });
 
-    // SHARE BUTTONS ON CHARTS
-    document.querySelectorAll('.chart-block').forEach(chart => {
-      const title = chart.querySelector('.chart-title')?.textContent || '';
-      const insight = chart.querySelector('.chart-insight')?.textContent || '';
-
-      const shareDiv = document.createElement('div');
-      shareDiv.className = 'chart-share';
-      shareDiv.innerHTML = `
-        <button class="share-twitter" title="Share on Twitter">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        </button>
-        <button class="share-copy" title="Copy insight">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-        </button>
-      `;
-      chart.appendChild(shareDiv);
-
-      // Twitter share
-      shareDiv.querySelector('.share-twitter').addEventListener('click', (e) => {
-        e.stopPropagation();
-        const text = `${title}: ${insight}\n\nFrom "After Abundance" — what 208 sci-fi books reveal about meaning when scarcity ends.`;
-        const url = window.location.href;
-        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank', 'width=550,height=420');
-      });
-
-      // Copy to clipboard
-      shareDiv.querySelector('.share-copy').addEventListener('click', (e) => {
-        e.stopPropagation();
-        const text = `${title}: ${insight}\n\nFrom "After Abundance" — https://livenowclub.vercel.app/wonder/essay`;
-        navigator.clipboard.writeText(text).then(() => {
-          const btn = e.currentTarget;
-          btn.classList.add('copied');
-          btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>';
-          setTimeout(() => {
-            btn.classList.remove('copied');
-            btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
-          }, 2000);
-        });
-      });
-    });
   </script>
 </body>
 </html>
