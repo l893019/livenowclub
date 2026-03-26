@@ -1750,6 +1750,192 @@
     .hero {
       padding-top: 100px;
     }
+
+    /* ===========================================
+       MOBILE OPTIMIZATION
+       =========================================== */
+
+    /* Phase 1: Typography & Base Styles */
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      h3 { font-size: 1.3rem; }
+      .hero-label { font-size: 11px; letter-spacing: 0.12em; }
+      .section-label { font-size: 10px; }
+    }
+
+    /* Phase 2: Section Spacing */
+    @media (max-width: 640px) {
+      section { padding: 32px 0; }
+      .act-header { padding: 48px 16px 32px; }
+      .trend-card { margin-top: 32px; margin-bottom: 32px; }
+    }
+
+    @media (max-width: 480px) {
+      section { padding: 24px 0; }
+      .act-header { padding: 32px 12px 24px; }
+      .trend-card { margin-top: 24px; margin-bottom: 24px; }
+    }
+
+    /* Phase 3: Hero Section */
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 80vh;
+        padding: 48px 20px;
+        padding-top: 80px;
+      }
+      .scroll-hint { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        min-height: 70vh;
+        padding: 32px 16px;
+        padding-top: 72px;
+      }
+    }
+
+    /* Phase 4: Landscape Dividers */
+    @media (max-width: 768px) {
+      .landscape-divider { height: 180px; }
+      .landscape-divider.tall { height: 220px; }
+      .landscape-divider.short { height: 140px; }
+    }
+
+    @media (max-width: 480px) {
+      .landscape-divider { height: 140px; }
+      .landscape-divider.tall { height: 180px; }
+      .landscape-divider.short { height: 100px; }
+    }
+
+    /* Phase 5: Touch Feedback */
+    @media (hover: none) and (pointer: coarse) {
+      .immersive-bar:active { transform: scale(0.98); }
+      .tech-card:active { transform: scale(0.98); }
+      .warning-item:active { transform: scale(0.98); }
+      .ifthen-card:active { transform: scale(0.98); opacity: 0.9; }
+      .theme-badge:active { opacity: 0.7; }
+      .filter-pill:active { opacity: 0.7; }
+      .author-card:active { transform: scale(0.98); }
+      .debate-card:active { transform: scale(0.98); }
+    }
+
+    /* Phase 6: Mobile TOC Button */
+    .mobile-toc-btn {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--accent-pink);
+      color: white;
+      border: none;
+      box-shadow: 0 4px 20px rgba(232,23,138,0.4);
+      z-index: 100;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .mobile-toc-btn:active {
+      transform: scale(0.95);
+    }
+
+    .mobile-toc-btn svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-toc-btn { display: flex; }
+    }
+
+    /* Mobile TOC Drawer */
+    .mobile-toc-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      z-index: 200;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    .mobile-toc-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-toc-drawer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      border-radius: 20px 20px 0 0;
+      padding: 20px 24px 40px;
+      z-index: 201;
+      transform: translateY(100%);
+      transition: transform 0.3s ease-out;
+    }
+
+    .mobile-toc-overlay.active .mobile-toc-drawer {
+      transform: translateY(0);
+    }
+
+    .mobile-toc-handle {
+      width: 40px;
+      height: 4px;
+      background: rgba(0,0,0,0.15);
+      border-radius: 2px;
+      margin: 0 auto 20px;
+    }
+
+    .mobile-toc-title {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-pink);
+      margin-bottom: 16px;
+    }
+
+    .mobile-toc-links {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .mobile-toc-links a {
+      display: block;
+      padding: 14px 16px;
+      font-family: var(--sans);
+      font-size: 15px;
+      color: var(--text);
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+
+    .mobile-toc-links a:active {
+      background: rgba(232,23,138,0.1);
+    }
+
+    .mobile-toc-links a.current {
+      background: rgba(232,23,138,0.08);
+      color: var(--accent-pink);
+    }
+
+    /* Phase 7: Performance */
+    .library-section {
+      content-visibility: auto;
+      contain-intrinsic-size: 0 800px;
+    }
+
   </style>
 </head>
 <body>
@@ -1765,6 +1951,27 @@
       <path d="M18 15l-6-6-6 6"/>
     </svg>
   </button>
+
+  <!-- MOBILE TOC -->
+  <button class="mobile-toc-btn" id="mobileTocBtn" aria-label="Table of contents">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+  <div class="mobile-toc-overlay" id="mobileTocOverlay">
+    <div class="mobile-toc-drawer">
+      <div class="mobile-toc-handle"></div>
+      <div class="mobile-toc-title">Jump to</div>
+      <div class="mobile-toc-links">
+        <a href="#act-1">Act I: What Changes</a>
+        <a href="#act-2">Act II: What Emerges</a>
+        <a href="#act-3">Act III: What Remains</a>
+        <a href="#library">The Library</a>
+      </div>
+    </div>
+  </div>
 
   <!-- LIVE NOW CLUB HEADER -->
   <header class="lnc-header">
@@ -3131,6 +3338,44 @@
       } else {
         actIndicator.classList.remove('visible');
       }
+    });
+
+    // MOBILE TOC
+    const mobileTocBtn = document.getElementById('mobileTocBtn');
+    const mobileTocOverlay = document.getElementById('mobileTocOverlay');
+
+    mobileTocBtn.addEventListener('click', () => {
+      mobileTocOverlay.classList.add('active');
+    });
+
+    mobileTocOverlay.addEventListener('click', (e) => {
+      if (e.target === mobileTocOverlay || e.target.tagName === 'A') {
+        mobileTocOverlay.classList.remove('active');
+      }
+    });
+
+    // Update current section in TOC
+    const tocLinks = mobileTocOverlay.querySelectorAll('a');
+    const sections = ['act-1', 'act-2', 'act-3', 'library'];
+
+    window.addEventListener('scroll', () => {
+      let currentSection = null;
+      sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < 300) {
+            currentSection = id;
+          }
+        }
+      });
+
+      tocLinks.forEach(link => {
+        link.classList.remove('current');
+        if (currentSection && link.getAttribute('href') === '#' + currentSection) {
+          link.classList.add('current');
+        }
+      });
     });
 
   </script>
