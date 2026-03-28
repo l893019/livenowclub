@@ -84,7 +84,6 @@ const IMAGE_MAP: Record<string, string> = {
   "in-any-given-moment-the-strongest-dream-in-that-moment-wins": "in-any-given-moment.jpg",
   "on-friendship-and-couches": "on-friendship-and-couches.jpg",
   "manifesto": "hero-playa-faded.png",
-  "soulmd": "soulmd.jpg",
 };
 
 // Curated pathways
