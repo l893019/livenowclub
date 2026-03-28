@@ -1,12 +1,8 @@
 # Embracing Free Fall
 
-
-[![Red-crowned Amazon Identification, All About Birds, Cornell Lab of  Ornithology](https://substackcdn.com/image/fetch/$s_!bqnk!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc2cdb870-dbae-4d94-9b0f-d1998d35c3fc_480x360.jpeg)](https://substackcdn.com/image/fetch/$s_!bqnk!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc2cdb870-dbae-4d94-9b0f-d1998d35c3fc_480x360.jpeg)
-
 There isn’t any easy way to say it, so I’ll just say it: I have cervical cancer. It’s invasive, seemingly advanced, and terrifying. It appears too large to be solved by surgery, and immediate chemo and radiation are the best paths. Having children with my DNA may never be in my future. I learned this on Friday, and it’s been a whirlwind since. There is a lot I still don’t know yet. I will likely need to leave my home, brother, friends, parrots, and plants in San Francisco for a while and move to New York. I will learn more about staging and treatment plans over the next few days, but there is likely more I may never know. What I do know is that the next few months will be the most difficult of my life. I’ve always been a giver, but now, I can do nothing but receive. I don’t know what this will look like or what this will feel like. I don’t know what I will be like. And in that, I think of Rilke’s quote, “Be patient toward all that is unsolved in your heart and try to love the questions themselves, like locked rooms and like books that are now written in a very foreign tongue.” I’m learning to stop grasping for control and lean back into complete free fall.
 
 I am going to keep writing through my cancer journey to keep my sanity. Subscribe here (free) to support me
-
 
 It’s an interesting state to be in - I have a mix of anger, of sadness, of confusion, of despair, of faith, of confidence, of peace. All of the things that mattered a week ago no longer do. I am in phenomenal shape - I swim in the ocean every day, I can hike a marathon on any given weekend, I can dance for hours, I have infinite energy, I take care of myself, I don’t drink, I eat well - but it’s not enough. All I want to do is jump into the ocean, but I can’t right now. It is now out of my grasp. I am everything and also nothing. It’s the cacophony of emotion to a sudden silence. Everyone chases an ‘ego death’ from psychedelics; try getting a cancer diagnosis.
 
@@ -53,13 +49,12 @@ I don’t know how many wake-up calls one gets in one’s life. My therapist, Lo
 
 I believe deeply that somewhere down the line, as scary as this present moment is and how much I wish I could wave a magic wand to make it go away, I will know that this is the best possible thing that could have ever happened to me. I have not been feeling well for months. There is a saying in ayahuasca traditions that “Sickness is the body getting better.” How lucky am I to live in a time where everything I face in front of me is curable? And, like the last line of “The Man in Bodega,” how do we know that what happens to us isn’t good?
 
-[![](https://substackcdn.com/image/fetch/$s_!ghB1!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3ceb771b-6972-4c1d-9c17-5546c6b0ec07_1014x697.jpeg)](https://substackcdn.com/image/fetch/$s_!ghB1!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3ceb771b-6972-4c1d-9c17-5546c6b0ec07_1014x697.jpeg)
+[![](https://substack-post-media.s3.amazonaws.com/public/images/3ceb771b-6972-4c1d-9c17-5546c6b0ec07_1014x697.jpeg)](https://substack-post-media.s3.amazonaws.com/public/images/3ceb771b-6972-4c1d-9c17-5546c6b0ec07_1014x697.jpeg)
 
 I don’t know what I’m going to need during this time. My best guess is that I will want people to just be there, hold my hand, give me a hug, surround me with flowers and joy, mirror back my strength when I am afraid, remind me to keep laughing. I don’t know where I will be but will update those who are curious once I have more information. 
 
 _Note: I’m overwhelmed and likely won’t respond to texts and calls, but that doesn’t mean I don’t appreciate them. I’ll figure out a better way to keep people who want to be up-to-date. I’m trying desperately not to do what I typically do when I’m sick - hide - and I would love to be surrounded by hugs and love._
 
 I am going to keep writing throughout my cancer journey to keep my sanity. Subscribe here (free) to support me.
-
 
 * * *

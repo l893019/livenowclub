@@ -2,8 +2,7 @@
 
 ## On the Battlefield
 
-
-[![Steam Workshop::Night in the Trenches \[4k, 30 FPS\] \(Battlefield 1\)](https://substackcdn.com/image/fetch/$s_!L1dx!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff28b20be-dca2-4fc0-b1f9-94a22458caba_637x358.gif)](https://substackcdn.com/image/fetch/$s_!L1dx!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff28b20be-dca2-4fc0-b1f9-94a22458caba_637x358.gif)
+[![Steam Workshop::Night in the Trenches \[4k, 30 FPS\] \(Battlefield 1\)](https://substack-post-media.s3.amazonaws.com/public/images/f28b20be-dca2-4fc0-b1f9-94a22458caba_637x358.gif)](https://substack-post-media.s3.amazonaws.com/public/images/f28b20be-dca2-4fc0-b1f9-94a22458caba_637x358.gif)
 
 The battlefield surrounds me. The enemy is multi-dimensional, multi-modular. I duck from the bullets whirling past me. I hear the cacophony of sounds, the vibration of attack. I just need to hang on.
 

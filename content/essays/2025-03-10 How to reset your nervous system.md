@@ -1,13 +1,10 @@
 # How to reset your nervous system
 
-
 _It’s ironic, but I wrote all of this in December before I had the faintest idea I had cancer. I’ve felt that way about many things - my body and mind have prepared me for this battle for a while. I know what I need, how to hold my center, and how to fight. I can light up any dark alley._
 
  _I’m treating this as my north star as I start to undergo chemo, radiation, and other treatments. I’ve already created a new nest here in New York, prepared my activity zones based on needs and energy levels, and taken to screaming into a pillow first thing in the morning to release all the pains of being human._ _Sometimes, all we can do is breathe, and that’s okay, too._
 
 * * *
-
-[![](https://substackcdn.com/image/fetch/$s_!9l9-!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0f1067a3-aabd-4896-92e4-7f0124e5e2c8_1024x681.jpeg)](https://substackcdn.com/image/fetch/$s_!9l9-!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0f1067a3-aabd-4896-92e4-7f0124e5e2c8_1024x681.jpeg)
 
 I’ve lived with a nervous system in overdrive for most of my life. And thus, for better or worse, I’ve tried it all. I think it’s a bit of a mindset shift - moving from being reactive towards life versus letting life live through you. Life is fundamentally better when you’re not in a state of stress, fear, or panic. Life shifts when you pull your nature forward without pushing yourself into the world. I’ve realized that any attempt to accelerate things is flawed: you can only live at the speed that life lets you.
 
@@ -21,16 +18,15 @@ When I was younger, I thought exhaustion was purely physical. However, I’ve re
 
 We are conscious minds in physical machines of bodies. And like any machine, we require fuel to run and regular maintenance checks. If you’re completely exhausted, you may have too much energy or not enough, you may have a system imbalance, you may need a tune-up. I’ve gotten better at discerning ‘what I need’ over time, but I’ve found that starting with a little bit of everything helps initially. To reset completely, you need them all:
 
-[![](https://substackcdn.com/image/fetch/$s_!itAY!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F665ed0fb-58bc-40d7-84f7-897db27311cc_1596x940.png)](https://substackcdn.com/image/fetch/$s_!itAY!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F665ed0fb-58bc-40d7-84f7-897db27311cc_1596x940.png)
+[![](https://substack-post-media.s3.amazonaws.com/public/images/665ed0fb-58bc-40d7-84f7-897db27311cc_1596x940.png)](https://substack-post-media.s3.amazonaws.com/public/images/665ed0fb-58bc-40d7-84f7-897db27311cc_1596x940.png)
 
 Knowing my body, I’ve found that my nerves and energy exist on a spectrum. When I am riled up, it is difficult for me to get to a state of zen calm without expending some energy first. It’s a see-saw, a balancing act - there are shortcuts to get me to immediate calmness, but they don’t last without holistically thinking about the overall energy in my system. I view it all almost like a purge, an energetic cleanse. There are two key steps to my process.
 
 ## Step 1: Shift my energy flow, release, and let go of anything I hold onto.
 
-[![](https://substackcdn.com/image/fetch/$s_!81Lo!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F84fb7198-af32-4ec0-aac3-8e735d1091f4_1868x3291.png)](https://substackcdn.com/image/fetch/$s_!81Lo!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F84fb7198-af32-4ec0-aac3-8e735d1091f4_1868x3291.png)
+[![](https://substack-post-media.s3.amazonaws.com/public/images/84fb7198-af32-4ec0-aac3-8e735d1091f4_1868x3291.png)](https://substack-post-media.s3.amazonaws.com/public/images/84fb7198-af32-4ec0-aac3-8e735d1091f4_1868x3291.png)
 
-
-[![](https://substackcdn.com/image/fetch/$s_!FmqJ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F14eaa246-23d7-41b7-b978-41897bab87d1_1x1.png)](https://substackcdn.com/image/fetch/$s_!FmqJ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F14eaa246-23d7-41b7-b978-41897bab87d1_1x1.png)
+[![](https://substack-post-media.s3.amazonaws.com/public/images/14eaa246-23d7-41b7-b978-41897bab87d1_1x1.png)](https://substack-post-media.s3.amazonaws.com/public/images/14eaa246-23d7-41b7-b978-41897bab87d1_1x1.png)
 
 A few general takeaways:
 
@@ -64,7 +60,6 @@ A few general takeaways:
 
     * Fire ceremonies: I like to write everything I want to release on one side of paper and then the opposite (everything I want to fill its place) on the other. I then make a fire and read both sides out loud before burning it.
 
-
 ## Step 2: Deep Nervous System Nourishment
 
 For this next step, nourishing and strengthening the nervous system, I am cognizant of all stimuli, inputs, and outputs in my space. I go through a checklist of sensations - sound, smell, visuals, taste, touch - to tune myself to my optimal state.
@@ -75,7 +70,6 @@ For this next step, nourishing and strengthening the nervous system, I am cogniz
 
   * Biologically, the sound of birds promotes nervous system relaxation by signaling safety. Water sounds - foundations, ocean waves - are deeply soothing.
 
-
 ### Shift your visual space:
 
   * Shifting your lighting is one of the fastest ways to calm your system. I find it soothing to turn off all artificial lights and sit in candlelight (or a fire).
@@ -83,7 +77,6 @@ For this next step, nourishing and strengthening the nervous system, I am cogniz
   * Nothing calms me down faster than being near or looking at nature - I love being surrounded by plants or flowers. Sitting by a window and looking at nothing but the microscope movements of nature - trees waving in the wind, birds flying, clouds rolling in - is deeply soothing for me.
 
   * I’m a huge proponent of my weighted eye mask or steam eye masks.
-
 
 ### Shift your aromatic space:
 
@@ -97,7 +90,6 @@ For this next step, nourishing and strengthening the nervous system, I am cogniz
 
   * If I’m upset about something or want to release something from my life, I usually sage myself (light sage and wave it around me with a feather) and my home. I typically do this in parallel with my fire ceremonies.
 
-
 ### Cocoon yourself:
 
   * Put on your snuggliest and comfiest clothes. I am a huge proponent of flowy clothes, cashmere, silks, nothing tight. Wear a hood or cover your head with a scarf if you want to retreat.
@@ -107,7 +99,6 @@ For this next step, nourishing and strengthening the nervous system, I am cogniz
   * I like to be lightly warm to relax - not hot enough to be sweaty, but warm where you feel calm.
 
   * I’d recommend optimizing spaces in your home to enable you to relax. Ideally, you have somewhere to go other than your bed. The optimal situation would be a couch or cushions where you can comfortably lie down with a throw blanket and adjustable lighting.
-
 
 ### Nourish yourself:
 
@@ -126,7 +117,6 @@ For this next step, nourishing and strengthening the nervous system, I am cogniz
   * I drink a lot of tea and lukewarm water. It comes from two things: 1) I don’t drink, 2) I realized from acupuncture that my body functions better with warm substances.
 
     * My go-to's are chai rooibos, turmeric ginger, barley, or mint.
-
 
 ## A few of my favorite nervous system nourishing things:
 
@@ -147,7 +137,6 @@ For this next step, nourishing and strengthening the nervous system, I am cogniz
   * [White noise machine](https://getsnooz.com/products/snooz-white-noise-machine)
 
   * [My oracle card deck](https://www.spirit-speak.com/product-page/iris-oracle-deck)
-
 
 And finally, don’t forget to take a deep breath 💗:
 

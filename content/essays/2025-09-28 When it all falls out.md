@@ -2,9 +2,6 @@
 
 ## Absence becomes essence
 
-
-[![](https://substackcdn.com/image/fetch/$s_!7OD2!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0188c82d-0130-4ace-b942-c640b7283a73_2048x1365.png)](https://substackcdn.com/image/fetch/$s_!7OD2!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0188c82d-0130-4ace-b942-c640b7283a73_2048x1365.png)
-
 I lost my hair a couple of days ago. While baldness is somewhat of a cancer cliché within popular media, only 30-40% of cancer patients experience significant hair loss. It’s somewhat ironic for me; this spring, when I was the closest to death I’ve ever been, I physically fit in the realm of normal. Now, I am the healthiest physically, mentally, and spiritually I’ve ever been, despite having Stage IV cancer, yet I wear the marks.
 
 I thought I was prepared. I had watched the strands thin, knew what was coming. But there is no preparing for the shock of waking up to a clump of yourself on the pillow, or of brushing your hair and finding your hand full of what used to crown you. It’s not just unsettling, it is ontological, shifting the sense of what you are. For months, I have carried my optimism like a shield, my conviction that one day I would look back and say this was the best thing that ever happened to me. Yet as my hair fell out, so did that foundation. Something more essential was exposed.
@@ -25,7 +22,6 @@ What does it mean to hide a face? And inversely, what does it mean to be fully k
 
 I lost my ability to be anyone. To blend in. But somewhere in there, in a way I have a hard time articulating, it no longer matters. I can no longer be anyone because now I have a self to claim.
 
-[![](https://substackcdn.com/image/fetch/$s_!0mRB!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F61364d7b-5773-4cbd-9e56-e8069a5e4943_1136x1704.png)](https://substackcdn.com/image/fetch/$s_!0mRB!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F61364d7b-5773-4cbd-9e56-e8069a5e4943_1136x1704.png)
-
+[![](https://substack-post-media.s3.amazonaws.com/public/images/61364d7b-5773-4cbd-9e56-e8069a5e4943_1136x1704.png)](https://substack-post-media.s3.amazonaws.com/public/images/61364d7b-5773-4cbd-9e56-e8069a5e4943_1136x1704.png)
 
  **PS.** Thank you for all your well wishes and support. It means so much to have this outlet, and I’m grateful for everyone who has shared and held my words. Tomorrow is another chemo infusion day. I welcome all prayers as I take one step closer to finishing this cycle (two rounds left) and continue down the longer path of part-time treatment in Germany.

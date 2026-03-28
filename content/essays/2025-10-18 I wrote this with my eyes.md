@@ -2,8 +2,7 @@
 
 ## The world before words
 
-
-[![Su Hui's Epic Palindrome: Star Gauge](https://substackcdn.com/image/fetch/$s_!aKu4!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0bd4d540-c1d2-4b67-ac74-499f435c0a23_563x295.png)](https://substackcdn.com/image/fetch/$s_!aKu4!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0bd4d540-c1d2-4b67-ac74-499f435c0a23_563x295.png)Sui Hui’s Star Gauge Poem - it can be read in different directions to generate over 3,000 different poems.
+[![Su Hui's Epic Palindrome: Star Gauge](https://substack-post-media.s3.amazonaws.com/public/images/0bd4d540-c1d2-4b67-ac74-499f435c0a23_563x295.png)](https://substack-post-media.s3.amazonaws.com/public/images/0bd4d540-c1d2-4b67-ac74-499f435c0a23_563x295.png)Sui Hui’s Star Gauge Poem - it can be read in different directions to generate over 3,000 different poems.
 
 There was a moment this spring when language broke down for me. I had been inside for weeks, barely capable of moving from the couch to the bathroom on my own, unable to walk more than the few steps it took to go from the apartment building door to the seat of the Uber without my mom’s steady arm. Too tired to think. Too tired to speak.
 
@@ -45,9 +44,6 @@ Gone, gone, gone beyond. Gone utterly beyond.
 
 Awakening.
 
-
-[![](https://substackcdn.com/image/fetch/$s_!5_xh!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F00df07cc-de1f-440b-914a-436a9df63e91_1344x256.png)](https://substackcdn.com/image/fetch/$s_!5_xh!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F00df07cc-de1f-440b-914a-436a9df63e91_1344x256.png)
-
  **ORBITS  
 ** _Core ideas and thinkers influencing me_
 
@@ -60,7 +56,6 @@ A lesson in surrender and attunement. _Marrying Maiden_ speaks to entering a rhy
  **“When I stop trying to lead, I can finally hear the rhythm that was there all along.”**
 
 → [Read the full hexagram here](https://www.cafeausoul.com/reading/?lns=798768&utm_source=chatgpt.com)
-
 
  **Books:**
 
@@ -83,7 +78,6 @@ A collage of mystic voices from every tradition, all circling the same truth.
   *  **[Wild Geese Returning: Chinese Reversible Poems](https://amzn.to/4oFbasV)** _[\- Michèle Metsch](https://amzn.to/4oFbasV)_[  
 ](https://amzn.to/4oFbasV) Poems that can be read forward and backward, revealing mirrored meanings. Deep-dive on the Star Gauge poem. 
 
-
 **RESONANCES  
 ** _Things that speak to me_
 
@@ -91,7 +85,7 @@ A collage of mystic voices from every tradition, all circling the same truth.
 
  **Color Palettes I’ve Collected Lately:**
 
-[![](https://substackcdn.com/image/fetch/$s_!qsfp!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fad4abb56-54dc-42dc-bac9-fe3c9c21a79c_856x448.png)](https://substackcdn.com/image/fetch/$s_!qsfp!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fad4abb56-54dc-42dc-bac9-fe3c9c21a79c_856x448.png)
+[![](https://substack-post-media.s3.amazonaws.com/public/images/ad4abb56-54dc-42dc-bac9-fe3c9c21a79c_856x448.png)](https://substack-post-media.s3.amazonaws.com/public/images/ad4abb56-54dc-42dc-bac9-fe3c9c21a79c_856x448.png)
 
  **GROUNDS**
 
@@ -102,6 +96,5 @@ A collage of mystic voices from every tradition, all circling the same truth.
     * One exercise from it: Tense your body as much as possible and then let that tension flow through your arm onto the page
 
   * This question: _What would it mean to look without needing to name?_
-
 
 Much love to you all!

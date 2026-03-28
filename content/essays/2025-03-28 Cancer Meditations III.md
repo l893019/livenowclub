@@ -2,9 +2,6 @@
 
 ## Diving to Darkness
 
-
-[![](https://substackcdn.com/image/fetch/$s_!fJdZ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1e09e2eb-a4ec-4023-817f-2f58b45abb62_1200x800.png)](https://substackcdn.com/image/fetch/$s_!fJdZ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1e09e2eb-a4ec-4023-817f-2f58b45abb62_1200x800.png)
-
 I’m in the darkness. There is no light around me. I hang onto my tether and breathe.
 
 * * *
@@ -26,7 +23,6 @@ ER hospital rooms ranked (low to high):
   * Room 1: The special room with a door and toilet, accessible if they need a stool sample
 
   * Critical Decision Unit: The promised land: tranquil; every room has doors. Accessible after initial tests are done.
-
 
 * * *
 
@@ -88,7 +84,7 @@ Maternity pads are the only ones that can support my fluid and blood loss levels
 
 On one of my first hospital visits, I saw this painting. It looks eerily like me as my future self - a sign that I will make it through.
 
-[![](https://substackcdn.com/image/fetch/$s_!bYnd!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5e518d05-75a4-45e0-8f02-149a0ab2cda8_1200x1600.jpeg)](https://substackcdn.com/image/fetch/$s_!bYnd!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5e518d05-75a4-45e0-8f02-149a0ab2cda8_1200x1600.jpeg)
+[![](https://substack-post-media.s3.amazonaws.com/public/images/5e518d05-75a4-45e0-8f02-149a0ab2cda8_1200x1600.jpeg)](https://substack-post-media.s3.amazonaws.com/public/images/5e518d05-75a4-45e0-8f02-149a0ab2cda8_1200x1600.jpeg)
 
 * * *
 

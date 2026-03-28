@@ -2,9 +2,6 @@
 
 ## Poems from my dreamscape
 
-
-[![Here Be Dragons - Atlas Obscura](https://substackcdn.com/image/fetch/$s_!bViD!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fae1cd830-7b04-4267-ae73-a777b5ef2f8c_780x408.png)](https://substackcdn.com/image/fetch/$s_!bViD!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fae1cd830-7b04-4267-ae73-a777b5ef2f8c_780x408.png)
-
 _I’ve been living closer to dreams these days. They’ve grown sharper. Stranger, vivid, untamed. Over the last few months, I began writing them down, struck by the worlds my subconscious can create if I let it._
 
  _They are wisps of smoke, glimpses of something truer than logic allows._
@@ -65,6 +62,5 @@ not to slay it,
 but to say:  
 I see you.  
 I set you down.
-
 
 [Share Welcome to LouLouLand](https://louiseireland.substack.com/?utm_source=substack&utm_medium=email&utm_content=share&action=share)

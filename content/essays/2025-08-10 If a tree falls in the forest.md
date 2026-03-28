@@ -1,8 +1,5 @@
 # If a tree falls in the forest
 
-
-[![](https://substackcdn.com/image/fetch/$s_!zlUI!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe9ba7b05-5bce-4ba0-9f23-06d6e91a6ced_2720x898.png)](https://substackcdn.com/image/fetch/$s_!zlUI!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe9ba7b05-5bce-4ba0-9f23-06d6e91a6ced_2720x898.png)
-
 I woke up a few days ago to a surprise from my team at [Batuta](https://batuta.com/), the cybersecurity company I co-founded several years ago. Over the last few months, they have been executing on a side passion of mine, a dream to bring people viscerally and tangibly into the experience of a cyber attack.
 
 It’s an [installation](https://thesoundofcyber.org/) that takes the invisible architecture of an attack and makes it impossible to ignore. A live honeypot lures real-world intrusion attempts, translating them into a soundscape you can feel in your sternum. HTTP flows become slow, steady drumbeats. DNS lookups click. SMB traffic hums until an attack distorts it into something jagged, metallic, almost alive. LED lights and projected visuals flare and dim in sync, the room breathing in time with the assault. What happens when you can no longer ignore what you've been trained not to hear? The installation answers this for networks. My cancer diagnosis answered it for me.
@@ -20,6 +17,5 @@ I think a lot about the sounds we don’t want to hear. The ones we file as back
 Neil deGrasse Tyson once said that when a tree is dying, other trees reach toward it through the roots, sending water, sugar, and sustenance. Trees don’t turn away from the reminder of their end. They move toward it.
 
 Silence is not the absence of change. It is the medium in which change can happen. And to listen, to truly listen, is not to stop the fall, but to be ready for what grows in its place.
-
 
 [Share Welcome to LouLouLand](https://louiseireland.substack.com/?utm_source=substack&utm_medium=email&utm_content=share&action=share)

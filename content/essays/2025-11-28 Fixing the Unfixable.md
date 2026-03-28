@@ -2,9 +2,6 @@
 
 ## What to say when there's nothing you can say
 
-
-[![Full moon at night reflecting on the water. Alpha channel moonlight bright  sea reflection. Clear big distinct moon glowing over the ocean in eerie  night scene.](https://substackcdn.com/image/fetch/$s_!w2IA!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe5fcb916-9251-4995-ab77-af9a24e82dab_1920x1080.png)](https://substackcdn.com/image/fetch/$s_!w2IA!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe5fcb916-9251-4995-ab77-af9a24e82dab_1920x1080.png)
-
 I need to tell you something. I don’t know what to say.
 
 I am not dying, I refuse to believe I am dying, I am holding out every hope for a miracle, every shred of optimism that a next-generation therapy could salvage my life. I cling to that light with every ounce of my being. Yet, in that space, I have to be realistic. I have to face the blood in my stool and see my body crumble from the inside out. I have to recognize my odds of making it another year or two, let alone five, are statistically low. That even if my scans come back clean in less than two weeks, the chance of a recurrence, of a life interrupted again, is high. That my world right now is one of uncertainty and unknowns.
@@ -42,7 +39,6 @@ The world may not get better. My cancer may not go away. But who is to say this 
 I write this from flight, traveling from country to country in search of a cure, in search of solace. As I look out the window, I see the moon at eye level above the clouds. From here, I can see that dying and living were never opposites. They were always the same thing, happening at once.
 
 I would love it if you shared my words with anyone you think would benefit from them. It means a lot to me to feel like I have a voice. 
-
 
  _Thank you, as always, for your support. It means the world to me that you’re reading and sharing my work._
 

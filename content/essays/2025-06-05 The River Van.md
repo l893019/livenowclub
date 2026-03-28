@@ -1,8 +1,5 @@
 # The River Ván
 
-
-[![This may contain: a woman floating in the water wearing a white dress and holding her leg up with both hands](https://substackcdn.com/image/fetch/$s_!fy-L!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F38c09fee-cdea-4500-bc44-a8327d86ade5_620x325.jpeg)](https://substackcdn.com/image/fetch/$s_!fy-L!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F38c09fee-cdea-4500-bc44-a8327d86ade5_620x325.jpeg)
-
 **The River Ván**
 
 They say Fenrir’s drool  
@@ -48,6 +45,5 @@ Made up of things
 we swear don’t exist,  
 but somehow hold us  
 to the end.
-
 
 My posts are public, so feel free to share to anyone who might enjoy

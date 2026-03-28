@@ -2,9 +2,6 @@
 
 ## Into the Wilderness
 
-
-[![Leave this to me! I will protect everyone! | henriscavills: Howl's Moving  Castle \(2004\) dir....](https://substackcdn.com/image/fetch/$s_!mkpF!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec30da4b-d467-4a44-8f46-b99a3d3d74a1_540x300.gif)](https://substackcdn.com/image/fetch/$s_!mkpF!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec30da4b-d467-4a44-8f46-b99a3d3d74a1_540x300.gif)
-
 You can only live at the speed life lets you.
 
 * * *

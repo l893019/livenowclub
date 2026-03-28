@@ -1,16 +1,12 @@
 # In any given moment, the strongest dream in that moment wins
 
-
-[![](https://substackcdn.com/image/fetch/$s_!P438!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3ea5bf03-19bc-460a-9fea-9594d623f4bc_640x640.jpeg)](https://substackcdn.com/image/fetch/$s_!P438!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3ea5bf03-19bc-460a-9fea-9594d623f4bc_640x640.jpeg)
-
 I’ve been thinking about this quote from Dave Chapelle for the last few weeks, “In your life, in any given moment, the strongest dream in that moment wins.” And it’s fallen into a broader line of questioning for me. In any given moment, are you living in the dream you dreamed? Or are you living in support of someone else’s dream? This could fall into daily actions, priorities, conscious choices, or unconscious engrained patterns. Who dreamt the dream you’re living? Is it really yours?
 
 Join me on my neverending quest to explore all of the idiosyncracies of this thing we call life.
 
-
 It comes through in other streams. There are lessons we are meant to learn throughout our lives and roads we are meant to take. It’s the disconnect between ‘the external pressure toward the thing you should do’ and ‘what your heart pulls you toward’ at any moment.
 
-[![](https://substackcdn.com/image/fetch/$s_!waWL!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F72cca2fa-745d-4947-a4d0-bd8ed0a17074_583x398.jpeg)](https://substackcdn.com/image/fetch/$s_!waWL!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F72cca2fa-745d-4947-a4d0-bd8ed0a17074_583x398.jpeg)
+[![](https://substack-post-media.s3.amazonaws.com/public/images/72cca2fa-745d-4947-a4d0-bd8ed0a17074_583x398.jpeg)](https://substack-post-media.s3.amazonaws.com/public/images/72cca2fa-745d-4947-a4d0-bd8ed0a17074_583x398.jpeg)
 
 We hear whispers of what calls us, but how often do we articulate what we want or what we’re yearning for to the people around us? I suppose it’s one part out of fear - what happens if you don’t get what you want? What happens if what you’re wishing for isn’t received well socially? What happens if you do get it and it turns out it isn’t what you wanted in the first place? If you say your dreams out loud, then you have to shift your behavior to change to get them - getting off your couch is sometimes the scariest part of all. You reach the mountain's top, realizing it is nothing more than a plateau. You reach the top and realize you followed directions to the wrong mountain.
 
@@ -24,33 +20,25 @@ A friend asked me what I wanted in my life this morning while on a sunrise walk.
 
   * I want to wake up every morning at sunrise to the sound of birds and children and waves crashing and a smile on my face that this is the life I am so lucky to be leading. I want to swim in the ocean daily (or take a cold bath if I’m traveling) and run or hike in the woods. I want to live in San Francisco, close to my community and my twin brother, and spend the rest of my time by the beach and in Japan.
 
-
   * I want to find a partner worthy of me (if you know anyone incredible, I’m available). Who is tall and masculine, but soft and playful, who sees a challenge and finds a creative opportunity, who loves what he does and is always looking to create something new, who loves the ocean as much as I do, who cares deeply about personal growth and isn’t opposed to the idea of getting married in an ayahuasca ceremony, who has traditional values but likes the idea of a non-traditional life, who is adventurous and can go from a five-star hotel to a tent without a problem, who knows when to take charge and when to give me space to grow, who wants to live cleanly with me but is always ready for a party to dance, who has an incredible visual eye and loves the arts as much as I do, who is always tinkering and crafting and building ‘something’, who wants to trade sci-fi and philosophy books with me and read poetry to me to relax, who loves to give and host and cares deeply for the community, who loves witty banter and always can make me laugh, and who is completely ready and able to be a father fully.
-
 
   * I want to build a family. I want to raise my children to be humble and curious, to question the world around them, and to look to improve it. I dream of pets running around and laughter and joy echoing in the hallways. I want them to grow up with a global view and respect for all cultures but a deep knowledge that, as eloquently put by Steve Jobs, “Everything around you that you call life was made up by people that were no smarter than you.” I want to encourage their creativity. I want to let them evolve to be whoever they are meant to be. 
 
-
   * I want to create safe spaces that enable authentic and vulnerable connections. I want to make our digital ecosystems safer and technology work for humans, not vice versa. I want to create physical spaces and experiences that allow people to feel at home and themselves in a way they may not have before. I want to help others uncover who they are at their core and evolve deeper into who they are meant to be.
 
-
   * I want to live in love and surround myself with carefully designed things, people who are authentically themselves, and music that hits my soul. I want to love deeply and freely. I want to always see people as they are, not as I want them to be. I want to live an intentional life in beauty and softness.
-
 
   * I want my art - in all forms: drawing, painting, writing, clothing, interior spaces, and experiences - to take on a life of its own. I want to be the container and vehicle that enables everything in my head to fruition. I want to build art installations that transcend time and space. I want to write books. I want to costume people in stunningly beautiful clothes that don't sacrifice comfort. I want to design interiors that heal and enable someone to live as themselves in the most beautiful way. I want to create spaces and experiences that enable the inner children of those I love to roam freely. I want it to exist beyond me, outside of me, and transcend me as my gift back to the world. 
 
   * I want to deepen my religious and spiritual practice. I want to help others see the merit of spirituality and the value of religion’s dogma. I want to help people take life a little less seriously, a little more joyfully, and lean into its inherent whimsy. I want to inspire those who are lost on their path and create a beacon of hope for those who need a hand. I want to build a sanctuary for birds with broken wings to help them fly and soar again.
 
-
   * I want to live with space to grow and evolve. I want to be surrounded by books and new ideas. I want to never stop learning and questioning everything around me. I want to be challenged by people smarter than me and always maintain a beginner’s mind. I want to advise, invest, and give back for all that has been given to me. 
-
 
   * I want to live fully and completely in my body. I want never to be too old to dance and move however I want to move. I want to live a healthy and active life. I want every cell of my being to be in tune with my mind and soul. 
 
   * I want to grow and nurture beautiful gardens of flowers, vegetables, herbs, plants, trees, ideas, and people. I want to give beauty time and space. I want to learn to be patient and learn to let things unfold. I want to feel dirt on my hands and grass on my feet and dance in fields of flowers. I want to lay on a hillside in complete peace, watching clouds as the world passes me by.
 
-
-[![](https://substackcdn.com/image/fetch/$s_!KdzQ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6ee5e652-cb63-4baf-9317-ccdc82b1e038_610x400.jpeg)](https://substackcdn.com/image/fetch/$s_!KdzQ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6ee5e652-cb63-4baf-9317-ccdc82b1e038_610x400.jpeg)
+[![](https://substack-post-media.s3.amazonaws.com/public/images/6ee5e652-cb63-4baf-9317-ccdc82b1e038_610x400.jpeg)](https://substack-post-media.s3.amazonaws.com/public/images/6ee5e652-cb63-4baf-9317-ccdc82b1e038_610x400.jpeg)
 
 And what do you want? What do you dream of? What thread do you want to pull? What makes you feel alive and your heart sing? I would love to know.
 

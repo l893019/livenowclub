@@ -2,9 +2,6 @@
 
 ## The descent into the liminal space
 
-
-[![2001: A Space Odyssey's Score Is Still Mind-Bending and Exhilarating | San  Francisco Classical Voice](https://substackcdn.com/image/fetch/$s_!WCNy!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F945dfd49-59ba-405b-9f5c-2d3a05718499_870x476.jpeg)](https://substackcdn.com/image/fetch/$s_!WCNy!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F945dfd49-59ba-405b-9f5c-2d3a05718499_870x476.jpeg)
-
 I wanted to do a photo shoot at home with my parrots before leaving SF, but they’re wild. I never know when they will come and go. I shouldn’t have worried - the photographer arrived at 11:30, the parrots arrived at 11:31.
 
 * * *

@@ -44,7 +44,14 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
   };
 
   // Convert markdown to basic HTML
-  const contentHtml = essay.content
+  let content = essay.content;
+
+  // First, handle multi-line italic blocks (epigraphs) - convert to blockquote
+  // Pattern: _text spanning\nmultiple lines_
+  content = content.replace(/^_([^_]+)_$/gm, '<blockquote class="epigraph">$1</blockquote>');
+  content = content.replace(/\n_([^_]*(?:\n(?!_)[^_]*)*?)_\n/g, '\n<blockquote class="epigraph">$1</blockquote>\n');
+
+  const contentHtml = content
     .split("\n")
     .map((line) => {
       if (line.startsWith("# ") || line.includes("Originally published")) return "";
@@ -52,10 +59,26 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
       if (line.startsWith("### ")) return `<h3>${line.slice(4)}</h3>`;
       if (line.trim() === "---") return "<hr />";
       if (line.startsWith("> ")) return `<blockquote>${line.slice(2)}</blockquote>`;
+      // Skip lines that are already processed as blockquotes
+      if (line.includes('<blockquote')) return line;
+
+      // Process images first: [![alt](src)](href) or ![alt](src)
       let processed = line
+        .replace(/\[!\[([^\]]*)\]\(([^)]+)\)\]\(([^)]+)\)/g, '<a href="$3" target="_blank"><img src="$2" alt="$1" /></a>')
+        .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" />');
+
+      // Process links: [text](url)
+      processed = processed.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+
+      // Now apply text formatting (won't affect URLs inside href/src attributes)
+      processed = processed
         .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
         .replace(/\*(.+?)\*/g, "<em>$1</em>")
-        .replace(/_(.+?)_/g, "<em>$1</em>");
+        .replace(/ _([^_]+)_ /g, " <em>$1</em> ")
+        .replace(/ _([^_]+)_$/g, " <em>$1</em>")
+        .replace(/^_([^_]+)_ /g, "<em>$1</em> ")
+        .replace(/"_([^_]+)_"/g, '"<em>$1</em>"');
+
       if (line.trim() === "") return "</p><p>";
       return processed;
     })
@@ -283,6 +306,17 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
           background: rgba(232, 23, 138, 0.02);
           border-radius: 0 6px 6px 0;
           line-height: 1.6;
+        }
+
+        .essay-content :global(blockquote.epigraph) {
+          font-style: italic;
+          text-align: center;
+          border-left: none;
+          background: none;
+          padding: 0;
+          margin: 32px auto;
+          max-width: 85%;
+          color: rgba(45, 42, 38, 0.7);
         }
 
         .essay-content :global(hr) {

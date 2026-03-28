@@ -2,9 +2,6 @@
 
 ## a poem for the end of summer
 
-
-[![](https://substackcdn.com/image/fetch/$s_!drnA!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F655caea2-af86-4004-a56a-080c8cf9e353_1024x536.jpeg)](https://substackcdn.com/image/fetch/$s_!drnA!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F655caea2-af86-4004-a56a-080c8cf9e353_1024x536.jpeg)
-
 I’ve lived long enough in cities   
 to lose the sound of a body  
 falling apart slowly,   
@@ -50,8 +47,6 @@ sweet and full,
 bursting at the seam,  
 feeding whatever comes next.  
 
-
 PS. Thank you as always for the support and sending you all much love for this last week of August <3\. 
-
 
 [Share Welcome to LouLouLand](https://louiseireland.substack.com/?utm_source=substack&utm_medium=email&utm_content=share&action=share)

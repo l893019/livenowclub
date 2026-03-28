@@ -1,8 +1,5 @@
 # You can’t always get what you want
 
-
-[![](https://substackcdn.com/image/fetch/$s_!_F_m!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F707b3775-2075-4457-bc31-615eef77ba85_4284x2243.png)](https://substackcdn.com/image/fetch/$s_!_F_m!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F707b3775-2075-4457-bc31-615eef77ba85_4284x2243.png)
-
 This week was supposed to be a week of triumph, of gentle applause, of exhaling in the quiet. I had just completed the first draft of the book I have been writing, which is about my cancer experience and the circular, recursive nature of life. (I need to edit, but if you have ideas on publishing, I’d love to hear them.) I had been fearful of looking to the future, but I began sketching dreams into place. I planned a few trips to complete my epilogue: a reunion with my family and cousins, dancing in the desert with friends, lying on my back in the ink-dark Aegean sea, my eyes tethered to a full and luminous moon.
 
 But, unfortunately, dream as I may, that is not my story. I received the news that no one wants to hear. I saw my doctors’ faces tremble as they reconciled a path forward from something that shocked them as much as it shocked me. My cancer spread further from my lymph nodes to my lungs. I am now Stage IVB. My cancer is no longer curable. My mom and I read the scan results in the back of an Uber on the way from Long Island to Manhattan. Outside, the world blurred into pools of sorrow. I have not stopped crying since.
@@ -20,6 +17,5 @@ And, as I see death, I see life. I close my eyes, and I am back, swimming into d
 Outside, I see a ginkgo tree waving in the breeze, a flicker of a dragonfly passing by, the swirling minutiae of dust off of a wall, worlds within worlds, spinning unnoticed. I believe now more than ever that it is not how long we live, but how deeply we live. My fear of losing all that I love is the chiaroscuro of being alive, the shadow that allows me to see the light.
 
 In this moment, leaning closer to the fragile boundary between life and loss, I understand anew the poignancy of Camus’s words. Now, more than ever, I live to the brink, to the breath, to the point of tears.
-
 
 [Share Welcome to LouLouLand](https://louiseireland.substack.com/?utm_source=substack&utm_medium=email&utm_content=share&action=share)

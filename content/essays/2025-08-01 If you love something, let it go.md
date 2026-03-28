@@ -1,8 +1,5 @@
 # If you love something, let it go
 
-
-[![A group of hermit crabs together on the beach.](https://substackcdn.com/image/fetch/$s_!8DQ0!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5a875eac-f346-48d2-9202-d2886b262047_3648x2056.jpeg)](https://substackcdn.com/image/fetch/$s_!8DQ0!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5a875eac-f346-48d2-9202-d2886b262047_3648x2056.jpeg)
-
 > _Depravity begins with thinking of love  
 >  as a radical act. I quit loving  
 > with difficulty. I love   
@@ -54,6 +51,5 @@ There is no other way. To stay in these circumstances, to hold tightly to the li
 Through the window, I could see the wild parrots had returned to my balcony railing, their bright green feathers catching the late afternoon light. They perched there for a moment, then lifted off together into the vast San Francisco sky. The shell was never the thing that kept me safe. It is the leaving, the changing that will.
 
 PS. Thank you so much for all of the kind comments and outreach from my last post. I’m beyond touched. It helps me a lot as I embark on this harrowing journey to know I have a voice <3
-
 
 [Share Welcome to LouLouLand](https://louiseireland.substack.com/?utm_source=substack&utm_medium=email&utm_content=share&action=share)

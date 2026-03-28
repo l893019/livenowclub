@@ -2,9 +2,6 @@
 
 ## And how to live now
 
-
-[![Why Are Penguins Black and White? | Color Meanings](https://substackcdn.com/image/fetch/$s_!kIQL!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F24d5bb64-cc14-4c61-844b-ba5c6b6628cf_1024x536.jpeg)](https://substackcdn.com/image/fetch/$s_!kIQL!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F24d5bb64-cc14-4c61-844b-ba5c6b6628cf_1024x536.jpeg)
-
 I’ve been thinking a lot about time lately. It comes from questioning how I best spend my limited time, but also what time fundamentally is.
 
 It is almost Thanksgiving, but my body still feels like it’s February. I rationally know that time hasn’t stood still, seasons have changed, strangers have turned to friends, leaves and my hair have shifted state and fallen, and cities have imprinted themselves on me. Yet I am swimming in two currents at once, surface water moving forward while deeper water holds me in place. I met a man in Kenya years ago who didn’t know his own birthdate, who didn’t know how old he was, but could tell me the exact timing of the great migrations and rainfalls. I think about that now, as I’ve lost the ability to articulate any external marker of time. I can tell you the rhythm of my body in detail, how the seasonal wind has shifted, the changing colors of the flowers, but the months escape me.
@@ -25,7 +22,7 @@ We’re looking for the feeling that everything will be okay in the ontological 
 
 Family friends gave me a card and gemstone before my last treatment cycle, with a line from John O’Donohue that hasn’t left my side since: _I would like to live / like a river flows. Carried by the surprise / of its own unfolding._
 
-[![](https://substackcdn.com/image/fetch/$s_!tk6h!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F24c67f5d-bd50-4b55-9030-48bf131e8f42_2972x3415.jpeg)](https://substackcdn.com/image/fetch/$s_!tk6h!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F24c67f5d-bd50-4b55-9030-48bf131e8f42_2972x3415.jpeg)
+[![](https://substack-post-media.s3.amazonaws.com/public/images/24c67f5d-bd50-4b55-9030-48bf131e8f42_2972x3415.jpeg)](https://substack-post-media.s3.amazonaws.com/public/images/24c67f5d-bd50-4b55-9030-48bf131e8f42_2972x3415.jpeg)
 
 Perhaps the threshold of selfhood isn’t just achievement, stability, or health, but learning to flow, learning to unfold, to stop negotiating your aliveness with the universe.
 
@@ -39,7 +36,6 @@ of knowing not knowing pretending
 pretending_
 
 The deepest gratitude might be wanting something enough to risk not getting it. To reach for the future while standing in February, to live in November while carrying every month that came before. Not waiting for time to become linear again, but learning to inhabit all of it at once.
-
 
 * * *
 
@@ -88,6 +84,5 @@ Here are some suggestions for you based on the parts you may long for most:
   *  _ **If you long for the spiritually connected you:**_
 
     * Sit in silence for 10 minutes before you check your phone. Create one tiny ritual that only means something to you.
-
 
  _What parallel life are you visiting this Thanksgiving? I’d love to know._

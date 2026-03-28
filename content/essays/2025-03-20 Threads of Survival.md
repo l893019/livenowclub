@@ -1,8 +1,5 @@
 # Threads of Survival
 
-
-[![](https://substackcdn.com/image/fetch/$s_!sNyY!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8e64566b-98d7-4afa-a318-d180ddf8cda4_612x409.jpeg)](https://substackcdn.com/image/fetch/$s_!sNyY!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8e64566b-98d7-4afa-a318-d180ddf8cda4_612x409.jpeg)
-
 I killed a spider three weeks ago.
 
 I was late to church and desperately needed a shower, and there it was - directly in the basin of my tub. I’m absolutely terrified of spiders. It’s been a life-long fear forever. I had noticed it earlier in the day. I knew I’d need a shower, but I prayed it would move out of the way and both of us would continue along the threads of our lives - the spider down another drain, me clean and on my way.

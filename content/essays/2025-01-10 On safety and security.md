@@ -1,8 +1,5 @@
 # On safety and security
 
-
-[![](https://substackcdn.com/image/fetch/$s_!zpHa!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa172430b-e302-4d02-a05d-ebf7f26439a3_919x563.jpeg)](https://substackcdn.com/image/fetch/$s_!zpHa!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa172430b-e302-4d02-a05d-ebf7f26439a3_919x563.jpeg)
-
 I think about safety more than the average person. Safety is something I’ve always been acutely aware of - what feels safe? Is this a safe space? Am I safe? 
 
 My obsession with safety and security is a natural precursor to my co-founding a [cybersecurity startup](https://www.metabaseq.com/), but more than anything, it’s a function of being human in a changing world. We can think the best of human nature, but inevitably, not everyone wishes us well at every moment. Dissent always follows troubled times—be they economic, political, religious, or social in root. In this present era, where a new crisis emerges daily and inevitably, a new debate tears us apart, the inherent assumption that all roads are paved with good intentions becomes harder to believe. 
@@ -49,18 +46,15 @@ I tend to find that most articles and reports on cybersecurity use an abundance 
 
     * Back to the point that we are all human - most attackers think about ROI (return on investment), too. It is cheap (almost free) to focus first on these easy targets - unpatched systems, passwords that haven’t been updated - more inevitability than not, you will catch a whale. We talk a lot about the risk of AI and quantum computing in cybersecurity, but the reality is, in a world where we leave unpatched systems online, there are significantly easier ways to break in
 
-
   2.  **It’s Difficult To Keep Track of What You Have (and Even Harder To Ensure That What You Have Is Protected):**
 
     * The first point of almost every cybersecurity framework is the same: Inventory. Yet few companies truly have complete certainty in exactly what they own. It’s easy to see how quickly things can go awry - a decommissioned server that was never fully taken offline, a new cloud instance sprung up by an intern, new employees, remote work, temporary contractor access. Inventory begets visibility which begets control. 
 
     * The problem compounds when you add in the technology you’ve deployed on top - you’ve purchased 2,000 licenses of [insert your preferred endpoint cybersecurity technology here], but how do you know for sure those agents are properly installed and configured across all of your devices? Multiple this problem if you have subsidiaries with different technology stacks. Multiple it again if you’re on an acquiring spree. Few companies have certainty in this matter.
 
-
   3.  **It’s Everyone’s Problem and No One’s Problem:**
 
     * One of the biggest challenges to maintaining secure networks falls between two departments - IT Operations and Cybersecurity. Every company has its own system for patching devices (maintaining system updates), but it usually falls to the asset owner. From a business perspective, it’s clear - you know where your crown jewels are, and you protect them. And more likely than not, multiple assets just aren’t that relevant to you. And if we’re being honest, their owners probably left the company years ago, and that server has just always been ‘there’. From an attacker view - an asset on your network is an asset on your network. It’s an opportunity to get in, to move laterally, to continue to find holes. There is a fundamental disconnect between how most businesses operate and what they need to do to be secure.
-
 
 I co-founded Metabase Q years ago based on my desire to make it easier for any company to eliminate the majority of its cyber risk through fundamental and proactive cybersecurity measures. To create a safe space, you have to start with the foundation. Our platform, Batuta—Spanish for ‘conductor’s wand’—is a control plane for Security Operations, enabling centralized management of assets and cybersecurity technologies. It’s a cloud-native endpoint management platform. 
 

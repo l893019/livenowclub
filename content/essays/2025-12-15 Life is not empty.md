@@ -2,9 +2,6 @@
 
 ## On collapse, creation, and healing from a poem a day
 
-
-[![2+ Million Beach Shore Waves Royalty-Free Images, Stock Photos & Pictures |  Shutterstock](https://substackcdn.com/image/fetch/$s_!W3xc!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa79fc3d6-782a-48a6-8509-0d61cea26ac1_600x314.webp)](https://substackcdn.com/image/fetch/$s_!W3xc!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa79fc3d6-782a-48a6-8509-0d61cea26ac1_600x314.webp)
-
 > _“To see a World in a Grain of Sand / And a Heaven in a Wild Flower, / Hold Infinity in the palm of your hand / And Eternity in an hour.” - William Blake_
 
 I am exhausted. Worn down to my bones. My scans came back not clean, but stable, that strange purgatory of continuation. In this space between rounds, between the certainty of chemo coursing through my veins and the unknowing of what’s next, I am collapsing. I have collapsed.
@@ -55,12 +52,11 @@ It’s called [Lingua Poetica](https://www.linguapoetica.com/).
 
 It’s a place to learn languages through poetry, hearing the divine in its mother tongue. I’ve begun with Persian, Spanish, and German and am slowly expanding into others. It’s early in its formation, built for no ambition beyond my wanting it to exist. But I wanted to share it as I’m going, so we can learn a poem a day together over morning coffee.
 
-[![](https://substackcdn.com/image/fetch/$s_!yqf5!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4992f8eb-92bd-4c46-b56d-f0a855fbab7b_1104x484.jpeg)](https://substackcdn.com/image/fetch/$s_!yqf5!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4992f8eb-92bd-4c46-b56d-f0a855fbab7b_1104x484.jpeg) _As you learn languages, your poetry garden grows. You learn by hearing, understanding (the translation but also the philosophical meaning and poem analysis), and speaking. It’s working for me, I hope it does for you._
+[![](https://substack-post-media.s3.amazonaws.com/public/images/4992f8eb-92bd-4c46-b56d-f0a855fbab7b_1104x484.jpeg)](https://substack-post-media.s3.amazonaws.com/public/images/4992f8eb-92bd-4c46-b56d-f0a855fbab7b_1104x484.jpeg) _As you learn languages, your poetry garden grows. You learn by hearing, understanding (the translation but also the philosophical meaning and poem analysis), and speaking. It’s working for me, I hope it does for you._
 
 My friend told me that in Persian, the word for God is Khoda—خدا. It comes from two words: Khod and aa. It means “come to oneself,” or “find yourself.”
 
 I hope Lingua Poetica holds you as it’s holding me, that you can lie back in the waves of Neruda, Goethe, and Rumi and find yourself, one word at a time.
-
 
 * * *
 
@@ -68,4 +64,4 @@ Thank you, as always, for reading and for the support. It means the world! As al
 
 And join us in the chat - I’d love to hear if anyone has any favorite poems! 
 
-[![User's avatar](https://substackcdn.com/image/fetch/$s_!er1r!,w_64,h_64,c_fill,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2938cf9c-1e73-4033-b037-1572d9aca726_1206x1206.jpeg)Join Louise Ireland’s subscriber chatAvailable in the Substack app and on webJoin chat](https://open.substack.com/pub/louiseireland/chat?utm_source=chat_embed)
+[![User's avatar](https://substack-post-media.s3.amazonaws.com/public/images/2938cf9c-1e73-4033-b037-1572d9aca726_1206x1206.jpeg)Join Louise Ireland’s subscriber chatAvailable in the Substack app and on webJoin chat](https://open.substack.com/pub/louiseireland/chat?utm_source=chat_embed)

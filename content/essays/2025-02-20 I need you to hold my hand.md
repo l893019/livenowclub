@@ -1,8 +1,5 @@
 # I need you to hold my hand
 
-
-[![](https://substackcdn.com/image/fetch/$s_!CgIE!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F009a7b6a-143a-4e6e-9ef6-661c987d3742_3024x2228.jpeg)](https://substackcdn.com/image/fetch/$s_!CgIE!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F009a7b6a-143a-4e6e-9ef6-661c987d3742_3024x2228.jpeg)
-
 In the last few days following my post, I have been flooded with outreach and love. I cannot begin to tell you how much it means to me. In case you missed it 👇
 
  _As a quick health aside: I just arrived in New York, I am heading in for more tests and scans tomorrow, and meeting with my doctor at MSK on Monday. Unfortunately, I do not know much at this moment._ _Given my level of blood loss, I am very fatigued._
@@ -24,7 +21,6 @@ I appreciate that many of you want to know what is going on and want to help. I 
     * It’s going to be raw, and it will be messy, but I really want to share. 
 
     * Please pass my words to anyone who else could benefit from them. 
-
 
 ##  **How can you help me?**
 
@@ -57,7 +53,6 @@ I am fortunate to have a saint of a mother who plans on being with me throughout
       * We are currently staying in Greenwich Village, but the space isn’t optimal. If you know of any furnished 2+ bedrooms that don’t feel corporate, are close to nature, and are not a far commute to MSK on the Upper East Side, please let us know.
 
       * Please don’t send me any mail or packages in NYC yet, as my location is not final.
-
 
 * * *
 

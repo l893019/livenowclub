@@ -1,8 +1,5 @@
 # Cancer Meditations V
 
-
-[![volcanic eruption, geologists](https://substackcdn.com/image/fetch/$s_!PrJL!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faf547370-7e58-49a2-8c5b-c6667564bbbd_1068x559.jpeg)](https://substackcdn.com/image/fetch/$s_!PrJL!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faf547370-7e58-49a2-8c5b-c6667564bbbd_1068x559.jpeg)
-
 I find myself apologizing to my body for what I've put it through, then remembering we're on the same side of this war.
 
 * * *

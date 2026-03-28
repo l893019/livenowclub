@@ -2,9 +2,6 @@
 
 ## Lou's Guide to Cancer
 
-
-[![Sea Horizon Poster with Minimalist Ocean Mood | Poster Store IE](https://substackcdn.com/image/fetch/$s_!3btt!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3b906481-1f95-4964-a88b-8c7dfcbf2ccc_2000x1047.jpeg)](https://substackcdn.com/image/fetch/$s_!3btt!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3b906481-1f95-4964-a88b-8c7dfcbf2ccc_2000x1047.jpeg)
-
 My scans are tomorrow, and in honor of whatever may come, I wanted to share something with you. This is the guide that I wish someone had handed me at the start of my experience with cancer. When I was first diagnosed, I didn’t know what to ask, what to prepare for, or how to let people help me. 
 
 If you’re going through this, I hope something here helps. If someone you love is going through this, scroll to the end, there’s a section for you, too.
@@ -15,8 +12,7 @@ Please pass this along to anyone who could use it ❤️. A pdf version is [here
 
 _Thank you to Bibi for inspiring me to do this, my sister for encouraging me, and Alexandra, MC, and my mom for sanity-checking._
 
-
-[![User's avatar](https://substackcdn.com/image/fetch/$s_!er1r!,w_64,h_64,c_fill,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2938cf9c-1e73-4033-b037-1572d9aca726_1206x1206.jpeg)Join Louise Ireland’s subscriber chatAvailable in the Substack app and on webJoin chat](https://open.substack.com/pub/louiseireland/chat?utm_source=chat_embed)
+[![User's avatar](https://substack-post-media.s3.amazonaws.com/public/images/2938cf9c-1e73-4033-b037-1572d9aca726_1206x1206.jpeg)Join Louise Ireland’s subscriber chatAvailable in the Substack app and on webJoin chat](https://open.substack.com/pub/louiseireland/chat?utm_source=chat_embed)
 
 * * *
 
@@ -118,7 +114,6 @@ Cancer staging and protocols are universal, but doctors take small (and life-cha
 
   * I would recommend choosing a hospital with a cancer-specific ER. Not all of them do, and it makes a massive difference if you need it.
 
-
 ### Be realistic about clinical trials/concierge doctors
 
 The majority of clinical trials are not available unless you’ve failed ‘standard of care’ treatment (likely chemotherapy and/or radiation). There is potential for ‘compassionate use’, n-of-1 care, expanded access, targeted trials based on mutations, but these typically become an option later, when you and your team know more about how your cancer responds.
@@ -131,7 +126,6 @@ Cancer care and recommendations are all standardized nationwide based on the gra
 
   * Make sure you get the actual slides from the lab to expedite review by other hospitals.
 
-
 ### Designate your advocate and primary support person
 
 Ideally, you will need one person who will be there with you for every appointment. Some hospitals offer patient advocates as a service. I found it very difficult to process or remember anything that doctors said during our meetings. They will provide notes after, but it’s helpful to have someone in the room with you at all times.
@@ -142,7 +136,6 @@ Ideally, you will need one person who will be there with you for every appointme
 
   * Ideally, this person can also help you manage medication.
 
-
 ### Identify backup support roles (transport, food, meds)
 
 You will need to consider how you get to the hospital and set up a system for meal trains and support.
@@ -151,13 +144,11 @@ You will need to consider how you get to the hospital and set up a system for me
 
   * A lot of people will show up for you at the start of treatment, make sure you plan for midway and later in the treatment. It’s not that people don’t care; they just get busy with their lives.
 
-
 ### Find a mentor with your cancer type
 
 We were fortunate to have a few contacts who had also recently suffered from cervical cancer. It was very useful to have someone to trade notes with on their exact experience.
 
   * If you don’t know someone, I would recommend reaching out to Immerman’s Angels.
-
 
 ## 2) Reduce the Information Flow In
 
@@ -171,7 +162,6 @@ There is a LOT of noise out there about alternative cancer treatments and cancer
 
   * There is a lot of intrigue about novel and new therapies, but they are not proven yet, and often not available until after you fail the standard line of treatment.
 
-
 ### Do not go down a Google rabbit hole
 
 Do not look at statistics. You are not a number. It’s helpful to be realistic about what you are facing, but do not let it define you.
@@ -181,7 +171,6 @@ Do not look at statistics. You are not a number. It’s helpful to be realistic 
 I found it very helpful to reduce my intake of anything that wasn’t about my health or directly tied to my getting better during this time.
 
   * You don’t want to disconnect yourself from the world (see next section), but you want to take care of your mental state.
-
 
 ## 3) Control the Information Flow Out
 
@@ -195,13 +184,11 @@ I appreciate and understand the desire to go through this on your own. At first,
 
   * Helping helps the helper: People want to show up. It allows them to feel close to you and gives them a sense of purpose during a time when everyone feels powerless.
 
-
 ### Plan for continuity
 
 When you are first diagnosed, everyone will want to help, but to ensure people are there for you when you need them most, it’s crucial to provide frequent updates.
 
   * It’s helpful to have a friend at this stage who can jump in to provide updates when necessary.
-
 
 ### Respect your energy
 
@@ -218,7 +205,6 @@ There are a number of things to consider:
   * What can your friends do so you know you’re loved and thought of during treatment?
 
   * Where do you need them to help you?
-
 
 MY ‘WE LOVE LOU’ SUPPORT SYSTEM
 
@@ -240,7 +226,6 @@ My mom made sure that my core needs (appointments, food, errands) were met, so I
 
     * Lou Flock - NYC/SF - Everyone. City-specific groups for local friends to convene.
 
-
 ## 4) Prepare Your Home for Healing
 
 I liked having different ‘spaces’ around my home where I could go to make it feel like I was moving around, even though I really didn’t have the energy to move far. This is what helped me a lot:
@@ -257,7 +242,6 @@ I liked having different ‘spaces’ around my home where I could go to make it
 
   * Heating pad: Comforting during cold spells from anemia
 
-
 ### Bathroom
 
   * Maternity pads and diapers (cervical cancer only). I bled a lot.
@@ -271,7 +255,6 @@ I liked having different ‘spaces’ around my home where I could go to make it
   * Dry mouth mouthwash: Some chemos give me dry mouth, so I recommend staying ahead of this to avoid mouth sores.
 
   * Ditch the razor: Certain chemotherapies cause you to bleed more heavily, so I avoided shaving during treatment.
-
 
 ### Space to watch TV
 
@@ -304,13 +287,11 @@ Set up a meal train or grocery service. Make sure you are stocked with bone brot
 
   * Pillboxes help you stay organized.
 
-
 ### Prepare your ER “go-bag”
 
 I was at the ER every week during my first round of treatment, and barely went during my second. I think it’s variable, but it’s best to be prepared.
 
   * Regardless of the reason for your visit, it will likely be a lengthy stay. My hospital had a dedicated ER for cancer patients, which made a massive difference for me
-
 
 Have a bag ready to go with core essentials:
 
@@ -330,7 +311,6 @@ Have a bag ready to go with core essentials:
 
   * Wear comfy clothes. I lived in my cancer uniform (next section).
 
-
 ## 6) Body Prep
 
 ### Egg freezing
@@ -346,7 +326,6 @@ I lived in sweatpant sets and simply rotated through multiple colors. It was a g
   * I did not get a port in the first round, so it was just important for me to be able to roll up my sleeves easily for IVs
 
   * For the second round, when I had a port, I wore low-cut tank tops and a cardigan.
-
 
 ### Decide if you need a port
 
@@ -376,7 +355,6 @@ Not every chemotherapy causes neuropathy. Check with your oncologist to see whet
 
   * To prevent this, I wore booties and gloves filled with ice packs during relevant treatments. These can be purchased on Amazon.
 
-
 ### Prepare for hair loss (if relevant)
 
 Not every chemotherapy causes hair loss. For the ones that do, hair loss typically begins 2-4 weeks after your first chemo treatment. Ask your oncologist what to expect with your specific regimen.
@@ -388,7 +366,6 @@ I chose not to wear a cold cap for a couple of reasons:
   * It added significant time to my therapy
 
   * There was still less than a 50% chance of my keeping more than half of my hair. I preferred to be completely bald rather than to have random bald spots.
-
 
 WHAT DO YOU DO WHEN IT FALLS OUT?
 
@@ -408,7 +385,6 @@ WIGS AND HEAD COVERINGS
 
   * The wig should fit snugly with a velvet band. Custom wigs can be made with different cap sizes, depending on the size of your head and the length of your neck
 
-
 EYEBROWS, EYELASHES
 
 I’ve found that I can get away with being bald without looking sick as long as my eyebrows and eyelashes are strong enough.
@@ -418,7 +394,6 @@ I’ve found that I can get away with being bald without looking sick as long as
   * Your hair will fall out in stages, so you have time to practice how to apply realistic hair strokes. It doesn’t happen all at once.
 
   * I have not had much luck with fake eyelashes, but I have found that eyeliner helps.
-
 
 ## 7) Build a Safety Net
 
@@ -446,20 +421,17 @@ Meditation - I use a couple of different apps (for different purposes):
 
   * Waking Up (philosophical discussions on life)
 
-
 ### Identify therapist support early
 
 If you don’t already have a therapist, I think it’s essential to find one, especially one with experience with cancer.
 
   * I was too exhausted to speak with mine for most of the treatment, but was very grateful that they checked in frequently.
 
-
 ### Establish spiritual / church connections
 
 It was a great help to know that I was in people’s prayer circles and to have someone to speak to about spiritual matters.
 
   * If you’re not well enough to make it to a church, most churches offer livestreaming.
-
 
 ## 8) Prepare to Stay Proactive, Not Reactive
 
@@ -479,7 +451,6 @@ You are the expert in your experience. If something isn’t right, speak up. Her
 
   * Advocate for comfort (nausea, pain relief, hydration. Don’t suffer in silence)
 
-
 ### Start parallel path planning
 
 Stay proactive about the path ahead. Ask a friend or family member to help you here.
@@ -493,7 +464,6 @@ Stay proactive about the path ahead. Ask a friend or family member to help you h
   * Build relationships with specialists and researchers in your cancer type
 
   * Revisit options each scan cycle
-
 
 Treat the cancer you have today. Prepare for the cancer you might be facing tomorrow.
 
@@ -517,7 +487,6 @@ Treat the cancer you have today. Prepare for the cancer you might be facing tomo
 
   * Emotional/spiritual support in place
 
-
 # Treatment
 
 ## Overall Advice
@@ -531,7 +500,6 @@ Treat the cancer you have today. Prepare for the cancer you might be facing tomo
   * Request morning appointments if possible - These have been shown to increase the likelihood of better outcomes and help you with better energy regulation
 
   * Check supplements + alt therapies with oncology (Radiation in particular is sensitive: avoid antioxidants, hyperbaric oxygen, IV vitamin drips, red-light therapy unless cleared)
-
 
  **FIELD NOTE**
 
@@ -547,7 +515,6 @@ These are (most likely) daily targeted sessions. They are very quick and painles
 
   * The doctors gave me tattoos on my stomach to more accurately line up the machine and made a mold for me to lie in so I wouldn’t move.
 
-
 WHAT IT FELT LIKE FOR ME
 
   * Week 1-2: I didn’t think it was that bad
@@ -560,7 +527,6 @@ WHAT IT FELT LIKE FOR ME
 
   * Pelvic radiation may affect the bladder and bowels
 
-
 WHAT HELPED ME
 
   * Get your appointments first thing in the morning.
@@ -568,7 +534,6 @@ WHAT HELPED ME
   * Wear clothes without metal, so you don’t need to go through the hassle of changing.
 
   * Put on Aquaphor at the first redness. I applied multiple times a day.
-
 
 ## Chemotherapy
 
@@ -583,7 +548,6 @@ WHAT IT FELT LIKE FOR ME
   * Day 3-7 = the dark woods. It will peak as the steroids wear off on day 3 and then slowly taper.
 
   * This cycle gets harder as treatment goes on.
-
 
 WHAT HELPED ME
 
@@ -603,7 +567,6 @@ During infusion:
 
   * Ask for additional hydration before and after chemotherapy to reduce the toxic effects.
 
-
 NAUSEA
 
 The majority of ways to curb chemotherapy nausea are all off-label. I would recommend getting them all from your doctor and trying them. Do not look up what the actual usage is online or any of the side effects. Just trust me on this.
@@ -613,7 +576,6 @@ The majority of ways to curb chemotherapy nausea are all off-label. I would reco
   * CBD gummies helped a bit. Just get everything and see what works best for you.
 
   * Do whatever you can to reliably eat meals at the same time every day and keep your calories up.
-
 
 ## Brachytherapy (cervical cancer specific)
 
@@ -629,7 +591,6 @@ WHAT HAPPENS (MAY BE DIFFERENT FOR YOU)
 
   * You may have a catheter, compression cuffs, IV lines, a pain pump, and oxygen
 
-
 WHAT IT FEELS LIKE
 
  **FIELD NOTE**
@@ -642,7 +603,6 @@ Pain from the needles inside of you
 
   * Anxiety around immobility
 
-
 WHAT HELPED ME
 
   * Make sure you have an advocate with you to ensure you have enough continuous pain meds. Ask for continuous, not just the self-administered pain pump.
@@ -654,7 +614,6 @@ WHAT HELPED ME
   * An adjustable arm or clamp to suspend a tablet so you can watch while lying flat
 
   * EMDR therapy after I finished. I found it unbelievably triggering for previous sexual assault.
-
 
 # Support Your Body During Treatment
 
@@ -672,13 +631,11 @@ DAILY FIXES
 
   * If you’re in a darker climate or stuck indoors, I used a new novel light therapy lamp for an hour each morning while eating breakfast or journaling.
 
-
 TREATMENT TIME
 
 Your treatment time matters. It sounds small, but the hour you receive radiation or chemotherapy can affect your body’s reaction.
 
   * If you can, unless you are a night owl or have a substantially different circadian rhythm, I recommend pushing for morning appointments. Early research studies have shown they are correlated with greater treatment success.
-
 
 ## Nutrition - During Treatment
 
@@ -688,11 +645,9 @@ Your primary and sole focus should be to eat what you can eat. Do not worry abou
 
   * Cancer treatments cause gas and bloating.
 
-
 My acupuncturist recommended the following diet to limit additional gas, but you should do whatever you need to do to keep your weight up:
 
   * No dairy products, no beans or nuts or seeds, no brown rice, only sticky rice, no wheat products or grains, no raw vegetables, just cooked vegetables, no carbonation in drinks, and no alcohol, no processed sugar, please drink plenty of water.
-
 
 FASTING BEFORE TREATMENT
 
@@ -712,7 +667,6 @@ THE IMPACT OF TREATMENT ON THE DIGESTIVE SYSTEM
 
   * I liked everything as plain, odorless, and tasteless as possible.
 
-
  **FIELD NOTE**
 
  _For several weeks during both of my treatments, I have had to revert to a BRAT (banana, rice, apple sauce, toast) diet. The notion of “healthy” is less relevant than what’s digestible. If you’re having digestive problems, focus on a low-residue diet (cooked vegetables, proteins, white starches). As you feel better, you can slowly start to add in more fiber._
@@ -727,7 +681,6 @@ NOTES ON NUTRITION IN RECOVERY
 
   * 
 
-
  **FIELD NOTE**
 
  _Low-glycemic doesn’t mean cutting out all sugar. It reflects the glycemic load of your body. You can look up the glycemic index and glycemic load of most foods with ChatGPT. To bring the glycemic load down, add protein and fiber. Never eat a carb alone, and always try to walk after meals to help your digestion._
@@ -738,7 +691,6 @@ NOTES ON NUTRITION IN RECOVERY
 
   * Because of my lightheadedness, I asked for additional hydration between cycles.
 
-
 ## Movement
 
   * Try to move as much as you can each day. This could range from a long walk outside to stretching.
@@ -746,7 +698,6 @@ NOTES ON NUTRITION IN RECOVERY
   * Studies have shown the benefit of aerobic exercise every day, but depending on your treatment, that can be hard to do.
 
   * You need to avoid stillness becoming stiffness.
-
 
 # Survivorship
 
@@ -762,7 +713,6 @@ WHAT TO EXPECT
 
   * Your body may feel unfamiliar or unreliable
 
-
 WHAT HELPED ME
 
   * Physical therapy can support if you were in a wheelchair, if you lost muscle from treatment, if you have neuropathy, or if your gait feels unstable.
@@ -772,7 +722,6 @@ WHAT HELPED ME
   * Gentle, consistent movement
 
   * Recognizing that it’s not about returning to who I was, but learning to live with the body I have now.
-
 
 ## Grief
 
@@ -784,11 +733,9 @@ Grief arrived for me after treatment was done and when the adrenaline wore off.
 
   * It was startling to be “done” but not feel better. I felt grief for my past self and the future that suddenly felt uncertain.
 
-
 WHAT HELPED ME
 
   * Naming the losses out loud, journaling without trying to resolve anything, talking about it with friends and family, letting grief exist without forcing gratitude, not trying to fix it, but letting it flow through me
-
 
 ## Sexual Health
 
@@ -802,7 +749,6 @@ WHAT TO EXPECT
 
   * Pelvic tissues may feel tight, fragile, or unfamiliar
 
-
 WHAT HELPED ME
 
   * Ask your oncologist if your treatment puts you at risk for early menopause. If so, depending on your cancer, they may be able to support you with hormone replacement therapy.
@@ -810,7 +756,6 @@ WHAT HELPED ME
   * Treating dilator use as a ritual, not a chore. Play music, breathe slowly, no rushing.
 
   * Letting go of any timeline for “getting back to normal.”
-
 
 ## Therapy
 
@@ -821,7 +766,6 @@ Cancer leaves psychological imprints long after the body stabilizes. Many surviv
   * I had strong reactions to hospitals, blood, needles, and medical smells, anxiety before scans or appointments, sudden emotional flooding or numbness, hypervigilance around bodily sensations, and difficulty trusting my body again.
 
   * Blood and hospital ceilings were particularly triggering for me
-
 
 WHAT HELPED ME
 
@@ -835,13 +779,11 @@ WHAT HELPED ME
 
   * Accepting that my recovery included psychological rehabilitation, not just physical
 
-
 ## Scanxiety & Follow-Up Care
 
 WHAT TO EXPECT
 
   * I found myself having anxiety that spikes days or weeks before scans. I don’t know if this ever gets easier.
-
 
 WHAT HELPED ME
 
@@ -854,7 +796,6 @@ WHAT HELPED ME
   * Having a post scan plan - I feel a lot calmer going into scans when I am very clear about what the various outcomes could entail.
 
   * Ask your oncologist about what they’re expecting to see and the next decision points. It helped me to think about my various next steps and focus on parallel planning.
-
 
 # How do you support a friend with cancer?
 
@@ -869,7 +810,6 @@ Please don’t feel offended if you don’t receive a reply. Thoughtfulness and 
 I found visitors really exhausting during my first round and welcomed them during my second. Other people may feel differently. But you need to be attuned to what the sick person needs, not vice versa. They won’t have the energy to entertain as they may have been able to previously.
 
   * Be available in case they want to talk or have a visit, but don’t push for it.
-
 
 ## What to say (and what not to say)
 
@@ -891,7 +831,6 @@ WHAT TO SAY
 
   * Nothing - just sit there and let your friend or family member rest
 
-
 WHAT NOT TO SAY
 
   * At least it’s ‘insert silver lining.’
@@ -908,7 +847,6 @@ WHAT NOT TO SAY
 
   * You look great! How are you feeling? - This can be triggering. It’s easier to say ‘It’s nice to see you’ or ‘It’s nice to be with you.’
 
-
 ## How to support in real life
 
   * Show up consistently, not just in the beginning. Especially show up towards the end and after treatment.
@@ -920,7 +858,6 @@ WHAT NOT TO SAY
   * Be mindful of their energy. I got drained after fifteen minutes. Be hyperaware and sensitive to their body language and eye movements.
 
   * Respect digital boundaries. Texts can be less draining than calls.
-
 
 ## How to support/give gifts
 
@@ -948,7 +885,6 @@ PHYSIOLOGICAL NEEDS (BASICS)
 
   * Noise-cancelling headphones or an iPad if they don’t have one, for time in the hospital
 
-
 SAFETY AND STABILITY
 
   * Help with logistics: rides to appointments, walking the dog, groceries
@@ -956,7 +892,6 @@ SAFETY AND STABILITY
   * A go-bag for ER visits
 
   * Setting up medical spreadsheets or appointment reminders. Supporting with managing medications. A fun pillbox
-
 
 BELONGING AND LOVE
 
@@ -974,7 +909,6 @@ BELONGING AND LOVE
 
   * Flowers (or plants, so they last!)
 
-
 ESTEEM AND CONFIDENCE
 
   * Photos of them with friends to look through
@@ -986,7 +920,6 @@ ESTEEM AND CONFIDENCE
   * A comfy cancer uniform set
 
   * Jewelry
-
 
 SELF-ACTUALIZATION
 
@@ -1001,7 +934,6 @@ SELF-ACTUALIZATION
   * Poetry, short story, or art book
 
   * Online class or subscription to something they love (nothing that requires full attention)
-
 
 ✦
 

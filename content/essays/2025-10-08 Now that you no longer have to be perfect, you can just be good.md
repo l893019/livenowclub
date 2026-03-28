@@ -2,12 +2,9 @@
 
 ## On joining the rhythms of the world
 
-
-[![](https://substackcdn.com/image/fetch/$s_!G_ib!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdf977f9f-71ac-4c75-a96a-b5118421b0ee_3024x1583.jpeg)](https://substackcdn.com/image/fetch/$s_!G_ib!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdf977f9f-71ac-4c75-a96a-b5118421b0ee_3024x1583.jpeg)
-
 A few days ago, a former colleague at IVP, the venture capital fund where I used to work, asked me how to practically apply some of the learnings I mentioned in a previous essay.
 
-[![All I want for my birthday is another shot at life](https://substackcdn.com/image/fetch/$s_!IKLM!,w_140,h_140,c_fill,f_auto,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7a28f070-692a-4d50-bddd-87cf05bde287_1000x524.jpeg)
+[![All I want for my birthday is another shot at life](https://substack-post-media.s3.amazonaws.com/public/images/7a28f070-692a-4d50-bddd-87cf05bde287_1000x524.jpeg)
 
 #### All I want for my birthday is another shot at life
 
@@ -29,14 +26,13 @@ I don’t pretend to have any answers. But by fault of my own human need to solv
 
 Who are you at your deepest level? The you that existed before you were defined by the world? Before disapproval or praise shaped you. Camus wrote that, “a person’s work is nothing but the slow trek to discover through the detours of art, those two or three great and simple images in whose presence their heart first opened.” What does your essence look like? What does it smell like? Taste like? Or, as I’ve written about before, if you were a couch, what couch would you be? There are no right answers, only the truth of what feels like you.
 
-[![](https://substackcdn.com/image/fetch/$s_!rGM0!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa24e4525-863c-4b6e-954f-a34d7b079cee_1600x913.png)](https://substackcdn.com/image/fetch/$s_!rGM0!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa24e4525-863c-4b6e-954f-a34d7b079cee_1600x913.png)Me as a couch
+[![](https://substack-post-media.s3.amazonaws.com/public/images/a24e4525-863c-4b6e-954f-a34d7b079cee_1600x913.png)](https://substack-post-media.s3.amazonaws.com/public/images/a24e4525-863c-4b6e-954f-a34d7b079cee_1600x913.png)Me as a couch
 
-[![On friendship & couches](https://substackcdn.com/image/fetch/$s_!DFR_!,w_140,h_140,c_fill,f_auto,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc543861f-7069-4a93-b2f2-7004b49993e1_1024x683.jpeg)
+[![On friendship & couches](https://substack-post-media.s3.amazonaws.com/public/images/c543861f-7069-4a93-b2f2-7004b49993e1_1024x683.jpeg)
 
 #### On friendship & couches
 
 April 17, 2024[Read full story](https://louiseireland.substack.com/p/on-friendship)](https://louiseireland.substack.com/p/on-friendship)
-
 
 When you build your inner world, you begin to understand the forces that move you. Values, as I see them, are not fixed inscriptions on a corporate wall but rather living systems, dynamic and cyclical. They are what give your world motion.
 
@@ -46,7 +42,7 @@ Gather what feels like you, the random photos from your favorites folder that ar
 
 My values form a living, cyclical system animated by the continuous dance between my Yin, my core value of softness, and my Yang, my core value of Growth. The meeting point of these is my deepest value of Love. You could also view this as what elevates me, what roots me, and the tree trunk connecting the two, my Value Tree, if you will.
 
-[![](https://substackcdn.com/image/fetch/$s_!mjYh!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa1260f6a-5a7c-4919-9bbb-43677d371f77_1344x600.png)](https://substackcdn.com/image/fetch/$s_!mjYh!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa1260f6a-5a7c-4919-9bbb-43677d371f77_1344x600.png)My Value Tree
+[![](https://substack-post-media.s3.amazonaws.com/public/images/a1260f6a-5a7c-4919-9bbb-43677d371f77_1344x600.png)](https://substack-post-media.s3.amazonaws.com/public/images/a1260f6a-5a7c-4919-9bbb-43677d371f77_1344x600.png)My Value Tree
 
 When I first created my Value Tree, it became clear where I was out of alignment and where I was spending energy on people and pursuits that did not nourish me. I began reviewing my actions weekly, noticing where I had overexpressed yang or yin, and focusing on my return to equilibrium.
 
@@ -61,7 +57,6 @@ If this feels abstract, let me use the four questions favored by tribal elders t
   * When did you stop being enchanted by stories? _\- leaving behind your imagination_
 
   * When did you stop being comforted by the sweet territory of silence? _\- listening to the deepest depths of yourself_
-
 
 How do you practically fit this all into a day-to-day life?
 
@@ -83,10 +78,9 @@ In _East of Eden,_ Cal comes to understand that goodness is not perfection, but 
 
 [ Share](https://louiseireland.substack.com/p/now-that-you-no-longer-have-to-be?utm_source=substack&utm_medium=email&utm_content=share&action=share)
 
-
 * * *
 
-[![](https://substackcdn.com/image/fetch/$s_!5_xh!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F00df07cc-de1f-440b-914a-436a9df63e91_1344x256.png)](https://substackcdn.com/image/fetch/$s_!5_xh!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F00df07cc-de1f-440b-914a-436a9df63e91_1344x256.png)
+[![](https://substack-post-media.s3.amazonaws.com/public/images/00df07cc-de1f-440b-914a-436a9df63e91_1344x256.png)](https://substack-post-media.s3.amazonaws.com/public/images/00df07cc-de1f-440b-914a-436a9df63e91_1344x256.png)
 
 I believe deeply that you are what you surround yourself with. At the risk of being ‘yet another newsletter’, I wanted to share some of the things that are currently floating in my sphere of consciousness lately, that are helping me live now, starting with several of the things I referenced. Please let me know in the comments what you would like more (or less) of! I would love feedback. I also love see people’s couches / value trees so please send along if this resonated with you. Please share, repost, or heart this if deserved. It helps me get discovered and reach more people.
 
@@ -103,7 +97,6 @@ The transformation to Coming to Meet signals encounter: the world approaching us
 We are always mid-crossing. The work is to keep walking  
 [Read the full hexagram here](https://www.cafeausoul.com/reading/?lns=876767)
 
-
  **Books:**
 
   *  **[It Lasts Forever and Then It’s Over](https://amzn.to/4oiw3d1)**[ – ](https://amzn.to/4oiw3d1)_[Anne de Marcken](https://amzn.to/4oiw3d1)  
@@ -118,7 +111,6 @@ _ A parable on dimensional blindness and the limits of perception.
   *  **[East of Eden](https://amzn.to/47e2Edd)**[ – ](https://amzn.to/47e2Edd)_[John Steinbeck](https://amzn.to/47e2Edd)  
 _ A sprawling, biblical tale of love, jealousy, and moral inheritance that asks whether we are bound by the sins of our forebearers or free to choose our own goodness.
 
-
   *  **[The Order of Time](https://amzn.to/48uXewL)**[ – ](https://amzn.to/48uXewL)_[Carlo Rovelli](https://amzn.to/48uXewL)  
 _ A physicist’s meditation on time as fluid and relational
 
@@ -127,15 +119,12 @@ A book I keep returning to for my own framework of how to be good, how to live h
 
 > Therefore, in every deed and every thought, act as though you were to die this very day. If you had a good conscience you would not fear death very much. It is better to avoid sin than fear death. If you are not prepared today, how will you be prepared tomorrow? Tomorrow is an uncertain day; how will you know you will have a tomorrow?
 
-
  **SIGNALS  
 ** _Cultural transmissions_
 
   *  **The Telepathy Tapes** (Podcast) – Explorations of consciousness, coincidence, and unseen communication.
 
-
   * “Technology at its best should create connection, safeguard communities, and give people more time for what matters most.” - Somesh Dash, more from his interview in Fortune [here](https://fortune.com/2025/09/18/ivp-somesh-dash-venture-capital-spirituality-peter-thiel-agi/)
-
 
  **RESONANCES  
 ** _Things that speak to me_
@@ -144,7 +133,7 @@ A book I keep returning to for my own framework of how to be good, how to live h
 
  **Color Palettes I’ve Collected Lately:**
 
-[![](https://substackcdn.com/image/fetch/$s_!PitL!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff7c5a910-19a2-466a-8438-76dc45e78154_1344x430.png)](https://substackcdn.com/image/fetch/$s_!PitL!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff7c5a910-19a2-466a-8438-76dc45e78154_1344x430.png)
+[![](https://substack-post-media.s3.amazonaws.com/public/images/f7c5a910-19a2-466a-8438-76dc45e78154_1344x430.png)](https://substack-post-media.s3.amazonaws.com/public/images/f7c5a910-19a2-466a-8438-76dc45e78154_1344x430.png)
 
  **GROUNDS**
 
@@ -153,7 +142,6 @@ A book I keep returning to for my own framework of how to be good, how to live h
   *  **5Rhythms practice:** If you are in New York, come dance with me. Otherwise, find a class near you [here](https://www.5rhythms.com/EventSearch.php)
 
   * This question: _What is the current carrying you towards, and where are you still trying to swim against it?_
-
 
 That’s all for now! Much love to you all. 
 

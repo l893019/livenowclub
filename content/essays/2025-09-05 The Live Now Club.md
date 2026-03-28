@@ -2,9 +2,6 @@
 
 ## Because now is all we have
 
-
-[![](https://substackcdn.com/image/fetch/$s_!uj1a!,w_1456,c_limit,f_auto,q_auto:good,fl_lossy/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F18e07f84-6590-4300-8de8-ca7746bce94e_1080x608.gif)](https://substackcdn.com/image/fetch/$s_!uj1a!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F18e07f84-6590-4300-8de8-ca7746bce94e_1080x608.gif)
-
 _My loss, by sickness — Was it Loss?  
 Or that Ethereal Gain  
 One earns by measuring the Grave —  
@@ -39,7 +36,7 @@ When I was first diagnosed, I joined countless cancer support groups. I quickly 
 
 So I ask you the same question I return to every morning:
 
-[![](https://substackcdn.com/image/fetch/$s_!bpII!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fafa29e6c-c762-4817-a2dd-81f4a55db41a_4096x1714.png)](https://substackcdn.com/image/fetch/$s_!bpII!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fafa29e6c-c762-4817-a2dd-81f4a55db41a_4096x1714.png)
+[![](https://substack-post-media.s3.amazonaws.com/public/images/afa29e6c-c762-4817-a2dd-81f4a55db41a_4096x1714.png)](https://substack-post-media.s3.amazonaws.com/public/images/afa29e6c-c762-4817-a2dd-81f4a55db41a_4096x1714.png)
 
  **What would you do if you knew your time was short?**
 
@@ -51,9 +48,8 @@ This is me learning to stop blinking. This is me living life with eyes wide open
 
 And this moment belongs to you too, what will you do with it?
 
-[![](https://substackcdn.com/image/fetch/$s_!yJha!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2ab245f6-0533-4942-b0a0-f3199491aeb8_3024x4032.jpeg)](https://substackcdn.com/image/fetch/$s_!yJha!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2ab245f6-0533-4942-b0a0-f3199491aeb8_3024x4032.jpeg)
+[![](https://substack-post-media.s3.amazonaws.com/public/images/2ab245f6-0533-4942-b0a0-f3199491aeb8_3024x4032.jpeg)](https://substack-post-media.s3.amazonaws.com/public/images/2ab245f6-0533-4942-b0a0-f3199491aeb8_3024x4032.jpeg)
 
 All my love, Lou 
-
 
 PS. I am open to ideas of where to take this or what would resonate with others. Further content on my website ([HERE](https://www.livenowclub.com/)) is forthcoming. I would greatly appreciate it if you could share my words so I can get a broader impact. More than anything, I would hear what dreams you want to live before you leave.

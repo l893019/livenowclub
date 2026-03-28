@@ -1,8 +1,5 @@
 # Cancer Meditations VI
 
-
-[![Planting Tulips for impact: long lasting varieties and colour blends –  Learning with Experts](https://substackcdn.com/image/fetch/$s_!qUWX!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8307803a-cac8-4507-b27d-56359d6fa634_1024x536.jpeg)](https://substackcdn.com/image/fetch/$s_!qUWX!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8307803a-cac8-4507-b27d-56359d6fa634_1024x536.jpeg)
-
 Treatment ends with bell-ringing. Recovery begins in silence with the slow work of reclaiming what medicine broke. I’m standing at the edge of survival with a body too tired to celebrate.
 
 * * *
@@ -54,6 +51,5 @@ My senses are slowly awakening from survival mode as the world turns to spring.
 * * *
 
 How intensely beautiful life is in the presence of death.
-
 
 [Share Welcome to LouLouLand](https://louiseireland.substack.com/?utm_source=substack&utm_medium=email&utm_content=share&action=share)

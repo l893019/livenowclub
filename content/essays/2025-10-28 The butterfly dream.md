@@ -2,8 +2,7 @@
 
 ## A palindrome of life and death
 
-
-[![](https://substackcdn.com/image/fetch/$s_!RabH!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1842a849-d714-49bc-ab40-596feaaaf9a1_3754x1966.jpeg)](https://substackcdn.com/image/fetch/$s_!RabH!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1842a849-d714-49bc-ab40-596feaaaf9a1_3754x1966.jpeg)A painting of my dreamscape
+[![](https://substack-post-media.s3.amazonaws.com/public/images/1842a849-d714-49bc-ab40-596feaaaf9a1_3754x1966.jpeg)](https://substack-post-media.s3.amazonaws.com/public/images/1842a849-d714-49bc-ab40-596feaaaf9a1_3754x1966.jpeg)A painting of my dreamscape
 
  **The butterfly dream**
 
@@ -16,9 +15,6 @@ Who dreams this dream?
 Within a wake.  
 Still lies the lie.   
 The sleep that sleeps in me dreams I.
-
-
-[![](https://substackcdn.com/image/fetch/$s_!5_xh!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F00df07cc-de1f-440b-914a-436a9df63e91_1344x256.png)](https://substackcdn.com/image/fetch/$s_!5_xh!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F00df07cc-de1f-440b-914a-436a9df63e91_1344x256.png)
 
 I’ve been fixated on my dreams for the last few months. It’s a new thing for me, a shift from me being afraid to going to bed, to me looking forward to exploring my dreamscape. Since March, I’ve cataloged my dreams every night I have them. It’s incredible what the subconscious reveals. I’ve not found answers, per se, but better questions. 
 
@@ -40,9 +36,7 @@ A movement from radiant visibility to sacred friction.
 
 Together, they speak to the tension between expression and individuation, how moving into our light can estrange us from what once felt familiar. The work is to stay centered while contrasts sharpen, to see conflict as the next threshold of growth.  
 
-
  _Mantra:_ **“The brighter the light, the clearer the truth.”**
-
 
  **Books:**
 
@@ -58,7 +52,6 @@ A novel where dreams shape reality, and the cost of trying to control the uncons
   *  **Gödel, Escher, Bach: An Eternal Golden Braid - Douglas Hofstadter**  
 A labyrinth of mirrors linking mathematics, music, and mind. On recursion, pattern, and how self-awareness arises when a system turns to watch itself.
 
-
  **RESONANCES  
 ** _Things that speak to me_
 
@@ -66,9 +59,9 @@ A labyrinth of mirrors linking mathematics, music, and mind. On recursion, patte
 
  **Color Palettes I’ve Collected Lately:**
 
-[![](https://substackcdn.com/image/fetch/$s_!tEsD!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3e090caa-4012-42b1-af23-f21d58d96e07_888x465.jpeg)](https://substackcdn.com/image/fetch/$s_!tEsD!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3e090caa-4012-42b1-af23-f21d58d96e07_888x465.jpeg)
+[![](https://substack-post-media.s3.amazonaws.com/public/images/3e090caa-4012-42b1-af23-f21d58d96e07_888x465.jpeg)](https://substack-post-media.s3.amazonaws.com/public/images/3e090caa-4012-42b1-af23-f21d58d96e07_888x465.jpeg)
 
-[![](https://substackcdn.com/image/fetch/$s_!6mqg!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F76a2ffff-dbaa-47f5-b907-8c5dfe411976_884x463.png)](https://substackcdn.com/image/fetch/$s_!6mqg!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F76a2ffff-dbaa-47f5-b907-8c5dfe411976_884x463.png)
+[![](https://substack-post-media.s3.amazonaws.com/public/images/76a2ffff-dbaa-47f5-b907-8c5dfe411976_884x463.png)](https://substack-post-media.s3.amazonaws.com/public/images/76a2ffff-dbaa-47f5-b907-8c5dfe411976_884x463.png)
 
  **GROUNDS**
 
@@ -89,6 +82,5 @@ A labyrinth of mirrors linking mathematics, music, and mind. On recursion, patte
     * I let these symbols infiltrate my art and my mind. 
 
   * This question: _Are you the dreamer or the dream?_
-
 
 Much love to you all! Sweet dreams :)

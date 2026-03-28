@@ -2,9 +2,6 @@
 
 ## poems at summer's edge
 
-
-[![Full view](https://substackcdn.com/image/fetch/$s_!eVOX!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F790e7bbd-849d-42a1-ad73-5c1b2df540c7_960x503.jpeg)](https://substackcdn.com/image/fetch/$s_!eVOX!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F790e7bbd-849d-42a1-ad73-5c1b2df540c7_960x503.jpeg)
-
 **august triptych**
 
  **I.**
@@ -39,6 +36,5 @@ enough,
   
 even the darkness  
 learns to hold light.
-
 
 [Share Welcome to LouLouLand](https://louiseireland.substack.com/?utm_source=substack&utm_medium=email&utm_content=share&action=share)

@@ -2,9 +2,6 @@
 
 ## (or how to build a body)
 
-
-[![](https://substackcdn.com/image/fetch/$s_!q7dn!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3dfaa057-822d-4948-b6a2-ab92c6eaec38_3881x4636.png)](https://substackcdn.com/image/fetch/$s_!q7dn!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3dfaa057-822d-4948-b6a2-ab92c6eaec38_3881x4636.png)
-
 The last few months have been the hardest physically on my body and on my mind in ways I wasn’t expecting. To be cured of cancer, your body has to be broken beyond its normal functioning level; to have the mental fortitude to survive, your mind has to be stretched in ways beyond the realm of human language. Everything I thought I knew - about cancer, about health, my basic grounding of common sense - was fundamentally challenged, forcing me to rebuild my understanding from the ground up.
 
 I’m coming out of this in search of equilibrium. I saw a circus act before my diagnosis and have had the visual of a performer doing a perfect one-handed handstand. Balance does not come from stillness, it comes from slight movements and slight adaptations. And like that performer, I live in a series of pivots. My body is learning how to function again, how to walk again, and how to eat again. It has been a cycle of life, death, and rebirth, and what my body needed in each stage was different and continues to be different. My body requires core things, but variations on healthy practices and living exist at each stage of wellness. Doctors and nurses are incredible, but unless you’re under a microscope getting cancer treatments, they are focused only on major shifts, the circus performer losing his footing. We are biologically ingrained to keep ourselves alive, but how do we know we’re doing the _right_ thing without overreacting?
@@ -23,29 +20,22 @@ It’s the core building blocks:
 
   *  **Blood** : Do you have too much in your system (most men) or too little (women)? Are your cells functioning as they should?  
 
-
   *  **Light** : We are meant to live with the sun. Our bodies need light in the morning to regulate themselves. Cancer treatment efficacy, drug efficacy, digestion, and mood all increase when aligned with natural rhythms and cycles. And we need the inverse: we need the darkness of sleep, and the rest it brings.   
-
 
   * **Food** : If you think in the context of diets, I posit that the healthiest diet for you is the one you can _most easily digest and turn into lasting energy_. For me, that was white bread for a long time, and now it’s cooked vegetables with digestive enzymes. It’s back to whole foods, it’s back to nature. It’s taking small bites and eating thoughtfully so your system can process what you’re putting into it. I’m on an excessive number of supplements, but my GI tract has broken; adding en vogue supplements without checking your bloodwork can cause more harm than good.   
 
-
   * **Water** : How much exhaustion and mental fatigue can be attributed to dehydration, not having enough water, and not having enough electrolytes? Chemotherapy showed me the consequences of not being able to hydrate myself; it is an easy way to kill a flower.   
-
 
   * **Breath** : How quickly we forget about the breath that sustains us. How grounding it is to breathe deeply, breathe with your diaphragm, focus only on the exhale, and then only on the inhale, box breathing. How many maladies can be prevented just from breathing through your nose?   
 
-
   * **Spirit** : There is no biohack for the joy of having grass in your toes, wind in your face, staring up into the crown shyness of trees, and recognizing how interconnected we all are. Call it religion, spirituality, or awe, but the core premise is the same: you are more than your body, and yet you live humbly within it.
-
 
 We beat up our bodies to prove athletic prowess, to prove we can work harder than others, to prove we can party harder, to prove we can do more, but for what? For the rest of my life that I have left, I wish to live slowly, to live softly, to live like a plant.
 
 I went to Kyoto last fall and spent hours sitting in one of my favorite temples, Saihōji, colloquially known as the Moss Temple. If you have never been, it’s a place unlike any other. Moss predates the trees and survives where little else can. It whispers and grows steadily. It’s the type of wisdom I want to embody now, the way I want to heal and build my body: rooted in stillness and thriving through softness.
 
-[![](https://substackcdn.com/image/fetch/$s_!hxnN!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5dc5980d-3510-45a1-84b3-8fb8b655fd76_1368x1688.jpeg)](https://substackcdn.com/image/fetch/$s_!hxnN!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5dc5980d-3510-45a1-84b3-8fb8b655fd76_1368x1688.jpeg)
+[![](https://substack-post-media.s3.amazonaws.com/public/images/5dc5980d-3510-45a1-84b3-8fb8b655fd76_1368x1688.jpeg)](https://substack-post-media.s3.amazonaws.com/public/images/5dc5980d-3510-45a1-84b3-8fb8b655fd76_1368x1688.jpeg)
 
 PS. if you enjoyed this, please leave me a heart or pass along to anyone else who would benefit. 
-
 
 [Share Welcome to LouLouLand](https://louiseireland.substack.com/?utm_source=substack&utm_medium=email&utm_content=share&action=share)

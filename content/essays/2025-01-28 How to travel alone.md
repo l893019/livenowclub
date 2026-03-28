@@ -1,14 +1,10 @@
 # How to travel alone
 
-
-[![](https://substackcdn.com/image/fetch/$s_!VzqJ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f53a2ee-da2b-4896-8b49-770850ecfe3a_4284x3213.jpeg)](https://substackcdn.com/image/fetch/$s_!VzqJ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f53a2ee-da2b-4896-8b49-770850ecfe3a_4284x3213.jpeg)
-
 I love traveling alone. And, like anything, there is an art to doing it. I wouldn’t deign to say that I’ve mastered it. But I’ve reached a point from being somewhat afraid of it to absolutely loving it, and I wanted to share a few pointers I’ve picked up along the way.
 
 You’re probably wondering why you would want to read this or why you should care. You probably have friends or a partner who likes to travel. There should be space for that, too, but there is something unique about being in a place you don’t know entirely by yourself.
 
 Join me on my neverending quest to explore all of the idiosyncracies of this thing we call life.
-
 
 I find travel brings out people’s true personalities. I often go on trips for second or third dates because I think it’s the best litmus test. How better to meet someone at their core than in a space neither of you knows and you’re free to explore together? Who are you/they when you lack known structures or creature comforts to fall back on? Who are you/they when things aren’t going your way? Who are you/they when you can be anyone? Travel forces a certain level of vulnerability, rawness, and adaptability. And in the same line of thought, travel is the best time to explore yourself. To go deeper into who you are, what you like, and so forth.
 
@@ -125,6 +121,5 @@ So here is a smattering of my recommendations. There is no rhyme or reason to th
   39. I love to start each day or adventure when I’m traveling by pulling an oracle or tarot card. I don’t know or care if this is the wrong or right way to go about this, but I focus my intention while shuffling the cards on the question, “What does my spirit want me to know?” and pull a card. Sometimes, I’ll draw one card. Sometimes, I’ll draw three. I also really like conversation question cards for this purpose.
 
   40. I do continuous check-ins to ask myself what I want to do. I find I often fall into the trap of ‘I need to do this, I need to be here,’ and it’s helpful to take a moment to remember that I am entirely by myself and there is nowhere I need to be.
-
 
 Thanks for reading Komorebi! Subscribe for free to receive new posts and support my work.

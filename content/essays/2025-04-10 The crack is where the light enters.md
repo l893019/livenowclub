@@ -1,8 +1,5 @@
 # The crack is where the light enters
 
-
-[![](https://substackcdn.com/image/fetch/$s_!fR4l!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6bda2d37-ef82-46bb-a584-01872e491bd9_620x413.png)](https://substackcdn.com/image/fetch/$s_!fR4l!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6bda2d37-ef82-46bb-a584-01872e491bd9_620x413.png)
-
 _Cold Dark Matter: An Exploded View, Cornelia Parker, 1991_
 
 I am almost done with this cycle of chemoradiation—I finished chemotherapy today and have two external radiation sessions left. It feels like forever since I left San Francisco, but I'm also gripped with the uncertainty of not knowing when I'll be back or when I’ll feel better. It's a time of waiting, a time of the unknown, and a time of realizing that any semblance of control I thought I had was an illusion to begin with.

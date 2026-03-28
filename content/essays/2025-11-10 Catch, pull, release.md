@@ -2,9 +2,6 @@
 
 ## The architecture of softening
 
-
-[![Map from Norton Juster's "The Phantom Tollbooth" \(1961\) : r/imaginarymaps](https://substackcdn.com/image/fetch/$s_!PXjS!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F86a6df2f-0b84-4b07-bd61-7bdfe76ec03e_921x482.jpeg)](https://substackcdn.com/image/fetch/$s_!PXjS!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F86a6df2f-0b84-4b07-bd61-7bdfe76ec03e_921x482.jpeg)
-
 > _“The inferno of the living is not something that will be; if there is one, it is what is already here… The way to not suffer it is to seek and learn to recognize who and what, in the midst of the inferno, are not inferno, and make them endure, give them space.”_
 > 
 >  _— Italo Calvino, Invisible Cities_
@@ -12,7 +9,6 @@
 I write this on my way back from Europe for my third cancer therapeutic peptide vaccine. I’ve finished five out of six of the traditional systemic treatments, a monthly cocktail of multiple chemotherapies and immunotherapies, and I feel the familiar sensations of my body crumbling. My feet are stiff and cold, I’m losing sensation in my toes, I walk amidst waves of nausea, amidst the ruins of my digestive system. But, unlike this spring, and I cannot emphasize this enough, I am walking!
 
 What is most disorienting is not my physical disintegration, but the elimination of a narrative arc. There is likely no moment in my future where I will not be at the hospital monthly in the chemotherapy suite receiving an infusion of some sort. It’s neither good nor bad, it just is. I have summited a peak in hopes of climbing the mountain, only to realize the mountain isn’t a single ascent at all, but an endless range. Yet, somewhere in there, the sharpness, the fear, and the trepidation of this spring have given way to the clarity of a still morning rowing on the river, each of my oars smoothly gliding. Catch, pull, release. I pray for clean scans next month and no recurrence, but I also recognize the odds of both are low. No bodies are meant to last, but I pray mine does long enough to let me get all I want to share with the world out.
-
 
 I’ve been thinking a lot about how the body metabolizes trauma. How collectively we metabolize it. Or perhaps, sometimes, how we don’t at all, letting it accrete and fossilize.
 
@@ -60,8 +56,7 @@ This year, I’ve been thinking about what it means to surrender. To lay down my
 
 Not freedom from the world, but freedom in the world. Not the absence of danger, but the presence of something that holds.
 
-
-[![](https://substackcdn.com/image/fetch/$s_!5_xh!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F00df07cc-de1f-440b-914a-436a9df63e91_1344x256.png)](https://substackcdn.com/image/fetch/$s_!5_xh!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F00df07cc-de1f-440b-914a-436a9df63e91_1344x256.png)
+[![](https://substack-post-media.s3.amazonaws.com/public/images/00df07cc-de1f-440b-914a-436a9df63e91_1344x256.png)](https://substack-post-media.s3.amazonaws.com/public/images/00df07cc-de1f-440b-914a-436a9df63e91_1344x256.png)
 
  _ **I appreciate your reading and any thoughts you may have. I may be slow to reply right now, but I read and cherish everything I receive. And if any part of this resonated with you, please pass it along to a friend (or two!). These words are meant to be shared.**_
 
@@ -73,7 +68,6 @@ Not freedom from the world, but freedom in the world. Not the absence of danger,
   *  **35, Progress** _ **changing to**_ **16, Enthusiasm:**   
 Let yourself be seen, let yourself be helped. That’s how progress becomes lift. Softening isn’t the opposite of strength; it’s the source of momentum.  
 [Read more here](https://www.cafeausoul.com/reading/?lns=888789)
-
 
  **Books:**
 
@@ -93,7 +87,6 @@ An ambassador enters a culture so interconnected it feels telepathic; she must d
 
 I actually haven’t finished this one yet, but since I declared war on bunkers, I’ve seen this book everywhere. It is also one of Rick Owens’ favorite books.
 
-
  **SIGNALS  
 ** _Cultural transmissions_
 
@@ -102,7 +95,6 @@ I actually haven’t finished this one yet, but since I declared war on bunkers,
   * **[This article about Rick Owens](https://www.nytimes.com/2025/06/28/style/rick-owens-retrospective.html)**. I saw the Rick Owens show in Paris and wished it were longer. He lives in his world; I want to build mine.
 
   *  **[From Bunker Experience to Bunker Mentality](https://www.pismowidok.org/en/archive/2013/4-ruin/from-bunker-experience-to-bunker-mentality)** \- A great article on the philosophy of bunkers.
-
 
  **RESONANCES  
 ** _Things that speak to me_
@@ -113,7 +105,7 @@ My favorite song on the planet
 
 **Color Palettes I’ve Collected Lately:**
 
-[![](https://substackcdn.com/image/fetch/$s_!gKCN!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4cb15109-5a89-497b-8113-6110e5b84d36_877x459.png)](https://substackcdn.com/image/fetch/$s_!gKCN!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4cb15109-5a89-497b-8113-6110e5b84d36_877x459.png)
+[![](https://substack-post-media.s3.amazonaws.com/public/images/4cb15109-5a89-497b-8113-6110e5b84d36_877x459.png)](https://substack-post-media.s3.amazonaws.com/public/images/4cb15109-5a89-497b-8113-6110e5b84d36_877x459.png)
 
  **GROUNDS**
 
@@ -128,6 +120,5 @@ My favorite song on the planet
     * [Samantha - Camino Brilliante / Forest Path](https://www.camino-brillante.com/)
 
   * This question: _Where am I fortifying when I could be connecting?_
-
 
 Thank you for being part of my constellation!

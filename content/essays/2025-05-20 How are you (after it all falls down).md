@@ -1,8 +1,5 @@
 # How are you (after it all falls down)?
 
-
-[![undefined](https://substackcdn.com/image/fetch/$s_!zkIX!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fae3879e3-2de2-424a-bae6-ee01d2fdbdb2_2258x1678.jpeg)](https://substackcdn.com/image/fetch/$s_!zkIX!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fae3879e3-2de2-424a-bae6-ee01d2fdbdb2_2258x1678.jpeg)
-
 I’m about as well as one could expect given the circumstances. It's funny. Now that I’ve had a minute to digest, all my emotions have compounded into a cathartic flood. In the moment, you’re caught up in the action and your mind is distracted by fight or flight, but as the scene fades, the stillness is deafening. It’s the chilling, unsettling silence after the Titanic sank, looking back on the disappearing shadow of a boat beneath the dark waves from the vantage point of a lifeboat that is days from shore. “And now what?”
 
 Grief pours in waves.

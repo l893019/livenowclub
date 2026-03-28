@@ -2,9 +2,6 @@
 
 ## (This is a cult)
 
-
-[![](https://substackcdn.com/image/fetch/$s_!GkCj!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbf194a21-36df-4961-ac90-a9ef70712ea3_2082x2831.jpeg)](https://substackcdn.com/image/fetch/$s_!GkCj!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbf194a21-36df-4961-ac90-a9ef70712ea3_2082x2831.jpeg)
-
 Here’s a fun fact you may not know (or if you’ve followed me for any length of time, you may already be aware): there is a flock of wild red-headed parrots living in San Francisco. No one knows how they got here. And unless you are paying attention, you may miss these magical creatures completely. 
 
 It may go without saying, but I am utterly obsessed with them. They adopted me when I first moved into my apartment (né bird cage), and we’ve lived a harmonious existence and love affair ever since. They visit me daily, but they are not my pets. Their presence is unpredictable, sometimes for an hour, sometimes for eight. They’ve trained me on the value of surprise and spontaneity. I leave food out for them in the same way that they nourish me with their whimsy. I have not given them names - it feels wrong to ground such ancient and wise beings in something so mundane. 

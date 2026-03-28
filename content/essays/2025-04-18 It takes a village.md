@@ -1,8 +1,5 @@
 # It takes a village
 
-
-[![](https://substackcdn.com/image/fetch/$s_!S4Zr!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6d035349-d2c9-4d6b-a19a-c527da9a8f4f_4284x2243.jpeg)](https://substackcdn.com/image/fetch/$s_!S4Zr!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6d035349-d2c9-4d6b-a19a-c527da9a8f4f_4284x2243.jpeg)
-
 My mom’s birthday is today, and I truly have no words for how grateful I am for her.
 
 Cancer is a solitary journey - the treatments break you down to a shell of yourself, it’s exhausting to see people, do things, and exist. But you also can’t do it alone - you need someone to help you live. And since I learned of my diagnosis in February, aside from one day when I thought I was strong enough to be on my own and promptly ended up in the ER, she has been glued to my side.

@@ -2,9 +2,6 @@
 
 ## Learning to taste again
 
-
-[![Scala Sancta - Sacred Staircase in Rome — attitudeDRIVEN Adventure](https://substackcdn.com/image/fetch/$s_!MnKF!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb6b68e76-b3f1-40a8-a2fe-7689bf769e3e_739x387.jpeg)](https://substackcdn.com/image/fetch/$s_!MnKF!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb6b68e76-b3f1-40a8-a2fe-7689bf769e3e_739x387.jpeg)
-
 A few days ago, I showered for the first time without fear of my hair falling out. It happened before I consciously realized it, the dab of shampoo in my hand, the liquid foaming on my head. I froze once I had realized what I had done, terrified that my hands would be filled with my strands. Yet, as the water rained over my head, my hair intact, I felt like Natalie Portman in V for Vendetta, emerging into the storm. Broken but victorious.
 
 I wept from the strangeness of return. From the terror of starting anew. From the defiant choice to love this life anyway, knowing how quickly it could disappear again.
@@ -51,7 +48,6 @@ I don’t want a single thread of truffle tagliatelle to go to waste.
 
 Sending so much love to you all! Thank you, as always, for reading and sharing my words. 
 
-
 If you relate, I would love to hear how you’re learning to live, love, and taste again. 
 
-[![User's avatar](https://substackcdn.com/image/fetch/$s_!er1r!,w_64,h_64,c_fill,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2938cf9c-1e73-4033-b037-1572d9aca726_1206x1206.jpeg)Join Louise Ireland’s subscriber chatAvailable in the Substack app and on webJoin chat](https://open.substack.com/pub/louiseireland/chat?utm_source=chat_embed)
+[![User's avatar](https://substack-post-media.s3.amazonaws.com/public/images/2938cf9c-1e73-4033-b037-1572d9aca726_1206x1206.jpeg)Join Louise Ireland’s subscriber chatAvailable in the Substack app and on webJoin chat](https://open.substack.com/pub/louiseireland/chat?utm_source=chat_embed)
