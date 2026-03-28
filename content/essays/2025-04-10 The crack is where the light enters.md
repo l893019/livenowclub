@@ -1,28 +1,32 @@
 # The crack is where the light enters
 
-*Originally published on Substack, April 2025*
 
----
+[![](https://substackcdn.com/image/fetch/$s_!fR4l!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6bda2d37-ef82-46bb-a584-01872e491bd9_620x413.png)](https://substackcdn.com/image/fetch/$s_!fR4l!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6bda2d37-ef82-46bb-a584-01872e491bd9_620x413.png)
 
-Cold Dark Matter: An Exploded View, Cornelia Parker, 1991
+_Cold Dark Matter: An Exploded View, Cornelia Parker, 1991_
 
-I am almost done with this cycle of chemoradiation. It feels equivalent to a controlled demolition, watching this body explode in slow motion, the debris suspended in the air.
+I am almost done with this cycle of chemoradiation—I finished chemotherapy today and have two external radiation sessions left. It feels like forever since I left San Francisco, but I'm also gripped with the uncertainty of not knowing when I'll be back or when I’ll feel better. It's a time of waiting, a time of the unknown, and a time of realizing that any semblance of control I thought I had was an illusion to begin with.
 
-The thing about controlled demolitions is that the aftermath is an empty lot, ready for a fresh start.
+I had so many ambitions for this rare time—time to reflect, create, dream, and spend with family and friends—but I neglected to foresee how much the pure burden of simply getting through the day would be. I am completely and totally exhausted to my bones; all I can do is manage my pain, manage my nausea and sleep. I find solace in Mary Oliver's words that this is more than enough:
 
-It feels like a bomb has gone off, and I have the shrapnel to prove it. It is impossible to escape unscathed, and so you have to embrace the cracks. The visible ones are, of course, easier to embrace than the invisible ones - but every crack is a vulnerability that when shared, invites new connection and beauty.
+ _"You do not have to be good.  
+_ _You do not have to walk on your knees  
+_ _for a hundred miles through the desert repenting.  
+_ _You only have to let the soft animal of your body  
+_ _love what it loves.  
+Tell me about despair, yours, and I will tell you mine.  
+Meanwhile the world goes on."_
 
-Wabi-sabi is the Japanese philosophy of embracing imperfection. It is finding beauty in the cracks, the weathered, the worn. It is kintsugi - the art of repairing broken pottery with gold, making the cracks a feature rather than a flaw. It is the antithesis of the modern obsession with perfection. It is the acceptance of transience and the celebration of the beauty that arises from it.
+The soft animal of my body eats and sleeps. I hibernate, lying unaware of what else exists in the world. All of the energy I have goes to fighting.
 
-We are all cracked. We are all broken. We are all imperfect. And that is what makes us beautiful.
+It's been nothing short of a saga so far. On one hand, it's something to be expected—the doctors are intentionally causing harm with a longer-term view of healing. But I was utterly blindsided by the rest. Every week has brought a new opponent to weaken me: severe blood loss, anemia, low blood pressure, infections, colds. I fight on, power up with IV hydration and blood transfusions, and pray to make it another day.
 
-In Japanese aesthetics, there is a term, mono no aware, which translates to "the pathos of things." It is the bittersweet awareness of the impermanence of all things. It is the beauty that arises from the knowledge that nothing lasts forever. It is the cherry blossoms that bloom for a fleeting moment before falling to the ground. It is the autumn leaves that turn brilliant shades of red and gold before withering away. It is the sunrise that paints the sky in hues of pink and orange before fading into the light of day.
+I'm scared to write that I'm through the worst of it—the worst being unstoppable hemorrhaging—because I don't know what else awaits me. I'm a regular at the emergency room. The furthest I can walk without fainting is to the bathroom. But somewhere in there, I've adjusted. This is my reality. I have no option but to completely live in the now.
 
-And here I am, a temporary being in a temporary world, trying to make sense of it all. I am cracked and broken, but I am also gold. The cracks are where the light enters. And in the end, that is all that matters.
+The next stage—internal radiation—is more invasive and more painful. It requires anesthesia and hospitalization. And all of the treatments are cumulative; they continue to affect my body long after I'm officially done. I don't know when I will feel better, but I know the darkest hour is always before dawn.
 
-Ring the bells that still can ring
-Forget your perfect offering
-There is a crack, a crack in everything
-That's how the light gets in.
+As bleak as it feels on any given day, I hang hope on the pure fact that my cancer is curative. There are varying odds of success for different outcomes, but there is a clear path where I emerge from this hell cancer-free for many years to come. My family and I have done everything possible to give myself the best chance of survival. I am with the best hospital and the best doctors. And so far, the treatment appears to be working. I'll know more in the next few days, but I had a scan recently where the tumor appeared to have shrunk.
 
-- Leonard Cohen, "Anthem"
+I think about dying stars and how their light remains long after they've extinguished. I think about how many stars in our sky are still alive and how many are all spiraling toward their form of decay. All inner life runs at some delay. How long tumors remain once they've died, and what light fills the newfound space.
+
+Continuing to write for my sanity, follow along for free

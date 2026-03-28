@@ -1,68 +1,70 @@
 # in case you forget
 
-*Poems from my dreamscape*
+## Poems from my dreamscape
 
-*Originally published on Substack, July 2025*
 
----
+[![Here Be Dragons - Atlas Obscura](https://substackcdn.com/image/fetch/$s_!bViD!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fae1cd830-7b04-4267-ae73-a777b5ef2f8c_780x408.png)](https://substackcdn.com/image/fetch/$s_!bViD!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fae1cd830-7b04-4267-ae73-a777b5ef2f8c_780x408.png)
 
-I've been living closer to dreams these days. They've grown sharper. Stranger, vivid, untamed. Over the last few months, I began writing them down, struck by the worlds my subconscious can create if I let it.
+_I’ve been living closer to dreams these days. They’ve grown sharper. Stranger, vivid, untamed. Over the last few months, I began writing them down, struck by the worlds my subconscious can create if I let it._
 
-They are wisps of smoke, glimpses of something truer than logic allows.
+ _They are wisps of smoke, glimpses of something truer than logic allows._
 
-Dreams speak in languages older than words: the door, the shark, the face I recognize without a name. They rise like tides and I watch them the way you watch clouds drift. A Rorschach of the mind that reveals nothing, and everything, all at once.
+ _Dreams speak in languages older than words: the door, the shark, the face I recognize without a name. They rise like tides and I watch them the way you watch clouds drift. A Rorschach of the mind that reveals nothing, and everything, all at once._
 
----
+* * *
 
-## in case you forget
+ **in case you forget**
 
-What is a life
+What is a life  
 but a slow knowing.
 
-Where the map ends,
+Where the map ends,  
 I begin.
 
-The body is both
+The body is both  
 the locked door and the key.
 
----
+* * *
 
-## the dog came back different
+ **the dog came back different**
 
-I lost her,
-the part of me that ran ahead,
-black and brown,
+I lost her,  
+the part of me that ran ahead,  
+black and brown,  
 tied to the earth and air.
 
-When she returned,
-her eyes were older.
-She could no longer be called.
+When she returned,  
+her eyes were older.  
+She could no longer be called.  
 She could only be followed.
 
----
+* * *
 
-## self-portrait
+ **self-portrait**
 
-In the white room,
-I am the artist
-and the painting,
-the brushstroke,
-the hand,
+In the white room,  
+I am the artist   
+and the painting,  
+the brushstroke,  
+the hand,  
 the unfinished sky.
 
----
+* * *
 
-## beneath the house
+ **beneath the house**
 
-It's not the weight
-that breaks us.
-It's the pretending
-we're not carrying it.
+It’s not the weight  
+that breaks us.  
+It’s the pretending  
+we’re not carrying it.
 
-Beneath the house,
-something breathes.
-I unbolt the door,
-not to slay it,
-but to say:
-I see you.
+Beneath the house,  
+something breathes.  
+I unbolt the door,  
+not to slay it,  
+but to say:  
+I see you.  
 I set you down.
+
+
+[Share Welcome to LouLouLand](https://louiseireland.substack.com/?utm_source=substack&utm_medium=email&utm_content=share&action=share)
