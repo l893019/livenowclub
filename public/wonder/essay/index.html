@@ -978,10 +978,21 @@
     }
 
     .trend-row .bar-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
       height: 100%;
       background: linear-gradient(90deg, var(--accent-pink), var(--accent-coral));
       border-radius: 6px;
       transition: width 0.8s ease-out;
+    }
+
+    .trend-row .bar-fill.bar-before {
+      opacity: 0.3;
+    }
+
+    .trend-row .bar-fill.bar-after {
+      opacity: 1;
     }
 
     .trend-row .pct {
@@ -2203,17 +2214,17 @@
         <div class="trend-comparison">
           <div class="trend-row">
             <span class="label">Meaning</span>
-            <div class="bar-track"><div class="bar-fill" style="width: 67%; opacity: 0.5;"></div><div class="bar-fill" style="width: 52%; position: absolute; left: 0; top: 0;"></div></div>
+            <div class="bar-track"><div class="bar-fill bar-before" style="width: 67%;"></div><div class="bar-fill bar-after" style="width: 52%;"></div></div>
             <span class="pct">67% → 52%</span>
           </div>
           <div class="trend-row">
             <span class="label">Identity</span>
-            <div class="bar-track"><div class="bar-fill" style="width: 10%; opacity: 0.5;"></div><div class="bar-fill" style="width: 21%; position: absolute; left: 0; top: 0;"></div></div>
+            <div class="bar-track"><div class="bar-fill bar-before" style="width: 10%;"></div><div class="bar-fill bar-after" style="width: 21%;"></div></div>
             <span class="pct">10% → 21%</span>
           </div>
           <div class="trend-row">
             <span class="label">Connection</span>
-            <div class="bar-track"><div class="bar-fill" style="width: 15%; opacity: 0.5;"></div><div class="bar-fill" style="width: 17%; position: absolute; left: 0; top: 0;"></div></div>
+            <div class="bar-track"><div class="bar-fill bar-before" style="width: 15%;"></div><div class="bar-fill bar-after" style="width: 17%;"></div></div>
             <span class="pct">15% → 17%</span>
           </div>
         </div>
