@@ -19,11 +19,11 @@ const FEATURED = {
 
 // Editor's Pick - your handpicked recommendation
 const EDITORS_PICK = {
-  slug: "expecting-the-unexpected",
-  title: "Expecting the Unexpected",
-  excerpt: "The guide I wish someone had handed me at the start. When I was first diagnosed, I didn't know what to ask, what to prepare for, or how to let people help me.",
-  type: "guide",
-  image: "/images/expecting-the-unexpected.jpg",
+  slug: "fixing-the-unfixable",
+  title: "Fixing the Unfixable",
+  excerpt: "What to say when there's nothing you can say.",
+  type: "essay",
+  image: "/images/fixing-the-unfixable.jpg",
 };
 
 // Most recent pieces (by date) - these would ideally be auto-populated
@@ -76,7 +76,7 @@ export default function HomePage() {
           <Link href="/read" className={pathname === "/read" ? "active" : ""}>Read</Link>
           <Link href="/navigate" className={pathname === "/navigate" ? "active" : ""}>Navigate</Link>
           <Link href="/wonder" className={pathname === "/wonder" ? "active" : ""}>Wonder</Link>
-          <Link href="/make" className={pathname === "/make" ? "active" : ""}>Make</Link>
+          <Link href="/connect" className={pathname === "/connect" ? "active" : ""}>Connect</Link>
         </nav>
       </header>
 
@@ -171,8 +171,7 @@ export default function HomePage() {
           <Link href="/read">Read</Link>
           <Link href="/navigate">Navigate</Link>
           <Link href="/wonder">Wonder</Link>
-          <Link href="/make">Make</Link>
-          <Link href="/about">About</Link>
+          <Link href="/connect">Connect</Link>
         </nav>
         <p className="footer-copy">&copy; 2026 Louise Ireland</p>
       </footer>

@@ -6,26 +6,32 @@
    ============================================ */
 
 :root {
-  /* Colors */
-  --cream: #FAF7F2;
+  /* Colors - aligned with After Abundance */
+  --cream: #FAF6F1;
+  --cream-light: #FFFBF7;
   --cream-dark: #F0EDE6;
-  --charcoal: #1A1A1A;
+  --charcoal: #2D2A26;
   --charcoal-light: #3D3D3D;
-  --pink: #E84A8A;
+  --text-dim: rgba(45, 42, 38, 0.7);
+  --text-muted: rgba(45, 42, 38, 0.45);
+  --pink: #E8178A;
   --pink-dark: #C93A75;
   --sage: #7A8B72;
   --sage-light: #A8B5A0;
   --teal: #2D7A7A;
+  --coral: #FF6B6B;
+  --gold: #F4A03F;
 
   /* Typography */
   --font-sans: var(--font-space), 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: var(--font-jetbrains), 'JetBrains Mono', 'Menlo', monospace;
 
-  /* Spacing */
+  /* Spacing - tighter to match After Abundance */
+  --space-xs: 0.5rem;
   --space-sm: 1rem;
-  --space-md: 2rem;
-  --space-lg: 4rem;
-  --space-xl: 8rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
 }
 
 /* ============================================
@@ -38,18 +44,23 @@
 }
 
 html {
-  font-size: 18px;
+  font-size: 17px;
   scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--font-sans);
   background: var(--cream);
-  color: var(--charcoal);
+  color: var(--text-dim);
   font-weight: 300;
   line-height: 1.75;
   overflow-x: hidden;
 }
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--pink); border-radius: 3px; }
 
 ::selection {
   background: var(--pink);
@@ -68,14 +79,15 @@ a {
 }
 
 /* ============================================
-   TYPOGRAPHY
+   TYPOGRAPHY - After Abundance Style
    ============================================ */
 h1 {
   font-family: var(--font-sans);
   font-size: clamp(2.5rem, 6vw, 4.5rem);
-  font-weight: 600;
+  font-weight: 300;
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+  color: var(--charcoal);
 }
 
 h1 em {
@@ -85,36 +97,58 @@ h1 em {
 
 h2 {
   font-family: var(--font-sans);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 500;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 300;
   line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--charcoal);
 }
 
 h3 {
   font-family: var(--font-sans);
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 400;
+  color: var(--charcoal);
 }
 
 blockquote {
-  font-family: var(--font-sans);
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  font-weight: 500;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--charcoal);
+  border-left: 2px solid var(--pink);
+  padding: 16px 0 16px 20px;
+  margin: 28px 0;
+  background: rgba(232, 23, 138, 0.02);
+  border-radius: 0 6px 6px 0;
 }
 
 blockquote em {
-  font-style: normal;
+  font-style: italic;
   color: var(--pink);
 }
 
 strong {
   color: var(--pink);
-  font-weight: 600;
+  font-weight: 500;
 }
 
-/* Mono for labels */
+p {
+  margin-bottom: 1.5em;
+  color: var(--text-dim);
+}
+
+/* Labels - wider letter spacing */
+.label, .section-label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--pink);
+}
+
+/* Mono for UI elements */
 .mono {
   font-family: var(--font-mono);
   font-size: 0.85rem;
@@ -126,12 +160,13 @@ strong {
    ============================================ */
 .btn {
   display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 1rem 2rem;
-  border: 2px solid var(--charcoal);
+  letter-spacing: 0.2em;
+  padding: 14px 28px;
+  border: 1px solid var(--charcoal);
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -157,9 +192,11 @@ strong {
 
 /* Text Links */
 .text-link {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
   color: var(--pink);
+  letter-spacing: 0.02em;
   transition: transform 0.2s ease;
   display: inline-block;
 }
@@ -205,11 +242,12 @@ strong {
 }
 
 .nav a {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--charcoal-light);
+  letter-spacing: 0.15em;
+  color: rgba(45, 42, 38, 0.6);
   transition: color 0.2s;
 }
 
@@ -265,11 +303,12 @@ strong {
 }
 
 .hero-tagline {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--charcoal-light);
+  color: rgba(45, 42, 38, 0.45);
   margin-bottom: var(--space-md);
 }
 
@@ -328,9 +367,10 @@ strong {
 
 .section-label {
   display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--pink);
   margin-bottom: var(--space-md);
@@ -417,9 +457,10 @@ strong {
 
 .latest-label {
   display: block;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--pink);
   margin-bottom: var(--space-sm);
@@ -427,7 +468,7 @@ strong {
 
 .latest-hero h2 {
   font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.1;
   letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
@@ -477,7 +518,7 @@ strong {
 
 .latest-card h3 {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 0.25rem;
 }
 
@@ -561,9 +602,10 @@ strong {
 
 .featured-essay-label {
   display: block;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--pink);
   margin-bottom: var(--space-sm);
@@ -571,7 +613,7 @@ strong {
 
 .featured-essay-content h2 {
   font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.1;
   letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
@@ -636,7 +678,7 @@ strong {
 
 .recent-header h2 {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 .recent-browse {
@@ -686,9 +728,10 @@ strong {
 
 .recent-card-type {
   display: block;
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.1em;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--pink);
   margin-bottom: 0.5rem;
@@ -696,7 +739,7 @@ strong {
 
 .recent-card h3 {
   font-size: 1.1rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.3;
   margin-bottom: 0.5rem;
 }
@@ -800,7 +843,7 @@ strong {
 
 .explore-title {
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--pink);
   margin-bottom: 0.25rem;
 }
@@ -912,10 +955,11 @@ strong {
 }
 
 .footer-nav a {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.15em;
   color: rgba(255, 255, 255, 0.6);
   transition: color 0.2s;
 }
@@ -977,9 +1021,10 @@ strong {
 }
 
 .essay-card-meta {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--pink);
   margin-bottom: 0.5rem;
@@ -987,7 +1032,7 @@ strong {
 
 .essay-card-title {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 400;
   margin-bottom: 0.25rem;
   transition: color 0.2s;
 }
@@ -1290,10 +1335,10 @@ strong {
 }
 
 .essay-card-type {
-  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
   font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
+  font-weight: 400;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--aa-pink);
   margin-bottom: 24px;
@@ -1302,9 +1347,9 @@ strong {
 .essay-card-title {
   font-family: 'Space Grotesk', system-ui, sans-serif;
   font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   color: var(--aa-text);
   margin-bottom: 20px;
 }
@@ -1379,9 +1424,10 @@ strong {
 }
 
 .deck-filter {
-  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
   font-size: 11px;
-  letter-spacing: 0.1em;
+  font-weight: 400;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   padding: 8px 16px;
   border: none;
@@ -1471,10 +1517,11 @@ strong {
 }
 
 .read-hero-label {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.3em;
   color: var(--pink);
   display: block;
   margin-bottom: var(--space-sm);
@@ -1523,11 +1570,12 @@ strong {
 }
 
 .read-section-header h2 {
-  font-size: 1rem;
-  font-family: var(--font-mono);
+  font-size: 11px;
+  font-family: var(--font-sans);
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--charcoal-light);
+  letter-spacing: 0.3em;
+  color: rgba(45, 42, 38, 0.45);
   margin-bottom: 0.5rem;
 }
 
@@ -1557,10 +1605,11 @@ strong {
 }
 
 .start-here-type {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.3em;
   color: var(--pink);
   display: block;
   margin-bottom: 0.75rem;
@@ -1568,7 +1617,7 @@ strong {
 
 .start-here-card h3 {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 400;
   margin-bottom: 0.5rem;
 }
 
@@ -1619,7 +1668,7 @@ strong {
 
 .latest-card h3 {
   font-size: 1.1rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* BROWSE */
@@ -1629,7 +1678,7 @@ strong {
 
 .read-category-title {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 300;
   margin-bottom: 0.5rem;
   color: var(--charcoal);
 }
@@ -1660,7 +1709,7 @@ strong {
 
 .browse-card h4 {
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 400;
   margin-bottom: 0.5rem;
 }
 
@@ -1718,7 +1767,7 @@ strong {
 
 .meditation-num {
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--pink);
   line-height: 1;
   margin-bottom: 0.5rem;
@@ -1787,10 +1836,11 @@ strong {
 }
 
 .read-editorial .read-hero-label {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.3em;
   color: var(--pink);
   display: block;
   margin-bottom: var(--space-sm);
@@ -1798,8 +1848,9 @@ strong {
 
 .read-editorial .read-hero-title {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.1;
+  letter-spacing: -0.02em;
   margin-bottom: var(--space-sm);
 }
 
@@ -1851,7 +1902,7 @@ strong {
 
 .read-section-title {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 300;
   margin-bottom: var(--space-sm);
   color: var(--charcoal);
 }
@@ -1954,23 +2005,410 @@ strong {
   margin: 0 auto;
 }
 
-/* Essay Cards */
-.read-editorial .essay-card {
+/* ============================================
+   IMMERSIVE GOOP-STYLE GRID
+   ============================================ */
+.read-immersive {
+  padding: 100px 24px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Manifesto Hero */
+.read-manifesto {
+  margin-bottom: var(--space-xl);
+}
+
+.manifesto-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.manifesto-card:hover {
+  border-color: var(--pink);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.manifesto-image {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.manifesto-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.manifesto-content {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.manifesto-label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: var(--space-sm);
+}
+
+.manifesto-content h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: var(--space-xs);
+}
+
+.manifesto-subtitle {
+  font-size: 1.125rem;
+  font-style: italic;
+  color: var(--text-dim);
+  margin-bottom: var(--space-sm);
+}
+
+.manifesto-excerpt {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .manifesto-card {
+    grid-template-columns: 1fr;
+  }
+
+  .manifesto-content {
+    padding: var(--space-lg);
+  }
+}
+
+/* Category filter pills */
+.read-filters {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: var(--space-md) 0;
+  flex-wrap: wrap;
+}
+
+.read-filter {
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--charcoal);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  color: var(--charcoal);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.read-filter:hover,
+.read-filter.active {
+  background: var(--charcoal);
+  color: white;
+}
+
+/* Hero - two large images */
+.read-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+/* Mood Section */
+.read-mood-section {
+  text-align: center;
+  padding: var(--space-lg) var(--space-md);
+  border-bottom: 1px solid var(--cream-dark);
+  margin-bottom: var(--space-md);
+}
+
+.read-mood-title {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--charcoal-light);
+  margin-bottom: var(--space-md);
+}
+
+.mood-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.mood-pill {
+  padding: 0.6rem 1.25rem;
+  background: var(--cream);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  color: var(--charcoal);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.mood-pill:hover {
+  background: var(--pink);
+  color: white;
+}
+
+/* Section Headers */
+.read-section {
+  margin-bottom: var(--space-md);
+}
+
+.section-header {
+  padding: var(--space-lg) var(--space-md) var(--space-sm);
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 0.25rem;
+  color: var(--charcoal);
+}
+
+.section-header p {
+  font-size: 0.9rem;
+  color: var(--charcoal-light);
+}
+
+/* Main grid */
+.read-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.read-grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.read-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .read-grid,
+  .read-grid--4,
+  .read-grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .read-grid,
+  .read-grid--4,
+  .read-grid--3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Section more link */
+.section-more {
+  text-align: center;
+  padding: var(--space-md) 0;
+}
+
+/* Immersive card */
+.immersive-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  background: var(--cream);
+}
+
+.immersive-card--hero {
+  aspect-ratio: 4/5;
+}
+
+.immersive-card--wide {
+  grid-column: span 2;
+  aspect-ratio: 16/9;
+}
+
+.immersive-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.immersive-card:hover img {
+  transform: scale(1.03);
+}
+
+/* Text overlay */
+.immersive-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-md);
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+  color: white;
+}
+
+.immersive-card-type {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  opacity: 0.8;
+  margin-bottom: 0.25rem;
   display: block;
+}
+
+.immersive-card-title {
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.immersive-card--hero .immersive-card-title {
+  font-size: 1.4rem;
+}
+
+/* Poem cards - text-only */
+.immersive-card--poem {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.immersive-card--poem:hover {
+  border-color: var(--pink);
+  background: var(--cream-light);
+}
+
+.immersive-card--poem .immersive-card-content {
+  position: relative;
+  background: none;
+  text-align: center;
+  color: var(--charcoal);
+}
+
+.immersive-card--poem .immersive-card-type {
+  color: var(--pink);
+  opacity: 1;
+}
+
+.immersive-card--poem .immersive-card-title {
+  font-size: 1.25rem;
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Read more link */
+.immersive-card-link {
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  opacity: 0.8;
+  display: inline-block;
+}
+
+/* Section headers (minimal) */
+.read-section-divider {
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+}
+
+.read-section-divider h2 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 400;
+  color: var(--charcoal-light);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .read-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .read-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .immersive-card--wide {
+    grid-column: span 2;
+  }
+
+  .immersive-card-title {
+    font-size: 0.95rem;
+  }
+
+  .immersive-card--hero .immersive-card-title {
+    font-size: 1.1rem;
+  }
+
+  .read-filters {
+    padding: var(--space-sm);
+  }
+
+  .read-filter {
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .read-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .immersive-card--wide {
+    grid-column: span 1;
+  }
+
+  .immersive-card {
+    aspect-ratio: 4/5;
+  }
+}
+
+/* Essay Cards - Horizontal Layout */
+.read-editorial .essay-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
   background: white;
   border: 1px solid var(--cream-dark);
+  border-radius: 8px;
   transition: all 0.2s ease;
   overflow: hidden;
+  padding: var(--space-sm);
 }
 
 .read-editorial .essay-card:hover {
   border-color: var(--pink);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  transform: translateX(4px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
 }
 
 .essay-card-image {
-  aspect-ratio: 16/10;
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 6px;
   overflow: hidden;
 }
 
@@ -1986,30 +2424,33 @@ strong {
 }
 
 .essay-card-content {
-  padding: var(--space-md);
+  flex: 1;
+  min-width: 0;
+  padding: var(--space-xs) 0;
 }
 
 .read-editorial .essay-card-type {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.3em;
   color: var(--pink);
   display: block;
   margin-bottom: 0.5rem;
 }
 
 .read-editorial .essay-card-title {
-  font-size: 1.25rem;
-  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 400;
   line-height: 1.3;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .read-editorial .essay-card-excerpt {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: var(--charcoal-light);
-  line-height: 1.6;
+  line-height: 1.5;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -2040,9 +2481,9 @@ strong {
 
 .essay-card-number {
   display: block;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--pink);
   margin-bottom: 0.5rem;
 }
@@ -2052,23 +2493,34 @@ strong {
   color: white;
 }
 
-/* Poem cards */
-.essay-card--poem {
-  padding: var(--space-md);
+/* Large cards (Start Here section) - bigger image */
+.read-editorial .essay-card--large .essay-card-image {
+  width: 140px;
+  height: 140px;
+}
+
+/* Poem cards - no image, just text with accent */
+.read-editorial .essay-card--poem {
   border-left: 3px solid var(--sage);
+  padding-left: var(--space-md);
 }
 
 .essay-card--poem .essay-card-title {
   font-style: italic;
 }
 
-/* Compact cards */
-.essay-card--compact {
-  padding: var(--space-sm);
+/* Compact cards (Recent section) - smaller */
+.read-editorial .essay-card--compact {
+  padding: var(--space-xs);
+}
+
+.read-editorial .essay-card--compact .essay-card-image {
+  width: 60px;
+  height: 60px;
 }
 
 .essay-card--compact .essay-card-title {
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 /* Browse All */
@@ -2078,8 +2530,9 @@ strong {
 }
 
 .browse-link {
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
   color: var(--pink);
   border-bottom: 1px solid var(--pink);
   padding-bottom: 4px;
@@ -2105,12 +2558,13 @@ strong {
   padding: 14px 24px;
   background: var(--pink);
   color: white;
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.15em;
   border-radius: 50px;
-  box-shadow: 0 4px 20px rgba(232, 74, 138, 0.4);
+  box-shadow: 0 4px 20px rgba(232, 23, 138, 0.4);
   transition: all 0.2s;
 }
 
@@ -2147,6 +2601,26 @@ strong {
 
   .mood-card {
     width: 100%;
+  }
+
+  /* Horizontal cards - smaller image on mobile */
+  .read-editorial .essay-card {
+    gap: var(--space-sm);
+    padding: var(--space-xs);
+  }
+
+  .essay-card-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .read-editorial .essay-card-title {
+    font-size: 1rem;
+  }
+
+  .read-editorial .essay-card-excerpt {
+    font-size: 0.8rem;
+    -webkit-line-clamp: 1;
   }
 
   .subscribe-float {
@@ -2205,8 +2679,9 @@ strong {
 
 .featured-text h2 {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.1;
+  letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
 }
 
@@ -2233,11 +2708,12 @@ strong {
 
 .worth-reading .section-label {
   display: block;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--charcoal-light);
+  color: rgba(45, 42, 38, 0.45);
   margin-bottom: var(--space-md);
   border: none;
   padding: 0;
@@ -2279,9 +2755,10 @@ strong {
 }
 
 .pick-label {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--pink);
   display: block;
@@ -2290,7 +2767,7 @@ strong {
 
 .pick-content h4 {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.2;
   margin-bottom: 0.75rem;
 }
@@ -2339,9 +2816,10 @@ strong {
 }
 
 .recent-item-type {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.1em;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--pink);
   display: block;
@@ -2350,7 +2828,7 @@ strong {
 
 .recent-item-content h4 {
   font-size: 1.1rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.3;
 }
 
@@ -2382,8 +2860,9 @@ strong {
 /* Join Simple */
 .join-simple {
   padding: var(--space-xl) var(--space-lg);
-  background: var(--sage-light);
+  background: var(--cream);
   text-align: center;
+  border-top: 1px solid rgba(45, 42, 38, 0.1);
 }
 
 .join-simple-content {
@@ -2393,14 +2872,15 @@ strong {
 
 .join-simple h2 {
   font-size: clamp(2rem, 4vw, 2.5rem);
-  font-weight: 500;
+  font-weight: 300;
+  letter-spacing: -0.02em;
   margin-bottom: var(--space-sm);
   color: var(--charcoal);
 }
 
 .join-simple p {
   font-size: 1.1rem;
-  color: var(--charcoal-light);
+  color: var(--text-dim);
   margin-bottom: var(--space-md);
 }
 

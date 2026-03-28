@@ -2,8 +2,70 @@ import Link from "next/link";
 import { CANCER_GUIDE, getCancerGuideEssays, getCancerEssays } from "@/lib/essays";
 
 export const metadata = {
-  title: "Lou's Guide to Cancer | The Live Now Club",
-  description: "Practical guidance for navigating cancer and supporting those who are.",
+  title: "Cancer Guide: Navigating Diagnosis, Treatment & Beyond | The Live Now Club",
+  description:
+    "A comprehensive guide to navigating cancer, written by a survivor. Practical advice for newly diagnosed patients, those in treatment, caregivers, and anyone seeking meaning through illness.",
+  keywords: [
+    "cancer guide",
+    "cancer diagnosis",
+    "cancer treatment",
+    "cancer survivor",
+    "cancer support",
+    "cancer caregiver",
+    "living with cancer",
+    "coping with cancer",
+    "cancer meditation",
+    "cancer essays",
+  ],
+  openGraph: {
+    title: "Cancer Guide: Navigating Diagnosis, Treatment & Beyond",
+    description:
+      "A comprehensive guide to navigating cancer, written by a survivor. Practical advice for newly diagnosed patients, those in treatment, and caregivers.",
+    type: "website",
+    url: "https://livenowclub.vercel.app/navigate",
+  },
+};
+
+// JSON-LD structured data for SEO
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Cancer Guide: Navigating Diagnosis, Treatment & Beyond",
+  description:
+    "A comprehensive guide to navigating cancer, written by a survivor. Practical advice for newly diagnosed patients, those in treatment, caregivers, and anyone seeking meaning through illness.",
+  author: {
+    "@type": "Person",
+    name: "Louise Ireland",
+  },
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Just Diagnosed",
+        description: "Everything I wish someone had told me at the start.",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "During Treatment",
+        description: "Practical guidance for the hardest days.",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "For Caregivers",
+        description: "How to support someone you love through this.",
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: "Finding Meaning",
+        description: "Making sense of it all.",
+      },
+    ],
+  },
 };
 
 export default function NavigatePage() {
@@ -11,6 +73,9 @@ export default function NavigatePage() {
 
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
       {/* Header */}
       <header className="header">
         <Link href="/" className="logo">
@@ -20,7 +85,7 @@ export default function NavigatePage() {
           <Link href="/read">Read</Link>
           <Link href="/navigate" className="active">Navigate</Link>
           <Link href="/wonder">Wonder</Link>
-          <Link href="/make">Make</Link>
+          <Link href="/connect">Connect</Link>
         </nav>
       </header>
 
@@ -28,10 +93,10 @@ export default function NavigatePage() {
         {/* Hero */}
         <section className="navigate-hero">
           <span className="navigate-label">Lou's Guide to Cancer</span>
-          <h1>Everything I wish someone had told me.</h1>
+          <h1>A Cancer Survivor's Guide: Everything I Wish Someone Had Told Me</h1>
           <p>
-            Practical guidance for navigating cancer and supporting those who are. Every piece here was written from the
-            trenches.
+            Practical guidance for navigating cancer diagnosis, treatment, and beyond.
+            Written by a survivor, for those in the trenches and those who love them.
           </p>
         </section>
 
@@ -195,14 +260,19 @@ export default function NavigatePage() {
         {/* Footer CTA */}
         <section className="guide-footer-cta">
           <p>You're not alone in this.</p>
-          <a
-            href="https://louiseireland.substack.com/subscribe"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn--primary"
-          >
-            Get updates →
-          </a>
+          <div className="guide-footer-buttons">
+            <Link href="/connect" className="btn btn--primary">
+              Share Your Story
+            </Link>
+            <a
+              href="https://louiseireland.substack.com/subscribe"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn--secondary"
+            >
+              Get Updates
+            </a>
+          </div>
         </section>
       </div>
 

@@ -48,19 +48,56 @@ const IMAGE_MAP: Record<string, string> = {
   "if-you-can-keep-your-head-about-you": "keep-your-head.jpg",
   "life-is-not-empty": "life-is-not-empty.jpg",
   "maybe": "maybe.jpg",
-  "now-that-you-no-longer-have-to-be-perfect": "now-that-you-no-longer-have-to-be-perfect.jpg",
+  "now-that-you-no-longer-have-to-be-perfect-you-can-just-be-good": "now-that-you-no-longer-have-to-be-perfect.jpg",
   "the-butterfly-dream": "the-butterfly-dream.jpg",
   "the-ebb": "the-ebb.jpg",
   "the-starting-line": "the-starting-line.jpg",
   "when-it-all-falls-out": "when-it-all-falls-out.png",
+  // New images from Substack
+  "sea-glass": "sea-glass.jpg",
+  "cancer-meditations": "cancer-meditations.jpg",
+  "cancer-meditations-ii": "cancer-meditations.jpg",
+  "cancer-meditations-iii": "cancer-meditations.jpg",
+  "cancer-meditations-iv": "cancer-meditations.jpg",
+  "cancer-meditations-v": "cancer-meditations.jpg",
+  "cancer-meditations-vi": "cancer-meditations.jpg",
+  "the-river-van": "the-river-van.jpg",
+  "threads-of-survival": "threads-of-survival.jpg",
+  "i-need-you-to-hold-my-hand": "i-need-you-to-hold-my-hand.jpg",
+  "the-in-between": "the-in-between.jpg",
+  "the-crack-is-where-the-light-enters": "the-crack-is-where-the-light-enters.png",
+  "the-forest-path": "the-forest-path.jpg",
+  "the-live-now-club": "the-live-now-club.gif",
+  "all-i-want-for-my-birthday-is-another-shot-at-life": "all-i-want-for-my-birthday.jpg",
+  "embracing-free-fall": "embracing-free-fall.jpg",
+  "you-cant-always-get-what-you-want": "you-cant-always-get-what-you-want.png",
+  "it-takes-a-village": "it-takes-a-village.jpg",
+  "how-to-travel-alone": "how-to-travel-alone.jpg",
+  "i-love-lou": "i-love-lou.jpg",
+  "reset-rebirth": "reset-rebirth.jpg",
+  "on-safety-and-security": "on-safety-and-security.jpg",
+  "the-way-of-the-parrot": "the-way-of-the-parrot.jpg",
+  "things-ive-learned-lately": "things-ive-learned-lately.png",
+  "how-to-reset-your-nervous-system": "how-to-reset-your-nervous-system.jpg",
+  "how-are-you-after-it-all-falls-down": "how-are-you-after-it-all-falls-down.jpg",
+  "in-any-given-moment-the-strongest-dream-in-that-moment-wins": "in-any-given-moment.jpg",
+  "on-friendship-and-couches": "on-friendship-and-couches.jpg",
+  "manifesto": "hero-playa-faded.png",
+  "soulmd": "soulmd.jpg",
 };
 
 // Curated pathways
 export const PATHWAYS: Pathway[] = [
   {
+    id: "manifesto",
+    title: "The Manifesto",
+    subtitle: "What is The Live Now Club? Start here.",
+    essays: ["the-live-now-club"],
+  },
+  {
     id: "start-here",
     title: "Start Here",
-    subtitle: "New to The Live Now Club? Begin with these three.",
+    subtitle: "New to The Live Now Club? Begin with these.",
     essays: ["expecting-the-unexpected", "fixing-the-unfixable", "and-still-the-figs-ripen"],
   },
   {
@@ -89,6 +126,18 @@ export const PATHWAYS: Pathway[] = [
     title: "Finding Joy Anyway",
     subtitle: "Because life is also beautiful.",
     essays: ["the-case-for-magical-thinking", "the-butterfly-dream", "life-is-not-empty", "august-triptych"],
+  },
+  {
+    id: "wisdom",
+    title: "Wisdom & Philosophy",
+    subtitle: "The deeper questions about meaning, identity, and being.",
+    essays: ["soulmd", "all-i-want-for-my-birthday-is-another-shot-at-life", "i-wrote-this-with-my-eyes", "catch-pull-release", "things-ive-learned-lately"],
+  },
+  {
+    id: "poems",
+    title: "Poems",
+    subtitle: "Brief meditations. Beauty in a breath.",
+    essays: ["sea-glass", "dry-lightning", "the-ebb", "august-triptych", "in-case-you-forget", "the-in-between"],
   },
   {
     id: "self-love",
@@ -297,6 +346,16 @@ export function getFeaturedEssay(): Essay | null {
   // Return the most impactful essay as the hero
   const essays = getAllEssays();
   return essays.find((e) => e.slug === "fixing-the-unfixable") || essays[0] || null;
+}
+
+export function getLatestEssays(limit = 4): Essay[] {
+  // Return the most recent essays by date
+  return getAllEssays().slice(0, limit);
+}
+
+export function getManifestoEssay(): Essay | null {
+  const essays = getAllEssays();
+  return essays.find((e) => e.slug === "the-live-now-club") || null;
 }
 
 // Cancer Guide pathways for /navigate

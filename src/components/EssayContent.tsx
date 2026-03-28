@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import type { Essay } from "@/lib/essays";
 
 type EssayContentProps = {
@@ -8,10 +9,38 @@ type EssayContentProps = {
   relatedEssays?: Essay[];
 };
 
+// Calculate read time (roughly 200 words per minute)
+function getReadTime(content: string): number {
+  const words = content.trim().split(/\s+/).length;
+  return Math.max(1, Math.ceil(words / 200));
+}
+
 export default function EssayContent({ essay, relatedEssays = [] }: EssayContentProps) {
+  const [copied, setCopied] = useState(false);
+
   const formatDate = (dateStr: string) => {
     const date = new Date(dateStr);
     return date.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+  };
+
+  const readTime = getReadTime(essay.content);
+
+  const shareUrl = typeof window !== "undefined" ? window.location.href : `https://livenowclub.vercel.app/read/${essay.slug}`;
+  const shareText = `${essay.title} by Louise Ireland`;
+
+  const handleCopyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy:", err);
+    }
+  };
+
+  const handleShareTwitter = () => {
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+    window.open(twitterUrl, "_blank", "noopener,noreferrer");
   };
 
   // Convert markdown to basic HTML
@@ -43,7 +72,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
           <Link href="/read">Read</Link>
           <Link href="/navigate">Navigate</Link>
           <Link href="/wonder">Wonder</Link>
-          <Link href="/make">Make</Link>
+          <Link href="/connect">Connect</Link>
         </nav>
       </header>
 
@@ -55,7 +84,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
 
         {/* Header */}
         <header className="essay-header">
-          <span className="essay-header-meta">{essay.type}</span>
+          <span className="essay-header-meta">{essay.type} · {readTime} min read</span>
           <h1>{essay.title}</h1>
           {essay.subtitle && <p className="essay-header-subtitle">{essay.subtitle}</p>}
           <time className="essay-header-date">{formatDate(essay.date)}</time>
@@ -70,6 +99,31 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
 
         {/* Content */}
         <article className="essay-content" dangerouslySetInnerHTML={{ __html: `<p>${contentHtml}</p>` }} />
+
+        {/* Share */}
+        <div className="essay-share">
+          <span className="essay-share-label">Share this piece</span>
+          <div className="essay-share-buttons">
+            <button onClick={handleShareTwitter} className="share-btn" aria-label="Share on Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </button>
+            <button onClick={handleCopyLink} className="share-btn" aria-label="Copy link">
+              {copied ? (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              ) : (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                </svg>
+              )}
+            </button>
+          </div>
+          {copied && <span className="copied-toast">Link copied!</span>}
+        </div>
 
         {/* Read Next */}
         {relatedEssays.length > 0 && (
@@ -102,7 +156,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
             rel="noopener noreferrer"
             className="btn btn--primary"
           >
-            Read on Substack →
+            Comment on Substack →
           </a>
         </footer>
       </div>
@@ -123,17 +177,18 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
 
         .essay-back {
           display: inline-block;
-          font-family: "JetBrains Mono", monospace;
+          font-family: "Space Grotesk", sans-serif;
           font-size: 12px;
-          letter-spacing: 0.1em;
+          font-weight: 400;
+          letter-spacing: 0.3em;
           text-transform: uppercase;
-          color: rgba(45, 42, 38, 0.6);
+          color: rgba(45, 42, 38, 0.45);
           margin-bottom: 60px;
           transition: color 0.2s;
         }
 
         .essay-back:hover {
-          color: #e84a8a;
+          color: #e8178a;
         }
 
         .essay-header {
@@ -144,34 +199,39 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
 
         .essay-header-meta {
           display: block;
-          font-family: "JetBrains Mono", monospace;
-          font-size: 11px;
-          letter-spacing: 0.2em;
+          font-family: "Space Grotesk", sans-serif;
+          font-size: 12px;
+          font-weight: 400;
+          letter-spacing: 0.4em;
           text-transform: uppercase;
-          color: #e84a8a;
-          margin-bottom: 16px;
+          color: #e8178a;
+          margin-bottom: 24px;
         }
 
         .essay-header h1 {
-          font-size: clamp(2.5rem, 5vw, 3.5rem);
-          font-weight: 500;
+          font-size: clamp(2.5rem, 6vw, 4rem);
+          font-weight: 300;
           line-height: 1.1;
-          letter-spacing: -0.02em;
-          color: #1a1a1a;
-          margin-bottom: 12px;
+          letter-spacing: -0.03em;
+          color: #2d2a26;
+          margin-bottom: 16px;
         }
 
         .essay-header-subtitle {
           font-size: 1.25rem;
+          font-weight: 300;
           font-style: italic;
           color: rgba(45, 42, 38, 0.7);
-          margin-bottom: 16px;
+          margin-bottom: 20px;
+          letter-spacing: 0.02em;
         }
 
         .essay-header-date {
-          font-family: "JetBrains Mono", monospace;
+          font-family: "Space Grotesk", sans-serif;
           font-size: 12px;
-          color: rgba(45, 42, 38, 0.5);
+          font-weight: 400;
+          letter-spacing: 0.1em;
+          color: rgba(45, 42, 38, 0.45);
         }
 
         .essay-hero-image {
@@ -186,29 +246,43 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         }
 
         .essay-content {
-          max-width: 650px;
+          max-width: 700px;
           margin: 0 auto;
-          font-size: 1.125rem;
-          line-height: 1.8;
-          color: #1a1a1a;
+          font-size: 17px;
+          font-weight: 300;
+          line-height: 1.75;
+          color: rgba(45, 42, 38, 0.7);
         }
 
         .essay-content :global(p) {
-          margin-bottom: 1.5rem;
+          margin-bottom: 1.5em;
         }
 
         .essay-content :global(h2) {
           font-size: 1.5rem;
-          font-weight: 500;
-          margin: 3rem 0 1rem;
+          font-weight: 400;
+          margin: 3rem 0 1.5rem;
+          color: #2d2a26;
+        }
+
+        .essay-content :global(h3) {
+          font-size: 1.25rem;
+          font-weight: 400;
+          margin: 2.5rem 0 1rem;
+          color: #2d2a26;
         }
 
         .essay-content :global(blockquote) {
-          font-style: italic;
-          border-left: 3px solid #e84a8a;
-          padding-left: 24px;
-          margin: 2rem 0;
-          color: rgba(45, 42, 38, 0.8);
+          font-size: 0.95rem;
+          font-weight: 400;
+          font-style: normal;
+          border-left: 2px solid #e8178a;
+          padding: 16px 0 16px 20px;
+          margin: 28px 0;
+          color: #2d2a26;
+          background: rgba(232, 23, 138, 0.02);
+          border-radius: 0 6px 6px 0;
+          line-height: 1.6;
         }
 
         .essay-content :global(hr) {
@@ -218,8 +292,68 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         }
 
         .essay-content :global(strong) {
-          font-weight: 600;
-          color: #e84a8a;
+          font-weight: 500;
+          color: #e8178a;
+        }
+
+        .essay-content :global(em) {
+          font-style: italic;
+          color: rgba(45, 42, 38, 0.8);
+        }
+
+        /* Share Section */
+        .essay-share {
+          max-width: 650px;
+          margin: 60px auto 0;
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          padding-top: 32px;
+          border-top: 1px solid rgba(45, 42, 38, 0.1);
+        }
+
+        .essay-share-label {
+          font-family: "Space Grotesk", sans-serif;
+          font-size: 11px;
+          font-weight: 400;
+          letter-spacing: 0.3em;
+          text-transform: uppercase;
+          color: rgba(45, 42, 38, 0.45);
+        }
+
+        .essay-share-buttons {
+          display: flex;
+          gap: 8px;
+        }
+
+        .share-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          border: 1px solid rgba(45, 42, 38, 0.15);
+          background: white;
+          color: rgba(45, 42, 38, 0.6);
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+
+        .share-btn:hover {
+          border-color: #e8178a;
+          color: #e8178a;
+        }
+
+        .copied-toast {
+          font-family: "JetBrains Mono", monospace;
+          font-size: 11px;
+          color: #7a8b72;
+          animation: fadeIn 0.2s ease;
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
         }
 
         /* Read Next Section */
@@ -231,11 +365,12 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         }
 
         .essay-read-next h2 {
-          font-family: "JetBrains Mono", monospace;
-          font-size: 12px;
-          letter-spacing: 0.15em;
+          font-family: "Space Grotesk", sans-serif;
+          font-size: 11px;
+          font-weight: 400;
+          letter-spacing: 0.3em;
           text-transform: uppercase;
-          color: rgba(45, 42, 38, 0.6);
+          color: rgba(45, 42, 38, 0.45);
           margin-bottom: 24px;
         }
 
@@ -253,7 +388,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         }
 
         .read-next-card:hover {
-          border-color: #e84a8a;
+          border-color: #e8178a;
           transform: translateY(-4px);
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
         }
@@ -274,24 +409,25 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         }
 
         .read-next-type {
-          font-family: "JetBrains Mono", monospace;
+          font-family: "Space Grotesk", sans-serif;
           font-size: 10px;
-          letter-spacing: 0.1em;
+          font-weight: 400;
+          letter-spacing: 0.3em;
           text-transform: uppercase;
-          color: #e84a8a;
+          color: #e8178a;
           display: block;
           margin-bottom: 8px;
         }
 
         .read-next-card h3 {
           font-size: 1rem;
-          font-weight: 500;
+          font-weight: 400;
           line-height: 1.3;
-          color: #1a1a1a;
+          color: #2d2a26;
         }
 
         .essay-footer {
-          max-width: 650px;
+          max-width: 700px;
           margin: 80px auto 0;
           text-align: center;
           padding-top: 40px;
@@ -299,11 +435,12 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         }
 
         .essay-footer p {
-          font-family: "JetBrains Mono", monospace;
-          font-size: 12px;
-          letter-spacing: 0.1em;
+          font-family: "Space Grotesk", sans-serif;
+          font-size: 11px;
+          font-weight: 400;
+          letter-spacing: 0.3em;
           text-transform: uppercase;
-          color: rgba(45, 42, 38, 0.5);
+          color: rgba(45, 42, 38, 0.45);
           margin-bottom: 16px;
         }
 
