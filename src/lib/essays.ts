@@ -46,6 +46,7 @@ const IMAGE_MAP: Record<string, string> = {
   "if-you-love-something-let-it-go": "if-you-love-something-let-it-go.jpg",
   "in-case-you-forget": "in-case-you-forget.png",
   "if-you-can-keep-your-head-about-you": "keep-your-head.jpg",
+  "soulmd": "soulmd.jpg",
   "life-is-not-empty": "life-is-not-empty.jpg",
   "maybe": "maybe.jpg",
   "now-that-you-no-longer-have-to-be-perfect-you-can-just-be-good": "now-that-you-no-longer-have-to-be-perfect.jpg",

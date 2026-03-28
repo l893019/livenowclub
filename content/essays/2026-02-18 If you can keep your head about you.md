@@ -1,10 +1,6 @@
 # If you can keep your head about you
 
-*On trusting your training*
-
-*Originally published on Substack, June 2025*
-
----
+## On trusting your training
 
 A couple of days ago, I went surfing for the first time in more than a year. My cancerversary was last week, my initial diagnosis of Stage III that led to Stage IV in a matter of months, and I've found myself since the beginning of the year fastidiously comparing now to then. This time last year, I was in Mexico for my board meeting. This time last year, I was celebrating with friends. This time last year, we threw flowers into the ocean to cast wishes and give me strength for the journey ahead. This time last year, my world shook, crumbling all that I thought to be true to the ground.
 
@@ -12,19 +8,15 @@ As I find myself a year apart, I still feel the reverberations as the last of ev
 
 I thought of the Kipling poem I had pinned to my mirror in boarding school.
 
-If you can keep your head about you,
-while all others are losing theirs...
+> *If you can keep your head about you, while all others are losing theirs…*
 
 How do you hold your center when the earth falls around you? How do you keep your head up when you don't know what the future holds? Standing in the street in Mexico, the ground rolling beneath me, I already knew the answer. I had been there before, and I had done this before. The challenge has a different face, a different nature, but my reaction is the same.
 
-Yesterday, at a Chinese New Year celebration, I painted my wish for the year, 养, Nourish. I thought about wishing for health, for love, for community, for family, for success, but I realized that the output is irrelevant. What matters more are the conditions you create for anything to exist. Call it scaffolding, call it practice or training, what is the invisible framework that you can fall back on when there is nothing visible left to hold you?
+Yesterday, at a Chinese New Year celebration, I painted my wish for the year, 養, Nourish. I thought about wishing for health, for love, for community, for family, for success, but I realized that the output is irrelevant. What matters more are the conditions you create for anything to exist. Call it scaffolding, call it practice or training, what is the invisible framework that you can fall back on when there is nothing visible left to hold you?
 
 My next round of scans is coming up, and in this time, I find myself collecting moments to sustain me. If I don't make it through this next round of treatments, what have I left undone? It's a heavy burden, debilitatingly so. But the thrill of living keeps me going. I squeeze my energy out like the last bit of toothpaste in the tube.
 
-If you can force your heart and nerve and sinew
-To serve your turn long after they are gone,
-And so hold on when there is nothing in you
-Except the Will which says to them: 'Hold on!'
+> *If you can force your heart and nerve and sinew To serve your turn long after they are gone, And so hold on when there is nothing in you Except the Will which says to them: 'Hold on!'*
 
 Over the last year, the dream of being back on a board, mind and body consumed by the ocean waves, kept me going. As I struggled to stand up and walk for part of this year, my faith that I would return never wavered. And there is nothing, my wrecked digestion, the dwindling sensation in my feet from neuropathy, and the fact that I wasn't particularly good to begin with, that could keep me from it.
 
@@ -36,7 +28,4 @@ When you turn the board around, you are locked in. Paddle, paddle, paddle, hard 
 
 And in the exhilaration of that moment, I think:
 
-Yours is the earth, and everything that's in it,
-And—which is more—you'll be a Man, my son!
-
-Thank you, as always, for reading and sharing my words. I'd love to hear if anything resonated with you, or if you have any wishes or mantras you're holding this year.
+> *Yours is the earth, and everything that's in it, And—which is more—you'll be a Man, my son!*
