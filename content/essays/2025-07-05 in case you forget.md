@@ -2,7 +2,7 @@
 
 ## Poems from my dreamscape
 
-_I’ve been living closer to dreams these days. They’ve grown sharper. Stranger, vivid, untamed. Over the last few months, I began writing them down, struck by the worlds my subconscious can create if I let it._
+> *I’ve been living closer to dreams these days. They’ve grown sharper. Stranger, vivid, untamed. Over the last few months, I began writing them down, struck by the worlds my subconscious can create if I let it.*
 
  _They are wisps of smoke, glimpses of something truer than logic allows._
 

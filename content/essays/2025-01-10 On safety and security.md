@@ -64,6 +64,6 @@ These are boring problems but massive ones that dramatically reduce the cyber ri
 
 It’s always scary as an entrepreneur to tie yourself too closely to your company, so I intentionally have tried not to for years. That said, this is a problem I care deeply about and one that hits the deepest part of my core. I believe in a techno-optimistic future where greater human connection is enabled through digital connection, but the online worlds we live in today are not as safe as we think. I believe this is possible to change, and I believe it starts with a re-focus of priorities. In the world we live in of broken pipes, doors, and windows, we need digital janitors/plumbers. 
 
-_Note: This personal note sheds some light on my founder journey. All views expressed belong solely to me._
+> *Note: This personal note sheds some light on my founder journey. All views expressed belong solely to me.*
 
 Thanks for reading Komorebi! Subscribe for free to receive new posts and support my work.

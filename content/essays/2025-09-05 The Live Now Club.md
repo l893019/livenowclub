@@ -2,11 +2,11 @@
 
 ## Because now is all we have
 
-_My loss, by sickness — Was it Loss?  
-Or that Ethereal Gain  
-One earns by measuring the Grave —  
-Then — measuring the Sun —  
-\- Emily Dickinson_
+> *My loss, by sickness — Was it Loss?*
+> *Or that Ethereal Gain*
+> *One earns by measuring the Grave —*
+> *Then — measuring the Sun —*
+> *\- Emily Dickinson*
 
 Ever so often, a sentence arrives that splits me open. Two weeks ago, one did.
 

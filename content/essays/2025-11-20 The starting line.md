@@ -49,7 +49,7 @@ I like to think that somewhere out there, our parallel lives are waiting for us 
 
 So, in honor of my new Thanksgiving tradition, not just gratitude for what exists but gratitude for what my psyche still wants, the eros and desires that keep me alive, I’m choosing to visit parts of me I’ve long postponed. 
 
-_**If you’re gathering with people this week, consider asking: what are you still longing for? What would you do if you knew your time was short?** It might be a more honest conversation than the usual gratitude list._
+> ***If you’re gathering with people this week, consider asking: what are you still longing for? What would you do if you knew your time was short?** It might be a more honest conversation than the usual gratitude list.*
 
 Here are some suggestions for you based on the parts you may long for most: 
 

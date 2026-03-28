@@ -10,7 +10,7 @@ I’m also opening up the chat for anyone else who may be going through somethin
 
 Please pass this along to anyone who could use it ❤️. A pdf version is [here](https://static1.squarespace.com/static/68baddbc65e901527cbfd30f/t/693ee015670f423dc00de98e/1765728277861/Expecting+the+Unexpected+LNC+VF.pdf). 
 
-_Thank you to Bibi for inspiring me to do this, my sister for encouraging me, and Alexandra, MC, and my mom for sanity-checking._
+> *Thank you to Bibi for inspiring me to do this, my sister for encouraging me, and Alexandra, MC, and my mom for sanity-checking.*
 
 [![User's avatar](https://substack-post-media.s3.amazonaws.com/public/images/2938cf9c-1e73-4033-b037-1572d9aca726_1206x1206.jpeg)Join Louise Ireland’s subscriber chatAvailable in the Substack app and on webJoin chat](https://open.substack.com/pub/louiseireland/chat?utm_source=chat_embed)
 

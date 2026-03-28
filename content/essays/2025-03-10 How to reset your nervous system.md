@@ -1,6 +1,6 @@
 # How to reset your nervous system
 
-_It’s ironic, but I wrote all of this in December before I had the faintest idea I had cancer. I’ve felt that way about many things - my body and mind have prepared me for this battle for a while. I know what I need, how to hold my center, and how to fight. I can light up any dark alley._
+> *It’s ironic, but I wrote all of this in December before I had the faintest idea I had cancer. I’ve felt that way about many things - my body and mind have prepared me for this battle for a while. I know what I need, how to hold my center, and how to fight. I can light up any dark alley.*
 
  _I’m treating this as my north star as I start to undergo chemo, radiation, and other treatments. I’ve already created a new nest here in New York, prepared my activity zones based on needs and energy levels, and taken to screaming into a pillow first thing in the morning to release all the pains of being human._ _Sometimes, all we can do is breathe, and that’s okay, too._
 

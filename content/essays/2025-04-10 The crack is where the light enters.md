@@ -1,6 +1,6 @@
 # The crack is where the light enters
 
-_Cold Dark Matter: An Exploded View, Cornelia Parker, 1991_
+> *Cold Dark Matter: An Exploded View, Cornelia Parker, 1991*
 
 I am almost done with this cycle of chemoradiation—I finished chemotherapy today and have two external radiation sessions left. It feels like forever since I left San Francisco, but I'm also gripped with the uncertainty of not knowing when I'll be back or when I’ll feel better. It's a time of waiting, a time of the unknown, and a time of realizing that any semblance of control I thought I had was an illusion to begin with.
 

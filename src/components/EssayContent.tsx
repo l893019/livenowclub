@@ -44,14 +44,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
   };
 
   // Convert markdown to basic HTML
-  let content = essay.content;
-
-  // First, handle multi-line italic blocks (epigraphs) - convert to blockquote
-  // Pattern: _text spanning\nmultiple lines_
-  content = content.replace(/^_([^_]+)_$/gm, '<blockquote class="epigraph">$1</blockquote>');
-  content = content.replace(/\n_([^_]*(?:\n(?!_)[^_]*)*?)_\n/g, '\n<blockquote class="epigraph">$1</blockquote>\n');
-
-  const contentHtml = content
+  const contentHtml = essay.content
     .split("\n")
     .map((line) => {
       if (line.startsWith("# ") || line.includes("Originally published")) return "";
@@ -59,8 +52,6 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
       if (line.startsWith("### ")) return `<h3>${line.slice(4)}</h3>`;
       if (line.trim() === "---") return "<hr />";
       if (line.startsWith("> ")) return `<blockquote>${line.slice(2)}</blockquote>`;
-      // Skip lines that are already processed as blockquotes
-      if (line.includes('<blockquote')) return line;
 
       // Process images first: [![alt](src)](href) or ![alt](src)
       let processed = line
