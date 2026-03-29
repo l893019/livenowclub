@@ -47,14 +47,14 @@ export default function ConnectPage() {
   return (
     <>
       {/* Header */}
-      <header className="header">
+      <header className="header scrolled">
         <Link href="/" className="logo">
           <img src="/images/logo-handwritten.png" alt="The Live Now Club" className="logo-img" />
         </Link>
         <nav className="nav">
-          <Link href="/read">Read</Link>
-          <Link href="/navigate">Navigate</Link>
-          <Link href="/wonder">Wonder</Link>
+          <Link href="/start-here">Start Here</Link>
+          <Link href="/guide">The Guide</Link>
+          <Link href="/library">Library</Link>
           <Link href="/connect" className="active">Connect</Link>
         </nav>
       </header>
@@ -79,6 +79,10 @@ export default function ConnectPage() {
               <p>
                 Have you faced something that changed how you see time?
                 Your story might help someone else feel less alone.
+              </p>
+              <p className="connect-form-note">
+                I read every submission personally. With your permission, your story may be shared
+                anonymously (or with attribution) to help others.
               </p>
             </div>
 
@@ -147,6 +151,9 @@ export default function ConnectPage() {
                 Questions, thoughts, or just want to say hello?
                 I read everything.
               </p>
+              <p className="connect-form-note">
+                I reply to most messages within a few days. No automated responses.
+              </p>
             </div>
 
             {messageSubmitted ? (
@@ -213,11 +220,10 @@ export default function ConnectPage() {
 
       {/* Footer */}
       <footer className="footer">
-        <p className="footer-quote">What if now is all we have?</p>
         <nav className="footer-nav">
-          <Link href="/read">Read</Link>
-          <Link href="/navigate">Navigate</Link>
-          <Link href="/wonder">Wonder</Link>
+          <Link href="/start-here">Start Here</Link>
+          <Link href="/guide">The Guide</Link>
+          <Link href="/library">Library</Link>
           <Link href="/connect">Connect</Link>
         </nav>
         <p className="footer-copy">&copy; 2026 Louise Ireland</p>
@@ -292,6 +298,13 @@ export default function ConnectPage() {
           font-size: 0.95rem;
           color: rgba(45, 42, 38, 0.6);
           line-height: 1.6;
+        }
+
+        .connect-form-note {
+          font-size: 0.85rem;
+          font-style: italic;
+          color: rgba(45, 42, 38, 0.5);
+          margin-top: 8px;
         }
 
         .connect-form {

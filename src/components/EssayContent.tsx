@@ -7,6 +7,7 @@ import type { Essay } from "@/lib/essays";
 type EssayContentProps = {
   essay: Essay;
   relatedEssays?: Essay[];
+  baseUrl?: string;
 };
 
 // Calculate read time (roughly 200 words per minute)
@@ -15,7 +16,7 @@ function getReadTime(content: string): number {
   return Math.max(1, Math.ceil(words / 200));
 }
 
-export default function EssayContent({ essay, relatedEssays = [] }: EssayContentProps) {
+export default function EssayContent({ essay, relatedEssays = [], baseUrl = "/library" }: EssayContentProps) {
   const [copied, setCopied] = useState(false);
 
   const formatDate = (dateStr: string) => {
@@ -121,22 +122,22 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
   return (
     <>
       {/* Header */}
-      <header className="header">
+      <header className="header scrolled">
         <Link href="/" className="logo">
           <img src="/images/logo-handwritten.png" alt="The Live Now Club" className="logo-img" />
         </Link>
         <nav className="nav">
-          <Link href="/read">Read</Link>
-          <Link href="/navigate">Navigate</Link>
-          <Link href="/wonder">Wonder</Link>
+          <Link href="/start-here">Start Here</Link>
+          <Link href="/guide">The Guide</Link>
+          <Link href="/library" className="active">Library</Link>
           <Link href="/connect">Connect</Link>
         </nav>
       </header>
 
       <div className="essay-page">
         {/* Back Button */}
-        <Link href="/read" className="essay-back">
-          ← Back to all
+        <Link href={baseUrl} className="essay-back">
+          ← Back to Library
         </Link>
 
         {/* Header */}
@@ -188,7 +189,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
             <h2>Read Next</h2>
             <div className="read-next-grid">
               {relatedEssays.map((related) => (
-                <Link key={related.slug} href={`/read/${related.slug}`} className="read-next-card">
+                <Link key={related.slug} href={`${baseUrl}/${related.slug}`} className="read-next-card">
                   {related.image && (
                     <div className="read-next-image">
                       <img src={related.image} alt="" />
