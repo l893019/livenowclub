@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getAllEssays, getLatestEssays, getQuoteWallEssays, getTimelineEssays, getPathwayEssays } from "@/lib/essays";
+import { getAllEssays, PATHWAYS, getPathwayEssays } from "@/lib/essays";
 
 export const metadata = {
   title: "Read | The Live Now Club",
@@ -8,16 +8,33 @@ export const metadata = {
 
 export default function ReadPage() {
   const allEssays = getAllEssays();
-  const latestEssays = getLatestEssays(6);
-  const quoteEssays = getQuoteWallEssays(4); // Fewer quotes since they're longer
-  const timelineEssays = getTimelineEssays();
-  const poems = getPathwayEssays("poems").slice(0, 4);
 
-  // For magazine layout: pick varied essays avoiding duplicates
-  const featured = allEssays.find((e) => e.slug === "fixing-the-unfixable");
-  const secondaryEssays = allEssays
-    .filter((e) => !["fixing-the-unfixable", "the-live-now-club"].includes(e.slug))
-    .slice(0, 4);
+  // Track which essays we've shown to avoid duplicates
+  const shownSlugs = new Set<string>();
+
+  // Helper to get essays for a pathway without duplicates
+  const getUniquePathwayEssays = (pathwayId: string) => {
+    const essays = getPathwayEssays(pathwayId);
+    return essays.filter(e => {
+      if (shownSlugs.has(e.slug)) return false;
+      shownSlugs.add(e.slug);
+      return true;
+    });
+  };
+
+  // Get essays by pathway in order
+  const startHere = getUniquePathwayEssays("start-here");
+  const cancerJourney = getUniquePathwayEssays("cancer-journey");
+  const cancerMeditations = getUniquePathwayEssays("cancer-meditations");
+  const griefLoss = getUniquePathwayEssays("grief-loss");
+  const findingJoy = getUniquePathwayEssays("finding-joy");
+  const wisdom = getUniquePathwayEssays("wisdom");
+  const selfLove = getUniquePathwayEssays("self-love");
+  const poems = getUniquePathwayEssays("poems");
+  const wonder = getUniquePathwayEssays("wonder");
+
+  // Remaining essays not in any pathway
+  const remaining = allEssays.filter(e => !shownSlugs.has(e.slug));
 
   return (
     <>
@@ -34,93 +51,40 @@ export default function ReadPage() {
         </nav>
       </header>
 
-      <div className="read-magazine">
-        {/* Magazine Hero Section - Mixed Sizes */}
-        <section className="magazine-hero">
-          <h1 className="magazine-title">The Writing</h1>
-          <p className="magazine-subtitle">{allEssays.length} pieces on life, love, cancer, and the relentless pursuit of joy</p>
+      <div className="read-curated">
+        {/* Hero */}
+        <section className="read-hero-simple">
+          <h1>The Writing</h1>
+          <p>Essays, poems, and meditations on life, love, cancer, and joy.</p>
         </section>
 
-        {/* Magazine Grid - Featured + Sidebar */}
-        <section className="magazine-grid">
-          {/* Large Featured Card */}
-          {featured && (
-            <Link href={`/read/${featured.slug}`} className="magazine-featured">
-              <div className="magazine-featured-image">
-                <img src={featured.image || "/images/default-essay.jpg"} alt={featured.title} />
-              </div>
-              <div className="magazine-featured-content">
-                <span className="magazine-type">{featured.type}</span>
-                <h2>{featured.title}</h2>
-                {featured.pullQuote && <p className="magazine-quote">"{featured.pullQuote}"</p>}
-                <span className="text-link">Read →</span>
-              </div>
-            </Link>
-          )}
+        {/* Quick Links */}
+        <nav className="read-quick-nav">
+          <a href="#start-here">Start Here</a>
+          <a href="#cancer-journey">Cancer Journey</a>
+          <a href="#grief">Grief & Loss</a>
+          <a href="#joy">Finding Joy</a>
+          <a href="#wisdom">Wisdom</a>
+          <a href="#poems">Poems</a>
+          <a href="#self-love">Self-Love</a>
+        </nav>
 
-          {/* Medium Sidebar Cards */}
-          <div className="magazine-sidebar">
-            {secondaryEssays.slice(0, 2).map((essay) => (
-              <Link key={essay.slug} href={`/read/${essay.slug}`} className="magazine-medium">
-                <div className="magazine-medium-image">
-                  <img src={essay.image || "/images/default-essay.jpg"} alt={essay.title} />
-                </div>
-                <div className="magazine-medium-content">
-                  <span className="magazine-type">{essay.type}</span>
-                  <h3>{essay.title}</h3>
-                  {essay.pullQuote && <p className="magazine-quote-small">"{essay.pullQuote}"</p>}
-                </div>
-              </Link>
-            ))}
+        {/* Start Here */}
+        <section id="start-here" className="read-section">
+          <div className="read-section-header">
+            <h2>Start Here</h2>
+            <p>New to The Live Now Club? Begin with these.</p>
           </div>
-        </section>
-
-        {/* Quote Wall */}
-        <section className="quote-wall">
-          <h2 className="section-label">Words That Stay</h2>
-          <div className="quote-grid">
-            {quoteEssays.map((essay) => (
-              <Link key={essay.slug} href={`/read/${essay.slug}`} className="quote-card">
-                <blockquote>"{essay.pullQuote}"</blockquote>
-                <cite>— {essay.title}</cite>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* Latest Writing */}
-        <section className="magazine-section">
-          <h2 className="section-label">Latest</h2>
-          <div className="magazine-row">
-            {latestEssays.map((essay) => (
-              <Link key={essay.slug} href={`/read/${essay.slug}`} className="magazine-card">
+          <div className="read-list">
+            {startHere.map((essay) => (
+              <Link key={essay.slug} href={`/read/${essay.slug}`} className="read-list-item">
                 {essay.image && (
-                  <div className="magazine-card-image">
+                  <div className="read-list-image">
                     <img src={essay.image} alt={essay.title} />
                   </div>
                 )}
-                <div className="magazine-card-content">
-                  <span className="magazine-type">{essay.type}</span>
-                  <h3>{essay.title}</h3>
-                  <p className="magazine-excerpt">{essay.excerpt}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* Timeline: The Cancer Journey */}
-        <section className="timeline-section">
-          <h2 className="section-label">The Journey</h2>
-          <p className="timeline-intro">A story told through essays, from before the diagnosis to after.</p>
-          <div className="timeline">
-            {timelineEssays.map((essay, index) => (
-              <Link key={essay.slug} href={`/read/${essay.slug}`} className="timeline-item">
-                <div className="timeline-marker">
-                  <span className="timeline-number">{index + 1}</span>
-                </div>
-                <div className="timeline-content">
-                  <span className="timeline-date">{essay.date}</span>
+                <div className="read-list-content">
+                  <span className="read-list-type">{essay.type}</span>
                   <h3>{essay.title}</h3>
                   <p>{essay.excerpt}</p>
                 </div>
@@ -129,29 +93,214 @@ export default function ReadPage() {
           </div>
         </section>
 
-        {/* Poems - Special Treatment */}
-        <section className="poems-section">
-          <h2 className="section-label">Brief & Beautiful</h2>
-          <div className="poems-grid">
-            {poems.map((poem) => (
-              <Link key={poem.slug} href={`/read/${poem.slug}`} className="poem-card">
-                <span className="poem-type">poem</span>
-                <h3>{poem.title}</h3>
-                {poem.pullQuote && <p className="poem-quote">"{poem.pullQuote}"</p>}
+        {/* Cancer Journey */}
+        <section id="cancer-journey" className="read-section">
+          <div className="read-section-header">
+            <h2>The Cancer Journey</h2>
+            <p>From diagnosis through treatment and beyond.</p>
+          </div>
+          <div className="read-list">
+            {cancerJourney.map((essay) => (
+              <Link key={essay.slug} href={`/read/${essay.slug}`} className="read-list-item">
+                {essay.image && (
+                  <div className="read-list-image">
+                    <img src={essay.image} alt={essay.title} />
+                  </div>
+                )}
+                <div className="read-list-content">
+                  <span className="read-list-type">{essay.type}</span>
+                  <h3>{essay.title}</h3>
+                  <p>{essay.excerpt}</p>
+                </div>
               </Link>
             ))}
           </div>
-          <div className="section-more">
-            <Link href="/read/poems" className="text-link">All poems →</Link>
+        </section>
+
+        {/* Cancer Meditations Series */}
+        {cancerMeditations.length > 0 && (
+          <section className="read-section read-section--series">
+            <div className="read-section-header">
+              <h2>Cancer Meditations</h2>
+              <p>A series written during treatment. Read in order.</p>
+            </div>
+            <div className="read-series">
+              {cancerMeditations.map((essay, index) => (
+                <Link key={essay.slug} href={`/read/${essay.slug}`} className="read-series-item">
+                  <span className="read-series-number">{index + 1}</span>
+                  <div className="read-series-content">
+                    <h3>{essay.title}</h3>
+                    <p>{essay.excerpt}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Grief & Loss */}
+        <section id="grief" className="read-section">
+          <div className="read-section-header">
+            <h2>On Grief & Loss</h2>
+            <p>For when you're carrying something heavy.</p>
+          </div>
+          <div className="read-list">
+            {griefLoss.map((essay) => (
+              <Link key={essay.slug} href={`/read/${essay.slug}`} className="read-list-item">
+                {essay.image && (
+                  <div className="read-list-image">
+                    <img src={essay.image} alt={essay.title} />
+                  </div>
+                )}
+                <div className="read-list-content">
+                  <span className="read-list-type">{essay.type}</span>
+                  <h3>{essay.title}</h3>
+                  <p>{essay.excerpt}</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
 
-        {/* Browse All */}
-        <section className="browse-section">
-          <Link href="/read/all" className="browse-link">
-            Browse all {allEssays.length} pieces →
-          </Link>
+        {/* Finding Joy */}
+        <section id="joy" className="read-section">
+          <div className="read-section-header">
+            <h2>Finding Joy Anyway</h2>
+            <p>Because life is also beautiful.</p>
+          </div>
+          <div className="read-list">
+            {findingJoy.map((essay) => (
+              <Link key={essay.slug} href={`/read/${essay.slug}`} className="read-list-item">
+                {essay.image && (
+                  <div className="read-list-image">
+                    <img src={essay.image} alt={essay.title} />
+                  </div>
+                )}
+                <div className="read-list-content">
+                  <span className="read-list-type">{essay.type}</span>
+                  <h3>{essay.title}</h3>
+                  <p>{essay.excerpt}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
         </section>
+
+        {/* Wisdom & Philosophy */}
+        <section id="wisdom" className="read-section">
+          <div className="read-section-header">
+            <h2>Wisdom & Philosophy</h2>
+            <p>The deeper questions about meaning and being.</p>
+          </div>
+          <div className="read-list">
+            {wisdom.map((essay) => (
+              <Link key={essay.slug} href={`/read/${essay.slug}`} className="read-list-item">
+                {essay.image && (
+                  <div className="read-list-image">
+                    <img src={essay.image} alt={essay.title} />
+                  </div>
+                )}
+                <div className="read-list-content">
+                  <span className="read-list-type">{essay.type}</span>
+                  <h3>{essay.title}</h3>
+                  <p>{essay.excerpt}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* Poems */}
+        <section id="poems" className="read-section">
+          <div className="read-section-header">
+            <h2>Poems</h2>
+            <p>Brief meditations. Beauty in a breath.</p>
+          </div>
+          <div className="read-poems-grid">
+            {poems.map((poem) => (
+              <Link key={poem.slug} href={`/read/${poem.slug}`} className="read-poem-card">
+                <span className="read-poem-type">poem</span>
+                <h3>{poem.title}</h3>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* Self-Love */}
+        <section id="self-love" className="read-section">
+          <div className="read-section-header">
+            <h2>Falling in Love with Yourself</h2>
+            <p>The most important relationship you'll ever have.</p>
+          </div>
+          <div className="read-list">
+            {selfLove.map((essay) => (
+              <Link key={essay.slug} href={`/read/${essay.slug}`} className="read-list-item">
+                {essay.image && (
+                  <div className="read-list-image">
+                    <img src={essay.image} alt={essay.title} />
+                  </div>
+                )}
+                <div className="read-list-content">
+                  <span className="read-list-type">{essay.type}</span>
+                  <h3>{essay.title}</h3>
+                  <p>{essay.excerpt}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* Wonder */}
+        {wonder.length > 0 && (
+          <section className="read-section">
+            <div className="read-section-header">
+              <h2>Wonder</h2>
+              <p>AI, dreams, and the bigger questions.</p>
+            </div>
+            <div className="read-list">
+              {wonder.map((essay) => (
+                <Link key={essay.slug} href={`/read/${essay.slug}`} className="read-list-item">
+                  {essay.image && (
+                    <div className="read-list-image">
+                      <img src={essay.image} alt={essay.title} />
+                    </div>
+                  )}
+                  <div className="read-list-content">
+                    <span className="read-list-type">{essay.type}</span>
+                    <h3>{essay.title}</h3>
+                    <p>{essay.excerpt}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Everything Else */}
+        {remaining.length > 0 && (
+          <section className="read-section">
+            <div className="read-section-header">
+              <h2>More Writing</h2>
+              <p>Everything else worth reading.</p>
+            </div>
+            <div className="read-list">
+              {remaining.map((essay) => (
+                <Link key={essay.slug} href={`/read/${essay.slug}`} className="read-list-item">
+                  {essay.image && (
+                    <div className="read-list-image">
+                      <img src={essay.image} alt={essay.title} />
+                    </div>
+                  )}
+                  <div className="read-list-content">
+                    <span className="read-list-type">{essay.type}</span>
+                    <h3>{essay.title}</h3>
+                    <p>{essay.excerpt}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
       </div>
 
       {/* Footer */}

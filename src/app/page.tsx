@@ -8,6 +8,40 @@ import { usePathname } from "next/navigation";
 // HOMEPAGE CONTENT CONFIG
 // ============================================
 
+// Pull quotes for the quote wall - actual excerpts from essays
+const QUOTES = [
+  {
+    slug: "the-live-now-club",
+    title: "The Live Now Club",
+    quote: "Most people in your situation are focused on living not to die, I think what you're trying to say is that you're living to live. The words rearranged the air in my lungs. It was as if the ground shifted beneath me.",
+  },
+  {
+    slug: "fixing-the-unfixable",
+    title: "Fixing the Unfixable",
+    quote: "There is nothing you can say that will solve it. But, there is much you can say that will keep someone company inside of it. You say: I'm not going anywhere. You say: You don't have to be strong with me.",
+  },
+  {
+    slug: "the-other-side-of-grief",
+    title: "The other side of grief",
+    quote: "I wept from the strangeness of return. From the terror of starting anew. From the defiant choice to love this life anyway, knowing how quickly it could disappear again.",
+  },
+  {
+    slug: "embracing-free-fall",
+    title: "Embracing Free Fall",
+    quote: "I'm learning to stop grasping for control and lean back into complete free fall. I don't believe in coincidences; I believe deeply that this diagnosis is another step on a path I started walking three years ago.",
+  },
+  {
+    slug: "cancer-meditations",
+    title: "Cancer Meditations",
+    quote: "I am not dying from this. But it's given me some peace to think that we are all on a path toward death, that we build beautiful lives that dissolve into beautiful nothingness.",
+  },
+  {
+    slug: "i-love-lou",
+    title: "I Love Lou",
+    quote: "I met her on February 13, 2022. Like any good meet-cute, I had this feeling I had met her long ago, maybe in another lifetime. This was going to be a very special person in my life. Her name is Lou.",
+  },
+];
+
 // Soft Entry Points - What do you need today?
 // These are the emotional entry points that guide visitors to the right content
 const SOFT_ENTRIES = [
@@ -151,6 +185,19 @@ export default function HomePage() {
               aria-label={entry.ariaLabel}
             >
               {entry.prompt}
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* QUOTE WALL */}
+      <section className="quote-wall">
+        <h2 className="section-label">Words That Stay</h2>
+        <div className="quote-grid">
+          {QUOTES.map((item) => (
+            <Link key={item.slug} href={`/read/${item.slug}`} className="quote-card">
+              <blockquote>"{item.quote}"</blockquote>
+              <cite>— {item.title}</cite>
             </Link>
           ))}
         </div>

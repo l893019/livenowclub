@@ -4651,3 +4651,263 @@ p {
     font-size: 2rem;
   }
 }
+
+/* ============================================
+   READ PAGE - CURATED LISTS
+   ============================================ */
+
+.read-curated {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.read-hero-simple {
+  text-align: center;
+  padding: var(--space-lg) 0 var(--space-md);
+}
+
+.read-hero-simple h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 300;
+  color: var(--charcoal);
+  margin-bottom: var(--space-xs);
+}
+
+.read-hero-simple p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* Quick Nav */
+.read-quick-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  justify-content: center;
+  padding: var(--space-md) 0 var(--space-xl);
+  border-bottom: 1px solid var(--cream-dark);
+  margin-bottom: var(--space-xl);
+}
+
+.read-quick-nav a {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  border: 1px solid var(--cream-dark);
+  border-radius: 100px;
+  transition: all 0.2s ease;
+}
+
+.read-quick-nav a:hover {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: white;
+}
+
+/* Read Section */
+.read-curated .read-section {
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.read-curated .read-section:last-child {
+  border-bottom: none;
+}
+
+.read-curated .read-section-header {
+  margin-bottom: var(--space-md);
+}
+
+.read-curated .read-section-header h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: var(--space-xs);
+}
+
+.read-curated .read-section-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Read List */
+.read-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.read-list-item {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-sm);
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.read-list-item:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.read-list-image {
+  width: 100px;
+  height: 70px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.read-list-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.read-list-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.read-list-type {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--pink);
+}
+
+.read-list-content h3 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin: 0.2rem 0 0.3rem;
+  line-height: 1.3;
+}
+
+.read-list-content p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Read Series (for Cancer Meditations) */
+.read-series {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.read-series-item {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-sm);
+  border-radius: 8px;
+  transition: background 0.2s ease;
+  align-items: flex-start;
+}
+
+.read-series-item:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.read-series-number {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--pink);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.read-series-content h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: 0.2rem;
+}
+
+.read-series-content p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Poems Grid */
+.read-poems-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+}
+
+.read-poem-card {
+  padding: var(--space-md);
+  background: var(--cream-light);
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.read-poem-card:hover {
+  transform: translateY(-2px);
+  background: white;
+}
+
+.read-poem-type {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--sage);
+}
+
+.read-poem-card h3 {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-top: 0.3rem;
+}
+
+/* Curated Responsive */
+@media (max-width: 768px) {
+  .read-list-item {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .read-list-image {
+    width: 100%;
+    height: 150px;
+  }
+
+  .read-poems-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .read-curated {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .read-quick-nav {
+    gap: 0.4rem;
+  }
+
+  .read-quick-nav a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .read-poems-grid {
+    grid-template-columns: 1fr;
+  }
+}
