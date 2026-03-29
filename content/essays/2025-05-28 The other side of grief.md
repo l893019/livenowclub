@@ -44,7 +44,7 @@ At the top, I stared eye to eye with the skull at the base of the cross. I reali
 
 I don’t want a single thread of truffle tagliatelle to go to waste.
 
-* * *
+---
 
 Sending so much love to you all! Thank you, as always, for reading and sharing my words. 
 

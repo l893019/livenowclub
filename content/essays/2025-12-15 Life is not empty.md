@@ -58,7 +58,7 @@ My friend told me that in Persian, the word for God is Khoda—خدا. It comes 
 
 I hope Lingua Poetica holds you as it’s holding me, that you can lie back in the waves of Neruda, Goethe, and Rumi and find yourself, one word at a time.
 
-* * *
+---
 
 Thank you, as always, for reading and for the support. It means the world! As always, please share and feel free to reach out. I would love to hear feedback! 
 

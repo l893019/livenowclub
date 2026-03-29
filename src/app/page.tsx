@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect } from "react";
-import { usePathname } from "next/navigation";
+import Header from "@/components/Header";
 
 // ============================================
 // HOMEPAGE CONTENT CONFIG
@@ -138,8 +138,6 @@ const RECENT = [
 // ============================================
 
 export default function HomePage() {
-  const pathname = usePathname();
-
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector(".header");
@@ -158,18 +156,7 @@ export default function HomePage() {
 
   return (
     <>
-      {/* HEADER */}
-      <header className="header">
-        <Link href="/" className="logo">
-          <img src="/images/logo-handwritten.png" alt="The Live Now Club" className="logo-img" />
-        </Link>
-        <nav className="nav">
-          <Link href="/read" className={pathname === "/read" ? "active" : ""}>Read</Link>
-          <Link href="/navigate" className={pathname === "/navigate" ? "active" : ""}>Navigate</Link>
-          <Link href="/wonder" className={pathname === "/wonder" ? "active" : ""}>Wonder</Link>
-          <Link href="/connect" className={pathname === "/connect" ? "active" : ""}>Connect</Link>
-        </nav>
-      </header>
+      <Header />
 
       {/* HERO */}
       <section className="hero">

@@ -270,6 +270,77 @@ p {
   background: var(--pink);
 }
 
+/* Nav Dropdown */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(45, 42, 38, 0.6);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.nav-dropdown-trigger:hover,
+.nav-dropdown-trigger.active {
+  color: var(--pink);
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 12px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown-menu:hover {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 12px 20px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.nav-dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.nav-dropdown-menu a:hover {
+  background: var(--cream);
+}
+
+.nav-dropdown-menu .coming-soon {
+  color: var(--text-muted);
+  cursor: default;
+}
+
+.nav-dropdown-menu .coming-soon:hover {
+  background: transparent;
+  color: var(--text-muted);
+}
+
 /* ============================================
    HERO
    ============================================ */

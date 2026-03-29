@@ -18,7 +18,7 @@ In the words of David Whyte in his poem, Sweet Darkness,
 > *There you can be sure*
 > *you are not beyond love.*
 
-* * *
+---
 
 I’ve never been skydiving, but I’ve heard it feels like this: You fall through the sky at such a speed and rate that it is perfect silence. Everything around you feels still. It is dangerous to grasp onto anything aside from the people around you who are also falling - you just have to let go. We hang onto structures, society, and a semblance of order, but you open the door, and it’s clear we’re all just tumbling down. We’re just in varying states of awareness and comfort around it. What does it mean to free fall?
 
@@ -36,4 +36,4 @@ I don't know what I'm going to need during this time. My best guess is that I wi
 
 I am going to keep writing throughout my cancer journey to keep my sanity. Subscribe here (free) to support me.
 
-* * *
+---

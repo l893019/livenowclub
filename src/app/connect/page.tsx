@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Header from "@/components/Header";
 
 export default function ConnectPage() {
   const [storySubmitted, setStorySubmitted] = useState(false);
@@ -46,18 +47,7 @@ export default function ConnectPage() {
 
   return (
     <>
-      {/* Header */}
-      <header className="header">
-        <Link href="/" className="logo">
-          <img src="/images/logo-handwritten.png" alt="The Live Now Club" className="logo-img" />
-        </Link>
-        <nav className="nav">
-          <Link href="/read">Read</Link>
-          <Link href="/navigate">Navigate</Link>
-          <Link href="/wonder">Wonder</Link>
-          <Link href="/connect" className="active">Connect</Link>
-        </nav>
-      </header>
+      <Header />
 
       <div className="connect-container">
         {/* Hero */}

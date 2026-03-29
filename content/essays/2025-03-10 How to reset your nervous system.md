@@ -4,7 +4,7 @@
 
  _I’m treating this as my north star as I start to undergo chemo, radiation, and other treatments. I’ve already created a new nest here in New York, prepared my activity zones based on needs and energy levels, and taken to screaming into a pillow first thing in the morning to release all the pains of being human._ _Sometimes, all we can do is breathe, and that’s okay, too._
 
-* * *
+---
 
 I’ve lived with a nervous system in overdrive for most of my life. And thus, for better or worse, I’ve tried it all. I think it’s a bit of a mindset shift - moving from being reactive towards life versus letting life live through you. Life is fundamentally better when you’re not in a state of stress, fear, or panic. Life shifts when you pull your nature forward without pushing yourself into the world. I’ve realized that any attempt to accelerate things is flawed: you can only live at the speed that life lets you.
 

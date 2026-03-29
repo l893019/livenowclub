@@ -13,7 +13,7 @@ Please pass this along to anyone who could use it ❤️. A pdf version is [here
 > *Thank you to Bibi for inspiring me to do this, my sister for encouraging me, and Alexandra, MC, and my mom for sanity-checking.*
 
 
-* * *
+---
 
 A NOTE FROM ME
 

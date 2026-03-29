@@ -8,7 +8,7 @@
 
  _Dreams speak in languages older than words: the door, the shark, the face I recognize without a name. They rise like tides and I watch them the way you watch clouds drift. A Rorschach of the mind that reveals nothing, and everything, all at once._
 
-* * *
+---
 
  **in case you forget**
 
@@ -21,7 +21,7 @@ I begin.
 The body is both  
 the locked door and the key.
 
-* * *
+---
 
  **the dog came back different**
 
@@ -35,7 +35,7 @@ her eyes were older.
 She could no longer be called.  
 She could only be followed.
 
-* * *
+---
 
  **self-portrait**
 
@@ -46,7 +46,7 @@ the brushstroke,
 the hand,  
 the unfinished sky.
 
-* * *
+---
 
  **beneath the house**
 

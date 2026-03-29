@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Header from "@/components/Header";
 import { getPathwayEssays } from "@/lib/essays";
 
 export const metadata = {
@@ -22,18 +23,7 @@ export default function WonderPage() {
 
   return (
     <>
-      {/* Header */}
-      <header className="header">
-        <Link href="/" className="logo">
-          <img src="/images/logo-handwritten.png" alt="The Live Now Club" className="logo-img" />
-        </Link>
-        <nav className="nav">
-          <Link href="/read">Read</Link>
-          <Link href="/navigate">Navigate</Link>
-          <Link href="/wonder" className="active">Wonder</Link>
-          <Link href="/connect">Connect</Link>
-        </nav>
-      </header>
+      <Header />
 
       <div className="wonder-container">
         {/* Hero */}

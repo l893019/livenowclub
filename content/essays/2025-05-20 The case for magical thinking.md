@@ -36,7 +36,7 @@ From the mountain, as I begin the descent, my legs shake. The path is uneven, an
 
 
 
-* * *
+---
 
 Thank you as always for reading! As always, I appreciate your sharing and passing my words along! 
 

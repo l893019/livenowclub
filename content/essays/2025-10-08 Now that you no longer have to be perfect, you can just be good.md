@@ -76,7 +76,7 @@ In _East of Eden,_ Cal comes to understand that goodness is not perfection, but 
 
 [ Share](https://louiseireland.substack.com/p/now-that-you-no-longer-have-to-be?utm_source=substack&utm_medium=email&utm_content=share&action=share)
 
-* * *
+---
 
 
 

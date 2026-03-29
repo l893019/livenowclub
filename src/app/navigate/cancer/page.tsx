@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Header from "@/components/Header";
 import { CANCER_GUIDE, getCancerGuideEssays, getCancerEssays } from "@/lib/essays";
 
 // Essays that are truly practical guides (actionable, step-by-step)
@@ -79,24 +80,9 @@ export default function NavigateCancerPage() {
       {/* JSON-LD Structured Data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      {/* Header */}
-      <header className="header">
-        <Link href="/" className="logo">
-          <img src="/images/logo-handwritten.png" alt="The Live Now Club" className="logo-img" />
-        </Link>
-        <nav className="nav">
-          <Link href="/read">Read</Link>
-          <Link href="/navigate" className="active">Navigate</Link>
-          <Link href="/wonder">Wonder</Link>
-          <Link href="/connect">Connect</Link>
-        </nav>
-      </header>
+      <Header />
 
       <div className="navigate-container">
-        {/* Breadcrumb */}
-        <div className="navigate-breadcrumb">
-          <Link href="/navigate">← Back to Navigate</Link>
-        </div>
 
         {/* Hero */}
         <section className="navigate-hero">

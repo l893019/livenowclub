@@ -4,13 +4,13 @@ In the last few days following my post, I have been flooded with outreach and lo
 
  _As a quick health aside: I just arrived in New York, I am heading in for more tests and scans tomorrow, and meeting with my doctor at MSK on Monday. Unfortunately, I do not know much at this moment._ _Given my level of blood loss, I am very fatigued._
 
-* * *
+---
 
 There are a lot of different ways to go through the cancer journey. Old Louise would have done this in complete silence and secrecy, but that no longer feels right. I had an enormous fear when I first got the diagnosis that no one would be there for me, and I would be alone in this - I need your help to quell this. I feel stronger knowing that I have an army behind me, that someone is holding a parachute below to catch me as I fall. I just got thrown into a gladiator ring and am ready to fight. I need you to cheer me on.
 
 I’ve been meditating a lot about my future state at the end of this. It means a lot to me to think that I am doing this all for a purpose greater than just my health. My dream is to come out of this stronger, more beautiful, more capable than ever, but it gives me unbelievable peace to think that if I don’t, my fight isn’t just in vain. That I inspire people to live more joyful, magical, and playful lives. That I bring people together in ways that bring them closer to their authentic selves. That others can channel my strength to do the things that scare them. That the world is a more beautiful, loving, and safer place because I’ve been in it. That every time you see birds (especially parrots) or butterflies, you think of me.
 
-* * *
+---
 
 ##  **How can you get updates from me?**
 
@@ -54,7 +54,7 @@ I am fortunate to have a saint of a mother who plans on being with me throughout
 
       * Please don’t send me any mail or packages in NYC yet, as my location is not final.
 
-* * *
+---
 
 ##  **How can you best communicate with me?**
 

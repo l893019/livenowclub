@@ -37,7 +37,7 @@ pretending_
 
 The deepest gratitude might be wanting something enough to risk not getting it. To reach for the future while standing in February, to live in November while carrying every month that came before. Not waiting for time to become linear again, but learning to inhabit all of it at once.
 
-* * *
+---
 
 ## How To Live Now
 
