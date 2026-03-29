@@ -52,4 +52,3 @@ Through the window, I could see the wild parrots had returned to my balcony rail
 
 PS. Thank you so much for all of the kind comments and outreach from my last post. I’m beyond touched. It helps me a lot as I embark on this harrowing journey to know I have a voice <3
 
-[Share Welcome to LouLouLand](https://louiseireland.substack.com/?utm_source=substack&utm_medium=email&utm_content=share&action=share)

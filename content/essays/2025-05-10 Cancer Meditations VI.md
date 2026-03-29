@@ -52,4 +52,3 @@ My senses are slowly awakening from survival mode as the world turns to spring.
 
 How intensely beautiful life is in the presence of death.
 
-[Share Welcome to LouLouLand](https://louiseireland.substack.com/?utm_source=substack&utm_medium=email&utm_content=share&action=share)

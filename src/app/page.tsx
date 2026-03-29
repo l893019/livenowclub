@@ -183,6 +183,19 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* SUBSCRIBE */}
+      <section className="subscribe-embed">
+        <p className="subscribe-embed-text">Join me on this journey</p>
+        <iframe
+          src="https://louiseireland.substack.com/embed"
+          width="100%"
+          height="150"
+          style={{ border: "none", background: "transparent" }}
+          frameBorder="0"
+          scrolling="no"
+        />
+      </section>
+
       {/* SOFT ENTRY POINTS - What do you need today? */}
       <section className="soft-entries">
         <p className="soft-entries-label">What do you need today?</p>

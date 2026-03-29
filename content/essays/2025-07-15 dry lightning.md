@@ -21,4 +21,3 @@ Everything broken, open,
 the way some trees only flower  
 after fire.
 
-[Share Welcome to LouLouLand](https://louiseireland.substack.com/?utm_source=substack&utm_medium=email&utm_content=share&action=share)

@@ -37,4 +37,3 @@ enough,
 even the darkness  
 learns to hold light.
 
-[Share Welcome to LouLouLand](https://louiseireland.substack.com/?utm_source=substack&utm_medium=email&utm_content=share&action=share)

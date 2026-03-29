@@ -28,4 +28,3 @@ like a prayer
 that doesn’t need  
 to be answered.
 
-[Share Welcome to LouLouLand](https://louiseireland.substack.com/?utm_source=substack&utm_medium=email&utm_content=share&action=share)

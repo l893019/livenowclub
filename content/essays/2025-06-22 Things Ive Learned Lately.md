@@ -38,4 +38,3 @@ I went to Kyoto last fall and spent hours sitting in one of my favorite temples,
 
 PS. if you enjoyed this, please leave me a heart or pass along to anyone else who would benefit. 
 
-[Share Welcome to LouLouLand](https://louiseireland.substack.com/?utm_source=substack&utm_medium=email&utm_content=share&action=share)

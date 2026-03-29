@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 
 export default function Header() {
   const pathname = usePathname();
-  const isNavigateActive = pathname?.startsWith("/navigate");
 
   return (
     <header className="header">
@@ -16,18 +15,9 @@ export default function Header() {
         <Link href="/read" className={pathname === "/read" ? "active" : ""}>
           Read
         </Link>
-
-        {/* Navigate Dropdown */}
-        <div className="nav-dropdown">
-          <button className={`nav-dropdown-trigger ${isNavigateActive ? "active" : ""}`}>
-            Navigate
-          </button>
-          <div className="nav-dropdown-menu">
-            <Link href="/navigate/cancer">Cancer Guide</Link>
-            <span className="coming-soon">Life (coming soon)</span>
-          </div>
-        </div>
-
+        <Link href="/navigate" className={pathname?.startsWith("/navigate") ? "active" : ""}>
+          Navigate
+        </Link>
         <Link href="/wonder" className={pathname === "/wonder" ? "active" : ""}>
           Wonder
         </Link>

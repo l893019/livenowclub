@@ -42,4 +42,3 @@ So, here is an appeal, or at least a modest proposal: consider the ceiling. Tran
 
 **PPS.** If you enjoyed my tirade, hearts are very appreciated, so more people can see / please pass it along to anyone else who may be able to help on this.   
 
-[Share Welcome to LouLouLand](https://louiseireland.substack.com/?utm_source=substack&utm_medium=email&utm_content=share&action=share)

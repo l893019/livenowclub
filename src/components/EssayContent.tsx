@@ -59,7 +59,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
     return text
       .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
       .replace(/\*(.+?)\*/g, "<em>$1</em>")
-      .replace(/\\-/g, "—");
+      .replace(/_([^_]+)_/g, "<em>$1</em>");
   };
 
   for (const line of lines) {
@@ -107,10 +107,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
     processed = processed
       .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
       .replace(/\*(.+?)\*/g, "<em>$1</em>")
-      .replace(/ _([^_]+)_ /g, " <em>$1</em> ")
-      .replace(/ _([^_]+)_$/g, " <em>$1</em>")
-      .replace(/^_([^_]+)_ /g, "<em>$1</em> ")
-      .replace(/"_([^_]+)_"/g, '"<em>$1</em>"');
+      .replace(/_([^_]+)_/g, "<em>$1</em>");
 
     result.push(processed);
   }
@@ -156,6 +153,19 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
 
         {/* Content */}
         <article className="essay-content" dangerouslySetInnerHTML={{ __html: `<p>${contentHtml}</p>` }} />
+
+        {/* Subscribe CTA */}
+        <div className="essay-subscribe-cta">
+          <p className="cta-text">Join me on this journey. New essays land in your inbox almost every week.</p>
+          <a
+            href="https://louiseireland.substack.com/subscribe"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cta-button"
+          >
+            Subscribe
+          </a>
+        </div>
 
         {/* Share */}
         <div className="essay-share">
@@ -367,6 +377,44 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         .essay-content :global(em) {
           font-style: italic;
           color: rgba(45, 42, 38, 0.8);
+        }
+
+        /* Subscribe CTA */
+        .essay-subscribe-cta {
+          max-width: 650px;
+          margin: 60px auto 0;
+          padding: 32px;
+          text-align: center;
+          border-top: 1px solid rgba(45, 42, 38, 0.1);
+          border-bottom: 1px solid rgba(45, 42, 38, 0.1);
+        }
+
+        .cta-text {
+          font-size: 1.1rem;
+          font-weight: 300;
+          color: rgba(45, 42, 38, 0.7);
+          margin-bottom: 20px;
+          font-style: italic;
+        }
+
+        .cta-button {
+          display: inline-block;
+          padding: 12px 32px;
+          background: #e8178a;
+          color: white;
+          font-family: "Space Grotesk", sans-serif;
+          font-size: 13px;
+          font-weight: 500;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          border: none;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+
+        .cta-button:hover {
+          background: #c9146f;
+          transform: translateY(-2px);
         }
 
         /* Share Section */

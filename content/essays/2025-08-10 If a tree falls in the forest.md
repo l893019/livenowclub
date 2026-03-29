@@ -18,4 +18,3 @@ Neil deGrasse Tyson once said that when a tree is dying, other trees reach towar
 
 Silence is not the absence of change. It is the medium in which change can happen. And to listen, to truly listen, is not to stop the fall, but to be ready for what grows in its place.
 
-[Share Welcome to LouLouLand](https://louiseireland.substack.com/?utm_source=substack&utm_medium=email&utm_content=share&action=share)

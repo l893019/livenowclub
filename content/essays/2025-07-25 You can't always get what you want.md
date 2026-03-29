@@ -18,4 +18,3 @@ Outside, I see a ginkgo tree waving in the breeze, a flicker of a dragonfly pass
 
 In this moment, leaning closer to the fragile boundary between life and loss, I understand anew the poignancy of Camus’s words. Now, more than ever, I live to the brink, to the breath, to the point of tears.
 
-[Share Welcome to LouLouLand](https://louiseireland.substack.com/?utm_source=substack&utm_medium=email&utm_content=share&action=share)
