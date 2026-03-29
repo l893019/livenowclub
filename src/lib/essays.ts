@@ -10,6 +10,7 @@ export type Essay = {
   date: string;
   type: EssayType;
   excerpt: string;
+  pullQuote?: string; // Compelling line for quote wall
   content: string;
   image?: string;
   substackUrl?: string;
@@ -28,6 +29,38 @@ const COLORS: Essay["color"][] = ["pink", "coral", "gold", "teal", "lavender"];
 
 const CONTENT_DIR = path.join(process.cwd(), "content/essays");
 const IMAGES_DIR = "/images";
+
+// Compelling pull quotes for the quote wall
+const PULL_QUOTES: Record<string, string> = {
+  "the-live-now-club": "Living to live, not living not to die.",
+  "fixing-the-unfixable": "Sometimes the best thing you can say is nothing at all. Just be there.",
+  "expecting-the-unexpected": "You don't have to be brave. You just have to show up.",
+  "the-other-side-of-grief": "Grief is love with nowhere to go.",
+  "embracing-free-fall": "What if this is not the end, but the beginning of actually living?",
+  "and-still-the-figs-ripen": "And still the figs ripen, the sea turns over, and we go on.",
+  "soulmd": "What if productivity isn't about doing more, but becoming more?",
+  "the-butterfly-dream": "Am I dreaming the butterfly, or is the butterfly dreaming me?",
+  "life-is-not-empty": "Life is not empty. It was never empty. I just forgot to look.",
+  "i-love-lou": "This is the year I fall in love with myself.",
+  "the-case-for-magical-thinking": "Maybe believing in magic is the most practical thing we can do.",
+  "when-it-all-falls-out": "Hair falls out. Identity gets stripped. And there you are, still you.",
+  "cancer-meditations": "The body knows things the mind refuses to accept.",
+  "the-ebb": "Let the tide go out. It will return.",
+  "sea-glass": "Tumbled by waves, made beautiful by breaking.",
+  "threads-of-survival": "We are woven from the threads of everyone who loved us.",
+  "how-to-reset-your-nervous-system": "Your body is not your enemy. It's trying to protect you.",
+  "it-takes-a-village": "You don't have to do this alone. You were never meant to.",
+  "consider-the-hospital-ceiling": "In the space between treatments, there is still life.",
+  "the-forest-path": "The path appears as you walk it.",
+  "if-you-love-something-let-it-go": "Letting go is not giving up. It's making room.",
+  "the-starting-line": "Every ending is a new starting line.",
+  "all-i-want-for-my-birthday-is-another-shot-at-life": "Another year is not a given. It's a gift.",
+  "things-ive-learned-lately": "The lesson keeps coming back until you learn it.",
+  "how-to-travel-alone": "Alone is not lonely. Alone is freedom.",
+  "reset-rebirth": "Sometimes you have to burn it down to build it right.",
+  "the-crack-is-where-the-light-enters": "The wound is where the light enters you.",
+  "on-friendship-and-couches": "The people who show up are the ones who matter.",
+};
 
 // Map titles to images
 const IMAGE_MAP: Record<string, string> = {
@@ -391,6 +424,7 @@ export function getAllEssays(): Essay[] {
       date: extractDate(filename),
       type: detectType(title, content),
       excerpt: extractExcerpt(content),
+      pullQuote: PULL_QUOTES[slug],
       content,
       image,
       color: COLORS[index % COLORS.length],
@@ -530,4 +564,35 @@ export function getCancerGuideEssays(pathwayId: string): Essay[] {
 
 export function getCancerEssays(): Essay[] {
   return getAllEssays().filter((e) => e.tags.includes("cancer"));
+}
+
+// Get essays with pull quotes for the quote wall
+export function getQuoteWallEssays(limit = 8): Essay[] {
+  return getAllEssays()
+    .filter((e) => e.pullQuote)
+    .slice(0, limit);
+}
+
+// Get essays for timeline view (ordered chronologically for cancer journey story)
+export function getTimelineEssays(): Essay[] {
+  const timelineOrder = [
+    "i-love-lou", // Pre-cancer: who Louise was
+    "embracing-free-fall", // The diagnosis
+    "expecting-the-unexpected", // Early navigation
+    "cancer-meditations", // Treatment begins
+    "cancer-meditations-ii",
+    "cancer-meditations-iii",
+    "when-it-all-falls-out", // Hair loss
+    "cancer-meditations-iv",
+    "cancer-meditations-v",
+    "threads-of-survival",
+    "cancer-meditations-vi",
+    "the-other-side-of-grief", // Post-treatment
+    "life-is-not-empty", // Recovery
+    "the-live-now-club", // The transformation
+  ];
+  const allEssays = getAllEssays();
+  return timelineOrder
+    .map((slug) => allEssays.find((e) => e.slug === slug))
+    .filter(Boolean) as Essay[];
 }

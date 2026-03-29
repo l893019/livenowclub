@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getAllEssays, PATHWAYS, getPathwayEssays, getLatestEssays, getManifestoEssay } from "@/lib/essays";
+import { getAllEssays, getLatestEssays, getQuoteWallEssays, getTimelineEssays, getPathwayEssays } from "@/lib/essays";
 
 export const metadata = {
   title: "Read | The Live Now Club",
@@ -8,8 +8,16 @@ export const metadata = {
 
 export default function ReadPage() {
   const allEssays = getAllEssays();
-  const latestEssays = getLatestEssays(4);
-  const manifesto = getManifestoEssay();
+  const latestEssays = getLatestEssays(6);
+  const quoteEssays = getQuoteWallEssays(6);
+  const timelineEssays = getTimelineEssays();
+  const poems = getPathwayEssays("poems").slice(0, 4);
+
+  // For magazine layout: pick varied essays avoiding duplicates
+  const featured = allEssays.find((e) => e.slug === "fixing-the-unfixable");
+  const secondaryEssays = allEssays
+    .filter((e) => !["fixing-the-unfixable", "the-live-now-club"].includes(e.slug))
+    .slice(0, 4);
 
   return (
     <>
@@ -26,205 +34,137 @@ export default function ReadPage() {
         </nav>
       </header>
 
-      <div className="read-immersive">
-        {/* Manifesto Hero */}
-        {manifesto && (
-          <section className="read-manifesto">
-            <Link href={`/read/${manifesto.slug}`} className="manifesto-card">
-              <div className="manifesto-image">
-                <img src={manifesto.image || "/images/the-live-now-club.gif"} alt={manifesto.title} />
+      <div className="read-magazine">
+        {/* Magazine Hero Section - Mixed Sizes */}
+        <section className="magazine-hero">
+          <h1 className="magazine-title">The Writing</h1>
+          <p className="magazine-subtitle">{allEssays.length} pieces on life, love, cancer, and the relentless pursuit of joy</p>
+        </section>
+
+        {/* Magazine Grid - Featured + Sidebar */}
+        <section className="magazine-grid">
+          {/* Large Featured Card */}
+          {featured && (
+            <Link href={`/read/${featured.slug}`} className="magazine-featured">
+              <div className="magazine-featured-image">
+                <img src={featured.image || "/images/default-essay.jpg"} alt={featured.title} />
               </div>
-              <div className="manifesto-content">
-                <span className="manifesto-label">The Manifesto</span>
-                <h1>{manifesto.title}</h1>
-                <p className="manifesto-subtitle">{manifesto.subtitle || "Because now is all we have"}</p>
-                <p className="manifesto-excerpt">{manifesto.excerpt}</p>
-                <span className="text-link">Read the founding essay →</span>
+              <div className="magazine-featured-content">
+                <span className="magazine-type">{featured.type}</span>
+                <h2>{featured.title}</h2>
+                {featured.pullQuote && <p className="magazine-quote">"{featured.pullQuote}"</p>}
+                <span className="text-link">Read →</span>
               </div>
             </Link>
-          </section>
-        )}
+          )}
 
-        {/* Latest */}
-        <section className="read-section">
-          <div className="section-header">
-            <h2>Latest</h2>
-            <p>The most recent writing</p>
+          {/* Medium Sidebar Cards */}
+          <div className="magazine-sidebar">
+            {secondaryEssays.slice(0, 2).map((essay) => (
+              <Link key={essay.slug} href={`/read/${essay.slug}`} className="magazine-medium">
+                <div className="magazine-medium-image">
+                  <img src={essay.image || "/images/default-essay.jpg"} alt={essay.title} />
+                </div>
+                <div className="magazine-medium-content">
+                  <span className="magazine-type">{essay.type}</span>
+                  <h3>{essay.title}</h3>
+                  {essay.pullQuote && <p className="magazine-quote-small">"{essay.pullQuote}"</p>}
+                </div>
+              </Link>
+            ))}
           </div>
-          <div className="read-grid read-grid--4">
+        </section>
+
+        {/* Quote Wall */}
+        <section className="quote-wall">
+          <h2 className="section-label">Words That Stay</h2>
+          <div className="quote-grid">
+            {quoteEssays.map((essay) => (
+              <Link key={essay.slug} href={`/read/${essay.slug}`} className="quote-card">
+                <blockquote>"{essay.pullQuote}"</blockquote>
+                <cite>— {essay.title}</cite>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* Latest Writing */}
+        <section className="magazine-section">
+          <h2 className="section-label">Latest</h2>
+          <div className="magazine-row">
             {latestEssays.map((essay) => (
-              <Link key={essay.slug} href={`/read/${essay.slug}`} className="immersive-card">
-                <img src={essay.image || "/images/default-essay.jpg"} alt={essay.title} />
-                <div className="immersive-card-content">
-                  <span className="immersive-card-type">{essay.type}</span>
-                  <h3 className="immersive-card-title">{essay.title}</h3>
+              <Link key={essay.slug} href={`/read/${essay.slug}`} className="magazine-card">
+                {essay.image && (
+                  <div className="magazine-card-image">
+                    <img src={essay.image} alt={essay.title} />
+                  </div>
+                )}
+                <div className="magazine-card-content">
+                  <span className="magazine-type">{essay.type}</span>
+                  <h3>{essay.title}</h3>
+                  <p className="magazine-excerpt">{essay.excerpt}</p>
                 </div>
               </Link>
             ))}
           </div>
         </section>
 
-        {/* What do you need today? */}
-        <section className="read-mood-section">
-          <h2 className="read-mood-title">What do you need today?</h2>
-          <div className="mood-cards">
-            <Link href="/navigate" className="mood-pill">I just got a diagnosis</Link>
-            <a href="#grief-loss" className="mood-pill">I'm grieving</a>
-            <a href="#finding-joy" className="mood-pill">I need hope</a>
-            <a href="#wisdom" className="mood-pill">I want to think deeply</a>
-            <a href="#poems" className="mood-pill">Something brief & beautiful</a>
-          </div>
-        </section>
-
-        {/* Start Here */}
-        <section id="start-here" className="read-section">
-          <div className="section-header">
-            <h2>Start Here</h2>
-            <p>New to The Live Now Club? Begin with these.</p>
-          </div>
-          <div className="read-grid">
-            {getPathwayEssays("start-here").map((essay) => (
-              <Link key={essay.slug} href={`/read/${essay.slug}`} className="immersive-card">
-                <img src={essay.image || "/images/default-essay.jpg"} alt={essay.title} />
-                <div className="immersive-card-content">
-                  <span className="immersive-card-type">{essay.type}</span>
-                  <h3 className="immersive-card-title">{essay.title}</h3>
+        {/* Timeline: The Cancer Journey */}
+        <section className="timeline-section">
+          <h2 className="section-label">The Journey</h2>
+          <p className="timeline-intro">A story told through essays, from before the diagnosis to after.</p>
+          <div className="timeline">
+            {timelineEssays.map((essay, index) => (
+              <Link key={essay.slug} href={`/read/${essay.slug}`} className="timeline-item">
+                <div className="timeline-marker">
+                  <span className="timeline-number">{index + 1}</span>
+                </div>
+                <div className="timeline-content">
+                  <span className="timeline-date">{essay.date}</span>
+                  <h3>{essay.title}</h3>
+                  <p>{essay.excerpt}</p>
                 </div>
               </Link>
             ))}
           </div>
         </section>
 
-        {/* Cancer Journey */}
-        <section id="cancer-journey" className="read-section">
-          <div className="section-header">
-            <h2>The Cancer Journey</h2>
-            <p>A series of meditations written during treatment.</p>
-          </div>
-          <div className="read-grid read-grid--4">
-            {getPathwayEssays("cancer-journey").slice(0, 4).map((essay) => (
-              <Link key={essay.slug} href={`/read/${essay.slug}`} className="immersive-card">
-                <img src={essay.image || "/images/default-essay.jpg"} alt={essay.title} />
-                <div className="immersive-card-content">
-                  <span className="immersive-card-type">{essay.type}</span>
-                  <h3 className="immersive-card-title">{essay.title}</h3>
-                </div>
+        {/* Poems - Special Treatment */}
+        <section className="poems-section">
+          <h2 className="section-label">Brief & Beautiful</h2>
+          <div className="poems-grid">
+            {poems.map((poem) => (
+              <Link key={poem.slug} href={`/read/${poem.slug}`} className="poem-card">
+                <span className="poem-type">poem</span>
+                <h3>{poem.title}</h3>
+                {poem.pullQuote && <p className="poem-quote">"{poem.pullQuote}"</p>}
               </Link>
             ))}
           </div>
           <div className="section-more">
-            <Link href="/navigate" className="text-link">See the full cancer guide →</Link>
-          </div>
-        </section>
-
-        {/* On Grief & Loss */}
-        <section id="grief-loss" className="read-section">
-          <div className="section-header">
-            <h2>On Grief & Loss</h2>
-            <p>For when you're carrying something heavy.</p>
-          </div>
-          <div className="read-grid">
-            {getPathwayEssays("grief-loss").map((essay) => (
-              <Link key={essay.slug} href={`/read/${essay.slug}`} className="immersive-card">
-                <img src={essay.image || "/images/default-essay.jpg"} alt={essay.title} />
-                <div className="immersive-card-content">
-                  <span className="immersive-card-type">{essay.type}</span>
-                  <h3 className="immersive-card-title">{essay.title}</h3>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* Finding Joy */}
-        <section id="finding-joy" className="read-section">
-          <div className="section-header">
-            <h2>Finding Joy Anyway</h2>
-            <p>Because life is also beautiful.</p>
-          </div>
-          <div className="read-grid">
-            {getPathwayEssays("finding-joy").map((essay) => (
-              <Link key={essay.slug} href={`/read/${essay.slug}`} className="immersive-card">
-                <img src={essay.image || "/images/default-essay.jpg"} alt={essay.title} />
-                <div className="immersive-card-content">
-                  <span className="immersive-card-type">{essay.type}</span>
-                  <h3 className="immersive-card-title">{essay.title}</h3>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* Wisdom & Philosophy */}
-        <section id="wisdom" className="read-section">
-          <div className="section-header">
-            <h2>Wisdom & Philosophy</h2>
-            <p>The deeper questions about meaning, identity, and being.</p>
-          </div>
-          <div className="read-grid">
-            {getPathwayEssays("wisdom").slice(0, 4).map((essay) => (
-              <Link key={essay.slug} href={`/read/${essay.slug}`} className="immersive-card">
-                <img src={essay.image || "/images/default-essay.jpg"} alt={essay.title} />
-                <div className="immersive-card-content">
-                  <span className="immersive-card-type">{essay.type}</span>
-                  <h3 className="immersive-card-title">{essay.title}</h3>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* Poems */}
-        <section id="poems" className="read-section">
-          <div className="section-header">
-            <h2>Poems</h2>
-            <p>Brief meditations. Beauty in a breath.</p>
-          </div>
-          <div className="read-grid read-grid--3">
-            {getPathwayEssays("poems").slice(0, 6).map((essay) => (
-              <Link key={essay.slug} href={`/read/${essay.slug}`} className="immersive-card immersive-card--poem">
-                <div className="immersive-card-content">
-                  <span className="immersive-card-type">poem</span>
-                  <h3 className="immersive-card-title">{essay.title}</h3>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* Falling in Love with Yourself */}
-        <section id="self-love" className="read-section">
-          <div className="section-header">
-            <h2>Falling in Love with Yourself</h2>
-            <p>The most important relationship you'll ever have.</p>
-          </div>
-          <div className="read-grid">
-            {getPathwayEssays("self-love").map((essay) => (
-              <Link key={essay.slug} href={`/read/${essay.slug}`} className="immersive-card">
-                <img src={essay.image || "/images/default-essay.jpg"} alt={essay.title} />
-                <div className="immersive-card-content">
-                  <span className="immersive-card-type">{essay.type}</span>
-                  <h3 className="immersive-card-title">{essay.title}</h3>
-                </div>
-              </Link>
-            ))}
+            <Link href="/read/poems" className="text-link">All poems →</Link>
           </div>
         </section>
 
         {/* Browse All */}
-        <section className="read-browse">
+        <section className="browse-section">
           <Link href="/read/all" className="browse-link">
             Browse all {allEssays.length} pieces →
           </Link>
         </section>
       </div>
 
-      {/* Floating Subscribe Button */}
-      <div className="subscribe-float">
-        <a href="https://louiseireland.substack.com/subscribe" target="_blank" rel="noopener noreferrer">
-          Subscribe
-        </a>
-      </div>
+      {/* Footer */}
+      <footer className="footer">
+        <p className="footer-quote">What if now is all we have?</p>
+        <nav className="footer-nav">
+          <Link href="/read">Read</Link>
+          <Link href="/navigate">Navigate</Link>
+          <Link href="/wonder">Wonder</Link>
+          <Link href="/connect">Connect</Link>
+        </nav>
+        <p className="footer-copy">&copy; 2026 Louise Ireland</p>
+      </footer>
     </>
   );
 }
