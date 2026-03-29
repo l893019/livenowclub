@@ -323,10 +323,49 @@ p {
    INTRO
    ============================================ */
 .intro {
-  max-width: 640px;
+  max-width: 720px;
   margin: 0 auto;
   padding: var(--space-xl) var(--space-md) var(--space-lg);
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.intro-photo {
+  flex-shrink: 0;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--pink);
+  box-shadow: 0 4px 20px rgba(232, 23, 138, 0.15);
+}
+
+.intro-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.intro-text {
+  text-align: left;
+}
+
+@media (max-width: 600px) {
+  .intro {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .intro-text {
+    text-align: center;
+  }
+
+  .intro-photo {
+    width: 140px;
+    height: 140px;
+  }
 }
 
 .intro-greeting {
@@ -341,16 +380,17 @@ p {
   line-height: 1.7;
   color: var(--text-dim);
   font-weight: 300;
-  margin-bottom: var(--space-sm);
-}
-
-.intro-body:last-child {
   margin-bottom: 0;
 }
 
 .intro-verbs {
   color: var(--pink);
   font-style: italic;
+}
+
+.intro-lou {
+  color: var(--text-muted);
+  font-weight: 300;
 }
 
 /* ============================================

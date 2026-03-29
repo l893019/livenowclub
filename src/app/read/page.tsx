@@ -58,11 +58,11 @@ export default function ReadPage() {
 
         {/* Quick Links */}
         <nav className="read-quick-nav">
-          <a href="#start-here">Start Here</a>
-          <a href="#grief">Grief & Loss</a>
+          <a href="#diagnosed">Just Diagnosed</a>
+          <a href="#heavy">Carrying Heavy</a>
           <a href="#joy">Finding Joy</a>
-          <a href="#wisdom">Wisdom</a>
-          <a href="#poems">Poems</a>
+          <a href="#perspective">Perspective</a>
+          <a href="#beautiful">Beautiful</a>
           <a href="#self-love">Self-Love</a>
         </nav>
 
@@ -72,8 +72,8 @@ export default function ReadPage() {
           <Link href="/navigate" className="read-callout-link">Navigate the journey →</Link>
         </div>
 
-        {/* Start Here */}
-        <section id="start-here" className="read-section">
+        {/* Start Here / Diagnosed */}
+        <section id="diagnosed" className="read-section">
           <div className="read-section-header">
             <h2>Start Here</h2>
             <p>New to The Live Now Club? Begin with these.</p>
@@ -96,8 +96,8 @@ export default function ReadPage() {
           </div>
         </section>
 
-        {/* Grief & Loss */}
-        <section id="grief" className="read-section">
+        {/* Grief & Loss / Heavy */}
+        <section id="heavy" className="read-section">
           <div className="read-section-header">
             <h2>On Grief & Loss</h2>
             <p>For when you're carrying something heavy.</p>
@@ -144,8 +144,8 @@ export default function ReadPage() {
           </div>
         </section>
 
-        {/* Wisdom & Philosophy */}
-        <section id="wisdom" className="read-section">
+        {/* Wisdom & Philosophy / Perspective */}
+        <section id="perspective" className="read-section">
           <div className="read-section-header">
             <h2>Wisdom & Philosophy</h2>
             <p>The deeper questions about meaning and being.</p>
@@ -168,8 +168,8 @@ export default function ReadPage() {
           </div>
         </section>
 
-        {/* Poems */}
-        <section id="poems" className="read-section">
+        {/* Poems / Beautiful */}
+        <section id="beautiful" className="read-section">
           <div className="read-section-header">
             <h2>Poems</h2>
             <p>Brief meditations. Beauty in a breath.</p>

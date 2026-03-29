@@ -321,7 +321,7 @@
 
     /* ACT HEADERS */
     .act-header {
-      padding: 80px 24px 60px;
+      padding: 50px 24px 40px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -349,9 +349,9 @@
     }
 
     .act-header h2 {
-      font-size: clamp(2.5rem, 8vw, 4rem);
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
       font-weight: 300;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
       letter-spacing: -0.02em;
     }
 
@@ -1212,6 +1212,7 @@
       background: linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
       padding: 50px 0;
       position: relative;
+      text-align: center;
     }
 
     .scatterplot-container { margin-top: 48px; }
@@ -1223,7 +1224,6 @@
       background: linear-gradient(135deg, #1e1e2e 0%, #13131f 100%);
       border: 1px solid rgba(232,23,138,0.15);
       border-radius: 16px;
-      overflow: hidden;
       box-shadow: 0 20px 60px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.05);
     }
 
@@ -1310,15 +1310,41 @@
       box-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
     }
 
+    /* Scatterplot tooltip */
+    .scatter-tooltip {
+      position: absolute;
+      background: rgba(20, 18, 22, 0.95);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 10px 14px;
+      pointer-events: none;
+      z-index: 100;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.15s ease, transform 0.15s ease;
+      white-space: nowrap;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .scatter-tooltip.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .scatter-tooltip-title {
+      font-weight: 600;
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .scatter-tooltip-meta {
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
     /* Mobile: larger tap targets */
     @media (max-width: 768px) {
       .scatterplot-canvas {
         height: 400px;
         touch-action: pan-y pinch-zoom;
-      }
-      .scatter-dot {
-        width: 14px;
-        height: 14px;
       }
       .scatter-dot::before {
         content: '';
@@ -1342,10 +1368,39 @@
       .scatterplot-canvas {
         height: 350px;
       }
-      .scatter-dot {
-        width: 12px;
-        height: 12px;
-      }
+    }
+
+    /* Decade filters */
+    .decade-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin: 24px 0;
+    }
+
+    .decade-filter {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 8px 16px;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      color: var(--text-dim);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .decade-filter:hover {
+      border-color: var(--accent-pink);
+      color: var(--text);
+    }
+
+    .decade-filter.active {
+      background: var(--accent-pink);
+      border-color: var(--accent-pink);
+      color: #fff;
     }
 
     .theme-legend {
@@ -2104,9 +2159,8 @@
 
   <!-- INTRODUCTION -->
   <section class="essay-section" style="position: relative; overflow: hidden;">
-    <div class="container">
-      <div class="essay-content">
-        <p>Our race could go extinct, machines could destroy us, we could destroy ourselves, or this could be the moment that we choose to strip away the excess to evolve to a more natural state that is technologically-enabled, yet deeply human.</p>
+    <div class="container-narrow">
+        <p><span style="font-size: 1.4em; font-weight: 400; color: var(--accent-pink);">Our</span> race could go extinct, machines could destroy us, we could destroy ourselves, or this could be the moment that we choose to strip away the excess to evolve to a more natural state that is technologically-enabled, yet deeply human.</p>
 
         <p>I write this with urgency. Over the last year, at the age of 34, my world turned upside down with a Stage III cancer diagnosis. I endured a brutal round of treatment, my D1 rower body debilitated to a wheelchair, my mind incapable of holding thoughts, only to learn that my cancer had progressed to Stage IV, spreading to multiple organs. Doctors gave me a prognosis of less than two years. By virtue of medicine, I am clear now, but I live in the shadow of expected recurrence.</p>
 
@@ -2131,10 +2185,9 @@
           <div class="essay-preview-card-content">
             <span class="essay-preview-card-label">Read more</span>
             <h4 class="essay-preview-card-title">Soul.md</h4>
-            <p class="essay-preview-card-subtitle">From doing to being</p>
+            <p class="essay-preview-card-subtitle">From Doing to Being. Searching for Meaning in Science Fiction</p>
           </div>
         </a>
-      </div>
     </div>
   </section>
 
@@ -2176,7 +2229,7 @@
 
       <div class="chart-grid">
         <div class="chart-block">
-          <h3 class="chart-title">What Remains Unfilled?</h3>
+          <h3 class="chart-title">What Is Left to Solve For?</h3>
           <div class="immersive-chart" id="chart-scarcity"></div>
           <p class="chart-insight">Meaning takes the place of material needs.</p>
           <p class="chart-source">Based on 208 science fiction books, 1895–2024</p>
@@ -2287,29 +2340,70 @@
 
       <div class="trend-card pink-accent">
         <h3 class="chart-title">What Do We Still Search For?</h3>
-        <p style="text-align: center; color: var(--text-muted); font-size: 13px; margin-bottom: 20px;">How anxieties have shifted over time</p>
-        <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; padding: 0 4px;">
-          <span></span>
-          <span style="text-align: right;">Pre-1980 → 2000+</span>
+        <p style="text-align: center; color: var(--text-muted); font-size: 13px; margin-bottom: 24px;">How anxieties have shifted over time</p>
+
+        <div style="display: flex; gap: 12px; margin-bottom: 16px; font-size: 11px; justify-content: flex-end;">
+          <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; background: rgba(232,23,138,0.3); border-radius: 2px;"></span> Pre-1980</span>
+          <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; background: var(--accent-pink); border-radius: 2px;"></span> 2000+</span>
         </div>
+
         <div class="trend-comparison">
-          <div class="trend-row">
-            <span class="label">Meaning</span>
-            <div class="bar-track"><div class="bar-fill" style="width: 52%;"></div></div>
-            <span class="pct">67% → 52%</span>
+          <div class="trend-row" style="margin-bottom: 16px;">
+            <span class="label" style="min-width: 80px;">Meaning</span>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="flex: 1; height: 16px; background: rgba(232,23,138,0.08); border-radius: 4px; overflow: hidden;">
+                  <div style="width: 67%; height: 100%; background: rgba(232,23,138,0.3); border-radius: 4px;"></div>
+                </div>
+                <span style="font-size: 13px; color: var(--text-muted); min-width: 36px;">67%</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="flex: 1; height: 16px; background: rgba(232,23,138,0.08); border-radius: 4px; overflow: hidden;">
+                  <div style="width: 52%; height: 100%; background: var(--accent-pink); border-radius: 4px;"></div>
+                </div>
+                <span style="font-size: 13px; color: var(--accent-pink); font-weight: 500; min-width: 36px;">52%</span>
+              </div>
+            </div>
           </div>
-          <div class="trend-row">
-            <span class="label">Identity</span>
-            <div class="bar-track"><div class="bar-fill" style="width: 21%;"></div></div>
-            <span class="pct">10% → 21%</span>
+
+          <div class="trend-row" style="margin-bottom: 16px;">
+            <span class="label" style="min-width: 80px;">Identity</span>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="flex: 1; height: 16px; background: rgba(232,23,138,0.08); border-radius: 4px; overflow: hidden;">
+                  <div style="width: 10%; height: 100%; background: rgba(232,23,138,0.3); border-radius: 4px;"></div>
+                </div>
+                <span style="font-size: 13px; color: var(--text-muted); min-width: 36px;">10%</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="flex: 1; height: 16px; background: rgba(232,23,138,0.08); border-radius: 4px; overflow: hidden;">
+                  <div style="width: 21%; height: 100%; background: var(--accent-pink); border-radius: 4px;"></div>
+                </div>
+                <span style="font-size: 13px; color: var(--accent-pink); font-weight: 500; min-width: 36px;">21%</span>
+              </div>
+            </div>
           </div>
+
           <div class="trend-row">
-            <span class="label">Connection</span>
-            <div class="bar-track"><div class="bar-fill" style="width: 17%;"></div></div>
-            <span class="pct">15% → 17%</span>
+            <span class="label" style="min-width: 80px;">Connection</span>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="flex: 1; height: 16px; background: rgba(232,23,138,0.08); border-radius: 4px; overflow: hidden;">
+                  <div style="width: 15%; height: 100%; background: rgba(232,23,138,0.3); border-radius: 4px;"></div>
+                </div>
+                <span style="font-size: 13px; color: var(--text-muted); min-width: 36px;">15%</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="flex: 1; height: 16px; background: rgba(232,23,138,0.08); border-radius: 4px; overflow: hidden;">
+                  <div style="width: 17%; height: 100%; background: var(--accent-pink); border-radius: 4px;"></div>
+                </div>
+                <span style="font-size: 13px; color: var(--accent-pink); font-weight: 500; min-width: 36px;">17%</span>
+              </div>
+            </div>
           </div>
         </div>
-        <p class="trend-shift">Based on 73 pre-1980 books vs 77 post-2000 books</p>
+
+        <p class="trend-shift" style="margin-top: 20px;">Based on 73 pre-1980 books vs 77 post-2000 books</p>
         <p class="trend-prose">Early science fiction obsessed over meaning. What gives life purpose when survival is solved? Modern authors have diversified the anxiety. Identity and connection now share the weight.</p>
       </div>
 
@@ -2429,7 +2523,7 @@
 
       <p>Across the corpus, the answer is yes, but I think the point is more nuanced than that. In a world of scarcity, connection is one factor among many. In a world of abundance, where technology can be equalized, connection is one of the few things that cannot.</p>
 
-      <p>In my favorite book, Neal Stephenson's <em>The Diamond Age</em>, an interactive book designed to raise a child, only succeeds because a real woman on the other side of the screen speaks the words with love. As our worlds become more artificial, our needs become more obviously human.</p>
+      <p>In my favorite book, Neal Stephenson's <em>The Diamond Age</em>, an interactive book designed to raise a child only succeeds because a real woman on the other side of the screen speaks the words with love. As our worlds become more artificial, our needs become more obviously human.</p>
 
       <p>I've thought about this a lot this year as I've been in and out of hospitals. As we continue to automate and delegate to machines, I wonder if we will learn what only a human can do.</p>
     </div>
@@ -2557,7 +2651,7 @@
         </div>
       </div>
 
-      <h3>The Warning: Power</h3>
+      <h3 style="margin-top: 50px;">The Warning: Power</h3>
       <p style="margin-bottom: 20px;"><strong>Technology amplifies existing power structures rather than transcending them:</strong> Tools designed for liberation are repurposed for control. Platforms designed for connection enable surveillance. Abundance for some enables poverty for others.</p>
       <p style="margin-bottom: 20px;"><strong>Surveillance enables tyranny, even benevolent tyranny:</strong> Being watched changes behavior, full transparency serves whoever is watching, and privacy, once surrendered, is almost impossible to reclaim. Even in societies built on good intentions, the capacity to observe becomes the capacity to control.</p>
       <p style="margin-bottom: 20px;"><strong>Comfort is the most effective form of control:</strong> When a society is trained to want what it is given, they never arrive at the discomfort that precedes revolution. It's a more subtle form of control than obvious tyranny.</p>
@@ -2587,7 +2681,7 @@
       <p style="margin-bottom: 30px;"><strong>Immortality without purpose is a curse:</strong> Endless time does not produce endless meaning. It produces endless time to fill. Without death imposing a horizon, every project becomes optional, every relationship provisional, every ambition something that can be put off for another century.</p>
 
       <div class="highlight-quote">
-        <p>"Once you've achieved everything, there is nothing left. You take the core of being human: the striving."</p>
+        <p>"Once you've achieved everything, there is nothing left. You take out the core of being human: the striving."</p>
         <div class="attribution">Peter Hamilton, The Evolutionary Void</div>
       </div>
     </div>
@@ -2620,7 +2714,7 @@
       <p>And in the moment where I am acutely aware of my own potential end, I've found peace in the vantage point. Science fiction often treats death as a problem to be solved. But the most profound works treat it as the very thing that gives the pattern its beauty.</p>
 
       <div class="highlight-quote" style="margin: 30px 0;">
-        <p>"If you can see a thing whole," he said, "it seems that it's always beautiful. Planets, lives.... But close up, a world's all dirt and rocks. And day to day, life's a hard job, you get tired, you loose the pattern. You need distance, interval. The way to see how beautiful earth is, is to see it from the moon. The way to see how beautiful life is, is from the vantage point of death."</p>
+        <p>"If you can see a thing whole," he said, "it seems that it's always beautiful. Planets, lives.... But close up, a world's all dirt and rocks. And day to day, life's a hard job, you get tired, you lose the pattern. You need distance, interval. The way to see how beautiful earth is, is to see it from the moon. The way to see how beautiful life is, is from the vantage point of death."</p>
         <div class="attribution">Ursula K. Le Guin, The Dispossessed</div>
       </div>
 
@@ -2636,7 +2730,7 @@
         <div class="chart-block">
           <h3 class="chart-title">How Do These Stories End?</h3>
           <div class="immersive-chart" id="chart-ending"></div>
-          <p class="chart-insight">Most end in acceptance, in <em>accommodation.</em></p>
+          <p class="chart-insight">The most common ending is acceptance, <em>accommodation.</em></p>
           <p class="chart-source">Based on 208 science fiction books, 1895–2024</p>
         </div>
 
@@ -2702,22 +2796,31 @@
     <div class="container">
       <div class="conclusion-content" style="text-align: center;">
         <p style="font-size: 1.2rem; line-height: 1.8; max-width: 700px; margin: 0 auto 40px; color: var(--text);">Across 208 books and 129 years, the writers who imagined the end of the world as we know it did not, on balance, despair. They confirmed what I've experienced this year.</p>
-        <p style="font-size: 1.5rem; font-weight: 500; max-width: 700px; margin: 0 auto; color: var(--text); line-height: 1.6;">When everything you thought you needed is taken away,<br>what is left is not nothing.<br><strong>It is the beginning.</strong></p>
+        <p style="font-size: 1.5rem; font-weight: 500; max-width: 700px; margin: 0 auto; color: var(--text); line-height: 1.6;">When everything you thought you needed is taken away,<br>what is left is not nothing.</p>
+        <p style="font-size: 1.8rem; font-weight: 500; max-width: 700px; margin: 30px auto 0; color: var(--accent-pink); line-height: 1.4;">It is the beginning.</p>
       </div>
     </div>
   </section>
 
   <!-- LANDSCAPE DIVIDER -->
   <div class="landscape-divider">
-    <img loading="lazy" src="/wonder/assets/landscapes/optimized/20.jpg" alt="Surreal landscape">
+    <img loading="lazy" src="/wonder/assets/landscapes/optimized/5.jpg" alt="Surreal landscape">
   </div>
 
   <!-- LIBRARY -->
   <section class="library-section" id="library">
     <div class="container-wide">
       <div class="section-label">The Library</div>
-      <h2>More Than 200 Books Mapped</h2>
-      <p style="max-width: 650px; color: var(--text-dim); font-size: 1.15rem;">Every book positioned by worldview. Humanist books believe in connection and human meaning. Exhausted books seek transcendence or find meaning elusive. Click any dot to explore.</p>
+      <h2>208 Books Mapped</h2>
+      <p style="max-width: 650px; margin: 0 auto; color: var(--text-dim); font-size: 1.15rem;">Each book positioned by its philosophical stance. Horizontal axis: technology as oppressive (left) to liberating (right). Vertical axis: meaning found in human connection (bottom) to transcendence (top). Hover to preview, click to explore.</p>
+
+      <div class="decade-filters">
+        <button class="decade-filter active" data-decade="all">All Years</button>
+        <button class="decade-filter" data-decade="pre1970">Pre-1970</button>
+        <button class="decade-filter" data-decade="1970s-90s">1970s–90s</button>
+        <button class="decade-filter" data-decade="2000s">2000s</button>
+        <button class="decade-filter" data-decade="2010s+">2010s+</button>
+      </div>
 
       <div class="scatterplot-container">
         <div class="scatterplot-canvas" id="scatterplot">
@@ -2726,6 +2829,11 @@
           <div class="scatter-axis-label bottom">Humanist</div>
           <div class="scatter-axis-label left">Pessimistic</div>
           <div class="scatter-axis-label right">Optimistic</div>
+          <!-- Tooltip -->
+          <div class="scatter-tooltip" id="scatterTooltip">
+            <div class="scatter-tooltip-title" id="tooltipTitle"></div>
+            <div class="scatter-tooltip-meta" id="tooltipMeta"></div>
+          </div>
         </div>
       </div>
 
@@ -2766,7 +2874,7 @@
           <div><strong>Theme</strong> Primary thematic concern (identity, meaning, hierarchy, connection, freedom, mortality, work, embodiment, scarcity)</div>
           <div><strong>Response</strong> How characters respond to abundance (acceptance, rejection, reform, transcendence, restlessness)</div>
           <div><strong>Tech Stance</strong> Whether technology liberates, imprisons, or is neutral</div>
-          <div><strong>What Remains Unfilled</strong> What replaces material scarcity (meaning, identity, connection, status, freedom)</div>
+          <div><strong>What Is Left to Solve For</strong> What replaces material scarcity (meaning, identity, connection, status, freedom)</div>
           <div><strong>Identity Model</strong> Whether identity is fixed, fluid, constructed, or multiple</div>
           <div><strong>What Makes Life Worth Living</strong> Connection, struggle, creation, discovery, or transcendence</div>
           <div><strong>Death's Role</strong> Whether mortality gives meaning, is a problem to solve, becomes irrelevant, or is transcended</div>
@@ -2785,13 +2893,20 @@
           <li style="margin-bottom: 12px;"><strong>Authorial intent vs. interpretation:</strong> Analysis reflects what the works communicate, which may differ from authorial intent. Science fiction often contains more complexity than any tagging system can capture.</li>
           <li><strong>Temporal distribution:</strong> More recent decades have more works, reflecting both expanded publishing and recency bias in selection.</li>
         </ul>
+
+        <h3 style="font-family: var(--sans); font-size: 13px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-pink); margin-bottom: 20px; margin-top: 48px;">Classification Notes</h3>
+        <ul style="line-height: 1.9; padding-left: 20px;">
+          <li style="margin-bottom: 12px;"><strong>On "constructed" identity:</strong> Early dystopias (<em>1984</em>, <em>Brave New World</em>, <em>Fahrenheit 451</em>) are tagged "constructed" though identity is state-imposed rather than self-constructed. The tag captures that identity is made, not given—the agency question is separate.</li>
+          <li style="margin-bottom: 12px;"><strong>On corpus boundaries:</strong> Several works (<em>The War of the Worlds</em>, <em>A Clockwork Orange</em>, <em>The Handmaid's Tale</em>) aren't post-scarcity novels but serve as counterpoints—showing what scarcity and control look like to sharpen the contrast.</li>
+          <li><strong>On borderline readings:</strong> Some tags are interpretive judgment calls. <em>Neuromancer</em> could be "transcendence" rather than "connection." <em>Blindsight</em> could be "consciousness" rather than "struggle." The patterns matter more than any individual classification.</li>
+        </ul>
       </div>
     </div>
   </section>
 
   <!-- LANDSCAPE DIVIDER -->
   <div class="landscape-divider">
-    <img loading="lazy" src="/wonder/assets/landscapes/optimized/22.jpg" alt="Surreal landscape">
+    <img loading="lazy" src="/wonder/assets/landscapes/optimized/3.jpg" alt="Surreal landscape">
   </div>
 
   <!-- FOOTER -->
@@ -3070,9 +3185,14 @@
         'irrelevant': 0.12
       };
 
+      // Store dots for filtering
+      const allDots = [];
+
       books.forEach((book) => {
         const dot = document.createElement('div');
         dot.className = 'scatter-dot';
+        dot.dataset.year = book.year;
+        dot.dataset.theme = book.theme;
 
         const techX = techMap[book.techStance] || 0.5;
         const responseX = responseXMap[book.response] || 0;
@@ -3090,13 +3210,70 @@
         dot.style.bottom = `${Math.min(92, Math.max(8, y + jitterY))}%`;
         dot.style.background = themeColors[book.theme] || '#888';
         dot.style.color = themeColors[book.theme] || '#888';
-        dot.title = `${book.title} (${book.author}, ${book.year})`;
+
+        // Custom tooltip on hover
+        dot.addEventListener('mouseenter', (e) => {
+          const tooltip = document.getElementById('scatterTooltip');
+          const titleEl = document.getElementById('tooltipTitle');
+          const metaEl = document.getElementById('tooltipMeta');
+
+          titleEl.textContent = book.title;
+          metaEl.textContent = `${book.author}, ${book.year}`;
+
+          // Position tooltip above the dot using the dot's percentage position
+          const dotLeft = parseFloat(dot.style.left);
+          const dotBottom = parseFloat(dot.style.bottom);
+
+          tooltip.style.left = `${dotLeft}%`;
+          tooltip.style.top = `${100 - dotBottom - 8}%`;
+          tooltip.style.bottom = 'auto';
+          tooltip.style.transform = 'translateX(-50%) translateY(-100%)';
+          tooltip.classList.add('visible');
+        });
+
+        dot.addEventListener('mouseleave', () => {
+          document.getElementById('scatterTooltip').classList.remove('visible');
+        });
 
         dot.addEventListener('click', () => {
           showBookCard(book);
         });
 
         container.appendChild(dot);
+        allDots.push({ dot, book });
+      });
+
+      // Decade filter functionality
+      const decadeFilters = document.querySelectorAll('.decade-filter');
+      decadeFilters.forEach(btn => {
+        btn.addEventListener('click', () => {
+          decadeFilters.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const decade = btn.dataset.decade;
+
+          allDots.forEach(({ dot, book }) => {
+            if (decade === 'all') {
+              dot.style.opacity = '0.8';
+              dot.style.pointerEvents = 'auto';
+            } else if (decade === 'pre1970') {
+              const match = book.year < 1970;
+              dot.style.opacity = match ? '0.9' : '0.1';
+              dot.style.pointerEvents = match ? 'auto' : 'none';
+            } else if (decade === '1970s-90s') {
+              const match = book.year >= 1970 && book.year < 2000;
+              dot.style.opacity = match ? '0.9' : '0.1';
+              dot.style.pointerEvents = match ? 'auto' : 'none';
+            } else if (decade === '2000s') {
+              const match = book.year >= 2000 && book.year < 2010;
+              dot.style.opacity = match ? '0.9' : '0.1';
+              dot.style.pointerEvents = match ? 'auto' : 'none';
+            } else if (decade === '2010s+') {
+              const match = book.year >= 2010;
+              dot.style.opacity = match ? '0.9' : '0.1';
+              dot.style.pointerEvents = match ? 'auto' : 'none';
+            }
+          });
+        });
       });
 
       Object.entries(themeColors).forEach(([theme, color]) => {

@@ -13,7 +13,7 @@ const QUOTES = [
   {
     slug: "the-live-now-club",
     title: "The Live Now Club",
-    quote: "Most people in your situation are focused on living not to die, I think what you're trying to say is that you're living to live.",
+    quote: "I want to create a place where mortality and joy sit side by side.",
   },
   {
     slug: "fixing-the-unfixable",
@@ -38,7 +38,7 @@ const QUOTES = [
   {
     slug: "i-love-lou",
     title: "I Love Lou",
-    quote: "I met her on February 13, 2022. Like any good meet-cute, I had this feeling I had met her long ago. Her name is Lou.",
+    quote: "Ultimately, there is no one on the planet who can love me better than I can love myself.",
   },
   {
     slug: "threads-of-survival",
@@ -48,17 +48,17 @@ const QUOTES = [
   {
     slug: "and-still-the-figs-ripen",
     title: "And still the figs ripen",
-    quote: "And still the figs ripen, the sea turns over, and we go on.",
+    quote: "I hope I go like the fig, sweet and full, bursting at the seam, feeding whatever comes next.",
   },
   {
     slug: "life-is-not-empty",
     title: "Life is not empty",
-    quote: "Life is not empty. It was never empty. I just forgot to look.",
+    quote: "Facing my mortality has revealed how much of my life I spent curating myself into smallness. Living now has become my spiritual practice, my rebellion.",
   },
   {
     slug: "the-butterfly-dream",
     title: "The Butterfly Dream",
-    quote: "Am I dreaming the butterfly, or is the butterfly dreaming me?",
+    quote: "I dream the sleep that sleeps in me. The lie lies still. Awake within. Who dreams this dream?",
   },
 ];
 
@@ -66,33 +66,23 @@ const QUOTES = [
 // These are the emotional entry points that guide visitors to the right content
 const SOFT_ENTRIES = [
   {
-    prompt: "I just got a diagnosis",
-    slug: "expecting-the-unexpected",
-    ariaLabel: "Practical guide for the newly diagnosed",
+    prompt: "I was just diagnosed",
+    href: "/read#diagnosed",
+    ariaLabel: "Essays for the newly diagnosed",
   },
   {
-    prompt: "I'm grieving",
-    slug: "the-other-side-of-grief",
-    ariaLabel: "Essays about processing grief and loss",
+    prompt: "I'm carrying something heavy",
+    href: "/read#heavy",
+    ariaLabel: "Essays about grief, loss, and burden",
   },
   {
-    prompt: "I'm supporting someone I love",
-    slug: "fixing-the-unfixable",
-    ariaLabel: "What to say when there's nothing to fix",
+    prompt: "I want perspective",
+    href: "/read#perspective",
+    ariaLabel: "Essays on meaning and clarity",
   },
   {
-    prompt: "I need to feel less alone",
-    slug: "the-live-now-club",
-    ariaLabel: "The founding essay about living fully",
-  },
-  {
-    prompt: "I want to think deeply",
-    slug: "soulmd",
-    ariaLabel: "Essays on meaning, AI, and being human",
-  },
-  {
-    prompt: "I want something beautiful",
-    slug: "and-still-the-figs-ripen",
+    prompt: "I need something beautiful",
+    href: "/read#beautiful",
     ariaLabel: "Poetry and meditations",
   },
 ];
@@ -195,16 +185,15 @@ export default function HomePage() {
 
       {/* INTRO */}
       <section className="intro">
-        <p className="intro-greeting">I'm Louise.</p>
-        <p className="intro-body">
-          I am a person of many verbs <span className="intro-verbs">(writer, founder, investor, artist)</span> who is working on being just a noun <span className="intro-verbs">(human)</span>.
-        </p>
-        <p className="intro-body">
-          I started writing to leave a mark in case I don't survive, and now I write to live.
-        </p>
-        <p className="intro-body">
-          I created this space to start more conversation around life, loss, illness, and the choice to choose joy every time.
-        </p>
+        <div className="intro-photo">
+          <img src="/images/louise-portrait.jpg" alt="Louise Ireland" />
+        </div>
+        <div className="intro-text">
+          <p className="intro-greeting">I'm Louise <span className="intro-lou">(but you may call me Lou)</span>.</p>
+          <p className="intro-body">
+            I started writing to leave a mark in case I don't survive. Now I write to live.
+          </p>
+        </div>
       </section>
 
       {/* SOFT ENTRY POINTS - What do you need today? */}
@@ -213,8 +202,8 @@ export default function HomePage() {
         <div className="soft-entries-grid">
           {SOFT_ENTRIES.map((entry) => (
             <Link
-              key={entry.slug}
-              href={`/read/${entry.slug}`}
+              key={entry.href}
+              href={entry.href}
               className="soft-entry"
               aria-label={entry.ariaLabel}
             >
