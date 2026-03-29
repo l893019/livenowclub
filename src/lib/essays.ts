@@ -92,13 +92,13 @@ export const PATHWAYS: Pathway[] = [
     id: "manifesto",
     title: "The Manifesto",
     subtitle: "What is The Live Now Club? Start here.",
-    essays: ["the-live-now-club"],
+    essays: ["the-live-now-club", "manifesto"],
   },
   {
     id: "start-here",
     title: "Start Here",
     subtitle: "New to The Live Now Club? Begin with these.",
-    essays: ["expecting-the-unexpected", "fixing-the-unfixable", "and-still-the-figs-ripen"],
+    essays: ["expecting-the-unexpected", "fixing-the-unfixable", "and-still-the-figs-ripen", "soulmd"],
   },
   {
     id: "cancer-journey",
@@ -113,25 +113,61 @@ export const PATHWAYS: Pathway[] = [
       "cancer-meditations-vi",
       "the-crack-is-where-the-light-enters",
       "threads-of-survival",
+      "how-to-reset-your-nervous-system",
+      "it-takes-a-village",
+      "how-are-you-after-it-all-falls-down",
+      "consider-the-hospital-ceiling",
+      "if-you-can-keep-your-head-about-you",
+      "embracing-free-fall",
     ],
   },
   {
     id: "grief-loss",
     title: "On Grief & Loss",
     subtitle: "For when you're carrying something heavy.",
-    essays: ["the-other-side-of-grief", "the-ebb", "when-it-all-falls-out", "if-you-love-something-let-it-go"],
+    essays: [
+      "you-cant-always-get-what-you-want",
+      "the-other-side-of-grief",
+      "how-are-you-after-it-all-falls-down",
+      "the-ebb",
+      "when-it-all-falls-out",
+      "if-you-love-something-let-it-go",
+      "catch-pull-release",
+      "fixing-the-unfixable",
+    ],
   },
   {
     id: "finding-joy",
     title: "Finding Joy Anyway",
     subtitle: "Because life is also beautiful.",
-    essays: ["the-case-for-magical-thinking", "the-butterfly-dream", "life-is-not-empty", "august-triptych"],
+    essays: [
+      "the-case-for-magical-thinking",
+      "the-butterfly-dream",
+      "life-is-not-empty",
+      "august-triptych",
+      "the-river-van",
+      "maybe",
+      "the-forest-path",
+      "if-a-tree-falls-in-the-forest",
+      "the-purge",
+    ],
   },
   {
     id: "wisdom",
     title: "Wisdom & Philosophy",
     subtitle: "The deeper questions about meaning, identity, and being.",
-    essays: ["soulmd", "all-i-want-for-my-birthday-is-another-shot-at-life", "i-wrote-this-with-my-eyes", "catch-pull-release", "things-ive-learned-lately"],
+    essays: [
+      "soulmd",
+      "all-i-want-for-my-birthday-is-another-shot-at-life",
+      "i-wrote-this-with-my-eyes",
+      "catch-pull-release",
+      "things-ive-learned-lately",
+      "in-any-given-moment-the-strongest-dream-in-that-moment-wins",
+      "the-way-of-the-parrot",
+      "you-cant-always-get-what-you-want",
+      "now-that-you-no-longer-have-to-be-perfect-you-can-just-be-good",
+      "the-starting-line",
+    ],
   },
   {
     id: "poems",
@@ -143,7 +179,14 @@ export const PATHWAYS: Pathway[] = [
     id: "self-love",
     title: "Falling in Love with Yourself",
     subtitle: "The most important relationship you'll ever have.",
-    essays: ["i-love-lou", "how-to-travel-alone", "on-friendship-and-couches", "reset-rebirth"],
+    essays: [
+      "i-love-lou",
+      "how-to-travel-alone",
+      "on-friendship-and-couches",
+      "reset-rebirth",
+      "on-safety-and-security",
+      "i-need-you-to-hold-my-hand",
+    ],
   },
 ];
 
@@ -225,6 +268,7 @@ function extractExcerpt(content: string): string {
     .filter((l) => {
       if (!l) return false;
       if (l.startsWith("#")) return false;
+      if (l.startsWith(">")) return false; // Skip blockquotes/epigraphs
       if (l.startsWith("*Originally")) return false;
       if (l === "---") return false;
       return true;

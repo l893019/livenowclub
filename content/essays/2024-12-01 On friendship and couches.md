@@ -1,7 +1,5 @@
 # On friendship & couches
 
-**Apr 17, 2024**
-
 ## **How well do you know your friends?**
 
 Because I love to analyze the world and my brain inherently thinks in systems, I’ve been thinking a lot about friendship and how to know someone - and furthermore, how to know yourself. If you’ve spoken to me at all over the last few weeks, I probably went deep on my current theory of Inner Worlds (how can you most accurately capture the true essence of someone, how can you symbolically represent someone - the past, present, future version of themselves, the mythology of their life). My current theory is this: many of us don’t know ourselves, and thus, we make it difficult for others to connect with us fully.

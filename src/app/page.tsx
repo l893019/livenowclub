@@ -26,19 +26,43 @@ const EDITORS_PICK = {
   image: "/images/fixing-the-unfixable.jpg",
 };
 
-// Most recent pieces (by date) - these would ideally be auto-populated
+// Most recent pieces (by date)
 const RECENT = [
   {
-    slug: "maybe",
-    title: "Maybe",
+    slug: "soulmd",
+    title: "Soul.md",
     type: "essay",
-    image: "/images/maybe.jpg",
+    image: "/images/soulmd.jpg",
   },
   {
-    slug: "the-case-for-magical-thinking",
-    title: "The Case for Magical Thinking",
+    slug: "if-you-can-keep-your-head-about-you",
+    title: "If you can keep your head about you",
     type: "essay",
-    image: "/images/the-case-for-magical-thinking.jpg",
+    image: "/images/keep-your-head.jpg",
+  },
+  {
+    slug: "the-purge",
+    title: "The Purge",
+    type: "essay",
+    image: "/images/the-purge.jpg",
+  },
+  {
+    slug: "life-is-not-empty",
+    title: "Life is not empty",
+    type: "essay",
+    image: "/images/life-is-not-empty.jpg",
+  },
+  {
+    slug: "expecting-the-unexpected",
+    title: "Expecting the Unexpected",
+    type: "guide",
+    image: "/images/expecting-the-unexpected.jpg",
+  },
+  {
+    slug: "fixing-the-unfixable",
+    title: "Fixing the Unfixable",
+    type: "essay",
+    image: "/images/fixing-the-unfixable.jpg",
   },
 ];
 

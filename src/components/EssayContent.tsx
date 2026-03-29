@@ -44,36 +44,79 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
   };
 
   // Convert markdown to basic HTML
-  const contentHtml = essay.content
-    .split("\n")
-    .map((line) => {
-      if (line.startsWith("# ") || line.includes("Originally published")) return "";
-      if (line.startsWith("## ")) return `<h2>${line.slice(3)}</h2>`;
-      if (line.startsWith("### ")) return `<h3>${line.slice(4)}</h3>`;
-      if (line.trim() === "---") return "<hr />";
-      if (line.startsWith("> ")) return `<blockquote>${line.slice(2)}</blockquote>`;
+  const lines = essay.content.split("\n");
+  const result: string[] = [];
+  let blockquoteBuffer: string[] = [];
 
-      // Process images first: [![alt](src)](href) or ![alt](src)
-      let processed = line
-        .replace(/\[!\[([^\]]*)\]\(([^)]+)\)\]\(([^)]+)\)/g, '<a href="$3" target="_blank"><img src="$2" alt="$1" /></a>')
-        .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" />');
+  const flushBlockquote = () => {
+    if (blockquoteBuffer.length > 0) {
+      result.push(`<blockquote>${blockquoteBuffer.join("<br />")}</blockquote>`);
+      blockquoteBuffer = [];
+    }
+  };
 
-      // Process links: [text](url)
-      processed = processed.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+  const processInlineFormatting = (text: string) => {
+    return text
+      .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+      .replace(/\*(.+?)\*/g, "<em>$1</em>")
+      .replace(/\\-/g, "—");
+  };
 
-      // Now apply text formatting (won't affect URLs inside href/src attributes)
-      processed = processed
-        .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-        .replace(/\*(.+?)\*/g, "<em>$1</em>")
-        .replace(/ _([^_]+)_ /g, " <em>$1</em> ")
-        .replace(/ _([^_]+)_$/g, " <em>$1</em>")
-        .replace(/^_([^_]+)_ /g, "<em>$1</em> ")
-        .replace(/"_([^_]+)_"/g, '"<em>$1</em>"');
+  for (const line of lines) {
+    if (line.startsWith("# ") || line.includes("Originally published")) {
+      flushBlockquote();
+      continue;
+    }
+    if (line.startsWith("## ")) {
+      flushBlockquote();
+      result.push(`<h2>${line.slice(3)}</h2>`);
+      continue;
+    }
+    if (line.startsWith("### ")) {
+      flushBlockquote();
+      result.push(`<h3>${line.slice(4)}</h3>`);
+      continue;
+    }
+    if (line.trim() === "---") {
+      flushBlockquote();
+      result.push("<hr />");
+      continue;
+    }
+    if (line.startsWith("> ")) {
+      blockquoteBuffer.push(processInlineFormatting(line.slice(2)));
+      continue;
+    }
 
-      if (line.trim() === "") return "</p><p>";
-      return processed;
-    })
-    .join("\n");
+    // Not a blockquote line, flush any buffered blockquotes
+    flushBlockquote();
+
+    if (line.trim() === "") {
+      result.push("</p><p>");
+      continue;
+    }
+
+    // Process images first: [![alt](src)](href) or ![alt](src)
+    let processed = line
+      .replace(/\[!\[([^\]]*)\]\(([^)]+)\)\]\(([^)]+)\)/g, '<a href="$3" target="_blank"><img src="$2" alt="$1" /></a>')
+      .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" />');
+
+    // Process links: [text](url)
+    processed = processed.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+
+    // Now apply text formatting
+    processed = processed
+      .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+      .replace(/\*(.+?)\*/g, "<em>$1</em>")
+      .replace(/ _([^_]+)_ /g, " <em>$1</em> ")
+      .replace(/ _([^_]+)_$/g, " <em>$1</em>")
+      .replace(/^_([^_]+)_ /g, "<em>$1</em> ")
+      .replace(/"_([^_]+)_"/g, '"<em>$1</em>"');
+
+    result.push(processed);
+  }
+
+  flushBlockquote(); // Flush any remaining blockquotes
+  const contentHtml = result.join("\n");
 
   return (
     <>
