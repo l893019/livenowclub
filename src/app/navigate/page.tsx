@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { CANCER_GUIDE, getCancerGuideEssays, getCancerEssays } from "@/lib/essays";
 
+// Essays that are truly practical guides (actionable, step-by-step)
+const PRACTICAL_GUIDES = ["expecting-the-unexpected", "how-to-reset-your-nervous-system"];
+
 export const metadata = {
   title: "Cancer Guide: Navigating Diagnosis, Treatment & Beyond | The Live Now Club",
   description:
@@ -139,7 +142,9 @@ export default function NavigatePage() {
                     </div>
                   )}
                   <div className="guide-card-content">
-                    <span className="guide-card-type">{essay.type}</span>
+                    <span className="guide-card-type">
+                      {PRACTICAL_GUIDES.includes(essay.slug) ? "Practical Guide" : essay.type}
+                    </span>
                     <h3>{essay.title}</h3>
                     <p>{essay.excerpt}</p>
                   </div>
@@ -186,6 +191,9 @@ export default function NavigatePage() {
                     </div>
                   )}
                   <div className="guide-card-content">
+                    {PRACTICAL_GUIDES.includes(essay.slug) && (
+                      <span className="guide-card-type">Practical Guide</span>
+                    )}
                     <h3>{essay.title}</h3>
                     <p>{essay.excerpt}</p>
                   </div>
@@ -207,6 +215,9 @@ export default function NavigatePage() {
               {getCancerGuideEssays("for-caregivers").map((essay) => (
                 <Link key={essay.slug} href={`/read/${essay.slug}`} className="guide-card">
                   <div className="guide-card-content">
+                    {PRACTICAL_GUIDES.includes(essay.slug) && (
+                      <span className="guide-card-type">Practical Guide</span>
+                    )}
                     <h3>{essay.title}</h3>
                     <p>{essay.excerpt}</p>
                     <span className="guide-card-cta">Read this →</span>
@@ -250,7 +261,9 @@ export default function NavigatePage() {
           <div className="guide-list">
             {allCancerEssays.map((essay) => (
               <Link key={essay.slug} href={`/read/${essay.slug}`} className="guide-list-item">
-                <span className="guide-list-type">{essay.type}</span>
+                <span className="guide-list-type">
+                  {PRACTICAL_GUIDES.includes(essay.slug) ? "guide" : essay.type}
+                </span>
                 <span className="guide-list-title">{essay.title}</span>
               </Link>
             ))}
