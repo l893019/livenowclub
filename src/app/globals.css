@@ -320,6 +320,23 @@ p {
 }
 
 /* ============================================
+   INTRO
+   ============================================ */
+.intro {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md) var(--space-lg);
+  text-align: center;
+}
+
+.intro p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--charcoal);
+  font-weight: 300;
+}
+
+/* ============================================
    SOFT ENTRY POINTS
    "What do you need today?"
    ============================================ */
