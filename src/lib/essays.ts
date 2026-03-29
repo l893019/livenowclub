@@ -86,7 +86,7 @@ const IMAGE_MAP: Record<string, string> = {
   "manifesto": "hero-playa-faded.png",
 };
 
-// Curated pathways
+// Curated pathways - Updated 2026-03-29 per Memoirist essay mapping
 export const PATHWAYS: Pathway[] = [
   {
     id: "manifesto",
@@ -97,13 +97,18 @@ export const PATHWAYS: Pathway[] = [
   {
     id: "start-here",
     title: "Start Here",
-    subtitle: "New to The Live Now Club? Begin with these.",
-    essays: ["expecting-the-unexpected", "fixing-the-unfixable", "and-still-the-figs-ripen", "soulmd"],
+    subtitle: "The heart of The Live Now Club. Begin here.",
+    essays: [
+      "the-live-now-club", // THE manifesto - living to live
+      "fixing-the-unfixable", // Core philosophy - what to say when nothing helps
+      "expecting-the-unexpected", // THE practical guide
+      "i-love-lou", // Pre-cancer foundation - who Louise was becoming
+    ],
   },
   {
-    id: "cancer-journey",
-    title: "The Cancer Journey",
-    subtitle: "A series of meditations written during treatment.",
+    id: "cancer-meditations",
+    title: "Cancer Meditations",
+    subtitle: "A series written during treatment. Read in order.",
     essays: [
       "cancer-meditations",
       "cancer-meditations-ii",
@@ -111,14 +116,21 @@ export const PATHWAYS: Pathway[] = [
       "cancer-meditations-iv",
       "cancer-meditations-v",
       "cancer-meditations-vi",
-      "the-crack-is-where-the-light-enters",
+    ],
+  },
+  {
+    id: "cancer-journey",
+    title: "My Cancer Story",
+    subtitle: "The diagnosis, treatment, and what came after.",
+    essays: [
+      "embracing-free-fall", // The diagnosis moment
+      "cancer-meditations", // Series start
       "threads-of-survival",
+      "the-other-side-of-grief", // Post-treatment
+      "life-is-not-empty", // Recovery and creation
       "how-to-reset-your-nervous-system",
-      "it-takes-a-village",
-      "how-are-you-after-it-all-falls-down",
       "consider-the-hospital-ceiling",
-      "if-you-can-keep-your-head-about-you",
-      "embracing-free-fall",
+      "it-takes-a-village",
     ],
   },
   {
@@ -126,14 +138,13 @@ export const PATHWAYS: Pathway[] = [
     title: "On Grief & Loss",
     subtitle: "For when you're carrying something heavy.",
     essays: [
-      "you-cant-always-get-what-you-want",
-      "the-other-side-of-grief",
-      "how-are-you-after-it-all-falls-down",
+      "the-other-side-of-grief", // Primary grief essay
       "the-ebb",
       "when-it-all-falls-out",
       "if-you-love-something-let-it-go",
       "catch-pull-release",
-      "fixing-the-unfixable",
+      "how-are-you-after-it-all-falls-down",
+      // NOTE: "fixing-the-unfixable" removed - it's foundational philosophy, not grief
     ],
   },
   {
@@ -142,14 +153,25 @@ export const PATHWAYS: Pathway[] = [
     subtitle: "Because life is also beautiful.",
     essays: [
       "the-case-for-magical-thinking",
-      "the-butterfly-dream",
       "life-is-not-empty",
+      "and-still-the-figs-ripen",
       "august-triptych",
       "the-river-van",
       "maybe",
       "the-forest-path",
       "if-a-tree-falls-in-the-forest",
-      "the-purge",
+    ],
+  },
+  {
+    id: "wonder",
+    title: "Wonder",
+    subtitle: "AI, philosophy, dreams, and the deeper questions.",
+    essays: [
+      "soulmd", // AI, meaning, productivity
+      "the-butterfly-dream", // Dreams, Jung, symbols
+      "life-is-not-empty", // Languages, poetry, creation
+      "the-case-for-magical-thinking",
+      "in-any-given-moment-the-strongest-dream-in-that-moment-wins",
     ],
   },
   {
@@ -157,14 +179,13 @@ export const PATHWAYS: Pathway[] = [
     title: "Wisdom & Philosophy",
     subtitle: "The deeper questions about meaning, identity, and being.",
     essays: [
+      "fixing-the-unfixable", // Core philosophy
+      "the-live-now-club", // Manifesto
       "soulmd",
       "all-i-want-for-my-birthday-is-another-shot-at-life",
       "i-wrote-this-with-my-eyes",
-      "catch-pull-release",
       "things-ive-learned-lately",
-      "in-any-given-moment-the-strongest-dream-in-that-moment-wins",
       "the-way-of-the-parrot",
-      "you-cant-always-get-what-you-want",
       "now-that-you-no-longer-have-to-be-perfect-you-can-just-be-good",
       "the-starting-line",
     ],
@@ -173,49 +194,76 @@ export const PATHWAYS: Pathway[] = [
     id: "poems",
     title: "Poems",
     subtitle: "Brief meditations. Beauty in a breath.",
-    essays: ["sea-glass", "dry-lightning", "the-ebb", "august-triptych", "in-case-you-forget", "the-in-between"],
+    essays: [
+      "and-still-the-figs-ripen",
+      "sea-glass",
+      "dry-lightning",
+      "the-ebb",
+      "the-in-between",
+      "the-forest-path",
+      "in-case-you-forget",
+    ],
   },
   {
     id: "self-love",
     title: "Falling in Love with Yourself",
     subtitle: "The most important relationship you'll ever have.",
     essays: [
-      "i-love-lou",
+      "i-love-lou", // The 10 Commandments of Lou
       "how-to-travel-alone",
       "on-friendship-and-couches",
       "reset-rebirth",
       "on-safety-and-security",
       "i-need-you-to-hold-my-hand",
+      "the-starting-line",
     ],
   },
 ];
 
-// Mood-based recommendations
-export const MOODS: { mood: string; prompt: string; essays: string[] }[] = [
+// Soft entry points - Updated 2026-03-29 per roundtable
+// These are the "What do you need?" prompts on the homepage
+export const MOODS: { mood: string; prompt: string; essays: string[]; primary?: string }[] = [
   {
-    mood: "scared",
+    mood: "diagnosis",
     prompt: "I just got a diagnosis",
-    essays: ["expecting-the-unexpected", "cancer-meditations", "i-need-you-to-hold-my-hand"],
+    primary: "expecting-the-unexpected", // Lead with THE guide
+    essays: ["expecting-the-unexpected", "embracing-free-fall", "i-need-you-to-hold-my-hand"],
   },
   {
     mood: "grieving",
     prompt: "I'm grieving",
-    essays: ["the-other-side-of-grief", "the-ebb", "fixing-the-unfixable"],
+    primary: "the-other-side-of-grief",
+    essays: ["the-other-side-of-grief", "and-still-the-figs-ripen", "the-ebb"],
+  },
+  {
+    mood: "caregiver",
+    prompt: "I'm supporting someone I love",
+    primary: "fixing-the-unfixable", // THE essay on what to say
+    essays: ["fixing-the-unfixable", "it-takes-a-village", "expecting-the-unexpected"],
   },
   {
     mood: "hope",
-    prompt: "I need hope",
-    essays: ["the-case-for-magical-thinking", "life-is-not-empty", "and-still-the-figs-ripen"],
+    prompt: "I need to feel less alone",
+    primary: "the-live-now-club",
+    essays: ["the-live-now-club", "fixing-the-unfixable", "i-love-lou"],
   },
   {
-    mood: "angry",
-    prompt: "I'm angry at the world",
-    essays: ["the-purge", "when-it-all-falls-out", "you-cant-always-get-what-you-want"],
+    mood: "curious",
+    prompt: "I'm curious who you are",
+    primary: "the-live-now-club",
+    essays: ["the-live-now-club", "soulmd", "i-love-lou"],
+  },
+  {
+    mood: "wonder",
+    prompt: "I want to think deeply",
+    primary: "soulmd",
+    essays: ["soulmd", "the-butterfly-dream", "the-case-for-magical-thinking"],
   },
   {
     mood: "peace",
-    prompt: "I want to feel peace",
-    essays: ["the-butterfly-dream", "sea-glass", "in-case-you-forget"],
+    prompt: "I want something beautiful",
+    primary: "and-still-the-figs-ripen",
+    essays: ["and-still-the-figs-ripen", "sea-glass", "the-forest-path"],
   },
 ];
 
@@ -402,18 +450,22 @@ export function getManifestoEssay(): Essay | null {
   return essays.find((e) => e.slug === "the-live-now-club") || null;
 }
 
-// Cancer Guide pathways for /navigate
+// Cancer Guide pathways for /navigate - Updated 2026-03-29 per Memoirist mapping
 export const CANCER_GUIDE: Pathway[] = [
   {
     id: "just-diagnosed",
     title: "Just Diagnosed",
     subtitle: "Everything I wish someone had told me at the start.",
-    essays: ["expecting-the-unexpected", "i-need-you-to-hold-my-hand", "embracing-free-fall"],
+    essays: [
+      "expecting-the-unexpected", // THE practical guide - always first
+      "embracing-free-fall", // Louise's diagnosis moment
+      "i-need-you-to-hold-my-hand",
+    ],
   },
   {
     id: "cancer-meditations",
     title: "Cancer Meditations",
-    subtitle: "A series written during treatment.",
+    subtitle: "A series written during treatment. Read in order.",
     essays: [
       "cancer-meditations",
       "cancer-meditations-ii",
@@ -432,23 +484,38 @@ export const CANCER_GUIDE: Pathway[] = [
       "consider-the-hospital-ceiling",
       "when-it-all-falls-out",
       "if-you-can-keep-your-head-about-you",
+      "threads-of-survival",
     ],
   },
   {
     id: "for-caregivers",
     title: "For Caregivers",
     subtitle: "How to support someone you love through this.",
-    essays: ["it-takes-a-village", "fixing-the-unfixable", "threads-of-survival"],
+    essays: [
+      "fixing-the-unfixable", // THE essay on what to say - first for caregivers
+      "expecting-the-unexpected", // Has caregiver section at the end
+      "it-takes-a-village",
+    ],
+  },
+  {
+    id: "survivorship",
+    title: "After Treatment",
+    subtitle: "What comes next. Recovery, grief, and rebuilding.",
+    essays: [
+      "the-other-side-of-grief", // Post-treatment processing
+      "life-is-not-empty", // Collapse, creation, recovery
+      "the-starting-line",
+    ],
   },
   {
     id: "finding-meaning",
     title: "Finding Meaning",
     subtitle: "Making sense of it all.",
     essays: [
+      "the-live-now-club", // The core philosophy
       "the-crack-is-where-the-light-enters",
       "the-case-for-magical-thinking",
-      "life-is-not-empty",
-      "the-starting-line",
+      "and-still-the-figs-ripen",
     ],
   },
 ];

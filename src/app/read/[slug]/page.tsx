@@ -1,5 +1,6 @@
-import { redirect } from "next/navigation";
-import { getAllEssays } from "@/lib/essays";
+import { notFound } from "next/navigation";
+import { getAllEssays, getEssayBySlug, getRelatedEssays } from "@/lib/essays";
+import EssayContent from "@/components/EssayContent";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -10,7 +11,26 @@ export async function generateStaticParams() {
   return essays.map((essay) => ({ slug: essay.slug }));
 }
 
-export default async function ReadSlugPage({ params }: Props) {
+export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
-  redirect(`/library/${slug}`);
+  const essay = getEssayBySlug(slug);
+  if (!essay) return { title: "Essay Not Found" };
+
+  return {
+    title: `${essay.title} | The Live Now Club`,
+    description: essay.excerpt,
+  };
+}
+
+export default async function EssayPage({ params }: Props) {
+  const { slug } = await params;
+  const essay = getEssayBySlug(slug);
+
+  if (!essay) {
+    notFound();
+  }
+
+  const relatedEssays = getRelatedEssays(essay, 3);
+
+  return <EssayContent essay={essay} relatedEssays={relatedEssays} />;
 }

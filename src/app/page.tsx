@@ -8,39 +8,84 @@ import { usePathname } from "next/navigation";
 // HOMEPAGE CONTENT CONFIG
 // ============================================
 
-// Read This First - the essential starting piece
-const READ_THIS_FIRST = {
-  slug: "the-live-now-club",
-  title: "The Live Now Club",
-  excerpt: "The manifesto that started it all. What it means to live like you mean it.",
-  image: "/images/the-live-now-club.jpg",
-};
-
-// Library preview - curated selection
-const LIBRARY_PREVIEW = [
+// Soft Entry Points - What do you need today?
+// These are the emotional entry points that guide visitors to the right content
+const SOFT_ENTRIES = [
   {
-    slug: "cancer-meditations",
-    title: "Cancer Meditations",
-    feeling: "facing crisis",
-    image: "/images/cancer-meditations.jpg",
+    prompt: "I just got a diagnosis",
+    slug: "expecting-the-unexpected",
+    ariaLabel: "Practical guide for the newly diagnosed",
   },
   {
+    prompt: "I'm grieving",
     slug: "the-other-side-of-grief",
-    title: "The Other Side of Grief",
-    feeling: "processing loss",
-    image: "/images/the-other-side-of-grief.jpg",
+    ariaLabel: "Essays about processing grief and loss",
+  },
+  {
+    prompt: "I'm supporting someone I love",
+    slug: "fixing-the-unfixable",
+    ariaLabel: "What to say when there's nothing to fix",
+  },
+  {
+    prompt: "I need to feel less alone",
+    slug: "the-live-now-club",
+    ariaLabel: "The founding essay about living fully",
+  },
+  {
+    prompt: "I want to think deeply",
+    slug: "soulmd",
+    ariaLabel: "Essays on meaning, AI, and being human",
+  },
+  {
+    prompt: "I want something beautiful",
+    slug: "and-still-the-figs-ripen",
+    ariaLabel: "Poetry and meditations",
+  },
+];
+
+// Featured piece - change this when you want to highlight something new
+const FEATURED = {
+  slug: "the-live-now-club",
+  title: "The Live Now Club",
+  subtitle: "Because now is all we have",
+  excerpt: "Living to live, not living not to die. The founding essay of this space.",
+  image: "/images/the-live-now-club.gif",
+};
+
+// Editor's Pick - your handpicked recommendation
+const EDITORS_PICK = {
+  slug: "fixing-the-unfixable",
+  title: "Fixing the Unfixable",
+  excerpt: "What to say when there's nothing you can say.",
+  type: "essay",
+  image: "/images/fixing-the-unfixable.jpg",
+};
+
+// Most recent pieces (by date)
+const RECENT = [
+  {
+    slug: "soulmd",
+    title: "Soul.md",
+    type: "essay",
+    image: "/images/soulmd.jpg",
+  },
+  {
+    slug: "if-you-can-keep-your-head-about-you",
+    title: "If you can keep your head about you",
+    type: "essay",
+    image: "/images/keep-your-head.jpg",
   },
   {
     slug: "life-is-not-empty",
     title: "Life is not empty",
-    feeling: "finding meaning",
+    type: "essay",
     image: "/images/life-is-not-empty.jpg",
   },
   {
-    slug: "and-still-the-figs-ripen",
-    title: "And Still the Figs Ripen",
-    feeling: "finding joy",
-    image: "/images/and-still-the-figs-ripen.jpg",
+    slug: "expecting-the-unexpected",
+    title: "Expecting the Unexpected",
+    type: "guide",
+    image: "/images/expecting-the-unexpected.jpg",
   },
 ];
 
@@ -75,106 +120,103 @@ export default function HomePage() {
           <img src="/images/logo-handwritten.png" alt="The Live Now Club" className="logo-img" />
         </Link>
         <nav className="nav">
-          <Link href="/start-here" className={pathname === "/start-here" ? "active" : ""}>Start Here</Link>
-          <Link href="/guide" className={pathname === "/guide" ? "active" : ""}>The Guide</Link>
-          <Link href="/library" className={pathname === "/library" ? "active" : ""}>Library</Link>
+          <Link href="/read" className={pathname === "/read" ? "active" : ""}>Read</Link>
+          <Link href="/navigate" className={pathname === "/navigate" ? "active" : ""}>Navigate</Link>
+          <Link href="/wonder" className={pathname === "/wonder" ? "active" : ""}>Wonder</Link>
           <Link href="/connect" className={pathname === "/connect" ? "active" : ""}>Connect</Link>
         </nav>
       </header>
 
       {/* HERO */}
-      <section className="hero hero--centered">
+      <section className="hero">
         <div className="hero-image">
           <img src="/images/hero-playa-faded.png" alt="" />
         </div>
         <div className="hero-content">
-          <h1 className="hero-headline">When life becomes real, where do you go?</h1>
-          <p className="hero-subline">Essays, meditations, and practical wisdom for when everything changes.</p>
+          <p className="hero-tagline">A club for those who don't want to waste the time they have left</p>
+          <img src="/images/handwritten-question.png" alt="What would you do if you knew your time was short?" className="hero-handwritten" />
+          <a href="#join" className="btn btn--primary">Join the Newsletter</a>
         </div>
       </section>
 
-      {/* ENTRY PATHS */}
-      <section className="entry-paths">
-        <div className="entry-paths-grid">
-          <Link href="/start-here?path=crisis" className="entry-path">
-            <span className="entry-path-label">I'm facing a crisis</span>
-            <p className="entry-path-desc">Cancer, loss, or life-altering news. Start here.</p>
-          </Link>
-          <Link href="/start-here?path=alone" className="entry-path">
-            <span className="entry-path-label">I want to feel less alone</span>
-            <p className="entry-path-desc">Someone else has been where you are.</p>
-          </Link>
-          <Link href="/start-here?path=meaning" className="entry-path">
-            <span className="entry-path-label">I'm searching for meaning</span>
-            <p className="entry-path-desc">Making sense of what happened.</p>
-          </Link>
+      {/* SOFT ENTRY POINTS - What do you need today? */}
+      <section className="soft-entries">
+        <p className="soft-entries-label">What do you need today?</p>
+        <div className="soft-entries-grid">
+          {SOFT_ENTRIES.map((entry) => (
+            <Link
+              key={entry.slug}
+              href={`/read/${entry.slug}`}
+              className="soft-entry"
+              aria-label={entry.ariaLabel}
+            >
+              {entry.prompt}
+            </Link>
+          ))}
         </div>
       </section>
 
-      {/* THE GUIDE */}
-      <section className="guide-feature">
-        <div className="guide-feature-content">
-          <span className="guide-feature-label">Featured</span>
-          <h2 className="guide-feature-title">The Guide</h2>
-          <p className="guide-feature-desc">
-            A structured path through crisis and meaning-making. Seven sections, fifty essays,
-            one journey from shock to integration.
-          </p>
-          <Link href="/guide" className="btn btn--primary">Explore The Guide</Link>
-        </div>
-        <div className="guide-feature-visual">
-          <div className="guide-sections-preview">
-            <span>Beginning</span>
-            <span>Navigating</span>
-            <span>Processing</span>
-            <span>Finding Joy</span>
-            <span>Integration</span>
+      {/* FEATURED PIECE */}
+      <section className="featured">
+        <Link href={`/${FEATURED.slug}`} className="featured-link">
+          <div className="featured-image">
+            <img src={FEATURED.image} alt={`Featured: ${FEATURED.title}`} />
           </div>
-        </div>
-      </section>
-
-      {/* READ THIS FIRST */}
-      <section className="read-first">
-        <h3 className="section-label">Read This First</h3>
-        <Link href={`/library/${READ_THIS_FIRST.slug}`} className="read-first-card">
-          <div className="read-first-image">
-            <img src={READ_THIS_FIRST.image} alt={READ_THIS_FIRST.title} />
-          </div>
-          <div className="read-first-content">
-            <h4>{READ_THIS_FIRST.title}</h4>
-            <p>{READ_THIS_FIRST.excerpt}</p>
+          <div className="featured-text">
+            <h2>{FEATURED.title}</h2>
+            <p className="featured-subtitle">{FEATURED.subtitle}</p>
+            <p className="featured-excerpt">{FEATURED.excerpt}</p>
             <span className="text-link">Read →</span>
           </div>
         </Link>
       </section>
 
-      {/* LIBRARY PREVIEW */}
-      <section className="library-preview">
-        <h3 className="section-label">From the Library</h3>
-        <div className="library-preview-grid">
-          {LIBRARY_PREVIEW.map((essay) => (
-            <Link key={essay.slug} href={`/library/${essay.slug}`} className="library-preview-card">
-              <div className="library-preview-image">
-                <img src={essay.image} alt={essay.title} />
-              </div>
-              <div className="library-preview-content">
-                <span className="library-preview-feeling">{essay.feeling}</span>
-                <h4>{essay.title}</h4>
-              </div>
-            </Link>
-          ))}
+      {/* ALSO WORTH READING */}
+      <section className="worth-reading">
+        <h3 className="section-label">Keep Reading</h3>
+        <div className="worth-reading-layout">
+          {/* Editor's Pick - larger */}
+          <Link href={`/read/${EDITORS_PICK.slug}`} className="pick">
+            <div className="pick-image">
+              <img src={EDITORS_PICK.image} alt={`Editor's Pick: ${EDITORS_PICK.title}`} />
+            </div>
+            <div className="pick-content">
+              <span className="pick-label">✦ Editor's Pick</span>
+              <h4>{EDITORS_PICK.title}</h4>
+              <p>{EDITORS_PICK.excerpt}</p>
+              <span className="text-link">Read →</span>
+            </div>
+          </Link>
+
+          {/* Recent pieces - smaller, stacked */}
+          <div className="recent-stack">
+            {RECENT.map((essay) => (
+              <Link key={essay.slug} href={`/read/${essay.slug}`} className="recent-item">
+                <div className="recent-item-image">
+                  <img src={essay.image} alt={essay.title} />
+                </div>
+                <div className="recent-item-content">
+                  <span className="recent-item-type">{essay.type}</span>
+                  <h4>{essay.title}</h4>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
-        <div className="library-preview-footer">
-          <Link href="/library" className="text-link">Browse all 52 essays →</Link>
+        <div className="worth-reading-footer">
+          <Link href="/read" className="text-link">Browse all writing →</Link>
         </div>
       </section>
 
-      {/* CLOSING / JOIN */}
-      <section id="join" className="closing">
-        <div className="closing-content">
-          <p className="closing-quote">What if now is all we have?</p>
+      {/* MANIFESTO ASIDE */}
+      <section className="manifesto-aside">
+        <p className="manifesto-statement"><em>Mortality</em> and <em>joy</em>, side by side.</p>
+      </section>
+
+      {/* JOIN */}
+      <section id="join" className="join-simple">
+        <div className="join-simple-content">
           <h2>Join me.</h2>
-          <p className="closing-desc">Essays on mortality, joy, and everything in between. Delivered when I write them.</p>
           <iframe
             src="https://louiseireland.substack.com/embed"
             width="100%"
@@ -188,10 +230,11 @@ export default function HomePage() {
 
       {/* FOOTER */}
       <footer className="footer">
+        <p className="footer-quote">What if now is all we have?</p>
         <nav className="footer-nav">
-          <Link href="/start-here">Start Here</Link>
-          <Link href="/guide">The Guide</Link>
-          <Link href="/library">Library</Link>
+          <Link href="/read">Read</Link>
+          <Link href="/navigate">Navigate</Link>
+          <Link href="/wonder">Wonder</Link>
           <Link href="/connect">Connect</Link>
         </nav>
         <p className="footer-copy">&copy; 2026 Louise Ireland</p>
