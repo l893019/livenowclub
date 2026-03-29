@@ -323,17 +323,109 @@ p {
    INTRO
    ============================================ */
 .intro {
-  max-width: 680px;
+  max-width: 640px;
   margin: 0 auto;
   padding: var(--space-xl) var(--space-md) var(--space-lg);
   text-align: center;
 }
 
-.intro p {
-  font-size: 1.15rem;
-  line-height: 1.8;
+.intro-greeting {
+  font-size: 1.5rem;
+  font-weight: 400;
   color: var(--charcoal);
+  margin-bottom: var(--space-sm);
+}
+
+.intro-body {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-dim);
   font-weight: 300;
+  margin-bottom: var(--space-sm);
+}
+
+.intro-body:last-child {
+  margin-bottom: 0;
+}
+
+.intro-verbs {
+  color: var(--pink);
+  font-style: italic;
+}
+
+/* ============================================
+   QUOTE CAROUSEL - Pink style
+   ============================================ */
+.quote-carousel {
+  padding: var(--space-lg) 0;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: var(--space-lg);
+  padding: 0 var(--space-md);
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-card {
+  flex: 0 0 400px;
+  padding: var(--space-lg);
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+}
+
+.carousel-card:hover {
+  transform: scale(1.02);
+}
+
+.carousel-card blockquote {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--pink);
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 400;
+}
+
+.carousel-card cite {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: normal;
+  margin-top: var(--space-md);
+  display: block;
+}
+
+.carousel-card cite:hover {
+  color: var(--pink);
+}
+
+@media (max-width: 768px) {
+  .carousel-card {
+    flex: 0 0 320px;
+  }
+
+  .carousel-card blockquote {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-card {
+    flex: 0 0 280px;
+    padding: var(--space-md);
+  }
 }
 
 /* ============================================

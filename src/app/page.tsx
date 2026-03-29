@@ -8,6 +8,60 @@ import { usePathname } from "next/navigation";
 // HOMEPAGE CONTENT CONFIG
 // ============================================
 
+// Pull quotes for the filmstrip - pink style
+const QUOTES = [
+  {
+    slug: "the-live-now-club",
+    title: "The Live Now Club",
+    quote: "Most people in your situation are focused on living not to die, I think what you're trying to say is that you're living to live.",
+  },
+  {
+    slug: "fixing-the-unfixable",
+    title: "Fixing the Unfixable",
+    quote: "There is nothing you can say that will solve it. But, there is much you can say that will keep someone company inside of it.",
+  },
+  {
+    slug: "the-other-side-of-grief",
+    title: "The other side of grief",
+    quote: "I wept from the strangeness of return. From the terror of starting anew. From the defiant choice to love this life anyway.",
+  },
+  {
+    slug: "embracing-free-fall",
+    title: "Embracing Free Fall",
+    quote: "I'm learning to stop grasping for control and lean back into complete free fall.",
+  },
+  {
+    slug: "cancer-meditations",
+    title: "Cancer Meditations",
+    quote: "I am not dying from this. But it's given me some peace to think that we are all on a path toward death, that we build beautiful lives that dissolve into beautiful nothingness.",
+  },
+  {
+    slug: "i-love-lou",
+    title: "I Love Lou",
+    quote: "I met her on February 13, 2022. Like any good meet-cute, I had this feeling I had met her long ago. Her name is Lou.",
+  },
+  {
+    slug: "threads-of-survival",
+    title: "Threads of Survival",
+    quote: "Every day, I return to this moment, wrestling with the humbling truth that binds us together - both small and scared, both fighting fiercely against the tide.",
+  },
+  {
+    slug: "and-still-the-figs-ripen",
+    title: "And still the figs ripen",
+    quote: "And still the figs ripen, the sea turns over, and we go on.",
+  },
+  {
+    slug: "life-is-not-empty",
+    title: "Life is not empty",
+    quote: "Life is not empty. It was never empty. I just forgot to look.",
+  },
+  {
+    slug: "the-butterfly-dream",
+    title: "The Butterfly Dream",
+    quote: "Am I dreaming the butterfly, or is the butterfly dreaming me?",
+  },
+];
+
 // Soft Entry Points - What do you need today?
 // These are the emotional entry points that guide visitors to the right content
 const SOFT_ENTRIES = [
@@ -141,8 +195,15 @@ export default function HomePage() {
 
       {/* INTRO */}
       <section className="intro">
-        <p>
-          I'm Louise. I am a person of many verbs (writer, founder, investor, artist) who is working on being just a noun (human). I started writing to leave a mark in case I don't survive, and now I write to live. I created this space to start more conversation around life, loss, illness, and the choice to chose joy every time.
+        <p className="intro-greeting">I'm Louise.</p>
+        <p className="intro-body">
+          I am a person of many verbs <span className="intro-verbs">(writer, founder, investor, artist)</span> who is working on being just a noun <span className="intro-verbs">(human)</span>.
+        </p>
+        <p className="intro-body">
+          I started writing to leave a mark in case I don't survive, and now I write to live.
+        </p>
+        <p className="intro-body">
+          I created this space to start more conversation around life, loss, illness, and the choice to choose joy every time.
         </p>
       </section>
 
@@ -158,6 +219,18 @@ export default function HomePage() {
               aria-label={entry.ariaLabel}
             >
               {entry.prompt}
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* QUOTE CAROUSEL - Pink style */}
+      <section className="quote-carousel">
+        <div className="carousel-track">
+          {QUOTES.map((item) => (
+            <Link key={item.slug} href={`/read/${item.slug}`} className="carousel-card">
+              <blockquote>"{item.quote}"</blockquote>
+              <cite>— {item.title}</cite>
             </Link>
           ))}
         </div>

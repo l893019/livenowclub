@@ -8,7 +8,7 @@ What more than 200 science fiction books reveal about meaning when scarcity ends
 
 Our race could go extinct, machines could destroy us, we could destroy ourselves, or this could be the moment that we choose to strip away the excess to evolve to a more natural state that is technologically-enabled, yet deeply human. 
 
-I write this with urgency. Over the last year, at the age of 34, my world turned upside down with a Stage III cancer diagnosis. I endured a brutal round of treatment, my D1 rower body debilitated to a wheelchair, my mind incapable of holding thoughts, only to learn that my cancer had progressed to multiple organs, doctors giving me a prognosis of less than two years. By virtue of medicine, I am clear now, but I live in the shadow of expected recurrence. 
+I write this with urgency. Over the last year, at the age of 34, my world turned upside down with a Stage III cancer diagnosis. I endured a brutal round of treatment, my D1 rower body debilitated to a wheelchair, my mind incapable of holding thoughts, only to learn that my cancer had progressed to Stage IV, spreading to multiple organs. Doctors gave me a prognosis of less than two years. By virtue of medicine, I am clear now, but I live in the shadow of expected recurrence. 
 
 My own personal journey mirrors the global one we may soon face.
 
