@@ -8,27 +8,27 @@ import { usePathname } from "next/navigation";
 // HOMEPAGE CONTENT CONFIG
 // ============================================
 
-// Pull quotes for the quote wall - actual excerpts from essays
+// Pull quotes for the filmstrip - actual excerpts from essays
 const QUOTES = [
   {
     slug: "the-live-now-club",
     title: "The Live Now Club",
-    quote: "Most people in your situation are focused on living not to die, I think what you're trying to say is that you're living to live. The words rearranged the air in my lungs. It was as if the ground shifted beneath me.",
+    quote: "Most people in your situation are focused on living not to die, I think what you're trying to say is that you're living to live.",
   },
   {
     slug: "fixing-the-unfixable",
     title: "Fixing the Unfixable",
-    quote: "There is nothing you can say that will solve it. But, there is much you can say that will keep someone company inside of it. You say: I'm not going anywhere. You say: You don't have to be strong with me.",
+    quote: "There is nothing you can say that will solve it. But, there is much you can say that will keep someone company inside of it.",
   },
   {
     slug: "the-other-side-of-grief",
     title: "The other side of grief",
-    quote: "I wept from the strangeness of return. From the terror of starting anew. From the defiant choice to love this life anyway, knowing how quickly it could disappear again.",
+    quote: "I wept from the strangeness of return. From the terror of starting anew. From the defiant choice to love this life anyway.",
   },
   {
     slug: "embracing-free-fall",
     title: "Embracing Free Fall",
-    quote: "I'm learning to stop grasping for control and lean back into complete free fall. I don't believe in coincidences; I believe deeply that this diagnosis is another step on a path I started walking three years ago.",
+    quote: "I'm learning to stop grasping for control and lean back into complete free fall.",
   },
   {
     slug: "cancer-meditations",
@@ -38,7 +38,27 @@ const QUOTES = [
   {
     slug: "i-love-lou",
     title: "I Love Lou",
-    quote: "I met her on February 13, 2022. Like any good meet-cute, I had this feeling I had met her long ago, maybe in another lifetime. This was going to be a very special person in my life. Her name is Lou.",
+    quote: "I met her on February 13, 2022. Like any good meet-cute, I had this feeling I had met her long ago. Her name is Lou.",
+  },
+  {
+    slug: "threads-of-survival",
+    title: "Threads of Survival",
+    quote: "Every day, I return to this moment, wrestling with the humbling truth that binds us together - both small and scared, both fighting fiercely against the tide.",
+  },
+  {
+    slug: "and-still-the-figs-ripen",
+    title: "And still the figs ripen",
+    quote: "And still the figs ripen, the sea turns over, and we go on.",
+  },
+  {
+    slug: "life-is-not-empty",
+    title: "Life is not empty",
+    quote: "Life is not empty. It was never empty. I just forgot to look.",
+  },
+  {
+    slug: "the-butterfly-dream",
+    title: "The Butterfly Dream",
+    quote: "Am I dreaming the butterfly, or is the butterfly dreaming me?",
   },
 ];
 
@@ -190,14 +210,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* QUOTE WALL */}
-      <section className="quote-wall">
+      {/* QUOTE FILMSTRIP */}
+      <section className="quote-filmstrip">
         <h2 className="section-label">Words That Stay</h2>
-        <div className="quote-grid">
+        <div className="filmstrip-track">
           {QUOTES.map((item) => (
-            <Link key={item.slug} href={`/read/${item.slug}`} className="quote-card">
+            <Link key={item.slug} href={`/read/${item.slug}`} className="filmstrip-frame">
               <blockquote>"{item.quote}"</blockquote>
-              <cite>— {item.title}</cite>
+              <cite>{item.title} →</cite>
             </Link>
           ))}
         </div>
