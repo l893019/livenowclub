@@ -9,7 +9,7 @@ export const metadata = {
 export default function ReadPage() {
   const allEssays = getAllEssays();
   const latestEssays = getLatestEssays(6);
-  const quoteEssays = getQuoteWallEssays(6);
+  const quoteEssays = getQuoteWallEssays(4); // Fewer quotes since they're longer
   const timelineEssays = getTimelineEssays();
   const poems = getPathwayEssays("poems").slice(0, 4);
 

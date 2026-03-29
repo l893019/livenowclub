@@ -4309,16 +4309,17 @@ p {
 
 .quote-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
-  max-width: 1200px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 .quote-card {
-  padding: var(--space-md);
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
+  padding: var(--space-lg);
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid var(--pink);
+  border-radius: 0 8px 8px 0;
   transition: background 0.3s ease, transform 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -4326,22 +4327,24 @@ p {
 }
 
 .quote-card:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(4px);
 }
 
 .quote-card blockquote {
-  font-size: 1rem;
-  font-style: italic;
+  font-size: 1.05rem;
+  font-style: normal;
   color: var(--cream);
-  line-height: 1.6;
-  margin-bottom: var(--space-sm);
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+  font-weight: 300;
 }
 
 .quote-card cite {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--pink);
   font-style: normal;
+  font-weight: 500;
 }
 
 /* Magazine Section */
@@ -4589,7 +4592,8 @@ p {
   }
 
   .quote-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    max-width: 600px;
   }
 
   .magazine-row {
