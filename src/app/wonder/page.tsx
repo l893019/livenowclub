@@ -4,7 +4,7 @@ import { getPathwayEssays } from "@/lib/essays";
 
 export const metadata = {
   title: "Wonder | The Live Now Club",
-  description: "Explorations at the intersection of AI, humanity, and meaning.",
+  description: "Explorations at the intersection of AI, humanity, and meaning. Join me as I spelunk down rabbit holes of my curiosity.",
 };
 
 // Featured essay - After Abundance (special interactive piece)
@@ -31,8 +31,7 @@ export default function WonderPage() {
           <span className="wonder-label">Wonder</span>
           <h1>What happens when machines dream?</h1>
           <p>
-            Explorations at the intersection of AI, humanity, and meaning.
-            Essays that ask big questions. Projects that experiment with answers.
+            Explorations at the intersection of AI, humanity, and meaning. Join me as I spelunk down rabbit holes of my curiosity.
           </p>
         </section>
 
