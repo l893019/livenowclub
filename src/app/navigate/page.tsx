@@ -276,12 +276,17 @@ export default function NavigatePage() {
         </section>
       </div>
 
-      {/* Floating Subscribe */}
-      <div className="subscribe-float">
-        <a href="https://louiseireland.substack.com/subscribe" target="_blank" rel="noopener noreferrer">
-          Subscribe
-        </a>
-      </div>
+      {/* Footer */}
+      <footer className="footer">
+        <p className="footer-quote">What if now is all we have?</p>
+        <nav className="footer-nav">
+          <Link href="/read">Read</Link>
+          <Link href="/navigate">Navigate</Link>
+          <Link href="/wonder">Wonder</Link>
+          <Link href="/connect">Connect</Link>
+        </nav>
+        <p className="footer-copy">&copy; 2026 Louise Ireland</p>
+      </footer>
     </>
   );
 }
