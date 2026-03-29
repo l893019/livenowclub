@@ -248,11 +248,23 @@ We may very well only have now. One earth. One body. One life. And in it, I ask 
 - **How Do These Stories End?** Most end in acceptance, in *accommodation.*
 - **What Role Does Death Play?** 45% say death gives meaning. The genre is divided.
 
-### Technologies
+### The Worlds: How Civilizations End
 
-**Rejuvenation (Heinlein, Robinson):** Reversed aging and indefinite lifespan, the technology that most directly tests whether death gives meaning. What happens to the goalpost when the goalpost can never be the end?
+**Earthseed (Butler):** A religion from the ruins of a collapsed America. The core tenet is that God is Change, not a being who saves you but a force you learn to shape. Humanity survives by becoming something it has never been. 
 
-**Earthseed (Butler):** "God is Change" - A religion built around shaping and being shaped rather than arriving somewhere fixed.
+**The Sublimed (Banks):** Civilizations that have existed long enough eventually Sublime, voluntarily departing the physical universe for a higher dimensional existence. 
+
+**The Ministry (Robinson):** Humanity decides to slowly and painfully change its course through international agreements, carbon coins, geoengineering, sabotage, and bureaucracy. 
+
+### Technologies: The Tools of Transformation
+
+**Rejuvenation (Heinlein, Robinson):** Reversed aging and indefinite lifespan.
+
+**Memory Backup (Hamilton):** Consciousness is stored in secure crystals embedded in the body, updated continously. When you die, a clone is grown and your memories are restored.
+
+**The Overmind (Clarke):** Humanity’s children merge into a vast collective consciousness, transcending the species entirely. 
+
+
 
 ---
 

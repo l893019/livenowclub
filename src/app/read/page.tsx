@@ -22,10 +22,8 @@ export default function ReadPage() {
     });
   };
 
-  // Get essays by pathway in order
+  // Get essays by pathway in order (cancer content lives on /navigate)
   const startHere = getUniquePathwayEssays("start-here");
-  const cancerJourney = getUniquePathwayEssays("cancer-journey");
-  const cancerMeditations = getUniquePathwayEssays("cancer-meditations");
   const griefLoss = getUniquePathwayEssays("grief-loss");
   const findingJoy = getUniquePathwayEssays("finding-joy");
   const wisdom = getUniquePathwayEssays("wisdom");
@@ -61,13 +59,18 @@ export default function ReadPage() {
         {/* Quick Links */}
         <nav className="read-quick-nav">
           <a href="#start-here">Start Here</a>
-          <a href="#cancer-journey">Cancer Journey</a>
           <a href="#grief">Grief & Loss</a>
           <a href="#joy">Finding Joy</a>
           <a href="#wisdom">Wisdom</a>
           <a href="#poems">Poems</a>
           <a href="#self-love">Self-Love</a>
         </nav>
+
+        {/* Cancer Guide Callout */}
+        <div className="read-callout">
+          <p>Looking for the cancer guide?</p>
+          <Link href="/navigate" className="read-callout-link">Navigate the journey →</Link>
+        </div>
 
         {/* Start Here */}
         <section id="start-here" className="read-section">
@@ -92,51 +95,6 @@ export default function ReadPage() {
             ))}
           </div>
         </section>
-
-        {/* Cancer Journey */}
-        <section id="cancer-journey" className="read-section">
-          <div className="read-section-header">
-            <h2>The Cancer Journey</h2>
-            <p>From diagnosis through treatment and beyond.</p>
-          </div>
-          <div className="read-list">
-            {cancerJourney.map((essay) => (
-              <Link key={essay.slug} href={`/read/${essay.slug}`} className="read-list-item">
-                {essay.image && (
-                  <div className="read-list-image">
-                    <img src={essay.image} alt={essay.title} />
-                  </div>
-                )}
-                <div className="read-list-content">
-                  <span className="read-list-type">{essay.type}</span>
-                  <h3>{essay.title}</h3>
-                  <p>{essay.excerpt}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* Cancer Meditations Series */}
-        {cancerMeditations.length > 0 && (
-          <section className="read-section read-section--series">
-            <div className="read-section-header">
-              <h2>Cancer Meditations</h2>
-              <p>A series written during treatment. Read in order.</p>
-            </div>
-            <div className="read-series">
-              {cancerMeditations.map((essay, index) => (
-                <Link key={essay.slug} href={`/read/${essay.slug}`} className="read-series-item">
-                  <span className="read-series-number">{index + 1}</span>
-                  <div className="read-series-content">
-                    <h3>{essay.title}</h3>
-                    <p>{essay.excerpt}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
 
         {/* Grief & Loss */}
         <section id="grief" className="read-section">

@@ -4705,6 +4705,34 @@ p {
   color: white;
 }
 
+/* Callout */
+.read-callout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: var(--cream-light);
+  border-radius: 8px;
+  margin-bottom: var(--space-xl);
+}
+
+.read-callout p {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.read-callout-link {
+  color: var(--pink);
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.read-callout-link:hover {
+  opacity: 0.8;
+}
+
 /* Read Section */
 .read-curated .read-section {
   margin-bottom: var(--space-xl);
