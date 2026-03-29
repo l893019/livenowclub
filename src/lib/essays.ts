@@ -30,22 +30,15 @@ const COLORS: Essay["color"][] = ["pink", "coral", "gold", "teal", "lavender"];
 const CONTENT_DIR = path.join(process.cwd(), "content/essays");
 const IMAGES_DIR = "/images";
 
-// Compelling pull quotes for the quote wall - paragraph excerpts that show Louise's voice
+// Compelling pull quotes for the quote wall - actual paragraphs from Louise's essays
 const PULL_QUOTES: Record<string, string> = {
-  "the-live-now-club": "I'm not living not to die. I'm living to live. There's a difference, and it took cancer to teach me that. The Live Now Club isn't about positivity or fighting or any of the things people expect you to say. It's about waking up.",
-  "fixing-the-unfixable": "You don't have to fix it. You can't fix it. The most loving thing you can do is stop trying to make it better and just be there. Sit with them in the darkness. That's enough. That's everything.",
-  "expecting-the-unexpected": "Nobody prepares you for the waiting rooms, the paperwork, the way time bends. Here's what I wish someone had told me: you don't have to be brave. You don't have to have it together. You just have to show up.",
-  "the-other-side-of-grief": "Grief isn't something you get over. It's something you get through, and then it lives in you forever, changing shape but never leaving. I used to think that was sad. Now I think it's the most human thing there is.",
-  "embracing-free-fall": "The moment the doctor said the word, I felt the ground disappear. But here's what nobody tells you about free fall: once you stop fighting it, there's a strange kind of peace. You're falling, but you're also flying.",
-  "and-still-the-figs-ripen": "And still the figs ripen on the branch, indifferent to my fear. The sea turns over its endless stones. The world doesn't stop for grief. Thank god. Thank god the world keeps going.",
-  "soulmd": "What if the point of productivity isn't to do more, but to become more? What if the thing we're optimizing for is the wrong thing entirely? I spent years measuring my worth in output. Now I measure it in presence.",
-  "the-butterfly-dream": "Zhuangzi dreamed he was a butterfly, then woke and wondered: am I a man who dreamed of being a butterfly, or a butterfly dreaming of being a man? Some questions aren't meant to be answered. They're meant to be lived.",
-  "life-is-not-empty": "I thought I had lost everything. Then I started learning Portuguese, and Spanish, and the names of trees. Life is not empty. It was never empty. I just forgot to look.",
-  "i-love-lou": "This is the year I fall in love with myself. Not in spite of everything, but because of it. These are the ten commandments I wrote to remind myself who I am when I forget.",
-  "the-case-for-magical-thinking": "They tell you to be realistic, to accept what is. But what if acceptance includes magic? What if believing in something more is the most practical thing we can do?",
-  "when-it-all-falls-out": "The hair goes first. Then the eyebrows. Then something else falls away—all the things you thought you needed to be you. And there you are, still you. Maybe more you than ever.",
-  "threads-of-survival": "We are not self-made. We are woven from the threads of everyone who loved us, every hand that held ours, every voice that said keep going. Survival is a collective act.",
-  "it-takes-a-village": "I used to pride myself on not needing anyone. Cancer cured me of that delusion. You cannot do this alone. You were never meant to. The village isn't weakness—it's the whole point.",
+  "the-live-now-club": "Most people in your situation are focused on living not to die, I think what you're trying to say is that you're living to live. The words rearranged the air in my lungs. It was as if the ground shifted beneath me. The difference between survival and existence. Between holding on and inhabiting.",
+  "fixing-the-unfixable": "There is nothing you can say that will solve it. But, there is much you can say that will keep someone company inside of it. You say: I'm not going anywhere. You say: You don't have to be strong with me. You say: I don't know what to say, but I'm here.",
+  "the-other-side-of-grief": "I wept from the strangeness of return. From the terror of starting anew. From the defiant choice to love this life anyway, knowing how quickly it could disappear again. Cancer hasn't shrunk my life. It has skimmed it.",
+  "embracing-free-fall": "I'm learning to stop grasping for control and lean back into complete free fall. I don't believe in coincidences; I believe deeply that this diagnosis is another step on a path I started walking three years ago toward living my best life.",
+  "cancer-meditations": "I am not dying from this. But it's given me some peace to think that we are all on a path toward death, that we build beautiful lives that dissolve into beautiful nothingness. And in that path, I don't want to die with my art still in me.",
+  "threads-of-survival": "I think about that spider's resiliency. I think every day about it hiding from the water and gingerly sticking its leg out to make a move. Every day, I return to this moment, wrestling with the humbling truth that binds us together - both small and scared, both fighting fiercely against the tide.",
+  "i-love-lou": "I met her on February 13, 2022. Like any good meet-cute, I had this feeling I had met her long ago, maybe in another lifetime. I realized I couldn't mess it up. This was going to be a very special person in my life - arguably the most special. Her name is Lou.",
 };
 
 // Map titles to images
