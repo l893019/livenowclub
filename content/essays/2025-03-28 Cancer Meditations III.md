@@ -84,7 +84,7 @@ Maternity pads are the only ones that can support my fluid and blood loss levels
 
 On one of my first hospital visits, I saw this painting. It looks eerily like me as my future self - a sign that I will make it through.
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/5e518d05-75a4-45e0-8f02-149a0ab2cda8_1200x1600.jpeg)](https://substack-post-media.s3.amazonaws.com/public/images/5e518d05-75a4-45e0-8f02-149a0ab2cda8_1200x1600.jpeg)
+
 
 * * *
 

@@ -50,4 +50,3 @@ Sending so much love to you all! Thank you, as always, for reading and sharing m
 
 If you relate, I would love to hear how you’re learning to live, love, and taste again. 
 
-[![User's avatar](https://substack-post-media.s3.amazonaws.com/public/images/2938cf9c-1e73-4033-b037-1572d9aca726_1206x1206.jpeg)Join Louise Ireland’s subscriber chatAvailable in the Substack app and on webJoin chat](https://open.substack.com/pub/louiseireland/chat?utm_source=chat_embed)

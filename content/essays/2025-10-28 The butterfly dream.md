@@ -2,7 +2,7 @@
 
 ## A palindrome of life and death
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/1842a849-d714-49bc-ab40-596feaaaf9a1_3754x1966.jpeg)](https://substack-post-media.s3.amazonaws.com/public/images/1842a849-d714-49bc-ab40-596feaaaf9a1_3754x1966.jpeg)A painting of my dreamscape
+A painting of my dreamscape
 
  **The butterfly dream**
 
@@ -59,9 +59,9 @@ A labyrinth of mirrors linking mathematics, music, and mind. On recursion, patte
 
  **Color Palettes I’ve Collected Lately:**
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/3e090caa-4012-42b1-af23-f21d58d96e07_888x465.jpeg)](https://substack-post-media.s3.amazonaws.com/public/images/3e090caa-4012-42b1-af23-f21d58d96e07_888x465.jpeg)
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/76a2ffff-dbaa-47f5-b907-8c5dfe411976_884x463.png)](https://substack-post-media.s3.amazonaws.com/public/images/76a2ffff-dbaa-47f5-b907-8c5dfe411976_884x463.png)
+
+
 
  **GROUNDS**
 

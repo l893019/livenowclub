@@ -2,7 +2,7 @@
 
 ## The world before words
 
-[![Su Hui's Epic Palindrome: Star Gauge](https://substack-post-media.s3.amazonaws.com/public/images/0bd4d540-c1d2-4b67-ac74-499f435c0a23_563x295.png)](https://substack-post-media.s3.amazonaws.com/public/images/0bd4d540-c1d2-4b67-ac74-499f435c0a23_563x295.png)Sui Hui’s Star Gauge Poem - it can be read in different directions to generate over 3,000 different poems.
+Sui Hui’s Star Gauge Poem - it can be read in different directions to generate over 3,000 different poems.
 
 There was a moment this spring when language broke down for me. I had been inside for weeks, barely capable of moving from the couch to the bathroom on my own, unable to walk more than the few steps it took to go from the apartment building door to the seat of the Uber without my mom’s steady arm. Too tired to think. Too tired to speak.
 
@@ -59,23 +59,23 @@ A lesson in surrender and attunement. _Marrying Maiden_ speaks to entering a rhy
 
  **Books:**
 
-  *  **[The Heart Sutra](https://amzn.to/3JnzjFc)** _[\- translated by Red Pine  
+  *  **[The Heart Sutra](https://amzn.to/3JnzjFc)** _[- translated by Red Pine  
 ](https://amzn.to/3JnzjFc)_ ”Buddhism in a nutshell”. I’ve carried this book with me on many plane flights. I don’t know if I will ever truly understand it all. 
 
-  * **[Ways of Seeing](https://www.ways-of-seeing.com/)**[\- ](https://www.ways-of-seeing.com/)_[John Berger](https://www.ways-of-seeing.com/)  
+  * **[Ways of Seeing](https://www.ways-of-seeing.com/)**[- ](https://www.ways-of-seeing.com/)_[John Berger](https://www.ways-of-seeing.com/)  
 _ A short but radical re-orientation toward image, gender, and gaze. Every act of seeing carries history. 
 
-  * **[The Invisible and Visible (excerpt)](http://timothyquigley.net/cont/mp-chiasm.pdf)** _[\- Maurice Merleau-Ponty  
+  * **[The Invisible and Visible (excerpt)](http://timothyquigley.net/cont/mp-chiasm.pdf)** _[- Maurice Merleau-Ponty  
 ](http://timothyquigley.net/cont/mp-chiasm.pdf)_ A parable on dimensional blindness and the limits of perception.
 
-  *  **[The Perennial Philosophy](https://amzn.to/3WleHjN)** _[\- Aldous Huxley](https://amzn.to/3WleHjN)_
+  *  **[The Perennial Philosophy](https://amzn.to/3WleHjN)** _[- Aldous Huxley](https://amzn.to/3WleHjN)_
 
 A collage of mystic voices from every tradition, all circling the same truth.
 
-  *  **[Nineteen Ways of Looking at Wang Wei](https://amzn.to/47lYG2i)** _[\- Eliot Weinberger](https://amzn.to/47lYG2i)_[  
+  *  **[Nineteen Ways of Looking at Wang Wei](https://amzn.to/47lYG2i)** _[- Eliot Weinberger](https://amzn.to/47lYG2i)_[  
 ](https://amzn.to/47lYG2i) A slim, brilliant meditation on translation and perception (thank you, Kate, for giving it to me!). Twenty translators, one four-line poem, and endless ways of seeing. A reminder that every act of interpretation is also an act of creation.
 
-  *  **[Wild Geese Returning: Chinese Reversible Poems](https://amzn.to/4oFbasV)** _[\- Michèle Metsch](https://amzn.to/4oFbasV)_[  
+  *  **[Wild Geese Returning: Chinese Reversible Poems](https://amzn.to/4oFbasV)** _[- Michèle Metsch](https://amzn.to/4oFbasV)_[  
 ](https://amzn.to/4oFbasV) Poems that can be read forward and backward, revealing mirrored meanings. Deep-dive on the Star Gauge poem. 
 
 **RESONANCES  
@@ -85,7 +85,7 @@ A collage of mystic voices from every tradition, all circling the same truth.
 
  **Color Palettes I’ve Collected Lately:**
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/ad4abb56-54dc-42dc-bac9-fe3c9c21a79c_856x448.png)](https://substack-post-media.s3.amazonaws.com/public/images/ad4abb56-54dc-42dc-bac9-fe3c9c21a79c_856x448.png)
+
 
  **GROUNDS**
 

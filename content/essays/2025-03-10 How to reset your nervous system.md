@@ -18,15 +18,15 @@ When I was younger, I thought exhaustion was purely physical. However, I’ve re
 
 We are conscious minds in physical machines of bodies. And like any machine, we require fuel to run and regular maintenance checks. If you’re completely exhausted, you may have too much energy or not enough, you may have a system imbalance, you may need a tune-up. I’ve gotten better at discerning ‘what I need’ over time, but I’ve found that starting with a little bit of everything helps initially. To reset completely, you need them all:
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/665ed0fb-58bc-40d7-84f7-897db27311cc_1596x940.png)](https://substack-post-media.s3.amazonaws.com/public/images/665ed0fb-58bc-40d7-84f7-897db27311cc_1596x940.png)
+
 
 Knowing my body, I’ve found that my nerves and energy exist on a spectrum. When I am riled up, it is difficult for me to get to a state of zen calm without expending some energy first. It’s a see-saw, a balancing act - there are shortcuts to get me to immediate calmness, but they don’t last without holistically thinking about the overall energy in my system. I view it all almost like a purge, an energetic cleanse. There are two key steps to my process.
 
 ## Step 1: Shift my energy flow, release, and let go of anything I hold onto.
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/84fb7198-af32-4ec0-aac3-8e735d1091f4_1868x3291.png)](https://substack-post-media.s3.amazonaws.com/public/images/84fb7198-af32-4ec0-aac3-8e735d1091f4_1868x3291.png)
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/14eaa246-23d7-41b7-b978-41897bab87d1_1x1.png)](https://substack-post-media.s3.amazonaws.com/public/images/14eaa246-23d7-41b7-b978-41897bab87d1_1x1.png)
+
+
 
 A few general takeaways:
 

@@ -52,7 +52,7 @@ It’s called [Lingua Poetica](https://www.linguapoetica.com/).
 
 It’s a place to learn languages through poetry, hearing the divine in its mother tongue. I’ve begun with Persian, Spanish, and German and am slowly expanding into others. It’s early in its formation, built for no ambition beyond my wanting it to exist. But I wanted to share it as I’m going, so we can learn a poem a day together over morning coffee.
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/4992f8eb-92bd-4c46-b56d-f0a855fbab7b_1104x484.jpeg)](https://substack-post-media.s3.amazonaws.com/public/images/4992f8eb-92bd-4c46-b56d-f0a855fbab7b_1104x484.jpeg) _As you learn languages, your poetry garden grows. You learn by hearing, understanding (the translation but also the philosophical meaning and poem analysis), and speaking. It’s working for me, I hope it does for you._
+ _As you learn languages, your poetry garden grows. You learn by hearing, understanding (the translation but also the philosophical meaning and poem analysis), and speaking. It’s working for me, I hope it does for you._
 
 My friend told me that in Persian, the word for God is Khoda—خدا. It comes from two words: Khod and aa. It means “come to oneself,” or “find yourself.”
 
@@ -64,4 +64,3 @@ Thank you, as always, for reading and for the support. It means the world! As al
 
 And join us in the chat - I’d love to hear if anyone has any favorite poems! 
 
-[![User's avatar](https://substack-post-media.s3.amazonaws.com/public/images/2938cf9c-1e73-4033-b037-1572d9aca726_1206x1206.jpeg)Join Louise Ireland’s subscriber chatAvailable in the Substack app and on webJoin chat](https://open.substack.com/pub/louiseireland/chat?utm_source=chat_embed)

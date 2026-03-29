@@ -36,7 +36,7 @@ Solutions exist and are neither radical nor prohibitively expensive. Several hos
 
 So, here is an appeal, or at least a modest proposal: consider the ceiling. Transform it from an institutional afterthought into an intentional act of compassion and intelligence. Recognize that the architecture of humanity itself deserves to be extended upwards. And perhaps, if we’re thoughtful enough, patients looking up might find solace rather than despair, hope rather than resignation, and humanity rather than emptiness staring back at them. The ceiling, after all, is often the last thing we see before we sleep, the first thing upon waking, and the constant companion during our most vulnerable hours. It deserves better than our collective architectural indifference.
 
-[![NHS - Feature Lighting, Illuminated Displays & Signs For Hospitals](https://substack-post-media.s3.amazonaws.com/public/images/4a7eb41e-6779-4772-b9a7-436443fec2f5_1170x658.jpeg)](https://substack-post-media.s3.amazonaws.com/public/images/4a7eb41e-6779-4772-b9a7-436443fec2f5_1170x658.jpeg)
+
 
  **PS**. If you are involved with hospital administration or building decisions, I would truly love to hear your perspective: what are the practical constraints that I am missing? What solutions have you tried that worked, or didn’t work? My mother and I have tried to reach the right person at MSK, where I received treatment, but navigating hospital bureaucracy has proved as challenging as navigating the healthcare system itself. I suspect there are other hospitals out there operating under the same well-intentioned standards. More than anything, I wish I could give every patient an open sky. 
 

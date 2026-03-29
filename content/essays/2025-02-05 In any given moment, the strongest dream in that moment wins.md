@@ -6,7 +6,7 @@ Join me on my neverending quest to explore all of the idiosyncracies of this thi
 
 It comes through in other streams. There are lessons we are meant to learn throughout our lives and roads we are meant to take. It’s the disconnect between ‘the external pressure toward the thing you should do’ and ‘what your heart pulls you toward’ at any moment.
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/72cca2fa-745d-4947-a4d0-bd8ed0a17074_583x398.jpeg)](https://substack-post-media.s3.amazonaws.com/public/images/72cca2fa-745d-4947-a4d0-bd8ed0a17074_583x398.jpeg)
+
 
 We hear whispers of what calls us, but how often do we articulate what we want or what we’re yearning for to the people around us? I suppose it’s one part out of fear - what happens if you don’t get what you want? What happens if what you’re wishing for isn’t received well socially? What happens if you do get it and it turns out it isn’t what you wanted in the first place? If you say your dreams out loud, then you have to shift your behavior to change to get them - getting off your couch is sometimes the scariest part of all. You reach the mountain's top, realizing it is nothing more than a plateau. You reach the top and realize you followed directions to the wrong mountain.
 
@@ -38,7 +38,7 @@ A friend asked me what I wanted in my life this morning while on a sunrise walk.
 
   * I want to grow and nurture beautiful gardens of flowers, vegetables, herbs, plants, trees, ideas, and people. I want to give beauty time and space. I want to learn to be patient and learn to let things unfold. I want to feel dirt on my hands and grass on my feet and dance in fields of flowers. I want to lay on a hillside in complete peace, watching clouds as the world passes me by.
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/6ee5e652-cb63-4baf-9317-ccdc82b1e038_610x400.jpeg)](https://substack-post-media.s3.amazonaws.com/public/images/6ee5e652-cb63-4baf-9317-ccdc82b1e038_610x400.jpeg)
+
 
 And what do you want? What do you dream of? What thread do you want to pull? What makes you feel alive and your heart sing? I would love to know.
 

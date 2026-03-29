@@ -4,7 +4,6 @@
 
 A few days ago, a former colleague at IVP, the venture capital fund where I used to work, asked me how to practically apply some of the learnings I mentioned in a previous essay.
 
-[![All I want for my birthday is another shot at life](https://substack-post-media.s3.amazonaws.com/public/images/7a28f070-692a-4d50-bddd-87cf05bde287_1000x524.jpeg)
 
 #### All I want for my birthday is another shot at life
 
@@ -26,9 +25,8 @@ I don’t pretend to have any answers. But by fault of my own human need to solv
 
 Who are you at your deepest level? The you that existed before you were defined by the world? Before disapproval or praise shaped you. Camus wrote that, “a person’s work is nothing but the slow trek to discover through the detours of art, those two or three great and simple images in whose presence their heart first opened.” What does your essence look like? What does it smell like? Taste like? Or, as I’ve written about before, if you were a couch, what couch would you be? There are no right answers, only the truth of what feels like you.
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/a24e4525-863c-4b6e-954f-a34d7b079cee_1600x913.png)](https://substack-post-media.s3.amazonaws.com/public/images/a24e4525-863c-4b6e-954f-a34d7b079cee_1600x913.png)Me as a couch
+Me as a couch
 
-[![On friendship & couches](https://substack-post-media.s3.amazonaws.com/public/images/c543861f-7069-4a93-b2f2-7004b49993e1_1024x683.jpeg)
 
 #### On friendship & couches
 
@@ -42,7 +40,7 @@ Gather what feels like you, the random photos from your favorites folder that ar
 
 My values form a living, cyclical system animated by the continuous dance between my Yin, my core value of softness, and my Yang, my core value of Growth. The meeting point of these is my deepest value of Love. You could also view this as what elevates me, what roots me, and the tree trunk connecting the two, my Value Tree, if you will.
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/a1260f6a-5a7c-4919-9bbb-43677d371f77_1344x600.png)](https://substack-post-media.s3.amazonaws.com/public/images/a1260f6a-5a7c-4919-9bbb-43677d371f77_1344x600.png)My Value Tree
+My Value Tree
 
 When I first created my Value Tree, it became clear where I was out of alignment and where I was spending energy on people and pursuits that did not nourish me. I began reviewing my actions weekly, noticing where I had overexpressed yang or yin, and focusing on my return to equilibrium.
 
@@ -50,13 +48,13 @@ A life without purpose exhausts itself; a life with vision renews.
 
 If this feels abstract, let me use the four questions favored by tribal elders to guide you back to the moment when you were last completely yourself:
 
-  * When did you stop dancing? _\- embodying joy and letting energy flow?_
+  * When did you stop dancing? _- embodying joy and letting energy flow?_
 
-  * When did you stop singing? _\- using your voice freely_
+  * When did you stop singing? _- using your voice freely_
 
-  * When did you stop being enchanted by stories? _\- leaving behind your imagination_
+  * When did you stop being enchanted by stories? _- leaving behind your imagination_
 
-  * When did you stop being comforted by the sweet territory of silence? _\- listening to the deepest depths of yourself_
+  * When did you stop being comforted by the sweet territory of silence? _- listening to the deepest depths of yourself_
 
 How do you practically fit this all into a day-to-day life?
 
@@ -80,7 +78,7 @@ In _East of Eden,_ Cal comes to understand that goodness is not perfection, but 
 
 * * *
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/00df07cc-de1f-440b-914a-436a9df63e91_1344x256.png)](https://substack-post-media.s3.amazonaws.com/public/images/00df07cc-de1f-440b-914a-436a9df63e91_1344x256.png)
+
 
 I believe deeply that you are what you surround yourself with. At the risk of being ‘yet another newsletter’, I wanted to share some of the things that are currently floating in my sphere of consciousness lately, that are helping me live now, starting with several of the things I referenced. Please let me know in the comments what you would like more (or less) of! I would love feedback. I also love see people’s couches / value trees so please send along if this resonated with you. Please share, repost, or heart this if deserved. It helps me get discovered and reach more people.
 
@@ -114,7 +112,7 @@ _ A sprawling, biblical tale of love, jealousy, and moral inheritance that asks 
   *  **[The Order of Time](https://amzn.to/48uXewL)**[ – ](https://amzn.to/48uXewL)_[Carlo Rovelli](https://amzn.to/48uXewL)  
 _ A physicist’s meditation on time as fluid and relational
 
-  *  **[The Imitation of Christ](https://www.amazon.com/Imitation-Christ-Thomas-%25C3%25A0-Kempis/dp/B09FC6HC78?sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY)**[ \- Thomas Kempis](https://www.amazon.com/Imitation-Christ-Thomas-%25C3%25A0-Kempis/dp/B09FC6HC78?sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY)  
+  *  **[The Imitation of Christ](https://www.amazon.com/Imitation-Christ-Thomas-%25C3%25A0-Kempis/dp/B09FC6HC78?sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY)**[ - Thomas Kempis](https://www.amazon.com/Imitation-Christ-Thomas-%25C3%25A0-Kempis/dp/B09FC6HC78?sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY)  
 A book I keep returning to for my own framework of how to be good, how to live humbly, and how to live a spiritual life. 
 
 > Therefore, in every deed and every thought, act as though you were to die this very day. If you had a good conscience you would not fear death very much. It is better to avoid sin than fear death. If you are not prepared today, how will you be prepared tomorrow? Tomorrow is an uncertain day; how will you know you will have a tomorrow?
@@ -133,7 +131,7 @@ A book I keep returning to for my own framework of how to be good, how to live h
 
  **Color Palettes I’ve Collected Lately:**
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/f7c5a910-19a2-466a-8438-76dc45e78154_1344x430.png)](https://substack-post-media.s3.amazonaws.com/public/images/f7c5a910-19a2-466a-8438-76dc45e78154_1344x430.png)
+
 
  **GROUNDS**
 

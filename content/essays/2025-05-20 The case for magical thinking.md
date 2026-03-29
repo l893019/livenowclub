@@ -34,7 +34,7 @@ If magic is real and you live enchanted, you gain everything. If it’s not and 
 
 From the mountain, as I begin the descent, my legs shake. The path is uneven, and I anchor against a root as the gravel shifts underfoot. I place my weight carefully and keep walking.
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/25947a81-cff0-4013-a736-a389013e7419_5712x4284.jpeg)](https://substack-post-media.s3.amazonaws.com/public/images/25947a81-cff0-4013-a736-a389013e7419_5712x4284.jpeg)
+
 
 * * *
 
@@ -44,4 +44,3 @@ And come join us in the chat!
 
 I’d love to hear about anything you used to see as ordinary that you now see as a sign, or any other ways you are enchanting your life. 
 
-[![User's avatar](https://substack-post-media.s3.amazonaws.com/public/images/2938cf9c-1e73-4033-b037-1572d9aca726_1206x1206.jpeg)Join Louise Ireland’s subscriber chatAvailable in the Substack app and on webJoin chat](https://open.substack.com/pub/louiseireland/chat?utm_source=chat_embed)

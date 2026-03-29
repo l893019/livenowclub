@@ -12,30 +12,11 @@ I don’t believe in coincidences; I believe deeply that this diagnosis is anoth
 
 In the words of David Whyte in his poem, Sweet Darkness,
 
-Text within this block will maintain its original spacing when published
-    
-    
-    Time to go into the dark
-
-Text within this block will maintain its original spacing when published
-    
-    
-    where the night has eyes
-
-Text within this block will maintain its original spacing when published
-    
-    
-    to recognize its own.
-
-Text within this block will maintain its original spacing when published
-    
-    
-    There you can be sure
-
-Text within this block will maintain its original spacing when published
-    
-    
-    you are not beyond love.
+> *Time to go into the dark*
+> *where the night has eyes*
+> *to recognize its own.*
+> *There you can be sure*
+> *you are not beyond love.*
 
 * * *
 
@@ -49,9 +30,7 @@ I don’t know how many wake-up calls one gets in one’s life. My therapist, Lo
 
 I believe deeply that somewhere down the line, as scary as this present moment is and how much I wish I could wave a magic wand to make it go away, I will know that this is the best possible thing that could have ever happened to me. I have not been feeling well for months. There is a saying in ayahuasca traditions that “Sickness is the body getting better.” How lucky am I to live in a time where everything I face in front of me is curable? And, like the last line of “The Man in Bodega,” how do we know that what happens to us isn’t good?
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/3ceb771b-6972-4c1d-9c17-5546c6b0ec07_1014x697.jpeg)](https://substack-post-media.s3.amazonaws.com/public/images/3ceb771b-6972-4c1d-9c17-5546c6b0ec07_1014x697.jpeg)
-
-I don’t know what I’m going to need during this time. My best guess is that I will want people to just be there, hold my hand, give me a hug, surround me with flowers and joy, mirror back my strength when I am afraid, remind me to keep laughing. I don’t know where I will be but will update those who are curious once I have more information. 
+I don't know what I'm going to need during this time. My best guess is that I will want people to just be there, hold my hand, give me a hug, surround me with flowers and joy, mirror back my strength when I am afraid, remind me to keep laughing. I don’t know where I will be but will update those who are curious once I have more information. 
 
 > *Note: I’m overwhelmed and likely won’t respond to texts and calls, but that doesn’t mean I don’t appreciate them. I’ll figure out a better way to keep people who want to be up-to-date. I’m trying desperately not to do what I typically do when I’m sick - hide - and I would love to be surrounded by hugs and love.*
 

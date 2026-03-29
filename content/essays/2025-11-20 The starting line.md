@@ -22,7 +22,7 @@ We’re looking for the feeling that everything will be okay in the ontological 
 
 Family friends gave me a card and gemstone before my last treatment cycle, with a line from John O’Donohue that hasn’t left my side since: _I would like to live / like a river flows. Carried by the surprise / of its own unfolding._
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/24c67f5d-bd50-4b55-9030-48bf131e8f42_2972x3415.jpeg)](https://substack-post-media.s3.amazonaws.com/public/images/24c67f5d-bd50-4b55-9030-48bf131e8f42_2972x3415.jpeg)
+
 
 Perhaps the threshold of selfhood isn’t just achievement, stability, or health, but learning to flow, learning to unfold, to stop negotiating your aliveness with the universe.
 

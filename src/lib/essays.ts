@@ -468,7 +468,7 @@ export const CANCER_GUIDE: Pathway[] = [
   {
     id: "just-diagnosed",
     title: "Just Diagnosed",
-    subtitle: "Everything I wish someone had told me at the start.",
+    subtitle: "Everything I wish someone had told me at the start. The essays I wrote the day I learned I had cancer.",
     essays: [
       "expecting-the-unexpected", // THE practical guide - always first
       "embracing-free-fall", // Louise's diagnosis moment
@@ -478,7 +478,7 @@ export const CANCER_GUIDE: Pathway[] = [
   {
     id: "cancer-meditations",
     title: "Cancer Meditations",
-    subtitle: "A series written during treatment. Read in order.",
+    subtitle: "A series written during my first round of treatment.",
     essays: [
       "cancer-meditations",
       "cancer-meditations-ii",

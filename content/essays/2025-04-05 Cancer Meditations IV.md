@@ -2,7 +2,7 @@
 
 ## On the Battlefield
 
-[![Steam Workshop::Night in the Trenches \[4k, 30 FPS\] \(Battlefield 1\)](https://substack-post-media.s3.amazonaws.com/public/images/f28b20be-dca2-4fc0-b1f9-94a22458caba_637x358.gif)](https://substack-post-media.s3.amazonaws.com/public/images/f28b20be-dca2-4fc0-b1f9-94a22458caba_637x358.gif)
+
 
 The battlefield surrounds me. The enemy is multi-dimensional, multi-modular. I duck from the bullets whirling past me. I hear the cacophony of sounds, the vibration of attack. I just need to hang on.
 

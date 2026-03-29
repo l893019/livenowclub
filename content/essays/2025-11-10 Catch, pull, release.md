@@ -4,7 +4,7 @@
 
 > _“The inferno of the living is not something that will be; if there is one, it is what is already here… The way to not suffer it is to seek and learn to recognize who and what, in the midst of the inferno, are not inferno, and make them endure, give them space.”_
 > 
->  _— Italo Calvino, Invisible Cities_
+>  _- Italo Calvino, Invisible Cities_
 
 I write this on my way back from Europe for my third cancer therapeutic peptide vaccine. I’ve finished five out of six of the traditional systemic treatments, a monthly cocktail of multiple chemotherapies and immunotherapies, and I feel the familiar sensations of my body crumbling. My feet are stiff and cold, I’m losing sensation in my toes, I walk amidst waves of nausea, amidst the ruins of my digestive system. But, unlike this spring, and I cannot emphasize this enough, I am walking!
 
@@ -56,7 +56,7 @@ This year, I’ve been thinking about what it means to surrender. To lay down my
 
 Not freedom from the world, but freedom in the world. Not the absence of danger, but the presence of something that holds.
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/00df07cc-de1f-440b-914a-436a9df63e91_1344x256.png)](https://substack-post-media.s3.amazonaws.com/public/images/00df07cc-de1f-440b-914a-436a9df63e91_1344x256.png)
+
 
  _ **I appreciate your reading and any thoughts you may have. I may be slow to reply right now, but I read and cherish everything I receive. And if any part of this resonated with you, please pass it along to a friend (or two!). These words are meant to be shared.**_
 
@@ -90,11 +90,11 @@ I actually haven’t finished this one yet, but since I declared war on bunkers,
  **SIGNALS  
 ** _Cultural transmissions_
 
-  *  **[Never Look Away](https://www.amazon.com/Never-Look-Away-Sebastian-Koch/dp/B07M7FYJ4D) \- **A German coming-of-age romantic drama inspired by the life of Gerald Richter. The beginning is hard to watch, but it’s a beautiful story. 
+  *  **[Never Look Away](https://www.amazon.com/Never-Look-Away-Sebastian-Koch/dp/B07M7FYJ4D) - **A German coming-of-age romantic drama inspired by the life of Gerald Richter. The beginning is hard to watch, but it’s a beautiful story. 
 
   * **[This article about Rick Owens](https://www.nytimes.com/2025/06/28/style/rick-owens-retrospective.html)**. I saw the Rick Owens show in Paris and wished it were longer. He lives in his world; I want to build mine.
 
-  *  **[From Bunker Experience to Bunker Mentality](https://www.pismowidok.org/en/archive/2013/4-ruin/from-bunker-experience-to-bunker-mentality)** \- A great article on the philosophy of bunkers.
+  *  **[From Bunker Experience to Bunker Mentality](https://www.pismowidok.org/en/archive/2013/4-ruin/from-bunker-experience-to-bunker-mentality)** - A great article on the philosophy of bunkers.
 
  **RESONANCES  
 ** _Things that speak to me_
@@ -105,7 +105,7 @@ My favorite song on the planet
 
 **Color Palettes I’ve Collected Lately:**
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/4cb15109-5a89-497b-8113-6110e5b84d36_877x459.png)](https://substack-post-media.s3.amazonaws.com/public/images/4cb15109-5a89-497b-8113-6110e5b84d36_877x459.png)
+
 
  **GROUNDS**
 

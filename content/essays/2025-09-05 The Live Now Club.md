@@ -2,11 +2,11 @@
 
 ## Because now is all we have
 
-> *My loss, by sickness — Was it Loss?*
+> *My loss, by sickness - Was it Loss?*
 > *Or that Ethereal Gain*
 > *One earns by measuring the Grave —*
-> *Then — measuring the Sun —*
-> *\- Emily Dickinson*
+> *Then - measuring the Sun —*
+> *- Emily Dickinson*
 
 Ever so often, a sentence arrives that splits me open. Two weeks ago, one did.
 
@@ -36,7 +36,7 @@ When I was first diagnosed, I joined countless cancer support groups. I quickly 
 
 So I ask you the same question I return to every morning:
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/afa29e6c-c762-4817-a2dd-81f4a55db41a_4096x1714.png)](https://substack-post-media.s3.amazonaws.com/public/images/afa29e6c-c762-4817-a2dd-81f4a55db41a_4096x1714.png)
+
 
  **What would you do if you knew your time was short?**
 
@@ -48,7 +48,7 @@ This is me learning to stop blinking. This is me living life with eyes wide open
 
 And this moment belongs to you too, what will you do with it?
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/2ab245f6-0533-4942-b0a0-f3199491aeb8_3024x4032.jpeg)](https://substack-post-media.s3.amazonaws.com/public/images/2ab245f6-0533-4942-b0a0-f3199491aeb8_3024x4032.jpeg)
+
 
 All my love, Lou 
 

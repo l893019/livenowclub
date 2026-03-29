@@ -92,7 +92,7 @@ const FEATURED = {
   slug: "the-live-now-club",
   title: "The Live Now Club",
   subtitle: "Because now is all we have",
-  excerpt: "Living to live, not living not to die. The founding essay of this space.",
+  excerpt: "Living to live, not living not to die. The manifesto.",
   image: "/images/the-live-now-club.gif",
 };
 

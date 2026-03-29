@@ -22,6 +22,6 @@ What does it mean to hide a face? And inversely, what does it mean to be fully k
 
 I lost my ability to be anyone. To blend in. But somewhere in there, in a way I have a hard time articulating, it no longer matters. I can no longer be anyone because now I have a self to claim.
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/61364d7b-5773-4cbd-9e56-e8069a5e4943_1136x1704.png)](https://substack-post-media.s3.amazonaws.com/public/images/61364d7b-5773-4cbd-9e56-e8069a5e4943_1136x1704.png)
+
 
  **PS.** Thank you for all your well wishes and support. It means so much to have this outlet, and I’m grateful for everyone who has shared and held my words. Tomorrow is another chemo infusion day. I welcome all prayers as I take one step closer to finishing this cycle (two rounds left) and continue down the longer path of part-time treatment in Germany.

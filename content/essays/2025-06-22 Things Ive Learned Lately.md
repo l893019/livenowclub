@@ -34,7 +34,7 @@ We beat up our bodies to prove athletic prowess, to prove we can work harder tha
 
 I went to Kyoto last fall and spent hours sitting in one of my favorite temples, Saihōji, colloquially known as the Moss Temple. If you have never been, it’s a place unlike any other. Moss predates the trees and survives where little else can. It whispers and grows steadily. It’s the type of wisdom I want to embody now, the way I want to heal and build my body: rooted in stillness and thriving through softness.
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/5dc5980d-3510-45a1-84b3-8fb8b655fd76_1368x1688.jpeg)](https://substack-post-media.s3.amazonaws.com/public/images/5dc5980d-3510-45a1-84b3-8fb8b655fd76_1368x1688.jpeg)
+
 
 PS. if you enjoyed this, please leave me a heart or pass along to anyone else who would benefit. 
 

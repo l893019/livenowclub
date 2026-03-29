@@ -4,13 +4,13 @@
 
 Because I love to analyze the world and my brain inherently thinks in systems, I’ve been thinking a lot about friendship and how to know someone - and furthermore, how to know yourself. If you’ve spoken to me at all over the last few weeks, I probably went deep on my current theory of Inner Worlds (how can you most accurately capture the true essence of someone, how can you symbolically represent someone - the past, present, future version of themselves, the mythology of their life). My current theory is this: many of us don’t know ourselves, and thus, we make it difficult for others to connect with us fully.
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/9f9df8cd-0f03-4d44-8dbc-3af76c5812fe_960x540.png)](https://substack-post-media.s3.amazonaws.com/public/images/9f9df8cd-0f03-4d44-8dbc-3af76c5812fe_960x540.png)
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/ad6651ad-d340-45a6-bebf-40cbf0d5f6fa_960x540.png)](https://substack-post-media.s3.amazonaws.com/public/images/ad6651ad-d340-45a6-bebf-40cbf0d5f6fa_960x540.png)
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/cd0a3f31-4b2e-4406-99fe-c32c3ccdb081_960x540.png)](https://substack-post-media.s3.amazonaws.com/public/images/cd0a3f31-4b2e-4406-99fe-c32c3ccdb081_960x540.png)
 
-[![](https://substack-post-media.s3.amazonaws.com/public/images/7e722555-5a1f-4c0f-9cbe-3bc6d946cd8d_960x540.png)](https://substack-post-media.s3.amazonaws.com/public/images/7e722555-5a1f-4c0f-9cbe-3bc6d946cd8d_960x540.png)
+
+
+
+
 
 I’ve been exploring this in several ways: What does the inside of your mind look like? If we assume your psyche is a house, what are the various rooms, and how do they encapsulate your hopes and dreams? What is your hero’s journey? What is the fantasy-style map of your life? If your life were an RPG, what would it look like? 
 
@@ -38,7 +38,7 @@ I hate small talk. I love to go deep but playful. I hate it when people therapy 
 
 I love to build worlds for people. I love design. I love building experiences - in particular, I love to throw birthday parties. I love it when things are perfectly efficient without sacrificing beauty. I love seeing a problem and finding a solution. I love symbolism. I love dream language. I love analyzing the world and people. I love little moments of spontaneity when it feels like the world is winking at you - when the light is refracted in a certain way, when I stumbled upon a heart-shaped rock or leaf, when you catch the green flash at the end of a sunset, when I look up to see the Big Dipper whenever I feel like I’ve lost my way. 
 
-This is the visual encapsulation of my world, [LouLouLand](https://www.pinterest.com/lsi027/loulouland/) \- I am equal parts whimsical and dark, fairy-like and structured, chaos and control, irrational and rational. I define myself by my contrasts. 
+This is the visual encapsulation of my world, [LouLouLand](https://www.pinterest.com/lsi027/loulouland/) - I am equal parts whimsical and dark, fairy-like and structured, chaos and control, irrational and rational. I define myself by my contrasts. 
 
 Me as a couch would be a 1970s De Sede Terrazza sofa with enough seats for 6 people in varying conversation formations. Sleek and elegant but unconventional. Natural but architectural. It would be moss green - maybe thick velvet or sheepskin or mongolian wool - something that you can sink into and have the feeling that you’re lying on a hillside of grass but cozier. I love to be warm and I love to snuggle so my couch would have a variety of weights of blankets and pillows for optimal coziness. There would be books and art projects scattered around and of course, plenty of snacks. Ideally, the couch would be outside on a grassy knoll next to the beach with crashing waves nearby. It would be shaded under a tree whose canopy looks like a kaleidoscope of butterflies. It is surrounded by flowers, birds (definitely parrots), and butterflies. It is perfectly positioned to take in a beautiful sunset and there is a firepit nearby for when it gets dark and the stars come out. 
 
