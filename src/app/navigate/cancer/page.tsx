@@ -5,6 +5,12 @@ import { CANCER_GUIDE, getCancerGuideEssays, getCancerEssays } from "@/lib/essay
 // Essays that are truly practical guides (actionable, step-by-step)
 const PRACTICAL_GUIDES = ["expecting-the-unexpected", "how-to-reset-your-nervous-system"];
 
+// Key milestones in Louise's cancer journey
+const JOURNEY_MILESTONES: Record<string, string> = {
+  "embracing-free-fall": "The diagnosis",
+  "you-cant-always-get-what-you-want": "When cancer returned",
+};
+
 export const metadata = {
   title: "Cancer Guide: Navigating Diagnosis, Treatment & Beyond | The Live Now Club",
   description:
@@ -73,7 +79,8 @@ const jsonLd = {
 };
 
 export default function NavigateCancerPage() {
-  const allCancerEssays = getCancerEssays();
+  // Sort chronologically (oldest first) for the journey timeline
+  const allCancerEssays = getCancerEssays().sort((a, b) => a.date.localeCompare(b.date));
 
   return (
     <>
@@ -241,17 +248,26 @@ export default function NavigateCancerPage() {
           </div>
         </section>
 
-        {/* All Cancer Writing */}
+        {/* All Cancer Writing - Chronological Timeline */}
         <section className="guide-list-section">
-          <h2>All Cancer Writing</h2>
-          <p className="guide-list-count">{allCancerEssays.length} pieces</p>
-          <div className="guide-list">
-            {allCancerEssays.map((essay) => (
-              <Link key={essay.slug} href={`/read/${essay.slug}`} className="guide-list-item">
-                <span className="guide-list-type">{essay.type}</span>
-                <span className="guide-list-title">{essay.title}</span>
-              </Link>
-            ))}
+          <h2>The Full Journey</h2>
+          <p className="guide-list-count">{allCancerEssays.length} pieces, oldest to newest</p>
+          <div className="guide-list guide-list--timeline">
+            {allCancerEssays.map((essay) => {
+              const milestone = JOURNEY_MILESTONES[essay.slug];
+              return (
+                <Link
+                  key={essay.slug}
+                  href={`/read/${essay.slug}`}
+                  className={`guide-list-item ${milestone ? "guide-list-item--milestone" : ""}`}
+                >
+                  {milestone && <span className="guide-list-milestone">{milestone}</span>}
+                  <span className="guide-list-date">{essay.date}</span>
+                  <span className="guide-list-title">{essay.title}</span>
+                  <span className="guide-list-type">{essay.type}</span>
+                </Link>
+              );
+            })}
           </div>
         </section>
 

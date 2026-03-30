@@ -8,7 +8,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="What Do You Believe About the Future?">
-  <meta property="og:description" content="Discover your post-scarcity archetype in 6 questions.">
+  <meta property="og:description" content="Discover your post-scarcity archetype in 6 questions. Based on 208 sci-fi books.">
   <meta property="og:image" content="https://livenowclub.vercel.app/wonder/assets/landscapes/optimized/1.jpg">
   <meta property="og:url" content="https://livenowclub.vercel.app/wonder/essay/quiz">
   <meta property="og:type" content="website">
@@ -21,47 +21,89 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg-deep: #0D0B10;
-      --bg: #13111A;
-      --bg-card: #1a1825;
-      --text: #E8E6F0;
-      --text-dim: rgba(232, 230, 240, 0.6);
-      --accent-pink: #E8178A;
-      --accent-coral: #FF6B6B;
-      --accent-gold: #FFD93D;
-      --border: rgba(255,255,255,0.08);
-      --sans: 'Inter', -apple-system, sans-serif;
-      --serif: 'Newsreader', Georgia, serif;
+      --bg-deep: #faf6f1;
+      --bg: #fffbf7;
+      --bg-card: #fff;
+      --text: #2d2a26;
+      --text-dim: rgba(45,42,38,0.7);
+      --text-muted: rgba(45,42,38,0.45);
+      --accent-pink: #e8178a;
+      --accent-coral: #ff6b6b;
+      --accent-gold: #f4a03f;
+      --border: rgba(232,23,138,0.12);
+      --sans: 'Space Grotesk', system-ui, sans-serif;
+      --mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: var(--sans);
       background: var(--bg-deep);
       color: var(--text);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.75;
+      font-weight: 300;
       min-height: 100vh;
-      line-height: 1.6;
-      overflow-x: hidden;
     }
 
-    /* LAYOUT */
-    .quiz-container {
-      min-height: 100vh;
+    ::selection { background: var(--accent-pink); color: #fff; }
+
+    /* HEADER */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      padding: 40px 24px;
+      padding: 16px 32px;
+      background: rgba(250, 247, 242, 0.95);
+      backdrop-filter: blur(20px);
+      transition: all 0.3s ease;
+    }
+
+    .logo { display: block; }
+    .logo-img { height: 40px; width: auto; }
+
+    .nav { display: flex; gap: 24px; }
+    .nav a {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      text-decoration: none;
+      color: rgba(45, 42, 38, 0.6);
+      transition: color 0.2s;
+    }
+    .nav a:hover { color: var(--accent-pink); }
+    .nav a.active {
+      color: var(--accent-pink);
       position: relative;
+    }
+    .nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--accent-pink);
+    }
+
+    @media (max-width: 600px) {
+      .header { padding: 12px 16px; }
+      .nav { gap: 16px; }
+      .nav a { font-size: 11px; }
+      .logo-img { height: 32px; }
     }
 
     /* PROGRESS BAR */
@@ -70,67 +112,101 @@
       top: 0;
       left: 0;
       height: 3px;
-      background: var(--accent-pink);
+      background: linear-gradient(90deg, var(--accent-pink), var(--accent-coral));
       transition: width 0.4s ease;
-      z-index: 100;
+      z-index: 9999;
     }
 
-    /* BACK LINK */
-    .back-link {
+    /* MAIN LAYOUT */
+    .quiz-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .quiz-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 120px 24px 80px;
+      position: relative;
+    }
+
+    /* BACKGROUND LANDSCAPE */
+    .bg-landscape {
       position: fixed;
-      top: 24px;
-      left: 24px;
-      font-size: 14px;
-      color: var(--text-dim);
-      text-decoration: none;
-      transition: color 0.2s;
-      z-index: 50;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 50vh;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 0;
     }
-    .back-link:hover { color: var(--text); }
+    .bg-landscape img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .bg-landscape::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 0%, var(--bg-deep) 100%);
+    }
 
-    /* QUESTION SCREENS */
+    /* SCREENS */
     .screen {
       display: none;
-      max-width: 600px;
+      max-width: 620px;
       width: 100%;
-      animation: fadeIn 0.4s ease;
+      position: relative;
+      z-index: 1;
     }
-    .screen.active { display: block; }
+    .screen.active {
+      display: block;
+      animation: fadeSlideIn 0.5s ease;
+    }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     /* INTRO SCREEN */
-    .intro-content {
-      text-align: center;
-    }
+    .intro-content { text-align: center; }
 
     .intro-label {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 500;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--accent-pink);
       margin-bottom: 24px;
     }
 
     .intro-title {
-      font-family: var(--serif);
-      font-size: clamp(2rem, 6vw, 3rem);
-      font-weight: 300;
-      line-height: 1.2;
+      font-family: var(--sans);
+      font-size: clamp(2.2rem, 6vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.15;
       margin-bottom: 24px;
+      color: var(--text);
     }
 
     .intro-subtitle {
-      font-size: 1.1rem;
+      font-family: var(--sans);
+      font-size: 1.15rem;
+      font-weight: 300;
+      font-style: italic;
       color: var(--text-dim);
       margin-bottom: 48px;
-      max-width: 450px;
+      max-width: 480px;
       margin-left: auto;
       margin-right: auto;
+      line-height: 1.7;
     }
 
     .start-btn {
@@ -139,129 +215,143 @@
       background: var(--accent-pink);
       color: white;
       font-family: var(--sans);
-      font-size: 16px;
+      font-size: 13px;
       font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       border: none;
-      border-radius: 50px;
+      border-radius: 4px;
       cursor: pointer;
       transition: all 0.3s ease;
     }
     .start-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(232, 23, 138, 0.4);
+      box-shadow: 0 8px 30px rgba(232, 23, 138, 0.3);
     }
 
-    /* QUESTION */
+    /* QUESTION SCREEN */
+    .question-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
     .question-number {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 500;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--accent-pink);
-      margin-bottom: 16px;
+      margin-bottom: 8px;
     }
 
     .question-category {
-      font-size: 14px;
-      color: var(--text-dim);
-      margin-bottom: 12px;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
     }
 
     .question-text {
-      font-family: var(--serif);
-      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-family: var(--sans);
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
       font-weight: 400;
-      line-height: 1.4;
-      margin-bottom: 40px;
+      line-height: 1.35;
+      text-align: center;
+      margin-bottom: 48px;
+      color: var(--text);
     }
 
     /* ANSWERS */
     .answers {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 16px;
     }
 
     .answer-btn {
       display: block;
       width: 100%;
-      padding: 20px 24px;
+      padding: 24px 28px;
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 8px;
       color: var(--text);
       font-family: var(--sans);
       font-size: 16px;
+      font-weight: 300;
       line-height: 1.5;
       text-align: left;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
     .answer-btn:hover {
       border-color: var(--accent-pink);
-      background: rgba(232, 23, 138, 0.08);
-      transform: translateX(4px);
+      background: #fff;
+      transform: translateX(8px);
+      box-shadow: 0 4px 20px rgba(232, 23, 138, 0.12);
     }
     .answer-btn:active {
-      transform: scale(0.98);
+      transform: translateX(8px) scale(0.99);
     }
 
     /* RESULT SCREEN */
-    .result-content {
-      text-align: center;
-    }
+    .result-content { text-align: center; }
 
     .result-label {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 500;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--accent-pink);
       margin-bottom: 16px;
     }
 
     .result-archetype {
-      font-family: var(--serif);
+      font-family: var(--sans);
       font-size: clamp(2.5rem, 8vw, 4rem);
-      font-weight: 300;
-      margin-bottom: 32px;
-      background: linear-gradient(135deg, var(--text) 0%, var(--accent-pink) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      font-weight: 400;
+      margin-bottom: 16px;
+      color: var(--text);
     }
 
     .result-tagline {
-      font-size: 1.3rem;
+      font-family: var(--sans);
+      font-size: 1.4rem;
       font-style: italic;
       color: var(--accent-pink);
-      margin-bottom: 32px;
+      margin-bottom: 40px;
     }
 
     .result-description {
+      font-family: var(--sans);
       font-size: 1.1rem;
-      line-height: 1.8;
+      font-weight: 300;
+      line-height: 1.9;
       color: var(--text);
-      max-width: 540px;
+      max-width: 560px;
       margin: 0 auto 48px;
     }
 
+    /* BOOK RECOMMENDATIONS */
     .result-books {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 12px;
       padding: 32px;
-      margin-bottom: 40px;
+      margin-bottom: 48px;
       text-align: left;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
     }
 
     .result-books-title {
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 500;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--accent-pink);
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
 
     .result-books-list {
@@ -269,198 +359,266 @@
     }
 
     .result-books-list li {
-      padding: 12px 0;
+      padding: 16px 0;
       border-bottom: 1px solid var(--border);
-      font-size: 16px;
     }
-    .result-books-list li:last-child { border-bottom: none; }
+    .result-books-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .result-books-list li:first-child { padding-top: 0; }
 
-    .result-books-list .book-title {
-      font-family: var(--serif);
+    .book-title {
+      font-family: var(--sans);
       font-style: italic;
+      font-size: 1.1rem;
+      color: var(--text);
+      display: block;
+      margin-bottom: 4px;
     }
-    .result-books-list .book-author {
-      color: var(--text-dim);
+    .book-author {
       font-size: 14px;
+      color: var(--text-muted);
     }
 
-    /* SHARE & ACTIONS */
+    /* ACTIONS */
     .result-actions {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 20px;
       align-items: center;
     }
 
     .share-btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 14px 32px;
+      gap: 10px;
+      padding: 16px 40px;
       background: var(--accent-pink);
       color: white;
       font-family: var(--sans);
-      font-size: 15px;
+      font-size: 13px;
       font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       border: none;
-      border-radius: 50px;
+      border-radius: 4px;
       cursor: pointer;
       transition: all 0.3s ease;
     }
     .share-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(232, 23, 138, 0.4);
+      box-shadow: 0 8px 30px rgba(232, 23, 138, 0.3);
     }
 
     .essay-link {
-      color: var(--text-dim);
-      font-size: 15px;
+      font-family: var(--sans);
+      font-size: 14px;
+      color: var(--accent-pink);
       text-decoration: none;
+      letter-spacing: 0.05em;
       transition: color 0.2s;
     }
-    .essay-link:hover { color: var(--accent-pink); }
+    .essay-link:hover { color: var(--accent-coral); }
 
     .retake-btn {
       background: none;
       border: none;
-      color: var(--text-dim);
       font-family: var(--sans);
-      font-size: 14px;
+      font-size: 13px;
+      color: var(--text-muted);
       cursor: pointer;
-      margin-top: 24px;
+      margin-top: 16px;
       transition: color 0.2s;
     }
     .retake-btn:hover { color: var(--text); }
 
+    /* FOOTER */
+    footer {
+      padding: 50px 24px;
+      background: var(--bg-deep);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    footer p {
+      font-family: var(--sans);
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    footer p:last-child { margin-bottom: 0; }
+
+    footer a {
+      color: var(--accent-pink);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    footer a:hover { color: var(--accent-coral); }
+
     /* MOBILE */
     @media (max-width: 600px) {
-      .quiz-container { padding: 60px 20px 40px; }
-      .back-link { top: 16px; left: 16px; }
-      .answer-btn { padding: 16px 20px; font-size: 15px; }
+      .quiz-main { padding: 100px 20px 60px; }
+      .answer-btn { padding: 20px 24px; font-size: 15px; }
       .result-books { padding: 24px; }
+      .intro-subtitle { font-size: 1.05rem; }
     }
   </style>
 </head>
 <body>
   <div class="progress-bar" id="progressBar"></div>
-  <a href="/wonder/essay" class="back-link">&larr; Back to Essay</a>
 
-  <div class="quiz-container">
-    <!-- INTRO -->
-    <div class="screen active" id="screen-intro">
-      <div class="intro-content">
-        <div class="intro-label">A Quiz from After Abundance</div>
-        <h1 class="intro-title">What Do You Believe About the Future?</h1>
-        <p class="intro-subtitle">Six questions. Six archetypes drawn from 208 science fiction books. Discover which post-scarcity worldview matches yours.</p>
-        <button class="start-btn" onclick="startQuiz()">Begin</button>
-      </div>
-    </div>
+  <!-- BACKGROUND -->
+  <div class="bg-landscape">
+    <img src="/wonder/assets/landscapes/optimized/3.jpg" alt="">
+  </div>
 
-    <!-- Q1: ABUNDANCE -->
-    <div class="screen" id="screen-1">
-      <div class="question-number">Question 1 of 6</div>
-      <div class="question-category">Abundance</div>
-      <h2 class="question-text">Material scarcity ends tomorrow. What's your first fear?</h2>
-      <div class="answers">
-        <button class="answer-btn" onclick="answer(1, 'A')">That I won't know what to do with myself</button>
-        <button class="answer-btn" onclick="answer(1, 'B')">That someone will control who gets what</button>
-        <button class="answer-btn" onclick="answer(1, 'C')">That people will stop needing each other</button>
-        <button class="answer-btn" onclick="answer(1, 'D')">That nothing will feel earned anymore</button>
-      </div>
-    </div>
+  <!-- HEADER -->
+  <header class="header">
+    <a href="/" class="logo">
+      <img src="/images/logo-handwritten.png" alt="The Live Now Club" class="logo-img">
+    </a>
+    <nav class="nav">
+      <a href="/read">Read</a>
+      <a href="/navigate">Navigate</a>
+      <a href="/wonder" class="active">Wonder</a>
+      <a href="/connect">Connect</a>
+    </nav>
+  </header>
 
-    <!-- Q2: IDENTITY -->
-    <div class="screen" id="screen-2">
-      <div class="question-number">Question 2 of 6</div>
-      <div class="question-category">Identity</div>
-      <h2 class="question-text">Your job, your title, your daily routine — gone. What do you reach for first?</h2>
-      <div class="answers">
-        <button class="answer-btn" onclick="answer(2, 'A')">I build something new</button>
-        <button class="answer-btn" onclick="answer(2, 'B')">I find my people</button>
-        <button class="answer-btn" onclick="answer(2, 'C')">I sit with not knowing</button>
-        <button class="answer-btn" onclick="answer(2, 'D')">I was never my job</button>
-      </div>
-    </div>
-
-    <!-- Q3: CONNECTION -->
-    <div class="screen" id="screen-3">
-      <div class="question-number">Question 3 of 6</div>
-      <div class="question-category">Connection</div>
-      <h2 class="question-text">A machine can now do everything a human caretaker does, better and without complaint. Do you want it?</h2>
-      <div class="answers">
-        <button class="answer-btn" onclick="answer(3, 'A')">Yes, free people from that labor</button>
-        <button class="answer-btn" onclick="answer(3, 'B')">No, the human doing it is the point</button>
-        <button class="answer-btn" onclick="answer(3, 'C')">It depends on who's receiving the care</button>
-        <button class="answer-btn" onclick="answer(3, 'D')">I wonder what the machine experiences</button>
-      </div>
-    </div>
-
-    <!-- Q4: POWER -->
-    <div class="screen" id="screen-4">
-      <div class="question-number">Question 4 of 6</div>
-      <div class="question-category">Power</div>
-      <h2 class="question-text">Every revolution in history has created new hierarchies. Can that cycle be broken?</h2>
-      <div class="answers">
-        <button class="answer-btn" onclick="answer(4, 'A')">Yes, with the right structures</button>
-        <button class="answer-btn" onclick="answer(4, 'B')">No, but we can make them less brutal</button>
-        <button class="answer-btn" onclick="answer(4, 'C')">The question itself is the wrong frame</button>
-        <button class="answer-btn" onclick="answer(4, 'D')">I'm not convinced we should try</button>
-      </div>
-    </div>
-
-    <!-- Q5: MORTALITY -->
-    <div class="screen" id="screen-5">
-      <div class="question-number">Question 5 of 6</div>
-      <div class="question-category">Mortality</div>
-      <h2 class="question-text">You can live indefinitely. Do you want to?</h2>
-      <div class="answers">
-        <button class="answer-btn" onclick="answer(5, 'A')">Yes, without hesitation</button>
-        <button class="answer-btn" onclick="answer(5, 'B')">Only if I can choose when to stop</button>
-        <button class="answer-btn" onclick="answer(5, 'C')">No, death is what makes this matter</button>
-        <button class="answer-btn" onclick="answer(5, 'D')">I need to know more before I answer</button>
-      </div>
-    </div>
-
-    <!-- Q6: PURPOSE -->
-    <div class="screen" id="screen-6">
-      <div class="question-number">Question 6 of 6</div>
-      <div class="question-category">Purpose</div>
-      <h2 class="question-text">The world no longer needs your productivity. What gives your life meaning?</h2>
-      <div class="answers">
-        <button class="answer-btn" onclick="answer(6, 'A')">What I choose to make</button>
-        <button class="answer-btn" onclick="answer(6, 'B')">Who I choose to love</button>
-        <button class="answer-btn" onclick="answer(6, 'C')">What I have yet to understand</button>
-        <button class="answer-btn" onclick="answer(6, 'D')">The fact that I'm here at all</button>
-      </div>
-    </div>
-
-    <!-- RESULT -->
-    <div class="screen" id="screen-result">
-      <div class="result-content">
-        <div class="result-label">Your Archetype</div>
-        <h2 class="result-archetype" id="resultArchetype"></h2>
-        <p class="result-tagline" id="resultTagline"></p>
-        <p class="result-description" id="resultDescription"></p>
-
-        <div class="result-books">
-          <div class="result-books-title">Read Next</div>
-          <ul class="result-books-list" id="resultBooks"></ul>
-        </div>
-
-        <div class="result-actions">
-          <button class="share-btn" onclick="shareResult()">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
-              <polyline points="16 6 12 2 8 6"/>
-              <line x1="12" y1="2" x2="12" y2="15"/>
-            </svg>
-            Share Result
-          </button>
-          <a href="/wonder/essay" class="essay-link">Read the full essay &rarr;</a>
-          <button class="retake-btn" onclick="retakeQuiz()">Retake quiz</button>
+  <div class="quiz-wrapper">
+    <main class="quiz-main">
+      <!-- INTRO -->
+      <div class="screen active" id="screen-intro">
+        <div class="intro-content">
+          <div class="intro-label">From After Abundance</div>
+          <h1 class="intro-title">What Do You Believe About the Future?</h1>
+          <p class="intro-subtitle">Six questions. Six archetypes drawn from 208 science fiction books. Discover which post-scarcity worldview matches yours.</p>
+          <button class="start-btn" onclick="startQuiz()">Begin the Quiz</button>
         </div>
       </div>
-    </div>
+
+      <!-- Q1: ABUNDANCE -->
+      <div class="screen" id="screen-1">
+        <div class="question-header">
+          <div class="question-number">Question 1 of 6</div>
+          <div class="question-category">Abundance</div>
+        </div>
+        <h2 class="question-text">Material scarcity ends tomorrow. What's your first fear?</h2>
+        <div class="answers">
+          <button class="answer-btn" onclick="answer(1, 'A')">That I won't know what to do with myself</button>
+          <button class="answer-btn" onclick="answer(1, 'B')">That someone will control who gets what</button>
+          <button class="answer-btn" onclick="answer(1, 'C')">That people will stop needing each other</button>
+          <button class="answer-btn" onclick="answer(1, 'D')">That nothing will feel earned anymore</button>
+        </div>
+      </div>
+
+      <!-- Q2: IDENTITY -->
+      <div class="screen" id="screen-2">
+        <div class="question-header">
+          <div class="question-number">Question 2 of 6</div>
+          <div class="question-category">Identity</div>
+        </div>
+        <h2 class="question-text">Your job, your title, your daily routine — gone. What do you reach for first?</h2>
+        <div class="answers">
+          <button class="answer-btn" onclick="answer(2, 'A')">I build something new</button>
+          <button class="answer-btn" onclick="answer(2, 'B')">I find my people</button>
+          <button class="answer-btn" onclick="answer(2, 'C')">I sit with not knowing</button>
+          <button class="answer-btn" onclick="answer(2, 'D')">I was never my job</button>
+        </div>
+      </div>
+
+      <!-- Q3: CONNECTION -->
+      <div class="screen" id="screen-3">
+        <div class="question-header">
+          <div class="question-number">Question 3 of 6</div>
+          <div class="question-category">Connection</div>
+        </div>
+        <h2 class="question-text">A machine can now do everything a human caretaker does, better and without complaint. Do you want it?</h2>
+        <div class="answers">
+          <button class="answer-btn" onclick="answer(3, 'A')">Yes, free people from that labor</button>
+          <button class="answer-btn" onclick="answer(3, 'B')">No, the human doing it is the point</button>
+          <button class="answer-btn" onclick="answer(3, 'C')">It depends on who's receiving the care</button>
+          <button class="answer-btn" onclick="answer(3, 'D')">I wonder what the machine experiences</button>
+        </div>
+      </div>
+
+      <!-- Q4: POWER -->
+      <div class="screen" id="screen-4">
+        <div class="question-header">
+          <div class="question-number">Question 4 of 6</div>
+          <div class="question-category">Power</div>
+        </div>
+        <h2 class="question-text">Every revolution in history has created new hierarchies. Can that cycle be broken?</h2>
+        <div class="answers">
+          <button class="answer-btn" onclick="answer(4, 'A')">Yes, with the right structures</button>
+          <button class="answer-btn" onclick="answer(4, 'B')">No, but we can make them less brutal</button>
+          <button class="answer-btn" onclick="answer(4, 'C')">The question itself is the wrong frame</button>
+          <button class="answer-btn" onclick="answer(4, 'D')">I'm not convinced we should try</button>
+        </div>
+      </div>
+
+      <!-- Q5: MORTALITY -->
+      <div class="screen" id="screen-5">
+        <div class="question-header">
+          <div class="question-number">Question 5 of 6</div>
+          <div class="question-category">Mortality</div>
+        </div>
+        <h2 class="question-text">You can live indefinitely. Do you want to?</h2>
+        <div class="answers">
+          <button class="answer-btn" onclick="answer(5, 'A')">Yes, without hesitation</button>
+          <button class="answer-btn" onclick="answer(5, 'B')">Only if I can choose when to stop</button>
+          <button class="answer-btn" onclick="answer(5, 'C')">No, death is what makes this matter</button>
+          <button class="answer-btn" onclick="answer(5, 'D')">I need to know more before I answer</button>
+        </div>
+      </div>
+
+      <!-- Q6: PURPOSE -->
+      <div class="screen" id="screen-6">
+        <div class="question-header">
+          <div class="question-number">Question 6 of 6</div>
+          <div class="question-category">Purpose</div>
+        </div>
+        <h2 class="question-text">The world no longer needs your productivity. What gives your life meaning?</h2>
+        <div class="answers">
+          <button class="answer-btn" onclick="answer(6, 'A')">What I choose to make</button>
+          <button class="answer-btn" onclick="answer(6, 'B')">Who I choose to love</button>
+          <button class="answer-btn" onclick="answer(6, 'C')">What I have yet to understand</button>
+          <button class="answer-btn" onclick="answer(6, 'D')">The fact that I'm here at all</button>
+        </div>
+      </div>
+
+      <!-- RESULT -->
+      <div class="screen" id="screen-result">
+        <div class="result-content">
+          <div class="result-label">Your Archetype</div>
+          <h2 class="result-archetype" id="resultArchetype"></h2>
+          <p class="result-tagline" id="resultTagline"></p>
+          <p class="result-description" id="resultDescription"></p>
+
+          <div class="result-books">
+            <div class="result-books-title">Read Next</div>
+            <ul class="result-books-list" id="resultBooks"></ul>
+          </div>
+
+          <div class="result-actions">
+            <button class="share-btn" onclick="shareResult()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+                <polyline points="16 6 12 2 8 6"/>
+                <line x1="12" y1="2" x2="12" y2="15"/>
+              </svg>
+              Share Result
+            </button>
+            <a href="/wonder/essay" class="essay-link">Read the full essay &rarr;</a>
+            <button class="retake-btn" onclick="retakeQuiz()">Retake quiz</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>Created by <a href="https://thelivenowclub.substack.com">Louise Ireland</a></p>
+      <p>Part of <a href="https://thelivenowclub.substack.com">The Live Now Club</a></p>
+    </footer>
   </div>
 
   <script>
@@ -469,6 +627,7 @@
       culture: {
         name: "Culture Citizen",
         tagline: "Comfort doesn't frighten me. Boredom does.",
+        shareText: "I believe we'll keep working even when we don't have to.",
         description: "You believe the machinery should handle the drudgery so we can get on with the business of being alive. You're not naive about power — you know that even utopia needs someone watching the edges — but you trust that intelligence, properly distributed, tends toward good. You'd rather live in a world with too much freedom than too little.",
         books: [
           { title: "The Player of Games", author: "Iain M. Banks" },
@@ -479,6 +638,7 @@
       earthseed: {
         name: "Earthseed Shaper",
         tagline: "The future is raw material.",
+        shareText: "I believe the future isn't something that happens to you — it's something you shape.",
         description: "You don't trust stillness. Not because you're restless, but because you understand that the moment you stop adapting, you start calcifying. You see the transition ahead not as a threat but as raw material. The future isn't something that happens to you. It's something you build with whatever is at hand, including the wreckage.",
         books: [
           { title: "Parable of the Sower", author: "Octavia Butler" },
@@ -489,6 +649,7 @@
       anarres: {
         name: "Anarres Builder",
         tagline: "Mutual aid is not a theory.",
+        shareText: "I believe even the best people will recreate the old hierarchies if the structures allow it.",
         description: "You believe the structures matter more than the individuals inside them. Not because people don't matter — they matter immensely — but because even the best people will reproduce the old hierarchies if the structures allow it. You'd rather build something imperfect and collectively owned than something elegant and controlled by a few.",
         books: [
           { title: "The Dispossessed", author: "Ursula K. Le Guin" },
@@ -499,6 +660,7 @@
       diamond: {
         name: "Diamond Reader",
         tagline: "Someone real has to speak the words.",
+        shareText: "I believe the thing that changes a life is a person choosing to be present for another.",
         description: "You keep coming back to the same realization: that no matter how sophisticated the systems become, the thing that actually changes a life is a person choosing to be present for another person. You're not a technophobe — you appreciate what machines can do — but you know the difference between capability and care.",
         books: [
           { title: "The Diamond Age", author: "Neal Stephenson" },
@@ -509,6 +671,7 @@
       solaris: {
         name: "Solaris Dreamer",
         tagline: "The edge is where the interesting things happen.",
+        shareText: "I believe some questions are worth more than their answers.",
         description: "You resist the urge to resolve. Where others see a problem to be solved, you see a question worth sitting with. You're drawn to the edges of understanding, not because you want to conquer them but because the edge itself is where the interesting things happen. You are comfortable with ambiguity in a world that punishes it.",
         books: [
           { title: "Solaris", author: "Stanislaw Lem" },
@@ -519,7 +682,8 @@
       wild: {
         name: "Wild Monk",
         tagline: "Enough is enough.",
-        description: "You've arrived at something most people spend their lives running from: the possibility that you don't need a reason to be here. That purpose is a construct, productivity is a habit, and the most radical thing you can do in a world optimized for output is to stop. Not out of exhaustion. Out of clarity. You find that it's enough.",
+        shareText: "I believe the most radical act is to stop — not from exhaustion, but from clarity.",
+        description: "You've arrived at something most people spend their lives running from: the possibility that you don't need a reason to be here. That purpose is a construct, productivity is a habit, and the most radical thing you can do in a world optimized for output is to stop. Not out of exhaustion. Out of clarity.",
         books: [
           { title: "A Psalm for the Wild-Built", author: "Becky Chambers" },
           { title: "Always Coming Home", author: "Ursula K. Le Guin" },
@@ -539,42 +703,12 @@
     };
 
     const scoring = {
-      1: { // Abundance
-        A: { earthseed: 2, culture: 1 },
-        B: { anarres: 2 },
-        C: { diamond: 2, wild: 1 },
-        D: { earthseed: 2 }
-      },
-      2: { // Identity
-        A: { earthseed: 2 },
-        B: { diamond: 2, anarres: 1 },
-        C: { solaris: 2, wild: 1 },
-        D: { culture: 2 }
-      },
-      3: { // Connection
-        A: { culture: 2 },
-        B: { diamond: 2 },
-        C: { anarres: 1, wild: 1 },
-        D: { solaris: 2 }
-      },
-      4: { // Power
-        A: { anarres: 2 },
-        B: { diamond: 1, culture: 1 },
-        C: { solaris: 2, wild: 1 },
-        D: { culture: 2 }
-      },
-      5: { // Mortality
-        A: { culture: 2 },
-        B: { earthseed: 2 },
-        C: { diamond: 1, wild: 2 },
-        D: { solaris: 2 }
-      },
-      6: { // Purpose
-        A: { earthseed: 2 },
-        B: { diamond: 2 },
-        C: { solaris: 2 },
-        D: { wild: 2 }
-      }
+      1: { A: { earthseed: 2, culture: 1 }, B: { anarres: 2 }, C: { diamond: 2, wild: 1 }, D: { earthseed: 2 } },
+      2: { A: { earthseed: 2 }, B: { diamond: 2, anarres: 1 }, C: { solaris: 2, wild: 1 }, D: { culture: 2 } },
+      3: { A: { culture: 2 }, B: { diamond: 2 }, C: { anarres: 1, wild: 1 }, D: { solaris: 2 } },
+      4: { A: { anarres: 2 }, B: { diamond: 1, culture: 1 }, C: { solaris: 2, wild: 1 }, D: { culture: 2 } },
+      5: { A: { culture: 2 }, B: { earthseed: 2 }, C: { diamond: 1, wild: 2 }, D: { solaris: 2 } },
+      6: { A: { earthseed: 2 }, B: { diamond: 2 }, C: { solaris: 2 }, D: { wild: 2 } }
     };
 
     let currentQuestion = 0;
@@ -587,6 +721,7 @@
     function showScreen(id) {
       document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
       document.getElementById(id).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function startQuiz() {
@@ -596,7 +731,6 @@
     }
 
     function answer(question, choice) {
-      // Apply scores
       const questionScores = scoring[question][choice];
       for (const [archetype, points] of Object.entries(questionScores)) {
         scores[archetype] += points;
@@ -613,7 +747,6 @@
     }
 
     function showResult() {
-      // Find highest scoring archetype
       let maxScore = 0;
       let result = 'culture';
       for (const [archetype, score] of Object.entries(scores)) {
@@ -631,36 +764,34 @@
 
       const booksList = document.getElementById('resultBooks');
       booksList.innerHTML = data.books.map(book =>
-        `<li><span class="book-title">${book.title}</span> <span class="book-author">by ${book.author}</span></li>`
+        `<li><span class="book-title">${book.title}</span><span class="book-author">${book.author}</span></li>`
       ).join('');
 
-      // Store for sharing
       window.quizResult = data;
-
+      window.quizResultKey = result;
       showScreen('screen-result');
     }
 
     function shareResult() {
       const data = window.quizResult;
-      const text = `I'm a ${data.name}. "${data.tagline}"\n\nWhat's your post-scarcity archetype?\n`;
-      const url = 'https://livenowclub.vercel.app/wonder/essay/quiz';
+      const key = window.quizResultKey;
+      const text = `${data.shareText}\n\nI'm a ${data.name}.\nWhat's your post-scarcity worldview?`;
+      const url = `https://livenowclub.vercel.app/wonder/essay/quiz/result?a=${key}`;
 
       if (navigator.share) {
         navigator.share({ title: 'My Post-Scarcity Archetype', text, url });
       } else {
-        // Fallback: copy to clipboard
-        const fullText = text + url;
+        const fullText = text + '\n\n' + url;
         navigator.clipboard.writeText(fullText).then(() => {
           const btn = document.querySelector('.share-btn');
           const original = btn.innerHTML;
-          btn.innerHTML = 'Copied!';
-          setTimeout(() => btn.innerHTML = original, 2000);
+          btn.innerHTML = 'Copied to clipboard!';
+          setTimeout(() => btn.innerHTML = original, 2500);
         });
       }
     }
 
     function retakeQuiz() {
-      // Reset scores
       scores = { culture: 0, earthseed: 0, anarres: 0, diamond: 0, solaris: 0, wild: 0 };
       currentQuestion = 0;
       updateProgress();

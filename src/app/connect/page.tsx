@@ -189,15 +189,15 @@ export default function ConnectPage() {
         {/* Newsletter CTA */}
         <section className="connect-newsletter">
           <h3>Want to stay connected?</h3>
-          <p>Essays on mortality and joy, delivered to your inbox.</p>
-          <a
-            href="https://louiseireland.substack.com/subscribe"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn--secondary"
-          >
-            Subscribe to the Newsletter
-          </a>
+          <p>Join me on this journey. Essays on mortality and joy, delivered to your inbox.</p>
+          <iframe
+            src="https://louiseireland.substack.com/embed"
+            width="100%"
+            height="150"
+            style={{ border: "none", background: "transparent" }}
+            frameBorder="0"
+            scrolling="no"
+          />
         </section>
       </div>
 
@@ -217,12 +217,12 @@ export default function ConnectPage() {
         .connect-container {
           min-height: 100vh;
           background: var(--cream, #faf6f1);
-          padding: 120px 24px 80px;
+          padding: 100px 24px 48px;
         }
 
         .connect-hero {
           max-width: 600px;
-          margin: 0 auto 60px;
+          margin: 0 auto 40px;
           text-align: center;
         }
 
@@ -255,19 +255,19 @@ export default function ConnectPage() {
         .connect-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 48px;
-          max-width: 1000px;
-          margin: 0 auto 80px;
+          gap: 32px;
+          max-width: 900px;
+          margin: 0 auto 48px;
         }
 
         .connect-form-section {
           background: white;
-          padding: 40px;
+          padding: 28px;
           border: 1px solid rgba(0, 0, 0, 0.06);
         }
 
         .connect-form-header {
-          margin-bottom: 32px;
+          margin-bottom: 24px;
         }
 
         .connect-form-header h2 {
@@ -407,13 +407,17 @@ export default function ConnectPage() {
         }
 
         @media (max-width: 768px) {
+          .connect-container {
+            padding: 100px 16px 32px;
+          }
+
           .connect-grid {
             grid-template-columns: 1fr;
-            gap: 32px;
+            gap: 24px;
           }
 
           .connect-form-section {
-            padding: 28px;
+            padding: 20px;
           }
         }
       `}</style>

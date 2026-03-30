@@ -239,18 +239,18 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         .essay-page {
           min-height: 100vh;
           background: #faf6f1;
-          padding: 120px 24px 80px;
+          padding: 80px 24px 48px;
         }
 
         .essay-back {
           display: inline-block;
           font-family: "Space Grotesk", sans-serif;
-          font-size: 12px;
+          font-size: 11px;
           font-weight: 400;
-          letter-spacing: 0.3em;
+          letter-spacing: 0.2em;
           text-transform: uppercase;
           color: rgba(45, 42, 38, 0.45);
-          margin-bottom: 60px;
+          margin-bottom: 24px;
           transition: color 0.2s;
         }
 
@@ -259,37 +259,37 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         }
 
         .essay-header {
-          max-width: 700px;
-          margin: 0 auto 48px;
+          max-width: 780px;
+          margin: 0 auto 24px;
           text-align: center;
         }
 
         .essay-header-meta {
           display: block;
           font-family: "Space Grotesk", sans-serif;
-          font-size: 12px;
+          font-size: 11px;
           font-weight: 400;
-          letter-spacing: 0.4em;
+          letter-spacing: 0.3em;
           text-transform: uppercase;
           color: #e8178a;
-          margin-bottom: 24px;
+          margin-bottom: 12px;
         }
 
         .essay-header h1 {
-          font-size: clamp(2.5rem, 6vw, 4rem);
+          font-size: clamp(2rem, 5vw, 3rem);
           font-weight: 300;
-          line-height: 1.1;
-          letter-spacing: -0.03em;
+          line-height: 1.15;
+          letter-spacing: -0.02em;
           color: #2d2a26;
-          margin-bottom: 16px;
+          margin-bottom: 8px;
         }
 
         .essay-header-subtitle {
-          font-size: 1.25rem;
+          font-size: 1.1rem;
           font-weight: 300;
           font-style: italic;
           color: rgba(45, 42, 38, 0.7);
-          margin-bottom: 20px;
+          margin-bottom: 12px;
           letter-spacing: 0.02em;
         }
 
@@ -303,7 +303,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
 
         .essay-hero-image {
           max-width: 900px;
-          margin: 0 auto 48px;
+          margin: 0 auto 24px;
         }
 
         .essay-hero-image img {
@@ -313,29 +313,29 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         }
 
         .essay-content {
-          max-width: 700px;
+          max-width: 780px;
           margin: 0 auto;
-          font-size: 17px;
+          font-size: 18px;
           font-weight: 300;
           line-height: 1.75;
-          color: rgba(45, 42, 38, 0.7);
+          color: rgba(45, 42, 38, 0.75);
         }
 
         .essay-content :global(p) {
-          margin-bottom: 1.5em;
+          margin-bottom: 1.25em;
         }
 
         .essay-content :global(h2) {
-          font-size: 1.5rem;
+          font-size: 1.35rem;
           font-weight: 400;
-          margin: 3rem 0 1.5rem;
+          margin: 2rem 0 1rem;
           color: #2d2a26;
         }
 
         .essay-content :global(h3) {
-          font-size: 1.25rem;
+          font-size: 1.15rem;
           font-weight: 400;
-          margin: 2.5rem 0 1rem;
+          margin: 1.75rem 0 0.75rem;
           color: #2d2a26;
         }
 
@@ -344,11 +344,11 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
           font-weight: 400;
           font-style: normal;
           border-left: 2px solid #e8178a;
-          padding: 16px 0 16px 20px;
-          margin: 28px 0;
+          padding: 12px 0 12px 16px;
+          margin: 20px 0;
           color: #2d2a26;
           background: rgba(232, 23, 138, 0.02);
-          border-radius: 0 6px 6px 0;
+          border-radius: 0 4px 4px 0;
           line-height: 1.6;
         }
 
@@ -366,7 +366,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         .essay-content :global(hr) {
           border: none;
           border-top: 1px solid rgba(45, 42, 38, 0.1);
-          margin: 3rem 0;
+          margin: 2rem 0;
         }
 
         .essay-content :global(strong) {
@@ -381,29 +381,29 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
 
         /* Subscribe CTA */
         .essay-subscribe-cta {
-          max-width: 650px;
-          margin: 60px auto 0;
-          padding: 32px;
+          max-width: 780px;
+          margin: 32px auto 0;
+          padding: 24px;
           text-align: center;
           border-top: 1px solid rgba(45, 42, 38, 0.1);
           border-bottom: 1px solid rgba(45, 42, 38, 0.1);
         }
 
         .cta-text {
-          font-size: 1.1rem;
+          font-size: 1rem;
           font-weight: 300;
           color: rgba(45, 42, 38, 0.7);
-          margin-bottom: 20px;
+          margin-bottom: 12px;
           font-style: italic;
         }
 
         .cta-button {
           display: inline-block;
-          padding: 12px 32px;
+          padding: 10px 24px;
           background: #e8178a;
           color: white;
           font-family: "Space Grotesk", sans-serif;
-          font-size: 13px;
+          font-size: 12px;
           font-weight: 500;
           letter-spacing: 0.1em;
           text-transform: uppercase;
@@ -419,12 +419,12 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
 
         /* Share Section */
         .essay-share {
-          max-width: 650px;
-          margin: 60px auto 0;
+          max-width: 780px;
+          margin: 24px auto 0;
           display: flex;
           align-items: center;
-          gap: 16px;
-          padding-top: 32px;
+          gap: 12px;
+          padding-top: 20px;
           border-top: 1px solid rgba(45, 42, 38, 0.1);
         }
 
@@ -475,25 +475,25 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         /* Read Next Section */
         .essay-read-next {
           max-width: 900px;
-          margin: 80px auto 0;
-          padding-top: 60px;
+          margin: 32px auto 0;
+          padding-top: 24px;
           border-top: 1px solid rgba(45, 42, 38, 0.1);
         }
 
         .essay-read-next h2 {
           font-family: "Space Grotesk", sans-serif;
-          font-size: 11px;
+          font-size: 10px;
           font-weight: 400;
-          letter-spacing: 0.3em;
+          letter-spacing: 0.25em;
           text-transform: uppercase;
           color: rgba(45, 42, 38, 0.45);
-          margin-bottom: 24px;
+          margin-bottom: 16px;
         }
 
         .read-next-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 24px;
+          gap: 16px;
         }
 
         .read-next-card {
@@ -521,43 +521,43 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         }
 
         .read-next-content {
-          padding: 16px;
+          padding: 12px;
         }
 
         .read-next-type {
           font-family: "Space Grotesk", sans-serif;
-          font-size: 10px;
+          font-size: 9px;
           font-weight: 400;
-          letter-spacing: 0.3em;
+          letter-spacing: 0.25em;
           text-transform: uppercase;
           color: #e8178a;
           display: block;
-          margin-bottom: 8px;
+          margin-bottom: 4px;
         }
 
         .read-next-card h3 {
-          font-size: 1rem;
+          font-size: 0.9rem;
           font-weight: 400;
           line-height: 1.3;
           color: #2d2a26;
         }
 
         .essay-footer {
-          max-width: 700px;
-          margin: 80px auto 0;
+          max-width: 780px;
+          margin: 32px auto 0;
           text-align: center;
-          padding-top: 40px;
+          padding-top: 24px;
           border-top: 1px solid rgba(45, 42, 38, 0.1);
         }
 
         .essay-footer p {
           font-family: "Space Grotesk", sans-serif;
-          font-size: 11px;
+          font-size: 10px;
           font-weight: 400;
-          letter-spacing: 0.3em;
+          letter-spacing: 0.25em;
           text-transform: uppercase;
           color: rgba(45, 42, 38, 0.45);
-          margin-bottom: 16px;
+          margin-bottom: 12px;
         }
 
         @media (max-width: 768px) {
