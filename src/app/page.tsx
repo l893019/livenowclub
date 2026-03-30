@@ -67,8 +67,8 @@ const QUOTES = [
 const SOFT_ENTRIES = [
   {
     prompt: "I was just diagnosed",
-    href: "/read#diagnosed",
-    ariaLabel: "Essays for the newly diagnosed",
+    href: "/navigate",
+    ariaLabel: "Guide for the newly diagnosed",
   },
   {
     prompt: "I'm carrying something heavy",
@@ -85,6 +85,11 @@ const SOFT_ENTRIES = [
     href: "/read#beautiful",
     ariaLabel: "Poetry and meditations",
   },
+  {
+    prompt: "I don't know",
+    href: "/read#start",
+    ariaLabel: "Start here",
+  },
 ];
 
 // Featured piece - change this when you want to highlight something new
@@ -92,7 +97,7 @@ const FEATURED = {
   slug: "the-live-now-club",
   title: "The Live Now Club",
   subtitle: "Because now is all we have",
-  excerpt: "Living to live, not living not to die. The manifesto.",
+  excerpt: "Living to live, not living not to die.",
   image: "/images/the-live-now-club.gif",
 };
 
@@ -175,7 +180,7 @@ export default function HomePage() {
           <img src="/images/louise-portrait-new.png" alt="Louise Ireland" />
         </div>
         <div className="intro-text">
-          <p className="intro-greeting">I'm Louise <span className="intro-lou">(but you may call me Lou)</span>.</p>
+          <p className="intro-greeting">I'm <Link href="/about" className="intro-louise-link">Louise</Link> <span className="intro-lou">(but you may call me Lou)</span>.</p>
           <p className="intro-body">
             I started writing to leave a mark in case I don't survive. Now I write to live.
           </p>
