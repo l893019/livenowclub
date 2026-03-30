@@ -11,6 +11,19 @@ const JOURNEY_MILESTONES: Record<string, string> = {
   "you-cant-always-get-what-you-want": "When cancer returned",
 };
 
+// Format date as "Feb 14" or "Feb 14, 2025" for display
+function formatDate(dateStr: string, includeYear = false): string {
+  const date = new Date(dateStr + "T12:00:00");
+  const options: Intl.DateTimeFormatOptions = { month: "short", day: "numeric" };
+  if (includeYear) options.year = "numeric";
+  return date.toLocaleDateString("en-US", options);
+}
+
+// Get year from date string
+function getYear(dateStr: string): string {
+  return dateStr.slice(0, 4);
+}
+
 export const metadata = {
   title: "Cancer Guide: Navigating Diagnosis, Treatment & Beyond | The Live Now Club",
   description:
@@ -249,23 +262,34 @@ export default function NavigateCancerPage() {
         </section>
 
         {/* All Cancer Writing - Chronological Timeline */}
-        <section className="guide-list-section">
-          <h2>The Full Journey</h2>
-          <p className="guide-list-count">{allCancerEssays.length} pieces, oldest to newest</p>
-          <div className="guide-list guide-list--timeline">
-            {allCancerEssays.map((essay) => {
+        <section className="journey-section">
+          <div className="journey-header">
+            <h2>The Full Journey</h2>
+            <p>{allCancerEssays.length} pieces, oldest to newest</p>
+          </div>
+          <div className="journey-timeline">
+            {allCancerEssays.map((essay, index) => {
               const milestone = JOURNEY_MILESTONES[essay.slug];
+              const prevYear = index > 0 ? getYear(allCancerEssays[index - 1].date) : null;
+              const currentYear = getYear(essay.date);
+              const showYear = currentYear !== prevYear;
+
               return (
-                <Link
-                  key={essay.slug}
-                  href={`/read/${essay.slug}`}
-                  className={`guide-list-item ${milestone ? "guide-list-item--milestone" : ""}`}
-                >
-                  {milestone && <span className="guide-list-milestone">{milestone}</span>}
-                  <span className="guide-list-date">{essay.date}</span>
-                  <span className="guide-list-title">{essay.title}</span>
-                  <span className="guide-list-type">{essay.type}</span>
-                </Link>
+                <div key={essay.slug} className="journey-entry">
+                  {showYear && <div className="journey-year">{currentYear}</div>}
+                  {milestone ? (
+                    <Link href={`/read/${essay.slug}`} className="journey-milestone">
+                      <span className="journey-milestone-marker">{milestone}</span>
+                      <span className="journey-milestone-title">{essay.title}</span>
+                      <span className="journey-milestone-date">{formatDate(essay.date)}</span>
+                    </Link>
+                  ) : (
+                    <Link href={`/read/${essay.slug}`} className="journey-item">
+                      <span className="journey-item-date">{formatDate(essay.date)}</span>
+                      <span className="journey-item-title">{essay.title}</span>
+                    </Link>
+                  )}
+                </div>
               );
             })}
           </div>

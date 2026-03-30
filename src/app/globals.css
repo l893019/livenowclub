@@ -5911,150 +5911,146 @@ p {
 }
 
 /* ========================================
-   CANCER JOURNEY TIMELINE
+   CANCER JOURNEY TIMELINE (Redesigned)
    ======================================== */
 
-.guide-list--timeline {
-  position: relative;
-}
-
-.guide-list--timeline::before {
-  content: "";
-  position: absolute;
-  left: 70px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--border);
-}
-
-.guide-list--timeline .guide-list-item {
-  position: relative;
-  padding-left: 100px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: auto auto;
-  gap: 0.2rem var(--space-md);
-  align-items: baseline;
-}
-
-.guide-list--timeline .guide-list-item::before {
-  content: "";
-  position: absolute;
-  left: 66px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+.journey-section {
+  padding: var(--space-2xl) var(--space-lg);
   background: var(--cream);
-  border: 2px solid var(--border);
 }
 
-.guide-list-date {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.75rem;
+.journey-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.journey-header h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  color: var(--charcoal);
+  margin-bottom: 0.5rem;
+}
+
+.journey-header p {
   color: var(--text-muted);
-  width: 60px;
-  text-align: right;
+  font-size: 0.9rem;
 }
 
-.guide-list--timeline .guide-list-title {
-  grid-column: 1;
-  grid-row: 1;
+.journey-timeline {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.guide-list--timeline .guide-list-type {
-  grid-column: 2;
-  grid-row: 1;
+.journey-entry {
+  position: relative;
 }
 
-/* Milestone styling */
-.guide-list-item--milestone {
-  background: linear-gradient(135deg, #fef7f5 0%, #fff 100%);
+/* Year markers */
+.journey-year {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  padding: var(--space-md) 0 var(--space-sm);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--space-sm);
+}
+
+.journey-entry:first-child .journey-year {
+  padding-top: 0;
+}
+
+/* Regular items */
+.journey-item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+  padding: 0.6rem 0;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.15s ease;
+}
+
+.journey-item:hover {
+  background: rgba(0, 0, 0, 0.03);
+  padding-left: 0.5rem;
+  margin-left: -0.5rem;
+  padding-right: 0.5rem;
+  margin-right: -0.5rem;
+}
+
+.journey-item-date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  min-width: 50px;
+  flex-shrink: 0;
+}
+
+.journey-item-title {
+  font-size: 0.95rem;
+  color: var(--charcoal);
+  line-height: 1.4;
+}
+
+/* Milestone cards */
+.journey-milestone {
+  display: block;
+  background: linear-gradient(135deg, #fff 0%, #fef9f7 100%);
   border: 1px solid var(--coral);
-  border-radius: 8px;
-  margin: var(--space-sm) 0;
-  padding-top: var(--space-md);
-  padding-bottom: var(--space-md);
+  border-left: 3px solid var(--coral);
+  border-radius: 6px;
+  padding: var(--space-md) var(--space-lg);
+  margin: var(--space-md) 0;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.guide-list-item--milestone::before {
-  background: var(--coral) !important;
-  border-color: var(--coral) !important;
-  width: 14px !important;
-  height: 14px !important;
-  left: 64px !important;
+.journey-milestone:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.guide-list-milestone {
-  grid-column: 1 / -1;
-  grid-row: 1;
+.journey-milestone-marker {
+  display: block;
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--coral);
-  font-weight: 500;
-  margin-bottom: 0.2rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
 }
 
-.guide-list-item--milestone .guide-list-title {
-  grid-row: 2;
+.journey-milestone-title {
+  display: block;
+  font-size: 1.1rem;
   font-weight: 500;
   color: var(--charcoal);
+  line-height: 1.3;
+  margin-bottom: 0.3rem;
 }
 
-.guide-list-item--milestone .guide-list-type {
-  grid-row: 2;
+.journey-milestone-date {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
 }
 
+/* Mobile adjustments */
 @media (max-width: 600px) {
-  .guide-list--timeline::before {
-    left: 10px;
+  .journey-section {
+    padding: var(--space-xl) var(--space-md);
   }
 
-  .guide-list--timeline .guide-list-item {
-    padding-left: 30px;
-    grid-template-columns: 1fr;
+  .journey-item {
+    flex-direction: column;
+    gap: 0.2rem;
   }
 
-  .guide-list--timeline .guide-list-item::before {
-    left: 6px;
+  .journey-item-date {
+    font-size: 0.75rem;
   }
 
-  .guide-list-date {
-    position: static;
-    transform: none;
-    width: auto;
-    text-align: left;
-    margin-bottom: 0.2rem;
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .guide-list--timeline .guide-list-title {
-    grid-row: 2;
-  }
-
-  .guide-list--timeline .guide-list-type {
-    grid-row: 2;
-    grid-column: 1;
-    justify-self: start;
-    margin-top: 0.3rem;
-  }
-
-  .guide-list-item--milestone .guide-list-title {
-    grid-row: 3;
-  }
-
-  .guide-list-item--milestone .guide-list-type {
-    grid-row: 3;
-  }
-
-  .guide-list-milestone {
-    grid-row: 2;
+  .journey-milestone {
+    padding: var(--space-sm) var(--space-md);
   }
 }

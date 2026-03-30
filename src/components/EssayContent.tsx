@@ -43,10 +43,27 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
     window.open(twitterUrl, "_blank", "noopener,noreferrer");
   };
 
+  // Boilerplate patterns to strip
+  const boilerplatePatterns = [
+    /thanks for reading komorebi/i,
+    /subscribe for free to receive/i,
+    /subscribe for free to follow along/i,
+    /subscribe here \(free\)/i,
+    /join me on my neverending quest/i,
+    /please leave me a heart or pass along/i,
+    /I would greatly appreciate it if you could share my words/i,
+  ];
+
+  const isBoilerplate = (line: string) => {
+    return boilerplatePatterns.some(pattern => pattern.test(line));
+  };
+
   // Convert markdown to basic HTML
   const lines = essay.content.split("\n");
   const result: string[] = [];
+  const psNotes: string[] = [];
   let blockquoteBuffer: string[] = [];
+  let inPsSection = false;
 
   const flushBlockquote = () => {
     if (blockquoteBuffer.length > 0) {
