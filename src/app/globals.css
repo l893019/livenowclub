@@ -6359,3 +6359,59 @@ p {
     display: none;
   }
 }
+
+/* ========================================
+   MOBILE TYPOGRAPHY OVERRIDES
+   ======================================== */
+
+@media (max-width: 768px) {
+  /* Base text - minimum 16px for readability */
+  body {
+    font-size: 16px;
+  }
+
+  /* Headings - scale down but stay readable */
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  h3 {
+    font-size: 1.25rem !important;
+  }
+
+  /* Paragraphs and body text */
+  p, li, blockquote {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* Labels and small text - never below 12px */
+  .read-list-type,
+  .guide-card-type,
+  .journey-item-date,
+  .recent-item-type,
+  .pick-label,
+  .section-label,
+  [class*="-type"],
+  [class*="-label"] {
+    font-size: 12px !important;
+  }
+
+  /* Navigation text */
+  .nav a,
+  .mobile-menu a,
+  .bottom-nav a {
+    font-size: 14px;
+  }
+
+  /* Buttons - larger for touch */
+  .btn {
+    font-size: 16px;
+    padding: 14px 28px;
+    min-height: 48px;
+  }
+}
