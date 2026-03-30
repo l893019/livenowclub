@@ -6461,6 +6461,60 @@ p {
 }
 
 /* ========================================
+   MOBILE ESSAY READING EXPERIENCE
+   ======================================== */
+
+@media (max-width: 768px) {
+  /* Essay container - full width with comfortable margins */
+  .essay-container,
+  .prose {
+    padding: 0 var(--space-md);
+    max-width: 100%;
+  }
+
+  /* Essay content - optimal reading width */
+  .essay-content {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .essay-content p {
+    margin-bottom: 1.5em;
+  }
+
+  /* Blockquotes - indented but not too cramped */
+  .essay-content blockquote {
+    margin: 1.5em 0;
+    padding: 1em 1.25em;
+    font-size: 1rem;
+    border-left-width: 3px;
+  }
+
+  /* Images in essays - full bleed */
+  .essay-content img {
+    width: calc(100% + var(--space-md) * 2);
+    margin-left: calc(var(--space-md) * -1);
+    margin-right: calc(var(--space-md) * -1);
+    max-width: none;
+  }
+
+  /* Essay header */
+  .essay-header {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .essay-header h1 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  /* Related essays at bottom */
+  .related-essays {
+    padding: var(--space-lg) var(--space-md);
+  }
+}
+
+/* ========================================
    READING PROGRESS BAR
    ======================================== */
 
