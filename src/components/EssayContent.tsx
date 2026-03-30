@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import type { Essay } from "@/lib/essays";
+import ReadingProgress from "./ReadingProgress";
 
 type EssayContentProps = {
   essay: Essay;
@@ -199,6 +200,8 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
 
   return (
     <>
+      <ReadingProgress />
+
       {/* Header */}
       <header className="header">
         <Link href="/" className="logo">

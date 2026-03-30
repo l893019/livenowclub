@@ -6459,3 +6459,17 @@ p {
     gap: var(--space-xs);
   }
 }
+
+/* ========================================
+   READING PROGRESS BAR
+   ======================================== */
+
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--pink), var(--coral));
+  z-index: 200;
+  transition: width 0.1s ease-out;
+}
