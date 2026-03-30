@@ -5850,6 +5850,123 @@ p {
   font-style: italic;
 }
 
+/* ========================================
+   ORBITS SECTION (Source Code page)
+   ======================================== */
+
+.orbits-category {
+  margin-bottom: var(--space-xl);
+}
+
+.orbits-category:last-child {
+  margin-bottom: 0;
+}
+
+.orbits-category h3 {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: var(--space-sm);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--border);
+}
+
+.orbits-intro {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-md);
+  font-style: italic;
+}
+
+.orbits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.orbits-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.orbit-item {
+  padding: var(--space-md);
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.orbit-item h4 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: var(--space-xs);
+}
+
+.orbit-item h4 a {
+  color: var(--charcoal);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.orbit-item h4 a:hover {
+  color: var(--pink);
+  border-color: var(--pink);
+}
+
+.orbit-author {
+  font-size: 0.85rem;
+  color: var(--pink);
+  margin-bottom: var(--space-xs);
+}
+
+.orbit-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.orbit-type {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: var(--space-xs);
+}
+
+.orbits-questions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.orbits-questions li {
+  padding: var(--space-sm) 0;
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--charcoal);
+  border-bottom: 1px solid var(--border);
+}
+
+.orbits-questions li:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 600px) {
+  .orbits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Life Page Responsive */
 @media (max-width: 768px) {
   .life-container {
@@ -6094,5 +6211,96 @@ p {
 
   .journey-milestone {
     padding: var(--space-sm) var(--space-md);
+  }
+}
+
+/* ============================================
+   MOBILE MENU
+   ============================================ */
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 200;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  background: var(--charcoal);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger--open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger--open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger--open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 150;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100%;
+  background: var(--cream);
+  padding: 80px var(--space-lg) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.mobile-menu a {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  color: var(--charcoal);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid rgba(45, 42, 38, 0.1);
+}
+
+.mobile-menu a:hover {
+  color: var(--pink);
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;
   }
 }
