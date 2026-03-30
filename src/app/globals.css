@@ -47,6 +47,13 @@
   --space-lg: var(--space-6);
   --space-xl: var(--space-12);
 
+  /* Border Radius */
+  --radius-sm: 2px;     /* Subtle rounding */
+  --radius-md: 4px;     /* Default for buttons, inputs */
+  --radius-lg: 8px;     /* Cards, larger elements */
+  --radius-xl: 16px;    /* Feature cards, modals */
+  --radius-full: 9999px; /* Pills, avatars */
+
   /* Content widths - tighter like Substack/Goop */
   --content-narrow: 640px;
   --content-medium: 800px;
