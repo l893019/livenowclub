@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import MobileMenu from "./MobileMenu";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const pathname = usePathname();
@@ -26,6 +27,7 @@ export default function Header() {
           Connect
         </Link>
       </nav>
+      <ThemeToggle />
       <MobileMenu />
     </header>
   );
