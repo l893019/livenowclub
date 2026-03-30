@@ -164,7 +164,6 @@ export default function HomePage() {
           <img src="/images/hero-playa-faded.png" alt="" />
         </div>
         <div className="hero-content">
-          <p className="hero-tagline">A club for those who don't want to waste the time they have left</p>
           <img src="/images/handwritten-question.png" alt="What would you do if you knew your time was short?" className="hero-handwritten" />
           <a href="#join" className="btn btn--primary">Join the Newsletter</a>
         </div>
