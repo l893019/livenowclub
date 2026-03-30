@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { BOOKS, PRACTICES } from "@/lib/source-code";
 
 export const metadata = {
   title: "Navigate Life | The Live Now Club",
   description:
-    "My rules for living fully, plus the books, ideas, and practices that shaped them. Time-tested principles tested against mortality, heartbreak, and starting over.",
+    "My rules for living fully. I've tested these against mortality, heartbreak, and starting over.",
   keywords: [
     "life principles",
     "rules for living",
@@ -19,7 +18,7 @@ export const metadata = {
   openGraph: {
     title: "Navigate Life",
     description:
-      "My rules for living fully, plus the books, ideas, and practices that shaped them.",
+      "My rules for living fully.",
     type: "website",
     url: "https://livenowclub.vercel.app/navigate/life",
   },
@@ -133,7 +132,7 @@ export default function NavigateLifePage() {
           <span className="life-label">Navigate Life</span>
           <h1>The inputs that shape me</h1>
           <p>
-            My rules for living fully, plus the books, ideas, and practices that shaped them.
+            My rules for living fully.
             I've tested these against mortality, heartbreak, and starting over.
           </p>
         </section>

@@ -36,11 +36,57 @@ const archetypes: Record<string, { name: string; shareText: string; color: strin
   }
 };
 
+// Sharp combination lines
+const synthesisLines: Record<string, string> = {
+  culture_earthseed: "You'll automate the revolution and optimize the resistance.",
+  culture_anarres: "You trust the machines more than you trust the committees — but you want both to succeed.",
+  culture_diamond: "You'll be the last to trust the AI caretaker — and the first to ask if it's lonely.",
+  culture_solaris: "You'd live forever just to see what questions we haven't thought to ask yet.",
+  culture_wild: "You want abundance so badly you might forget to enjoy it.",
+  earthseed_culture: "You'll build the future they automate — and wonder if it was worth the sweat.",
+  earthseed_anarres: "You'll tear down the system by building something better beside it.",
+  earthseed_diamond: "You shape the world for people who didn't ask to be shaped — and that keeps you up at night.",
+  earthseed_solaris: "You're drawn to edges you know you shouldn't try to cross.",
+  earthseed_wild: "You build so hard you sometimes forget you're allowed to stop.",
+  anarres_culture: "You design systems that could run without you — and worry they will.",
+  anarres_earthseed: "You want to change everything except the collective's power to resist change.",
+  anarres_diamond: "You'll build the commune and then stay up wondering if anyone actually feels at home.",
+  anarres_solaris: "You organize the resistance while secretly hoping someone will explain what we're resisting toward.",
+  anarres_wild: "You've built the alternative — now you're not sure you want to live there.",
+  diamond_culture: "You trust people over systems — until the system is full of people you trust.",
+  diamond_earthseed: "You know presence matters most, but you're not sure you can stay present through the change.",
+  diamond_anarres: "You put people first, then wonder if the structure would do it better.",
+  diamond_solaris: "You reach out to connect — and find the other side reaching back with questions, not answers.",
+  diamond_wild: "You believe in presence so deeply you've forgotten to be present to yourself.",
+  solaris_culture: "You question everything except your right to keep questioning.",
+  solaris_earthseed: "You sit with uncertainty while secretly building toward certainty.",
+  solaris_anarres: "You embrace the mystery but wish someone else would organize the search party.",
+  solaris_diamond: "You'd rather sit in silence with someone than solve them.",
+  solaris_wild: "You've stopped asking why — and you're not sure that's an answer.",
+  wild_culture: "You've found peace — now you're restless about how much work went into finding it.",
+  wild_earthseed: "You stopped building to rest — and woke up building again.",
+  wild_anarres: "You stepped off the wheel — and it keeps turning toward you.",
+  wild_diamond: "You're so present you've forgotten that others are still arriving.",
+  wild_solaris: "You found the answer in stopping — and now you're suspicious of it."
+};
+
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const archetype = searchParams.get('archetype') || 'culture';
+  const shadow = searchParams.get('shadow');
 
   const data = archetypes[archetype] || archetypes.culture;
+  const shadowData = shadow ? archetypes[shadow] : null;
+
+  // Get synthesis line if shadow exists
+  const synthesisKey = shadow ? `${archetype}_${shadow}` : null;
+  const synthesis = synthesisKey && synthesisLines[synthesisKey] ? synthesisLines[synthesisKey] : data.shareText;
+
+  // Display text depends on whether we have a shadow
+  const displayText = shadow ? synthesis : data.shareText;
+  const displayName = shadowData
+    ? `${data.name} · ${shadowData.name}`
+    : data.name;
 
   return new ImageResponse(
     (
@@ -71,10 +117,10 @@ export async function GET(request: NextRequest) {
           "
         </div>
 
-        {/* Belief statement */}
+        {/* Belief/synthesis statement */}
         <div
           style={{
-            fontSize: 48,
+            fontSize: shadow ? 44 : 48,
             fontWeight: 400,
             color: '#2d2a26',
             textAlign: 'center',
@@ -83,10 +129,10 @@ export async function GET(request: NextRequest) {
             marginBottom: 40,
           }}
         >
-          {data.shareText}
+          {displayText}
         </div>
 
-        {/* Archetype name */}
+        {/* Archetype name(s) */}
         <div
           style={{
             display: 'flex',
@@ -112,6 +158,36 @@ export async function GET(request: NextRequest) {
           >
             {data.name}
           </div>
+          {shadowData && (
+            <>
+              <div
+                style={{
+                  fontSize: 24,
+                  color: 'rgba(45,42,38,0.5)',
+                }}
+              >
+                with shades of
+              </div>
+              <div
+                style={{
+                  width: 10,
+                  height: 10,
+                  borderRadius: '50%',
+                  backgroundColor: shadowData.color,
+                }}
+              />
+              <div
+                style={{
+                  fontSize: 24,
+                  fontWeight: 400,
+                  color: shadowData.color,
+                  fontStyle: 'italic',
+                }}
+              >
+                {shadowData.name}
+              </div>
+            </>
+          )}
         </div>
 
         {/* CTA */}
@@ -126,7 +202,7 @@ export async function GET(request: NextRequest) {
           What's your post-scarcity worldview? Take the quiz →
         </div>
 
-        {/* Accent bar */}
+        {/* Accent bar - gradient if shadow exists */}
         <div
           style={{
             position: 'absolute',
@@ -134,7 +210,9 @@ export async function GET(request: NextRequest) {
             left: 0,
             right: 0,
             height: 8,
-            backgroundColor: data.color,
+            background: shadowData
+              ? `linear-gradient(90deg, ${data.color} 0%, ${shadowData.color} 100%)`
+              : data.color,
           }}
         />
       </div>

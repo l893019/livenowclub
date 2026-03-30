@@ -308,25 +308,108 @@
       margin-bottom: 16px;
     }
 
+    /* RADAR CHART */
+    .radar-container {
+      width: 280px;
+      height: 280px;
+      margin: 0 auto 32px;
+      position: relative;
+    }
+
+    .radar-svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .radar-grid {
+      fill: none;
+      stroke: var(--border);
+      stroke-width: 1;
+    }
+
+    .radar-axis {
+      stroke: var(--border);
+      stroke-width: 1;
+    }
+
+    .radar-shape {
+      fill: rgba(232, 23, 138, 0.15);
+      stroke: var(--accent-pink);
+      stroke-width: 2;
+      transition: all 0.5s ease;
+    }
+
+    .radar-point {
+      fill: var(--accent-pink);
+      transition: all 0.3s ease;
+    }
+
+    .radar-label {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      fill: var(--text-dim);
+    }
+
+    .radar-label.primary {
+      fill: var(--accent-pink);
+      font-weight: 600;
+    }
+
+    .radar-label.shadow {
+      fill: var(--accent-coral);
+    }
+
+    /* PRIMARY + SHADOW */
     .result-archetype {
       font-family: var(--sans);
-      font-size: clamp(2.5rem, 8vw, 4rem);
+      font-size: clamp(2.2rem, 7vw, 3.5rem);
       font-weight: 400;
-      margin-bottom: 16px;
+      margin-bottom: 8px;
       color: var(--text);
+    }
+
+    .result-shadow {
+      font-family: var(--sans);
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .result-shadow span {
+      color: var(--accent-coral);
+      font-style: italic;
+    }
+
+    /* SYNTHESIZED LINE */
+    .result-synthesis {
+      font-family: var(--sans);
+      font-size: 1.25rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--accent-pink);
+      max-width: 480px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .result-tagline {
       font-family: var(--sans);
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       font-style: italic;
-      color: var(--accent-pink);
-      margin-bottom: 40px;
+      color: var(--text-dim);
+      margin-bottom: 32px;
     }
 
     .result-description {
       font-family: var(--sans);
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 300;
       line-height: 1.9;
       color: var(--text);
@@ -589,7 +672,18 @@
       <div class="screen" id="screen-result">
         <div class="result-content">
           <div class="result-label">Your Archetype</div>
+
+          <!-- Radar Chart -->
+          <div class="radar-container">
+            <svg class="radar-svg" id="radarChart" viewBox="0 0 280 280"></svg>
+          </div>
+
           <h2 class="result-archetype" id="resultArchetype"></h2>
+          <p class="result-shadow" id="resultShadow"></p>
+
+          <!-- Sharp Synthesized Line -->
+          <p class="result-synthesis" id="resultSynthesis"></p>
+
           <p class="result-tagline" id="resultTagline"></p>
           <p class="result-description" id="resultDescription"></p>
 
@@ -629,6 +723,7 @@
         tagline: "Comfort doesn't frighten me. Boredom does.",
         shareText: "I believe we'll keep working even when we don't have to.",
         description: "You believe the machinery should handle the drudgery so we can get on with the business of being alive. You're not naive about power — you know that even utopia needs someone watching the edges — but you trust that intelligence, properly distributed, tends toward good. You'd rather live in a world with too much freedom than too little.",
+        color: "#3db9a4",
         books: [
           { title: "The Player of Games", author: "Iain M. Banks" },
           { title: "Accelerando", author: "Charles Stross" },
@@ -640,6 +735,7 @@
         tagline: "The future is raw material.",
         shareText: "I believe the future isn't something that happens to you — it's something you shape.",
         description: "You don't trust stillness. Not because you're restless, but because you understand that the moment you stop adapting, you start calcifying. You see the transition ahead not as a threat but as raw material. The future isn't something that happens to you. It's something you build with whatever is at hand, including the wreckage.",
+        color: "#f4a03f",
         books: [
           { title: "Parable of the Sower", author: "Octavia Butler" },
           { title: "Red Mars", author: "Kim Stanley Robinson" },
@@ -651,6 +747,7 @@
         tagline: "Mutual aid is not a theory.",
         shareText: "I believe even the best people will recreate the old hierarchies if the structures allow it.",
         description: "You believe the structures matter more than the individuals inside them. Not because people don't matter — they matter immensely — but because even the best people will reproduce the old hierarchies if the structures allow it. You'd rather build something imperfect and collectively owned than something elegant and controlled by a few.",
+        color: "#9b8fef",
         books: [
           { title: "The Dispossessed", author: "Ursula K. Le Guin" },
           { title: "Pacific Edge", author: "Kim Stanley Robinson" },
@@ -662,6 +759,7 @@
         tagline: "Someone real has to speak the words.",
         shareText: "I believe the thing that changes a life is a person choosing to be present for another.",
         description: "You keep coming back to the same realization: that no matter how sophisticated the systems become, the thing that actually changes a life is a person choosing to be present for another person. You're not a technophobe — you appreciate what machines can do — but you know the difference between capability and care.",
+        color: "#e8178a",
         books: [
           { title: "The Diamond Age", author: "Neal Stephenson" },
           { title: "Klara and the Sun", author: "Kazuo Ishiguro" },
@@ -673,6 +771,7 @@
         tagline: "The edge is where the interesting things happen.",
         shareText: "I believe some questions are worth more than their answers.",
         description: "You resist the urge to resolve. Where others see a problem to be solved, you see a question worth sitting with. You're drawn to the edges of understanding, not because you want to conquer them but because the edge itself is where the interesting things happen. You are comfortable with ambiguity in a world that punishes it.",
+        color: "#6b8fef",
         books: [
           { title: "Solaris", author: "Stanislaw Lem" },
           { title: "Blindsight", author: "Peter Watts" },
@@ -684,12 +783,59 @@
         tagline: "Enough is enough.",
         shareText: "I believe the most radical act is to stop — not from exhaustion, but from clarity.",
         description: "You've arrived at something most people spend their lives running from: the possibility that you don't need a reason to be here. That purpose is a construct, productivity is a habit, and the most radical thing you can do in a world optimized for output is to stop. Not out of exhaustion. Out of clarity.",
+        color: "#7ed6a4",
         books: [
           { title: "A Psalm for the Wild-Built", author: "Becky Chambers" },
           { title: "Always Coming Home", author: "Ursula K. Le Guin" },
           { title: "Piranesi", author: "Susanna Clarke" }
         ]
       }
+    };
+
+    // SHARP COMBINATION LINES - Reveals something they didn't explicitly say
+    // Format: primary_shadow: "synthesis line"
+    const synthesisLines = {
+      // Culture primary
+      culture_earthseed: "You'll automate the revolution and optimize the resistance.",
+      culture_anarres: "You trust the machines more than you trust the committees — but you want both to succeed.",
+      culture_diamond: "You'll be the last to trust the AI caretaker — and the first to ask if it's lonely.",
+      culture_solaris: "You'd live forever just to see what questions we haven't thought to ask yet.",
+      culture_wild: "You want abundance so badly you might forget to enjoy it.",
+
+      // Earthseed primary
+      earthseed_culture: "You'll build the future they automate — and wonder if it was worth the sweat.",
+      earthseed_anarres: "You'll tear down the system by building something better beside it.",
+      earthseed_diamond: "You shape the world for people who didn't ask to be shaped — and that keeps you up at night.",
+      earthseed_solaris: "You're drawn to edges you know you shouldn't try to cross.",
+      earthseed_wild: "You build so hard you sometimes forget you're allowed to stop.",
+
+      // Anarres primary
+      anarres_culture: "You design systems that could run without you — and worry they will.",
+      anarres_earthseed: "You want to change everything except the collective's power to resist change.",
+      anarres_diamond: "You'll build the commune and then stay up wondering if anyone actually feels at home.",
+      anarres_solaris: "You organize the resistance while secretly hoping someone will explain what we're resisting toward.",
+      anarres_wild: "You've built the alternative — now you're not sure you want to live there.",
+
+      // Diamond primary
+      diamond_culture: "You trust people over systems — until the system is full of people you trust.",
+      diamond_earthseed: "You know presence matters most, but you're not sure you can stay present through the change.",
+      diamond_anarres: "You put people first, then wonder if the structure would do it better.",
+      diamond_solaris: "You reach out to connect — and find the other side reaching back with questions, not answers.",
+      diamond_wild: "You believe in presence so deeply you've forgotten to be present to yourself.",
+
+      // Solaris primary
+      solaris_culture: "You question everything except your right to keep questioning.",
+      solaris_earthseed: "You sit with uncertainty while secretly building toward certainty.",
+      solaris_anarres: "You embrace the mystery but wish someone else would organize the search party.",
+      solaris_diamond: "You'd rather sit in silence with someone than solve them.",
+      solaris_wild: "You've stopped asking why — and you're not sure that's an answer.",
+
+      // Wild primary
+      wild_culture: "You've found peace — now you're restless about how much work went into finding it.",
+      wild_earthseed: "You stopped building to rest — and woke up building again.",
+      wild_anarres: "You stepped off the wheel — and it keeps turning toward you.",
+      wild_diamond: "You're so present you've forgotten that others are still arriving.",
+      wild_solaris: "You found the answer in stopping — and now you're suspicious of it."
     };
 
     // SCORING
@@ -709,6 +855,16 @@
       4: { A: { anarres: 2 }, B: { diamond: 1, culture: 1 }, C: { solaris: 2, wild: 1 }, D: { culture: 2 } },
       5: { A: { culture: 2 }, B: { earthseed: 2 }, C: { diamond: 1, wild: 2 }, D: { solaris: 2 } },
       6: { A: { earthseed: 2 }, B: { diamond: 2 }, C: { solaris: 2 }, D: { wild: 2 } }
+    };
+
+    const archetypeOrder = ['culture', 'earthseed', 'anarres', 'diamond', 'solaris', 'wild'];
+    const archetypeShortNames = {
+      culture: 'Citizen',
+      earthseed: 'Shaper',
+      anarres: 'Builder',
+      diamond: 'Reader',
+      solaris: 'Dreamer',
+      wild: 'Monk'
     };
 
     let currentQuestion = 0;
@@ -746,19 +902,99 @@
       }
     }
 
-    function showResult() {
-      let maxScore = 0;
-      let result = 'culture';
-      for (const [archetype, score] of Object.entries(scores)) {
-        if (score > maxScore) {
-          maxScore = score;
-          result = archetype;
-        }
+    // Calculate primary and shadow archetypes
+    function getPrimaryAndShadow() {
+      const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+      const primary = sorted[0][0];
+      const shadow = sorted[1][0];
+      return { primary, shadow, scores: sorted };
+    }
+
+    // Draw radar chart
+    function drawRadarChart(primary, shadow) {
+      const svg = document.getElementById('radarChart');
+      const cx = 140, cy = 140;
+      const maxRadius = 100;
+      const levels = 3;
+
+      // Find max score for normalization
+      const maxScore = Math.max(...Object.values(scores), 4);
+
+      // Generate SVG content
+      let svgContent = '';
+
+      // Draw grid circles
+      for (let i = 1; i <= levels; i++) {
+        const r = (maxRadius / levels) * i;
+        svgContent += `<circle cx="${cx}" cy="${cy}" r="${r}" class="radar-grid"/>`;
       }
 
-      const data = archetypes[result];
+      // Draw axes and labels
+      archetypeOrder.forEach((key, i) => {
+        const angle = (Math.PI * 2 * i / 6) - Math.PI / 2;
+        const x2 = cx + maxRadius * Math.cos(angle);
+        const y2 = cy + maxRadius * Math.sin(angle);
+        svgContent += `<line x1="${cx}" y1="${cy}" x2="${x2}" y2="${y2}" class="radar-axis"/>`;
 
+        // Label position (further out)
+        const labelRadius = maxRadius + 28;
+        const lx = cx + labelRadius * Math.cos(angle);
+        const ly = cy + labelRadius * Math.sin(angle);
+
+        const labelClass = key === primary ? 'primary' : key === shadow ? 'shadow' : '';
+        const anchor = i === 0 ? 'middle' : i < 3 ? 'start' : i === 3 ? 'middle' : 'end';
+        const dy = i === 0 ? '-0.3em' : i === 3 ? '0.8em' : '0.3em';
+
+        svgContent += `<text x="${lx}" y="${ly}" class="radar-label ${labelClass}" text-anchor="${anchor}" dy="${dy}">${archetypeShortNames[key]}</text>`;
+      });
+
+      // Calculate shape points
+      const points = archetypeOrder.map((key, i) => {
+        const angle = (Math.PI * 2 * i / 6) - Math.PI / 2;
+        const normalizedScore = scores[key] / maxScore;
+        const r = Math.max(normalizedScore * maxRadius, 10); // Minimum radius of 10
+        const x = cx + r * Math.cos(angle);
+        const y = cy + r * Math.sin(angle);
+        return { x, y, key };
+      });
+
+      // Draw filled shape
+      const pointsStr = points.map(p => `${p.x},${p.y}`).join(' ');
+      svgContent += `<polygon points="${pointsStr}" class="radar-shape"/>`;
+
+      // Draw points
+      points.forEach(p => {
+        const isPrimary = p.key === primary;
+        const isShadow = p.key === shadow;
+        const radius = isPrimary ? 6 : isShadow ? 5 : 4;
+        const fill = isPrimary ? archetypes[primary].color : isShadow ? '#ff6b6b' : '#e8178a';
+        svgContent += `<circle cx="${p.x}" cy="${p.y}" r="${radius}" class="radar-point" fill="${fill}"/>`;
+      });
+
+      svg.innerHTML = svgContent;
+    }
+
+    function showResult() {
+      const { primary, shadow, scores: sortedScores } = getPrimaryAndShadow();
+
+      const data = archetypes[primary];
+      const shadowData = archetypes[shadow];
+
+      // Draw radar chart
+      drawRadarChart(primary, shadow);
+
+      // Update archetype name
       document.getElementById('resultArchetype').textContent = data.name;
+
+      // Update shadow text
+      const shadowEl = document.getElementById('resultShadow');
+      shadowEl.innerHTML = `with shades of <span>${shadowData.name}</span>`;
+
+      // Update synthesis line
+      const synthesisKey = `${primary}_${shadow}`;
+      const synthesis = synthesisLines[synthesisKey] || data.shareText;
+      document.getElementById('resultSynthesis').textContent = `"${synthesis}"`;
+
       document.getElementById('resultTagline').textContent = '"' + data.tagline + '"';
       document.getElementById('resultDescription').textContent = data.description;
 
@@ -768,15 +1004,21 @@
       ).join('');
 
       window.quizResult = data;
-      window.quizResultKey = result;
+      window.quizResultKey = primary;
+      window.quizShadowKey = shadow;
+      window.quizSynthesis = synthesis;
       showScreen('screen-result');
     }
 
     function shareResult() {
       const data = window.quizResult;
-      const key = window.quizResultKey;
-      const text = `${data.shareText}\n\nI'm a ${data.name}.\nWhat's your post-scarcity worldview?`;
-      const url = `https://livenowclub.vercel.app/wonder/essay/quiz/result?a=${key}`;
+      const primaryKey = window.quizResultKey;
+      const shadowKey = window.quizShadowKey;
+      const synthesis = window.quizSynthesis;
+
+      const shadowName = archetypes[shadowKey].name;
+      const text = `"${synthesis}"\n\nI'm a ${data.name} with shades of ${shadowName}.\n\nWhat's your post-scarcity worldview?`;
+      const url = `https://livenowclub.vercel.app/wonder/essay/quiz/result?a=${primaryKey}&s=${shadowKey}`;
 
       if (navigator.share) {
         navigator.share({ title: 'My Post-Scarcity Archetype', text, url });

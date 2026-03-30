@@ -172,7 +172,7 @@ export default function HomePage() {
       {/* INTRO */}
       <section className="intro">
         <div className="intro-photo">
-          <img src="/images/louise-portrait.jpg" alt="Louise Ireland" />
+          <img src="/images/louise-portrait-new.png" alt="Louise Ireland" />
         </div>
         <div className="intro-text">
           <p className="intro-greeting">I'm Louise <span className="intro-lou">(but you may call me Lou)</span>.</p>

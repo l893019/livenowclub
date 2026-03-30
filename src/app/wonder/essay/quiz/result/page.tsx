@@ -2,6 +2,46 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ShareButton from "./ShareButton";
 
+// Sharp combination lines that reveal something they didn't explicitly say
+const synthesisLines: Record<string, string> = {
+  // Culture primary
+  culture_earthseed: "You'll automate the revolution and optimize the resistance.",
+  culture_anarres: "You trust the machines more than you trust the committees — but you want both to succeed.",
+  culture_diamond: "You'll be the last to trust the AI caretaker — and the first to ask if it's lonely.",
+  culture_solaris: "You'd live forever just to see what questions we haven't thought to ask yet.",
+  culture_wild: "You want abundance so badly you might forget to enjoy it.",
+  // Earthseed primary
+  earthseed_culture: "You'll build the future they automate — and wonder if it was worth the sweat.",
+  earthseed_anarres: "You'll tear down the system by building something better beside it.",
+  earthseed_diamond: "You shape the world for people who didn't ask to be shaped — and that keeps you up at night.",
+  earthseed_solaris: "You're drawn to edges you know you shouldn't try to cross.",
+  earthseed_wild: "You build so hard you sometimes forget you're allowed to stop.",
+  // Anarres primary
+  anarres_culture: "You design systems that could run without you — and worry they will.",
+  anarres_earthseed: "You want to change everything except the collective's power to resist change.",
+  anarres_diamond: "You'll build the commune and then stay up wondering if anyone actually feels at home.",
+  anarres_solaris: "You organize the resistance while secretly hoping someone will explain what we're resisting toward.",
+  anarres_wild: "You've built the alternative — now you're not sure you want to live there.",
+  // Diamond primary
+  diamond_culture: "You trust people over systems — until the system is full of people you trust.",
+  diamond_earthseed: "You know presence matters most, but you're not sure you can stay present through the change.",
+  diamond_anarres: "You put people first, then wonder if the structure would do it better.",
+  diamond_solaris: "You reach out to connect — and find the other side reaching back with questions, not answers.",
+  diamond_wild: "You believe in presence so deeply you've forgotten to be present to yourself.",
+  // Solaris primary
+  solaris_culture: "You question everything except your right to keep questioning.",
+  solaris_earthseed: "You sit with uncertainty while secretly building toward certainty.",
+  solaris_anarres: "You embrace the mystery but wish someone else would organize the search party.",
+  solaris_diamond: "You'd rather sit in silence with someone than solve them.",
+  solaris_wild: "You've stopped asking why — and you're not sure that's an answer.",
+  // Wild primary
+  wild_culture: "You've found peace — now you're restless about how much work went into finding it.",
+  wild_earthseed: "You stopped building to rest — and woke up building again.",
+  wild_anarres: "You stepped off the wheel — and it keeps turning toward you.",
+  wild_diamond: "You're so present you've forgotten that others are still arriving.",
+  wild_solaris: "You found the answer in stopping — and now you're suspicious of it."
+};
+
 const archetypes: Record<string, {
   name: string;
   tagline: string;
@@ -91,23 +131,41 @@ type Props = {
 export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
   const params = await searchParams;
   const archetypeKey = (typeof params.a === 'string' ? params.a : 'culture') as string;
+  const shadowKey = (typeof params.s === 'string' ? params.s : null) as string | null;
   const data = archetypes[archetypeKey] || archetypes.culture;
+  const shadowData = shadowKey ? archetypes[shadowKey] : null;
+
+  // Get synthesis line or fallback to shareText
+  const synthesisKey = shadowKey ? `${archetypeKey}_${shadowKey}` : null;
+  const synthesis = synthesisKey && synthesisLines[synthesisKey] ? synthesisLines[synthesisKey] : data.shareText;
+
+  const title = shadowData
+    ? `I'm a ${data.name} with shades of ${shadowData.name}`
+    : `I'm a ${data.name}`;
+
+  const ogUrl = shadowKey
+    ? `https://livenowclub.vercel.app/api/og?archetype=${archetypeKey}&shadow=${shadowKey}`
+    : `https://livenowclub.vercel.app/api/og?archetype=${archetypeKey}`;
+
+  const pageUrl = shadowKey
+    ? `https://livenowclub.vercel.app/wonder/essay/quiz/result?a=${archetypeKey}&s=${shadowKey}`
+    : `https://livenowclub.vercel.app/wonder/essay/quiz/result?a=${archetypeKey}`;
 
   return {
     title: `${data.name} | After Abundance Quiz`,
-    description: data.shareText,
+    description: synthesis,
     openGraph: {
-      title: `I'm a ${data.name}`,
-      description: data.shareText,
-      images: [`https://livenowclub.vercel.app/api/og?archetype=${archetypeKey}`],
-      url: `https://livenowclub.vercel.app/wonder/essay/quiz/result?a=${archetypeKey}`,
+      title,
+      description: synthesis,
+      images: [ogUrl],
+      url: pageUrl,
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title: `I'm a ${data.name}`,
-      description: data.shareText,
-      images: [`https://livenowclub.vercel.app/api/og?archetype=${archetypeKey}`],
+      title,
+      description: synthesis,
+      images: [ogUrl],
     },
   };
 }
@@ -115,10 +173,20 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 export default async function QuizResultPage({ searchParams }: Props) {
   const params = await searchParams;
   const archetypeKey = (typeof params.a === 'string' ? params.a : 'culture') as string;
+  const shadowKey = (typeof params.s === 'string' ? params.s : null) as string | null;
   const data = archetypes[archetypeKey] || archetypes.culture;
+  const shadowData = shadowKey && archetypes[shadowKey] ? archetypes[shadowKey] : null;
 
-  const shareText = `${data.shareText}\n\nI'm a ${data.name}.\nWhat's your post-scarcity worldview?`;
-  const shareUrl = `https://livenowclub.vercel.app/wonder/essay/quiz/result?a=${archetypeKey}`;
+  // Get synthesis line
+  const synthesisKey = shadowKey ? `${archetypeKey}_${shadowKey}` : null;
+  const synthesis = synthesisKey && synthesisLines[synthesisKey] ? synthesisLines[synthesisKey] : data.shareText;
+
+  const shareText = shadowData
+    ? `"${synthesis}"\n\nI'm a ${data.name} with shades of ${shadowData.name}.\n\nWhat's your post-scarcity worldview?`
+    : `${data.shareText}\n\nI'm a ${data.name}.\nWhat's your post-scarcity worldview?`;
+  const shareUrl = shadowKey
+    ? `https://livenowclub.vercel.app/wonder/essay/quiz/result?a=${archetypeKey}&s=${shadowKey}`
+    : `https://livenowclub.vercel.app/wonder/essay/quiz/result?a=${archetypeKey}`;
 
   return (
     <>
@@ -190,11 +258,29 @@ export default async function QuizResultPage({ searchParams }: Props) {
           margin-bottom: 12px;
           letter-spacing: -0.02em;
         }
+        .result-shadow {
+          font-size: 1.1rem;
+          font-weight: 300;
+          color: var(--text-muted);
+          margin-bottom: 24px;
+        }
+        .result-synthesis {
+          font-size: 1.25rem;
+          font-weight: 400;
+          font-style: italic;
+          color: var(--accent-pink);
+          max-width: 480px;
+          margin: 0 auto 24px;
+          line-height: 1.6;
+          padding: 24px 0;
+          border-top: 1px solid rgba(232,23,138,0.15);
+          border-bottom: 1px solid rgba(232,23,138,0.15);
+        }
         .result-tagline {
-          font-size: 1.3rem;
+          font-size: 1.2rem;
           color: var(--text-dim);
           font-style: italic;
-          margin-bottom: 40px;
+          margin-bottom: 32px;
         }
         .result-description {
           max-width: 600px;
@@ -320,6 +406,10 @@ export default async function QuizResultPage({ searchParams }: Props) {
       <main className="result-container">
         <div className="result-label">Your Archetype</div>
         <h1 className="result-name">{data.name}</h1>
+        {shadowData && (
+          <p className="result-shadow">with shades of <span style={{ color: shadowData.color, fontStyle: 'italic' }}>{shadowData.name}</span></p>
+        )}
+        <p className="result-synthesis">"{synthesis}"</p>
         <p className="result-tagline">"{data.tagline}"</p>
         <p className="result-description">{data.description}</p>
 
