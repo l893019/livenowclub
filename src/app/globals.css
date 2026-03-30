@@ -3170,7 +3170,7 @@ p {
   gap: var(--space-md);
   background: white;
   border: 1px solid var(--cream-dark);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   transition: all 0.2s ease;
   overflow: hidden;
   padding: var(--space-sm);
@@ -3426,7 +3426,7 @@ p {
 .featured-link {
   display: block;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
 }
 
 .featured-link:hover {
@@ -3440,7 +3440,7 @@ p {
 .featured-image {
   aspect-ratio: 21/9;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   margin-bottom: var(--space-md);
 }
 
@@ -3448,7 +3448,7 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
 }
 
 .featured-text {
@@ -3521,7 +3521,7 @@ p {
 .pick-image {
   aspect-ratio: 4/3;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   margin-bottom: var(--space-md);
 }
 
@@ -3529,7 +3529,7 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
 }
 
 .pick-label {
@@ -3576,7 +3576,7 @@ p {
   flex-direction: column;
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   transition: all 0.3s ease;
 }
@@ -3948,7 +3948,7 @@ p {
 .guide-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: var(--space-6);
 }
 
 .guide-grid--three {
@@ -4002,14 +4002,14 @@ p {
 }
 
 .guide-card-content {
-  padding: 24px;
+  padding: var(--space-6);
 }
 
 .guide-card--featured .guide-card-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 32px;
+  padding: var(--space-8);
 }
 
 .guide-card-type {
@@ -4020,7 +4020,7 @@ p {
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--pink);
-  margin-bottom: 8px;
+  margin-bottom: var(--space-2);
 }
 
 .guide-card-content h3 {
@@ -4028,7 +4028,7 @@ p {
   font-weight: 400;
   line-height: 1.3;
   color: var(--charcoal);
-  margin-bottom: 8px;
+  margin-bottom: var(--space-2);
 }
 
 .guide-card--featured .guide-card-content h3 {
@@ -4047,13 +4047,13 @@ p {
   font-size: 14px;
   font-weight: 400;
   color: var(--pink);
-  margin-top: 16px;
+  margin-top: var(--space-4);
   display: inline-block;
 }
 
 /* Numbered Cards (Cancer Meditations) */
 .guide-card--numbered {
-  padding: 24px;
+  padding: var(--space-6);
 }
 
 .guide-card-number {
@@ -4063,7 +4063,7 @@ p {
   font-weight: 400;
   letter-spacing: 0.3em;
   color: var(--pink);
-  margin-bottom: 12px;
+  margin-bottom: var(--space-3);
 }
 
 /* All Cancer Writing List */
@@ -4077,7 +4077,7 @@ p {
   font-size: 1.5rem;
   font-weight: 300;
   color: var(--charcoal);
-  margin-bottom: 8px;
+  margin-bottom: var(--space-2);
 }
 
 .guide-list-count {
@@ -4087,7 +4087,7 @@ p {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin-bottom: 24px;
+  margin-bottom: var(--space-6);
 }
 
 .guide-list {
@@ -4135,12 +4135,12 @@ p {
   font-size: 1.25rem;
   font-weight: 300;
   color: var(--charcoal);
-  margin-bottom: 24px;
+  margin-bottom: var(--space-6);
 }
 
 .guide-footer-buttons {
   display: flex;
-  gap: 16px;
+  gap: var(--space-4);
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -4269,7 +4269,7 @@ p {
 .read-hero-image {
   aspect-ratio: 4/3;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
 }
 
 .read-hero-image img {
@@ -4307,7 +4307,7 @@ p {
   border: 1px solid rgba(0, 0, 0, 0.06);
   padding: var(--space-md);
   text-align: center;
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   transition: all 0.3s ease;
 }
 
@@ -4378,7 +4378,7 @@ p {
 .essay-card {
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   transition: all 0.3s ease;
 }
@@ -4798,7 +4798,7 @@ p {
   padding: var(--space-lg);
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -5033,7 +5033,7 @@ p {
 .poem-card {
   padding: var(--space-md);
   background: white;
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -5226,7 +5226,7 @@ p {
   gap: var(--space-sm);
   padding: var(--space-md);
   background: var(--cream-light);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   margin-bottom: var(--space-xl);
 }
 
@@ -5285,7 +5285,7 @@ p {
   flex-direction: column;
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   transition: all 0.3s ease;
 }
@@ -5375,7 +5375,7 @@ p {
   display: flex;
   gap: var(--space-md);
   padding: var(--space-sm);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   transition: background 0.2s ease;
   align-items: flex-start;
 }
@@ -5421,7 +5421,7 @@ p {
 .read-poem-card {
   padding: var(--space-md);
   background: var(--cream-light);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   text-align: center;
   transition: transform 0.2s ease, background 0.2s ease;
 }
@@ -5645,13 +5645,13 @@ p {
 
 .navigate-question-options {
   display: flex;
-  gap: 24px;
+  gap: var(--space-6);
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .navigate-option {
-  padding: 20px 32px;
+  padding: var(--space-5) var(--space-8);
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.08);
   transition: all 0.2s ease;
@@ -5874,7 +5874,7 @@ p {
 
 .value-branch {
   padding: var(--space-md);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
 }
 
 .value-branch--yin {
@@ -5909,7 +5909,7 @@ p {
   margin-top: var(--space-lg);
   padding: var(--space-md);
   background: rgba(0, 0, 0, 0.02);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
 }
 
 .life-questions h4 {
@@ -6025,7 +6025,7 @@ p {
 .building-block {
   padding: var(--space-md);
   background: white;
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   border: 1px solid var(--border);
 }
 
@@ -6258,7 +6258,7 @@ p {
 .navigate-option {
   display: block;
   padding: var(--space-lg) var(--space-xl);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   text-decoration: none;
   transition: all 0.2s ease;
   border: 1px solid var(--border);
