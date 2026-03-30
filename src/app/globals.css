@@ -3337,50 +3337,65 @@ p {
   gap: var(--space-md);
 }
 
-.recent-item {
+/* Recent Items - Card style with bigger images */
+.recent-stack {
   display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: var(--space-sm);
-  align-items: center;
-  transition: transform 0.2s ease;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.recent-item {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .recent-item:hover {
-  transform: translateX(8px);
-}
-
-.recent-item:hover .recent-item-image {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-color: var(--pink);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
 }
 
 .recent-item-image {
-  aspect-ratio: 1;
+  aspect-ratio: 16/10;
   overflow: hidden;
-  border-radius: 8px;
 }
 
 .recent-item-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.recent-item:hover .recent-item-image img {
+  transform: scale(1.03);
+}
+
+.recent-item-content {
+  padding: var(--space-md);
 }
 
 .recent-item-type {
   font-family: var(--font-sans);
   font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0.3em;
+  font-weight: 500;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--pink);
   display: block;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.4rem;
 }
 
 .recent-item-content h4 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.3;
+  color: var(--charcoal);
 }
 
 .worth-reading-footer {
@@ -3442,19 +3457,7 @@ p {
   }
 
   .recent-stack {
-    flex-direction: row;
-    overflow-x: auto;
-    gap: var(--space-md);
-    padding-bottom: var(--space-sm);
-  }
-
-  .recent-item {
-    flex: 0 0 280px;
-    grid-template-columns: 1fr;
-  }
-
-  .recent-item-image {
-    aspect-ratio: 16/10;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -3552,8 +3555,8 @@ p {
     font-size: 1rem;
   }
 
-  .recent-item {
-    grid-template-columns: 100px 1fr;
+  .recent-stack {
+    grid-template-columns: 1fr;
   }
 
   .recent-item-content h4 {
@@ -5043,30 +5046,31 @@ p {
   font-size: 0.95rem;
 }
 
-/* Read List */
+/* Read Cards - Grid layout with bigger images */
 .read-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-lg);
 }
 
 .read-list-item {
   display: flex;
-  gap: var(--space-md);
-  padding: var(--space-sm);
+  flex-direction: column;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 8px;
-  transition: background 0.2s ease;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .read-list-item:hover {
-  background: rgba(0, 0, 0, 0.02);
+  border-color: var(--pink);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
 }
 
 .read-list-image {
-  width: 100px;
-  height: 70px;
-  flex-shrink: 0;
-  border-radius: 6px;
+  aspect-ratio: 16/10;
   overflow: hidden;
 }
 
@@ -5074,11 +5078,18 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.read-list-item:hover .read-list-image img {
+  transform: scale(1.03);
 }
 
 .read-list-content {
+  padding: var(--space-md);
   flex: 1;
-  min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .read-list-type {
@@ -5086,24 +5097,44 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--pink);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 
 .read-list-content h3 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 400;
   color: var(--charcoal);
-  margin: 0.2rem 0 0.3rem;
+  margin-bottom: 0.5rem;
   line-height: 1.3;
 }
 
 .read-list-content p {
   font-size: 0.9rem;
   color: var(--text-muted);
-  line-height: 1.4;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  line-height: 1.5;
+  flex: 1;
+}
+
+/* Featured first item in each section */
+.read-list-item:first-child {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+}
+
+.read-list-item:first-child .read-list-image {
+  aspect-ratio: auto;
+  height: 100%;
+}
+
+.read-list-item:first-child .read-list-content {
+  padding: var(--space-lg);
+  justify-content: center;
+}
+
+.read-list-item:first-child .read-list-content h3 {
+  font-size: 1.5rem;
 }
 
 /* Read Series (for Cancer Meditations) */
@@ -5189,14 +5220,25 @@ p {
 
 /* Curated Responsive */
 @media (max-width: 768px) {
-  .read-list-item {
-    flex-direction: column;
-    gap: var(--space-sm);
+  .read-list {
+    grid-template-columns: 1fr;
   }
 
-  .read-list-image {
-    width: 100%;
-    height: 150px;
+  .read-list-item:first-child {
+    grid-template-columns: 1fr;
+  }
+
+  .read-list-item:first-child .read-list-image {
+    aspect-ratio: 16/10;
+    height: auto;
+  }
+
+  .read-list-item:first-child .read-list-content {
+    padding: var(--space-md);
+  }
+
+  .read-list-item:first-child .read-list-content h3 {
+    font-size: 1.2rem;
   }
 
   .read-poems-grid {
