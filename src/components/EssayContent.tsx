@@ -66,8 +66,9 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
   // Convert markdown to basic HTML
   const lines = essay.content.split("\n");
   const result: string[] = [];
-  const psNotes: string[] = [];
+  const psContent: string[] = [];
   let blockquoteBuffer: string[] = [];
+  let inOrbitsSection = false;
   let inPsSection = false;
 
   const flushBlockquote = () => {
@@ -85,6 +86,55 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
   };
 
   for (const line of lines) {
+    const trimmedLine = line.trim();
+
+    // Detect ORBITS section - stop processing main content
+    // Match variations: "**ORBITS", "** ORBITS", "ORBITS", "**SIGNALS", "**RESONANCES", "**GROUNDS"
+    if (
+      trimmedLine.includes("**ORBITS") ||
+      trimmedLine.includes("**SIGNALS") ||
+      trimmedLine.includes("**RESONANCES") ||
+      trimmedLine.includes("**GROUNDS") ||
+      trimmedLine === "ORBITS" ||
+      /^\*\*\s*ORBITS/i.test(trimmedLine)
+    ) {
+      inOrbitsSection = true;
+      flushBlockquote();
+      continue;
+    }
+
+    // Skip everything in ORBITS section
+    if (inOrbitsSection) {
+      continue;
+    }
+
+    // Skip boilerplate
+    if (isBoilerplate(line)) {
+      continue;
+    }
+
+    // Detect PS section - capture meaningful PS notes
+    if (/^PS\.?\s/i.test(line.trim())) {
+      // Check if it's a meaningful PS (thank you, personal note) vs CTA
+      const isMeaningfulPs = /thank you|thanks|love|<3|heart/i.test(line) &&
+                            !/share|subscribe|pass along|leave.*heart/i.test(line);
+      if (isMeaningfulPs) {
+        inPsSection = true;
+        psContent.push(line.replace(/^PS\.?\s*/i, "").trim());
+      }
+      continue;
+    }
+
+    // If in PS section, capture continuation lines
+    if (inPsSection) {
+      if (line.trim() === "") {
+        inPsSection = false;
+      } else {
+        psContent.push(line.trim());
+      }
+      continue;
+    }
+
     if (line.startsWith("# ") || line.includes("Originally published")) {
       flushBlockquote();
       continue;
@@ -184,7 +234,14 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         )}
 
         {/* Content */}
-        <article className="essay-content" dangerouslySetInnerHTML={{ __html: `<p>${contentHtml}</p>` }} />
+        <article className={`essay-content ${isPoem ? "essay-content--poem" : ""}`} dangerouslySetInnerHTML={{ __html: `<p>${contentHtml}</p>` }} />
+
+        {/* PS Note */}
+        {psContent.length > 0 && (
+          <aside className="essay-ps">
+            <p><strong>PS.</strong> {psContent.join(" ")}</p>
+          </aside>
+        )}
 
         {/* Subscribe CTA */}
         <div className="essay-subscribe-cta">
@@ -353,6 +410,23 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
           color: rgba(45, 42, 38, 0.75);
         }
 
+        /* Poem styling */
+        .essay-content--poem {
+          text-align: center;
+          max-width: 600px;
+        }
+
+        .essay-content--poem :global(p) {
+          margin-bottom: 2em;
+          line-height: 1.9;
+        }
+
+        .essay-content--poem :global(br) {
+          display: block;
+          content: "";
+          margin-bottom: 0;
+        }
+
         .essay-content :global(p) {
           margin-bottom: 1.25em;
         }
@@ -409,6 +483,23 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         .essay-content :global(em) {
           font-style: italic;
           color: rgba(45, 42, 38, 0.8);
+        }
+
+        /* PS Note */
+        .essay-ps {
+          max-width: 780px;
+          margin: 24px auto 0;
+          padding: 16px 20px;
+          background: rgba(232, 23, 138, 0.04);
+          border-left: 2px solid rgba(232, 23, 138, 0.3);
+          font-size: 0.95rem;
+          font-style: italic;
+          color: rgba(45, 42, 38, 0.7);
+        }
+
+        .essay-ps strong {
+          font-style: normal;
+          color: #e8178a;
         }
 
         /* Subscribe CTA */

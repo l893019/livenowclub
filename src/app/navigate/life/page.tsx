@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { BOOKS, I_CHING, SIGNALS, PRACTICES, QUESTIONS } from "@/lib/source-code";
 
 export const metadata = {
-  title: "Navigate Life: My Rules for Living Fully | The Live Now Club",
+  title: "Source Code: The Inputs That Shape Me | The Live Now Club",
   description:
-    "Time-tested principles for living fully. Core values, rules for rooting, and wisdom tested against mortality, heartbreak, and starting over.",
+    "My rules for living fully, plus the books, ideas, and practices that shaped them. Time-tested principles tested against mortality, heartbreak, and starting over.",
   keywords: [
     "life principles",
     "rules for living",
@@ -13,11 +14,13 @@ export const metadata = {
     "living fully",
     "mindfulness",
     "wisdom",
+    "book recommendations",
+    "I Ching",
   ],
   openGraph: {
-    title: "Navigate Life: My Rules for Living Fully",
+    title: "Source Code: The Inputs That Shape Me",
     description:
-      "Time-tested principles for living fully. Core values, rules for rooting, and wisdom tested against mortality, heartbreak, and starting over.",
+      "My rules for living fully, plus the books, ideas, and practices that shaped them.",
     type: "website",
     url: "https://livenowclub.vercel.app/navigate/life",
   },
@@ -128,11 +131,11 @@ export default function NavigateLifePage() {
 
         {/* Hero */}
         <section className="life-hero">
-          <span className="life-label">Navigate Life</span>
-          <h1>My rules for living fully</h1>
+          <span className="life-label">Source Code</span>
+          <h1>The inputs that shape me</h1>
           <p>
-            These are my time-tested principles that I live by. I've tested them against mortality,
-            heartbreak, and starting over. Take what serves you, leave what doesn't.
+            My rules for living fully, plus the books, ideas, and practices that shaped them.
+            I've tested these against mortality, heartbreak, and starting over.
           </p>
         </section>
 
@@ -140,9 +143,9 @@ export default function NavigateLifePage() {
         <nav className="life-nav">
           <a href="#the-root">The Root</a>
           <a href="#foundations">Foundations</a>
-          <a href="#rules-for-rooting">Rules for Rooting</a>
-          <a href="#building-a-body">Building a Body</a>
-          <a href="#ground-rules">Ground Rules</a>
+          <a href="#rules-for-rooting">Rules</a>
+          <a href="#building-a-body">Body</a>
+          <a href="#orbits">Orbits</a>
         </nav>
 
         {/* Section 1: The Root */}
@@ -324,6 +327,121 @@ export default function NavigateLifePage() {
               From "Manifesto" — {" "}
               <Link href="/read/manifesto">Read the full essay →</Link>
             </p>
+          </div>
+        </section>
+
+        {/* Section 6: ORBITS - Inputs */}
+        <section id="orbits" className="life-section life-section--alt">
+          <div className="life-section-header">
+            <span className="life-section-number">06</span>
+            <h2>Orbits</h2>
+            <p className="life-section-subtitle">The inputs that shape my thinking</p>
+          </div>
+
+          <div className="life-section-content">
+            <p className="life-intro">
+              Books, ideas, practices, and questions I return to. These are the inputs
+              that orbit my life and pull me in new directions.
+            </p>
+
+            {/* Books */}
+            <div className="orbits-category">
+              <h3>Books</h3>
+              <div className="orbits-grid">
+                {BOOKS.map((book, i) => (
+                  <div key={i} className="orbit-item orbit-item--book">
+                    <h4>
+                      {book.link ? (
+                        <a href={book.link} target="_blank" rel="noopener noreferrer">
+                          {book.title}
+                        </a>
+                      ) : (
+                        book.title
+                      )}
+                    </h4>
+                    <p className="orbit-author">{book.author}</p>
+                    <p className="orbit-desc">{book.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* I Ching */}
+            <div className="orbits-category">
+              <h3>I Ching</h3>
+              <p className="orbits-intro">Hexagrams that have guided me through transitions.</p>
+              <div className="orbits-list">
+                {I_CHING.map((hex, i) => (
+                  <div key={i} className="orbit-item orbit-item--iching">
+                    <h4>
+                      {hex.link ? (
+                        <a href={hex.link} target="_blank" rel="noopener noreferrer">
+                          {hex.hexagram}
+                        </a>
+                      ) : (
+                        hex.hexagram
+                      )}
+                    </h4>
+                    <p className="orbit-desc">{hex.meaning}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Signals */}
+            <div className="orbits-category">
+              <h3>Signals</h3>
+              <p className="orbits-intro">Cultural transmissions that resonate.</p>
+              <div className="orbits-list">
+                {SIGNALS.map((signal, i) => (
+                  <div key={i} className="orbit-item orbit-item--signal">
+                    <span className="orbit-type">{signal.type}</span>
+                    <h4>
+                      {signal.link ? (
+                        <a href={signal.link} target="_blank" rel="noopener noreferrer">
+                          {signal.title}
+                        </a>
+                      ) : (
+                        signal.title
+                      )}
+                    </h4>
+                    <p className="orbit-desc">{signal.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Practices */}
+            <div className="orbits-category">
+              <h3>Practices</h3>
+              <p className="orbits-intro">Things that help me live now.</p>
+              <div className="orbits-list">
+                {PRACTICES.map((practice, i) => (
+                  <div key={i} className="orbit-item orbit-item--practice">
+                    <h4>
+                      {practice.link ? (
+                        <a href={practice.link} target="_blank" rel="noopener noreferrer">
+                          {practice.title}
+                        </a>
+                      ) : (
+                        practice.title
+                      )}
+                    </h4>
+                    <p className="orbit-desc">{practice.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Questions */}
+            <div className="orbits-category">
+              <h3>Questions to Live With</h3>
+              <ul className="orbits-questions">
+                {QUESTIONS.map((q, i) => (
+                  <li key={i}>{q}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </section>
 
