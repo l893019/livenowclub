@@ -54,6 +54,13 @@
   --radius-xl: 16px;    /* Feature cards, modals */
   --radius-full: 9999px; /* Pills, avatars */
 
+  /* Line Heights */
+  --leading-none: 1;        /* Headings, display text */
+  --leading-tight: 1.2;     /* Large headings */
+  --leading-snug: 1.4;      /* Small headings, UI text */
+  --leading-normal: 1.6;    /* Body copy */
+  --leading-relaxed: 1.75;  /* Long-form reading */
+
   /* Content widths - tighter like Substack/Goop */
   --content-narrow: 640px;
   --content-medium: 800px;
