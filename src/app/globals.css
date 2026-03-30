@@ -417,7 +417,7 @@ p {
   background: var(--pink);
   border-color: var(--pink);
   color: white;
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
 }
 
 .btn--primary:hover {
@@ -6639,7 +6639,7 @@ p {
   .btn {
     font-size: 16px;
     padding: 14px 28px;
-    min-height: 48px;
+    min-height: var(--space-12);
   }
 }
 
