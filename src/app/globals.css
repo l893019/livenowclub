@@ -232,6 +232,61 @@ a {
 }
 
 /* ============================================
+   FOCUS STATES - Accessibility
+   ============================================ */
+
+/* Base focus-visible for all interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 2px;
+}
+
+/* Remove default focus ring (we're using focus-visible instead) */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Cards and larger clickable areas - inset ring */
+.carousel-card:focus-visible,
+.soft-entry:focus-visible,
+.read-list-item:focus-visible,
+.guide-card:focus-visible,
+.pick:focus-visible,
+.recent-item:focus-visible,
+.wonder-essay-card:focus-visible,
+.wonder-list-item:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: -2px;
+}
+
+/* Dark mode focus adjustments */
+@media (prefers-color-scheme: dark) {
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  [tabindex]:focus-visible {
+    outline-color: var(--coral);
+  }
+}
+
+:root.dark a:focus-visible,
+:root.dark button:focus-visible,
+:root.dark input:focus-visible,
+:root.dark textarea:focus-visible,
+:root.dark select:focus-visible,
+:root.dark [tabindex]:focus-visible {
+  outline-color: var(--coral);
+}
+
+/* ============================================
    TYPOGRAPHY - After Abundance Style
    ============================================ */
 h1 {
