@@ -306,18 +306,18 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
           </section>
         )}
 
-        {/* Footer */}
-        <footer className="essay-footer">
-          <p>Continue the conversation</p>
+        {/* Comment CTA */}
+        <div className="essay-subscribe-cta">
+          <p className="cta-text">If this resonated, leave a heart or comment on Substack and share with a friend. It helps me get discovered.</p>
           <a
-            href="https://louiseireland.substack.com"
+            href={essay.substackUrl || "https://louiseireland.substack.com"}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn--primary"
+            className="cta-button"
           >
-            Comment on Substack →
+            Leave a comment
           </a>
-        </footer>
+        </div>
       </div>
 
       {/* Floating Subscribe */}
@@ -666,24 +666,6 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
           font-weight: 400;
           line-height: 1.3;
           color: #2d2a26;
-        }
-
-        .essay-footer {
-          max-width: 780px;
-          margin: 32px auto 0;
-          text-align: center;
-          padding-top: 24px;
-          border-top: 1px solid rgba(45, 42, 38, 0.1);
-        }
-
-        .essay-footer p {
-          font-family: "Space Grotesk", sans-serif;
-          font-size: 10px;
-          font-weight: 400;
-          letter-spacing: 0.25em;
-          text-transform: uppercase;
-          color: rgba(45, 42, 38, 0.45);
-          margin-bottom: 12px;
         }
 
         @media (max-width: 768px) {

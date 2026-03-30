@@ -124,7 +124,8 @@ export default function NavigateCancerPage() {
               { href: "#just-diagnosed", num: "01", title: "Just Diagnosed", sub: "Start here" },
               { href: "#during-treatment", num: "02", title: "During Treatment", sub: "Practical guidance" },
               { href: "#for-caregivers", num: "03", title: "For Caregivers", sub: "Supporting someone" },
-              { href: "#finding-meaning", num: "04", title: "Finding Meaning", sub: "Making sense of it" },
+              { href: "#living-with-uncertainty", num: "04", title: "Living with Uncertainty", sub: "Holding it loosely" },
+              { href: "#finding-meaning", num: "05", title: "Finding Meaning", sub: "Making sense of it" },
             ].map((item) => (
               <Link key={item.href} href={item.href} className="quick-link-card">
                 <span className="quick-link-number">{item.num}</span>
@@ -239,13 +240,39 @@ export default function NavigateCancerPage() {
           </div>
         </section>
 
-        {/* Finding Meaning */}
-        <section id="finding-meaning" className="guide-section">
+        {/* Living with Uncertainty */}
+        <section id="living-with-uncertainty" className="guide-section">
           <div className="guide-section-inner">
             <div className="guide-section-header">
               <span className="guide-section-number">04</span>
-              <h2>{CANCER_GUIDE[4].title}</h2>
-              <p>{CANCER_GUIDE[4].subtitle}</p>
+              <h2>{CANCER_GUIDE[5].title}</h2>
+              <p>{CANCER_GUIDE[5].subtitle}</p>
+            </div>
+            <div className="guide-grid">
+              {getCancerGuideEssays("living-with-uncertainty").map((essay) => (
+                <Link key={essay.slug} href={`/read/${essay.slug}`} className="guide-card">
+                  {essay.image && (
+                    <div className="guide-card-image">
+                      <img src={essay.image} alt={essay.title} />
+                    </div>
+                  )}
+                  <div className="guide-card-content">
+                    <h3>{essay.title}</h3>
+                    <p>{essay.excerpt}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Finding Meaning */}
+        <section id="finding-meaning" className="guide-section guide-section--alt">
+          <div className="guide-section-inner">
+            <div className="guide-section-header">
+              <span className="guide-section-number">05</span>
+              <h2>{CANCER_GUIDE[6].title}</h2>
+              <p>{CANCER_GUIDE[6].subtitle}</p>
             </div>
             <div className="guide-grid">
               {getCancerGuideEssays("finding-meaning").map((essay) => (

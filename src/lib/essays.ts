@@ -406,6 +406,7 @@ export function getAllEssays(): Essay[] {
       pullQuote: PULL_QUOTES[slug],
       content,
       image,
+      substackUrl: `https://louiseireland.substack.com/p/${slug}`,
       color: COLORS[index % COLORS.length],
       tags: inferTags(title, content),
     };
@@ -518,6 +519,18 @@ export const CANCER_GUIDE: Pathway[] = [
       "the-other-side-of-grief", // Post-treatment processing
       "life-is-not-empty", // Collapse, creation, recovery
       "the-starting-line",
+    ],
+  },
+  {
+    id: "living-with-uncertainty",
+    title: "Living with Uncertainty",
+    subtitle: "When the ground shifts and you learn to hold it all loosely.",
+    essays: [
+      "you-cant-always-get-what-you-want",
+      "how-are-you-after-it-all-falls-down",
+      "maybe",
+      "the-in-between",
+      "the-ebb",
     ],
   },
   {
