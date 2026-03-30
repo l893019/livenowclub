@@ -772,16 +772,19 @@ p {
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.3s ease;
+  background: var(--pink);
+  border-radius: var(--radius-lg);
 }
 
 .carousel-card:hover {
   transform: scale(1.02);
+  background: var(--pink-dark);
 }
 
 .carousel-card blockquote {
   font-size: 1.25rem;
   font-style: italic;
-  color: var(--pink);
+  color: white;
   line-height: var(--leading-normal);
   margin: 0;
   font-weight: 400;
@@ -789,14 +792,14 @@ p {
 
 .carousel-card cite {
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.8);
   font-style: normal;
   margin-top: var(--space-md);
   display: block;
 }
 
 .carousel-card cite:hover {
-  color: var(--pink);
+  color: white;
 }
 
 @media (max-width: 768px) {
