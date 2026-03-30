@@ -284,6 +284,19 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
           {copied && <span className="copied-toast">Link copied!</span>}
         </div>
 
+        {/* Comment CTA */}
+        <div className="essay-subscribe-cta">
+          <p className="cta-text">If this resonated, leave a heart or comment on Substack and share with a friend. It helps me get discovered.</p>
+          <a
+            href={essay.substackUrl || "https://louiseireland.substack.com"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cta-button"
+          >
+            Leave a comment
+          </a>
+        </div>
+
         {/* Read Next */}
         {relatedEssays.length > 0 && (
           <section className="essay-read-next">
@@ -305,19 +318,6 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
             </div>
           </section>
         )}
-
-        {/* Comment CTA */}
-        <div className="essay-subscribe-cta">
-          <p className="cta-text">If this resonated, leave a heart or comment on Substack and share with a friend. It helps me get discovered.</p>
-          <a
-            href={essay.substackUrl || "https://louiseireland.substack.com"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-button"
-          >
-            Leave a comment
-          </a>
-        </div>
       </div>
 
       {/* Floating Subscribe */}
