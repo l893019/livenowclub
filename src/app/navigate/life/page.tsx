@@ -144,7 +144,6 @@ export default function NavigateLifePage() {
           <a href="#foundations">Foundations</a>
           <a href="#rules-for-rooting">Rules</a>
           <a href="#building-a-body">Body</a>
-          <a href="#orbits">Orbits</a>
         </nav>
 
         {/* Section 1: The Root */}
@@ -326,67 +325,6 @@ export default function NavigateLifePage() {
               From "Manifesto" — {" "}
               <Link href="/read/manifesto">Read the full essay →</Link>
             </p>
-          </div>
-        </section>
-
-        {/* Section 6: ORBITS - Inputs */}
-        <section id="orbits" className="life-section life-section--alt">
-          <div className="life-section-header">
-            <span className="life-section-number">06</span>
-            <h2>Orbits</h2>
-            <p className="life-section-subtitle">The inputs that shape my thinking</p>
-          </div>
-
-          <div className="life-section-content">
-            <p className="life-intro">
-              Books and practices I return to. These are the inputs
-              that orbit my life and pull me in new directions.
-            </p>
-
-            {/* Books */}
-            <div className="orbits-category">
-              <h3>Books</h3>
-              <div className="orbits-grid">
-                {BOOKS.map((book, i) => (
-                  <div key={i} className="orbit-item orbit-item--book">
-                    <h4>
-                      {book.link ? (
-                        <a href={book.link} target="_blank" rel="noopener noreferrer">
-                          {book.title}
-                        </a>
-                      ) : (
-                        book.title
-                      )}
-                    </h4>
-                    <p className="orbit-author">{book.author}</p>
-                    <p className="orbit-desc">{book.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Practices */}
-            <div className="orbits-category">
-              <h3>Practices</h3>
-              <p className="orbits-intro">Things that help me live now.</p>
-              <div className="orbits-list">
-                {PRACTICES.map((practice, i) => (
-                  <div key={i} className="orbit-item orbit-item--practice">
-                    <h4>
-                      {practice.link ? (
-                        <a href={practice.link} target="_blank" rel="noopener noreferrer">
-                          {practice.title}
-                        </a>
-                      ) : (
-                        practice.title
-                      )}
-                    </h4>
-                    <p className="orbit-desc">{practice.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
           </div>
         </section>
 
