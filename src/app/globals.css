@@ -234,7 +234,7 @@ body {
   background: var(--cream);
   color: var(--text-dim);
   font-weight: 300;
-  line-height: 1.75;
+  line-height: var(--leading-relaxed);
   overflow-x: hidden;
 }
 
@@ -321,7 +321,7 @@ h1 {
   font-family: var(--font-sans);
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 300;
-  line-height: 1.1;
+  line-height: var(--leading-none);
   letter-spacing: -0.03em;
   color: var(--charcoal);
 }
@@ -335,7 +335,7 @@ h2 {
   font-family: var(--font-sans);
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 300;
-  line-height: 1.15;
+  line-height: var(--leading-tight);
   letter-spacing: -0.02em;
   color: var(--charcoal);
 }
@@ -350,7 +350,7 @@ h3 {
 blockquote {
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: var(--leading-normal);
   color: var(--charcoal);
   border-left: 2px solid var(--pink);
   padding: 16px 0 16px 20px;
@@ -685,7 +685,7 @@ p {
 
 .intro-body {
   font-size: 1.1rem;
-  line-height: 1.7;
+  line-height: var(--leading-relaxed);
   color: var(--text-dim);
   font-weight: 300;
   margin-bottom: 0;
@@ -760,7 +760,7 @@ p {
   font-size: 1.25rem;
   font-style: italic;
   color: var(--pink);
-  line-height: 1.6;
+  line-height: var(--leading-normal);
   margin: 0;
   font-weight: 400;
 }
@@ -1013,7 +1013,7 @@ p {
 .latest-hero h2 {
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 300;
-  line-height: 1.1;
+  line-height: var(--leading-none);
   letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
 }
@@ -1027,7 +1027,7 @@ p {
 
 .latest-excerpt {
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: var(--leading-relaxed);
   color: var(--charcoal-light);
   margin-bottom: var(--space-md);
 }
@@ -1075,7 +1075,7 @@ p {
 
 .latest-card-excerpt {
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: var(--leading-normal);
   color: var(--charcoal-light);
   margin-bottom: var(--space-md);
   flex-grow: 1;
@@ -1158,7 +1158,7 @@ p {
 .featured-essay-content h2 {
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 300;
-  line-height: 1.1;
+  line-height: var(--leading-none);
   letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
 }
@@ -1172,7 +1172,7 @@ p {
 
 .featured-essay-excerpt {
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: var(--leading-relaxed);
   color: var(--charcoal-light);
   margin-bottom: var(--space-md);
 }
@@ -1284,13 +1284,13 @@ p {
 .recent-card h3 {
   font-size: 1.1rem;
   font-weight: 400;
-  line-height: 1.3;
+  line-height: var(--leading-snug);
   margin-bottom: 0.5rem;
 }
 
 .recent-card p {
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: var(--leading-snug);
   color: var(--charcoal-light);
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -1326,7 +1326,7 @@ p {
 .manifesto-quote blockquote {
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 400;
-  line-height: 1.5;
+  line-height: var(--leading-snug);
   color: var(--charcoal);
   max-width: 700px;
   margin: 0 auto var(--space-md);
@@ -1546,7 +1546,7 @@ p {
 .wonder-hero h1 {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 300;
-  line-height: 1.2;
+  line-height: var(--leading-tight);
   letter-spacing: -0.02em;
   color: var(--charcoal);
   margin-bottom: 24px;
@@ -1555,7 +1555,7 @@ p {
 .wonder-hero p {
   font-size: 1.125rem;
   color: var(--text-dim);
-  line-height: 1.7;
+  line-height: var(--leading-relaxed);
 }
 
 .wonder-section {
@@ -1627,7 +1627,7 @@ p {
 .wonder-essay-content h3 {
   font-size: 1.75rem;
   font-weight: 300;
-  line-height: 1.2;
+  line-height: var(--leading-tight);
   letter-spacing: -0.02em;
   color: var(--charcoal);
   margin-bottom: 8px;
@@ -1643,7 +1643,7 @@ p {
 .wonder-essay-description {
   font-size: 1rem;
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: var(--leading-normal);
   margin-bottom: 20px;
 }
 
@@ -1698,7 +1698,7 @@ p {
 .wonder-list-content h3 {
   font-size: 1.25rem;
   font-weight: 400;
-  line-height: 1.3;
+  line-height: var(--leading-snug);
   color: var(--charcoal);
   margin-bottom: 8px;
 }
@@ -1706,7 +1706,7 @@ p {
 .wonder-list-content p {
   font-size: 0.9rem;
   color: var(--text-dim);
-  line-height: 1.5;
+  line-height: var(--leading-snug);
 }
 
 .wonder-coming-soon {
@@ -1921,7 +1921,7 @@ p {
 .navigate-hero p {
   font-size: 1.3rem;
   color: var(--charcoal-light);
-  line-height: 1.7;
+  line-height: var(--leading-relaxed);
 }
 
 .guide-sections {
@@ -2124,7 +2124,7 @@ p {
   font-family: 'Space Grotesk', system-ui, sans-serif;
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 300;
-  line-height: 1.1;
+  line-height: var(--leading-none);
   letter-spacing: -0.03em;
   color: var(--aa-text);
   margin-bottom: 20px;
@@ -2135,7 +2135,7 @@ p {
   font-size: clamp(1.1rem, 2vw, 1.35rem);
   font-weight: 300;
   font-style: italic;
-  line-height: 1.6;
+  line-height: var(--leading-normal);
   color: var(--aa-text-dim);
   max-width: 500px;
   margin: 0 auto 32px;
@@ -2313,7 +2313,7 @@ p {
 
 .read-hero-excerpt {
   font-size: 1.5rem;
-  line-height: 1.5;
+  line-height: var(--leading-snug);
   color: var(--charcoal-light);
   margin-bottom: var(--space-md);
   font-style: italic;
@@ -2492,7 +2492,7 @@ p {
 .browse-excerpt {
   font-size: 0.85rem;
   color: var(--charcoal-light);
-  line-height: 1.5;
+  line-height: var(--leading-snug);
   margin-bottom: 0.75rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -2545,14 +2545,14 @@ p {
   font-size: 2rem;
   font-weight: 400;
   color: var(--pink);
-  line-height: 1;
+  line-height: var(--leading-none);
   margin-bottom: 0.5rem;
 }
 
 .meditation-title {
   font-size: 0.8rem;
   color: var(--charcoal-light);
-  line-height: 1.3;
+  line-height: var(--leading-snug);
 }
 
 /* RESPONSIVE */
@@ -2625,7 +2625,7 @@ p {
 .read-editorial .read-hero-title {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 300;
-  line-height: 1.1;
+  line-height: var(--leading-none);
   letter-spacing: -0.02em;
   margin-bottom: var(--space-sm);
 }
@@ -2639,7 +2639,7 @@ p {
 
 .read-editorial .read-hero-excerpt {
   font-size: 1.1rem;
-  line-height: 1.7;
+  line-height: var(--leading-relaxed);
   color: var(--charcoal-light);
   margin-bottom: var(--space-md);
 }
@@ -2854,7 +2854,7 @@ p {
 .manifesto-excerpt {
   font-size: 1rem;
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: var(--leading-normal);
   margin-bottom: var(--space-md);
 }
 
@@ -3053,7 +3053,7 @@ p {
 .immersive-card-title {
   font-size: 1.1rem;
   font-weight: 600;
-  line-height: 1.3;
+  line-height: var(--leading-snug);
   text-shadow: 0 1px 2px rgba(0,0,0,0.9), 0 2px 4px rgba(0,0,0,0.6), 0 4px 12px rgba(0,0,0,0.4);
 }
 
@@ -3221,14 +3221,14 @@ p {
 .read-editorial .essay-card-title {
   font-size: 1.1rem;
   font-weight: 400;
-  line-height: 1.3;
+  line-height: var(--leading-snug);
   margin-bottom: 0.25rem;
 }
 
 .read-editorial .essay-card-excerpt {
   font-size: 0.85rem;
   color: var(--charcoal-light);
-  line-height: 1.5;
+  line-height: var(--leading-snug);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -3458,7 +3458,7 @@ p {
 .featured-text h2 {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 300;
-  line-height: 1.1;
+  line-height: var(--leading-none);
   letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
 }
@@ -3472,7 +3472,7 @@ p {
 
 .featured-excerpt {
   font-size: 1.1rem;
-  line-height: 1.7;
+  line-height: var(--leading-relaxed);
   color: var(--charcoal-light);
   margin-bottom: var(--space-md);
 }
@@ -3546,13 +3546,13 @@ p {
 .pick-content h4 {
   font-size: 1.5rem;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: var(--leading-tight);
   margin-bottom: 0.75rem;
 }
 
 .pick-content p {
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: var(--leading-normal);
   color: var(--charcoal-light);
   margin-bottom: var(--space-sm);
 }
@@ -3621,7 +3621,7 @@ p {
 .recent-item-content h4 {
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.3;
+  line-height: var(--leading-snug);
   color: var(--charcoal);
 }
 
@@ -3641,7 +3641,7 @@ p {
 .manifesto-statement {
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 400;
-  line-height: 1.5;
+  line-height: var(--leading-snug);
   color: var(--charcoal);
 }
 
@@ -3828,7 +3828,7 @@ p {
 .navigate-hero h1 {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 300;
-  line-height: 1.2;
+  line-height: var(--leading-tight);
   letter-spacing: -0.02em;
   color: var(--charcoal);
   margin-bottom: 24px;
@@ -3837,7 +3837,7 @@ p {
 .navigate-hero p {
   font-size: 1.125rem;
   color: var(--text-dim);
-  line-height: 1.7;
+  line-height: var(--leading-relaxed);
 }
 
 /* Quick Links Grid */
@@ -3941,7 +3941,7 @@ p {
 .guide-section-header p {
   font-size: 1.125rem;
   color: var(--text-dim);
-  line-height: 1.6;
+  line-height: var(--leading-normal);
 }
 
 /* Guide Cards */
@@ -4026,7 +4026,7 @@ p {
 .guide-card-content h3 {
   font-size: 1.25rem;
   font-weight: 400;
-  line-height: 1.3;
+  line-height: var(--leading-snug);
   color: var(--charcoal);
   margin-bottom: var(--space-2);
 }
@@ -4038,7 +4038,7 @@ p {
 
 .guide-card-content p {
   font-size: 0.9rem;
-  line-height: 1.6;
+  line-height: var(--leading-normal);
   color: var(--text-dim);
 }
 
@@ -4236,7 +4236,7 @@ p {
 .read-hero-title {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 500;
-  line-height: 1.1;
+  line-height: var(--leading-none);
   margin-bottom: 0.5rem;
 }
 
@@ -4249,7 +4249,7 @@ p {
 
 .read-hero-excerpt {
   font-size: 1.1rem;
-  line-height: 1.6;
+  line-height: var(--leading-normal);
   color: var(--charcoal-light);
   margin-bottom: var(--space-md);
 }
@@ -4453,7 +4453,7 @@ p {
 .essay-card-title {
   font-size: 1.1rem;
   font-weight: 500;
-  line-height: 1.3;
+  line-height: var(--leading-snug);
   margin-bottom: 0.5rem;
 }
 
@@ -4463,7 +4463,7 @@ p {
 
 .essay-card-excerpt {
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: var(--leading-snug);
   color: var(--charcoal-light);
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -4680,7 +4680,7 @@ p {
   font-weight: 400;
   color: var(--charcoal);
   margin-bottom: var(--space-sm);
-  line-height: 1.2;
+  line-height: var(--leading-tight);
 }
 
 .magazine-quote {
@@ -4688,7 +4688,7 @@ p {
   font-style: italic;
   color: var(--text-dim);
   margin-bottom: var(--space-sm);
-  line-height: 1.5;
+  line-height: var(--leading-snug);
 }
 
 .magazine-type {
@@ -4747,14 +4747,14 @@ p {
   font-weight: 400;
   color: var(--charcoal);
   margin-bottom: var(--space-xs);
-  line-height: 1.3;
+  line-height: var(--leading-snug);
 }
 
 .magazine-quote-small {
   font-size: 0.85rem;
   font-style: italic;
   color: var(--text-muted);
-  line-height: 1.4;
+  line-height: var(--leading-snug);
 }
 
 /* Quote Filmstrip */
@@ -4823,7 +4823,7 @@ p {
   font-size: 1.1rem;
   font-style: italic;
   color: var(--cream);
-  line-height: 1.6;
+  line-height: var(--leading-normal);
   margin: 0;
   font-weight: 300;
 }
@@ -4916,13 +4916,13 @@ p {
   font-weight: 400;
   color: var(--charcoal);
   margin-bottom: var(--space-xs);
-  line-height: 1.3;
+  line-height: var(--leading-snug);
 }
 
 .magazine-excerpt {
   font-size: 0.85rem;
   color: var(--text-muted);
-  line-height: 1.4;
+  line-height: var(--leading-snug);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -5012,7 +5012,7 @@ p {
 .timeline-content p {
   font-size: 0.9rem;
   color: var(--text-dim);
-  line-height: 1.5;
+  line-height: var(--leading-snug);
 }
 
 /* Poems Section */
@@ -5333,13 +5333,13 @@ p {
   font-weight: 400;
   color: var(--charcoal);
   margin-bottom: 0.5rem;
-  line-height: 1.3;
+  line-height: var(--leading-snug);
 }
 
 .read-list-content p {
   font-size: 0.9rem;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: var(--leading-snug);
   flex: 1;
 }
 
@@ -5408,7 +5408,7 @@ p {
 .read-series-content p {
   font-size: 0.85rem;
   color: var(--text-muted);
-  line-height: 1.4;
+  line-height: var(--leading-snug);
 }
 
 /* Poems Grid */
@@ -5577,7 +5577,7 @@ p {
 .navigate-path-card p {
   font-size: 1rem;
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: var(--leading-normal);
   flex: 1;
 }
 
@@ -5724,7 +5724,7 @@ p {
   color: var(--text-muted);
   max-width: 600px;
   margin: 0 auto;
-  line-height: 1.7;
+  line-height: var(--leading-relaxed);
 }
 
 /* Sticky Nav */
@@ -5810,7 +5810,7 @@ p {
   font-size: 1.05rem;
   color: var(--text-muted);
   margin-bottom: var(--space-lg);
-  line-height: 1.7;
+  line-height: var(--leading-relaxed);
 }
 
 .life-source {
@@ -5991,7 +5991,7 @@ p {
   padding: var(--space-sm) 0;
   break-inside: avoid;
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: var(--leading-normal);
 }
 
 @media (min-width: 600px) {
@@ -6039,7 +6039,7 @@ p {
 .building-block p {
   font-size: 0.9rem;
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: var(--leading-normal);
   margin: 0;
 }
 
@@ -6059,7 +6059,7 @@ p {
 .manifesto-list li {
   padding: var(--space-sm) 0;
   font-size: 0.95rem;
-  line-height: 1.7;
+  line-height: var(--leading-relaxed);
   color: var(--charcoal);
 }
 
@@ -6155,7 +6155,7 @@ p {
 .orbit-desc {
   font-size: 0.9rem;
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: var(--leading-normal);
   margin: 0;
 }
 
@@ -6375,7 +6375,7 @@ p {
 .journey-item-title {
   font-size: 0.95rem;
   color: var(--charcoal);
-  line-height: 1.4;
+  line-height: var(--leading-snug);
 }
 
 /* Milestone cards */
@@ -6411,7 +6411,7 @@ p {
   font-size: 1.1rem;
   font-weight: 500;
   color: var(--charcoal);
-  line-height: 1.3;
+  line-height: var(--leading-snug);
   margin-bottom: 0.3rem;
 }
 
@@ -6613,7 +6613,7 @@ p {
   /* Paragraphs and body text */
   p, li, blockquote {
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: var(--leading-relaxed);
   }
 
   /* Labels and small text - never below 12px */
@@ -6732,7 +6732,7 @@ p {
 
   .essay-header h1 {
     font-size: 1.75rem;
-    line-height: 1.2;
+    line-height: var(--leading-tight);
   }
 
   /* Related essays at bottom */
