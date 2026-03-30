@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { BOOKS, I_CHING, SIGNALS, PRACTICES, QUESTIONS } from "@/lib/source-code";
+import { BOOKS, PRACTICES } from "@/lib/source-code";
 
 export const metadata = {
-  title: "Source Code: The Inputs That Shape Me | The Live Now Club",
+  title: "Navigate Life | The Live Now Club",
   description:
     "My rules for living fully, plus the books, ideas, and practices that shaped them. Time-tested principles tested against mortality, heartbreak, and starting over.",
   keywords: [
@@ -15,10 +15,9 @@ export const metadata = {
     "mindfulness",
     "wisdom",
     "book recommendations",
-    "I Ching",
   ],
   openGraph: {
-    title: "Source Code: The Inputs That Shape Me",
+    title: "Navigate Life",
     description:
       "My rules for living fully, plus the books, ideas, and practices that shaped them.",
     type: "website",
@@ -131,7 +130,7 @@ export default function NavigateLifePage() {
 
         {/* Hero */}
         <section className="life-hero">
-          <span className="life-label">Source Code</span>
+          <span className="life-label">Navigate Life</span>
           <h1>The inputs that shape me</h1>
           <p>
             My rules for living fully, plus the books, ideas, and practices that shaped them.
@@ -340,7 +339,7 @@ export default function NavigateLifePage() {
 
           <div className="life-section-content">
             <p className="life-intro">
-              Books, ideas, practices, and questions I return to. These are the inputs
+              Books and practices I return to. These are the inputs
               that orbit my life and pull me in new directions.
             </p>
 
@@ -361,51 +360,6 @@ export default function NavigateLifePage() {
                     </h4>
                     <p className="orbit-author">{book.author}</p>
                     <p className="orbit-desc">{book.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* I Ching */}
-            <div className="orbits-category">
-              <h3>I Ching</h3>
-              <p className="orbits-intro">Hexagrams that have guided me through transitions.</p>
-              <div className="orbits-list">
-                {I_CHING.map((hex, i) => (
-                  <div key={i} className="orbit-item orbit-item--iching">
-                    <h4>
-                      {hex.link ? (
-                        <a href={hex.link} target="_blank" rel="noopener noreferrer">
-                          {hex.hexagram}
-                        </a>
-                      ) : (
-                        hex.hexagram
-                      )}
-                    </h4>
-                    <p className="orbit-desc">{hex.meaning}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Signals */}
-            <div className="orbits-category">
-              <h3>Signals</h3>
-              <p className="orbits-intro">Cultural transmissions that resonate.</p>
-              <div className="orbits-list">
-                {SIGNALS.map((signal, i) => (
-                  <div key={i} className="orbit-item orbit-item--signal">
-                    <span className="orbit-type">{signal.type}</span>
-                    <h4>
-                      {signal.link ? (
-                        <a href={signal.link} target="_blank" rel="noopener noreferrer">
-                          {signal.title}
-                        </a>
-                      ) : (
-                        signal.title
-                      )}
-                    </h4>
-                    <p className="orbit-desc">{signal.description}</p>
                   </div>
                 ))}
               </div>
@@ -433,15 +387,6 @@ export default function NavigateLifePage() {
               </div>
             </div>
 
-            {/* Questions */}
-            <div className="orbits-category">
-              <h3>Questions to Live With</h3>
-              <ul className="orbits-questions">
-                {QUESTIONS.map((q, i) => (
-                  <li key={i}>{q}</li>
-                ))}
-              </ul>
-            </div>
           </div>
         </section>
 
