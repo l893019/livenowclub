@@ -61,6 +61,11 @@
   --leading-normal: 1.6;    /* Body copy */
   --leading-relaxed: 1.75;  /* Long-form reading */
 
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+
   /* Content widths - tighter like Substack/Goop */
   --content-narrow: 640px;
   --content-medium: 800px;
@@ -312,6 +317,23 @@ button:focus:not(:focus-visible) {
 :root.dark select:focus-visible,
 :root.dark [tabindex]:focus-visible {
   outline-color: var(--coral);
+}
+
+/* ============================================
+   TRANSITIONS - Consistent timing
+   ============================================ */
+
+/* Base transitions for all interactive elements */
+a, button, .btn,
+.carousel-card, .soft-entry, .read-list-item,
+.guide-card, .pick, .recent-item {
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    opacity var(--transition-fast);
 }
 
 /* ============================================
