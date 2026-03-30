@@ -227,7 +227,7 @@ export default function HomePage() {
 
       {/* FEATURED PIECE */}
       <section className="featured">
-        <Link href={`/${FEATURED.slug}`} className="featured-link">
+        <Link href={`/read/${FEATURED.slug}`} className="featured-link">
           <div className="featured-image">
             <img src={FEATURED.image} alt={`Featured: ${FEATURED.title}`} />
           </div>
