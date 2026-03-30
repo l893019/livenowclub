@@ -43,6 +43,69 @@
   --page-margin-mobile: 16px;
 }
 
+/* ========================================
+   DARK MODE
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cream: #1a1a1a;
+    --cream-dark: #242424;
+    --charcoal: #f5f5f5;
+    --charcoal-light: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --text-dim: #888888;
+    --border: #333333;
+    --pink: #ff9eb5;
+    --coral: #ffb4a2;
+    --gold: #ffd700;
+  }
+
+  body {
+    background: #1a1a1a;
+    color: #f5f5f5;
+  }
+
+  /* Cards and surfaces */
+  .guide-card,
+  .read-list-item,
+  .recent-item,
+  .journey-milestone {
+    background: #242424;
+    border-color: #333;
+  }
+
+  /* Header */
+  .header {
+    background: rgba(26, 26, 26, 0.95);
+  }
+
+  .header.scrolled {
+    background: rgba(26, 26, 26, 0.98);
+  }
+
+  /* Mobile menu */
+  .mobile-menu {
+    background: #1a1a1a;
+  }
+
+  /* Bottom nav */
+  .bottom-nav {
+    background: #1a1a1a;
+    border-top-color: #333;
+  }
+
+  /* Images - slight brightness reduction */
+  img {
+    filter: brightness(0.9);
+  }
+
+  /* Invert logo for dark mode */
+  .logo-img {
+    filter: invert(1) brightness(0.9);
+  }
+}
+
 /* ============================================
    RESET
    ============================================ */
