@@ -58,6 +58,11 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
     return boilerplatePatterns.some(pattern => pattern.test(line));
   };
 
+  // Detect if this is a poem (short lines, few lines)
+  const contentLines = essay.content.split("\n").filter(l => l.trim() && !l.startsWith("#"));
+  const avgLineLength = contentLines.reduce((a, l) => a + l.length, 0) / contentLines.length;
+  const isPoem = avgLineLength < 50 && contentLines.length < 40;
+
   // Convert markdown to basic HTML
   const lines = essay.content.split("\n");
   const result: string[] = [];
@@ -108,7 +113,12 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
     flushBlockquote();
 
     if (line.trim() === "") {
-      result.push("</p><p>");
+      // For poems, empty lines create stanza breaks
+      if (isPoem) {
+        result.push("</p><p class=\"stanza\">");
+      } else {
+        result.push("</p><p>");
+      }
       continue;
     }
 
@@ -126,7 +136,12 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
       .replace(/\*(.+?)\*/g, "<em>$1</em>")
       .replace(/_([^_]+)_/g, "<em>$1</em>");
 
-    result.push(processed);
+    // For poems, add line breaks after each line (except headings)
+    if (isPoem && !line.startsWith("**") && !line.startsWith(" **")) {
+      result.push(processed + "<br />");
+    } else {
+      result.push(processed);
+    }
   }
 
   flushBlockquote(); // Flush any remaining blockquotes

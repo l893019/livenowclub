@@ -5464,7 +5464,7 @@ p {
    ======================================== */
 
 .life-container {
-  padding: var(--space-lg);
+  padding: 100px var(--page-margin) var(--space-lg);
   max-width: 800px;
   margin: 0 auto;
 }
@@ -5853,11 +5853,11 @@ p {
 /* Life Page Responsive */
 @media (max-width: 768px) {
   .life-container {
-    padding: var(--space-md);
+    padding: 100px var(--page-margin-mobile) var(--space-md);
   }
 
   .life-section--alt {
-    margin: 0 calc(-1 * var(--space-md));
+    margin: 0 calc(-1 * var(--page-margin-mobile));
     padding: var(--space-lg) var(--space-md);
   }
 

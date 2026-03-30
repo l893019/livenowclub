@@ -103,6 +103,10 @@ export default function NavigateCancerPage() {
       <Header />
 
       <div className="navigate-container">
+        {/* Breadcrumb */}
+        <div className="navigate-breadcrumb">
+          <Link href="/navigate">← Back</Link>
+        </div>
 
         {/* Hero */}
         <section className="navigate-hero">

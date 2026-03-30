@@ -123,7 +123,7 @@ export default function NavigateLifePage() {
       <div className="life-container">
         {/* Breadcrumb */}
         <div className="navigate-breadcrumb">
-          <Link href="/navigate">← Back to Navigate</Link>
+          <Link href="/navigate">← Back</Link>
         </div>
 
         {/* Hero */}
