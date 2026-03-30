@@ -6415,3 +6415,47 @@ p {
     min-height: 48px;
   }
 }
+
+/* ========================================
+   TOUCH TARGET IMPROVEMENTS (Mobile)
+   ======================================== */
+
+@media (max-width: 768px) {
+  /* All clickable elements - minimum 44x44px touch target */
+  a, button {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Card links - larger tap area */
+  .read-list-item,
+  .guide-card,
+  .journey-item,
+  .journey-milestone,
+  .recent-item {
+    min-height: 60px;
+  }
+
+  /* List items with more padding */
+  .journey-item {
+    padding: 12px 0;
+  }
+
+  /* Quick links - bigger touch targets */
+  .quick-link-card,
+  .soft-entry,
+  .navigate-option {
+    padding: 20px;
+    min-height: 80px;
+  }
+
+  /* Increase spacing between tappable items */
+  .read-list {
+    gap: var(--space-md);
+  }
+
+  .journey-timeline {
+    gap: var(--space-xs);
+  }
+}
