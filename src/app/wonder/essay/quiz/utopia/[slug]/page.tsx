@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getUtopia, type UtopiaRoom, type UtopiaMember } from "@/lib/utopia";
+import { getUtopia, type UtopiaMember } from "@/lib/utopia";
 import ShareButton from "./ShareButton";
+import PlanetVisualization from "./PlanetVisualization";
 
 // Archetype display data
 const archetypeData: Record<string, { name: string; color: string }> = {
@@ -258,18 +259,10 @@ export default async function UtopiaPage({ params }: Props) {
           margin-bottom: 32px;
         }
 
-        .planet-placeholder {
-          width: 280px;
-          height: 280px;
+        .planet-wrapper {
           margin: 0 auto 32px;
-          border-radius: 50%;
-          background: linear-gradient(135deg, rgba(232,23,138,0.1), rgba(168,85,247,0.1));
           display: flex;
-          align-items: center;
           justify-content: center;
-          font-size: 14px;
-          color: var(--text-muted);
-          border: 1px dashed var(--border);
         }
 
         .one-liner {
@@ -469,7 +462,7 @@ export default async function UtopiaPage({ params }: Props) {
           .nav { gap: 16px; }
           .nav a { font-size: 10px; }
           .utopia-name { font-size: 2rem; }
-          .planet-placeholder { width: 200px; height: 200px; }
+          .planet-wrapper { margin-bottom: 24px; }
           .one-liner { font-size: 1.1rem; }
         }
       `}</style>
@@ -501,7 +494,9 @@ export default async function UtopiaPage({ params }: Props) {
             {room.members.length} {room.members.length === 1 ? "person" : "people"}
           </p>
 
-          <div className="planet-placeholder">Planet visualization coming soon</div>
+          <div className="planet-wrapper">
+            <PlanetVisualization archetypes={room.members.map(m => m.archetype)} size={280} />
+          </div>
 
           <p className="one-liner">{oneLiner}</p>
         </div>
@@ -563,8 +558,8 @@ export default async function UtopiaPage({ params }: Props) {
           <div className="share-link">{shareUrl}</div>
           <div className="actions">
             <ShareButton shareText={shareText} shareUrl={shareUrl} />
-            <Link href="/wonder/essay/quiz" className="btn btn-secondary">
-              Retake Quiz
+            <Link href="/wonder/essay/quiz/my-utopias" className="btn btn-secondary">
+              My Utopias
             </Link>
           </div>
         </div>
