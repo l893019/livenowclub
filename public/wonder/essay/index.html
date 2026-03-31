@@ -1820,7 +1820,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 32px;
+      padding: 20px 32px;
       background: transparent;
       transition: all 0.3s ease;
     }
@@ -1831,20 +1831,10 @@
       padding: 12px 32px;
     }
 
-    .logo {
-      display: block;
-    }
+    .logo { display: block; }
+    .logo-img { height: 40px; width: auto; }
 
-    .logo-img {
-      height: 40px;
-      width: auto;
-    }
-
-    .nav {
-      display: flex;
-      gap: 24px;
-    }
-
+    .nav { display: flex; gap: 24px; }
     .nav a {
       font-family: var(--sans);
       font-size: 12px;
@@ -1855,16 +1845,11 @@
       color: rgba(45, 42, 38, 0.6);
       transition: color 0.2s;
     }
-
-    .nav a:hover {
-      color: var(--accent-pink);
-    }
-
+    .nav a:hover { color: var(--accent-pink); }
     .nav a.active {
       color: var(--accent-pink);
       position: relative;
     }
-
     .nav a.active::after {
       content: '';
       position: absolute;
@@ -1875,19 +1860,85 @@
       background: var(--accent-pink);
     }
 
-    @media (max-width: 600px) {
-      .header {
-        padding: 12px 16px;
-      }
-      .nav {
-        gap: 16px;
-      }
-      .nav a {
-        font-size: 11px;
-      }
-      .logo-img {
-        height: 32px;
-      }
+    /* Mobile menu toggle */
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 24px;
+      height: 18px;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger--open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger--open span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger--open span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    .mobile-menu-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 150;
+    }
+
+    .mobile-menu-overlay.open {
+      display: block;
+    }
+
+    .mobile-menu {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 280px;
+      height: 100%;
+      background: var(--bg);
+      padding: 80px 32px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .mobile-menu a {
+      font-family: var(--sans);
+      font-size: 1.25rem;
+      color: var(--text);
+      text-decoration: none;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mobile-menu a:hover {
+      color: var(--accent-pink);
+    }
+
+    @media (max-width: 768px) {
+      .header { padding: 12px 16px; }
+      .nav { display: none; }
+      .logo-img { height: 32px; }
+      .mobile-menu-toggle { display: block; }
     }
 
     /* Offset hero for fixed header */
@@ -2128,7 +2179,24 @@
       <a href="/wonder" class="active">Wonder</a>
       <a href="/connect">Connect</a>
     </nav>
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Open menu">
+      <span class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
   </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="toggleMobileMenu()">
+    <nav class="mobile-menu" onclick="event.stopPropagation()">
+      <a href="/read">Read</a>
+      <a href="/navigate">Navigate</a>
+      <a href="/wonder">Wonder</a>
+      <a href="/connect">Connect</a>
+    </nav>
+  </div>
 
   <script>
     // Header scroll effect
@@ -2138,6 +2206,14 @@
         header.classList.toggle('scrolled', window.scrollY > 50);
       }
     });
+
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const hamburger = document.getElementById('hamburger');
+      const overlay = document.getElementById('mobileMenuOverlay');
+      hamburger.classList.toggle('hamburger--open');
+      overlay.classList.toggle('open');
+    }
   </script>
 
   <!-- HERO -->
