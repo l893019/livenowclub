@@ -1,6 +1,6 @@
 # Group Utopias Design
 
-**Status:** Draft
+**Status:** Final
 **Date:** 2026-03-31
 **Project:** Live Now Club Quiz Enhancement
 
@@ -8,26 +8,201 @@
 
 ## Overview
 
-Extend the sci-fi worldview quiz to support group utopias - collaborative spaces where friends can compare archetypes, see what's missing from their collective worldview, and visualize their shared utopia as a procedurally generated planet.
+Extend the sci-fi worldview quiz to support group utopias — collaborative spaces where friends can compare archetypes, see what's missing from their collective worldview, and visualize their shared utopia as a procedurally generated planet.
 
-## Current State
+## Design Principles
 
-The quiz is fully functional:
-- 7 questions with scoring matrix
-- 14 archetypes with descriptions, blind spots, compatibility, books
-- Result page with primary + secondary archetype
-- Basic share (copies URL with params)
+- **Playful entry, depth as reward** — easy to join, meaningful to explore
+- **Direct voice, like a friend** — not precious, not literary
+- **The people are the point** — planet is visual payoff, but comparison/conversation is the purpose
 
-## What We're Building
+---
 
-### Phase 1: Individual Persistence
-Save quiz results locally so users can rejoin utopias later.
+## Core Decisions
 
-### Phase 2: Group Utopias
-Create and join shared utopia rooms with friends.
+### Naming
+- **Random star name** assigned on creation: Vega, Arcturus, Sirius, Fomalhaut...
+- Editable if they want something else
+- Display names can repeat; slugs are unique (vega-x7k9, vega-m2p4)
+- ~200 curated star names in the pool
 
-### Phase 3: Planet Visualization
-Procedurally generated planet reflecting group composition.
+### Utopia Page Structure
+1. **Planet** (hero) — top-down view, layered illustrated elements
+2. **One-liner** — generated description, direct voice
+3. **Analysis** — what's present, missing, tensions
+4. **Member list** — grouped by archetype
+
+### One-liner Voice
+Direct, like a friend telling you what they see:
+> "You're heavy on builders, light on preservers. This group moves fast and doesn't look back."
+
+### Member List Format
+Grouped by archetype, names within each:
+```
+SHAPERS OF CHANGE
+Sarah, Mike, Jenna
+
+KEEPERS OF PRESENCE
+Tom, Lisa
+```
+
+### Share Message
+"Build a utopia with me" + link
+
+### Join Flow
+1. Click shared link
+2. See banner: "Sarah invited you to join Vega"
+3. Take quiz
+4. Auto-added after completion → land on utopia page
+
+### Individual Share Card
+**Planet seed** — mini planet with just their archetype's features
+- Lonely little world, incomplete, waiting for others
+- "My utopia. Come build with me."
+
+### Dashboard
+Dedicated page: /wonder/essay/quiz/my-utopias
+- Simple grid of mini planets
+- Star name + member count
+- Click to enter
+
+---
+
+## Planet Visualization
+
+### Approach
+- **Flat/top-down view** — circular planet
+- **Layered illustrated elements** — match essay's surrealist sci-fi aesthetic
+- Each archetype has visual features (transparent PNGs)
+- Composited based on group composition
+- Missing archetypes = dark unexplored regions
+
+### Archetype Visual Elements
+
+| Archetype | Visual Feature |
+|-----------|----------------|
+| Citizen | Parklands, leisure domes |
+| Shaper | Construction cranes, scaffolding |
+| Architect | Circular amphitheaters, civic halls |
+| Presence | Warm glowing windows, small dwellings |
+| Swimmer | Reflective pools, deep ocean regions |
+| Rooted | Gardens, green zones, ivy |
+| Conscience | Glass watchtowers |
+| Embers | Archive building, library spire |
+| Friction | Jagged mountains, storm clouds |
+| Unbound | Abstract glowing geometry |
+| Alive | Multicolored light regions |
+| Mender | Workshop structures, visible repairs |
+| Clear-Eyed | Solitary tower |
+| Between | Raw unformed terrain |
+| (Missing) | Dark unexplored patches |
+
+---
+
+## Generated Copy
+
+### Pair Dynamics (2 people, same archetype)
+
+| Both are... | Copy |
+|-------------|------|
+| Citizen | "Two at ease. This utopia floats. Who drops anchor?" |
+| Shaper | "Two builders. You'll create something—if you stop redesigning it." |
+| Architect | "Two systems thinkers. Great structures. Who lives in them?" |
+| Presence | "Two keepers. So much holding space. Who makes the first move?" |
+| Swimmer | "Two in deep water. You'll question everything. Even this." |
+| Rooted | "Two in stillness. Peaceful—but the tea isn't going to make itself." |
+| Conscience | "Two watchmen. Nothing escapes you. Exhausting, but safe." |
+| Embers | "Two archivists. The past is very well preserved here." |
+| Friction | "Two who crave difficulty. This should be interesting." |
+| Unbound | "Two transcenders. You've both left the building." |
+| Alive | "Two sensation-seekers. Buckle up." |
+| Mender | "Two fixers. Everything here will work. Eventually." |
+| Clear-Eyed | "Two truth-tellers. No one's getting away with anything." |
+| Between | "Two still figuring it out. At least you're not alone." |
+
+### Pair Dynamics (2 people, different archetypes)
+Use compatibility data to generate:
+> "A Shaper and a Rooted. One can't stop building, one chose stillness. You'll either balance each other or drive each other crazy."
+
+### Overrepresentation (3+ of same)
+
+| Overrep | Copy |
+|---------|------|
+| Citizen | "Three at ease. But who's watching the edges?" |
+| Shaper | "Three builders. Does anyone here sit down?" |
+| Architect | "Three systems thinkers. The meeting about the meeting is scheduled." |
+| Presence | "Three keepers. So much presence. Who takes action?" |
+| Swimmer | "Three philosophers. Beautiful questions. Any answers?" |
+| Rooted | "Three in stillness. Peaceful—but does anything happen?" |
+| Conscience | "Three watchmen. Nothing gets past you. Maybe lighten up?" |
+| Embers | "Three archivists. The past is safe. What about tomorrow?" |
+| Friction | "Three who crave difficulty. Everything's a mountain." |
+| Unbound | "Three transcenders. Don't forget you still have bodies." |
+| Alive | "Three sensation-seekers. Who's driving?" |
+| Mender | "Three fixers. You'll repair anything—even what should stay broken." |
+| Clear-Eyed | "Three truth-tellers. Brutal honesty in stereo." |
+| Between | "Three still figuring it out. Take your time. Really." |
+
+### Missing Archetypes
+
+| Missing | Copy |
+|---------|------|
+| Citizen | "No one here is at ease. You're all still fighting for something." |
+| Shaper | "No one is building. Are you too comfortable with how things are?" |
+| Architect | "No one is thinking about structures. Who decides how decisions get made?" |
+| Presence | "No one is just... here. Everyone's somewhere else." |
+| Swimmer | "No one sits with questions. You might solve the wrong problems efficiently." |
+| Rooted | "No one has stopped. When does this group rest?" |
+| Conscience | "No one is watching. What might you miss?" |
+| Embers | "No one guards the past. You might build something incredible and forget why." |
+| Friction | "No one craves difficulty. Comfort might be your blind spot." |
+| Unbound | "No one is reaching past the edges. Too earthbound." |
+| Alive | "No one is here just to feel. Don't forget to enjoy this." |
+| Mender | "No one fixes things. When it breaks, you'll just build new." |
+| Clear-Eyed | "No one tells the hard truth. Who calls out the elephant?" |
+| Between | "Everyone knows what they believe. You might lack beginner's mind." |
+
+---
+
+## User Flows
+
+### Flow 1: Complete Quiz → Save Result
+1. User completes quiz
+2. Prompt: "What should we call you?" (name required)
+3. Optional: "Get updates when someone joins your utopias?" (email)
+4. Generate uuid, save to localStorage + Vercel KV
+5. Show result page with "Build a Utopia" button
+
+### Flow 2: Create Utopia
+1. Click "Build a Utopia"
+2. Assign random star name, show: "Your utopia is called **Vega**. Keep it or change it."
+3. Create room in KV, creator as first member
+4. Show shareable link + "Build a utopia with me"
+5. Redirect to group utopia page
+
+### Flow 3: Join Utopia
+1. Click shared link
+2. Banner: "Sarah invited you to join Vega"
+3. Take quiz (or use existing result if in localStorage)
+4. Auto-added to room
+5. Land on group utopia page
+
+### Flow 4: View Group Utopia
+1. Load room from KV
+2. Display: planet, one-liner, analysis, members
+3. Share link always visible
+
+---
+
+## Edge Cases
+
+| Scenario | Behavior |
+|----------|----------|
+| Retake quiz | Auto-update archetype in all utopias |
+| Clear cookies | Fresh start, no recovery in v1 |
+| Leave utopia | Yes, remove from member list |
+| Delete utopia | No, not in v1 |
+| Star name collision | Display names can repeat, slugs unique |
 
 ---
 
@@ -37,349 +212,117 @@ Procedurally generated planet reflecting group composition.
 
 ```
 Keys:
-  user:{id}           → UserResult (their quiz result)
-  utopia:{slug}       → UtopiaRoom (room data + members)
-  user:{id}:utopias   → string[] (slugs of rooms they belong to)
+  user:{id}           → UserResult
+  utopia:{slug}       → UtopiaRoom
+  user:{id}:utopias   → string[] (room slugs)
 ```
 
 ### Data Types
 
 ```typescript
 type UserResult = {
-  id: string;                    // uuid
-  name: string;                  // display name
-  email: string | null;          // optional, for notifications
-  archetype: string;             // primary archetype key
-  secondaryArchetype: string;    // shadow archetype key
-  scores: Record<string, number>; // raw scores for all 14
-  answers: string[];             // ['A', 'C', 'B', ...] for 7 questions
-  createdAt: string;             // ISO date
+  id: string;
+  name: string;
+  email: string | null;
+  archetype: string;
+  secondaryArchetype: string;
+  scores: Record<string, number>;
+  answers: string[];
+  createdAt: string;
 };
 
 type UtopiaRoom = {
-  slug: string;                  // url-safe slug
-  name: string;                  // "The Builders" etc
-  createdBy: string;             // user id
-  members: UtopiaMemember[];
+  slug: string;
+  name: string;
+  createdBy: string;
+  members: UtopiaMember[];
   createdAt: string;
 };
 
 type UtopiaMember = {
-  id: string;                    // user id
-  name: string;                  // display name
-  archetype: string;             // primary archetype
+  id: string;
+  name: string;
+  archetype: string;
   joinedAt: string;
 };
 ```
 
-### Client-Side Storage
+### API Routes
 
-```typescript
-// localStorage keys
-'quiz-user-id'      → string (uuid, created on first quiz completion)
-'quiz-user-result'  → UserResult (full result object)
+```
+POST /api/utopia/save-result   — save user result
+POST /api/utopia/create        — create utopia
+POST /api/utopia/join          — join utopia
+POST /api/utopia/leave         — leave utopia
+GET  /api/utopia/[slug]        — get utopia data
+GET  /api/utopia/user/[id]     — get user's utopias
+```
+
+### Client Storage
+
+```
+localStorage:
+  'quiz-user-id'      → uuid
+  'quiz-user-result'  → UserResult
 ```
 
 ---
 
-## User Flows
-
-### Flow 1: Take Quiz → Save Result
+## Pages
 
 ```
-1. User completes quiz
-2. Generate uuid if not exists
-3. Prompt for name (required) and email (optional)
-4. Save to localStorage
-5. Save to Vercel KV: user:{id}
-6. Show result page with "Build a Utopia" button
-```
-
-### Flow 2: Create Utopia
-
-```
-1. Click "Build a Utopia" on result page
-2. Enter utopia name
-3. Generate slug from name (slugify + random suffix)
-4. Create room in KV with creator as first member
-5. Add room slug to user's utopia list
-6. Show shareable link
-7. Redirect to group utopia page
-```
-
-### Flow 3: Join Utopia (New User)
-
-```
-1. Click shared link: /wonder/essay/quiz/utopia/[slug]
-2. If no local result:
-   a. Show "Take the quiz first" with link
-   b. After quiz, redirect back to utopia page
-3. If has local result but not in room:
-   a. Show room preview (name, member count)
-   b. "Join this utopia" button
-   c. Add to room, redirect to group page
-```
-
-### Flow 4: Join Utopia (Existing User)
-
-```
-1. Click shared link
-2. Has local result, check if already member
-3. If member: show group page
-4. If not: show join prompt, add on confirm
-```
-
-### Flow 5: View Group Utopia
-
-```
-1. Load room from KV
-2. Display:
-   - Planet visualization (canvas)
-   - Member list with archetypes
-   - Archetype distribution chart
-   - Group axes position (averages)
-   - Generated group description
-   - What's overrepresented
-   - What's missing
-   - Share link
-```
-
----
-
-## API Routes
-
-All routes under `/api/utopia/`:
-
-### POST /api/utopia/save-result
-Save user result to KV after quiz completion.
-
-```typescript
-Request: { result: UserResult }
-Response: { success: true }
-```
-
-### POST /api/utopia/create
-Create new utopia room.
-
-```typescript
-Request: { name: string, userId: string }
-Response: { slug: string, shareUrl: string }
-```
-
-### POST /api/utopia/join
-Join existing utopia room.
-
-```typescript
-Request: { slug: string, userId: string }
-Response: { success: true, room: UtopiaRoom }
-```
-
-### GET /api/utopia/[slug]
-Get utopia room data.
-
-```typescript
-Response: { room: UtopiaRoom } | { error: 'not_found' }
-```
-
-### GET /api/utopia/user/[userId]/rooms
-Get all rooms a user belongs to.
-
-```typescript
-Response: { rooms: UtopiaRoom[] }
-```
-
----
-
-## Group Analysis Logic
-
-### Archetype Distribution
-
-```typescript
-function getDistribution(members: UtopiaMember[]): Record<string, number> {
-  const counts: Record<string, number> = {};
-  for (const m of members) {
-    counts[m.archetype] = (counts[m.archetype] || 0) + 1;
-  }
-  return counts;
-}
-```
-
-### Overrepresentation (3+ of same)
-
-```typescript
-const overrepTemplates: Record<string, string> = {
-  shaper: "You have {count} Shapers. This utopia never stops rebuilding. Does anyone here sleep?",
-  presence: "You have {count} Keepers of Presence. This utopia runs on tea and eye contact.",
-  conscience: "You have {count} Consciences. Nothing gets past this group. Nothing.",
-  friction: "You have {count} Friction-seekers. Your utopia has a climbing wall in every room.",
-  // ... all 14
-};
-```
-
-### Missing Archetypes
-
-```typescript
-const missingInsights: Record<string, string> = {
-  embers: "No one is guarding what came before. You might build something incredible and forget why.",
-  mender: "No one wants to fix things. When something breaks, you'll all just build a new one.",
-  swimmer: "No one sits with questions. You might solve the wrong problems very efficiently.",
-  // ... all 14
-};
-```
-
-### Group Axes (Average Position)
-
-Each archetype has implicit positions on three axes:
-- **Tech orientation:** embrace ↔ skeptical
-- **Meaning source:** internal ↔ collective
-- **Change orientation:** build ↔ preserve
-
-Average members' positions to get group position.
-
----
-
-## Planet Visualization
-
-### Approach: Canvas-based procedural generation
-
-Circular planet viewed from above. Base sphere with atmosphere glow. Features layered based on archetype presence.
-
-### Feature Mapping
-
-| Archetype | Visual Feature |
-|-----------|----------------|
-| Citizen | Parklands, leisure domes |
-| Shaper | Construction cranes, scaffolding |
-| Architect | Circular amphitheaters, civic structures |
-| Presence | Warm light clusters, small dwellings |
-| Swimmer | Ocean/water regions |
-| Rooted | Gardens, green zones, ivy |
-| Conscience | Glass/transparent watchtowers |
-| Embers | Archive building, library |
-| Friction | Mountain ranges, storm clouds |
-| Unbound | Abstract glowing geometry |
-| Alive | Multicolored light regions |
-| Mender | Workshop structures, visible repairs |
-| Clear-Eyed | Solitary tower |
-| Between | Raw unformed terrain |
-| (Missing) | Dark unexplored patches |
-
-### Rendering Logic
-
-```typescript
-function renderPlanet(ctx: CanvasRenderingContext2D, distribution: Record<string, number>, total: number) {
-  // 1. Draw base planet (circle with gradient)
-  drawBasePlanet(ctx);
-
-  // 2. Draw atmosphere glow
-  drawAtmosphere(ctx);
-
-  // 3. For each archetype present, draw features
-  for (const [archetype, count] of Object.entries(distribution)) {
-    const weight = count / total;
-    const feature = archetypeFeatures[archetype];
-    drawFeature(ctx, feature, weight);
-  }
-
-  // 4. Draw dark patches for missing archetypes
-  const missing = allArchetypes.filter(a => !distribution[a]);
-  for (const archetype of missing) {
-    drawDarkPatch(ctx, archetype);
-  }
-}
-```
-
-### Individual Utopia Illustration
-
-Small version of their archetype's feature, used on result page and share card.
-
----
-
-## Pages Structure
-
-```
-/wonder/essay/quiz/                    # Quiz (existing)
-/wonder/essay/quiz/result              # Result page (existing, enhance)
-/wonder/essay/quiz/utopia/[slug]       # Group utopia page (new)
-/wonder/essay/quiz/my-utopias          # User's utopia dashboard (new)
+/wonder/essay/quiz/                    — Quiz (existing, add name prompt)
+/wonder/essay/quiz/result              — Result (existing, add "Build a Utopia")
+/wonder/essay/quiz/utopia/[slug]       — Group utopia page (new)
+/wonder/essay/quiz/my-utopias          — Dashboard (new)
 ```
 
 ---
 
 ## Implementation Phases
 
-### Phase 1: Storage & Persistence (2-3 hours)
-- [ ] Set up Vercel KV
-- [ ] Add name/email prompt after quiz
-- [ ] Save result to localStorage + KV
-- [ ] Load existing result on page load
+### Phase 1: Storage & Identity
+- Set up Vercel KV
+- Add name/email prompt after quiz
+- Save result to localStorage + KV
+- Load existing result on page load
 
-### Phase 2: Create & Join Utopias (3-4 hours)
-- [ ] API routes for create/join/get
-- [ ] "Build a Utopia" button on result page
-- [ ] Create utopia modal (name input)
-- [ ] Join flow on utopia page
-- [ ] Share link generation
+### Phase 2: Create & Join
+- API routes
+- "Build a Utopia" button
+- Star name assignment
+- Create modal
+- Join flow with invite banner
 
-### Phase 3: Group Utopia Page (3-4 hours)
-- [ ] Page layout with member list
-- [ ] Archetype distribution display
-- [ ] Group description generation
-- [ ] Overrep/missing analysis
-- [ ] Share functionality
+### Phase 3: Group Page
+- Page layout (planet placeholder + content)
+- One-liner generation
+- Analysis (overrep, missing, pairs)
+- Member list grouped by archetype
+- Share functionality
 
-### Phase 4: Planet Visualization (4-5 hours)
-- [ ] Canvas setup and base planet
-- [ ] Feature rendering for each archetype
-- [ ] Animation/interactivity
-- [ ] Individual archetype illustrations
+### Phase 4: Planet Visualization
+- Illustrated elements for each archetype
+- Canvas compositing
+- Individual planet seed for share cards
 
-### Phase 5: Dashboard & Polish (2-3 hours)
-- [ ] My utopias page
-- [ ] Email capture for notifications
-- [ ] OG tags for sharing
-- [ ] Mobile optimization
-
----
-
-## Open Questions
-
-1. **Slug generation:** Use name-based slugs (readable but possible collisions) or random IDs (ugly but unique)?
-   - **Recommendation:** Name + 4 random chars, e.g., `the-builders-x7k9`
-
-2. **Room limits:** Max members per room?
-   - **Recommendation:** No limit initially, revisit if performance issues
-
-3. **Room deletion:** Can creators delete rooms?
-   - **Recommendation:** Not in v1, add later if needed
-
-4. **Email notifications:** Send when someone joins?
-   - **Recommendation:** v1 just captures email, v2 adds actual notifications
+### Phase 5: Dashboard & Polish
+- My utopias page
+- Mini planet previews
+- OG tags for sharing
+- Mobile optimization
 
 ---
 
-## Files to Create/Modify
+## Assets Needed
 
-```
-New files:
-  src/app/api/utopia/save-result/route.ts
-  src/app/api/utopia/create/route.ts
-  src/app/api/utopia/join/route.ts
-  src/app/api/utopia/[slug]/route.ts
-  src/app/api/utopia/user/[userId]/rooms/route.ts
-  src/app/wonder/essay/quiz/utopia/[slug]/page.tsx
-  src/app/wonder/essay/quiz/my-utopias/page.tsx
-  src/lib/utopia.ts (KV helpers)
-  src/lib/planet.ts (canvas rendering)
-  src/components/PlanetCanvas.tsx
-
-Modified files:
-  public/wonder/essay/quiz/index.html (add name prompt, save to KV)
-  src/app/wonder/essay/quiz/result/page.tsx (add "Build a Utopia" button)
-```
+- 14 illustrated archetype elements (transparent PNGs)
+- Star names list (~200)
+- Planet base/atmosphere artwork
+- Share card template
 
 ---
 
 ## Ready for Implementation
 
-This design is complete. Next step: Set up Vercel KV and begin Phase 1.
+Design complete. Next: Set up Vercel KV, begin Phase 1.
