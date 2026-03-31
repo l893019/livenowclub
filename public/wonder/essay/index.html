@@ -243,26 +243,40 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* SCROLL HINT */
     .scroll-hint {
       position: absolute;
-      bottom: 50px;
+      bottom: 32px;
       left: 50%;
       transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
       font-family: var(--sans);
       font-size: 10px;
-      letter-spacing: 0.3em;
+      font-weight: 500;
+      letter-spacing: 0.25em;
       color: var(--text-muted);
       opacity: 0;
-      animation: fadeUp 1s ease forwards 1.2s;
+      animation: fadeIn 1s ease forwards 1.5s;
     }
 
     .scroll-hint::after {
       content: '';
-      display: block;
       width: 1px;
-      height: 60px;
+      height: 40px;
       background: linear-gradient(to bottom, var(--accent-pink), transparent);
-      margin: 16px auto 0;
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.6; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.1); }
     }
 
     /* CONTAINERS */
@@ -1996,7 +2010,8 @@
         justify-content: center !important;
       }
       .hero h1 { font-size: clamp(2.2rem, 8vw, 3rem); }
-      .scroll-hint { bottom: 24px; }
+      .scroll-hint { bottom: 20px; }
+      .scroll-hint::after { height: 32px; }
     }
 
     @media (max-width: 480px) {
@@ -2006,7 +2021,8 @@
         justify-content: center !important;
       }
       .hero h1 { font-size: clamp(2rem, 9vw, 2.5rem); }
-      .scroll-hint { bottom: 20px; }
+      .scroll-hint { bottom: 16px; }
+      .scroll-hint::after { height: 28px; }
     }
 
     /* Phase 4: Landscape Dividers */
