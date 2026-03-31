@@ -1687,27 +1687,40 @@
     }
 
     /* FOOTER */
-    footer {
-      padding: 50px 0;
-      background: var(--bg-deep);
-      border-top: 1px solid var(--border);
+    .site-footer {
+      padding: 48px 24px;
+      background: #2d2a26;
       text-align: center;
     }
 
-    footer p {
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .footer-nav a {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover {
+      color: var(--accent-pink);
+    }
+
+    .footer-copy {
       font-family: var(--sans);
       font-size: 14px;
-      color: var(--text-muted);
-      margin-bottom: 12px;
+      color: rgba(255, 255, 255, 0.4);
     }
-
-    footer a {
-      color: var(--accent-pink);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    footer a:hover { color: var(--accent-coral); }
 
     .read-more-link {
       display: inline-flex;
@@ -2999,11 +3012,15 @@
   </div>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <p>Created by <a href="https://thelivenowclub.substack.com">Louise Ireland</a></p>
-      <p>Part of <a href="https://thelivenowclub.substack.com">The Live Now Club</a></p>
+  <footer class="site-footer">
+    <div class="footer-nav">
+      <a href="/read">Read</a>
+      <a href="/navigate">Navigate</a>
+      <a href="/wonder">Wonder</a>
+      <a href="/about">About</a>
+      <a href="https://louiseireland.substack.com" target="_blank" rel="noopener noreferrer">Substack</a>
     </div>
+    <p class="footer-copy">&copy; 2026 Louise Ireland</p>
   </footer>
 
   <!-- Book Card Overlay -->
