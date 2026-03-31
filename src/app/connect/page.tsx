@@ -5,42 +5,22 @@ import { useState } from "react";
 import Header from "@/components/Header";
 
 export default function ConnectPage() {
-  const [storySubmitted, setStorySubmitted] = useState(false);
-  const [messageSubmitted, setMessageSubmitted] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleStorySubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const formData = new FormData(form);
 
     // TODO: Replace with your Formspree endpoint
-    // Sign up at formspree.io and create a form to get your endpoint
-    const response = await fetch("https://formspree.io/f/YOUR_STORY_FORM_ID", {
+    const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
       method: "POST",
       body: formData,
       headers: { Accept: "application/json" },
     });
 
     if (response.ok) {
-      setStorySubmitted(true);
-      form.reset();
-    }
-  };
-
-  const handleMessageSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    // TODO: Replace with your Formspree endpoint
-    const response = await fetch("https://formspree.io/f/YOUR_MESSAGE_FORM_ID", {
-      method: "POST",
-      body: formData,
-      headers: { Accept: "application/json" },
-    });
-
-    if (response.ok) {
-      setMessageSubmitted(true);
+      setSubmitted(true);
       form.reset();
     }
   };
@@ -53,143 +33,62 @@ export default function ConnectPage() {
         {/* Hero */}
         <section className="connect-hero">
           <span className="connect-label">Connect</span>
-          <h1>You're not alone in this.</h1>
-          <p>
-            Whether you have a story to share or just want to say hello,
-            this is a space for real connection.
+          <h1>Leave a mark</h1>
+          <p className="connect-subtitle">
+            I read everything, but am admittedly not always good at replying in a timely manner. I very much appreciate your reading my words. Feel free to let me know what landed, what you'd like more of, what you're dealing with, anything that would be helpful to share! It is difficult for me to support people on a 1-1 basis, but I want to be there for you as much as I can.
           </p>
         </section>
 
-        {/* Two Column Layout */}
-        <div className="connect-grid">
-          {/* Share Your Story */}
-          <section className="connect-form-section">
-            <div className="connect-form-header">
-              <h2>Share Your Story</h2>
-              <p>
-                Have you faced something that changed how you see time?
-                Your story might help someone else feel less alone.
-              </p>
+        {/* Single Form */}
+        <section className="connect-form-section">
+          {submitted ? (
+            <div className="connect-success">
+              <p>Thank you. It landed.</p>
             </div>
-
-            {storySubmitted ? (
-              <div className="connect-success">
-                <p>Thank you for sharing. Your story matters.</p>
+          ) : (
+            <form onSubmit={handleSubmit} className="connect-form">
+              <div className="form-group">
+                <label htmlFor="message">What resonated?</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows={6}
+                  placeholder="Tell me what landed, what you're sitting with, or just say hello..."
+                />
               </div>
-            ) : (
-              <form onSubmit={handleStorySubmit} className="connect-form">
-                <div className="form-group">
-                  <label htmlFor="story-name">Name (or anonymous)</label>
-                  <input
-                    type="text"
-                    id="story-name"
-                    name="name"
-                    placeholder="What should I call you?"
-                  />
-                </div>
 
-                <div className="form-group">
-                  <label htmlFor="story-email">Email</label>
-                  <input
-                    type="email"
-                    id="story-email"
-                    name="email"
-                    required
-                    placeholder="your@email.com"
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="story-content">Your Story</label>
-                  <textarea
-                    id="story-content"
-                    name="story"
-                    required
-                    rows={8}
-                    placeholder="Tell me what happened, what you learned, or what you're still figuring out..."
-                  />
-                </div>
-
-                <div className="form-group form-checkbox">
-                  <input
-                    type="checkbox"
-                    id="story-share"
-                    name="canShare"
-                    value="yes"
-                  />
-                  <label htmlFor="story-share">
-                    You may share this story publicly (with my permission on specifics)
-                  </label>
-                </div>
-
-                <button type="submit" className="btn btn--primary">
-                  Share My Story
-                </button>
-              </form>
-            )}
-          </section>
-
-          {/* Write to Louise */}
-          <section className="connect-form-section">
-            <div className="connect-form-header">
-              <h2>Write to Louise</h2>
-              <p>
-                Questions, thoughts, or just want to say hello?
-                I read everything.
-              </p>
-            </div>
-
-            {messageSubmitted ? (
-              <div className="connect-success">
-                <p>Message sent. I'll be in touch.</p>
+              <div className="form-group">
+                <label htmlFor="name">Name (optional)</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="What should I call you?"
+                />
               </div>
-            ) : (
-              <form onSubmit={handleMessageSubmit} className="connect-form">
-                <div className="form-group">
-                  <label htmlFor="message-name">Name</label>
-                  <input
-                    type="text"
-                    id="message-name"
-                    name="name"
-                    required
-                    placeholder="Your name"
-                  />
-                </div>
 
-                <div className="form-group">
-                  <label htmlFor="message-email">Email</label>
-                  <input
-                    type="email"
-                    id="message-email"
-                    name="email"
-                    required
-                    placeholder="your@email.com"
-                  />
-                </div>
+              <div className="form-group">
+                <label htmlFor="email">Email (optional)</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Only if you'd like a response"
+                />
+              </div>
 
-                <div className="form-group">
-                  <label htmlFor="message-content">Message</label>
-                  <textarea
-                    id="message-content"
-                    name="message"
-                    required
-                    rows={6}
-                    placeholder="What's on your mind?"
-                  />
-                </div>
-
-                <button type="submit" className="btn btn--primary">
-                  Send Message
-                </button>
-              </form>
-            )}
-          </section>
-        </div>
+              <button type="submit" className="btn btn--primary">
+                Leave it here
+              </button>
+            </form>
+          )}
+        </section>
 
         {/* Newsletter CTA */}
         <section className="connect-newsletter">
-          <h3>Want to stay connected?</h3>
-          <p>Join me on this journey. Essays on mortality and joy, delivered to your inbox.</p>
+          <h3>Stay connected</h3>
+          <p>Essays on mortality and joy, delivered to your inbox.</p>
           <iframe
             src="https://louiseireland.substack.com/embed"
             width="100%"
@@ -221,7 +120,7 @@ export default function ConnectPage() {
         }
 
         .connect-hero {
-          max-width: 600px;
+          max-width: 500px;
           margin: 0 auto 40px;
           text-align: center;
         }
@@ -246,42 +145,18 @@ export default function ConnectPage() {
           margin-bottom: 16px;
         }
 
-        .connect-hero p {
-          font-size: 1.125rem;
+        .connect-subtitle {
+          font-size: 1rem;
           color: rgba(45, 42, 38, 0.7);
-          line-height: 1.6;
-        }
-
-        .connect-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 32px;
-          max-width: 900px;
-          margin: 0 auto 48px;
+          line-height: 1.7;
         }
 
         .connect-form-section {
+          max-width: 480px;
+          margin: 0 auto 48px;
           background: white;
-          padding: 28px;
+          padding: 32px;
           border: 1px solid rgba(0, 0, 0, 0.06);
-        }
-
-        .connect-form-header {
-          margin-bottom: 24px;
-        }
-
-        .connect-form-header h2 {
-          font-size: 1.5rem;
-          font-weight: 300;
-          letter-spacing: -0.01em;
-          color: #2d2a26;
-          margin-bottom: 12px;
-        }
-
-        .connect-form-header p {
-          font-size: 0.95rem;
-          color: rgba(45, 42, 38, 0.6);
-          line-height: 1.6;
         }
 
         .connect-form {
@@ -300,9 +175,9 @@ export default function ConnectPage() {
           font-family: "Space Grotesk", sans-serif;
           font-size: 11px;
           font-weight: 400;
-          letter-spacing: 0.2em;
+          letter-spacing: 0.15em;
           text-transform: uppercase;
-          color: rgba(45, 42, 38, 0.6);
+          color: rgba(45, 42, 38, 0.5);
         }
 
         .form-group input,
@@ -312,65 +187,44 @@ export default function ConnectPage() {
           font-family: inherit;
           border: 1px solid rgba(0, 0, 0, 0.1);
           background: var(--cream, #faf6f1);
-          color: var(--charcoal, #1a1a1a);
+          color: var(--charcoal, #2d2a26);
           transition: border-color 0.2s;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
           outline: none;
-          border-color: var(--pink, #e84a8a);
+          border-color: var(--pink, #E8178A);
         }
 
         .form-group input::placeholder,
         .form-group textarea::placeholder {
-          color: rgba(45, 42, 38, 0.4);
+          color: rgba(45, 42, 38, 0.35);
         }
 
         .form-group textarea {
           resize: vertical;
-          min-height: 120px;
-        }
-
-        .form-checkbox {
-          flex-direction: row;
-          align-items: flex-start;
-          gap: 12px;
-        }
-
-        .form-checkbox input {
-          width: 18px;
-          height: 18px;
-          margin-top: 2px;
-          accent-color: var(--pink, #e84a8a);
-        }
-
-        .form-checkbox label {
-          font-family: inherit;
-          font-size: 0.9rem;
-          text-transform: none;
-          letter-spacing: 0;
-          color: rgba(45, 42, 38, 0.7);
-          line-height: 1.5;
+          min-height: 140px;
         }
 
         .connect-success {
           background: rgba(122, 139, 114, 0.1);
-          padding: 32px;
+          padding: 48px 32px;
           text-align: center;
           border: 1px solid rgba(122, 139, 114, 0.2);
         }
 
         .connect-success p {
           color: var(--sage, #7a8b72);
-          font-size: 1.125rem;
+          font-size: 1.25rem;
+          font-style: italic;
         }
 
         .connect-newsletter {
-          max-width: 500px;
+          max-width: 480px;
           margin: 0 auto;
           text-align: center;
-          padding: 60px 0;
+          padding: 48px 0;
           border-top: 1px solid rgba(45, 42, 38, 0.1);
         }
 
@@ -386,38 +240,13 @@ export default function ConnectPage() {
           margin-bottom: 24px;
         }
 
-        .btn--secondary {
-          display: inline-block;
-          padding: 14px 28px;
-          font-family: "Space Grotesk", sans-serif;
-          font-size: 11px;
-          font-weight: 400;
-          letter-spacing: 0.2em;
-          text-transform: uppercase;
-          border: 1px solid #2d2a26;
-          color: #2d2a26;
-          background: transparent;
-          cursor: pointer;
-          transition: all 0.2s;
-        }
-
-        .btn--secondary:hover {
-          background: var(--charcoal, #1a1a1a);
-          color: white;
-        }
-
         @media (max-width: 768px) {
           .connect-container {
             padding: 100px 16px 32px;
           }
 
-          .connect-grid {
-            grid-template-columns: 1fr;
-            gap: 24px;
-          }
-
           .connect-form-section {
-            padding: 20px;
+            padding: 24px;
           }
         }
       `}</style>

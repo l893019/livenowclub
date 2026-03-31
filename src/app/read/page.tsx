@@ -58,7 +58,7 @@ export default function ReadPage() {
 
         {/* Quick Links */}
         <nav className="read-quick-nav">
-          <a href="#diagnosed">Just Diagnosed</a>
+          <a href="#start">Start Here</a>
           <a href="#heavy">Carrying Heavy</a>
           <a href="#joy">Finding Joy</a>
           <a href="#perspective">Perspective</a>
@@ -72,8 +72,8 @@ export default function ReadPage() {
           <Link href="/navigate" className="read-callout-link">Navigate the journey →</Link>
         </div>
 
-        {/* Start Here / Diagnosed */}
-        <section id="diagnosed" className="read-section">
+        {/* Start Here */}
+        <section id="start" className="read-section">
           <div className="read-section-header">
             <h2>Start Here</h2>
             <p>New to The Live Now Club? Begin with these.</p>

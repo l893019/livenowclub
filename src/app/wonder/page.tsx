@@ -7,12 +7,12 @@ export const metadata = {
   description: "Explorations at the intersection of AI, humanity, and meaning. Join me as I spelunk down rabbit holes of my curiosity.",
 };
 
-// Featured essay - After Abundance (special interactive piece)
+// Featured essay - interactive piece
 const FEATURED_ESSAY = {
   slug: "/wonder/essay",
-  title: "After Abundance",
-  subtitle: "When Purpose Is All We Have Left",
-  description: "What more than 200 science fiction books reveal about human purpose when scarcity ends.",
+  title: "When Purpose Is All We Have Left",
+  subtitle: "What 200+ sci-fi books reveal about meaning",
+  description: "An interactive exploration of human purpose through the lens of sci-fi.",
   image: "/wonder/assets/landscapes/optimized/1.jpg",
   type: "interactive essay",
 };

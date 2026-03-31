@@ -3,90 +3,86 @@ import { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
 
-const archetypes: Record<string, { name: string; shareText: string; color: string }> = {
-  culture: {
-    name: "Culture Citizen",
-    shareText: "I believe we'll keep working even when we don't have to.",
+const archetypes: Record<string, { name: string; utopia: string; color: string }> = {
+  citizen: {
+    name: "Citizen of Abundance",
+    utopia: "Your utopia has no word for \"job.\" They used to, but it fell out of the language three centuries ago.",
     color: "#3db9a4"
   },
-  earthseed: {
-    name: "Earthseed Shaper",
-    shareText: "I believe the future isn't something that happens to you — it's something you shape.",
+  shaper: {
+    name: "Shaper of Change",
+    utopia: "Your utopia is never finished. Everything is always changing.",
     color: "#f4a03f"
   },
-  anarres: {
-    name: "Anarres Builder",
-    shareText: "I believe even the best people will recreate the old hierarchies if the structures allow it.",
+  architect: {
+    name: "Architect of the Commons",
+    utopia: "Your utopia belongs to everyone and answers to no one.",
     color: "#9b8fef"
   },
-  diamond: {
-    name: "Diamond Reader",
-    shareText: "I believe the thing that changes a life is a person choosing to be present for another.",
+  presence: {
+    name: "Keeper of Presence",
+    utopia: "Your utopia decided that the most valuable thing in the universe was undivided attention.",
     color: "#e8178a"
   },
-  solaris: {
-    name: "Solaris Dreamer",
-    shareText: "I believe some questions are worth more than their answers.",
+  swimmer: {
+    name: "Swimmer in Deep Water",
+    utopia: "Your utopia is a civilization of philosophers.",
     color: "#6b8fef"
   },
-  wild: {
-    name: "Wild Monk",
-    shareText: "I believe the most radical act is to stop — not from exhaustion, but from clarity.",
+  rooted: {
+    name: "Rooted in Stillness",
+    utopia: "Your utopia returned to a simpler way of life, on purpose.",
     color: "#7ed6a4"
+  },
+  conscience: {
+    name: "Conscience Before Comfort",
+    utopia: "Your utopia built accountability into the architecture.",
+    color: "#d64545"
+  },
+  embers: {
+    name: "Keeper of Embers",
+    utopia: "Your utopia's most protected resource is not water or energy. It's memory.",
+    color: "#c97d3a"
+  },
+  friction: {
+    name: "Alive in the Friction",
+    utopia: "Your utopia kept one part of the world deliberately dangerous.",
+    color: "#ff6b35"
+  },
+  unbound: {
+    name: "Unbound from Form",
+    utopia: "Your utopia transcended the physical. You exist as pure consciousness now.",
+    color: "#a855f7"
+  },
+  alive: {
+    name: "Alive to Everything",
+    utopia: "Your utopia engineered twelve new senses and a sunset that lasts all day.",
+    color: "#f472b6"
+  },
+  mender: {
+    name: "Mender of What Remains",
+    utopia: "Your utopia decided that the most advanced act of engineering was making what already existed work again.",
+    color: "#10b981"
+  },
+  cleareyed: {
+    name: "Clear-Eyed in the Storm",
+    utopia: "Your utopia has one person whose only job is to tell the truth.",
+    color: "#64748b"
+  },
+  between: {
+    name: "In the Space Between",
+    utopia: "Your utopia just started to exist. Nothing is built yet.",
+    color: "#8b8b8b"
   }
-};
-
-// Sharp combination lines
-const synthesisLines: Record<string, string> = {
-  culture_earthseed: "You'll automate the revolution and optimize the resistance.",
-  culture_anarres: "You trust the machines more than you trust the committees — but you want both to succeed.",
-  culture_diamond: "You'll be the last to trust the AI caretaker — and the first to ask if it's lonely.",
-  culture_solaris: "You'd live forever just to see what questions we haven't thought to ask yet.",
-  culture_wild: "You want abundance so badly you might forget to enjoy it.",
-  earthseed_culture: "You'll build the future they automate — and wonder if it was worth the sweat.",
-  earthseed_anarres: "You'll tear down the system by building something better beside it.",
-  earthseed_diamond: "You shape the world for people who didn't ask to be shaped — and that keeps you up at night.",
-  earthseed_solaris: "You're drawn to edges you know you shouldn't try to cross.",
-  earthseed_wild: "You build so hard you sometimes forget you're allowed to stop.",
-  anarres_culture: "You design systems that could run without you — and worry they will.",
-  anarres_earthseed: "You want to change everything except the collective's power to resist change.",
-  anarres_diamond: "You'll build the commune and then stay up wondering if anyone actually feels at home.",
-  anarres_solaris: "You organize the resistance while secretly hoping someone will explain what we're resisting toward.",
-  anarres_wild: "You've built the alternative — now you're not sure you want to live there.",
-  diamond_culture: "You trust people over systems — until the system is full of people you trust.",
-  diamond_earthseed: "You know presence matters most, but you're not sure you can stay present through the change.",
-  diamond_anarres: "You put people first, then wonder if the structure would do it better.",
-  diamond_solaris: "You reach out to connect — and find the other side reaching back with questions, not answers.",
-  diamond_wild: "You believe in presence so deeply you've forgotten to be present to yourself.",
-  solaris_culture: "You question everything except your right to keep questioning.",
-  solaris_earthseed: "You sit with uncertainty while secretly building toward certainty.",
-  solaris_anarres: "You embrace the mystery but wish someone else would organize the search party.",
-  solaris_diamond: "You'd rather sit in silence with someone than solve them.",
-  solaris_wild: "You've stopped asking why — and you're not sure that's an answer.",
-  wild_culture: "You've found peace — now you're restless about how much work went into finding it.",
-  wild_earthseed: "You stopped building to rest — and woke up building again.",
-  wild_anarres: "You stepped off the wheel — and it keeps turning toward you.",
-  wild_diamond: "You're so present you've forgotten that others are still arriving.",
-  wild_solaris: "You found the answer in stopping — and now you're suspicious of it."
 };
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
-  const archetype = searchParams.get('archetype') || 'culture';
+  const archetype = searchParams.get('archetype') || 'citizen';
   const shadow = searchParams.get('shadow');
 
-  const data = archetypes[archetype] || archetypes.culture;
+  const data = archetypes[archetype] || archetypes.citizen;
   const shadowData = shadow ? archetypes[shadow] : null;
-
-  // Get synthesis line if shadow exists
-  const synthesisKey = shadow ? `${archetype}_${shadow}` : null;
-  const synthesis = synthesisKey && synthesisLines[synthesisKey] ? synthesisLines[synthesisKey] : data.shareText;
-
-  // Display text depends on whether we have a shadow
-  const displayText = shadow ? synthesis : data.shareText;
-  const displayName = shadowData
-    ? `${data.name} · ${shadowData.name}`
-    : data.name;
 
   return new ImageResponse(
     (
@@ -117,19 +113,20 @@ export async function GET(request: NextRequest) {
           "
         </div>
 
-        {/* Belief/synthesis statement */}
+        {/* Utopia statement */}
         <div
           style={{
-            fontSize: shadow ? 44 : 48,
+            fontSize: shadow ? 40 : 44,
             fontWeight: 400,
             color: '#2d2a26',
             textAlign: 'center',
             lineHeight: 1.3,
             maxWidth: '90%',
             marginBottom: 40,
+            fontStyle: 'italic',
           }}
         >
-          {displayText}
+          {data.utopia}
         </div>
 
         {/* Archetype name(s) */}

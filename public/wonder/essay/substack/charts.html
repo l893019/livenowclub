@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>After Abundance - Charts for Substack</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf6f1;
+      --text: #2d2a26;
+      --text-dim: rgba(45,42,38,0.7);
+      --text-muted: rgba(45,42,38,0.45);
+      --accent-pink: #e8178a;
+      --sans: 'Space Grotesk', system-ui, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #fff;
+      font-family: var(--sans);
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .instructions {
+      background: #f5f5f5;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+      font-size: 14px;
+      color: var(--text-dim);
+    }
+
+    .chart-container {
+      background: var(--bg);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 40px;
+      max-width: 600px;
+    }
+
+    .chart-title {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .chart {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 24px;
+      height: 200px;
+      padding-bottom: 60px;
+      position: relative;
+    }
+
+    .bar-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bar {
+      width: 48px;
+      border-radius: 6px 6px 0 0;
+      transition: none;
+    }
+
+    .bar-pct {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .bar-label {
+      font-size: 12px;
+      color: var(--text-dim);
+      text-align: center;
+      max-width: 70px;
+      line-height: 1.3;
+    }
+
+    .chart-insight {
+      text-align: center;
+      font-size: 14px;
+      font-style: italic;
+      color: var(--accent-pink);
+      margin-top: 16px;
+    }
+
+    .chart-source {
+      text-align: center;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* Individual chart styling */
+    .bar.meaning { background: linear-gradient(180deg, #e8178a 0%, #e8178a88 100%); }
+    .bar.identity { background: linear-gradient(180deg, #f4a03f 0%, #f4a03f88 100%); }
+    .bar.connection { background: linear-gradient(180deg, #9b8fef 0%, #9b8fef88 100%); }
+    .bar.status { background: linear-gradient(180deg, #3db9a4 0%, #3db9a488 100%); }
+    .bar.freedom { background: linear-gradient(180deg, #ff6b6b 0%, #ff6b6b88 100%); }
+
+    .bar.whoami { background: linear-gradient(180deg, #e8178a 0%, #e8178a88 100%); }
+    .bar.howlive { background: linear-gradient(180deg, #f4a03f 0%, #f4a03f88 100%); }
+    .bar.whatreal { background: linear-gradient(180deg, #9b8fef 0%, #9b8fef88 100%); }
+    .bar.survive { background: linear-gradient(180deg, #3db9a4 0%, #3db9a488 100%); }
+    .bar.whatnext { background: linear-gradient(180deg, #ff6b6b 0%, #ff6b6b88 100%); }
+  </style>
+</head>
+<body>
+  <h1>After Abundance - Static Charts for Substack</h1>
+
+  <div class="instructions">
+    <strong>Instructions:</strong> Screenshot each chart below at 2x resolution (use Chrome DevTools device toolbar or Cmd+Shift+4 on Mac). Each chart is sized for optimal display in Substack posts.
+  </div>
+
+  <!-- Chart 1: What Is Left to Solve For? -->
+  <div class="chart-container" id="chart-scarcity">
+    <div class="chart-title">What Is Left to Solve For?</div>
+    <div class="chart">
+      <div class="bar-group">
+        <div class="bar-pct">59%</div>
+        <div class="bar meaning" style="height: 160px;"></div>
+        <div class="bar-label">Meaning</div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-pct">17%</div>
+        <div class="bar identity" style="height: 46px;"></div>
+        <div class="bar-label">Identity</div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-pct">16%</div>
+        <div class="bar connection" style="height: 43px;"></div>
+        <div class="bar-label">Connection</div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-pct">5%</div>
+        <div class="bar status" style="height: 14px;"></div>
+        <div class="bar-label">Status</div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-pct">3%</div>
+        <div class="bar freedom" style="height: 8px;"></div>
+        <div class="bar-label">Freedom</div>
+      </div>
+    </div>
+    <div class="chart-insight">Meaning takes the place of material needs.</div>
+    <div class="chart-source">Based on 208 science fiction books, 1895-2024</div>
+  </div>
+
+  <!-- Chart 2: What Question Does the Book Ask? -->
+  <div class="chart-container" id="chart-question">
+    <div class="chart-title">What Question Does the Book Ask?</div>
+    <div class="chart">
+      <div class="bar-group">
+        <div class="bar-pct">32%</div>
+        <div class="bar whoami" style="height: 140px;"></div>
+        <div class="bar-label">Who am I?</div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-pct">30%</div>
+        <div class="bar howlive" style="height: 130px;"></div>
+        <div class="bar-label">How should we live?</div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-pct">15%</div>
+        <div class="bar whatreal" style="height: 65px;"></div>
+        <div class="bar-label">What is real?</div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-pct">13%</div>
+        <div class="bar survive" style="height: 57px;"></div>
+        <div class="bar-label">Can we survive?</div>
+      </div>
+      <div class="bar-group">
+        <div class="bar-pct">10%</div>
+        <div class="bar whatnext" style="height: 44px;"></div>
+        <div class="bar-label">What comes next?</div>
+      </div>
+    </div>
+    <div class="chart-insight">"Who am I?" edges out "How should we live?"</div>
+    <div class="chart-source">Based on 208 science fiction books, 1895-2024</div>
+  </div>
+
+</body>
+</html>

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, IBM_Plex_Mono, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import ExitIntentCard from "@/components/ExitIntentCard";
-import BottomNav from "@/components/BottomNav";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -62,7 +61,6 @@ export default function RootLayout({
       <body className={`${inter.variable} ${ibmPlexMono.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased`}>
         {children}
         <ExitIntentCard />
-        <BottomNav />
       </body>
     </html>
   );

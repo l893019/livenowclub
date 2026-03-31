@@ -90,7 +90,7 @@ const IMAGE_MAP: Record<string, string> = {
   "reset-rebirth": "reset-rebirth.jpg",
   "on-safety-and-security": "on-safety-and-security.jpg",
   "the-way-of-the-parrot": "the-way-of-the-parrot.jpg",
-  "things-ive-learned-lately": "things-ive-learned-lately.png",
+  "things-ive-learned-lately": "things-ive-learned-lately.jpg",
   "how-to-reset-your-nervous-system": "how-to-reset-your-nervous-system.jpg",
   "how-are-you-after-it-all-falls-down": "how-are-you-after-it-all-falls-down.jpg",
   "in-any-given-moment-the-strongest-dream-in-that-moment-wins": "in-any-given-moment.jpg",

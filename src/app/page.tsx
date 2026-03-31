@@ -138,6 +138,17 @@ const RECENT = [
   },
 ];
 
+// Interactive piece from Wonder
+const INTERACTIVE = {
+  href: "/wonder/essay",
+  title: "When Purpose Is All We Have Left",
+  subtitle: "What 200+ sci-fi books reveal about meaning",
+  description: "An interactive exploration of human purpose through the lens of sci-fi.",
+  image: "/wonder/assets/landscapes/optimized/1.jpg",
+  quizHref: "/wonder/essay/quiz",
+  quizLabel: "Take the quiz →",
+};
+
 // ============================================
 // HOMEPAGE COMPONENT
 // ============================================
@@ -229,6 +240,27 @@ export default function HomePage() {
             <span className="text-link">Read →</span>
           </div>
         </Link>
+      </section>
+
+      {/* INTERACTIVE - After Abundance */}
+      <section className="interactive-callout">
+        <div className="interactive-callout-inner">
+          <span className="interactive-label">New from Wonder</span>
+          <Link href={INTERACTIVE.href} className="interactive-card">
+            <div className="interactive-image">
+              <img src={INTERACTIVE.image} alt={INTERACTIVE.title} />
+            </div>
+            <div className="interactive-content">
+              <h3>{INTERACTIVE.title}</h3>
+              <p className="interactive-subtitle">{INTERACTIVE.subtitle}</p>
+              <p className="interactive-description">{INTERACTIVE.description}</p>
+              <div className="interactive-actions">
+                <span className="text-link">Read the essay →</span>
+                <Link href={INTERACTIVE.quizHref} className="quiz-link">{INTERACTIVE.quizLabel}</Link>
+              </div>
+            </div>
+          </Link>
+        </div>
       </section>
 
       {/* ALSO WORTH READING */}
