@@ -93,6 +93,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = `${room.name} — A Utopia of ${memberCount}`;
   const description = `Build a utopia with me. ${memberCount} ${memberCount === 1 ? "person has" : "people have"} joined ${room.name}.`;
 
+  const ogImage = `https://livenowclub.vercel.app/api/og/utopia/${slug}`;
+
   return {
     title,
     description,
@@ -101,11 +103,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       url: `https://livenowclub.vercel.app/wonder/essay/quiz/utopia/${slug}`,
       type: "website",
+      images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
       title: "Build a utopia with me",
       description,
+      images: [ogImage],
     },
   };
 }
