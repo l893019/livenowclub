@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What Do You Believe About the Future? | After Abundance</title>
-  <meta name="description" content="A 6-question quiz to discover your post-scarcity archetype. Based on analysis of 208 science fiction books.">
+  <title>What Do You Believe About the Future? | The Live Now Club</title>
+  <meta name="description" content="A 7-question quiz to discover your post-scarcity archetype. Based on analysis of 208 science fiction books.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="What Do You Believe About the Future?">
-  <meta property="og:description" content="Discover your post-scarcity archetype in 6 questions. Based on 208 sci-fi books.">
+  <meta property="og:description" content="Discover your post-scarcity archetype in 7 questions. Based on 208 sci-fi books.">
   <meta property="og:image" content="https://livenowclub.vercel.app/wonder/assets/landscapes/optimized/1.jpg">
   <meta property="og:url" content="https://livenowclub.vercel.app/wonder/essay/quiz">
   <meta property="og:type" content="website">
@@ -16,7 +16,7 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="What Do You Believe About the Future?">
-  <meta name="twitter:description" content="Discover your post-scarcity archetype in 6 questions.">
+  <meta name="twitter:description" content="Discover your post-scarcity archetype in 7 questions.">
   <meta name="twitter:image" content="https://livenowclub.vercel.app/wonder/assets/landscapes/optimized/1.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,6 +53,21 @@
     }
 
     ::selection { background: var(--accent-pink); color: #fff; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-deep); }
+    ::-webkit-scrollbar-thumb { background: var(--accent-pink); border-radius: 3px; }
+
+    /* QUIZ PROGRESS BAR */
+    .quiz-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-pink), var(--accent-coral));
+      width: 0%;
+      z-index: 9999;
+      transition: width 0.4s ease-out;
+    }
 
     /* HEADER */
     .header {
@@ -64,10 +79,15 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 32px;
+      padding: 20px 32px;
+      background: transparent;
+      transition: all 0.3s ease;
+    }
+
+    .header.scrolled {
       background: rgba(250, 247, 242, 0.95);
       backdrop-filter: blur(20px);
-      transition: all 0.3s ease;
+      padding: 12px 32px;
     }
 
     .logo { display: block; }
@@ -99,22 +119,85 @@
       background: var(--accent-pink);
     }
 
-    @media (max-width: 600px) {
-      .header { padding: 12px 16px; }
-      .nav { gap: 16px; }
-      .nav a { font-size: 11px; }
-      .logo-img { height: 32px; }
+    /* Mobile menu toggle */
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+      z-index: 1001;
     }
 
-    /* PROGRESS BAR */
-    .progress-bar {
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 24px;
+      height: 18px;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger--open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger--open span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger--open span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    .mobile-menu-overlay {
+      display: none;
       position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 150;
+    }
+
+    .mobile-menu-overlay.open {
+      display: block;
+    }
+
+    .mobile-menu {
+      position: absolute;
       top: 0;
-      left: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent-pink), var(--accent-coral));
-      transition: width 0.4s ease;
-      z-index: 9999;
+      right: 0;
+      width: 280px;
+      height: 100%;
+      background: var(--bg);
+      padding: 80px 32px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .mobile-menu a {
+      font-family: var(--sans);
+      font-size: 1.25rem;
+      color: var(--text);
+      text-decoration: none;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mobile-menu a:hover {
+      color: var(--accent-pink);
+    }
+
+    @media (max-width: 768px) {
+      .header { padding: 12px 16px; }
+      .nav { display: none; }
+      .logo-img { height: 32px; }
+      .mobile-menu-toggle { display: block; }
     }
 
     /* MAIN LAYOUT */
@@ -160,7 +243,7 @@
     /* SCREENS */
     .screen {
       display: none;
-      max-width: 620px;
+      max-width: 680px;
       width: 100%;
       position: relative;
       z-index: 1;
@@ -179,34 +262,49 @@
     .intro-content { text-align: center; }
 
     .intro-label {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.25em;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.4em;
       text-transform: uppercase;
       color: var(--accent-pink);
-      margin-bottom: 24px;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards 0.1s;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .intro-title {
       font-family: var(--sans);
       font-size: clamp(2.2rem, 6vw, 3.2rem);
-      font-weight: 400;
+      font-weight: 300;
       line-height: 1.15;
       margin-bottom: 24px;
-      color: var(--text);
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--accent-pink) 0%, var(--accent-coral) 50%, var(--accent-gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards 0.3s;
     }
 
     .intro-subtitle {
       font-family: var(--sans);
-      font-size: 1.15rem;
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
       font-weight: 300;
-      font-style: italic;
       color: var(--text-dim);
-      margin-bottom: 48px;
-      max-width: 480px;
+      margin-bottom: 50px;
+      max-width: 520px;
       margin-left: auto;
       margin-right: auto;
-      line-height: 1.7;
+      line-height: 1.8;
+      letter-spacing: 0.02em;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards 0.5s;
     }
 
     .start-btn {
@@ -223,6 +321,8 @@
       border-radius: 4px;
       cursor: pointer;
       transition: all 0.3s ease;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards 0.7s;
     }
     .start-btn:hover {
       transform: translateY(-2px);
@@ -254,9 +354,9 @@
 
     .question-text {
       font-family: var(--sans);
-      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-size: clamp(1.4rem, 3.5vw, 1.8rem);
       font-weight: 400;
-      line-height: 1.35;
+      line-height: 1.4;
       text-align: center;
       margin-bottom: 48px;
       color: var(--text);
@@ -266,19 +366,19 @@
     .answers {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 12px;
     }
 
     .answer-btn {
       display: block;
       width: 100%;
-      padding: 24px 28px;
+      padding: 20px 24px;
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 8px;
       color: var(--text);
       font-family: var(--sans);
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 300;
       line-height: 1.5;
       text-align: left;
@@ -308,64 +408,9 @@
       margin-bottom: 16px;
     }
 
-    /* RADAR CHART */
-    .radar-container {
-      width: 280px;
-      height: 280px;
-      margin: 0 auto 32px;
-      position: relative;
-    }
-
-    .radar-svg {
-      width: 100%;
-      height: 100%;
-    }
-
-    .radar-grid {
-      fill: none;
-      stroke: var(--border);
-      stroke-width: 1;
-    }
-
-    .radar-axis {
-      stroke: var(--border);
-      stroke-width: 1;
-    }
-
-    .radar-shape {
-      fill: rgba(232, 23, 138, 0.15);
-      stroke: var(--accent-pink);
-      stroke-width: 2;
-      transition: all 0.5s ease;
-    }
-
-    .radar-point {
-      fill: var(--accent-pink);
-      transition: all 0.3s ease;
-    }
-
-    .radar-label {
-      font-family: var(--sans);
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      fill: var(--text-dim);
-    }
-
-    .radar-label.primary {
-      fill: var(--accent-pink);
-      font-weight: 600;
-    }
-
-    .radar-label.shadow {
-      fill: var(--accent-coral);
-    }
-
-    /* PRIMARY + SHADOW */
     .result-archetype {
       font-family: var(--sans);
-      font-size: clamp(2.2rem, 7vw, 3.5rem);
+      font-size: clamp(2rem, 6vw, 3rem);
       font-weight: 400;
       margin-bottom: 8px;
       color: var(--text);
@@ -376,35 +421,50 @@
       font-size: 1.1rem;
       font-weight: 300;
       color: var(--text-muted);
-      margin-bottom: 24px;
+      margin-bottom: 32px;
     }
-
     .result-shadow span {
       color: var(--accent-coral);
       font-style: italic;
     }
 
-    /* SYNTHESIZED LINE */
-    .result-synthesis {
-      font-family: var(--sans);
-      font-size: 1.25rem;
-      font-weight: 400;
-      font-style: italic;
-      color: var(--accent-pink);
-      max-width: 480px;
-      margin: 0 auto 32px;
-      line-height: 1.6;
-      padding: 24px 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+    /* UTOPIA CARD */
+    .utopia-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      padding: 0;
+      margin-bottom: 32px;
+      text-align: center;
     }
 
-    .result-tagline {
+    .utopia-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .utopia-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-pink);
+      margin-bottom: 16px;
+      padding: 24px 32px 0;
+    }
+
+    .utopia-text {
       font-family: var(--sans);
       font-size: 1.2rem;
+      font-weight: 400;
       font-style: italic;
-      color: var(--text-dim);
-      margin-bottom: 32px;
+      line-height: 1.7;
+      padding: 0 32px 32px;
+      color: var(--text);
+      max-width: 500px;
+      margin: 0 auto;
     }
 
     .result-description {
@@ -414,7 +474,84 @@
       line-height: 1.9;
       color: var(--text);
       max-width: 560px;
-      margin: 0 auto 48px;
+      margin: 0 auto 32px;
+      text-align: left;
+    }
+
+    /* BLIND SPOT */
+    .blind-spot {
+      background: rgba(255,107,107,0.08);
+      border-left: 3px solid var(--accent-coral);
+      padding: 20px 24px;
+      margin-bottom: 32px;
+      text-align: left;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .blind-spot-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-coral);
+      margin-bottom: 8px;
+    }
+
+    .blind-spot-text {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    /* COMPATIBILITY */
+    .compatibility {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+
+    .compatibility-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-pink);
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .compatibility-item {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .compatibility-item:last-child { border-bottom: none; }
+
+    .compatibility-type {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .compatibility-text {
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    .compatibility-name {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--accent-pink);
+      margin-top: 8px;
     }
 
     /* BOOK RECOMMENDATIONS */
@@ -422,19 +559,19 @@
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 32px;
-      margin-bottom: 48px;
+      padding: 24px;
+      margin-bottom: 32px;
       text-align: left;
       box-shadow: 0 4px 24px rgba(0,0,0,0.06);
     }
 
     .result-books-title {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 500;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--accent-pink);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .result-books-list {
@@ -442,7 +579,7 @@
     }
 
     .result-books-list li {
-      padding: 16px 0;
+      padding: 12px 0;
       border-bottom: 1px solid var(--border);
     }
     .result-books-list li:last-child { border-bottom: none; padding-bottom: 0; }
@@ -451,13 +588,13 @@
     .book-title {
       font-family: var(--sans);
       font-style: italic;
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: var(--text);
       display: block;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
     .book-author {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--text-muted);
     }
 
@@ -465,7 +602,7 @@
     .result-actions {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 16px;
       align-items: center;
     }
 
@@ -508,45 +645,81 @@
       font-size: 13px;
       color: var(--text-muted);
       cursor: pointer;
-      margin-top: 16px;
+      margin-top: 8px;
       transition: color 0.2s;
     }
     .retake-btn:hover { color: var(--text); }
 
-    /* FOOTER */
-    footer {
-      padding: 50px 24px;
-      background: var(--bg-deep);
-      border-top: 1px solid var(--border);
+    .closing-note {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--text-dim);
+      margin-top: 32px;
       text-align: center;
     }
 
-    footer p {
-      font-family: var(--sans);
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-bottom: 12px;
+    /* FOOTER */
+    footer {
+      padding: 48px 24px;
+      background: #2d2a26;
+      text-align: center;
     }
-    footer p:last-child { margin-bottom: 0; }
 
-    footer a {
-      color: var(--accent-pink);
-      text-decoration: none;
-      transition: color 0.3s ease;
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 24px;
     }
-    footer a:hover { color: var(--accent-coral); }
+
+    .footer-nav a {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-nav a:hover { color: var(--accent-pink); }
+
+    .footer-copy {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.4);
+    }
 
     /* MOBILE */
     @media (max-width: 600px) {
       .quiz-main { padding: 100px 20px 60px; }
-      .answer-btn { padding: 20px 24px; font-size: 15px; }
-      .result-books { padding: 24px; }
+      .answer-btn { padding: 16px 20px; font-size: 14px; }
+      .result-books { padding: 20px; }
       .intro-subtitle { font-size: 1.05rem; }
+      .utopia-card { padding: 0; }
+      .utopia-label { padding: 20px 20px 0; }
+      .utopia-text { padding: 0 20px 24px; font-size: 1.1rem; }
+      .compatibility { padding: 20px; }
+
+      /* Screenshot-optimized result screen */
+      .result-label { margin-bottom: 8px; }
+      .result-archetype { font-size: 1.8rem; margin-bottom: 4px; }
+      .result-shadow { font-size: 1rem; margin-bottom: 16px; }
+      .utopia-card { margin-bottom: 20px; }
+      .utopia-image { max-height: 280px; object-fit: cover; }
+      .utopia-label { padding: 16px 16px 0; margin-bottom: 8px; }
+      .utopia-text { padding: 0 16px 16px; font-size: 1rem; line-height: 1.5; }
+      .result-description { font-size: 0.95rem; margin-bottom: 20px; }
+      .blind-spot { margin-bottom: 20px; padding: 16px; }
+      .compatibility-item { padding: 10px 0; }
     }
   </style>
 </head>
 <body>
-  <div class="progress-bar" id="progressBar"></div>
+  <!-- PROGRESS BAR -->
+  <div class="quiz-progress" id="quiz-progress"></div>
 
   <!-- BACKGROUND -->
   <div class="bg-landscape">
@@ -564,107 +737,158 @@
       <a href="/wonder" class="active">Wonder</a>
       <a href="/connect">Connect</a>
     </nav>
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Open menu">
+      <span class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
   </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="toggleMobileMenu()">
+    <nav class="mobile-menu" onclick="event.stopPropagation()">
+      <a href="/read">Read</a>
+      <a href="/navigate">Navigate</a>
+      <a href="/wonder">Wonder</a>
+      <a href="/connect">Connect</a>
+    </nav>
+  </div>
 
   <div class="quiz-wrapper">
     <main class="quiz-main">
       <!-- INTRO -->
       <div class="screen active" id="screen-intro">
         <div class="intro-content">
-          <div class="intro-label">From After Abundance</div>
-          <h1 class="intro-title">What Do You Believe About the Future?</h1>
-          <p class="intro-subtitle">Discover which post-scarcity worldview matches yours.</p>
-          <button class="start-btn" onclick="startQuiz()">Begin the Quiz</button>
+          <div class="intro-label">Interactive Essay</div>
+          <h1 class="intro-title">Who are you, when you are finally free to just be?</h1>
+          <p class="intro-subtitle">Discover which post-scarcity worldview matches yours based on over 200 science fiction books.</p>
+          <button class="start-btn" onclick="startQuiz()">Begin</button>
         </div>
       </div>
 
       <!-- Q1: ABUNDANCE -->
       <div class="screen" id="screen-1">
         <div class="question-header">
-          <div class="question-number">Question 1 of 6</div>
+          <div class="question-number">Question 1 of 7</div>
           <div class="question-category">Abundance</div>
         </div>
-        <h2 class="question-text">Material scarcity ends tomorrow. What's your first fear?</h2>
+        <h2 class="question-text">Due to technological innovations, every human on Earth now has free access to food, housing, healthcare, and education. What's your first question?</h2>
         <div class="answers">
-          <button class="answer-btn" onclick="answer(1, 'A')">That I won't know what to do with myself</button>
-          <button class="answer-btn" onclick="answer(1, 'B')">That someone will control who gets what</button>
-          <button class="answer-btn" onclick="answer(1, 'C')">That people will stop needing each other</button>
-          <button class="answer-btn" onclick="answer(1, 'D')">That nothing will feel earned anymore</button>
+          <button class="answer-btn" onclick="answer(1, 'A')">What do we build now that survival is solved?</button>
+          <button class="answer-btn" onclick="answer(1, 'B')">Who controls the system, and what do they get out of it?</button>
+          <button class="answer-btn" onclick="answer(1, 'C')">What did we give up to get here?</button>
+          <button class="answer-btn" onclick="answer(1, 'D')">What will people do with their time?</button>
+          <button class="answer-btn" onclick="answer(1, 'E')">What happens to relationships when no one needs anything from anyone?</button>
+          <button class="answer-btn" onclick="answer(1, 'F')">How could it break? How long until we ruin this?</button>
         </div>
       </div>
 
       <!-- Q2: IDENTITY -->
       <div class="screen" id="screen-2">
         <div class="question-header">
-          <div class="question-number">Question 2 of 6</div>
+          <div class="question-number">Question 2 of 7</div>
           <div class="question-category">Identity</div>
         </div>
-        <h2 class="question-text">Your job, your title, your daily routine — gone. What do you reach for first?</h2>
+        <h2 class="question-text">Everything that defined you—your work, your role, your daily structure—is gone. What do you do?</h2>
         <div class="answers">
-          <button class="answer-btn" onclick="answer(2, 'A')">I build something new</button>
-          <button class="answer-btn" onclick="answer(2, 'B')">I find my people</button>
-          <button class="answer-btn" onclick="answer(2, 'C')">I sit with not knowing</button>
-          <button class="answer-btn" onclick="answer(2, 'D')">I was never my job</button>
+          <button class="answer-btn" onclick="answer(2, 'A')">Build something new immediately</button>
+          <button class="answer-btn" onclick="answer(2, 'B')">Find my people</button>
+          <button class="answer-btn" onclick="answer(2, 'C')">Sit with it until something emerges</button>
+          <button class="answer-btn" onclick="answer(2, 'D')">Feel everything about the loss</button>
+          <button class="answer-btn" onclick="answer(2, 'E')">Those things were never really me</button>
+          <button class="answer-btn" onclick="answer(2, 'F')">Make sure no one was left behind in the transition</button>
         </div>
       </div>
 
       <!-- Q3: CONNECTION -->
       <div class="screen" id="screen-3">
         <div class="question-header">
-          <div class="question-number">Question 3 of 6</div>
+          <div class="question-number">Question 3 of 7</div>
           <div class="question-category">Connection</div>
         </div>
-        <h2 class="question-text">A machine can now do everything a human caretaker does, better and without complaint. Do you want it?</h2>
+        <h2 class="question-text">A machine can now provide perfect companionship. Attentive, patient, never distracted, always available. What's your reaction?</h2>
         <div class="answers">
-          <button class="answer-btn" onclick="answer(3, 'A')">Yes, free people from that labor</button>
-          <button class="answer-btn" onclick="answer(3, 'B')">No, the human doing it is the point</button>
-          <button class="answer-btn" onclick="answer(3, 'C')">It depends on who's receiving the care</button>
-          <button class="answer-btn" onclick="answer(3, 'D')">I wonder what the machine experiences</button>
+          <button class="answer-btn" onclick="answer(3, 'A')">Useful, but it's not the same thing</button>
+          <button class="answer-btn" onclick="answer(3, 'B')">This is the most dangerous invention in history</button>
+          <button class="answer-btn" onclick="answer(3, 'C')">I'd try it</button>
+          <button class="answer-btn" onclick="answer(3, 'D')">I'd want to know what it does to children who grow up with it</button>
+          <button class="answer-btn" onclick="answer(3, 'E')">It depends entirely on what the person needs</button>
         </div>
       </div>
 
       <!-- Q4: POWER -->
       <div class="screen" id="screen-4">
         <div class="question-header">
-          <div class="question-number">Question 4 of 6</div>
+          <div class="question-number">Question 4 of 7</div>
           <div class="question-category">Power</div>
         </div>
-        <h2 class="question-text">Every revolution in history has created new hierarchies. Can that cycle be broken?</h2>
+        <h2 class="question-text">A society has achieved universal comfort. No one goes hungry, no one is homeless, no one dies of preventable disease. In exchange, certain freedoms have been quietly reduced. You live there. What do you do?</h2>
         <div class="answers">
-          <button class="answer-btn" onclick="answer(4, 'A')">Yes, with the right structures</button>
-          <button class="answer-btn" onclick="answer(4, 'B')">No, but we can make them less brutal</button>
-          <button class="answer-btn" onclick="answer(4, 'C')">The question itself is the wrong frame</button>
-          <button class="answer-btn" onclick="answer(4, 'D')">I'm not convinced we should try</button>
+          <button class="answer-btn" onclick="answer(4, 'A')">I need to know exactly what was given up before I can answer</button>
+          <button class="answer-btn" onclick="answer(4, 'B')">Stay, but start asking questions publicly</button>
+          <button class="answer-btn" onclick="answer(4, 'C')">Stay, and secretly look for anyone else who realizes there's something wrong</button>
+          <button class="answer-btn" onclick="answer(4, 'D')">Stay. Most people are happier here than they were before.</button>
+          <button class="answer-btn" onclick="answer(4, 'E')">Stay. I miss the chaos and beauty of the old world, but the new world is better in the ways that matter.</button>
+          <button class="answer-btn" onclick="answer(4, 'F')">How do we know we won't lose more? I want to understand how we got here.</button>
+          <button class="answer-btn" onclick="answer(4, 'G')">Leave.</button>
         </div>
       </div>
 
       <!-- Q5: MORTALITY -->
       <div class="screen" id="screen-5">
         <div class="question-header">
-          <div class="question-number">Question 5 of 6</div>
+          <div class="question-number">Question 5 of 7</div>
           <div class="question-category">Mortality</div>
         </div>
-        <h2 class="question-text">You can live indefinitely. Do you want to?</h2>
+        <h2 class="question-text">You are offered indefinite life. How do you respond?</h2>
         <div class="answers">
-          <button class="answer-btn" onclick="answer(5, 'A')">Yes, without hesitation</button>
-          <button class="answer-btn" onclick="answer(5, 'B')">Only if I can choose when to stop</button>
-          <button class="answer-btn" onclick="answer(5, 'C')">No, death is what makes this matter</button>
-          <button class="answer-btn" onclick="answer(5, 'D')">I need to know more before I answer</button>
+          <button class="answer-btn" onclick="answer(5, 'A')">Yes. More time means more experience.</button>
+          <button class="answer-btn" onclick="answer(5, 'B')">Yes, but only if I can choose when to stop.</button>
+          <button class="answer-btn" onclick="answer(5, 'C')">I'd rather burn brightly in a short life than live forever.</button>
+          <button class="answer-btn" onclick="answer(5, 'D')">I'd want to understand what this does to a person first.</button>
+          <button class="answer-btn" onclick="answer(5, 'E')">I'd rather evolve into something new than extend what I already am.</button>
+          <button class="answer-btn" onclick="answer(5, 'F')">This is too good to be true. What's being asked of me in return?</button>
         </div>
       </div>
 
       <!-- Q6: PURPOSE -->
       <div class="screen" id="screen-6">
         <div class="question-header">
-          <div class="question-number">Question 6 of 6</div>
+          <div class="question-number">Question 6 of 7</div>
           <div class="question-category">Purpose</div>
         </div>
-        <h2 class="question-text">The world no longer needs your productivity. What gives your life meaning?</h2>
+        <h2 class="question-text">It's a Tuesday. Nothing is required of you. Nothing has been required of you for months. What does your day actually look like?</h2>
         <div class="answers">
-          <button class="answer-btn" onclick="answer(6, 'A')">What I choose to make</button>
-          <button class="answer-btn" onclick="answer(6, 'B')">Who I choose to love</button>
-          <button class="answer-btn" onclick="answer(6, 'C')">What I have yet to understand</button>
-          <button class="answer-btn" onclick="answer(6, 'D')">The fact that I'm here at all</button>
+          <button class="answer-btn" onclick="answer(6, 'A')">I'm in the middle of building something. I barely notice the time.</button>
+          <button class="answer-btn" onclick="answer(6, 'B')">I'm with family and friends. Not doing anything in particular.</button>
+          <button class="answer-btn" onclick="answer(6, 'C')">I'm deep in something I'm trying to understand. I've been at it for weeks.</button>
+          <button class="answer-btn" onclick="answer(6, 'D')">I'm rereading something old. I keep coming back to the same books.</button>
+          <button class="answer-btn" onclick="answer(6, 'E')">I'm outside. My body is moving.</button>
+          <button class="answer-btn" onclick="answer(6, 'F')">I found a problem. Nothing major, but I've been fixing it.</button>
+          <button class="answer-btn" onclick="answer(6, 'G')">Honestly? I'm still figuring out what the day is for.</button>
+        </div>
+      </div>
+
+      <!-- Q7: CIVILIZATION -->
+      <div class="screen" id="screen-7">
+        <div class="question-header">
+          <div class="question-number">Question 7 of 7</div>
+          <div class="question-category">Civilization</div>
+        </div>
+        <h2 class="question-text">When you think about the future of humanity, what's your honest gut reaction?</h2>
+        <div class="answers">
+          <button class="answer-btn" onclick="answer(7, 'A')">We can build something extraordinary if we're intentional about it</button>
+          <button class="answer-btn" onclick="answer(7, 'B')">We'll be fine, but only if someone is paying attention to what we're giving up</button>
+          <button class="answer-btn" onclick="answer(7, 'C')">I'm more interested in what we've already been than what we'll become</button>
+          <button class="answer-btn" onclick="answer(7, 'D')">I want to be alive for as much of it as possible</button>
+          <button class="answer-btn" onclick="answer(7, 'E')">I think we're on the verge of becoming something we can't currently imagine</button>
+          <button class="answer-btn" onclick="answer(7, 'F')">The future of humanity is probably just whether your neighbor is ok</button>
+          <button class="answer-btn" onclick="answer(7, 'G')">I think about my mom. My friends. Not humanity.</button>
+          <button class="answer-btn" onclick="answer(7, 'H')">I honestly go back and forth between hope and terror</button>
+          <button class="answer-btn" onclick="answer(7, 'I')">I think we'll be ok. We always have been.</button>
+          <button class="answer-btn" onclick="answer(7, 'J')">I'm not sure we deserve what's coming, but I want us to try.</button>
         </div>
       </div>
 
@@ -672,20 +896,40 @@
       <div class="screen" id="screen-result">
         <div class="result-content">
           <div class="result-label">Your Archetype</div>
-
-          <!-- Radar Chart -->
-          <div class="radar-container">
-            <svg class="radar-svg" id="radarChart" viewBox="0 0 280 280"></svg>
-          </div>
-
           <h2 class="result-archetype" id="resultArchetype"></h2>
           <p class="result-shadow" id="resultShadow"></p>
 
-          <!-- Sharp Synthesized Line -->
-          <p class="result-synthesis" id="resultSynthesis"></p>
+          <div class="utopia-card">
+            <img class="utopia-image" id="utopiaImage" src="" alt="Your utopia illustration" />
+            <div class="utopia-label">Your Utopia</div>
+            <p class="utopia-text" id="resultUtopia"></p>
+          </div>
 
-          <p class="result-tagline" id="resultTagline"></p>
           <p class="result-description" id="resultDescription"></p>
+
+          <div class="blind-spot">
+            <div class="blind-spot-label">Your Blind Spot</div>
+            <p class="blind-spot-text" id="resultBlindSpot"></p>
+          </div>
+
+          <div class="compatibility" id="resultCompatibility">
+            <div class="compatibility-label">Your People</div>
+            <div class="compatibility-item">
+              <div class="compatibility-type">Your Natural Ally</div>
+              <p class="compatibility-text" id="compatAlly"></p>
+              <p class="compatibility-name" id="compatAllyName"></p>
+            </div>
+            <div class="compatibility-item">
+              <div class="compatibility-type">Your Tension</div>
+              <p class="compatibility-text" id="compatTension"></p>
+              <p class="compatibility-name" id="compatTensionName"></p>
+            </div>
+            <div class="compatibility-item">
+              <div class="compatibility-type">Your Counterweight</div>
+              <p class="compatibility-text" id="compatNeed"></p>
+              <p class="compatibility-name" id="compatNeedName"></p>
+            </div>
+          </div>
 
           <div class="result-books">
             <div class="result-books-title">Read Next</div>
@@ -699,9 +943,9 @@
                 <polyline points="16 6 12 2 8 6"/>
                 <line x1="12" y1="2" x2="12" y2="15"/>
               </svg>
-              Share Result
+              Share Your Utopia
             </button>
-            <a href="/wonder/essay" class="essay-link">Read the full essay &rarr;</a>
+            <a href="/wonder/essay" class="essay-link">Read the full essay</a>
             <button class="retake-btn" onclick="retakeQuiz()">Retake quiz</button>
           </div>
         </div>
@@ -710,168 +954,324 @@
 
     <!-- FOOTER -->
     <footer>
-      <p>Created by <a href="https://thelivenowclub.substack.com">Louise Ireland</a></p>
-      <p>Part of <a href="https://thelivenowclub.substack.com">The Live Now Club</a></p>
+      <nav class="footer-nav">
+        <a href="/read">Essays</a>
+        <a href="/about">About</a>
+        <a href="https://livenowclub.substack.com" target="_blank" rel="noopener noreferrer">Substack</a>
+      </nav>
+      <p class="footer-copy">&copy; 2025 Louise Ireland</p>
     </footer>
   </div>
 
   <script>
-    // ARCHETYPES DATA
+    // 14 ARCHETYPES
     const archetypes = {
-      culture: {
-        name: "Culture Citizen",
-        tagline: "Comfort doesn't frighten me. Boredom does.",
-        shareText: "I believe we'll keep working even when we don't have to.",
-        description: "You believe the machinery should handle the drudgery so we can get on with the business of being alive. You're not naive about power — you know that even utopia needs someone watching the edges — but you trust that intelligence, properly distributed, tends toward good. You'd rather live in a world with too much freedom than too little.",
-        color: "#3db9a4",
+      citizen: {
+        name: "Citizen of Abundance",
+        description: "Let the machines handle the drudgery. You have better things to do with being alive. You know how power works and you know that utopia still needs someone watching the edges. You also trust that intelligence, properly distributed, tends toward good. Too much freedom will always be preferable to too little. Comfort doesn't frighten you. Boredom does.",
+        utopia: "Your utopia has no word for \"job.\" They used to, but it fell out of the language three centuries ago.",
+        blindSpot: "You sometimes mistake access for equity. Everyone having options is not the same as everyone being free.",
         books: [
-          { title: "The Player of Games", author: "Iain M. Banks" },
-          { title: "Accelerando", author: "Charles Stross" },
-          { title: "Down and Out in the Magic Kingdom", author: "Cory Doctorow" }
-        ]
+          { title: "The Player of Games", author: "Banks" },
+          { title: "Accelerando", author: "Stross" },
+          { title: "Down and Out in the Magic Kingdom", author: "Doctorow" }
+        ],
+        compatibility: {
+          ally: { key: "alive", desc: "The one who wants to feel everything. You both believe abundance is the point, not the problem." },
+          tension: { key: "conscience", desc: "The one who's watching for what's being hidden. They think your ease is blindness." },
+          need: { key: "friction", desc: "The one who craves difficulty. They remind you that comfort can calcify." }
+        }
       },
-      earthseed: {
-        name: "Earthseed Shaper",
-        tagline: "The future is raw material.",
-        shareText: "I believe the future isn't something that happens to you — it's something you shape.",
-        description: "You don't trust stillness. Not because you're restless, but because you understand that the moment you stop adapting, you start calcifying. You see the transition ahead not as a threat but as raw material. The future isn't something that happens to you. It's something you build with whatever is at hand, including the wreckage.",
-        color: "#f4a03f",
+      shaper: {
+        name: "Shaper of Change",
+        description: "You don't trust stillness. The moment you stop adapting, you start calcifying, and you've seen it happen to every institution, every relationship, every version of yourself you've held onto too long. The transition ahead is raw material. The future is something you build with whatever is at hand, including the wreckage. You've probably already started.",
+        utopia: "Your utopia is never finished. Everything is always changing.",
+        blindSpot: "You sometimes mistake movement for progress. Tearing something down and building something new can be its own form of running away.",
         books: [
-          { title: "Parable of the Sower", author: "Octavia Butler" },
-          { title: "Red Mars", author: "Kim Stanley Robinson" },
-          { title: "The Diamond Age", author: "Neal Stephenson" }
-        ]
+          { title: "Parable of the Sower", author: "Butler" },
+          { title: "Red Mars", author: "Robinson" },
+          { title: "The Diamond Age", author: "Stephenson" }
+        ],
+        compatibility: {
+          ally: { key: "friction", desc: "The one who craves difficulty. You both need forward motion." },
+          tension: { key: "rooted", desc: "The one who chose stillness. They think your restlessness is avoidance." },
+          need: { key: "embers", desc: "The one who guards what came before. They remember what you're too busy to preserve." }
+        }
       },
-      anarres: {
-        name: "Anarres Builder",
-        tagline: "Mutual aid is not a theory.",
-        shareText: "I believe even the best people will recreate the old hierarchies if the structures allow it.",
-        description: "You believe the structures matter more than the individuals inside them. Not because people don't matter — they matter immensely — but because even the best people will reproduce the old hierarchies if the structures allow it. You'd rather build something imperfect and collectively owned than something elegant and controlled by a few.",
-        color: "#9b8fef",
+      architect: {
+        name: "Architect of the Commons",
+        description: "You focus on the structures. Because the best people in the world will still reproduce the old hierarchies if the structures allow it. You'd rather build something imperfect and collectively owned than something elegant and controlled by a few. Mutual aid is a practice, and it requires showing up. You show up.",
+        utopia: "Your utopia belongs to everyone and answers to no one. It doesn't work perfectly but it belongs to the people inside it.",
+        blindSpot: "You sometimes love the system more than the people inside it. The meeting can become more important than what the meeting was for.",
         books: [
-          { title: "The Dispossessed", author: "Ursula K. Le Guin" },
-          { title: "Pacific Edge", author: "Kim Stanley Robinson" },
-          { title: "Four Ways to Forgiveness", author: "Ursula K. Le Guin" }
-        ]
+          { title: "The Dispossessed", author: "Le Guin" },
+          { title: "Pacific Edge", author: "Robinson" },
+          { title: "Four Ways to Forgiveness", author: "Le Guin" }
+        ],
+        compatibility: {
+          ally: { key: "mender", desc: "The one who fixes what's broken. You both believe in showing up for the unglamorous work." },
+          tension: { key: "unbound", desc: "The one who left the body behind. They've already moved past the structures you're building." },
+          need: { key: "swimmer", desc: "The one who lives in questions. They ask whether your structures are the right ones." }
+        }
       },
-      diamond: {
-        name: "Diamond Reader",
-        tagline: "Someone real has to speak the words.",
-        shareText: "I believe the thing that changes a life is a person choosing to be present for another.",
-        description: "You keep coming back to the same realization: that no matter how sophisticated the systems become, the thing that actually changes a life is a person choosing to be present for another person. You're not a technophobe — you appreciate what machines can do — but you know the difference between capability and care.",
-        color: "#e8178a",
+      presence: {
+        name: "Keeper of Presence",
+        description: "You keep coming back to the same realization: that the thing that actually changes a life is a person choosing to be present for another person. You appreciate what machines can do. You also know the difference between capability and care, and you've never confused the two. Someone's life is different because you showed up. You may not even know whose.",
+        utopia: "Your utopia decided that the most valuable thing in the universe was undivided attention, and built its entire economy around it.",
+        blindSpot: "You sometimes use care as a way to avoid confrontation. Staying in the room is not always the brave choice. Sometimes the brave choice is leaving it.",
         books: [
-          { title: "The Diamond Age", author: "Neal Stephenson" },
-          { title: "Klara and the Sun", author: "Kazuo Ishiguro" },
-          { title: "The Lifecycle of Software Objects", author: "Ted Chiang" }
-        ]
+          { title: "The Diamond Age", author: "Stephenson" },
+          { title: "Klara and the Sun", author: "Ishiguro" },
+          { title: "The Lifecycle of Software Objects", author: "Chiang" }
+        ],
+        compatibility: {
+          ally: { key: "rooted", desc: "The one who chose stillness. You both understand that being there is enough." },
+          tension: { key: "unbound", desc: "The one who left the body behind. They abandoned the physical world you think is sacred." },
+          need: { key: "cleareyed", desc: "The one who tells the truth. They tell you when your care has become avoidance." }
+        }
       },
-      solaris: {
-        name: "Solaris Dreamer",
-        tagline: "The edge is where the interesting things happen.",
-        shareText: "I believe some questions are worth more than their answers.",
-        description: "You resist the urge to resolve. Where others see a problem to be solved, you see a question worth sitting with. You're drawn to the edges of understanding, not because you want to conquer them but because the edge itself is where the interesting things happen. You are comfortable with ambiguity in a world that punishes it.",
-        color: "#6b8fef",
+      swimmer: {
+        name: "Swimmer in Deep Water",
+        description: "You resist the urge to resolve. Most people see a problem and want to solve it. You see a question and want to live inside it. The edges of understanding are where the interesting things happen, and you've always been drawn there. You are comfortable with ambiguity in a world that punishes it, and you suspect that this comfort is its own form of wisdom.",
+        utopia: "Your utopia is a civilization of philosophers. Their single ambition is to reach the deepest level of questioning ever achieved. Everything else is automated so they can focus.",
+        blindSpot: "You can sit with a question so long that it becomes an excuse to never act. At some point, not-knowing becomes its own form of cowardice.",
         books: [
-          { title: "Solaris", author: "Stanislaw Lem" },
-          { title: "Blindsight", author: "Peter Watts" },
-          { title: "Story of Your Life", author: "Ted Chiang" }
-        ]
+          { title: "Solaris", author: "Lem" },
+          { title: "Blindsight", author: "Watts" },
+          { title: "Story of Your Life", author: "Chiang" }
+        ],
+        compatibility: {
+          ally: { key: "unbound", desc: "The one who left the body behind. You're both drawn past the edges of the known." },
+          tension: { key: "mender", desc: "The one who fixes what's broken. They think your questions are a luxury." },
+          need: { key: "architect", desc: "The one who builds collective structures. They ground your abstraction in something real." }
+        }
       },
-      wild: {
-        name: "Wild Monk",
-        tagline: "Enough is enough.",
-        shareText: "I believe the most radical act is to stop — not from exhaustion, but from clarity.",
-        description: "You've arrived at something most people spend their lives running from: the possibility that you don't need a reason to be here. That purpose is a construct, productivity is a habit, and the most radical thing you can do in a world optimized for output is to stop. Not out of exhaustion. Out of clarity.",
-        color: "#7ed6a4",
+      rooted: {
+        name: "Rooted in Stillness",
+        description: "You've arrived at something most people spend their lives running from: the possibility that you don't need a reason to be here. Purpose is a construct. Productivity is a habit. The most radical thing you can do in a world optimized for output is to stop, and mean it. You pour the tea. You notice what's in front of you. You find that it's enough.",
+        utopia: "Your utopia returned to a simpler way of life, on purpose, with full knowledge of what it was giving up. It gave up automation to do things by hand.",
+        blindSpot: "Your stillness can look a lot like withdrawal to the people who need you. Choosing to stop is a luxury not everyone can afford.",
         books: [
-          { title: "A Psalm for the Wild-Built", author: "Becky Chambers" },
-          { title: "Always Coming Home", author: "Ursula K. Le Guin" },
-          { title: "Piranesi", author: "Susanna Clarke" }
-        ]
+          { title: "A Psalm for the Wild-Built", author: "Chambers" },
+          { title: "Always Coming Home", author: "Le Guin" },
+          { title: "Piranesi", author: "Clarke" }
+        ],
+        compatibility: {
+          ally: { key: "presence", desc: "The one who values presence above all. You both chose the small and close over the vast and abstract." },
+          tension: { key: "shaper", desc: "The one who can't stop building. They can't understand why you stopped." },
+          need: { key: "alive", desc: "The one who wants to feel everything. They remind you that stillness is not the only way to be present." }
+        }
+      },
+      conscience: {
+        name: "Conscience Before Comfort",
+        description: "You see what others prefer to ignore. The comfortable prison. The soft erosion. The hierarchy that rebrands itself as community. You believe in what humans can be. You also refuse to look away from what they become when no one is paying attention. Someone has to watch the watchers. You've always known it would be you.",
+        utopia: "Your utopia built accountability into the architecture. Every leader's decisions are projected onto the sky the day they leave office.",
+        blindSpot: "You can become so focused on what's wrong that you forget to notice what's working. Permanent suspicion is its own kind of prison.",
+        books: [
+          { title: "1984", author: "Orwell" },
+          { title: "Brave New World", author: "Huxley" },
+          { title: "The Handmaid's Tale", author: "Atwood" }
+        ],
+        compatibility: {
+          ally: { key: "cleareyed", desc: "The one who tells the truth. You both refuse to look away." },
+          tension: { key: "citizen", desc: "The one who's made peace with abundance. You think their comfort is complicity." },
+          need: { key: "presence", desc: "The one who values presence above all. They remind you that vigilance without tenderness becomes its own prison." }
+        }
+      },
+      embers: {
+        name: "Keeper of Embers",
+        description: "Everyone else is racing forward. You keep looking back, because you have this stubborn conviction that we've already figured most of this out and keep forgetting. Oral traditions, old religions, indigenous knowledge, the grandmother's hand on the child's head. The most dangerous thing about acceleration is amnesia. The answers aren't in the next technology. They're in the last ten thousand years.",
+        utopia: "Your utopia's most protected resource is not water or energy. It's memory. The central archive is guarded more heavily than weapons or the bank.",
+        blindSpot: "You can love what was so deeply that you become hostile to what could be. The archive becomes a fortress. The past becomes an identity.",
+        books: [
+          { title: "A Canticle for Leibowitz", author: "Miller" },
+          { title: "Always Coming Home", author: "Le Guin" },
+          { title: "Parable of the Talents", author: "Butler" }
+        ],
+        compatibility: {
+          ally: { key: "architect", desc: "The one who builds collective structures. You both believe in what lasts." },
+          tension: { key: "shaper", desc: "The one who can't stop building. They tear down what you're trying to save." },
+          need: { key: "between", desc: "The one still figuring it out. They know what it feels like to lose a world, which is why your work matters." }
+        }
+      },
+      friction: {
+        name: "Alive in the Friction",
+        description: "Ease is more dangerous than difficulty. Something in us requires resistance. The act of pushing against something is how we know we're alive, and you've always known this in your bones. Take away every problem and you don't get paradise. You get a species that has forgotten how to want. You'd rather build the boat in a storm than float in still water.",
+        utopia: "Your utopia kept one part of the world deliberately dangerous, because the people who built it believed that too much safety would kill something essential in the species.",
+        blindSpot: "You can mistake difficulty for meaning. Not everything that's hard is worth doing. Sometimes the easy path is the right one and you can't accept that.",
+        books: [
+          { title: "The Stars My Destination", author: "Bester" },
+          { title: "The Moon Is a Harsh Mistress", author: "Heinlein" },
+          { title: "The Evolutionary Void", author: "Hamilton" }
+        ],
+        compatibility: {
+          ally: { key: "shaper", desc: "The one who can't stop building. You both need motion and resistance." },
+          tension: { key: "rooted", desc: "The one who chose stillness. You think their peace is surrender." },
+          need: { key: "presence", desc: "The one who values presence above all. They're the one you come home to when the mountain nearly killed you." }
+        }
+      },
+      unbound: {
+        name: "Unbound from Form",
+        description: "You look at the species and see a draft. A first attempt. You're curious about what comes next. Uploading, merging, subliming, evolving. The vocabulary doesn't matter. The boundary of the self is simply not where you stop. Most people find this frightening. You find it the most interesting question there is.",
+        utopia: "Your utopia transcended the physical. You exist as pure consciousness now, moving through dimensions that don't have names.",
+        blindSpot: "You left so much behind that you may not recognize what was worth keeping until it's too late. Evolution without memory is just forgetting with better marketing.",
+        books: [
+          { title: "Childhood's End", author: "Clarke" },
+          { title: "Diaspora", author: "Egan" },
+          { title: "The Hydrogen Sonata", author: "Banks" }
+        ],
+        compatibility: {
+          ally: { key: "swimmer", desc: "The one who lives in questions. You're both comfortable leaving solid ground." },
+          tension: { key: "presence", desc: "The one who values presence above all. They think you abandoned something essential." },
+          need: { key: "embers", desc: "The one who guards what came before. They preserve the version of you that you left behind." }
+        }
+      },
+      alive: {
+        name: "Alive to Everything",
+        description: "You don't need a reason. You need a body, a world, and enough time. Change your form, change your perspective, taste every experience, climb every mountain, love every person who'll have you, and when you've done all of it, start again. The universe gave you everything. The least you can do is feel it. You suspect that most philosophies of meaning are elaborate ways of avoiding pleasure.",
+        utopia: "Your utopia engineered twelve new senses and a sunset that lasts all day.",
+        blindSpot: "Sensation can become consumption. Feeling everything is not the same as understanding anything. The twelfth sense doesn't help if the first five are numb from overuse.",
+        books: [
+          { title: "Surface Detail", author: "Banks" },
+          { title: "Trouble on Triton", author: "Delany" },
+          { title: "Schismatrix Plus", author: "Sterling" }
+        ],
+        compatibility: {
+          ally: { key: "citizen", desc: "The one who's made peace with abundance. You both believe the point is to enjoy this." },
+          tension: { key: "conscience", desc: "The one who's watching for what's being hidden. They think your pleasure is irresponsible." },
+          need: { key: "cleareyed", desc: "The one who tells the truth. They see what you're too dazzled to notice." }
+        }
+      },
+      mender: {
+        name: "Mender of What Remains",
+        description: "You look at the stars and feel nothing pulling you toward them. The work is here. The soil, the water, the damaged systems, the fraying relationships. While everyone else is building arks and uploading their consciousness, you're fixing the thing in front of you. The most radical act in an age of acceleration is to stay, to repair, to solve the specific problem that no one else cares about. The future is the next thing that needs doing.",
+        utopia: "Your utopia decided that the most advanced act of engineering was making what already existed work again instead of building something new.",
+        blindSpot: "You can become so focused on repair that you miss when something needs to die. Not everything should be saved. Some things are broken because they should be.",
+        books: [
+          { title: "The Ministry for the Future", author: "Robinson" },
+          { title: "New York 2140", author: "Robinson" },
+          { title: "Station Eleven", author: "Mandel" }
+        ],
+        compatibility: {
+          ally: { key: "architect", desc: "The one who builds collective structures. You both care about what's in front of you." },
+          tension: { key: "swimmer", desc: "The one who lives in questions. They're thinking about the universe while your sink is leaking." },
+          need: { key: "friction", desc: "The one who craves difficulty. They remind you that not everything should be fixed. Some things should be fought." }
+        }
+      },
+      cleareyed: {
+        name: "Clear-Eyed in the Storm",
+        description: "You have one job: to see what is actually happening and say it out loud. The version that's true. The one that makes people uncomfortable. Most people don't want this from you. Civilizations survive by the quality of their honest observers, though, and collapse when the honest observers go quiet. You won't be the one who goes quiet.",
+        utopia: "Your utopia has one person whose only job is to tell the truth. They answer to no one. They are the most feared and most respected person in the civilization.",
+        blindSpot: "Honesty without tenderness is cruelty. You can see everything clearly and still miss the most important thing in the room, which is how your truth lands on the person hearing it.",
+        books: [
+          { title: "Slaughterhouse-Five", author: "Vonnegut" },
+          { title: "His Master's Voice", author: "Lem" },
+          { title: "The Road", author: "McCarthy" }
+        ],
+        compatibility: {
+          ally: { key: "conscience", desc: "The one who's watching for what's being hidden. You both value truth over peace." },
+          tension: { key: "alive", desc: "The one who wants to feel everything. They think you're missing the point of being alive." },
+          need: { key: "rooted", desc: "The one who chose stillness. They teach you that seeing everything clearly is not the same as being at peace." }
+        }
+      },
+      between: {
+        name: "In the Space Between",
+        description: "This isn't a philosophy you chose. It's a condition you're living in. The old world shifted and left you standing in a place you don't recognize. You're figuring out how to breathe in a room with no familiar walls. Everyone else on this list has a position. You have a question. And you're still here, which might be the bravest thing on this list.",
+        utopia: "Your utopia just started to exist. Nothing is built yet. It's the beginning of an idea.",
+        blindSpot: "The space between can become a permanent address. At some point, not knowing what you are becomes a way of avoiding the risk of choosing.",
+        books: [
+          { title: "Never Let Me Go", author: "Ishiguro" },
+          { title: "Station Eleven", author: "Mandel" },
+          { title: "The Left Hand of Darkness", author: "Le Guin" }
+        ],
+        compatibility: {
+          ally: { key: "embers", desc: "The one who guards what came before. They hold what you've lost." },
+          tension: { key: "friction", desc: "The one who craves difficulty. They can't understand why you're not moving yet." },
+          need: { key: "shaper", desc: "The one who can't stop building. When you're ready, they'll show you what to do with the rubble." }
+        }
       }
     };
 
-    // SHARP COMBINATION LINES - Reveals something they didn't explicitly say
-    // Format: primary_shadow: "synthesis line"
-    const synthesisLines = {
-      // Culture primary
-      culture_earthseed: "You'll automate the revolution and optimize the resistance.",
-      culture_anarres: "You trust the machines more than you trust the committees — but you want both to succeed.",
-      culture_diamond: "You'll be the last to trust the AI caretaker — and the first to ask if it's lonely.",
-      culture_solaris: "You'd live forever just to see what questions we haven't thought to ask yet.",
-      culture_wild: "You want abundance so badly you might forget to enjoy it.",
+    // ARCHETYPE ORDER FOR SCORING
+    const archetypeKeys = ['citizen', 'shaper', 'architect', 'presence', 'swimmer', 'rooted', 'conscience', 'embers', 'friction', 'unbound', 'alive', 'mender', 'cleareyed', 'between'];
 
-      // Earthseed primary
-      earthseed_culture: "You'll build the future they automate — and wonder if it was worth the sweat.",
-      earthseed_anarres: "You'll tear down the system by building something better beside it.",
-      earthseed_diamond: "You shape the world for people who didn't ask to be shaped — and that keeps you up at night.",
-      earthseed_solaris: "You're drawn to edges you know you shouldn't try to cross.",
-      earthseed_wild: "You build so hard you sometimes forget you're allowed to stop.",
-
-      // Anarres primary
-      anarres_culture: "You design systems that could run without you — and worry they will.",
-      anarres_earthseed: "You want to change everything except the collective's power to resist change.",
-      anarres_diamond: "You'll build the commune and then stay up wondering if anyone actually feels at home.",
-      anarres_solaris: "You organize the resistance while secretly hoping someone will explain what we're resisting toward.",
-      anarres_wild: "You've built the alternative — now you're not sure you want to live there.",
-
-      // Diamond primary
-      diamond_culture: "You trust people over systems — until the system is full of people you trust.",
-      diamond_earthseed: "You know presence matters most, but you're not sure you can stay present through the change.",
-      diamond_anarres: "You put people first, then wonder if the structure would do it better.",
-      diamond_solaris: "You reach out to connect — and find the other side reaching back with questions, not answers.",
-      diamond_wild: "You believe in presence so deeply you've forgotten to be present to yourself.",
-
-      // Solaris primary
-      solaris_culture: "You question everything except your right to keep questioning.",
-      solaris_earthseed: "You sit with uncertainty while secretly building toward certainty.",
-      solaris_anarres: "You embrace the mystery but wish someone else would organize the search party.",
-      solaris_diamond: "You'd rather sit in silence with someone than solve them.",
-      solaris_wild: "You've stopped asking why — and you're not sure that's an answer.",
-
-      // Wild primary
-      wild_culture: "You've found peace — now you're restless about how much work went into finding it.",
-      wild_earthseed: "You stopped building to rest — and woke up building again.",
-      wild_anarres: "You stepped off the wheel — and it keeps turning toward you.",
-      wild_diamond: "You're so present you've forgotten that others are still arriving.",
-      wild_solaris: "You found the answer in stopping — and now you're suspicious of it."
-    };
-
-    // SCORING
-    let scores = {
-      culture: 0,
-      earthseed: 0,
-      anarres: 0,
-      diamond: 0,
-      solaris: 0,
-      wild: 0
-    };
-
+    // SCORING MATRIX - Each answer adds to hidden variables, which map to archetypes
     const scoring = {
-      1: { A: { earthseed: 2, culture: 1 }, B: { anarres: 2 }, C: { diamond: 2, wild: 1 }, D: { earthseed: 2 } },
-      2: { A: { earthseed: 2 }, B: { diamond: 2, anarres: 1 }, C: { solaris: 2, wild: 1 }, D: { culture: 2 } },
-      3: { A: { culture: 2 }, B: { diamond: 2 }, C: { anarres: 1, wild: 1 }, D: { solaris: 2 } },
-      4: { A: { anarres: 2 }, B: { diamond: 1, culture: 1 }, C: { solaris: 2, wild: 1 }, D: { culture: 2 } },
-      5: { A: { culture: 2 }, B: { earthseed: 2 }, C: { diamond: 1, wild: 2 }, D: { solaris: 2 } },
-      6: { A: { earthseed: 2 }, B: { diamond: 2 }, C: { solaris: 2 }, D: { wild: 2 } }
+      1: {
+        A: { shaper: 2, citizen: 1 },
+        B: { conscience: 2, architect: 1 },
+        C: { embers: 2, cleareyed: 1 },
+        D: { swimmer: 2, between: 1 },
+        E: { presence: 2, alive: 1 },
+        F: { friction: 2, mender: 1 }
+      },
+      2: {
+        A: { shaper: 2, friction: 1 },
+        B: { architect: 2, presence: 1 },
+        C: { swimmer: 2, rooted: 1 },
+        D: { between: 2, alive: 1 },
+        E: { unbound: 2, citizen: 1 },
+        F: { conscience: 2, mender: 1 }
+      },
+      3: {
+        A: { presence: 2, mender: 1 },
+        B: { conscience: 2, cleareyed: 1 },
+        C: { citizen: 2, alive: 1, unbound: 1 },
+        D: { swimmer: 2, architect: 1, cleareyed: 1 },
+        E: { rooted: 2, between: 1 }
+      },
+      4: {
+        A: { swimmer: 2, cleareyed: 1 },
+        B: { conscience: 2, friction: 1 },
+        C: { conscience: 2, embers: 1 },
+        D: { citizen: 2, alive: 1 },
+        E: { between: 2, presence: 1 },
+        F: { embers: 2, architect: 1 },
+        G: { friction: 2, conscience: 1 }
+      },
+      5: {
+        A: { alive: 2, citizen: 1 },
+        B: { shaper: 2, friction: 1 },
+        C: { presence: 2, rooted: 1 },
+        D: { swimmer: 2, between: 1 },
+        E: { unbound: 2 },
+        F: { conscience: 2, cleareyed: 1 }
+      },
+      6: {
+        A: { shaper: 2, friction: 1 },
+        B: { presence: 2, architect: 1 },
+        C: { swimmer: 2, unbound: 1 },
+        D: { embers: 2, cleareyed: 1 },
+        E: { alive: 2, rooted: 1 },
+        F: { mender: 2, architect: 1 },
+        G: { between: 2 }
+      },
+      7: {
+        A: { shaper: 2, architect: 1 },
+        B: { conscience: 2, cleareyed: 1 },
+        C: { embers: 2 },
+        D: { alive: 2, citizen: 1 },
+        E: { unbound: 2, swimmer: 1 },
+        F: { presence: 2, rooted: 1 },
+        G: { mender: 2, presence: 1 },
+        H: { between: 2 },
+        I: { citizen: 2, rooted: 1 },
+        J: { friction: 2, shaper: 1 }
+      }
     };
 
-    const archetypeOrder = ['culture', 'earthseed', 'anarres', 'diamond', 'solaris', 'wild'];
-    const archetypeShortNames = {
-      culture: 'Citizen',
-      earthseed: 'Shaper',
-      anarres: 'Builder',
-      diamond: 'Reader',
-      solaris: 'Dreamer',
-      wild: 'Monk'
-    };
+    // Initialize scores
+    let scores = {};
+    archetypeKeys.forEach(k => scores[k] = 0);
 
     let currentQuestion = 0;
+    let q6Answer = null; // For tie-breaking
 
-    function updateProgress() {
-      const progress = (currentQuestion / 7) * 100;
-      document.getElementById('progressBar').style.width = progress + '%';
+    function updateProgress(question) {
+      const progress = document.getElementById('quiz-progress');
+      // 0 = intro, 1-7 = questions, 8 = result
+      const percent = question === 0 ? 0 : question >= 8 ? 100 : (question / 7) * 100;
+      progress.style.width = percent + '%';
     }
 
     function showScreen(id) {
@@ -882,121 +1282,72 @@
 
     function startQuiz() {
       currentQuestion = 1;
-      updateProgress();
+      updateProgress(1);
       showScreen('screen-1');
     }
 
     function answer(question, choice) {
       const questionScores = scoring[question][choice];
-      for (const [archetype, points] of Object.entries(questionScores)) {
-        scores[archetype] += points;
+      if (questionScores) {
+        for (const [archetype, points] of Object.entries(questionScores)) {
+          scores[archetype] += points;
+        }
+      }
+
+      // Track Q6 answer for tie-breaking
+      if (question === 6) {
+        q6Answer = choice;
       }
 
       currentQuestion = question + 1;
-      updateProgress();
 
-      if (question < 6) {
+      if (question < 7) {
+        updateProgress(question + 1);
         showScreen('screen-' + (question + 1));
       } else {
+        updateProgress(8);
         showResult();
       }
     }
 
-    // Calculate primary and shadow archetypes
     function getPrimaryAndShadow() {
       const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
-      const primary = sorted[0][0];
-      const shadow = sorted[1][0];
-      return { primary, shadow, scores: sorted };
-    }
+      let primary = sorted[0][0];
+      let shadow = sorted[1][0];
 
-    // Draw radar chart
-    function drawRadarChart(primary, shadow) {
-      const svg = document.getElementById('radarChart');
-      const cx = 140, cy = 140;
-      const maxRadius = 100;
-      const levels = 3;
-
-      // Find max score for normalization
-      const maxScore = Math.max(...Object.values(scores), 4);
-
-      // Generate SVG content
-      let svgContent = '';
-
-      // Draw grid circles
-      for (let i = 1; i <= levels; i++) {
-        const r = (maxRadius / levels) * i;
-        svgContent += `<circle cx="${cx}" cy="${cy}" r="${r}" class="radar-grid"/>`;
+      // Tie-breaking with Q6 if needed
+      if (sorted[0][1] === sorted[1][1] && q6Answer) {
+        const q6Mapping = {
+          A: 'shaper', B: 'presence', C: 'swimmer', D: 'embers',
+          E: 'alive', F: 'mender', G: 'between'
+        };
+        if (q6Mapping[q6Answer]) {
+          primary = q6Mapping[q6Answer];
+          shadow = sorted.find(([k]) => k !== primary)[0];
+        }
       }
 
-      // Draw axes and labels
-      archetypeOrder.forEach((key, i) => {
-        const angle = (Math.PI * 2 * i / 6) - Math.PI / 2;
-        const x2 = cx + maxRadius * Math.cos(angle);
-        const y2 = cy + maxRadius * Math.sin(angle);
-        svgContent += `<line x1="${cx}" y1="${cy}" x2="${x2}" y2="${y2}" class="radar-axis"/>`;
-
-        // Label position (further out)
-        const labelRadius = maxRadius + 28;
-        const lx = cx + labelRadius * Math.cos(angle);
-        const ly = cy + labelRadius * Math.sin(angle);
-
-        const labelClass = key === primary ? 'primary' : key === shadow ? 'shadow' : '';
-        const anchor = i === 0 ? 'middle' : i < 3 ? 'start' : i === 3 ? 'middle' : 'end';
-        const dy = i === 0 ? '-0.3em' : i === 3 ? '0.8em' : '0.3em';
-
-        svgContent += `<text x="${lx}" y="${ly}" class="radar-label ${labelClass}" text-anchor="${anchor}" dy="${dy}">${archetypeShortNames[key]}</text>`;
-      });
-
-      // Calculate shape points
-      const points = archetypeOrder.map((key, i) => {
-        const angle = (Math.PI * 2 * i / 6) - Math.PI / 2;
-        const normalizedScore = scores[key] / maxScore;
-        const r = Math.max(normalizedScore * maxRadius, 10); // Minimum radius of 10
-        const x = cx + r * Math.cos(angle);
-        const y = cy + r * Math.sin(angle);
-        return { x, y, key };
-      });
-
-      // Draw filled shape
-      const pointsStr = points.map(p => `${p.x},${p.y}`).join(' ');
-      svgContent += `<polygon points="${pointsStr}" class="radar-shape"/>`;
-
-      // Draw points
-      points.forEach(p => {
-        const isPrimary = p.key === primary;
-        const isShadow = p.key === shadow;
-        const radius = isPrimary ? 6 : isShadow ? 5 : 4;
-        const fill = isPrimary ? archetypes[primary].color : isShadow ? '#ff6b6b' : '#e8178a';
-        svgContent += `<circle cx="${p.x}" cy="${p.y}" r="${radius}" class="radar-point" fill="${fill}"/>`;
-      });
-
-      svg.innerHTML = svgContent;
+      return { primary, shadow };
     }
 
     function showResult() {
-      const { primary, shadow, scores: sortedScores } = getPrimaryAndShadow();
-
+      const { primary, shadow } = getPrimaryAndShadow();
       const data = archetypes[primary];
       const shadowData = archetypes[shadow];
 
-      // Draw radar chart
-      drawRadarChart(primary, shadow);
-
-      // Update archetype name
       document.getElementById('resultArchetype').textContent = data.name;
-
-      // Update shadow text
-      const shadowEl = document.getElementById('resultShadow');
-      shadowEl.innerHTML = `with shades of <span>${shadowData.name}</span>`;
-
-      // Update synthesis line
-      const synthesisKey = `${primary}_${shadow}`;
-      const synthesis = synthesisLines[synthesisKey] || data.shareText;
-      document.getElementById('resultSynthesis').textContent = `"${synthesis}"`;
-
-      document.getElementById('resultTagline').textContent = '"' + data.tagline + '"';
+      document.getElementById('resultShadow').innerHTML = `with shades of <span>${shadowData.name}</span>`;
+      document.getElementById('utopiaImage').src = `/wonder/essay/quiz/images/utopia-${primary}.png`;
+      document.getElementById('resultUtopia').textContent = data.utopia;
       document.getElementById('resultDescription').textContent = data.description;
+      document.getElementById('resultBlindSpot').textContent = data.blindSpot;
+
+      document.getElementById('compatAlly').textContent = data.compatibility.ally.desc;
+      document.getElementById('compatAllyName').textContent = archetypes[data.compatibility.ally.key].name;
+      document.getElementById('compatTension').textContent = data.compatibility.tension.desc;
+      document.getElementById('compatTensionName').textContent = archetypes[data.compatibility.tension.key].name;
+      document.getElementById('compatNeed').textContent = data.compatibility.need.desc;
+      document.getElementById('compatNeedName').textContent = archetypes[data.compatibility.need.key].name;
 
       const booksList = document.getElementById('resultBooks');
       booksList.innerHTML = data.books.map(book =>
@@ -1006,22 +1357,18 @@
       window.quizResult = data;
       window.quizResultKey = primary;
       window.quizShadowKey = shadow;
-      window.quizSynthesis = synthesis;
       showScreen('screen-result');
     }
 
     function shareResult() {
-      const data = window.quizResult;
       const primaryKey = window.quizResultKey;
       const shadowKey = window.quizShadowKey;
-      const synthesis = window.quizSynthesis;
 
-      const shadowName = archetypes[shadowKey].name;
-      const text = `"${synthesis}"\n\nI'm a ${data.name} with shades of ${shadowName}.\n\nWhat's your post-scarcity worldview?`;
+      const text = `What's your post-scarcity worldview?`;
       const url = `https://livenowclub.vercel.app/wonder/essay/quiz/result?a=${primaryKey}&s=${shadowKey}`;
 
       if (navigator.share) {
-        navigator.share({ title: 'My Post-Scarcity Archetype', text, url });
+        navigator.share({ title: text, text, url });
       } else {
         const fullText = text + '\n\n' + url;
         navigator.clipboard.writeText(fullText).then(() => {
@@ -1034,10 +1381,28 @@
     }
 
     function retakeQuiz() {
-      scores = { culture: 0, earthseed: 0, anarres: 0, diamond: 0, solaris: 0, wild: 0 };
+      scores = {};
+      archetypeKeys.forEach(k => scores[k] = 0);
       currentQuestion = 0;
-      updateProgress();
+      q6Answer = null;
+      updateProgress(0);
       showScreen('screen-intro');
+    }
+
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.header');
+      if (header) {
+        header.classList.toggle('scrolled', window.scrollY > 50);
+      }
+    });
+
+    // Mobile menu
+    function toggleMobileMenu() {
+      const overlay = document.getElementById('mobileMenuOverlay');
+      const hamburger = document.getElementById('hamburger');
+      overlay.classList.toggle('open');
+      hamburger.classList.toggle('hamburger--open');
     }
   </script>
 </body>
