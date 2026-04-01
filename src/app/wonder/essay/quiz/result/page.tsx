@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ShareButton from "./ShareButton";
-import ScoreBreakdown from "./ScoreBreakdown";
 import BuildUtopiaButton from "./BuildUtopiaButton";
 
 // Map compatibility descriptions to archetype keys
@@ -688,10 +687,10 @@ export default async function QuizResultPage({ searchParams }: Props) {
       </header>
 
       <main className="result-container">
-        <div className="result-label">Your Archetype</div>
+        <div className="result-label">You are</div>
         <h1 className="result-name">{data.name}</h1>
         {shadowData && shadowKey && (
-          <p className="result-shadow">with shades of <Link href={`/wonder/essay/quiz/result?a=${shadowKey}`} style={{ color: shadowData.color, fontStyle: 'italic', textDecoration: 'none' }}>{shadowData.name}</Link></p>
+          <p className="result-shadow">with a streak of <Link href={`/wonder/essay/quiz/result?a=${shadowKey}`} style={{ color: shadowData.color, fontStyle: 'italic', textDecoration: 'none' }}>{shadowData.name}</Link></p>
         )}
 
         <div className="utopia-card">
@@ -704,20 +703,18 @@ export default async function QuizResultPage({ searchParams }: Props) {
           <p className="utopia-text">{data.utopia}</p>
         </div>
 
-        <ScoreBreakdown currentArchetype={archetypeKey} />
-
         <p className="result-description">{data.description}</p>
 
         <div className="blind-spot">
-          <div className="blind-spot-label">Your Blind Spot</div>
+          <div className="blind-spot-label">What you might miss</div>
           <p className="blind-spot-text">{data.blindSpot}</p>
         </div>
 
 
         <div className="compatibility">
-          <div className="compatibility-label">Your Connections</div>
+          <div className="compatibility-label">Your People</div>
           <div className="compatibility-item">
-            <div className="compatibility-type">Your natural ally</div>
+            <div className="compatibility-type">You'll click with</div>
             <div className="compatibility-text">
               <Link href={`/wonder/essay/quiz/result?a=${compatibilityMap[data.compatibility.ally]}`} className="compatibility-link">
                 {archetypes[compatibilityMap[data.compatibility.ally]]?.name || data.compatibility.ally}
@@ -725,7 +722,7 @@ export default async function QuizResultPage({ searchParams }: Props) {
             </div>
           </div>
           <div className="compatibility-item">
-            <div className="compatibility-type">Your tension</div>
+            <div className="compatibility-type">You'll clash with</div>
             <div className="compatibility-text">
               <Link href={`/wonder/essay/quiz/result?a=${compatibilityMap[data.compatibility.tension]}`} className="compatibility-link">
                 {archetypes[compatibilityMap[data.compatibility.tension]]?.name || data.compatibility.tension}
@@ -733,7 +730,7 @@ export default async function QuizResultPage({ searchParams }: Props) {
             </div>
           </div>
           <div className="compatibility-item">
-            <div className="compatibility-type">Your secret need</div>
+            <div className="compatibility-type">You secretly need</div>
             <div className="compatibility-text">
               <Link href={`/wonder/essay/quiz/result?a=${compatibilityMap[data.compatibility.need]}`} className="compatibility-link">
                 {archetypes[compatibilityMap[data.compatibility.need]]?.name || data.compatibility.need}
@@ -743,7 +740,7 @@ export default async function QuizResultPage({ searchParams }: Props) {
         </div>
 
         <div className="books-section">
-          <div className="books-label">Read Next</div>
+          <div className="books-label">Books for You</div>
           <div className="books-list">
             {data.books.map((book, i) => (
               <div key={i} className="book-item">
@@ -770,9 +767,9 @@ export default async function QuizResultPage({ searchParams }: Props) {
         </div>
 
         <div className="cta-secondary">
-          <div className="cta-secondary-title">Build a Shared Utopia</div>
+          <div className="cta-secondary-title">What happens when worldviews collide?</div>
           <p className="cta-secondary-desc">
-            Invite friends to take the quiz and see how your worldviews combine into something new.
+            Create a room, invite others to take the quiz, and watch your utopias combine.
           </p>
           <BuildUtopiaButton archetypeKey={archetypeKey} />
         </div>
