@@ -37,7 +37,7 @@ const archetypes: Record<string, {
     color: "#3db9a4",
     books: [
       { title: "The Player of Games", author: "Banks", reason: "The Culture at its most playful—a civilization where games become the highest art because survival has been solved." },
-      { title: "Accelerando", author: "Stross", reason: "Abundance accelerates past human comprehension. The economy keeps going. Nobody understands it anymore." },
+      { title: "Accelerando", author: "Stross", reason: "What happens when abundance accelerates past human comprehension, and the economy becomes incomprehensible to its creators." },
       { title: "Down and Out in the Magic Kingdom", author: "Doctorow", reason: "Post-scarcity as actually lived: messy, political, and still full of people trying to figure out what matters." }
     ],
     compatibility: {
@@ -55,7 +55,7 @@ const archetypes: Record<string, {
     books: [
       { title: "Parable of the Sower", author: "Butler", reason: "Building a new belief system from the ruins. Change as spiritual practice." },
       { title: "Red Mars", author: "Robinson", reason: "Terraforming as philosophy—every technical choice is a political one, and the planet pushes back." },
-      { title: "The Diamond Age", author: "Stephenson", reason: "Education as revolution. A book that raises a girl better than her world ever could." }
+      { title: "The Diamond Age", author: "Stephenson", reason: "Education as revolution. The primer doesn't just teach—it transforms who you can become." }
     ],
     compatibility: {
       ally: "the one who craves difficulty",
@@ -87,7 +87,7 @@ const archetypes: Record<string, {
     blindSpot: "You sometimes use care as a way to avoid confrontation. Staying in the room is not always the brave choice. Sometimes the brave choice is leaving it.",
     color: "#e8178a",
     books: [
-      { title: "The Diamond Age", author: "Stephenson", reason: "A hired actress becomes a surrogate mother through a screen. The machine carries the voice. The care is real." },
+      { title: "The Diamond Age", author: "Stephenson", reason: "A hired actress becomes a surrogate mother through a machine. Presence transmitted through technology but never replaced by it." },
       { title: "Klara and the Sun", author: "Ishiguro", reason: "An AI friend who sees everything and is seen by almost no one. The quiet devastation of being present for someone who doesn't stay." },
       { title: "The Lifecycle of Software Objects", author: "Chiang", reason: "Raising digital beings requires the same thing as raising children: showing up, year after year, when it's no longer novel." }
     ],
@@ -105,7 +105,7 @@ const archetypes: Record<string, {
     color: "#6b8fef",
     books: [
       { title: "Solaris", author: "Lem", reason: "An ocean that may be conscious but refuses to be understood. Contact as permanent mystery." },
-      { title: "Blindsight", author: "Watts", reason: "What if consciousness is a bug, not a feature? This book will ruin your week." },
+      { title: "Blindsight", author: "Watts", reason: "What if consciousness is a bug, not a feature? The deepest questions have no comfortable answers." },
       { title: "Story of Your Life", author: "Chiang", reason: "Learning an alien language that reveals time differently. Knowing the ending doesn't diminish the living." }
     ],
     compatibility: {
@@ -174,7 +174,7 @@ const archetypes: Record<string, {
     books: [
       { title: "The Stars My Destination", author: "Bester", reason: "Revenge as rocket fuel. A man who burns through every obstacle because stopping would mean facing himself." },
       { title: "The Moon Is a Harsh Mistress", author: "Heinlein", reason: "Revolution as engineering problem. Free people building freedom from scratch, with math." },
-      { title: "The Evolutionary Void", author: "Hamilton", reason: "Post-human and still striving. Godlike powers and nowhere near done." }
+      { title: "The Evolutionary Void", author: "Hamilton", reason: "Post-human and still striving. Even with god-like powers, there's always another frontier." }
     ],
     compatibility: {
       ally: "the one who can't stop building",
@@ -225,7 +225,7 @@ const archetypes: Record<string, {
     books: [
       { title: "The Ministry for the Future", author: "Robinson", reason: "Climate repair as political thriller. Every chapter a different tool for fixing what we broke." },
       { title: "New York 2140", author: "Robinson", reason: "The city floods and people stay anyway. Adaptation as stubborn hope." },
-      { title: "Station Eleven", author: "Mandel", reason: "After collapse, someone has to remember Shakespeare. A traveling troupe keeps beauty alive." }
+      { title: "Station Eleven", author: "Mandel", reason: "After collapse, someone has to remember Shakespeare. Art as repair of the spirit." }
     ],
     compatibility: {
       ally: "the one who builds collective structures",
@@ -257,9 +257,9 @@ const archetypes: Record<string, {
     blindSpot: "The space between can become a permanent address. At some point, not knowing what you are becomes a way of avoiding the risk of choosing.",
     color: "#8b8b8b",
     books: [
-      { title: "Never Let Me Go", author: "Ishiguro", reason: "Knowing your fate doesn't prepare you for it. They know what's coming and keep living anyway." },
+      { title: "Never Let Me Go", author: "Ishiguro", reason: "Knowing your fate doesn't prepare you for it. The space between knowledge and acceptance." },
       { title: "Station Eleven", author: "Mandel", reason: "The before and the after, and the people caught in the middle trying to remember who they were." },
-      { title: "The Left Hand of Darkness", author: "Le Guin", reason: "An envoy on a world without gender, learning that everything he knew was local. Stranger everywhere, including home." }
+      { title: "The Left Hand of Darkness", author: "Le Guin", reason: "An envoy on a world without gender, learning that everything he knew was local. The space between cultures." }
     ],
     compatibility: {
       ally: "the one who guards what came before",

@@ -1749,14 +1749,24 @@
         showScreen('screen-' + (question + 1));
       } else {
         updateProgress(8);
-        // Check if user already has a saved result with name
-        if (userResult && userResult.name) {
-          // Update their result with new answers
-          updateExistingResult();
-        } else {
-          // First time - show name prompt
-          showScreen('screen-name');
+        // Generate user ID and save result locally, then show results
+        if (!userId) {
+          userId = generateUUID();
+          localStorage.setItem('quiz-user-id', userId);
         }
+        const { primary, shadow } = getPrimaryAndShadow();
+        userResult = {
+          id: userId,
+          name: userResult?.name || '',
+          email: userResult?.email || null,
+          archetype: primary,
+          secondaryArchetype: shadow,
+          scores: { ...scores },
+          answers: [...userAnswers],
+          createdAt: userResult?.createdAt || new Date().toISOString()
+        };
+        localStorage.setItem('quiz-user-result', JSON.stringify(userResult));
+        showResult();
       }
     }
 
