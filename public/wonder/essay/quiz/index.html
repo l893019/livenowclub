@@ -1003,14 +1003,27 @@
       animation: fadeSlideIn 0.5s ease;
     }
 
-    /* BUILD UTOPIA BUTTON */
+    /* BUILD UTOPIA BUTTON - Primary CTA */
+    .build-utopia-section {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .build-utopia-description {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--text-dim);
+      margin-bottom: 16px;
+    }
+
     .build-utopia-btn {
       display: inline-flex;
       align-items: center;
       gap: 10px;
       padding: 16px 40px;
-      background: transparent;
-      color: var(--accent-pink);
+      background: var(--accent-pink);
+      color: white;
       font-family: var(--sans);
       font-size: 13px;
       font-weight: 500;
@@ -1023,8 +1036,8 @@
     }
 
     .build-utopia-btn:hover {
-      background: var(--accent-pink);
-      color: white;
+      background: #c9146f;
+      border-color: #c9146f;
       transform: translateY(-2px);
       box-shadow: 0 8px 30px rgba(232, 23, 138, 0.3);
     }
@@ -1369,14 +1382,18 @@
             <div class="utopias-grid" id="utopiasGrid"></div>
           </div>
 
-          <div class="result-actions">
+          <div class="build-utopia-section">
+            <p class="build-utopia-description">See how your worldviews combine with family, friends, or coworkers</p>
             <button class="build-utopia-btn" onclick="buildUtopia()">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="12" cy="12" r="10"/>
                 <path d="M12 6v12M6 12h12"/>
               </svg>
-              Build a Utopia
+              Build a Shared Utopia
             </button>
+          </div>
+
+          <div class="result-actions">
             <button class="share-btn" onclick="shareResult()">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
