@@ -19,9 +19,10 @@
   <meta name="twitter:description" content="Discover your post-scarcity archetype in 7 questions.">
   <meta name="twitter:image" content="https://livenowclub.vercel.app/wonder/assets/landscapes/optimized/1.jpg">
 
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -35,7 +36,7 @@
       --accent-coral: #ff6b6b;
       --accent-gold: #f4a03f;
       --border: rgba(232,23,138,0.12);
-      --sans: 'Space Grotesk', system-ui, sans-serif;
+      --sans: 'Satoshi', system-ui, sans-serif;
       --mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
     }
 
@@ -1741,36 +1742,34 @@
         showScreen('screen-' + (question + 1));
       } else {
         updateProgress(8);
-        // Check if user already has a saved result with name
-        if (userResult && userResult.name) {
-          // Update their result with new answers
-          updateExistingResult();
-        } else {
-          // First time - show name prompt
-          showScreen('screen-name');
-        }
+        // Show results immediately (no name required)
+        saveResultLocally();
+        showResult();
       }
     }
 
-    function updateExistingResult() {
+    function saveResultLocally() {
       const { primary, shadow } = getPrimaryAndShadow();
 
-      // Update stored result
-      userResult.archetype = primary;
-      userResult.secondaryArchetype = shadow;
-      userResult.scores = { ...scores };
-      userResult.answers = [...userAnswers];
+      // Generate user ID if needed
+      if (!userId) {
+        userId = generateUUID();
+        localStorage.setItem('quiz-user-id', userId);
+      }
+
+      // Create or update result object (without name initially)
+      userResult = {
+        id: userId,
+        name: userResult?.name || '', // Keep existing name if any
+        email: userResult?.email || null,
+        archetype: primary,
+        secondaryArchetype: shadow,
+        scores: { ...scores },
+        answers: [...userAnswers],
+        createdAt: userResult?.createdAt || new Date().toISOString()
+      };
 
       localStorage.setItem('quiz-user-result', JSON.stringify(userResult));
-
-      // Save to API (fire and forget)
-      fetch('/api/utopia/save-result', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ result: userResult })
-      }).catch(console.error);
-
-      showResult();
     }
 
     function submitName(event) {
@@ -1929,6 +1928,29 @@
       if (!userResult || !userId) {
         alert('Please complete the quiz first.');
         return;
+      }
+
+      // If user doesn't have a name, prompt for one
+      if (!userResult.name) {
+        const name = prompt('What should we call you?\n(So your friends can find you in the utopia)');
+        if (!name || !name.trim()) {
+          return; // User cancelled
+        }
+
+        // Update userResult with name
+        userResult.name = name.trim();
+        localStorage.setItem('quiz-user-result', JSON.stringify(userResult));
+
+        // Save to API
+        try {
+          await fetch('/api/utopia/save-result', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ result: userResult })
+          });
+        } catch (e) {
+          console.error('Failed to save name:', e);
+        }
       }
 
       const btn = document.querySelector('.build-utopia-btn');
