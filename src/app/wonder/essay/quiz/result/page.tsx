@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ShareButton from "./ShareButton";
+import ScoreBreakdown from "./ScoreBreakdown";
 
 // Map compatibility descriptions to archetype keys
 const compatibilityMap: Record<string, string> = {
@@ -601,6 +602,81 @@ export default async function QuizResultPage({ searchParams }: Props) {
         .compatibility-link:hover {
           color: var(--accent-pink);
         }
+        .shadow-section {
+          max-width: 520px;
+          margin-bottom: 40px;
+          border: 1px solid rgba(0,0,0,0.08);
+          border-radius: 16px;
+          overflow: hidden;
+        }
+        .shadow-header {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 20px 24px;
+          background: rgba(0,0,0,0.02);
+          border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .shadow-dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          flex-shrink: 0;
+        }
+        .shadow-header-text {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+        }
+        .shadow-label {
+          font-size: 10px;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          color: var(--text-muted);
+        }
+        .shadow-name {
+          font-size: 1.1rem;
+          font-weight: 400;
+          color: var(--text);
+        }
+        .shadow-content {
+          padding: 20px 24px;
+        }
+        .shadow-description {
+          font-size: 0.9rem;
+          color: var(--text-dim);
+          line-height: 1.7;
+          margin-bottom: 16px;
+          font-style: italic;
+        }
+        .shadow-utopia {
+          font-size: 0.85rem;
+          color: var(--text-dim);
+          line-height: 1.6;
+          padding: 12px 16px;
+          background: rgba(0,0,0,0.02);
+          border-radius: 8px;
+          margin-bottom: 16px;
+        }
+        .shadow-utopia-label {
+          font-size: 9px;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          color: var(--text-muted);
+          margin-bottom: 4px;
+        }
+        .shadow-link {
+          display: inline-block;
+          font-size: 0.85rem;
+          color: var(--accent-pink);
+          text-decoration: none;
+          transition: opacity 0.2s;
+        }
+        .shadow-link:hover {
+          opacity: 0.7;
+        }
         .actions {
           display: flex;
           gap: 16px;
@@ -698,6 +774,8 @@ export default async function QuizResultPage({ searchParams }: Props) {
           <p className="result-shadow">with shades of <span style={{ color: shadowData.color, fontStyle: 'italic' }}>{shadowData.name}</span></p>
         )}
 
+        <ScoreBreakdown currentArchetype={archetypeKey} />
+
         <div className="utopia-card">
           <img
             src={`/wonder/essay/quiz/images/utopia-${archetypeKey}.png`}
@@ -714,6 +792,30 @@ export default async function QuizResultPage({ searchParams }: Props) {
           <div className="blind-spot-label">Your Blind Spot</div>
           <p className="blind-spot-text">{data.blindSpot}</p>
         </div>
+
+        {shadowData && shadowKey && (
+          <div className="shadow-section">
+            <div className="shadow-header">
+              <div className="shadow-dot" style={{ background: shadowData.color }} />
+              <div className="shadow-header-text">
+                <div className="shadow-label">Your Shadow</div>
+                <div className="shadow-name">{shadowData.name}</div>
+              </div>
+            </div>
+            <div className="shadow-content">
+              <p className="shadow-description">
+                The part of you that didn't win but still wants to be heard.
+              </p>
+              <div className="shadow-utopia">
+                <div className="shadow-utopia-label">Their Utopia</div>
+                {shadowData.utopia}
+              </div>
+              <Link href={`/wonder/essay/quiz/result?a=${shadowKey}`} className="shadow-link">
+                Explore this archetype →
+              </Link>
+            </div>
+          </div>
+        )}
 
         <div className="compatibility">
           <div className="compatibility-label">Your Connections</div>
