@@ -529,6 +529,16 @@ export default async function QuizResultPage({ searchParams }: Props) {
           font-size: 0.9rem;
           color: var(--text-dim);
           line-height: 1.6;
+          margin-bottom: 8px;
+        }
+        .book-link {
+          font-size: 0.8rem;
+          color: var(--accent-pink);
+          text-decoration: none;
+          transition: opacity 0.2s;
+        }
+        .book-link:hover {
+          opacity: 0.7;
         }
         .carousel-section {
           margin-bottom: 48px;
@@ -676,6 +686,42 @@ export default async function QuizResultPage({ searchParams }: Props) {
         }
         .shadow-link:hover {
           opacity: 0.7;
+        }
+        .newsletter-section {
+          max-width: 480px;
+          margin-bottom: 48px;
+          padding: 32px;
+          background: white;
+          border-radius: 16px;
+          box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+          text-align: center;
+        }
+        .newsletter-title {
+          font-size: 1.1rem;
+          font-weight: 400;
+          color: var(--text);
+          margin-bottom: 8px;
+        }
+        .newsletter-desc {
+          font-size: 0.9rem;
+          color: var(--text-dim);
+          margin-bottom: 20px;
+          line-height: 1.6;
+        }
+        .newsletter-btn {
+          display: inline-block;
+          padding: 12px 24px;
+          background: var(--accent-pink);
+          color: white;
+          font-size: 14px;
+          font-weight: 500;
+          text-decoration: none;
+          border-radius: 50px;
+          transition: all 0.3s;
+        }
+        .newsletter-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 24px rgba(232,23,138,0.3);
         }
         .actions {
           display: flex;
@@ -854,6 +900,14 @@ export default async function QuizResultPage({ searchParams }: Props) {
                   <span className="book-title">{book.title}</span> ({book.author})
                 </div>
                 <div className="book-reason">{book.reason}</div>
+                <a
+                  href={`https://bookshop.org/search?keywords=${encodeURIComponent(book.title + ' ' + book.author)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="book-link"
+                >
+                  Find on Bookshop.org →
+                </a>
               </div>
             ))}
           </div>
@@ -878,10 +932,26 @@ export default async function QuizResultPage({ searchParams }: Props) {
           </div>
         </div>
 
+        <div className="newsletter-section">
+          <div className="newsletter-title">Want more like this?</div>
+          <p className="newsletter-desc">Essays on meaning, mortality, and what comes next.</p>
+          <a
+            href="https://louiseireland.substack.com/subscribe"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="newsletter-btn"
+          >
+            Subscribe
+          </a>
+        </div>
+
         <div className="actions">
           <ShareButton shareText={shareText} shareUrl={shareUrl} />
           <Link href="/wonder/essay/quiz" className="btn btn-secondary">
             Retake Quiz
+          </Link>
+          <Link href="/wonder/essay#library" className="btn btn-secondary">
+            Explore 208 Books
           </Link>
           <Link href="/wonder/essay" className="btn btn-secondary">
             Read the Essay
