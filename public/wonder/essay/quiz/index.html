@@ -397,6 +397,33 @@
       transform: translateX(8px) scale(0.99);
     }
 
+    .question-nav {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 24px;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 16px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 400;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .back-btn:hover {
+      color: var(--text);
+    }
+    .back-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
     /* RESULT SCREEN */
     .result-content { text-align: center; }
 
@@ -1768,6 +1795,35 @@
         localStorage.setItem('quiz-user-result', JSON.stringify(userResult));
         showResult();
       }
+    }
+
+    function goBack() {
+      if (currentQuestion <= 1) return;
+
+      const prevQuestion = currentQuestion - 1;
+      const prevChoice = userAnswers[prevQuestion - 1];
+
+      // Subtract scores from previous answer
+      if (prevChoice) {
+        const questionScores = scoring[prevQuestion][prevChoice];
+        if (questionScores) {
+          for (const [archetype, points] of Object.entries(questionScores)) {
+            scores[archetype] -= points;
+          }
+        }
+      }
+
+      // Clear the answer
+      userAnswers[prevQuestion - 1] = undefined;
+
+      // Clear Q6 tie-breaker if going back from Q7
+      if (prevQuestion === 6) {
+        q6Answer = null;
+      }
+
+      currentQuestion = prevQuestion;
+      updateProgress(prevQuestion);
+      showScreen('screen-' + prevQuestion);
     }
 
     function updateExistingResult() {
