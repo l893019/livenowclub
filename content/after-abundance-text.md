@@ -16,7 +16,7 @@ When everything falls away, you realize what really matters. I write this from t
 
 > Who am I when I can no longer work the way I used to? Who am I when the core values I built my identity around have been razed?
 
-I suspect these may not just be my questions. As AI makes more human labor optional and shifts how we show up in the world, they become everyone's. Who are you when you don't have to work? What holds a society together when it no longer needs your productivity?
+I suspect these may not just be my questions. As AI makes more human labor optional and shifts how we show up in the world, they become everyone's. Who are you when you are no longer defined by work? What holds a society together when it no longer needs your productivity?
 
 I’ve spent my entire life reading science fiction and dreaming about worlds that don’t yet exist. And in this moment, when everything feels as though it is breaking, I credit those books for my deep inherent optimism around the future. 
 
