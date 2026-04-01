@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getUtopia, type UtopiaMember } from "@/lib/utopia";
 import ShareButton from "./ShareButton";
 import PlanetVisualization from "./PlanetVisualization";
+import EditableMemberList from "./EditableMemberList";
 
 // Archetype display data
 const archetypeData: Record<string, { name: string; color: string }> = {
@@ -176,11 +177,6 @@ export default async function UtopiaPage({ params }: Props) {
   const creatorName = creator?.name || "Someone";
   const shareUrl = `https://livenowclub.com/wonder/essay/quiz/utopia/${slug}/join`;
   const shareText = `Join ${room.name} — a utopia of ${room.members.length}.`;
-
-  // Sort archetypes by member count (most first)
-  const sortedArchetypes = Object.entries(counts).sort(
-    (a, b) => b[1].length - a[1].length
-  );
 
   return (
     <>
@@ -508,27 +504,12 @@ export default async function UtopiaPage({ params }: Props) {
         {/* Members */}
         <div className="section">
           <h2 className="section-title">Who&apos;s Here</h2>
-          <div className="members-grid">
-            {sortedArchetypes.map(([archetype, memberNames]) => {
-              const data = archetypeData[archetype];
-              // Get member objects to check for founder
-              const membersOfType = room.members.filter(m => m.archetype === archetype);
-              const namesWithFounder = membersOfType.map(m =>
-                m.id === room.createdBy ? `${m.name} (founder)` : m.name
-              );
-              return (
-                <div key={archetype} className="archetype-group">
-                  <div
-                    className="archetype-name"
-                    style={{ color: data?.color || "#666" }}
-                  >
-                    {data?.name || archetype}
-                  </div>
-                  <div className="member-names">{namesWithFounder.join(", ")}</div>
-                </div>
-              );
-            })}
-          </div>
+          <EditableMemberList
+            members={room.members}
+            createdBy={room.createdBy}
+            slug={slug}
+            archetypeData={archetypeData}
+          />
         </div>
 
         {/* Missing archetypes (only show a few) */}

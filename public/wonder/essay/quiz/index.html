@@ -348,8 +348,25 @@
       margin-bottom: 32px;
       line-height: 1.6;
     }
-    .name-input-wrapper {
+    .name-fields {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
       margin-bottom: 32px;
+    }
+    .name-field {
+      text-align: left;
+    }
+    .name-field-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+    .name-field-label .optional {
+      font-weight: 400;
+      color: var(--text-muted);
     }
     .utopia-name-input {
       width: 100%;
@@ -1224,10 +1241,17 @@
       <!-- NAME YOUR UTOPIA -->
       <div class="screen" id="screen-name">
         <div class="name-content">
-          <div class="name-label">First, name your utopia</div>
+          <div class="name-label">Create your utopia</div>
           <p class="name-subtitle">You'll invite others to join after you discover your worldview.</p>
-          <div class="name-input-wrapper">
-            <input type="text" id="utopia-name-input" class="utopia-name-input" placeholder="e.g., The Abundant Commons" maxlength="50" />
+          <div class="name-fields">
+            <div class="name-field">
+              <label for="utopia-name-input" class="name-field-label">Utopia name</label>
+              <input type="text" id="utopia-name-input" class="utopia-name-input" placeholder="e.g., The Abundant Commons" maxlength="50" />
+            </div>
+            <div class="name-field">
+              <label for="user-name-input" class="name-field-label">Your name <span class="optional">(optional)</span></label>
+              <input type="text" id="user-name-input" class="utopia-name-input" placeholder="How should we introduce you?" maxlength="30" />
+            </div>
           </div>
           <div class="name-actions">
             <button class="start-btn" onclick="startQuizWithName()">Continue</button>
@@ -1867,6 +1891,7 @@
     let userId = localStorage.getItem('quiz-user-id');
     let userResult = null;
     let pendingUtopiaName = null; // Name for utopia to create after quiz
+    let pendingUserName = null; // User's display name for utopia
     try {
       const stored = localStorage.getItem('quiz-user-result');
       if (stored) userResult = JSON.parse(stored);
@@ -1905,16 +1930,23 @@
     }
 
     function startQuizWithName() {
-      const nameInput = document.getElementById('utopia-name-input');
-      const name = nameInput.value.trim();
-      if (name) {
-        pendingUtopiaName = name;
+      const utopiaNameInput = document.getElementById('utopia-name-input');
+      const userNameInput = document.getElementById('user-name-input');
+      const utopiaName = utopiaNameInput.value.trim();
+      const userName = userNameInput.value.trim();
+
+      if (utopiaName) {
+        pendingUtopiaName = utopiaName;
+      }
+      if (userName) {
+        pendingUserName = userName;
       }
       startQuiz();
     }
 
     function startQuizWithoutName() {
       pendingUtopiaName = null;
+      pendingUserName = null;
       startQuiz();
     }
 
@@ -2149,21 +2181,16 @@
       // Check if they named a utopia to create
       if (pendingUtopiaName && userId) {
         try {
-          // Need a name to create utopia - prompt if missing
-          if (!userResult || !userResult.name) {
-            const name = prompt('What should we call you?\n(So others can see who founded the utopia)');
-            if (name && name.trim()) {
-              if (userResult) {
-                userResult.name = name.trim();
-                localStorage.setItem('quiz-user-result', JSON.stringify(userResult));
-                // Update API with name
-                await fetch('/api/utopia/save-result', {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({ result: userResult })
-                });
-              }
-            }
+          // Use the name they entered on the naming screen
+          if (pendingUserName && userResult) {
+            userResult.name = pendingUserName;
+            localStorage.setItem('quiz-user-result', JSON.stringify(userResult));
+            // Update API with name
+            await fetch('/api/utopia/save-result', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ result: userResult })
+            });
           }
 
           // Create the utopia
