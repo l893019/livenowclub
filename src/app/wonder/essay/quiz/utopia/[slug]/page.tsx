@@ -172,7 +172,9 @@ export default async function UtopiaPage({ params }: Props) {
   }
 
   const { counts, missing, oneLiner } = analyzeGroup(room.members);
-  const shareUrl = `https://livenowclub.vercel.app/wonder/essay/quiz?join=${slug}`;
+  const creator = room.members.find(m => m.id === room.createdBy);
+  const creatorName = creator?.name || "Someone";
+  const shareUrl = `https://livenowclub.vercel.app/wonder/essay/quiz?join=${slug}&by=${encodeURIComponent(creatorName)}`;
   const shareText = `Build a utopia with me.`;
 
   // Sort archetypes by member count (most first)

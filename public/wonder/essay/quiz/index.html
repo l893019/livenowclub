@@ -1982,13 +1982,13 @@
           invitedBy: invitedBy
         }));
 
-        // Show invite banner
-        if (invitedBy) {
-          const banner = document.createElement('div');
-          banner.className = 'invite-banner';
-          banner.innerHTML = `<span>${invitedBy} invited you to join their utopia</span>`;
-          document.querySelector('.quiz-main').prepend(banner);
-        }
+        // Always show invite banner
+        const banner = document.createElement('div');
+        banner.className = 'invite-banner';
+        banner.innerHTML = invitedBy
+          ? `<span>${decodeURIComponent(invitedBy)} invited you to join their utopia</span>`
+          : `<span>Take the quiz to join this utopia</span>`;
+        document.querySelector('.quiz-main').prepend(banner);
       }
     }
 
@@ -2011,12 +2011,31 @@
     // Check for pending invite and auto-join
     async function checkAndJoinInvite() {
       const inviteData = sessionStorage.getItem('utopia-invite');
-      if (!inviteData || !userId) return;
+      if (!inviteData || !userId || !userResult) return;
+
+      // Need a name to join - prompt if missing
+      if (!userResult.name) {
+        const name = prompt('What should we call you?\n(So others can see who joined the utopia)');
+        if (!name || !name.trim()) {
+          sessionStorage.removeItem('utopia-invite');
+          return; // User cancelled
+        }
+        userResult.name = name.trim();
+        localStorage.setItem('quiz-user-result', JSON.stringify(userResult));
+      }
 
       try {
         const invite = JSON.parse(inviteData);
         sessionStorage.removeItem('utopia-invite');
 
+        // First save user to API
+        await fetch('/api/utopia/save-result', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ result: userResult })
+        });
+
+        // Then join the utopia
         const response = await fetch('/api/utopia/join', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

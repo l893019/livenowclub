@@ -2,13 +2,31 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ShareButton from "./ShareButton";
 
+// Map compatibility descriptions to archetype keys
+const compatibilityMap: Record<string, string> = {
+  "the one who wants to feel everything": "alive",
+  "the one who's watching for what's being hidden": "conscience",
+  "the one who craves difficulty": "friction",
+  "the one who chose stillness": "rooted",
+  "the one who guards what came before": "embers",
+  "the one who fixes what's broken": "mender",
+  "the one who left the body behind": "unbound",
+  "the one who lives in questions": "swimmer",
+  "the one who values presence above all": "presence",
+  "the one who builds collective structures": "architect",
+  "the one who can't stop building": "shaper",
+  "the one who tells the truth": "cleareyed",
+  "the one who's made peace with abundance": "citizen",
+  "the one still figuring it out": "between",
+};
+
 const archetypes: Record<string, {
   name: string;
   description: string;
   utopia: string;
   blindSpot: string;
   color: string;
-  books: { title: string; author: string }[];
+  books: { title: string; author: string; reason: string }[];
   compatibility: { ally: string; tension: string; need: string };
 }> = {
   citizen: {
@@ -18,9 +36,9 @@ const archetypes: Record<string, {
     blindSpot: "You sometimes mistake access for equity. Everyone having options is not the same as everyone being free.",
     color: "#3db9a4",
     books: [
-      { title: "The Player of Games", author: "Banks" },
-      { title: "Accelerando", author: "Stross" },
-      { title: "Down and Out in the Magic Kingdom", author: "Doctorow" }
+      { title: "The Player of Games", author: "Banks", reason: "The Culture at its most playful—a civilization where games become the highest art because survival has been solved." },
+      { title: "Accelerando", author: "Stross", reason: "What happens when abundance accelerates past human comprehension, and the economy becomes incomprehensible to its creators." },
+      { title: "Down and Out in the Magic Kingdom", author: "Doctorow", reason: "Post-scarcity as actually lived: messy, political, and still full of people trying to figure out what matters." }
     ],
     compatibility: {
       ally: "the one who wants to feel everything",
@@ -35,9 +53,9 @@ const archetypes: Record<string, {
     blindSpot: "You sometimes mistake movement for progress. Tearing something down and building something new can be its own form of running away.",
     color: "#f4a03f",
     books: [
-      { title: "Parable of the Sower", author: "Butler" },
-      { title: "Red Mars", author: "Robinson" },
-      { title: "The Diamond Age", author: "Stephenson" }
+      { title: "Parable of the Sower", author: "Butler", reason: "Building a new belief system from the ruins. Change as spiritual practice." },
+      { title: "Red Mars", author: "Robinson", reason: "Terraforming as philosophy—every technical choice is a political one, and the planet pushes back." },
+      { title: "The Diamond Age", author: "Stephenson", reason: "Education as revolution. The primer doesn't just teach—it transforms who you can become." }
     ],
     compatibility: {
       ally: "the one who craves difficulty",
@@ -52,9 +70,9 @@ const archetypes: Record<string, {
     blindSpot: "You sometimes love the system more than the people inside it. The meeting can become more important than what the meeting was for.",
     color: "#9b8fef",
     books: [
-      { title: "The Dispossessed", author: "Le Guin" },
-      { title: "Pacific Edge", author: "Robinson" },
-      { title: "Four Ways to Forgiveness", author: "Le Guin" }
+      { title: "The Dispossessed", author: "Le Guin", reason: "The ambiguous utopia. Anarchism as lived practice, with all its frustrations and freedoms." },
+      { title: "Pacific Edge", author: "Robinson", reason: "Utopia is zoning laws and water rights. The quiet work of making a good society actually function." },
+      { title: "Four Ways to Forgiveness", author: "Le Guin", reason: "Liberation is not a moment but a generation. The slow, painful work of building freedom after slavery." }
     ],
     compatibility: {
       ally: "the one who fixes what's broken",
@@ -69,9 +87,9 @@ const archetypes: Record<string, {
     blindSpot: "You sometimes use care as a way to avoid confrontation. Staying in the room is not always the brave choice. Sometimes the brave choice is leaving it.",
     color: "#e8178a",
     books: [
-      { title: "The Diamond Age", author: "Stephenson" },
-      { title: "Klara and the Sun", author: "Ishiguro" },
-      { title: "The Lifecycle of Software Objects", author: "Chiang" }
+      { title: "The Diamond Age", author: "Stephenson", reason: "A hired actress becomes a surrogate mother through a machine. Presence transmitted through technology but never replaced by it." },
+      { title: "Klara and the Sun", author: "Ishiguro", reason: "An AI friend who sees everything and is seen by almost no one. The quiet devastation of being present for someone who doesn't stay." },
+      { title: "The Lifecycle of Software Objects", author: "Chiang", reason: "Raising digital beings requires the same thing as raising children: showing up, year after year, when it's no longer novel." }
     ],
     compatibility: {
       ally: "the one who chose stillness",
@@ -86,9 +104,9 @@ const archetypes: Record<string, {
     blindSpot: "You can sit with a question so long that it becomes an excuse to never act. At some point, not-knowing becomes its own form of cowardice.",
     color: "#6b8fef",
     books: [
-      { title: "Solaris", author: "Lem" },
-      { title: "Blindsight", author: "Watts" },
-      { title: "Story of Your Life", author: "Chiang" }
+      { title: "Solaris", author: "Lem", reason: "An ocean that may be conscious but refuses to be understood. Contact as permanent mystery." },
+      { title: "Blindsight", author: "Watts", reason: "What if consciousness is a bug, not a feature? The deepest questions have no comfortable answers." },
+      { title: "Story of Your Life", author: "Chiang", reason: "Learning an alien language that reveals time differently. Knowing the ending doesn't diminish the living." }
     ],
     compatibility: {
       ally: "the one who left the body behind",
@@ -103,9 +121,9 @@ const archetypes: Record<string, {
     blindSpot: "Your stillness can look a lot like withdrawal to the people who need you. Choosing to stop is a luxury not everyone can afford.",
     color: "#7ed6a4",
     books: [
-      { title: "A Psalm for the Wild-Built", author: "Chambers" },
-      { title: "Always Coming Home", author: "Le Guin" },
-      { title: "Piranesi", author: "Clarke" }
+      { title: "A Psalm for the Wild-Built", author: "Chambers", reason: "A monk and a robot ask what we're for. The answer might be: nothing, and that's okay." },
+      { title: "Always Coming Home", author: "Le Guin", reason: "A civilization that chose not to progress. The anthropology of people who stayed put." },
+      { title: "Piranesi", author: "Clarke", reason: "A man who has forgotten the world and found peace in a house with no exit. Presence without purpose." }
     ],
     compatibility: {
       ally: "the one who values presence above all",
@@ -120,9 +138,9 @@ const archetypes: Record<string, {
     blindSpot: "You can become so focused on what's wrong that you forget to notice what's working. Permanent suspicion is its own kind of prison.",
     color: "#d64545",
     books: [
-      { title: "1984", author: "Orwell" },
-      { title: "Brave New World", author: "Huxley" },
-      { title: "The Handmaid's Tale", author: "Atwood" }
+      { title: "1984", author: "Orwell", reason: "The nightmare that taught us to recognize the signs. Big Brother wasn't a prediction—it was a warning." },
+      { title: "Brave New World", author: "Huxley", reason: "The dystopia that seduces. Comfort as control. The soma we choose over the truth we can't bear." },
+      { title: "The Handmaid's Tale", author: "Atwood", reason: "Everything in this book has happened somewhere. The power of witness against forgetting." }
     ],
     compatibility: {
       ally: "the one who tells the truth",
@@ -137,9 +155,9 @@ const archetypes: Record<string, {
     blindSpot: "You can love what was so deeply that you become hostile to what could be. The archive becomes a fortress. The past becomes an identity.",
     color: "#c97d3a",
     books: [
-      { title: "A Canticle for Leibowitz", author: "Miller" },
-      { title: "Always Coming Home", author: "Le Guin" },
-      { title: "Parable of the Talents", author: "Butler" }
+      { title: "A Canticle for Leibowitz", author: "Miller", reason: "Monks preserving fragments of knowledge through a dark age. Memory as sacred duty." },
+      { title: "Always Coming Home", author: "Le Guin", reason: "A future that remembers how to live. The Kesh didn't lose the old ways—they chose them." },
+      { title: "Parable of the Talents", author: "Butler", reason: "Building a religion from what survives. The ember that becomes a fire." }
     ],
     compatibility: {
       ally: "the one who builds collective structures",
@@ -154,9 +172,9 @@ const archetypes: Record<string, {
     blindSpot: "You can mistake difficulty for meaning. Not everything that's hard is worth doing. Sometimes the easy path is the right one and you can't accept that.",
     color: "#ff6b35",
     books: [
-      { title: "The Stars My Destination", author: "Bester" },
-      { title: "The Moon Is a Harsh Mistress", author: "Heinlein" },
-      { title: "The Evolutionary Void", author: "Hamilton" }
+      { title: "The Stars My Destination", author: "Bester", reason: "Revenge as rocket fuel. A man who burns through every obstacle because stopping would mean facing himself." },
+      { title: "The Moon Is a Harsh Mistress", author: "Heinlein", reason: "Revolution as engineering problem. Free people building freedom from scratch, with math." },
+      { title: "The Evolutionary Void", author: "Hamilton", reason: "Post-human and still striving. Even with god-like powers, there's always another frontier." }
     ],
     compatibility: {
       ally: "the one who can't stop building",
@@ -171,9 +189,9 @@ const archetypes: Record<string, {
     blindSpot: "You left so much behind that you may not recognize what was worth keeping until it's too late. Evolution without memory is just forgetting with better marketing.",
     color: "#a855f7",
     books: [
-      { title: "Childhood's End", author: "Clarke" },
-      { title: "Diaspora", author: "Egan" },
-      { title: "The Hydrogen Sonata", author: "Banks" }
+      { title: "Childhood's End", author: "Clarke", reason: "The last generation of humans watches their children become something unrecognizable. Evolution as transcendence and loss." },
+      { title: "Diaspora", author: "Egan", reason: "Minds running on quantum computers, exploring mathematical universes. What's left when the body is optional?" },
+      { title: "The Hydrogen Sonata", author: "Banks", reason: "A civilization preparing to Sublime—to leave the material universe entirely. The party at the end of history." }
     ],
     compatibility: {
       ally: "the one who lives in questions",
@@ -188,9 +206,9 @@ const archetypes: Record<string, {
     blindSpot: "Sensation can become consumption. Feeling everything is not the same as understanding anything. The twelfth sense doesn't help if the first five are numb from overuse.",
     color: "#f472b6",
     books: [
-      { title: "Surface Detail", author: "Banks" },
-      { title: "Trouble on Triton", author: "Delany" },
-      { title: "Schismatrix Plus", author: "Sterling" }
+      { title: "Surface Detail", author: "Banks", reason: "Virtual heavens and hells. The Culture debates whether experience without consequence still counts." },
+      { title: "Trouble on Triton", author: "Delany", reason: "Change your body, your gender, your neighborhood, your self. Freedom as endless reconfiguration." },
+      { title: "Schismatrix Plus", author: "Sterling", reason: "Humanity splinters into a thousand experiments. Every faction trying to feel more, differently, longer." }
     ],
     compatibility: {
       ally: "the one who's made peace with abundance",
@@ -205,9 +223,9 @@ const archetypes: Record<string, {
     blindSpot: "You can become so focused on repair that you miss when something needs to die. Not everything should be saved. Some things are broken because they should be.",
     color: "#10b981",
     books: [
-      { title: "The Ministry for the Future", author: "Robinson" },
-      { title: "New York 2140", author: "Robinson" },
-      { title: "Station Eleven", author: "Mandel" }
+      { title: "The Ministry for the Future", author: "Robinson", reason: "Climate repair as political thriller. Every chapter a different tool for fixing what we broke." },
+      { title: "New York 2140", author: "Robinson", reason: "The city floods and people stay anyway. Adaptation as stubborn hope." },
+      { title: "Station Eleven", author: "Mandel", reason: "After collapse, someone has to remember Shakespeare. Art as repair of the spirit." }
     ],
     compatibility: {
       ally: "the one who builds collective structures",
@@ -222,9 +240,9 @@ const archetypes: Record<string, {
     blindSpot: "Honesty without tenderness is cruelty. You can see everything clearly and still miss the most important thing in the room, which is how your truth lands on the person hearing it.",
     color: "#64748b",
     books: [
-      { title: "Slaughterhouse-Five", author: "Vonnegut" },
-      { title: "His Master's Voice", author: "Lem" },
-      { title: "The Road", author: "McCarthy" }
+      { title: "Slaughterhouse-Five", author: "Vonnegut", reason: "So it goes. The only honest response to war is to say what happened and not look away." },
+      { title: "His Master's Voice", author: "Lem", reason: "Scientists trying to decode an alien message and mostly decoding their own limitations." },
+      { title: "The Road", author: "McCarthy", reason: "No hope, no rescue, no meaning—just a father and son walking. The truth stripped to bone." }
     ],
     compatibility: {
       ally: "the one who's watching for what's being hidden",
@@ -239,9 +257,9 @@ const archetypes: Record<string, {
     blindSpot: "The space between can become a permanent address. At some point, not knowing what you are becomes a way of avoiding the risk of choosing.",
     color: "#8b8b8b",
     books: [
-      { title: "Never Let Me Go", author: "Ishiguro" },
-      { title: "Station Eleven", author: "Mandel" },
-      { title: "The Left Hand of Darkness", author: "Le Guin" }
+      { title: "Never Let Me Go", author: "Ishiguro", reason: "Knowing your fate doesn't prepare you for it. The space between knowledge and acceptance." },
+      { title: "Station Eleven", author: "Mandel", reason: "The before and the after, and the people caught in the middle trying to remember who they were." },
+      { title: "The Left Hand of Darkness", author: "Le Guin", reason: "An envoy on a world without gender, learning that everything he knew was local. The space between cultures." }
     ],
     compatibility: {
       ally: "the one who guards what came before",
@@ -474,6 +492,7 @@ export default async function QuizResultPage({ searchParams }: Props) {
         }
         .books-section {
           margin-bottom: 48px;
+          max-width: 520px;
         }
         .books-label {
           font-size: 11px;
@@ -486,15 +505,101 @@ export default async function QuizResultPage({ searchParams }: Props) {
         .books-list {
           display: flex;
           flex-direction: column;
-          gap: 8px;
+          gap: 20px;
         }
         .book-item {
+          text-align: left;
+          padding: 16px 20px;
+          background: white;
+          border-radius: 12px;
+          box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+        .book-header {
           font-size: 1rem;
           color: var(--text-dim);
+          margin-bottom: 8px;
         }
         .book-title {
           font-style: italic;
           color: var(--text);
+          font-weight: 400;
+        }
+        .book-reason {
+          font-size: 0.9rem;
+          color: var(--text-dim);
+          line-height: 1.6;
+        }
+        .carousel-section {
+          margin-bottom: 48px;
+          width: 100%;
+          max-width: 800px;
+        }
+        .carousel-label {
+          font-size: 11px;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.15em;
+          color: var(--text-muted);
+          margin-bottom: 16px;
+          text-align: center;
+        }
+        .carousel-container {
+          display: flex;
+          gap: 16px;
+          overflow-x: auto;
+          padding: 8px 0 16px;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+        }
+        .carousel-container::-webkit-scrollbar {
+          display: none;
+        }
+        .carousel-card {
+          flex: 0 0 200px;
+          scroll-snap-align: start;
+          background: white;
+          border-radius: 12px;
+          padding: 20px;
+          text-decoration: none;
+          box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+          transition: all 0.3s;
+          border: 2px solid transparent;
+        }
+        .carousel-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        .carousel-card-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          margin-bottom: 12px;
+        }
+        .carousel-card-name {
+          font-size: 0.95rem;
+          font-weight: 500;
+          color: var(--text);
+          margin-bottom: 8px;
+          line-height: 1.3;
+        }
+        .carousel-card-utopia {
+          font-size: 0.8rem;
+          color: var(--text-dim);
+          line-height: 1.5;
+          font-style: italic;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .compatibility-link {
+          color: var(--text);
+          text-decoration: none;
+          transition: color 0.2s;
+        }
+        .compatibility-link:hover {
+          color: var(--accent-pink);
         }
         .actions {
           display: flex;
@@ -614,15 +719,27 @@ export default async function QuizResultPage({ searchParams }: Props) {
           <div className="compatibility-label">Your Connections</div>
           <div className="compatibility-item">
             <div className="compatibility-type">Your natural ally</div>
-            <div className="compatibility-text">{data.compatibility.ally}</div>
+            <div className="compatibility-text">
+              <Link href={`/wonder/essay/quiz/result?a=${compatibilityMap[data.compatibility.ally]}`} className="compatibility-link">
+                {archetypes[compatibilityMap[data.compatibility.ally]]?.name || data.compatibility.ally}
+              </Link>
+            </div>
           </div>
           <div className="compatibility-item">
             <div className="compatibility-type">Your tension</div>
-            <div className="compatibility-text">{data.compatibility.tension}</div>
+            <div className="compatibility-text">
+              <Link href={`/wonder/essay/quiz/result?a=${compatibilityMap[data.compatibility.tension]}`} className="compatibility-link">
+                {archetypes[compatibilityMap[data.compatibility.tension]]?.name || data.compatibility.tension}
+              </Link>
+            </div>
           </div>
           <div className="compatibility-item">
             <div className="compatibility-type">Your secret need</div>
-            <div className="compatibility-text">{data.compatibility.need}</div>
+            <div className="compatibility-text">
+              <Link href={`/wonder/essay/quiz/result?a=${compatibilityMap[data.compatibility.need]}`} className="compatibility-link">
+                {archetypes[compatibilityMap[data.compatibility.need]]?.name || data.compatibility.need}
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -631,9 +748,31 @@ export default async function QuizResultPage({ searchParams }: Props) {
           <div className="books-list">
             {data.books.map((book, i) => (
               <div key={i} className="book-item">
-                <span className="book-title">{book.title}</span> ({book.author})
+                <div className="book-header">
+                  <span className="book-title">{book.title}</span> ({book.author})
+                </div>
+                <div className="book-reason">{book.reason}</div>
               </div>
             ))}
+          </div>
+        </div>
+
+        <div className="carousel-section">
+          <div className="carousel-label">Explore Other Utopias</div>
+          <div className="carousel-container">
+            {Object.entries(archetypes)
+              .filter(([key]) => key !== archetypeKey)
+              .map(([key, archetype]) => (
+                <Link
+                  key={key}
+                  href={`/wonder/essay/quiz/result?a=${key}`}
+                  className="carousel-card"
+                >
+                  <div className="carousel-card-dot" style={{ background: archetype.color }} />
+                  <div className="carousel-card-name">{archetype.name}</div>
+                  <div className="carousel-card-utopia">{archetype.utopia}</div>
+                </Link>
+              ))}
           </div>
         </div>
 
