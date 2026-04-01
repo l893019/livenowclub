@@ -295,8 +295,8 @@ export default function NavigateCancerPage() {
         {/* All Cancer Writing - Chronological Timeline */}
         <section className="journey-section">
           <div className="journey-header">
-            <h2>The Full Journey</h2>
-            <p>{allCancerEssays.length} pieces, oldest to newest</p>
+            <h2>From the Start</h2>
+            <p>from diagnosis to now</p>
           </div>
           <div className="journey-timeline">
             {allCancerEssays.map((essay, index) => {
