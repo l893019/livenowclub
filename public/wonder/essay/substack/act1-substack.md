@@ -1,10 +1,10 @@
-# After Abundance: What Do We Search For When We Have Everything?
+# After Abundance: What Do You Do When You No Longer Have to Do Anything?
 
 *What 208 science fiction books reveal about meaning when scarcity ends.*
 
 ---
 
-There is a perverse weight to having everything.
+Freedom, it turns out, is the hard part.
 
 I often think about how "freedom from" is not the same as "freedom to". Freed from constraints, free from excuses, free from anything that had theoretically been holding you back, how do you even begin to understand what you want at your core?
 
