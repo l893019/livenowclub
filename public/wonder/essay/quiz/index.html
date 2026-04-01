@@ -330,6 +330,71 @@
       box-shadow: 0 8px 30px rgba(232, 23, 138, 0.3);
     }
 
+    /* NAME YOUR UTOPIA SCREEN */
+    .name-content {
+      text-align: center;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .name-label {
+      font-size: clamp(1.6rem, 4vw, 2rem);
+      font-weight: 300;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .name-subtitle {
+      font-size: 1rem;
+      color: var(--text-dim);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .name-input-wrapper {
+      margin-bottom: 32px;
+    }
+    .utopia-name-input {
+      width: 100%;
+      padding: 16px 20px;
+      font-size: 1.1rem;
+      font-family: var(--sans);
+      font-weight: 400;
+      border: 2px solid rgba(0,0,0,0.1);
+      border-radius: 8px;
+      background: white;
+      color: var(--text);
+      text-align: center;
+      transition: border-color 0.2s;
+    }
+    .utopia-name-input:focus {
+      outline: none;
+      border-color: var(--accent-pink);
+    }
+    .utopia-name-input::placeholder {
+      color: var(--text-muted);
+    }
+    .name-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+    .name-actions .start-btn {
+      opacity: 1;
+      animation: none;
+    }
+    .skip-btn {
+      background: none;
+      border: none;
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 8px 16px;
+      transition: color 0.2s;
+    }
+    .skip-btn:hover {
+      color: var(--accent-pink);
+    }
+
     /* QUESTION SCREEN */
     .question-header {
       text-align: center;
@@ -1152,7 +1217,22 @@
           <div class="intro-label">Interactive</div>
           <h1 class="intro-title">Discover Your Sci-Fi Worldview & Build Your Own Utopia</h1>
           <p class="intro-subtitle">Fourteen worldviews drawn from 200+ science fiction books. Which one is yours?</p>
-          <button class="start-btn" onclick="startQuiz()">Begin</button>
+          <button class="start-btn" onclick="showNamingScreen()">Begin</button>
+        </div>
+      </div>
+
+      <!-- NAME YOUR UTOPIA -->
+      <div class="screen" id="screen-name">
+        <div class="name-content">
+          <div class="name-label">First, name your utopia</div>
+          <p class="name-subtitle">You'll invite others to join after you discover your worldview.</p>
+          <div class="name-input-wrapper">
+            <input type="text" id="utopia-name-input" class="utopia-name-input" placeholder="e.g., The Abundant Commons" maxlength="50" />
+          </div>
+          <div class="name-actions">
+            <button class="start-btn" onclick="startQuizWithName()">Continue</button>
+            <button class="skip-btn" onclick="startQuizWithoutName()">Skip — I just want my result</button>
+          </div>
         </div>
       </div>
 
@@ -1786,6 +1866,7 @@
     // User identity
     let userId = localStorage.getItem('quiz-user-id');
     let userResult = null;
+    let pendingUtopiaName = null; // Name for utopia to create after quiz
     try {
       const stored = localStorage.getItem('quiz-user-result');
       if (stored) userResult = JSON.parse(stored);
@@ -1811,6 +1892,30 @@
       document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
       document.getElementById(id).classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showNamingScreen() {
+      // Check if there's a join invite - if so, skip naming (they're joining, not creating)
+      const inviteData = sessionStorage.getItem('utopia-invite');
+      if (inviteData) {
+        startQuiz();
+        return;
+      }
+      showScreen('screen-name');
+    }
+
+    function startQuizWithName() {
+      const nameInput = document.getElementById('utopia-name-input');
+      const name = nameInput.value.trim();
+      if (name) {
+        pendingUtopiaName = name;
+      }
+      startQuiz();
+    }
+
+    function startQuizWithoutName() {
+      pendingUtopiaName = null;
+      startQuiz();
     }
 
     function startQuiz() {
@@ -2041,7 +2146,48 @@
         }
       }
 
-      // No invite or join failed - go to regular result page
+      // Check if they named a utopia to create
+      if (pendingUtopiaName && userId) {
+        try {
+          // Need a name to create utopia - prompt if missing
+          if (!userResult || !userResult.name) {
+            const name = prompt('What should we call you?\n(So others can see who founded the utopia)');
+            if (name && name.trim()) {
+              if (userResult) {
+                userResult.name = name.trim();
+                localStorage.setItem('quiz-user-result', JSON.stringify(userResult));
+                // Update API with name
+                await fetch('/api/utopia/save-result', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ result: userResult })
+                });
+              }
+            }
+          }
+
+          // Create the utopia
+          const response = await fetch('/api/utopia/create', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              userId,
+              customName: pendingUtopiaName
+            })
+          });
+
+          const data = await response.json();
+          if (data.success && data.room) {
+            // Redirect to utopia page
+            window.location.href = `/wonder/essay/quiz/utopia/${data.room.slug}`;
+            return;
+          }
+        } catch (error) {
+          console.error('Failed to create utopia:', error);
+        }
+      }
+
+      // No invite, no utopia name, or creation failed - go to regular result page
       window.location.href = `/wonder/essay/quiz/result?a=${primary}&s=${shadow}`;
     }
 
