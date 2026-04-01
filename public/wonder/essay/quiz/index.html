@@ -1296,7 +1296,13 @@
 
           <div class="result-books">
             <div class="result-books-title">Read Next</div>
+            <p class="result-books-why" id="resultBooksWhy"></p>
             <ul class="result-books-list" id="resultBooks"></ul>
+          </div>
+
+          <div class="other-utopias">
+            <div class="other-utopias-title">Explore Other Utopias</div>
+            <div class="utopias-grid" id="utopiasGrid"></div>
           </div>
 
           <div class="result-actions">
@@ -1332,6 +1338,29 @@
       </nav>
       <p class="footer-copy">&copy; 2025 Louise Ireland</p>
     </footer>
+  </div>
+
+  <!-- UTOPIA DETAIL MODAL -->
+  <div class="utopia-detail-overlay" id="utopiaDetailOverlay" onclick="closeUtopiaDetail()">
+    <div class="utopia-detail-modal" onclick="event.stopPropagation()">
+      <button class="utopia-detail-close" onclick="closeUtopiaDetail()" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <img class="utopia-detail-image" id="utopiaDetailImage" src="" alt="">
+      <div class="utopia-detail-content">
+        <h3 class="utopia-detail-name" id="utopiaDetailName"></h3>
+        <div class="utopia-detail-label">Their Utopia</div>
+        <p class="utopia-detail-text" id="utopiaDetailText"></p>
+        <p class="utopia-detail-desc" id="utopiaDetailDesc"></p>
+        <div class="utopia-detail-books">
+          <div class="utopia-detail-books-title">They Read</div>
+          <ul class="utopia-detail-books-list" id="utopiaDetailBooks"></ul>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -1512,6 +1541,7 @@
         description: "You don't need a reason. You need a body, a world, and enough time. Change your form, change your perspective, taste every experience, climb every mountain, love every person who'll have you, and when you've done all of it, start again. The universe gave you everything. The least you can do is feel it. You suspect that most philosophies of meaning are elaborate ways of avoiding pleasure.",
         utopia: "Your utopia engineered twelve new senses and a sunset that lasts all day.",
         blindSpot: "Sensation can become consumption. Feeling everything is not the same as understanding anything. The twelfth sense doesn't help if the first five are numb from overuse.",
+        bookReasoning: "These books are sensory feasts. They explore civilizations where experience is the currency, where bodies and identities are endlessly malleable, and where the point of living is to feel everything possible.",
         books: [
           { title: "Surface Detail", author: "Banks" },
           { title: "Trouble on Triton", author: "Delany" },
@@ -1528,6 +1558,7 @@
         description: "You look at the stars and feel nothing pulling you toward them. The work is here. The soil, the water, the damaged systems, the fraying relationships. While everyone else is building arks and uploading their consciousness, you're fixing the thing in front of you. The most radical act in an age of acceleration is to stay, to repair, to solve the specific problem that no one else cares about. The future is the next thing that needs doing.",
         utopia: "Your utopia decided that the most advanced act of engineering was making what already existed work again instead of building something new.",
         blindSpot: "You can become so focused on repair that you miss when something needs to die. Not everything should be saved. Some things are broken because they should be.",
+        bookReasoning: "These books are about staying. They feature characters who don't leave for the stars or upload to the cloud—they fix what's broken, tend what remains, and find meaning in the specific and local.",
         books: [
           { title: "The Ministry for the Future", author: "Robinson" },
           { title: "New York 2140", author: "Robinson" },
@@ -1544,6 +1575,7 @@
         description: "You have one job: to see what is actually happening and say it out loud. The version that's true. The one that makes people uncomfortable. Most people don't want this from you. Civilizations survive by the quality of their honest observers, though, and collapse when the honest observers go quiet. You won't be the one who goes quiet.",
         utopia: "Your utopia has one person whose only job is to tell the truth. They answer to no one. They are the most feared and most respected person in the civilization.",
         blindSpot: "Honesty without tenderness is cruelty. You can see everything clearly and still miss the most important thing in the room, which is how your truth lands on the person hearing it.",
+        bookReasoning: "These books refuse to look away. Their authors write the uncomfortable truth without softening it, documenting what is actually happening with brutal clarity and hard-won compassion.",
         books: [
           { title: "Slaughterhouse-Five", author: "Vonnegut" },
           { title: "His Master's Voice", author: "Lem" },
@@ -1560,6 +1592,7 @@
         description: "This isn't a philosophy you chose. It's a condition you're living in. The old world shifted and left you standing in a place you don't recognize. You're figuring out how to breathe in a room with no familiar walls. Everyone else on this list has a position. You have a question. And you're still here, which might be the bravest thing on this list.",
         utopia: "Your utopia just started to exist. Nothing is built yet. It's the beginning of an idea.",
         blindSpot: "The space between can become a permanent address. At some point, not knowing what you are becomes a way of avoiding the risk of choosing.",
+        bookReasoning: "These books know what it feels like to lose a world. Their characters navigate transitions without maps, living in the space between what was and what might be. They understand that not-knowing is its own kind of journey.",
         books: [
           { title: "Never Let Me Go", author: "Ishiguro" },
           { title: "Station Eleven", author: "Mandel" },
@@ -1831,10 +1864,27 @@
       document.getElementById('compatNeed').textContent = data.compatibility.need.desc;
       document.getElementById('compatNeedName').textContent = archetypes[data.compatibility.need.key].name;
 
+      // Book reasoning
+      document.getElementById('resultBooksWhy').textContent = data.bookReasoning;
+
       const booksList = document.getElementById('resultBooks');
       booksList.innerHTML = data.books.map(book =>
         `<li><span class="book-title">${book.title}</span><span class="book-author">${book.author}</span></li>`
       ).join('');
+
+      // Populate other utopias grid
+      const utopiasGrid = document.getElementById('utopiasGrid');
+      utopiasGrid.innerHTML = archetypeKeys
+        .filter(key => key !== primary) // Exclude the user's own result
+        .map(key => {
+          const arch = archetypes[key];
+          return `
+            <div class="utopia-mini-card" onclick="openUtopiaDetail('${key}')">
+              <img class="utopia-mini-image" src="/wonder/essay/quiz/images/utopia-${key}.png" alt="${arch.name}" loading="lazy">
+              <div class="utopia-mini-name">${arch.name}</div>
+            </div>
+          `;
+        }).join('');
 
       window.quizResult = data;
       window.quizResultKey = primary;
@@ -1977,6 +2027,37 @@
         console.error('Failed to join utopia:', error);
       }
     }
+
+    // Utopia detail modal functions
+    function openUtopiaDetail(key) {
+      const arch = archetypes[key];
+      if (!arch) return;
+
+      document.getElementById('utopiaDetailImage').src = `/wonder/essay/quiz/images/utopia-${key}.png`;
+      document.getElementById('utopiaDetailName').textContent = arch.name;
+      document.getElementById('utopiaDetailText').textContent = arch.utopia;
+      document.getElementById('utopiaDetailDesc').textContent = arch.description;
+
+      const booksList = document.getElementById('utopiaDetailBooks');
+      booksList.innerHTML = arch.books.map(book =>
+        `<li><span class="book-title">${book.title}</span><span class="book-author">${book.author}</span></li>`
+      ).join('');
+
+      document.getElementById('utopiaDetailOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeUtopiaDetail() {
+      document.getElementById('utopiaDetailOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeUtopiaDetail();
+      }
+    });
 
     // Initialize on page load
     document.addEventListener('DOMContentLoaded', () => {
