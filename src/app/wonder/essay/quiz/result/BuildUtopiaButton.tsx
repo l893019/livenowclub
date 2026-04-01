@@ -45,17 +45,12 @@ export default function BuildUtopiaButton({ archetypeKey }: BuildUtopiaButtonPro
   };
 
   return (
-    <div className="build-utopia-section">
-      <p className="build-utopia-desc">
-        See how your worldviews combine with family, friends, or coworkers
-      </p>
-      <button
-        onClick={handleBuildUtopia}
-        disabled={isLoading}
-        className="btn btn-primary"
-      >
-        {isLoading ? "Creating..." : "Build a Shared Utopia"}
-      </button>
-    </div>
+    <button
+      onClick={handleBuildUtopia}
+      disabled={isLoading}
+      className="btn btn-primary"
+    >
+      {isLoading ? "Creating..." : "Create Shared Utopia"}
+    </button>
   );
 }

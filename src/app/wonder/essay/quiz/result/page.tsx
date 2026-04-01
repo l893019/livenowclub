@@ -541,70 +541,6 @@ export default async function QuizResultPage({ searchParams }: Props) {
         .book-link:hover {
           opacity: 0.7;
         }
-        .carousel-section {
-          margin-bottom: 48px;
-          width: 100%;
-          max-width: 800px;
-        }
-        .carousel-label {
-          font-size: 11px;
-          font-weight: 500;
-          text-transform: uppercase;
-          letter-spacing: 0.15em;
-          color: var(--text-muted);
-          margin-bottom: 16px;
-          text-align: center;
-        }
-        .carousel-container {
-          display: flex;
-          gap: 16px;
-          overflow-x: auto;
-          padding: 8px 0 16px;
-          scroll-snap-type: x mandatory;
-          -webkit-overflow-scrolling: touch;
-          scrollbar-width: none;
-        }
-        .carousel-container::-webkit-scrollbar {
-          display: none;
-        }
-        .carousel-card {
-          flex: 0 0 200px;
-          scroll-snap-align: start;
-          background: white;
-          border-radius: 12px;
-          padding: 20px;
-          text-decoration: none;
-          box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-          transition: all 0.3s;
-          border: 2px solid transparent;
-        }
-        .carousel-card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-        }
-        .carousel-card-dot {
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          margin-bottom: 12px;
-        }
-        .carousel-card-name {
-          font-size: 0.95rem;
-          font-weight: 500;
-          color: var(--text);
-          margin-bottom: 8px;
-          line-height: 1.3;
-        }
-        .carousel-card-utopia {
-          font-size: 0.8rem;
-          color: var(--text-dim);
-          line-height: 1.5;
-          font-style: italic;
-          display: -webkit-box;
-          -webkit-line-clamp: 3;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
         .compatibility-link {
           color: var(--text);
           text-decoration: none;
@@ -613,122 +549,55 @@ export default async function QuizResultPage({ searchParams }: Props) {
         .compatibility-link:hover {
           color: var(--accent-pink);
         }
-        .shadow-section {
-          max-width: 520px;
-          margin-bottom: 40px;
-          border: 1px solid rgba(0,0,0,0.08);
-          border-radius: 16px;
-          overflow: hidden;
-        }
-        .shadow-header {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          padding: 20px 24px;
-          background: rgba(0,0,0,0.02);
-          border-bottom: 1px solid rgba(0,0,0,0.06);
-        }
-        .shadow-dot {
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
-          flex-shrink: 0;
-        }
-        .shadow-header-text {
-          display: flex;
-          flex-direction: column;
-          gap: 2px;
-        }
-        .shadow-label {
-          font-size: 10px;
-          font-weight: 500;
-          text-transform: uppercase;
-          letter-spacing: 0.1em;
-          color: var(--text-muted);
-        }
-        .shadow-name {
-          font-size: 1.1rem;
-          font-weight: 400;
-          color: var(--text);
-        }
-        .shadow-content {
-          padding: 20px 24px;
-        }
-        .shadow-description {
-          font-size: 0.9rem;
-          color: var(--text-dim);
-          line-height: 1.7;
-          margin-bottom: 16px;
-          font-style: italic;
-        }
-        .shadow-utopia {
-          font-size: 0.85rem;
-          color: var(--text-dim);
-          line-height: 1.6;
-          padding: 12px 16px;
-          background: rgba(0,0,0,0.02);
-          border-radius: 8px;
-          margin-bottom: 16px;
-        }
-        .shadow-utopia-label {
-          font-size: 9px;
-          font-weight: 500;
-          text-transform: uppercase;
-          letter-spacing: 0.1em;
-          color: var(--text-muted);
-          margin-bottom: 4px;
-        }
-        .shadow-link {
-          display: inline-block;
-          font-size: 0.85rem;
-          color: var(--accent-pink);
-          text-decoration: none;
-          transition: opacity 0.2s;
-        }
-        .shadow-link:hover {
-          opacity: 0.7;
-        }
-        .newsletter-section {
-          max-width: 480px;
+        .cta-primary {
           margin-bottom: 48px;
-          padding: 32px;
-          background: white;
-          border-radius: 16px;
-          box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+        }
+        .cta-secondary {
+          max-width: 400px;
+          margin-bottom: 48px;
           text-align: center;
         }
-        .newsletter-title {
+        .cta-secondary-title {
           font-size: 1.1rem;
-          font-weight: 400;
+          font-weight: 500;
           color: var(--text);
           margin-bottom: 8px;
         }
-        .newsletter-desc {
+        .cta-secondary-desc {
+          font-size: 0.95rem;
+          color: var(--text-dim);
+          line-height: 1.6;
+          margin-bottom: 20px;
+        }
+        .cta-tertiary {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          margin-bottom: 48px;
+        }
+        .cta-link {
+          font-size: 0.95rem;
+          color: var(--text-dim);
+          text-decoration: none;
+          transition: color 0.2s;
+        }
+        .cta-link:hover {
+          color: var(--accent-pink);
+        }
+        .cta-divider {
+          color: var(--text-muted);
+        }
+        .footer-newsletter {
+          margin-bottom: 24px;
+        }
+        .footer-newsletter a {
           font-size: 0.9rem;
           color: var(--text-dim);
-          margin-bottom: 20px;
-          line-height: 1.6;
-        }
-        .newsletter-btn {
-          display: inline-block;
-          padding: 12px 24px;
-          background: var(--accent-pink);
-          color: white;
-          font-size: 14px;
-          font-weight: 500;
           text-decoration: none;
-          border-radius: 50px;
-          transition: all 0.3s;
+          transition: color 0.2s;
         }
-        .newsletter-btn:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(232,23,138,0.3);
-        }
-        .actions {
-          display: flex;
-          gap: 16px;
-          flex-wrap: wrap;
-          justify-content: center;
+        .footer-newsletter a:hover {
+          color: var(--accent-pink);
         }
         .btn {
           display: inline-flex;
@@ -764,59 +633,6 @@ export default async function QuizResultPage({ searchParams }: Props) {
         .btn-primary:disabled {
           opacity: 0.6;
           cursor: not-allowed;
-        }
-        .build-utopia-section {
-          max-width: 480px;
-          margin-bottom: 48px;
-          text-align: center;
-        }
-        .build-utopia-desc {
-          font-size: 1rem;
-          color: var(--text-dim);
-          margin-bottom: 16px;
-        }
-        .go-deeper {
-          max-width: 480px;
-          margin-bottom: 48px;
-        }
-        .go-deeper-title {
-          font-size: 11px;
-          font-weight: 500;
-          text-transform: uppercase;
-          letter-spacing: 0.15em;
-          color: var(--text-muted);
-          margin-bottom: 16px;
-          text-align: center;
-        }
-        .go-deeper-links {
-          display: flex;
-          flex-direction: column;
-          gap: 12px;
-        }
-        .go-deeper-link {
-          display: block;
-          background: white;
-          border: 1px solid rgba(0,0,0,0.08);
-          border-radius: 12px;
-          padding: 16px 20px;
-          text-decoration: none;
-          transition: all 0.25s ease;
-        }
-        .go-deeper-link:hover {
-          border-color: var(--accent-pink);
-          transform: translateX(4px);
-        }
-        .go-deeper-link-title {
-          display: block;
-          font-size: 1rem;
-          font-weight: 500;
-          color: var(--text);
-          margin-bottom: 4px;
-        }
-        .go-deeper-link-sub {
-          display: block;
-          font-size: 0.85rem;
-          color: var(--text-muted);
         }
         .footer {
           padding: 60px 24px;
@@ -874,8 +690,8 @@ export default async function QuizResultPage({ searchParams }: Props) {
       <main className="result-container">
         <div className="result-label">Your Archetype</div>
         <h1 className="result-name">{data.name}</h1>
-        {shadowData && (
-          <p className="result-shadow">with shades of <span style={{ color: shadowData.color, fontStyle: 'italic' }}>{shadowData.name}</span></p>
+        {shadowData && shadowKey && (
+          <p className="result-shadow">with shades of <Link href={`/wonder/essay/quiz/result?a=${shadowKey}`} style={{ color: shadowData.color, fontStyle: 'italic', textDecoration: 'none' }}>{shadowData.name}</Link></p>
         )}
 
         <ScoreBreakdown currentArchetype={archetypeKey} />
@@ -897,29 +713,6 @@ export default async function QuizResultPage({ searchParams }: Props) {
           <p className="blind-spot-text">{data.blindSpot}</p>
         </div>
 
-        {shadowData && shadowKey && (
-          <div className="shadow-section">
-            <div className="shadow-header">
-              <div className="shadow-dot" style={{ background: shadowData.color }} />
-              <div className="shadow-header-text">
-                <div className="shadow-label">Your Shadow</div>
-                <div className="shadow-name">{shadowData.name}</div>
-              </div>
-            </div>
-            <div className="shadow-content">
-              <p className="shadow-description">
-                Your shadow side.
-              </p>
-              <div className="shadow-utopia">
-                <div className="shadow-utopia-label">Their Utopia</div>
-                {shadowData.utopia}
-              </div>
-              <Link href={`/wonder/essay/quiz/result?a=${shadowKey}`} className="shadow-link">
-                Explore this archetype →
-              </Link>
-            </div>
-          </div>
-        )}
 
         <div className="compatibility">
           <div className="compatibility-label">Your Connections</div>
@@ -971,66 +764,33 @@ export default async function QuizResultPage({ searchParams }: Props) {
           </div>
         </div>
 
-        <div className="carousel-section">
-          <div className="carousel-label">Explore Other Utopias</div>
-          <div className="carousel-container">
-            {Object.entries(archetypes)
-              .filter(([key]) => key !== archetypeKey)
-              .map(([key, archetype]) => (
-                <Link
-                  key={key}
-                  href={`/wonder/essay/quiz/result?a=${key}`}
-                  className="carousel-card"
-                >
-                  <div className="carousel-card-dot" style={{ background: archetype.color }} />
-                  <div className="carousel-card-name">{archetype.name}</div>
-                  <div className="carousel-card-utopia">{archetype.utopia}</div>
-                </Link>
-              ))}
-          </div>
-        </div>
 
-        <BuildUtopiaButton archetypeKey={archetypeKey} />
-
-        <div className="go-deeper">
-          <div className="go-deeper-title">Go Deeper</div>
-          <div className="go-deeper-links">
-            <Link href="/wonder/essay" className="go-deeper-link">
-              <span className="go-deeper-link-title">Read the full essay</span>
-              <span className="go-deeper-link-sub">When Purpose Is All We Have Left</span>
-            </Link>
-          </div>
-        </div>
-
-        <div className="newsletter-section">
-          <div className="newsletter-title">Want more like this?</div>
-          <p className="newsletter-desc">Essays on meaning, mortality, and what comes next.</p>
-          <a
-            href="https://louiseireland.substack.com/subscribe"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="newsletter-btn"
-          >
-            Subscribe
-          </a>
-        </div>
-
-        <div className="actions">
+        <div className="cta-primary">
           <ShareButton shareText={shareText} shareUrl={shareUrl} />
-          <Link href="/wonder/essay/quiz" className="btn btn-secondary">
-            Retake Quiz
-          </Link>
-          <Link href="/wonder/essay#library" className="btn btn-secondary">
-            Explore 208 Books
-          </Link>
-          <Link href="/wonder/essay" className="btn btn-secondary">
-            Read the Essay
-          </Link>
+        </div>
+
+        <div className="cta-secondary">
+          <div className="cta-secondary-title">Build a Shared Utopia</div>
+          <p className="cta-secondary-desc">
+            Invite friends to take the quiz and see how your worldviews combine into something new.
+          </p>
+          <BuildUtopiaButton archetypeKey={archetypeKey} />
+        </div>
+
+        <div className="cta-tertiary">
+          <Link href="/wonder/essay/quiz" className="cta-link">Retake Quiz</Link>
+          <span className="cta-divider">·</span>
+          <Link href="/wonder/essay" className="cta-link">Read the Essay</Link>
         </div>
       </main>
 
       <footer className="footer">
         <p className="footer-quote">What if now is all we have?</p>
+        <p className="footer-newsletter">
+          <a href="https://louiseireland.substack.com/subscribe" target="_blank" rel="noopener noreferrer">
+            Subscribe for essays on meaning, mortality, and what comes next
+          </a>
+        </p>
         <nav className="footer-nav">
           <Link href="/read">Read</Link>
           <Link href="/navigate">Navigate</Link>
