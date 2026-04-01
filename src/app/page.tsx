@@ -11,9 +11,9 @@ import Header from "@/components/Header";
 // Pull quotes for the filmstrip - pink style
 const QUOTES = [
   {
-    slug: "the-live-now-club",
-    title: "The Live Now Club",
-    quote: "I want to create a place where mortality and joy sit side by side.",
+    slug: "life-is-not-empty",
+    title: "Life is not empty",
+    quote: "Facing my mortality has revealed how much of my life I spent curating myself into smallness. Living now has become my spiritual practice, my rebellion.",
   },
   {
     slug: "fixing-the-unfixable",
@@ -36,6 +36,11 @@ const QUOTES = [
     quote: "I am not dying from this. But it's given me some peace to think that we are all on a path toward death, that we build beautiful lives that dissolve into beautiful nothingness.",
   },
   {
+    slug: "the-live-now-club",
+    title: "The Live Now Club",
+    quote: "I want to create a place where mortality and joy sit side by side.",
+  },
+  {
     slug: "i-love-lou",
     title: "I Love Lou",
     quote: "Ultimately, there is no one on the planet who can love me better than I can love myself.",
@@ -49,11 +54,6 @@ const QUOTES = [
     slug: "and-still-the-figs-ripen",
     title: "And still the figs ripen",
     quote: "I hope I go like the fig, sweet and full, bursting at the seam, feeding whatever comes next.",
-  },
-  {
-    slug: "life-is-not-empty",
-    title: "Life is not empty",
-    quote: "Facing my mortality has revealed how much of my life I spent curating myself into smallness. Living now has become my spiritual practice, my rebellion.",
   },
   {
     slug: "the-butterfly-dream",
