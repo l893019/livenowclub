@@ -1987,35 +1987,9 @@
 
     function showResult() {
       const { primary, shadow } = getPrimaryAndShadow();
-      const data = archetypes[primary];
-      const shadowData = archetypes[shadow];
 
-      document.getElementById('resultArchetype').textContent = data.name;
-      document.getElementById('resultShadow').innerHTML = `with shades of <span>${shadowData.name}</span>`;
-      document.getElementById('utopiaImage').src = `/wonder/essay/quiz/images/utopia-${primary}.png`;
-      document.getElementById('resultUtopia').textContent = data.utopia;
-      document.getElementById('resultDescription').textContent = data.description;
-      document.getElementById('resultBlindSpot').textContent = data.blindSpot;
-
-      document.getElementById('compatAlly').textContent = data.compatibility.ally.desc;
-      document.getElementById('compatAllyName').innerHTML = `<a href="/wonder/essay/quiz/utopia/${data.compatibility.ally.key}">${archetypes[data.compatibility.ally.key].name}</a>`;
-      document.getElementById('compatTension').textContent = data.compatibility.tension.desc;
-      document.getElementById('compatTensionName').innerHTML = `<a href="/wonder/essay/quiz/utopia/${data.compatibility.tension.key}">${archetypes[data.compatibility.tension.key].name}</a>`;
-      document.getElementById('compatNeed').textContent = data.compatibility.need.desc;
-      document.getElementById('compatNeedName').innerHTML = `<a href="/wonder/essay/quiz/utopia/${data.compatibility.need.key}">${archetypes[data.compatibility.need.key].name}</a>`;
-
-      // Book reasoning
-      document.getElementById('resultBooksWhy').textContent = data.bookReasoning;
-
-      const booksList = document.getElementById('resultBooks');
-      booksList.innerHTML = data.books.map(book =>
-        `<li><span class="book-title">${book.title}</span><span class="book-author">${book.author}</span></li>`
-      ).join('');
-
-      window.quizResult = data;
-      window.quizResultKey = primary;
-      window.quizShadowKey = shadow;
-      showScreen('screen-result');
+      // Redirect to React result page (persistent, shareable URL)
+      window.location.href = `/wonder/essay/quiz/result?a=${primary}&s=${shadow}`;
 
       // Check if there's a pending invite to join
       setTimeout(checkAndJoinInvite, 500);
