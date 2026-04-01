@@ -694,8 +694,6 @@ export default async function QuizResultPage({ searchParams }: Props) {
           <p className="result-shadow">with shades of <Link href={`/wonder/essay/quiz/result?a=${shadowKey}`} style={{ color: shadowData.color, fontStyle: 'italic', textDecoration: 'none' }}>{shadowData.name}</Link></p>
         )}
 
-        <ScoreBreakdown currentArchetype={archetypeKey} />
-
         <div className="utopia-card">
           <img
             src={`/wonder/essay/quiz/images/utopia-${archetypeKey}.png`}
@@ -705,6 +703,8 @@ export default async function QuizResultPage({ searchParams }: Props) {
           <div className="utopia-label">Your Utopia</div>
           <p className="utopia-text">{data.utopia}</p>
         </div>
+
+        <ScoreBreakdown currentArchetype={archetypeKey} />
 
         <p className="result-description">{data.description}</p>
 
