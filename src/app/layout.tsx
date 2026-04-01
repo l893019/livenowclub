@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Live Now Club | Louise Ireland",
     description: "Essays and poems on life, love, cancer, and the relentless pursuit of joy and whimsy despite it all.",
-    url: "https://livenowclub.com",
+    url: "https://livenowclub.vercel.app",
     siteName: "The Live Now Club",
     locale: "en_US",
     type: "website",

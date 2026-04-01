@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
       customName
     );
 
-    const shareUrl = `https://livenowclub.com/wonder/essay/quiz/utopia/${room.slug}`;
+    const shareUrl = `https://livenowclub.vercel.app/wonder/essay/quiz/utopia/${room.slug}`;
 
     return NextResponse.json({
       success: true,
