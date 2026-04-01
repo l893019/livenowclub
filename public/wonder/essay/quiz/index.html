@@ -1683,6 +1683,13 @@
     let q6Answer = null; // For tie-breaking
     let userAnswers = []; // Track all answers
 
+    // Check for reset parameter
+    if (new URLSearchParams(window.location.search).has('reset')) {
+      localStorage.removeItem('quiz-user-id');
+      localStorage.removeItem('quiz-user-result');
+      window.history.replaceState({}, '', window.location.pathname);
+    }
+
     // User identity
     let userId = localStorage.getItem('quiz-user-id');
     let userResult = null;
