@@ -1246,7 +1246,7 @@
           <div class="name-fields">
             <div class="name-field">
               <label for="utopia-name-input" class="name-field-label">Utopia name</label>
-              <input type="text" id="utopia-name-input" class="utopia-name-input" placeholder="e.g., The Abundant Commons" maxlength="50" />
+              <input type="text" id="utopia-name-input" class="utopia-name-input" maxlength="50" />
             </div>
             <div class="name-field">
               <label for="user-name-input" class="name-field-label">Your name <span class="optional">(optional)</span></label>
@@ -1919,12 +1919,39 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    // Suggested utopia names
+    const suggestedUtopiaNames = [
+      "The Abundant Commons",
+      "The Unfinished City",
+      "The People's House",
+      "The Gathering Place",
+      "The Deep End",
+      "The Still Garden",
+      "The Watchtower",
+      "The Memory Palace",
+      "The Proving Ground",
+      "The Infinite Edge",
+      "The Feeling World",
+      "The Repair Shop",
+      "The Clear View",
+      "The Threshold"
+    ];
+
+    function getRandomSuggestedName() {
+      return suggestedUtopiaNames[Math.floor(Math.random() * suggestedUtopiaNames.length)];
+    }
+
     function showNamingScreen() {
       // Check if there's a join invite - if so, skip naming (they're joining, not creating)
       const inviteData = sessionStorage.getItem('utopia-invite');
       if (inviteData) {
         startQuiz();
         return;
+      }
+      // Pre-fill with a random suggested name
+      const nameInput = document.getElementById('utopia-name-input');
+      if (nameInput && !nameInput.value) {
+        nameInput.value = getRandomSuggestedName();
       }
       showScreen('screen-name');
     }
