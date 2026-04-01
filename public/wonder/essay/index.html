@@ -24,23 +24,43 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-deep: #faf6f1;
-      --bg: #fffbf7;
+      /* Colors - aligned with main site */
+      --cream: #FAF6F1;
+      --cream-light: #FFFBF7;
+      --charcoal: #2D2A26;
+      --text-dim: rgba(45, 42, 38, 0.7);
+      --text-muted: rgba(45, 42, 38, 0.45);
+      --pink: #E8178A;
+      --coral: #FF6B6B;
+      --gold: #F4A03F;
+      --teal: #2D7A7A;
+
+      /* Legacy aliases for this page */
+      --bg-deep: var(--cream);
+      --bg: var(--cream-light);
       --bg-elevated: #fff;
       --bg-card: #fff;
-      --text: #2d2a26;
-      --text-dim: rgba(45,42,38,0.7);
-      --text-muted: rgba(45,42,38,0.45);
-      --accent-pink: #e8178a;
-      --accent-coral: #ff6b6b;
-      --accent-gold: #f4a03f;
+      --text: var(--charcoal);
+      --accent-pink: var(--pink);
+      --accent-coral: var(--coral);
+      --accent-gold: var(--gold);
       --accent-orange: #fd9644;
       --accent-teal: #3db9a4;
       --accent-lavender: #9b8fef;
       --accent-green: #7ed6a4;
-      --sans: 'Space Grotesk', system-ui, sans-serif;
-      --mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+      /* Typography - matching main site */
+      --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Menlo', monospace;
+      --sans: var(--font-sans);
+      --mono: var(--font-mono);
+
       --border: rgba(232,23,138,0.12);
+
+      /* Line Heights */
+      --leading-tight: 1.2;
+      --leading-normal: 1.6;
+      --leading-relaxed: 1.75;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
