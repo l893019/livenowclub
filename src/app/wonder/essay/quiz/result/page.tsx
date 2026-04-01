@@ -804,7 +804,7 @@ export default async function QuizResultPage({ searchParams }: Props) {
             </div>
             <div className="shadow-content">
               <p className="shadow-description">
-                The part of you that didn't win but still wants to be heard.
+                Your shadow side.
               </p>
               <div className="shadow-utopia">
                 <div className="shadow-utopia-label">Their Utopia</div>
