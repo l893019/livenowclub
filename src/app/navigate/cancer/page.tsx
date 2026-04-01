@@ -9,6 +9,7 @@ const PRACTICAL_GUIDES = ["expecting-the-unexpected", "how-to-reset-your-nervous
 const JOURNEY_MILESTONES: Record<string, string> = {
   "embracing-free-fall": "The diagnosis",
   "you-cant-always-get-what-you-want": "When cancer returned",
+  "maybe": "In remission",
 };
 
 // Format date as "Feb 14" or "Feb 14, 2025" for display
