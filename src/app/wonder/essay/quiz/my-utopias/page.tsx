@@ -19,68 +19,27 @@ type UtopiaRoom = {
 };
 
 // Mini planet component for dashboard
-function MiniPlanet({ archetypes }: { archetypes: string[] }) {
-  const archetypeColors: Record<string, string> = {
-    citizen: "#3db9a4",
-    shaper: "#f4a03f",
-    architect: "#9b8fef",
-    presence: "#e8178a",
-    swimmer: "#6b8fef",
-    rooted: "#7ed6a4",
-    conscience: "#d64545",
-    embers: "#c97d3a",
-    friction: "#ff6b35",
-    unbound: "#a855f7",
-    alive: "#f472b6",
-    mender: "#10b981",
-    cleareyed: "#64748b",
-    between: "#8b8b8b",
-  };
-
-  const unique = [...new Set(archetypes)];
-  const count = unique.length;
+function MiniPlanet({ memberCount }: { memberCount: number }) {
+  // Choose planet image based on group size
+  const planetImage =
+    memberCount <= 1
+      ? "/wonder/essay/quiz/images/planet-solo.png"
+      : memberCount <= 4
+        ? "/wonder/essay/quiz/images/planet-group.png"
+        : "/wonder/essay/quiz/images/planet-full.png";
 
   return (
-    <svg viewBox="0 0 100 100" width="80" height="80">
-      <defs>
-        <radialGradient id={`miniBase-${archetypes.join("")}`} cx="30%" cy="30%">
-          <stop offset="0%" stopColor="#2a2a3e" />
-          <stop offset="100%" stopColor="#1a1a2e" />
-        </radialGradient>
-        <clipPath id={`miniClip-${archetypes.join("")}`}>
-          <circle cx="50" cy="50" r="45" />
-        </clipPath>
-      </defs>
-
-      <circle cx="50" cy="50" r="45" fill={`url(#miniBase-${archetypes.join("")})`} />
-
-      <g clipPath={`url(#miniClip-${archetypes.join("")})`}>
-        {unique.map((arch, i) => {
-          const segmentAngle = 360 / count;
-          const startAngle = (segmentAngle * i) - 90;
-          const endAngle = startAngle + segmentAngle;
-          const startRad = (startAngle * Math.PI) / 180;
-          const endRad = (endAngle * Math.PI) / 180;
-          const x1 = 50 + 45 * Math.cos(startRad);
-          const y1 = 50 + 45 * Math.sin(startRad);
-          const x2 = 50 + 45 * Math.cos(endRad);
-          const y2 = 50 + 45 * Math.sin(endRad);
-          const largeArc = segmentAngle > 180 ? 1 : 0;
-          const pathD = `M50,50 L${x1},${y1} A45,45 0 ${largeArc},1 ${x2},${y2} Z`;
-
-          return (
-            <path
-              key={arch}
-              d={pathD}
-              fill={archetypeColors[arch] || "#666"}
-              opacity={0.6}
-            />
-          );
-        })}
-      </g>
-
-      <ellipse cx="35" cy="35" rx="15" ry="10" fill="white" opacity="0.08" />
-    </svg>
+    <img
+      src={planetImage}
+      alt="Utopia planet"
+      width={80}
+      height={80}
+      style={{
+        borderRadius: "50%",
+        objectFit: "cover",
+        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+      }}
+    />
   );
 }
 
@@ -382,7 +341,7 @@ export default function MyUtopiasPage() {
                 className="utopia-card"
               >
                 <div className="utopia-card-planet">
-                  <MiniPlanet archetypes={utopia.members.map((m) => m.archetype)} />
+                  <MiniPlanet memberCount={utopia.members.length} />
                 </div>
                 <div className="utopia-card-name">{utopia.name}</div>
                 <div className="utopia-card-count">
