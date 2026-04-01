@@ -578,8 +578,18 @@
     .compatibility-name {
       font-size: 0.85rem;
       font-weight: 500;
-      color: var(--accent-pink);
       margin-top: 8px;
+    }
+
+    .compatibility-name a {
+      color: var(--accent-pink);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .compatibility-name a:hover {
+      border-bottom-color: var(--accent-pink);
     }
 
     /* BOOK RECOMMENDATIONS */
@@ -638,61 +648,56 @@
       color: var(--text-muted);
     }
 
-    /* EXPLORE OTHER UTOPIAS */
-    .other-utopias {
+    /* GO DEEPER SECTION */
+    .go-deeper {
       margin-bottom: 32px;
     }
 
-    .other-utopias-title {
+    .go-deeper-title {
       font-size: 10px;
       font-weight: 500;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--accent-pink);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       text-align: center;
     }
 
-    .utopias-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    .go-deeper-links {
+      display: flex;
+      flex-direction: column;
       gap: 12px;
     }
 
-    .utopia-mini-card {
+    .go-deeper-link {
+      display: block;
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 8px;
-      overflow: hidden;
-      cursor: pointer;
+      padding: 16px 20px;
+      text-decoration: none;
       transition: all 0.25s ease;
     }
 
-    .utopia-mini-card:hover {
+    .go-deeper-link:hover {
       border-color: var(--accent-pink);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 16px rgba(232, 23, 138, 0.12);
+      transform: translateX(4px);
     }
 
-    .utopia-mini-card.active {
-      border-color: var(--accent-pink);
-      border-width: 2px;
-    }
-
-    .utopia-mini-image {
-      width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-    }
-
-    .utopia-mini-name {
+    .go-deeper-link-title {
+      display: block;
       font-family: var(--sans);
-      font-size: 11px;
+      font-size: 1rem;
       font-weight: 500;
       color: var(--text);
-      padding: 10px;
-      text-align: center;
-      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .go-deeper-link-sub {
+      display: block;
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
 
     /* UTOPIA DETAIL MODAL */
@@ -1377,9 +1382,18 @@
             <ul class="result-books-list" id="resultBooks"></ul>
           </div>
 
-          <div class="other-utopias">
-            <div class="other-utopias-title">Explore Other Utopias</div>
-            <div class="utopias-grid" id="utopiasGrid"></div>
+          <div class="go-deeper">
+            <div class="go-deeper-title">Go Deeper</div>
+            <div class="go-deeper-links">
+              <a href="/wonder/essay/quiz/explore" class="go-deeper-link">
+                <span class="go-deeper-link-title">See where all worldviews land</span>
+                <span class="go-deeper-link-sub">Interactive scatterplot</span>
+              </a>
+              <a href="/wonder/essay" class="go-deeper-link">
+                <span class="go-deeper-link-title">Read the full essay</span>
+                <span class="go-deeper-link-sub">When Purpose Is All We Have Left</span>
+              </a>
+            </div>
           </div>
 
           <div class="build-utopia-section">
@@ -1403,7 +1417,6 @@
               Share Your Result
             </button>
             <a href="/wonder/essay/quiz/my-utopias" class="essay-link">My Utopias</a>
-            <a href="/wonder/essay" class="essay-link">Read the full essay</a>
             <button class="retake-btn" onclick="retakeQuiz()">Retake quiz</button>
           </div>
         </div>
@@ -1985,11 +1998,11 @@
       document.getElementById('resultBlindSpot').textContent = data.blindSpot;
 
       document.getElementById('compatAlly').textContent = data.compatibility.ally.desc;
-      document.getElementById('compatAllyName').textContent = archetypes[data.compatibility.ally.key].name;
+      document.getElementById('compatAllyName').innerHTML = `<a href="/wonder/essay/quiz/utopia/${data.compatibility.ally.key}">${archetypes[data.compatibility.ally.key].name}</a>`;
       document.getElementById('compatTension').textContent = data.compatibility.tension.desc;
-      document.getElementById('compatTensionName').textContent = archetypes[data.compatibility.tension.key].name;
+      document.getElementById('compatTensionName').innerHTML = `<a href="/wonder/essay/quiz/utopia/${data.compatibility.tension.key}">${archetypes[data.compatibility.tension.key].name}</a>`;
       document.getElementById('compatNeed').textContent = data.compatibility.need.desc;
-      document.getElementById('compatNeedName').textContent = archetypes[data.compatibility.need.key].name;
+      document.getElementById('compatNeedName').innerHTML = `<a href="/wonder/essay/quiz/utopia/${data.compatibility.need.key}">${archetypes[data.compatibility.need.key].name}</a>`;
 
       // Book reasoning
       document.getElementById('resultBooksWhy').textContent = data.bookReasoning;
@@ -1998,20 +2011,6 @@
       booksList.innerHTML = data.books.map(book =>
         `<li><span class="book-title">${book.title}</span><span class="book-author">${book.author}</span></li>`
       ).join('');
-
-      // Populate other utopias grid
-      const utopiasGrid = document.getElementById('utopiasGrid');
-      utopiasGrid.innerHTML = archetypeKeys
-        .filter(key => key !== primary) // Exclude the user's own result
-        .map(key => {
-          const arch = archetypes[key];
-          return `
-            <div class="utopia-mini-card" onclick="openUtopiaDetail('${key}')">
-              <img class="utopia-mini-image" src="/wonder/essay/quiz/images/utopia-${key}.png" alt="${arch.name}" loading="lazy">
-              <div class="utopia-mini-name">${arch.name}</div>
-            </div>
-          `;
-        }).join('');
 
       window.quizResult = data;
       window.quizResultKey = primary;
