@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ShareButton from "./ShareButton";
 import ScoreBreakdown from "./ScoreBreakdown";
+import BuildUtopiaButton from "./BuildUtopiaButton";
 
 // Map compatibility descriptions to archetype keys
 const compatibilityMap: Record<string, string> = {
@@ -760,6 +761,63 @@ export default async function QuizResultPage({ searchParams }: Props) {
           border-color: var(--accent-pink);
           color: var(--accent-pink);
         }
+        .btn-primary:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+        .build-utopia-section {
+          max-width: 480px;
+          margin-bottom: 48px;
+          text-align: center;
+        }
+        .build-utopia-desc {
+          font-size: 1rem;
+          color: var(--text-dim);
+          margin-bottom: 16px;
+        }
+        .go-deeper {
+          max-width: 480px;
+          margin-bottom: 48px;
+        }
+        .go-deeper-title {
+          font-size: 11px;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.15em;
+          color: var(--text-muted);
+          margin-bottom: 16px;
+          text-align: center;
+        }
+        .go-deeper-links {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+        .go-deeper-link {
+          display: block;
+          background: white;
+          border: 1px solid rgba(0,0,0,0.08);
+          border-radius: 12px;
+          padding: 16px 20px;
+          text-decoration: none;
+          transition: all 0.25s ease;
+        }
+        .go-deeper-link:hover {
+          border-color: var(--accent-pink);
+          transform: translateX(4px);
+        }
+        .go-deeper-link-title {
+          display: block;
+          font-size: 1rem;
+          font-weight: 500;
+          color: var(--text);
+          margin-bottom: 4px;
+        }
+        .go-deeper-link-sub {
+          display: block;
+          font-size: 0.85rem;
+          color: var(--text-muted);
+        }
         .footer {
           padding: 60px 24px;
           text-align: center;
@@ -929,6 +987,22 @@ export default async function QuizResultPage({ searchParams }: Props) {
                   <div className="carousel-card-utopia">{archetype.utopia}</div>
                 </Link>
               ))}
+          </div>
+        </div>
+
+        <BuildUtopiaButton archetypeKey={archetypeKey} />
+
+        <div className="go-deeper">
+          <div className="go-deeper-title">Go Deeper</div>
+          <div className="go-deeper-links">
+            <Link href="/wonder/essay/quiz/explore" className="go-deeper-link">
+              <span className="go-deeper-link-title">See where all worldviews land</span>
+              <span className="go-deeper-link-sub">Interactive scatterplot of 14 archetypes</span>
+            </Link>
+            <Link href="/wonder/essay" className="go-deeper-link">
+              <span className="go-deeper-link-title">Read the full essay</span>
+              <span className="go-deeper-link-sub">When Purpose Is All We Have Left</span>
+            </Link>
           </div>
         </div>
 
