@@ -1,8 +1,22 @@
 import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
-import { getUtopia } from "@/lib/utopia";
 
 export const runtime = "edge";
+
+type UtopiaMember = {
+  id: string;
+  name: string;
+  archetype: string;
+  joinedAt: string;
+};
+
+type UtopiaRoom = {
+  slug: string;
+  name: string;
+  createdBy: string;
+  members: UtopiaMember[];
+  createdAt: string;
+};
 
 const archetypeColors: Record<string, string> = {
   citizen: "#3db9a4",
@@ -26,7 +40,12 @@ export async function GET(
   { params }: { params: Promise<{ slug: string }> }
 ) {
   const { slug } = await params;
-  const room = await getUtopia(slug);
+
+  // Fetch utopia data via API (ioredis doesn't work in Edge runtime)
+  const origin = request.nextUrl.origin;
+  const response = await fetch(`${origin}/api/utopia/${slug}`);
+  const data = await response.json();
+  const room: UtopiaRoom | null = data.utopia || null;
 
   if (!room) {
     // Return a fallback image

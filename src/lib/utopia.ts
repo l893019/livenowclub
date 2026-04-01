@@ -1,11 +1,7 @@
-import { Redis } from '@upstash/redis';
+import Redis from 'ioredis';
 
-// Initialize Redis client
-// Will use UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN env vars
-const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_URL!,
-  token: process.env.UPSTASH_REDIS_REST_TOKEN!,
-});
+// Initialize Redis client using REDIS_URL
+const redis = new Redis(process.env.REDIS_URL || '');
 
 // =============================================================================
 // TYPES
@@ -57,7 +53,7 @@ export const STAR_NAMES = [
   'Markab', 'Scheat', 'Matar', 'Enif', 'Baham', 'Homam', 'Sadalbari',
   'Gienah', 'Algorab', 'Minkar', 'Kraz', 'Alchiba', 'Zaniah', 'Porrima',
   'Vindemiatrix', 'Heze', 'Zavijava', 'Syrma', 'Khambalia', 'Diadem',
-  'Cor Caroli', 'Chara', 'Asterion', 'Thuban', 'Rastaban', 'Grumium',
+  'Cor Caroli', 'Chara', 'Asterion', 'Rastaban', 'Grumium',
   'Sadr', 'Albireo', 'Gienah Cygni', 'Azha', 'Cursa', 'Acamar', 'Ankaa',
   'Diphda', 'Menkar', 'Kaffaljidhma', 'Baten Kaitos', 'Deneb Kaitos',
   'Suhail', 'Naos', 'Regor', 'Aspidiske', 'Avior', 'Miaplacidus', 'Tureis',
@@ -67,8 +63,8 @@ export const STAR_NAMES = [
   'Atria', 'Kuma', 'Alathfar', 'Sheliak', 'Sulafat', 'Sulaphat', 'Sarin',
   'Tyl', 'Edasich', 'Giausar', 'Aldhibah', 'Nodus', 'Alrakis', 'Arrakis',
   'Alwaid', 'Etamin', 'Aldhibain', 'Tarazed', 'Dabih', 'Algedi', 'Giedi',
-  'Nashira', 'Sadalsuud', 'Ancha', 'Situla', 'Albali', 'Sadachbia',
-  'Sadalmelik', 'Sadaltager', 'Biham', 'Salm', 'Fum al Samakah'
+  'Ancha', 'Situla', 'Albali', 'Sadachbia',
+  'Sadaltager', 'Biham', 'Salm', 'Fum al Samakah'
 ];
 
 export function getRandomStarName(): string {
@@ -90,9 +86,9 @@ export async function saveUserResult(result: UserResult): Promise<void> {
 }
 
 export async function getUserResult(userId: string): Promise<UserResult | null> {
-  const data = await redis.get<string>(`user:${userId}`);
+  const data = await redis.get(`user:${userId}`);
   if (!data) return null;
-  return typeof data === 'string' ? JSON.parse(data) : data;
+  return JSON.parse(data);
 }
 
 export async function updateUserArchetype(
@@ -162,9 +158,9 @@ export async function createUtopia(
 }
 
 export async function getUtopia(slug: string): Promise<UtopiaRoom | null> {
-  const data = await redis.get<string>(`utopia:${slug}`);
+  const data = await redis.get(`utopia:${slug}`);
   if (!data) return null;
-  return typeof data === 'string' ? JSON.parse(data) : data;
+  return JSON.parse(data);
 }
 
 export async function joinUtopia(
@@ -220,23 +216,27 @@ export async function leaveUtopia(slug: string, userId: string): Promise<boolean
 
 async function addUtopiaToUser(userId: string, slug: string): Promise<void> {
   const key = `user:${userId}:utopias`;
-  const existing = await redis.get<string[]>(key) || [];
-  if (!existing.includes(slug)) {
-    existing.push(slug);
-    await redis.set(key, existing);
+  const existing = await redis.get(key);
+  const list: string[] = existing ? JSON.parse(existing) : [];
+  if (!list.includes(slug)) {
+    list.push(slug);
+    await redis.set(key, JSON.stringify(list));
   }
 }
 
 async function removeUtopiaFromUser(userId: string, slug: string): Promise<void> {
   const key = `user:${userId}:utopias`;
-  const existing = await redis.get<string[]>(key) || [];
-  const updated = existing.filter(s => s !== slug);
-  await redis.set(key, updated);
+  const existing = await redis.get(key);
+  if (!existing) return;
+  const list: string[] = JSON.parse(existing);
+  const updated = list.filter(s => s !== slug);
+  await redis.set(key, JSON.stringify(updated));
 }
 
 export async function getUserUtopias(userId: string): Promise<UtopiaRoom[]> {
   const key = `user:${userId}:utopias`;
-  const slugs = await redis.get<string[]>(key) || [];
+  const data = await redis.get(key);
+  const slugs: string[] = data ? JSON.parse(data) : [];
 
   const utopias: UtopiaRoom[] = [];
   for (const slug of slugs) {

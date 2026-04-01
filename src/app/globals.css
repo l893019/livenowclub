@@ -1510,6 +1510,7 @@ p {
   border: 1px solid rgba(0, 0, 0, 0.06);
   overflow: hidden;
   transition: all 0.3s;
+  min-height: 320px;
 }
 
 .wonder-essay-card:hover {
@@ -1519,8 +1520,8 @@ p {
 }
 
 .wonder-essay-image {
-  aspect-ratio: 16/10;
   overflow: hidden;
+  height: 100%;
 }
 
 .wonder-essay-image img {
@@ -1591,8 +1592,8 @@ p {
 
 .wonder-list-image {
   flex-shrink: 0;
-  width: 120px;
-  height: 80px;
+  width: 200px;
+  height: 140px;
   overflow: hidden;
 }
 

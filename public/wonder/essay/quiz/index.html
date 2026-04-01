@@ -574,6 +574,18 @@
       margin-bottom: 16px;
     }
 
+    .result-books-why {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--text-dim);
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
     .result-books-list {
       list-style: none;
     }
@@ -596,6 +608,186 @@
     .book-author {
       font-size: 13px;
       color: var(--text-muted);
+    }
+
+    /* EXPLORE OTHER UTOPIAS */
+    .other-utopias {
+      margin-bottom: 32px;
+    }
+
+    .other-utopias-title {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-pink);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .utopias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
+    }
+
+    .utopia-mini-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .utopia-mini-card:hover {
+      border-color: var(--accent-pink);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(232, 23, 138, 0.12);
+    }
+
+    .utopia-mini-card.active {
+      border-color: var(--accent-pink);
+      border-width: 2px;
+    }
+
+    .utopia-mini-image {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+
+    .utopia-mini-name {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text);
+      padding: 10px;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    /* UTOPIA DETAIL MODAL */
+    .utopia-detail-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .utopia-detail-overlay.open {
+      display: flex;
+    }
+
+    .utopia-detail-modal {
+      background: var(--bg);
+      border-radius: 16px;
+      max-width: 560px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .utopia-detail-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(45, 42, 38, 0.1);
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: background 0.2s;
+    }
+
+    .utopia-detail-close:hover {
+      background: rgba(45, 42, 38, 0.2);
+    }
+
+    .utopia-detail-image {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 16px 16px 0 0;
+    }
+
+    .utopia-detail-content {
+      padding: 24px;
+    }
+
+    .utopia-detail-name {
+      font-family: var(--sans);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .utopia-detail-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-pink);
+      margin-bottom: 12px;
+    }
+
+    .utopia-detail-text {
+      font-family: var(--sans);
+      font-size: 1.1rem;
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .utopia-detail-desc {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .utopia-detail-books {
+      background: rgba(232, 23, 138, 0.04);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .utopia-detail-books-title {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-pink);
+      margin-bottom: 12px;
+    }
+
+    .utopia-detail-books-list {
+      list-style: none;
+    }
+
+    .utopia-detail-books-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .utopia-detail-books-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
     }
 
     /* ACTIONS */
@@ -1150,6 +1342,7 @@
         description: "Let the machines handle the drudgery. You have better things to do with being alive. You know how power works and you know that utopia still needs someone watching the edges. You also trust that intelligence, properly distributed, tends toward good. Too much freedom will always be preferable to too little. Comfort doesn't frighten you. Boredom does.",
         utopia: "Your utopia has no word for \"job.\" They used to, but it fell out of the language three centuries ago.",
         blindSpot: "You sometimes mistake access for equity. Everyone having options is not the same as everyone being free.",
+        bookReasoning: "These books explore post-scarcity civilizations where material needs are solved, letting characters grapple with the questions that interest you most: what do we do with freedom, and what new games emerge when the old ones are won?",
         books: [
           { title: "The Player of Games", author: "Banks" },
           { title: "Accelerando", author: "Stross" },
@@ -1166,6 +1359,7 @@
         description: "You don't trust stillness. The moment you stop adapting, you start calcifying, and you've seen it happen to every institution, every relationship, every version of yourself you've held onto too long. The transition ahead is raw material. The future is something you build with whatever is at hand, including the wreckage. You've probably already started.",
         utopia: "Your utopia is never finished. Everything is always changing.",
         blindSpot: "You sometimes mistake movement for progress. Tearing something down and building something new can be its own form of running away.",
+        bookReasoning: "These books feature protagonists who build new worlds from collapse and chaos. They understand that transition is the permanent condition, and that the builders are the ones who shape what comes next.",
         books: [
           { title: "Parable of the Sower", author: "Butler" },
           { title: "Red Mars", author: "Robinson" },
@@ -1182,6 +1376,7 @@
         description: "You focus on the structures. Because the best people in the world will still reproduce the old hierarchies if the structures allow it. You'd rather build something imperfect and collectively owned than something elegant and controlled by a few. Mutual aid is a practice, and it requires showing up. You show up.",
         utopia: "Your utopia belongs to everyone and answers to no one. It doesn't work perfectly but it belongs to the people inside it.",
         blindSpot: "You sometimes love the system more than the people inside it. The meeting can become more important than what the meeting was for.",
+        bookReasoning: "These books wrestle with the hard question of how to build truly equitable structures. They don't pretend collective ownership is easy—they explore what it costs and what it makes possible.",
         books: [
           { title: "The Dispossessed", author: "Le Guin" },
           { title: "Pacific Edge", author: "Robinson" },
@@ -1198,6 +1393,7 @@
         description: "You keep coming back to the same realization: that the thing that actually changes a life is a person choosing to be present for another person. You appreciate what machines can do. You also know the difference between capability and care, and you've never confused the two. Someone's life is different because you showed up. You may not even know whose.",
         utopia: "Your utopia decided that the most valuable thing in the universe was undivided attention, and built its entire economy around it.",
         blindSpot: "You sometimes use care as a way to avoid confrontation. Staying in the room is not always the brave choice. Sometimes the brave choice is leaving it.",
+        bookReasoning: "These books explore what happens when artificial intelligence encounters the irreplaceable quality of human presence. Each asks: what can machines do, and what requires a person choosing to show up?",
         books: [
           { title: "The Diamond Age", author: "Stephenson" },
           { title: "Klara and the Sun", author: "Ishiguro" },
@@ -1214,6 +1410,7 @@
         description: "You resist the urge to resolve. Most people see a problem and want to solve it. You see a question and want to live inside it. The edges of understanding are where the interesting things happen, and you've always been drawn there. You are comfortable with ambiguity in a world that punishes it, and you suspect that this comfort is its own form of wisdom.",
         utopia: "Your utopia is a civilization of philosophers. Their single ambition is to reach the deepest level of questioning ever achieved. Everything else is automated so they can focus.",
         blindSpot: "You can sit with a question so long that it becomes an excuse to never act. At some point, not-knowing becomes its own form of cowardice.",
+        bookReasoning: "These books refuse to resolve. They present encounters with the genuinely unknowable—alien minds, the nature of consciousness, the texture of time—and let the questions stay open.",
         books: [
           { title: "Solaris", author: "Lem" },
           { title: "Blindsight", author: "Watts" },
@@ -1230,6 +1427,7 @@
         description: "You've arrived at something most people spend their lives running from: the possibility that you don't need a reason to be here. Purpose is a construct. Productivity is a habit. The most radical thing you can do in a world optimized for output is to stop, and mean it. You pour the tea. You notice what's in front of you. You find that it's enough.",
         utopia: "Your utopia returned to a simpler way of life, on purpose, with full knowledge of what it was giving up. It gave up automation to do things by hand.",
         blindSpot: "Your stillness can look a lot like withdrawal to the people who need you. Choosing to stop is a luxury not everyone can afford.",
+        bookReasoning: "These books are about choosing to stop—and discovering what emerges in the stillness. They explore worlds where purpose dissolves and something simpler, stranger, and more peaceful takes its place.",
         books: [
           { title: "A Psalm for the Wild-Built", author: "Chambers" },
           { title: "Always Coming Home", author: "Le Guin" },
@@ -1246,6 +1444,7 @@
         description: "You see what others prefer to ignore. The comfortable prison. The soft erosion. The hierarchy that rebrands itself as community. You believe in what humans can be. You also refuse to look away from what they become when no one is paying attention. Someone has to watch the watchers. You've always known it would be you.",
         utopia: "Your utopia built accountability into the architecture. Every leader's decisions are projected onto the sky the day they leave office.",
         blindSpot: "You can become so focused on what's wrong that you forget to notice what's working. Permanent suspicion is its own kind of prison.",
+        bookReasoning: "These books are warnings. They map exactly how freedom erodes—not through dramatic collapse but through quiet concessions. They arm you with the pattern recognition you already possess.",
         books: [
           { title: "1984", author: "Orwell" },
           { title: "Brave New World", author: "Huxley" },
@@ -1262,6 +1461,7 @@
         description: "Everyone else is racing forward. You keep looking back, because you have this stubborn conviction that we've already figured most of this out and keep forgetting. Oral traditions, old religions, indigenous knowledge, the grandmother's hand on the child's head. The most dangerous thing about acceleration is amnesia. The answers aren't in the next technology. They're in the last ten thousand years.",
         utopia: "Your utopia's most protected resource is not water or energy. It's memory. The central archive is guarded more heavily than weapons or the bank.",
         blindSpot: "You can love what was so deeply that you become hostile to what could be. The archive becomes a fortress. The past becomes an identity.",
+        bookReasoning: "These books understand that the future depends on what we remember. They explore civilizations fighting to preserve knowledge through collapse, and the quiet wisdom that survives when everything else burns.",
         books: [
           { title: "A Canticle for Leibowitz", author: "Miller" },
           { title: "Always Coming Home", author: "Le Guin" },
@@ -1278,6 +1478,7 @@
         description: "Ease is more dangerous than difficulty. Something in us requires resistance. The act of pushing against something is how we know we're alive, and you've always known this in your bones. Take away every problem and you don't get paradise. You get a species that has forgotten how to want. You'd rather build the boat in a storm than float in still water.",
         utopia: "Your utopia kept one part of the world deliberately dangerous, because the people who built it believed that too much safety would kill something essential in the species.",
         blindSpot: "You can mistake difficulty for meaning. Not everything that's hard is worth doing. Sometimes the easy path is the right one and you can't accept that.",
+        bookReasoning: "These books are about people who refuse to be comfortable. Their protagonists fight, strive, and push against impossible odds—not because they have to, but because something in them requires the resistance.",
         books: [
           { title: "The Stars My Destination", author: "Bester" },
           { title: "The Moon Is a Harsh Mistress", author: "Heinlein" },
@@ -1294,6 +1495,7 @@
         description: "You look at the species and see a draft. A first attempt. You're curious about what comes next. Uploading, merging, subliming, evolving. The vocabulary doesn't matter. The boundary of the self is simply not where you stop. Most people find this frightening. You find it the most interesting question there is.",
         utopia: "Your utopia transcended the physical. You exist as pure consciousness now, moving through dimensions that don't have names.",
         blindSpot: "You left so much behind that you may not recognize what was worth keeping until it's too late. Evolution without memory is just forgetting with better marketing.",
+        bookReasoning: "These books ask what happens when consciousness leaves the body behind. They explore transcendence, subliming, and the dissolution of individual identity into something larger and stranger.",
         books: [
           { title: "Childhood's End", author: "Clarke" },
           { title: "Diaspora", author: "Egan" },
