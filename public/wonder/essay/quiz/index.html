@@ -2232,16 +2232,18 @@
 
           const data = await response.json();
           if (data.success && data.room) {
-            // Redirect to utopia page
-            window.location.href = `/wonder/essay/quiz/utopia/${data.room.slug}`;
-            return;
+            // Store utopia info for result page to show banner
+            sessionStorage.setItem('created-utopia', JSON.stringify({
+              slug: data.room.slug,
+              name: data.room.name
+            }));
           }
         } catch (error) {
           console.error('Failed to create utopia:', error);
         }
       }
 
-      // No invite, no utopia name, or creation failed - go to regular result page
+      // Always go to result page first (with utopia banner if applicable)
       window.location.href = `/wonder/essay/quiz/result?a=${primary}&s=${shadow}`;
     }
 

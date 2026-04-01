@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ShareButton from "./ShareButton";
 import CreateUtopiaSection from "./CreateUtopiaSection";
+import UtopiaReadyBanner from "./UtopiaReadyBanner";
 
 // Map compatibility descriptions to archetype keys
 const compatibilityMap: Record<string, string> = {
@@ -773,6 +774,8 @@ export default async function QuizResultPage({ searchParams }: Props) {
         </nav>
         <p className="footer-copy">&copy; 2026 Louise Ireland</p>
       </footer>
+
+      <UtopiaReadyBanner />
     </>
   );
 }
