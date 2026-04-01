@@ -1940,23 +1940,27 @@
         // Update userResult with name
         userResult.name = name.trim();
         localStorage.setItem('quiz-user-result', JSON.stringify(userResult));
-
-        // Save to API
-        try {
-          await fetch('/api/utopia/save-result', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ result: userResult })
-          });
-        } catch (e) {
-          console.error('Failed to save name:', e);
-        }
       }
 
       const btn = document.querySelector('.build-utopia-btn');
       const originalText = btn.innerHTML;
       btn.disabled = true;
       btn.innerHTML = 'Creating...';
+
+      // Always save to API before creating utopia (ensures user exists in database)
+      try {
+        await fetch('/api/utopia/save-result', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ result: userResult })
+        });
+      } catch (e) {
+        console.error('Failed to save result:', e);
+        alert('Failed to save. Please try again.');
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+        return;
+      }
 
       try {
         const response = await fetch('/api/utopia/create', {
