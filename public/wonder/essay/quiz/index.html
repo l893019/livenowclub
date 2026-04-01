@@ -1985,14 +1985,64 @@
       return { primary, shadow };
     }
 
-    function showResult() {
+    async function showResult() {
       const { primary, shadow } = getPrimaryAndShadow();
 
-      // Redirect to React result page (persistent, shareable URL)
-      window.location.href = `/wonder/essay/quiz/result?a=${primary}&s=${shadow}`;
-
       // Check if there's a pending invite to join
-      setTimeout(checkAndJoinInvite, 500);
+      const inviteData = sessionStorage.getItem('utopia-invite');
+
+      if (inviteData && userId) {
+        // Joining a utopia - save result and join directly
+        try {
+          const invite = JSON.parse(inviteData);
+          sessionStorage.removeItem('utopia-invite');
+
+          // Need a name to join - prompt if missing
+          if (!userResult || !userResult.name) {
+            const name = prompt('What should we call you?\\n(So others can see who joined the utopia)');
+            if (!name || !name.trim()) {
+              // User cancelled - go to regular result page
+              window.location.href = `/wonder/essay/quiz/result?a=${primary}&s=${shadow}`;
+              return;
+            }
+            if (userResult) {
+              userResult.name = name.trim();
+              localStorage.setItem('quiz-user-result', JSON.stringify(userResult));
+            }
+          }
+
+          // Save user result to API
+          if (userResult) {
+            await fetch('/api/utopia/save-result', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ result: userResult })
+            });
+          }
+
+          // Join the utopia
+          const response = await fetch('/api/utopia/join', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              slug: invite.slug,
+              userId: userId
+            })
+          });
+
+          const data = await response.json();
+          if (data.success) {
+            // Redirect directly to utopia page
+            window.location.href = `/wonder/essay/quiz/utopia/${invite.slug}`;
+            return;
+          }
+        } catch (error) {
+          console.error('Failed to join utopia:', error);
+        }
+      }
+
+      // No invite or join failed - go to regular result page
+      window.location.href = `/wonder/essay/quiz/result?a=${primary}&s=${shadow}`;
     }
 
     function shareResult() {

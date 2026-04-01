@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ShareButton from "./ShareButton";
-import BuildUtopiaButton from "./BuildUtopiaButton";
+import CreateUtopiaSection from "./CreateUtopiaSection";
 
 // Map compatibility descriptions to archetype keys
 const compatibilityMap: Record<string, string> = {
@@ -551,23 +551,6 @@ export default async function QuizResultPage({ searchParams }: Props) {
         .cta-primary {
           margin-bottom: 48px;
         }
-        .cta-secondary {
-          max-width: 400px;
-          margin-bottom: 48px;
-          text-align: center;
-        }
-        .cta-secondary-title {
-          font-size: 1.1rem;
-          font-weight: 500;
-          color: var(--text);
-          margin-bottom: 8px;
-        }
-        .cta-secondary-desc {
-          font-size: 0.95rem;
-          color: var(--text-dim);
-          line-height: 1.6;
-          margin-bottom: 20px;
-        }
         .cta-tertiary {
           display: flex;
           align-items: center;
@@ -766,13 +749,7 @@ export default async function QuizResultPage({ searchParams }: Props) {
           <ShareButton shareText={shareText} shareUrl={shareUrl} />
         </div>
 
-        <div className="cta-secondary">
-          <div className="cta-secondary-title">What happens when worldviews collide?</div>
-          <p className="cta-secondary-desc">
-            Create a room, invite others to take the quiz, and watch your utopias combine.
-          </p>
-          <BuildUtopiaButton archetypeKey={archetypeKey} />
-        </div>
+        <CreateUtopiaSection archetypeKey={archetypeKey} />
 
         <div className="cta-tertiary">
           <Link href="/wonder/essay/quiz" className="cta-link">Retake Quiz</Link>

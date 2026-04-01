@@ -23,7 +23,33 @@ export type UtopiaMember = {
   name: string;
   archetype: string;
   joinedAt: string;
+  isFounder?: boolean;
 };
+
+// =============================================================================
+// SUGGESTED UTOPIA NAMES BY ARCHETYPE
+// =============================================================================
+
+export const SUGGESTED_UTOPIA_NAMES: Record<string, string> = {
+  citizen: "The Abundant Commons",
+  shaper: "The Unfinished City",
+  architect: "The People's House",
+  presence: "The Gathering Place",
+  swimmer: "The Deep End",
+  rooted: "The Still Garden",
+  conscience: "The Watchtower",
+  embers: "The Memory Palace",
+  friction: "The Proving Ground",
+  unbound: "The Infinite Edge",
+  alive: "The Feeling World",
+  mender: "The Repair Shop",
+  cleareyed: "The Clear View",
+  between: "The Threshold",
+};
+
+export function getSuggestedUtopiaName(archetype: string): string {
+  return SUGGESTED_UTOPIA_NAMES[archetype] || "My Utopia";
+}
 
 export type UtopiaRoom = {
   slug: string;
@@ -132,18 +158,19 @@ export async function createUtopia(
   userArchetype: string,
   customName?: string
 ): Promise<UtopiaRoom> {
-  const starName = customName || getRandomStarName();
-  const slug = generateSlug(starName);
+  const utopiaName = customName || getSuggestedUtopiaName(userArchetype);
+  const slug = generateSlug(utopiaName);
 
   const room: UtopiaRoom = {
     slug,
-    name: starName,
+    name: utopiaName,
     createdBy: userId,
     members: [{
       id: userId,
       name: userName,
       archetype: userArchetype,
       joinedAt: new Date().toISOString(),
+      isFounder: true,
     }],
     createdAt: new Date().toISOString(),
   };

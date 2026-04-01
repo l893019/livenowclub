@@ -93,21 +93,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = `${room.name} — A Utopia of ${memberCount}`;
   const description = `Build a utopia with me. ${memberCount} ${memberCount === 1 ? "person has" : "people have"} joined ${room.name}.`;
 
-  const ogImage = `https://livenowclub.vercel.app/api/og/utopia/${slug}`;
+  const ogImage = `https://livenowclub.com/api/og/utopia/${slug}`;
 
   return {
     title,
     description,
     openGraph: {
-      title: "Build a utopia with me",
+      title: `Join ${room.name}`,
       description,
-      url: `https://livenowclub.vercel.app/wonder/essay/quiz/utopia/${slug}`,
+      url: `https://livenowclub.com/wonder/essay/quiz/utopia/${slug}`,
       type: "website",
       images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Build a utopia with me",
+      title: `Join ${room.name}`,
       description,
       images: [ogImage],
     },
@@ -174,8 +174,8 @@ export default async function UtopiaPage({ params }: Props) {
   const { counts, missing, oneLiner } = analyzeGroup(room.members);
   const creator = room.members.find(m => m.id === room.createdBy);
   const creatorName = creator?.name || "Someone";
-  const shareUrl = `https://livenowclub.vercel.app/wonder/essay/quiz?join=${slug}&by=${encodeURIComponent(creatorName)}`;
-  const shareText = `Build a utopia with me.`;
+  const shareUrl = `https://livenowclub.com/wonder/essay/quiz/utopia/${slug}/join`;
+  const shareText = `Join ${room.name} — a utopia of ${room.members.length}.`;
 
   // Sort archetypes by member count (most first)
   const sortedArchetypes = Object.entries(counts).sort(
@@ -509,8 +509,13 @@ export default async function UtopiaPage({ params }: Props) {
         <div className="section">
           <h2 className="section-title">Who&apos;s Here</h2>
           <div className="members-grid">
-            {sortedArchetypes.map(([archetype, names]) => {
+            {sortedArchetypes.map(([archetype, memberNames]) => {
               const data = archetypeData[archetype];
+              // Get member objects to check for founder
+              const membersOfType = room.members.filter(m => m.archetype === archetype);
+              const namesWithFounder = membersOfType.map(m =>
+                m.id === room.createdBy ? `${m.name} (founder)` : m.name
+              );
               return (
                 <div key={archetype} className="archetype-group">
                   <div
@@ -519,7 +524,7 @@ export default async function UtopiaPage({ params }: Props) {
                   >
                     {data?.name || archetype}
                   </div>
-                  <div className="member-names">{names.join(", ")}</div>
+                  <div className="member-names">{namesWithFounder.join(", ")}</div>
                 </div>
               );
             })}
