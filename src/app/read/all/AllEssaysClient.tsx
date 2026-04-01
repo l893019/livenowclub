@@ -155,7 +155,7 @@ export default function AllEssaysClient({ essays }: AllEssaysClientProps) {
 
         .back-link {
           display: inline-block;
-          font-family: "Space Grotesk", sans-serif;
+          font-family: "Satoshi", sans-serif;
           font-size: 12px;
           font-weight: 400;
           letter-spacing: 0.3em;
@@ -182,7 +182,7 @@ export default function AllEssaysClient({ essays }: AllEssaysClientProps) {
         }
 
         .all-essays-header p {
-          font-family: "Space Grotesk", sans-serif;
+          font-family: "Satoshi", sans-serif;
           font-size: 11px;
           font-weight: 400;
           letter-spacing: 0.3em;
@@ -246,7 +246,7 @@ export default function AllEssaysClient({ essays }: AllEssaysClientProps) {
         }
 
         .search-results {
-          font-family: "Space Grotesk", sans-serif;
+          font-family: "Satoshi", sans-serif;
           font-size: 12px;
           font-weight: 400;
           letter-spacing: 0.05em;
@@ -265,7 +265,7 @@ export default function AllEssaysClient({ essays }: AllEssaysClientProps) {
         }
 
         .year-header {
-          font-family: "Space Grotesk", sans-serif;
+          font-family: "Satoshi", sans-serif;
           font-size: 14px;
           font-weight: 400;
           letter-spacing: 0.2em;
@@ -295,7 +295,7 @@ export default function AllEssaysClient({ essays }: AllEssaysClientProps) {
         }
 
         .essay-type {
-          font-family: "Space Grotesk", sans-serif;
+          font-family: "Satoshi", sans-serif;
           font-size: 10px;
           font-weight: 400;
           letter-spacing: 0.2em;
@@ -316,7 +316,7 @@ export default function AllEssaysClient({ essays }: AllEssaysClientProps) {
         }
 
         .essay-read-time {
-          font-family: "Space Grotesk", sans-serif;
+          font-family: "Satoshi", sans-serif;
           font-size: 10px;
           font-weight: 400;
           color: rgba(45, 42, 38, 0.45);
@@ -326,7 +326,7 @@ export default function AllEssaysClient({ essays }: AllEssaysClientProps) {
         }
 
         .essay-date {
-          font-family: "Space Grotesk", sans-serif;
+          font-family: "Satoshi", sans-serif;
           font-size: 11px;
           font-weight: 400;
           color: rgba(45, 42, 38, 0.45);

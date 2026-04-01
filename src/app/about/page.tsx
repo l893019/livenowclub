@@ -142,7 +142,7 @@ export default function AboutPage() {
 
         .about-label {
           display: block;
-          font-family: "Space Grotesk", sans-serif;
+          font-family: "Satoshi", sans-serif;
           font-size: 11px;
           font-weight: 400;
           letter-spacing: 0.3em;
@@ -220,7 +220,7 @@ export default function AboutPage() {
           display: inline-flex;
           align-items: center;
           gap: 8px;
-          font-family: "Space Grotesk", sans-serif;
+          font-family: "Satoshi", sans-serif;
           font-size: 0.9375rem;
           color: var(--pink, #E8178A);
           text-decoration: none;

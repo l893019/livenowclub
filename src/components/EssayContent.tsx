@@ -336,7 +336,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
 
         .essay-back {
           display: inline-block;
-          font-family: "Space Grotesk", sans-serif;
+          font-family: "Satoshi", sans-serif;
           font-size: 11px;
           font-weight: 400;
           letter-spacing: 0.2em;
@@ -358,7 +358,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
 
         .essay-header-meta {
           display: block;
-          font-family: "Space Grotesk", sans-serif;
+          font-family: "Satoshi", sans-serif;
           font-size: 11px;
           font-weight: 400;
           letter-spacing: 0.3em;
@@ -386,7 +386,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         }
 
         .essay-header-date {
-          font-family: "Space Grotesk", sans-serif;
+          font-family: "Satoshi", sans-serif;
           font-size: 12px;
           font-weight: 400;
           letter-spacing: 0.1em;
@@ -528,7 +528,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
           padding: 10px 24px;
           background: #e8178a;
           color: white;
-          font-family: "Space Grotesk", sans-serif;
+          font-family: "Satoshi", sans-serif;
           font-size: 12px;
           font-weight: 500;
           letter-spacing: 0.1em;
@@ -555,7 +555,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         }
 
         .essay-share-label {
-          font-family: "Space Grotesk", sans-serif;
+          font-family: "Satoshi", sans-serif;
           font-size: 11px;
           font-weight: 400;
           letter-spacing: 0.3em;
@@ -607,7 +607,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         }
 
         .essay-read-next h2 {
-          font-family: "Space Grotesk", sans-serif;
+          font-family: "Satoshi", sans-serif;
           font-size: 10px;
           font-weight: 400;
           letter-spacing: 0.25em;
@@ -651,7 +651,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         }
 
         .read-next-type {
-          font-family: "Space Grotesk", sans-serif;
+          font-family: "Satoshi", sans-serif;
           font-size: 9px;
           font-weight: 400;
           letter-spacing: 0.25em;

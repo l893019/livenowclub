@@ -127,7 +127,7 @@ export default function ConnectPage() {
 
         .connect-label {
           display: block;
-          font-family: "Space Grotesk", sans-serif;
+          font-family: "Satoshi", sans-serif;
           font-size: 11px;
           font-weight: 400;
           letter-spacing: 0.3em;
@@ -172,7 +172,7 @@ export default function ConnectPage() {
         }
 
         .form-group label {
-          font-family: "Space Grotesk", sans-serif;
+          font-family: "Satoshi", sans-serif;
           font-size: 11px;
           font-weight: 400;
           letter-spacing: 0.15em;

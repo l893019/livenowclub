@@ -117,7 +117,7 @@ export default function ExitIntentCard() {
           padding: 12px 24px;
           background: #e8178a;
           color: white;
-          font-family: "Space Grotesk", sans-serif;
+          font-family: "Satoshi", sans-serif;
           font-size: 12px;
           font-weight: 500;
           letter-spacing: 0.15em;

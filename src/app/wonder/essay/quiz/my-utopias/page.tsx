@@ -89,7 +89,7 @@ export default function MyUtopiasPage() {
         body {
           background: var(--bg-deep);
           color: var(--text);
-          font-family: 'Space Grotesk', system-ui, sans-serif;
+          font-family: 'Satoshi', system-ui, sans-serif;
           font-size: 17px;
           line-height: 1.75;
           font-weight: 300;
@@ -270,12 +270,8 @@ export default function MyUtopiasPage() {
         }
       `}</style>
 
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap"
-        rel="stylesheet"
-      />
+      <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
+      <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet" />
 
       <header className="header">
         <Link href="/" className="logo">

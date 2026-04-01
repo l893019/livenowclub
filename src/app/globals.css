@@ -23,7 +23,7 @@
   --gold: #F4A03F;
 
   /* Typography */
-  --font-sans: var(--font-space), 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: var(--font-jetbrains), 'JetBrains Mono', 'Menlo', monospace;
 
   /* Spacing - 4px base unit */
@@ -2034,7 +2034,7 @@ p {
 }
 
 .essay-card-type {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: 'Satoshi', system-ui, sans-serif;
   font-size: 11px;
   font-weight: 400;
   letter-spacing: 0.3em;
@@ -2044,7 +2044,7 @@ p {
 }
 
 .essay-card-title {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: 'Satoshi', system-ui, sans-serif;
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 300;
   line-height: var(--leading-none);
@@ -2054,7 +2054,7 @@ p {
 }
 
 .essay-card-quote {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: 'Satoshi', system-ui, sans-serif;
   font-size: clamp(1.1rem, 2vw, 1.35rem);
   font-weight: 300;
   font-style: italic;
@@ -2123,7 +2123,7 @@ p {
 }
 
 .deck-filter {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: 'Satoshi', system-ui, sans-serif;
   font-size: 11px;
   font-weight: 400;
   letter-spacing: 0.2em;
