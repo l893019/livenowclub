@@ -995,10 +995,6 @@ export default async function QuizResultPage({ searchParams }: Props) {
         <div className="go-deeper">
           <div className="go-deeper-title">Go Deeper</div>
           <div className="go-deeper-links">
-            <Link href="/wonder/essay/quiz/explore" className="go-deeper-link">
-              <span className="go-deeper-link-title">See where all worldviews land</span>
-              <span className="go-deeper-link-sub">Interactive scatterplot of 14 archetypes</span>
-            </Link>
             <Link href="/wonder/essay" className="go-deeper-link">
               <span className="go-deeper-link-title">Read the full essay</span>
               <span className="go-deeper-link-sub">When Purpose Is All We Have Left</span>
