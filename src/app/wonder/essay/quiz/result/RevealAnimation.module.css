@@ -10,29 +10,34 @@
 }
 
 .youAre {
-  position: absolute;
-  font-size: clamp(1rem, 3vw, 1.2rem);
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
   font-weight: 300;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.5);
   opacity: 0;
   animation: fadeIn 0.8s ease forwards;
+  margin-bottom: 12px;
+}
+
+.youAreFadeOut {
+  animation: fadeOut 0.5s ease forwards;
 }
 
 .name {
-  font-size: clamp(1.8rem, 6vw, 3rem);
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
+  font-size: clamp(1.6rem, 5vw, 2.5rem);
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.05em;
   opacity: 0;
   animation: fadeIn 1s ease forwards;
   transition: transform 0.8s ease, font-size 0.8s ease;
+  padding: 0 24px;
 }
 
 .nameUp {
   transform: translateY(-30vh);
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
 }
 
 .image {
@@ -82,4 +87,9 @@
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
 }

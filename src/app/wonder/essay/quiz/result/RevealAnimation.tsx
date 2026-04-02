@@ -41,8 +41,8 @@ export function RevealAnimation({
 
   return (
     <div className={styles.overlay}>
-      <div className={styles.youAre}>
-        You are a...
+      <div className={`${styles.youAre} ${showName ? styles.youAreFadeOut : ""}`}>
+        You are
       </div>
 
       {showName && (
