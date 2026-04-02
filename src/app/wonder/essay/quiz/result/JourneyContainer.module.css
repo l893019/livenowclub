@@ -1,0 +1,165 @@
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Step content wrapper */
+.stepWrapper {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.stepContent {
+  width: 100%;
+  min-height: 100vh;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.slideFromRight {
+  animation-name: slideFromRight;
+}
+
+.slideFromLeft {
+  animation-name: slideFromLeft;
+}
+
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Navigation buttons */
+.navButtons {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+  z-index: 100;
+}
+
+.navButton {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.navButton:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 1);
+}
+
+.navButton:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.navButton:focus-visible {
+  outline: 2px solid #e8178a;
+  outline-offset: 2px;
+}
+
+/* Progress dots - Desktop: right side, vertical */
+.progressDots {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 100;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.dotActive {
+  background: #e8178a;
+  box-shadow: 0 0 12px rgba(232, 23, 138, 0.5);
+  transform: scale(1.2);
+}
+
+.dotCompleted {
+  background: rgba(232, 23, 138, 0.5);
+}
+
+.dotPending {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.dot:hover:not(:disabled) {
+  transform: scale(1.3);
+}
+
+.dot:disabled {
+  cursor: default;
+}
+
+.dot:focus-visible {
+  outline: 2px solid #e8178a;
+  outline-offset: 2px;
+}
+
+/* Mobile: bottom, horizontal */
+@media (max-width: 768px) {
+  .navButtons {
+    bottom: 100px;
+  }
+
+  .progressDots {
+    position: fixed;
+    right: auto;
+    top: auto;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .navButton {
+    width: 44px;
+    height: 44px;
+  }
+}
