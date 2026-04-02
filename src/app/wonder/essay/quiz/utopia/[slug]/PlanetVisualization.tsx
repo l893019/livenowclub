@@ -1,37 +1,118 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 type PlanetVisualizationProps = {
   archetypes: string[];
   size?: number;
 };
 
-// Archetype colors for indicators
-const archetypeColors: Record<string, string> = {
-  citizen: "#3db9a4",
-  shaper: "#f4a03f",
-  architect: "#9b8fef",
-  presence: "#e8178a",
-  swimmer: "#6b8fef",
-  rooted: "#7ed6a4",
-  conscience: "#d64545",
-  embers: "#c97d3a",
-  friction: "#ff6b35",
-  unbound: "#a855f7",
-  alive: "#f472b6",
-  mender: "#10b981",
-  cleareyed: "#64748b",
-  between: "#8b8b8b",
+// Archetype colors and names
+const archetypeInfo: Record<string, { color: string; name: string }> = {
+  citizen: { color: "#3db9a4", name: "Citizen of Abundance" },
+  shaper: { color: "#f4a03f", name: "Shaper of Change" },
+  architect: { color: "#9b8fef", name: "Architect of the Commons" },
+  presence: { color: "#e8178a", name: "Keeper of Presence" },
+  swimmer: { color: "#6b8fef", name: "Swimmer in Deep Water" },
+  rooted: { color: "#7ed6a4", name: "Rooted in Stillness" },
+  conscience: { color: "#d64545", name: "Conscience Before Comfort" },
+  embers: { color: "#c97d3a", name: "Keeper of Embers" },
+  friction: { color: "#ff6b35", name: "Alive in the Friction" },
+  unbound: { color: "#a855f7", name: "Unbound from Form" },
+  alive: { color: "#f472b6", name: "Alive to Everything" },
+  mender: { color: "#10b981", name: "Mender of What Remains" },
+  cleareyed: { color: "#64748b", name: "Clear-Eyed in the Storm" },
+  between: { color: "#8b8b8b", name: "In the Space Between" },
 };
+
+const allArchetypes = Object.keys(archetypeInfo);
 
 export default function PlanetVisualization({
   archetypes,
   size = 280,
 }: PlanetVisualizationProps) {
-  // Get unique archetypes
-  const unique = useMemo(() => [...new Set(archetypes)], [archetypes]);
+  const [hoveredArch, setHoveredArch] = useState<string | null>(null);
   const memberCount = archetypes.length;
+
+  // Count each archetype
+  const counts = useMemo(() => {
+    const c: Record<string, number> = {};
+    for (const arch of archetypes) {
+      c[arch] = (c[arch] || 0) + 1;
+    }
+    return c;
+  }, [archetypes]);
+
+  // Find missing archetypes
+  const missing = useMemo(() => {
+    return allArchetypes.filter((arch) => !counts[arch]);
+  }, [counts]);
+
+  // Build ring segments - present archetypes get proportional space, missing get equal tiny slices
+  const segments = useMemo(() => {
+    if (memberCount === 0) {
+      // All missing - equal distribution
+      return allArchetypes.map((arch, i) => ({
+        arch,
+        count: 0,
+        isMissing: true,
+        startAngle: -90 + (360 / allArchetypes.length) * i,
+        endAngle: -90 + (360 / allArchetypes.length) * (i + 1),
+        color: archetypeInfo[arch]?.color || "#666",
+      }));
+    }
+
+    // Present archetypes take 85% of the ring, missing take 15%
+    const presentPercent = 0.85;
+    const missingPercent = 0.15;
+
+    const presentArchetypes = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+    const missingCount = missing.length;
+
+    const result: {
+      arch: string;
+      count: number;
+      isMissing: boolean;
+      startAngle: number;
+      endAngle: number;
+      color: string;
+    }[] = [];
+
+    let currentAngle = -90;
+
+    // Add present archetypes
+    for (const [arch, count] of presentArchetypes) {
+      const percentage = (count / memberCount) * presentPercent;
+      const angle = percentage * 360;
+      result.push({
+        arch,
+        count,
+        isMissing: false,
+        startAngle: currentAngle,
+        endAngle: currentAngle + angle,
+        color: archetypeInfo[arch]?.color || "#666",
+      });
+      currentAngle += angle;
+    }
+
+    // Add missing archetypes (equal small slices)
+    if (missingCount > 0) {
+      const missingAngle = (missingPercent * 360) / missingCount;
+      for (const arch of missing) {
+        result.push({
+          arch,
+          count: 0,
+          isMissing: true,
+          startAngle: currentAngle,
+          endAngle: currentAngle + missingAngle,
+          color: archetypeInfo[arch]?.color || "#666",
+        });
+        currentAngle += missingAngle;
+      }
+    }
+
+    return result;
+  }, [counts, memberCount, missing]);
 
   // Choose planet image based on group size
   const planetImage = useMemo(() => {
@@ -40,8 +121,92 @@ export default function PlanetVisualization({
     return "/wonder/essay/quiz/images/planet-full.png";
   }, [memberCount]);
 
+  // SVG arc path helper
+  const describeArc = (
+    cx: number,
+    cy: number,
+    radius: number,
+    startAngle: number,
+    endAngle: number
+  ) => {
+    const start = polarToCartesian(cx, cy, radius, endAngle);
+    const end = polarToCartesian(cx, cy, radius, startAngle);
+    const largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
+    return [
+      "M", start.x, start.y,
+      "A", radius, radius, 0, largeArcFlag, 0, end.x, end.y,
+    ].join(" ");
+  };
+
+  const polarToCartesian = (
+    cx: number,
+    cy: number,
+    radius: number,
+    angleInDegrees: number
+  ) => {
+    const angleInRadians = (angleInDegrees * Math.PI) / 180.0;
+    return {
+      x: cx + radius * Math.cos(angleInRadians),
+      y: cy + radius * Math.sin(angleInRadians),
+    };
+  };
+
+  // Get midpoint of arc for label positioning
+  const getArcMidpoint = (startAngle: number, endAngle: number, radius: number, cx: number, cy: number) => {
+    const midAngle = (startAngle + endAngle) / 2;
+    return polarToCartesian(cx, cy, radius, midAngle);
+  };
+
+  const ringRadius = size / 2 + 20;
+  const ringWidth = 10;
+  const svgSize = size + 80;
+  const center = svgSize / 2;
+
+  // Get hovered segment info
+  const hoveredSegment = segments.find((s) => s.arch === hoveredArch);
+
   return (
-    <div className="planet-container" style={{ width: size, height: size }}>
+    <div className="planet-container" style={{ width: svgSize, height: svgSize }}>
+      {/* Composition ring */}
+      <svg
+        width={svgSize}
+        height={svgSize}
+        className="composition-ring"
+        style={{ position: "absolute", top: 0, left: 0 }}
+      >
+        {segments.map((seg) => {
+          const isHovered = hoveredArch === seg.arch;
+          const gap = 1.5;
+          const adjustedStart = seg.startAngle + gap / 2;
+          const adjustedEnd = seg.endAngle - gap / 2;
+
+          if (adjustedEnd <= adjustedStart) return null;
+
+          // For very small segments, just return null
+          if (adjustedEnd - adjustedStart < 2) return null;
+
+          return (
+            <path
+              key={seg.arch}
+              d={describeArc(center, center, ringRadius, adjustedStart, adjustedEnd)}
+              fill="none"
+              stroke={seg.color}
+              strokeWidth={isHovered ? ringWidth + 4 : ringWidth}
+              strokeLinecap="round"
+              opacity={seg.isMissing ? 0.2 : 1}
+              style={{
+                filter: isHovered ? `drop-shadow(0 0 8px ${seg.color})` :
+                        seg.isMissing ? "none" : `drop-shadow(0 0 4px ${seg.color}40)`,
+                cursor: "pointer",
+                transition: "all 0.2s ease",
+              }}
+              onMouseEnter={() => setHoveredArch(seg.arch)}
+              onMouseLeave={() => setHoveredArch(null)}
+            />
+          );
+        })}
+      </svg>
+
       {/* Planet image */}
       <img
         src={planetImage}
@@ -52,31 +217,53 @@ export default function PlanetVisualization({
           height: size,
           borderRadius: "50%",
           objectFit: "cover",
+          position: "absolute",
+          top: (svgSize - size) / 2,
+          left: (svgSize - size) / 2,
         }}
       />
 
-      {/* Archetype indicators around the edge */}
-      <div className="archetype-indicators">
-        {unique.map((arch, i) => {
-          const angle = (360 / unique.length) * i - 90;
-          const rad = (angle * Math.PI) / 180;
-          const radius = size / 2 + 16;
-          const x = Math.cos(rad) * radius;
-          const y = Math.sin(rad) * radius;
-
-          return (
-            <div
-              key={arch}
-              className="archetype-dot"
-              style={{
-                backgroundColor: archetypeColors[arch] || "#666",
-                transform: `translate(${x}px, ${y}px)`,
-                boxShadow: `0 0 12px ${archetypeColors[arch] || "#666"}`,
-              }}
-            />
-          );
-        })}
-      </div>
+      {/* Hover tooltip */}
+      {hoveredSegment && (
+        <div
+          className="hover-tooltip"
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            background: "rgba(255, 255, 255, 0.95)",
+            padding: "12px 16px",
+            borderRadius: "8px",
+            boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
+            textAlign: "center",
+            pointerEvents: "none",
+            zIndex: 10,
+          }}
+        >
+          <div
+            style={{
+              fontSize: "11px",
+              fontWeight: 500,
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              color: hoveredSegment.color,
+              marginBottom: "4px",
+            }}
+          >
+            {archetypeInfo[hoveredSegment.arch]?.name || hoveredSegment.arch}
+          </div>
+          <div style={{ fontSize: "14px", color: "#2d2a26" }}>
+            {hoveredSegment.isMissing ? (
+              <span style={{ fontStyle: "italic", color: "rgba(45,42,38,0.5)" }}>
+                No one yet
+              </span>
+            ) : (
+              `${hoveredSegment.count} ${hoveredSegment.count === 1 ? "person" : "people"}`
+            )}
+          </div>
+        </div>
+      )}
 
       <style jsx>{`
         .planet-container {
@@ -88,24 +275,6 @@ export default function PlanetVisualization({
           display: block;
           box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15),
             0 0 60px rgba(232, 23, 138, 0.1);
-        }
-
-        .archetype-indicators {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 0;
-          height: 0;
-        }
-
-        .archetype-dot {
-          position: absolute;
-          width: 12px;
-          height: 12px;
-          border-radius: 50%;
-          margin-left: -6px;
-          margin-top: -6px;
-          border: 2px solid rgba(255, 255, 255, 0.9);
         }
 
         @keyframes float {

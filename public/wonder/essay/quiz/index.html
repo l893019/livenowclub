@@ -2320,6 +2320,13 @@
       const invitedBy = params.get('by');
 
       if (inviteSlug) {
+        // Clear existing user identity so each person joining gets a fresh ID
+        // This allows multiple people on the same device to join the same utopia
+        localStorage.removeItem('quiz-user-id');
+        localStorage.removeItem('quiz-user-result');
+        userId = null;
+        userResult = null;
+
         // Store invite info for after quiz completion
         sessionStorage.setItem('utopia-invite', JSON.stringify({
           slug: inviteSlug,

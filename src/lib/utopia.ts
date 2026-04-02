@@ -197,10 +197,19 @@ export async function joinUtopia(
   userArchetype: string
 ): Promise<UtopiaRoom | null> {
   const utopia = await getUtopia(slug);
-  if (!utopia) return null;
+  if (!utopia) {
+    console.log('[joinUtopia] Utopia not found:', slug);
+    return null;
+  }
 
   // Check if already a member
-  if (utopia.members.some(m => m.id === userId)) {
+  const existingMember = utopia.members.find(m => m.id === userId);
+  if (existingMember) {
+    console.log('[joinUtopia] User already a member:', {
+      userId,
+      existingMember: { id: existingMember.id, name: existingMember.name },
+      totalMembers: utopia.members.length
+    });
     return utopia;
   }
 
@@ -210,6 +219,13 @@ export async function joinUtopia(
     name: userName,
     archetype: userArchetype,
     joinedAt: new Date().toISOString(),
+  });
+
+  console.log('[joinUtopia] Added new member:', {
+    userId,
+    userName,
+    userArchetype,
+    totalMembers: utopia.members.length
   });
 
   // Save

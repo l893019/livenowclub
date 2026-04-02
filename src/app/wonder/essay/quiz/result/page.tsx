@@ -390,6 +390,17 @@ export default async function QuizResultPage({ searchParams }: Props) {
           margin-bottom: 12px;
           letter-spacing: -0.02em;
         }
+        .result-name-link {
+          color: inherit;
+          text-decoration: none;
+          transition: color 0.2s;
+          cursor: pointer;
+        }
+        .result-name-link:hover {
+          color: var(--accent-color);
+          text-decoration: underline;
+          text-underline-offset: 4px;
+        }
         .result-shadow {
           font-size: 1.1rem;
           font-weight: 300;
@@ -672,7 +683,9 @@ export default async function QuizResultPage({ searchParams }: Props) {
 
       <main className="result-container">
         <div className="result-label">You are</div>
-        <h1 className="result-name">{data.name}</h1>
+        <h1 className="result-name">
+          <Link href={`/wonder/essay/quiz/explore/#${archetypeKey}`} className="result-name-link">{data.name}</Link>
+        </h1>
         {shadowData && shadowKey && (
           <p className="result-shadow">with a streak of <Link href={`/wonder/essay/quiz/result?a=${shadowKey}`} style={{ color: shadowData.color, fontStyle: 'italic', textDecoration: 'none' }}>{shadowData.name}</Link></p>
         )}
