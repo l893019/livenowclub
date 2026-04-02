@@ -273,15 +273,16 @@ export function UtopiaPageClient({
         />
 
         <div className={styles.actions}>
+          <button className={styles.btnSecondary} onClick={() => setCurrentView("profile")}>
+            Your Profile
+          </button>
           <button className={styles.btnSecondary} onClick={handleShowReading}>
-            See Group Reading
+            Group Reading
           </button>
           <button className={styles.btnPrimary} onClick={handleShare}>
             Invite Someone
           </button>
         </div>
-
-        <p className={styles.hint}>Tap any dot to explore</p>
 
         <Link href="/wonder/essay/quiz/my-utopias" className={styles.myUtopias}>
           My Utopias →
