@@ -234,3 +234,115 @@ export function getPairDynamic(a: string, b: string): string | null {
   const key = getPairKey(a, b);
   return pairDynamics[key] || null;
 }
+
+// Get the most applicable group dynamic
+export function getGroupDynamic(keys: string[]): string | null {
+  if (keys.length === 0) return null;
+  if (keys.length === 1) return null;
+
+  // For pairs, use exact match
+  if (keys.length === 2) {
+    return getPairDynamic(keys[0], keys[1]);
+  }
+
+  // For larger groups, find the first matching pair (sorted by how interesting)
+  // Prioritize tension pairs over harmony pairs
+  const tensionPairs = [
+    ["shaper", "rooted"],
+    ["shaper", "embers"],
+    ["conscience", "citizen"],
+    ["presence", "unbound"],
+    ["swimmer", "mender"],
+    ["friction", "rooted"],
+  ];
+
+  for (const [a, b] of tensionPairs) {
+    if (keys.includes(a) && keys.includes(b)) {
+      return getPairDynamic(a, b);
+    }
+  }
+
+  // Fall back to any matching pair
+  for (let i = 0; i < keys.length; i++) {
+    for (let j = i + 1; j < keys.length; j++) {
+      const dynamic = getPairDynamic(keys[i], keys[j]);
+      if (dynamic) return dynamic;
+    }
+  }
+
+  return null;
+}
+
+// Generate blended vision from present archetypes
+export function getBlendedVision(keys: string[]): string {
+  if (keys.length === 0) return "";
+  if (keys.length === 1) {
+    return archetypes[keys[0]]?.utopia || "";
+  }
+
+  // For 2-3 archetypes, combine their core concepts
+  const concepts = keys.slice(0, 3).map(k => {
+    const utopia = archetypes[k]?.utopia || "";
+    // Extract the distinctive part after "Their utopia"
+    const match = utopia.match(/Their utopia[^.]*?([a-z].*)/i);
+    if (match) return match[1].replace(/\.$/, "");
+    return utopia.replace(/^Their utopia /, "").replace(/\.$/, "");
+  });
+
+  if (concepts.length === 2) {
+    return `A place where ${concepts[0]}, and where ${concepts[1]}.`;
+  }
+
+  return `A place where ${concepts[0]}, where ${concepts[1]}, and where ${concepts[2]}.`;
+}
+
+// Get superpowers weighted by representation
+export function getSuperpowers(keys: string[], counts?: Record<string, number>): string[] {
+  const powers = keys
+    .map(k => ({ key: k, power: archetypes[k]?.superpower, count: counts?.[k] || 1 }))
+    .filter(p => p.power)
+    .sort((a, b) => b.count - a.count)
+    .map(p => p.power as string);
+
+  return powers.slice(0, 3);
+}
+
+// Get missing voice insights
+export type MissingVoice = { key: string; name: string; color: string; insight: string };
+
+const missingInsights: Record<string, string> = {
+  citizen: "No one here trusts abundance yet.",
+  shaper: "No one is pushing for change.",
+  architect: "No one is thinking about structures.",
+  presence: "No one is fully here.",
+  swimmer: "No one sits with questions.",
+  rooted: "No one has stopped moving.",
+  conscience: "No one is watching the watchers.",
+  embers: "No one guards the memory.",
+  friction: "No one craves difficulty.",
+  unbound: "No one is reaching past the edges.",
+  alive: "No one is here just to feel.",
+  mender: "No one fixes what's broken.",
+  cleareyed: "No one tells the hard truth.",
+  between: "Everyone already knows what they believe.",
+};
+
+export function getMissingVoices(presentKeys: string[], limit = 2): MissingVoice[] {
+  const missing = archetypeKeys.filter(k => !presentKeys.includes(k));
+
+  return missing.slice(0, limit).map(key => ({
+    key,
+    name: archetypes[key].name,
+    color: archetypes[key].color,
+    insight: missingInsights[key] || "This perspective is missing.",
+  }));
+}
+
+// Get a group book recommendation
+export function getGroupBook(keys: string[], counts?: Record<string, number>): Book | null {
+  if (keys.length === 0) return null;
+
+  // Pick from the most represented archetype
+  const sorted = [...keys].sort((a, b) => (counts?.[b] || 1) - (counts?.[a] || 1));
+  return archetypes[sorted[0]]?.book || null;
+}
