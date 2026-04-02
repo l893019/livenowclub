@@ -284,6 +284,78 @@
 
 ---
 
+## Additional Design Details
+
+### Returning Users
+
+**First visit:** Full journey (Reveal → Radar → Card → etc.)
+
+**Return visit:**
+- Land directly on your Card
+- Subtle "Replay intro" link for those who want it again
+- If you have utopias: "Your Utopias" pill/badge visible
+
+---
+
+### Share Artifact
+
+**What gets shared:** A generated image, not just a link
+
+**Image specs:**
+- 1080x1920px (Instagram Stories format)
+- Contains: archetype name, island image, utopia quote, mini radar, subtle branding
+- Also copies link to clipboard as backup
+
+**OG images:** Generate for every result URL so link previews look good in Messages/Twitter
+
+---
+
+### Invite Flow
+
+**When someone clicks an invite link:**
+1. See the inviter's card first: *"Louise is a Swimmer in Deep Water"*
+2. Below: *"She started The Unfinished City. Take the quiz to join."*
+3. After completing quiz → Their reveal plays
+4. Then group view with their dot appearing among existing members
+
+---
+
+### My Utopias Dashboard
+
+**Access:** Profile icon in corner, or "My Utopias" link at end of journey
+
+**Layout:**
+- Simple list of utopias you're in
+- Each shows: Mini radar thumbnail, utopia name, member count
+- Tap → Goes to that group's radar view
+
+**Philosophy:** Dashboard is utility, not the main experience. Keep it out of the way.
+
+---
+
+### Large Groups (10+ people)
+
+**Radar behavior:**
+- Show all dots but cluster overlapping ones
+- Your dot always highlighted/on top
+- Member count label: "12 people"
+- Tap count → Full member list
+
+**Relationships:** Still work via tap on dot or selecting from list
+
+---
+
+### Essay Connection
+
+**Placement:** End of the individual journey (after Card or Go Deeper)
+
+**Treatment:**
+- Subtle link: *"This quiz is from an essay on post-scarcity futures. Read it →"*
+- Not forced into the main flow
+- The quiz stands alone; the essay is for those who want the full context
+
+---
+
 ## Implementation Priority
 
 **Phase 1: Individual Journey**
