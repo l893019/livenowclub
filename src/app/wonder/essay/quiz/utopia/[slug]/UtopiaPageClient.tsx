@@ -283,6 +283,7 @@ export function UtopiaPageClient({
               <div className={styles.yourCardContent}>
                 <span className={styles.yourCardLabel}>{arch.name}</span>
                 <p className={styles.yourCardQuote}>{arch.utopia.replace(/^Their/, "Your")}</p>
+                <span className={styles.yourCardLink}>See your profile →</span>
               </div>
             </button>
           );

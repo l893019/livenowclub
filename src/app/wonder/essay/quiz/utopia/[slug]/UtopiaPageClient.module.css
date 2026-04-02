@@ -241,6 +241,15 @@
   line-height: 1.5;
 }
 
+.yourCardLink {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  font-style: normal;
+  color: #e8178a;
+  font-weight: 500;
+}
+
 .myUtopias {
   margin-top: 16px;
   font-size: 0.85rem;
