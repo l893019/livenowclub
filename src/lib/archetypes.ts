@@ -7,6 +7,18 @@ export type Book = {
   author: string;
 };
 
+export type BookWithReason = {
+  title: string;
+  author: string;
+  reason: string;
+};
+
+export type Compatibility = {
+  ally: string;
+  tension: string;
+  need: string;
+};
+
 export type Archetype = {
   key: string;
   name: string;
@@ -16,6 +28,8 @@ export type Archetype = {
   blindSpot: string;
   superpower: string;
   book: Book;
+  books: BookWithReason[];
+  compatibility: Compatibility;
 };
 
 export const archetypes: Record<string, Archetype> = {
@@ -28,6 +42,16 @@ export const archetypes: Record<string, Archetype> = {
     blindSpot: "They sometimes mistake access for equity. Everyone having options is not the same as everyone being free.",
     superpower: "trusting abundance",
     book: { title: "The Player of Games", author: "Banks" },
+    books: [
+      { title: "The Player of Games", author: "Banks", reason: "The Culture at its most playful—a civilization where games become the highest art because survival has been solved." },
+      { title: "Accelerando", author: "Stross", reason: "What happens when abundance accelerates past human comprehension, and the economy becomes incomprehensible to its creators." },
+      { title: "Down and Out in the Magic Kingdom", author: "Doctorow", reason: "Post-scarcity as actually lived: messy, political, and still full of people trying to figure out what matters." }
+    ],
+    compatibility: {
+      ally: "the one who wants to feel everything",
+      tension: "the one who's watching for what's being hidden",
+      need: "the one who craves difficulty"
+    },
   },
   shaper: {
     key: "shaper",
@@ -38,6 +62,16 @@ export const archetypes: Record<string, Archetype> = {
     blindSpot: "They sometimes mistake movement for progress. Tearing something down can be its own form of running away.",
     superpower: "building from scratch",
     book: { title: "Parable of the Sower", author: "Butler" },
+    books: [
+      { title: "Parable of the Sower", author: "Butler", reason: "Building a new belief system from the ruins. Change as spiritual practice." },
+      { title: "Red Mars", author: "Robinson", reason: "Terraforming as philosophy—every technical choice is a political one, and the planet pushes back." },
+      { title: "The Diamond Age", author: "Stephenson", reason: "Education as revolution. The primer doesn't just teach—it transforms who you can become." }
+    ],
+    compatibility: {
+      ally: "the one who craves difficulty",
+      tension: "the one who chose stillness",
+      need: "the one who guards what came before"
+    },
   },
   architect: {
     key: "architect",
@@ -48,6 +82,16 @@ export const archetypes: Record<string, Archetype> = {
     blindSpot: "They can love the system more than the people inside it. The meeting can become more important than what the meeting was for.",
     superpower: "thinking in systems",
     book: { title: "The Dispossessed", author: "Le Guin" },
+    books: [
+      { title: "The Dispossessed", author: "Le Guin", reason: "The ambiguous utopia. Anarchism as lived practice, with all its frustrations and freedoms." },
+      { title: "Pacific Edge", author: "Robinson", reason: "Utopia is zoning laws and water rights. The quiet work of making a good society actually function." },
+      { title: "Four Ways to Forgiveness", author: "Le Guin", reason: "Liberation is not a moment but a generation. The slow, painful work of building freedom after slavery." }
+    ],
+    compatibility: {
+      ally: "the one who fixes what's broken",
+      tension: "the one who left the body behind",
+      need: "the one who lives in questions"
+    },
   },
   presence: {
     key: "presence",
@@ -58,6 +102,16 @@ export const archetypes: Record<string, Archetype> = {
     blindSpot: "They sometimes use care as a way to avoid confrontation. Staying in the room is not always the brave choice.",
     superpower: "showing up fully",
     book: { title: "Klara and the Sun", author: "Ishiguro" },
+    books: [
+      { title: "The Diamond Age", author: "Stephenson", reason: "A hired actress becomes a surrogate mother through a machine. Presence transmitted through technology but never replaced by it." },
+      { title: "Klara and the Sun", author: "Ishiguro", reason: "An AI friend who sees everything and is seen by almost no one. The quiet devastation of being present for someone who doesn't stay." },
+      { title: "The Lifecycle of Software Objects", author: "Chiang", reason: "Raising digital beings requires the same thing as raising children: showing up, year after year, when it's no longer novel." }
+    ],
+    compatibility: {
+      ally: "the one who chose stillness",
+      tension: "the one who left the body behind",
+      need: "the one who tells the truth"
+    },
   },
   swimmer: {
     key: "swimmer",
@@ -68,6 +122,16 @@ export const archetypes: Record<string, Archetype> = {
     blindSpot: "They can sit with a question so long it becomes an excuse to never act. Not-knowing can become its own cowardice.",
     superpower: "sitting with hard questions",
     book: { title: "Solaris", author: "Lem" },
+    books: [
+      { title: "Solaris", author: "Lem", reason: "An ocean that may be conscious but refuses to be understood. Contact as permanent mystery." },
+      { title: "Blindsight", author: "Watts", reason: "What if consciousness is a bug, not a feature? The deepest questions have no comfortable answers." },
+      { title: "Story of Your Life", author: "Chiang", reason: "Learning an alien language that reveals time differently. Knowing the ending doesn't diminish the living." }
+    ],
+    compatibility: {
+      ally: "the one who left the body behind",
+      tension: "the one who fixes what's broken",
+      need: "the one who builds collective structures"
+    },
   },
   rooted: {
     key: "rooted",
@@ -78,6 +142,16 @@ export const archetypes: Record<string, Archetype> = {
     blindSpot: "Their stillness can look like withdrawal to the people who need them. Choosing to stop is a luxury not everyone can afford.",
     superpower: "knowing when to stop",
     book: { title: "A Psalm for the Wild-Built", author: "Chambers" },
+    books: [
+      { title: "A Psalm for the Wild-Built", author: "Chambers", reason: "A monk and a robot ask what we're for. The answer might be: nothing, and that's okay." },
+      { title: "Always Coming Home", author: "Le Guin", reason: "A civilization that chose not to progress. The anthropology of people who stayed put." },
+      { title: "Piranesi", author: "Clarke", reason: "A man who has forgotten the world and found peace in a house with no exit. Presence without purpose." }
+    ],
+    compatibility: {
+      ally: "the one who values presence above all",
+      tension: "the one who can't stop building",
+      need: "the one who wants to feel everything"
+    },
   },
   conscience: {
     key: "conscience",
@@ -88,6 +162,16 @@ export const archetypes: Record<string, Archetype> = {
     blindSpot: "They can become so focused on what's wrong that they forget to notice what's working. Permanent suspicion is its own kind of prison.",
     superpower: "spotting what's hidden",
     book: { title: "1984", author: "Orwell" },
+    books: [
+      { title: "1984", author: "Orwell", reason: "The nightmare that taught us to recognize the signs. Big Brother wasn't a prediction—it was a warning." },
+      { title: "Brave New World", author: "Huxley", reason: "The dystopia that seduces. Comfort as control. The soma we choose over the truth we can't bear." },
+      { title: "The Handmaid's Tale", author: "Atwood", reason: "Everything in this book has happened somewhere. The power of witness against forgetting." }
+    ],
+    compatibility: {
+      ally: "the one who tells the truth",
+      tension: "the one who's made peace with abundance",
+      need: "the one who values presence above all"
+    },
   },
   embers: {
     key: "embers",
@@ -98,6 +182,16 @@ export const archetypes: Record<string, Archetype> = {
     blindSpot: "They can love what was so deeply that they become hostile to what could be. The archive becomes a fortress.",
     superpower: "remembering what matters",
     book: { title: "A Canticle for Leibowitz", author: "Miller" },
+    books: [
+      { title: "A Canticle for Leibowitz", author: "Miller", reason: "Monks preserving fragments of knowledge through a dark age. Memory as sacred duty." },
+      { title: "Always Coming Home", author: "Le Guin", reason: "A future that remembers how to live. The Kesh didn't lose the old ways—they chose them." },
+      { title: "Parable of the Talents", author: "Butler", reason: "Building a religion from what survives. The ember that becomes a fire." }
+    ],
+    compatibility: {
+      ally: "the one who builds collective structures",
+      tension: "the one who can't stop building",
+      need: "the one still figuring it out"
+    },
   },
   friction: {
     key: "friction",
@@ -108,6 +202,16 @@ export const archetypes: Record<string, Archetype> = {
     blindSpot: "They can mistake difficulty for meaning. Not everything hard is worth doing. Sometimes the easy path is the right one.",
     superpower: "embracing difficulty",
     book: { title: "The Stars My Destination", author: "Bester" },
+    books: [
+      { title: "The Stars My Destination", author: "Bester", reason: "Revenge as rocket fuel. A man who burns through every obstacle because stopping would mean facing himself." },
+      { title: "The Moon Is a Harsh Mistress", author: "Heinlein", reason: "Revolution as engineering problem. Free people building freedom from scratch, with math." },
+      { title: "The Evolutionary Void", author: "Hamilton", reason: "Post-human and still striving. Even with god-like powers, there's always another frontier." }
+    ],
+    compatibility: {
+      ally: "the one who can't stop building",
+      tension: "the one who chose stillness",
+      need: "the one who values presence above all"
+    },
   },
   unbound: {
     key: "unbound",
@@ -118,6 +222,16 @@ export const archetypes: Record<string, Archetype> = {
     blindSpot: "They left so much behind that they may not recognize what was worth keeping until it's too late.",
     superpower: "imagining beyond limits",
     book: { title: "Childhood's End", author: "Clarke" },
+    books: [
+      { title: "Childhood's End", author: "Clarke", reason: "The last generation of humans watches their children become something unrecognizable. Evolution as transcendence and loss." },
+      { title: "Diaspora", author: "Egan", reason: "Minds running on quantum computers, exploring mathematical universes. What's left when the body is optional?" },
+      { title: "The Hydrogen Sonata", author: "Banks", reason: "A civilization preparing to Sublime—to leave the material universe entirely. The party at the end of history." }
+    ],
+    compatibility: {
+      ally: "the one who lives in questions",
+      tension: "the one who values presence above all",
+      need: "the one who guards what came before"
+    },
   },
   alive: {
     key: "alive",
@@ -128,6 +242,16 @@ export const archetypes: Record<string, Archetype> = {
     blindSpot: "Sensation can become consumption. Feeling everything is not the same as understanding anything.",
     superpower: "feeling everything",
     book: { title: "Surface Detail", author: "Banks" },
+    books: [
+      { title: "Surface Detail", author: "Banks", reason: "Virtual heavens and hells. The Culture debates whether experience without consequence still counts." },
+      { title: "Trouble on Triton", author: "Delany", reason: "Change your body, your gender, your neighborhood, your self. Freedom as endless reconfiguration." },
+      { title: "Schismatrix Plus", author: "Sterling", reason: "Humanity splinters into a thousand experiments. Every faction trying to feel more, differently, longer." }
+    ],
+    compatibility: {
+      ally: "the one who's made peace with abundance",
+      tension: "the one who's watching for what's being hidden",
+      need: "the one who tells the truth"
+    },
   },
   mender: {
     key: "mender",
@@ -138,6 +262,16 @@ export const archetypes: Record<string, Archetype> = {
     blindSpot: "They can become so focused on repair that they miss when something needs to die. Not everything should be saved.",
     superpower: "fixing what's broken",
     book: { title: "The Ministry for the Future", author: "Robinson" },
+    books: [
+      { title: "The Ministry for the Future", author: "Robinson", reason: "Climate repair as political thriller. Every chapter a different tool for fixing what we broke." },
+      { title: "New York 2140", author: "Robinson", reason: "The city floods and people stay anyway. Adaptation as stubborn hope." },
+      { title: "Station Eleven", author: "Mandel", reason: "After collapse, someone has to remember Shakespeare. Art as repair of the spirit." }
+    ],
+    compatibility: {
+      ally: "the one who builds collective structures",
+      tension: "the one who lives in questions",
+      need: "the one who craves difficulty"
+    },
   },
   cleareyed: {
     key: "cleareyed",
@@ -148,6 +282,16 @@ export const archetypes: Record<string, Archetype> = {
     blindSpot: "Honesty without tenderness is cruelty. They can see everything clearly and still miss how their truth lands.",
     superpower: "telling hard truths",
     book: { title: "Slaughterhouse-Five", author: "Vonnegut" },
+    books: [
+      { title: "Slaughterhouse-Five", author: "Vonnegut", reason: "So it goes. The only honest response to war is to say what happened and not look away." },
+      { title: "His Master's Voice", author: "Lem", reason: "Scientists trying to decode an alien message and mostly decoding their own limitations." },
+      { title: "The Road", author: "McCarthy", reason: "No hope, no rescue, no meaning—just a father and son walking. The truth stripped to bone." }
+    ],
+    compatibility: {
+      ally: "the one who's watching for what's being hidden",
+      tension: "the one who wants to feel everything",
+      need: "the one who chose stillness"
+    },
   },
   between: {
     key: "between",
@@ -158,6 +302,16 @@ export const archetypes: Record<string, Archetype> = {
     blindSpot: "The space between can become a permanent address. Not knowing what you are can become a way of avoiding the risk of choosing.",
     superpower: "holding uncertainty",
     book: { title: "Never Let Me Go", author: "Ishiguro" },
+    books: [
+      { title: "Never Let Me Go", author: "Ishiguro", reason: "Knowing your fate doesn't prepare you for it. The space between knowledge and acceptance." },
+      { title: "Station Eleven", author: "Mandel", reason: "The before and the after, and the people caught in the middle trying to remember who they were." },
+      { title: "The Left Hand of Darkness", author: "Le Guin", reason: "An envoy on a world without gender, learning that everything he knew was local. The space between cultures." }
+    ],
+    compatibility: {
+      ally: "the one who guards what came before",
+      tension: "the one who craves difficulty",
+      need: "the one who can't stop building"
+    },
   },
 };
 
