@@ -1,28 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { headers } from "next/headers";
 import { getUtopia, type UtopiaMember } from "@/lib/utopia";
+import { archetypes } from "@/lib/archetypes";
 import ShareButton from "./ShareButton";
 import PlanetVisualization from "./PlanetVisualization";
-import EditableMemberList from "./EditableMemberList";
-
-// Archetype display data
-const archetypeData: Record<string, { name: string; color: string }> = {
-  citizen: { name: "Citizen of Abundance", color: "#3db9a4" },
-  shaper: { name: "Shaper of Change", color: "#f4a03f" },
-  architect: { name: "Architect of the Commons", color: "#9b8fef" },
-  presence: { name: "Keeper of Presence", color: "#e8178a" },
-  swimmer: { name: "Swimmer in Deep Water", color: "#6b8fef" },
-  rooted: { name: "Rooted in Stillness", color: "#7ed6a4" },
-  conscience: { name: "Conscience Before Comfort", color: "#d64545" },
-  embers: { name: "Keeper of Embers", color: "#c97d3a" },
-  friction: { name: "Alive in the Friction", color: "#ff6b35" },
-  unbound: { name: "Unbound from Form", color: "#a855f7" },
-  alive: { name: "Alive to Everything", color: "#f472b6" },
-  mender: { name: "Mender of What Remains", color: "#10b981" },
-  cleareyed: { name: "Clear-Eyed in the Storm", color: "#64748b" },
-  between: { name: "In the Space Between", color: "#8b8b8b" },
-};
+import { UtopiaCards } from "./UtopiaCards";
 
 // Copy for same archetype pairs
 const pairSameCopy: Record<string, string> = {
@@ -130,7 +114,7 @@ function analyzeGroup(members: UtopiaMember[]) {
     .map(([arch]) => arch);
 
   // Find missing
-  const allArchetypes = Object.keys(archetypeData);
+  const allArchetypes = Object.keys(archetypes);
   const missing = allArchetypes.filter((arch) => !counts[arch]);
 
   // Generate one-liner
@@ -143,8 +127,8 @@ function analyzeGroup(members: UtopiaMember[]) {
       oneLiner = pairSameCopy[a.archetype] || "Two of a kind.";
     } else {
       // Different archetypes
-      const aName = archetypeData[a.archetype]?.name || a.archetype;
-      const bName = archetypeData[b.archetype]?.name || b.archetype;
+      const aName = archetypes[a.archetype]?.name || a.archetype;
+      const bName = archetypes[b.archetype]?.name || b.archetype;
       oneLiner = `A ${aName.split(" ")[0]} and a ${bName.split(" ")[0]}. You'll either balance each other or drive each other crazy.`;
     }
   } else if (overrep.length > 0) {
@@ -175,7 +159,12 @@ export default async function UtopiaPage({ params }: Props) {
   const { counts, missing, oneLiner } = analyzeGroup(room.members);
   const creator = room.members.find(m => m.id === room.createdBy);
   const creatorName = creator?.name || "Someone";
-  const shareUrl = `https://livenowclub.com/wonder/essay/quiz/utopia/${slug}/join`;
+
+  // Get current host for share URL
+  const headersList = await headers();
+  const host = headersList.get("host") || "livenowclub.com";
+  const protocol = host.includes("localhost") ? "http" : "https";
+  const shareUrl = `${protocol}://${host}/wonder/essay/quiz/utopia/${slug}/join`;
   const shareText = `Join ${room.name} — a utopia of ${room.members.length}.`;
 
   return (
@@ -349,6 +338,15 @@ export default async function UtopiaPage({ params }: Props) {
           text-transform: uppercase;
           letter-spacing: 0.1em;
           margin-bottom: 4px;
+          text-decoration: none;
+          display: block;
+          cursor: pointer;
+          transition: opacity 0.2s;
+        }
+        .missing-archetype:hover {
+          opacity: 0.7;
+          text-decoration: underline;
+          text-underline-offset: 3px;
         }
 
         .missing-insight {
@@ -387,6 +385,13 @@ export default async function UtopiaPage({ params }: Props) {
           display: inline-block;
           margin-bottom: 24px;
           word-break: break-all;
+          text-decoration: none;
+          transition: all 0.2s;
+          cursor: pointer;
+        }
+        .share-link:hover {
+          color: var(--accent-pink);
+          background: rgba(232, 23, 138, 0.08);
         }
 
         .actions {
@@ -501,14 +506,13 @@ export default async function UtopiaPage({ params }: Props) {
           <p className="one-liner">{oneLiner}</p>
         </div>
 
-        {/* Members */}
+        {/* Members - Swipeable Cards */}
         <div className="section">
           <h2 className="section-title">Who&apos;s Here</h2>
-          <EditableMemberList
+          <UtopiaCards
             members={room.members}
             createdBy={room.createdBy}
-            slug={slug}
-            archetypeData={archetypeData}
+            utopiaName={room.name}
           />
         </div>
 
@@ -523,12 +527,13 @@ export default async function UtopiaPage({ params }: Props) {
               <div className="missing-list">
                 {missing.slice(0, 4).map((arch) => (
                   <div key={arch} className="missing-item">
-                    <div
+                    <Link
+                      href={`/wonder/essay/quiz/explore/#${arch}`}
                       className="missing-archetype"
-                      style={{ color: archetypeData[arch]?.color || "#666" }}
+                      style={{ color: archetypes[arch]?.color || "#666" }}
                     >
-                      {archetypeData[arch]?.name || arch}
-                    </div>
+                      {archetypes[arch]?.name || arch}
+                    </Link>
                     <div className="missing-insight">
                       {missingCopy[arch] || "Someone with this perspective could help."}
                     </div>
@@ -545,7 +550,7 @@ export default async function UtopiaPage({ params }: Props) {
           <p className="share-subtitle">
             See how your utopia changes when new worldviews join.
           </p>
-          <div className="share-link">{shareUrl}</div>
+          <a href={shareUrl} className="share-link" target="_blank" rel="noopener noreferrer">{shareUrl}</a>
           <div className="actions">
             <ShareButton shareText={shareText} shareUrl={shareUrl} />
             <Link href="/wonder/essay/quiz/my-utopias" className="btn btn-secondary">
