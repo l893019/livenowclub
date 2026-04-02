@@ -66,14 +66,13 @@ export function CombinedCard({ utopiaName, presentKeys, grouped }: CombinedCardP
       {superpowers.length > 0 && (
         <div className={styles.section}>
           <span className={styles.sectionLabel}>Your strengths</span>
-          <p className={styles.sectionText}>
-            {superpowers.length === 1
-              ? superpowers[0]
-              : superpowers.length === 2
-                ? `${superpowers[0]} and ${superpowers[1]}`
-                : `${superpowers[0]}, ${superpowers[1]}, and ${superpowers[2]}`
-            }
-          </p>
+          <div className={styles.strengthsList}>
+            {superpowers.map((power, i) => (
+              <span key={i} className={styles.strengthPill}>
+                {power.charAt(0).toUpperCase() + power.slice(1)}
+              </span>
+            ))}
+          </div>
         </div>
       )}
 

@@ -91,6 +91,22 @@
   margin: 0;
 }
 
+.strengthsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.strengthPill {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #e8178a;
+  background: rgba(232, 23, 138, 0.08);
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
 .utopia {
   font-size: 1rem;
   font-style: italic;
