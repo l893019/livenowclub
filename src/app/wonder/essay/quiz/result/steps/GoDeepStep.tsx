@@ -147,7 +147,7 @@ export function GoDeepStep({
       {/* Essay Link */}
       <div className={styles.essayLink}>
         <Link href="/wonder/essay" className={styles.essayLinkText}>
-          This quiz is from an essay on post-scarcity futures. Read it &rarr;
+          Read the essay &rarr;
         </Link>
       </div>
     </div>
