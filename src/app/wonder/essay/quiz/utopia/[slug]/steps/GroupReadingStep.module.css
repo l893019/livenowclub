@@ -1,0 +1,107 @@
+.container {
+  min-height: 100vh;
+  padding: 100px 24px 120px;
+  background: #faf6f1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.sectionLabel {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(45, 42, 38, 0.45);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.strengthsCard,
+.blindSpotCard,
+.bookCard {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  text-align: center;
+}
+
+.strengthsText {
+  font-size: 1.1rem;
+  color: #2d2a26;
+  line-height: 1.7;
+  text-transform: capitalize;
+}
+
+.blindSpotCard {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.blindSpotText {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: rgba(45, 42, 38, 0.8);
+  line-height: 1.7;
+}
+
+.missingList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.missingItem {
+  background: white;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.missingName {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.missingName:hover {
+  opacity: 0.7;
+}
+
+.missingInsight {
+  font-size: 0.95rem;
+  color: rgba(45, 42, 38, 0.7);
+  margin-top: 4px;
+  line-height: 1.6;
+}
+
+.bookTitle {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.bookTitleText {
+  font-style: italic;
+  color: #2d2a26;
+}
+
+.bookAuthor {
+  color: rgba(45, 42, 38, 0.6);
+}
+
+.bookLink {
+  font-size: 0.85rem;
+  color: #e8178a;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.bookLink:hover {
+  opacity: 0.7;
+}
