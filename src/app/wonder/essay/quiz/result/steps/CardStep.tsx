@@ -9,9 +9,10 @@ type CardStepProps = {
   archetypeKey: string;
   imageUrl: string;
   onContinue: () => void;
+  onBuildUtopia: () => void;
 };
 
-export function CardStep({ archetypeKey, imageUrl, onContinue }: CardStepProps) {
+export function CardStep({ archetypeKey, imageUrl, onContinue, onBuildUtopia }: CardStepProps) {
   const [shareStatus, setShareStatus] = useState<"idle" | "copied" | "shared">("idle");
 
   const archetype = archetypes[archetypeKey];
@@ -96,14 +97,20 @@ export function CardStep({ archetypeKey, imageUrl, onContinue }: CardStepProps) 
       {/* Actions below card */}
       <div className={styles.actions}>
         <button
-          className={styles.shareButton}
+          className={styles.primaryButton}
+          onClick={onBuildUtopia}
+        >
+          Build Your Utopia
+        </button>
+        <button
+          className={styles.secondaryButton}
           onClick={handleShare}
           aria-label="Share your result"
         >
           {shareStatus === "copied" ? "Copied!" : shareStatus === "shared" ? "Shared!" : "Share"}
         </button>
         <button
-          className={styles.continueButton}
+          className={styles.textButton}
           onClick={onContinue}
         >
           Go Deeper &rarr;

@@ -81,12 +81,13 @@
   max-width: 340px;
 }
 
-/* Share button - primary pink */
-.shareButton {
+/* Primary button - Build Your Utopia */
+.primaryButton {
   width: 100%;
   padding: 1rem 1.5rem;
   font-size: 1rem;
   font-weight: 600;
+  font-family: inherit;
   color: #fff;
   background: #e8178a;
   border: none;
@@ -95,26 +96,27 @@
   transition: all 0.2s ease;
 }
 
-.shareButton:hover {
+.primaryButton:hover {
   background: #d11077;
   transform: translateY(-1px);
 }
 
-.shareButton:active {
+.primaryButton:active {
   transform: translateY(0);
 }
 
-.shareButton:focus-visible {
+.primaryButton:focus-visible {
   outline: 2px solid #e8178a;
   outline-offset: 2px;
 }
 
-/* Continue button - secondary */
-.continueButton {
+/* Secondary button - Share */
+.secondaryButton {
   width: 100%;
   padding: 1rem 1.5rem;
   font-size: 1rem;
   font-weight: 500;
+  font-family: inherit;
   color: #2d2a26;
   background: transparent;
   border: 1px solid rgba(45, 42, 38, 0.2);
@@ -123,18 +125,42 @@
   transition: all 0.2s ease;
 }
 
-.continueButton:hover {
+.secondaryButton:hover {
   background: rgba(45, 42, 38, 0.05);
   border-color: rgba(45, 42, 38, 0.3);
 }
 
-.continueButton:active {
+.secondaryButton:active {
   background: rgba(45, 42, 38, 0.08);
 }
 
-.continueButton:focus-visible {
+.secondaryButton:focus-visible {
   outline: 2px solid #e8178a;
   outline-offset: 2px;
+}
+
+/* Text button - Go Deeper */
+.textButton {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  font-family: inherit;
+  color: rgba(45, 42, 38, 0.6);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.textButton:hover {
+  color: #e8178a;
+}
+
+.textButton:focus-visible {
+  outline: 2px solid #e8178a;
+  outline-offset: 2px;
+  border-radius: 8px;
 }
 
 /* Responsive adjustments */

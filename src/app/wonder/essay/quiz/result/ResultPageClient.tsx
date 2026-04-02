@@ -56,7 +56,7 @@ export function ResultPageClient({
     },
     {
       id: "card",
-      component: <CardStep archetypeKey={archetypeKey} imageUrl={imageUrl} onContinue={handleGoDeeper} />,
+      component: <CardStep archetypeKey={archetypeKey} imageUrl={imageUrl} onContinue={handleGoDeeper} onBuildUtopia={handleBuildUtopia} />,
     },
     {
       id: "deeper",
