@@ -235,7 +235,7 @@ export function UtopiaPageClient({
                 </p>
               </div>
               <div className={styles.profileActions}>
-                <Link href="/wonder/essay/quiz/result" className={styles.btnSecondary}>
+                <Link href={`/wonder/essay/quiz/result?a=${me.archetype}`} className={styles.btnSecondary}>
                   See Full Result
                 </Link>
                 <Link href="/wonder/essay/quiz/my-utopias" className={styles.btnSecondary}>
