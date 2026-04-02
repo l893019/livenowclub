@@ -13,6 +13,7 @@ import styles from "./RelationshipStep.module.css";
 type RelationshipStepProps = {
   you: UtopiaMember;
   them: UtopiaMember;
+  utopiaSlug: string;
   onBack: () => void;
   onNext?: () => void;
   onPrev?: () => void;
@@ -23,6 +24,7 @@ type RelationshipStepProps = {
 export function RelationshipStep({
   you,
   them,
+  utopiaSlug,
   onBack,
   onNext,
   onPrev,
@@ -31,6 +33,26 @@ export function RelationshipStep({
 }: RelationshipStepProps) {
   const yourArchetype = archetypes[you.archetype];
   const theirArchetype = archetypes[them.archetype];
+
+  const handleShare = async () => {
+    const shareUrl = `${window.location.origin}/wonder/essay/quiz/utopia/${utopiaSlug}?view=relationship&you=${you.id}&them=${them.id}`;
+    const shareText = `${yourArchetype?.name?.split(" ")[0]} × ${theirArchetype?.name?.split(" ")[0]} — See our relationship`;
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: `${you.name || "You"} × ${them.name || "Them"}`,
+          text: shareText,
+          url: shareUrl,
+        });
+      } catch {
+        // User cancelled or error
+      }
+    } else {
+      await navigator.clipboard.writeText(shareUrl);
+      alert("Link copied to clipboard!");
+    }
+  };
 
   // Get dynamic (detailed or fallback)
   const dynamic =
@@ -102,6 +124,11 @@ export function RelationshipStep({
           <p className={styles.giveText}>{dynamic.give}</p>
         </section>
       </div>
+
+      {/* Share button */}
+      <button className={styles.shareButton} onClick={handleShare}>
+        Share this relationship
+      </button>
 
       {/* Swipe navigation */}
       {(hasNext || hasPrev) && (

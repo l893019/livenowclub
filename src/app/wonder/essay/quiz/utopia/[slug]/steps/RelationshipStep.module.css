@@ -91,6 +91,25 @@
   line-height: 1.7;
 }
 
+.shareButton {
+  margin-top: 32px;
+  padding: 14px 28px;
+  background: #e8178a;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.shareButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232, 23, 138, 0.3);
+}
+
 .swipeNav {
   position: fixed;
   bottom: 32px;

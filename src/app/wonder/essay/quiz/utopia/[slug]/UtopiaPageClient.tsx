@@ -44,6 +44,22 @@ export function UtopiaPageClient({
   useEffect(() => {
     const userId = localStorage.getItem("quiz-user-id");
     setCurrentUserId(userId);
+
+    // Handle deep link for relationship view
+    const params = new URLSearchParams(window.location.search);
+    const view = params.get("view");
+    const youId = params.get("you");
+    const themId = params.get("them");
+
+    if (view === "relationship" && youId && themId) {
+      // Set the selected member and view
+      setSelectedMemberId(themId);
+      setCurrentView("relationship");
+      // Override currentUserId with the "you" from URL for viewing
+      if (youId !== userId) {
+        setCurrentUserId(youId);
+      }
+    }
   }, []);
 
   useEffect(() => {
@@ -171,6 +187,7 @@ export function UtopiaPageClient({
         <RelationshipStep
           you={you}
           them={them}
+          utopiaSlug={slug}
           onBack={handleBackToGroup}
           onNext={selectedIndex < otherMembers.length - 1 ? handleNextMember : undefined}
           onPrev={selectedIndex > 0 ? handlePrevMember : undefined}
