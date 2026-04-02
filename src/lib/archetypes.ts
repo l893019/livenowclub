@@ -534,6 +534,16 @@ export type PairDynamic = {
 
 // Expanded pair dynamics with richer content
 export const expandedPairDynamics: Record<string, PairDynamic> = {
+  "alive+citizen": {
+    thesis: "Both believe in abundance. One trusts access, the other craves experience. A generous worldview.",
+    align: ["You both trust that life can be good", "Scarcity isn't your default assumption"],
+    clash: ["One wants access for all. One wants to feel it all.", "System-building vs. sensation-seeking"],
+    give: {
+      youToThem: "You show them what abundance actually feels like in the body",
+      themToYou: "They build systems that make your experiences possible",
+    },
+    question: "What does abundance mean if no one is there to feel it?",
+  },
   "alive+conscience": {
     thesis: "One wants to feel everything. The other keeps asking: but should we?",
     align: ["You both feel things deeply", "Neither of you can ignore what's happening around you"],
@@ -544,6 +554,16 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
     },
     question: "When does watching become a way of avoiding feeling?",
     warning: "The Conscience may judge what the Alive one needs to experience",
+  },
+  "alive+friction": {
+    thesis: "Both seek intensity. One through sensation, one through challenge. Adjacent energies, different fuel.",
+    align: ["You both reject numbness", "Intensity feels like home to both of you"],
+    clash: ["One seeks sensation. One seeks resistance.", "Feeling everything vs. embracing difficulty"],
+    give: {
+      youToThem: "You show them that intensity can be pleasure, not just struggle",
+      themToYou: "They show you that friction can sharpen what you feel",
+    },
+    question: "When does the search for intensity become its own kind of escape?",
   },
   "alive+rooted": {
     thesis: "One moves constantly. One stays still. Between them, the question of what it means to be present.",
@@ -596,6 +616,16 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
     question: "What would a system look like that earned both your trust?",
     warning: "The Conscience may exhaust the Citizen with constant critique",
   },
+  "citizen+friction": {
+    thesis: "Both embrace challenge, but from different places. One trusts abundance, one craves difficulty.",
+    align: ["You both engage with life actively", "Neither retreats into passivity"],
+    clash: ["One trusts ease. One seeks friction.", "Abundance thinking vs. resistance-seeking"],
+    give: {
+      youToThem: "You show them that good things can come without struggle",
+      themToYou: "They remind you that some difficulty is worth choosing",
+    },
+    question: "What difficulty is worth seeking when abundance is already there?",
+  },
   "citizen+shaper": {
     thesis: "Both believe in what's possible. One trusts the system, one wants to rebuild it.",
     align: ["You both believe in what's possible", "Optimism comes naturally to both"],
@@ -616,6 +646,16 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
     },
     question: "What truth needs to be spoken, and what truth needs to be held?",
   },
+  "cleareyed+swimmer": {
+    thesis: "Both observers. One questions, one speaks. Different relationships to the answers.",
+    align: ["You both look carefully at what is", "Surface-level doesn't satisfy either of you"],
+    clash: ["One lives in questions. One tells hard truths.", "Sitting with uncertainty vs. speaking clarity"],
+    give: {
+      youToThem: "You give their clarity something to question",
+      themToYou: "They crystallize what you've been circling",
+    },
+    question: "When does a question need an answer, and when does the truth need to stay open?",
+  },
   "conscience+embers": {
     thesis: "One watches the present. One guards the past. Between them, nothing is forgotten.",
     align: ["You both guard what matters", "Vigilance is a shared value"],
@@ -626,6 +666,17 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
     },
     question: "What from the past do we need to remember to see the present clearly?",
   },
+  "conscience+friction": {
+    thesis: "One wants to do. One wants to watch. Different responses to the same world.",
+    align: ["You both refuse complacency", "Neither accepts things as they are"],
+    clash: ["One acts through challenge. One acts through vigilance.", "Embracing difficulty vs. spotting what's hidden"],
+    give: {
+      youToThem: "You channel their vigilance into action",
+      themToYou: "They ensure your difficulty-seeking doesn't miss what matters",
+    },
+    question: "When does watching become avoidance, and when does action become blindness?",
+    warning: "The Conscience may see the Friction-seeker's challenges as reckless",
+  },
   "embers+presence": {
     thesis: "One looks back. One stays present. Together, they hold the thread of time.",
     align: ["You both value what endures", "Continuity matters to both of you"],
@@ -635,6 +686,27 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
       themToYou: "They remind you where you came from",
     },
     question: "What do you carry from the past that helps you be present?",
+  },
+  "embers+rooted": {
+    thesis: "Both honor what is. One guards memory, one chose stillness. Preservation as philosophy.",
+    align: ["You both resist the urge to discard", "What endures matters to both of you"],
+    clash: ["One preserves through memory. One preserves through stillness.", "Remembering what matters vs. knowing when to stop"],
+    give: {
+      youToThem: "You give their stillness something to remember",
+      themToYou: "They show you that some preservation requires letting go",
+    },
+    question: "What is worth keeping: the memory or the moment?",
+  },
+  "embers+unbound": {
+    thesis: "One guards what came before. One imagines beyond. Maximum temporal distance.",
+    align: ["You both care about what lasts", "Legacy matters, though you define it differently"],
+    clash: ["One looks back. One reaches beyond.", "Remembering what matters vs. imagining beyond limits"],
+    give: {
+      youToThem: "You anchor their transcendence to something real",
+      themToYou: "They show you that memory can travel into the unimaginable",
+    },
+    question: "What from the past deserves to transcend? What should stay earthbound?",
+    warning: "The Unbound may dismiss the Embers-keeper's treasures as weights to shed",
   },
   "embers+shaper": {
     thesis: "One races toward tomorrow. The other holds yesterday close. Between them, the present gets attention.",
@@ -656,6 +728,16 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
       themToYou: "They ground your transcendence in something real",
     },
     question: "What difficulty is worth keeping?",
+  },
+  "mender+presence": {
+    thesis: "Both grounded in care. One shows up, one fixes things. Complementary approaches to helping.",
+    align: ["You both respond to what's needed", "Care is not abstract to either of you"],
+    clash: ["One shows up fully. One fixes what's broken.", "Being there vs. making it better"],
+    give: {
+      youToThem: "You give their presence something to hold",
+      themToYou: "They show you that sometimes showing up is the repair",
+    },
+    question: "When does fixing become a way of avoiding being present?",
   },
   "mender+swimmer": {
     thesis: "The Swimmer lives in questions. The Mender needs to fix things. One pauses, the other acts.",
@@ -689,6 +771,17 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
     question: "What would it take for you to truly hear each other?",
     warning: "This pair may struggle to find common ground",
   },
+  "rooted+unbound": {
+    thesis: "One stays grounded. One transcends form. Fundamental disagreement about what matters.",
+    align: ["You both have made a choice about how to be", "Neither drifts without intention"],
+    clash: ["One chose stillness. One transcends the physical.", "Knowing when to stop vs. imagining beyond limits"],
+    give: {
+      youToThem: "You ground their transcendence in something they can return to",
+      themToYou: "They show you that stillness isn't the only form of wisdom",
+    },
+    question: "What would each of you lose by fully embracing the other's path?",
+    warning: "You may be arguing about different definitions of freedom",
+  },
   "shaper+swimmer": {
     thesis: "The Shaper builds. The Swimmer questions why. Between them, nothing goes unexamined.",
     align: ["You both reject easy answers", "Depth matters more than speed"],
@@ -698,6 +791,16 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
       themToYou: "They make you examine your creations",
     },
     question: "What have you built that you've never questioned?",
+  },
+  "swimmer+unbound": {
+    thesis: "Both comfortable with ambiguity. One lives in questions, one imagines beyond. They might talk for hours.",
+    align: ["You both sit with what others rush to resolve", "Uncertainty doesn't frighten either of you"],
+    clash: ["One sits with questions. One reaches past them.", "Sitting with hard questions vs. imagining beyond limits"],
+    give: {
+      youToThem: "You give their imagination something to explore",
+      themToYou: "They show you that some questions have answers beyond form",
+    },
+    question: "What question has an answer that neither of you can reach alone?",
   },
   // Same-archetype dynamics
   "shaper+shaper": {
@@ -791,6 +894,17 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
     },
     question: "What difficulty are you creating that isn't necessary?",
     warning: "Two Friction types may exhaust each other",
+  },
+  "friction+rooted": {
+    thesis: "One craves difficulty. One chose stillness. They don't understand each other at all.",
+    align: ["You both have conviction", "Neither of you does things halfway"],
+    clash: ["One needs resistance. One stopped moving.", "Embracing difficulty vs. knowing when to stop"],
+    give: {
+      youToThem: "You show them that stillness can be its own friction",
+      themToYou: "They show you that some challenges require stopping",
+    },
+    question: "What would it take for you to truly understand each other's choice?",
+    warning: "Maximum philosophical tension. This pair may struggle to find common ground.",
   },
   "unbound+unbound": {
     thesis: "Two transcenders. You've both left the building.",
