@@ -64,6 +64,15 @@ export function ArchetypeCard({
         <span className={styles.sectionLabel}>Blind spot</span>
         <p className={styles.blindspot}>{data.blindSpot}</p>
       </div>
+
+      {data.book && (
+        <div className={styles.section}>
+          <span className={styles.sectionLabel}>Read this</span>
+          <p className={styles.bookText}>
+            <em>{data.book.title}</em> by {data.book.author}
+          </p>
+        </div>
+      )}
     </article>
   );
 }
