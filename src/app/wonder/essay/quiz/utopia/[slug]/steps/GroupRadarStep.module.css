@@ -1,0 +1,181 @@
+/* GroupRadarStep.module.css */
+
+.container {
+  min-height: 100dvh;
+  background: #0a0a0a;
+  color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.5rem;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(245, 245, 245, 0.5);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 300;
+  margin: 0 0 0.5rem 0;
+  color: #f5f5f5;
+  letter-spacing: -0.01em;
+}
+
+.memberCount {
+  font-size: 0.875rem;
+  color: rgba(245, 245, 245, 0.6);
+  margin: 0;
+}
+
+/* Radar Section */
+.radarSection {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radarContainer {
+  position: relative;
+  width: 320px;
+  height: 320px;
+}
+
+/* Clickable dot buttons */
+.dotButton {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0;
+  transition: transform 0.2s ease;
+  z-index: 10;
+}
+
+.dotButton:hover {
+  transform: scale(1.3);
+}
+
+.dotButton:focus {
+  outline: none;
+}
+
+.dotButton:focus-visible {
+  outline: 2px solid #e8178a;
+  outline-offset: 2px;
+}
+
+.youDot {
+  /* Slightly larger hit area for the current user's dot */
+  width: 36px;
+  height: 36px;
+  margin-left: -3px;
+  margin-top: -3px;
+}
+
+/* Pulse animation for newly appearing dots */
+.pulseIn {
+  animation: pulseIn 0.6s ease-out;
+}
+
+@keyframes pulseIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Screen reader only */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Summary */
+.summary {
+  text-align: center;
+  margin-top: 1.5rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.summary.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.summaryText {
+  font-size: 1rem;
+  color: rgba(245, 245, 245, 0.85);
+  margin: 0;
+  font-style: italic;
+  max-width: 280px;
+}
+
+/* Hint */
+.hint {
+  text-align: center;
+  margin-top: 2rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s;
+}
+
+.hint.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hint p {
+  font-size: 0.8rem;
+  color: rgba(245, 245, 245, 0.4);
+  margin: 0;
+}
+
+/* Dark mode radar styles - override light defaults */
+.radarContainer :global(.RadarChart_ring__*),
+.radarContainer :global([class*="ring"]) {
+  stroke: rgba(245, 245, 245, 0.08) !important;
+}
+
+.radarContainer :global(.RadarChart_axis__*),
+.radarContainer :global([class*="axis"]) {
+  stroke: rgba(245, 245, 245, 0.15) !important;
+}
+
+.radarContainer :global(.RadarChart_label__*),
+.radarContainer :global([class*="label"]) {
+  color: rgba(245, 245, 245, 0.4) !important;
+}
