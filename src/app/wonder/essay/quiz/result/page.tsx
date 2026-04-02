@@ -256,8 +256,8 @@ type Props = {
 
 export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
   const params = await searchParams;
-  const archetypeKey = (typeof params.a === 'string' ? params.a : 'citizen') as string;
-  const shadowKey = (typeof params.s === 'string' ? params.s : null) as string | null;
+  const archetypeKey = typeof params.a === 'string' ? params.a : 'citizen';
+  const shadowKey = typeof params.s === 'string' ? params.s : null;
   const data = archetypes[archetypeKey] || archetypes.citizen;
 
   const title = "What's your post-scarcity worldview?";
@@ -288,7 +288,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 
 export default async function QuizResultPage({ searchParams }: Props) {
   const params = await searchParams;
-  const archetypeKey = (typeof params.a === 'string' ? params.a : 'citizen') as string;
+  const archetypeKey = typeof params.a === 'string' ? params.a : 'citizen';
   const data = archetypes[archetypeKey] || archetypes.citizen;
 
   const imageUrl = `/wonder/essay/quiz/images/utopia-${archetypeKey}.png`;

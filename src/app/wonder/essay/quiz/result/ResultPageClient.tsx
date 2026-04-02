@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useMemo } from "react";
 import { RevealAnimation } from "./RevealAnimation";
 import { JourneyContainer } from "./JourneyContainer";
 import { RadarExplainStep } from "./steps/RadarExplainStep";
@@ -43,7 +43,7 @@ export function ResultPageClient({
     setCurrentStep(stepIndex);
   }, []);
 
-  const steps = [
+  const steps = useMemo(() => [
     {
       id: "radar",
       component: <RadarExplainStep archetypeKey={archetypeKey} imageUrl={imageUrl} />,
@@ -60,7 +60,7 @@ export function ResultPageClient({
       id: "create",
       component: <CreateJoinStep archetypeKey={archetypeKey} />,
     },
-  ];
+  ], [archetypeKey, imageUrl, handleGoDeeper, compatibility, books, blindSpot]);
 
   return (
     <>
