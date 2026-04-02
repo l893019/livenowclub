@@ -1,0 +1,242 @@
+/* GoDeepStep.module.css */
+/* Scrollable full profile page with blind spot, compatibility, books, and island */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem 1rem 4rem;
+  background-color: #faf6f1;
+  overflow-y: auto;
+}
+
+/* Section styling */
+.section {
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 2.5rem;
+}
+
+.sectionLabel {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(45, 42, 38, 0.45);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Blind Spot Card - styled for shareability */
+.blindSpotCard {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem 1.25rem;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.06),
+    0 1px 4px rgba(0, 0, 0, 0.04);
+  position: relative;
+}
+
+.blindSpotCard::before {
+  content: '"';
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  font-size: 3rem;
+  font-family: Georgia, serif;
+  color: rgba(45, 42, 38, 0.1);
+  line-height: 1;
+}
+
+.blindSpotText {
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: #2d2a26;
+  text-align: center;
+  margin: 0;
+  padding-top: 0.5rem;
+}
+
+/* Compatibility section */
+.compatibilityList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: white;
+  border-radius: 16px;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.06),
+    0 1px 4px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.compatibilityItem {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(45, 42, 38, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.compatibilityItem:last-child {
+  border-bottom: none;
+}
+
+.compatibilityType {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(45, 42, 38, 0.45);
+}
+
+.compatibilityLink {
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.compatibilityLink:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Books section */
+.booksList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bookCard {
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.04),
+    0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.bookHeader {
+  margin-bottom: 0.5rem;
+}
+
+.bookTitle {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 400;
+  color: #2d2a26;
+}
+
+.bookAuthor {
+  font-size: 0.9rem;
+  color: rgba(45, 42, 38, 0.6);
+}
+
+.bookReason {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(45, 42, 38, 0.7);
+  margin: 0 0 0.75rem 0;
+}
+
+.bookLink {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #e8178a;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.bookLink:hover {
+  opacity: 0.7;
+}
+
+/* Island image section */
+.islandContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.islandImage {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Essay link at bottom */
+.essayLink {
+  margin-top: 1rem;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.essayLinkText {
+  font-size: 0.95rem;
+  color: rgba(45, 42, 38, 0.6);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.essayLinkText:hover {
+  color: #e8178a;
+}
+
+/* Responsive adjustments */
+@media (min-width: 640px) {
+  .container {
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  .section {
+    max-width: 520px;
+    margin-bottom: 3rem;
+  }
+
+  .sectionLabel {
+    font-size: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .blindSpotCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .blindSpotText {
+    font-size: 1.1rem;
+  }
+
+  .compatibilityItem {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .compatibilityLink {
+    font-size: 1.05rem;
+  }
+
+  .bookCard {
+    padding: 1.5rem;
+  }
+
+  .bookTitle {
+    font-size: 1.05rem;
+  }
+
+  .bookReason {
+    font-size: 0.95rem;
+  }
+
+  .islandImage {
+    max-width: 480px;
+  }
+}
