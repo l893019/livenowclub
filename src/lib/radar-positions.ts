@@ -33,6 +33,32 @@ export const axisLabels = {
   west: "Witness",
 };
 
+// Axis descriptions (for the explanation step)
+export const axisDescriptions = {
+  north: "reaching beyond",
+  south: "staying grounded",
+  east: "creating change",
+  west: "seeing clearly",
+};
+
+// Position one-liners for each archetype
+export const positionDescriptions: Record<string, string> = {
+  citizen: "You trust that abundance, properly shared, tends toward good.",
+  shaper: "You can't stop building. The future is raw material.",
+  architect: "You focus on the structures that make freedom possible.",
+  presence: "You know that undivided attention changes everything.",
+  swimmer: "You live in the questions. Wisdom is in the uncertainty.",
+  rooted: "You've arrived at something most people spend their lives running from.",
+  conscience: "You see what others prefer to ignore.",
+  embers: "You keep looking back, because we've already figured most of this out.",
+  friction: "Something in you requires resistance. Ease is more dangerous than difficulty.",
+  unbound: "The boundary of the self is simply not where you stop.",
+  alive: "The universe gave you everything. The least you can do is feel it.",
+  mender: "While everyone else is building arks, you're fixing what's in front of you.",
+  cleareyed: "You have one job: to see what's actually happening and say it out loud.",
+  between: "Everyone else has a position. You have a question.",
+};
+
 // Calculate weighted position from top 2 archetype scores
 export function getWeightedPosition(
   archetype1: string,
