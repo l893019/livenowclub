@@ -516,6 +516,405 @@ export type DetailedPairDynamic = {
   give: string;
 };
 
+// =============================================================================
+// EXPANDED PAIR DYNAMICS - NEW STRUCTURE
+// =============================================================================
+
+export type PairDynamic = {
+  thesis: string;           // One poetic sentence capturing the essence
+  align: [string, string];  // Shared value + how it shows in practice
+  clash: [string, string];  // Fundamental tension + day-to-day manifestation
+  give: {
+    youToThem: string;      // What first archetype offers
+    themToYou: string;      // What second archetype offers
+  };
+  question: string;         // Specific reflection for this pair
+  warning?: string;         // Optional: what to watch out for (high-tension pairs)
+};
+
+// Expanded pair dynamics with richer content
+export const expandedPairDynamics: Record<string, PairDynamic> = {
+  "alive+conscience": {
+    thesis: "One wants to feel everything. The other keeps asking: but should we?",
+    align: ["You both feel things deeply", "Neither of you can ignore what's happening around you"],
+    clash: ["One wants to feel. One wants to watch.", "Experience vs. examination"],
+    give: {
+      youToThem: "You remind them to live, not just observe",
+      themToYou: "They keep you grounded in what matters",
+    },
+    question: "When does watching become a way of avoiding feeling?",
+    warning: "The Conscience may judge what the Alive one needs to experience",
+  },
+  "alive+rooted": {
+    thesis: "One moves constantly. One stays still. Between them, the question of what it means to be present.",
+    align: ["You both know what matters", "Presence takes different forms for each of you"],
+    clash: ["One moves constantly. One stays still.", "Sensation-seeking vs. stillness"],
+    give: {
+      youToThem: "You wake them up to new experiences",
+      themToYou: "They slow you down enough to feel what you're feeling",
+    },
+    question: "What would it mean to be fully present together?",
+  },
+  "architect+mender": {
+    thesis: "Systems thinkers both. One designs new ones, one fixes old ones. They probably need each other.",
+    align: ["You both think in systems", "You understand how pieces connect"],
+    clash: ["One designs new. One fixes old.", "Creation vs. repair"],
+    give: {
+      youToThem: "You give their repairs a larger architecture",
+      themToYou: "They repair what you build when it breaks",
+    },
+    question: "When is it time to fix, and when is it time to rebuild from scratch?",
+  },
+  "architect+swimmer": {
+    thesis: "One builds systems. One questions them. Between them, nothing goes unexamined.",
+    align: ["You both care about getting it right", "Rigor matters to both of you"],
+    clash: ["One builds systems. One questions them.", "Structure vs. inquiry"],
+    give: {
+      youToThem: "You keep their systems honest with hard questions",
+      themToYou: "They push you to structure your questions",
+    },
+    question: "What system have you built that you've never questioned?",
+  },
+  "between+cleareyed": {
+    thesis: "One sees clearly. One is still looking. Together, they navigate uncertainty.",
+    align: ["You both live with uncertainty", "Neither claims to have all the answers"],
+    clash: ["One sees clearly. One is still looking.", "Clarity vs. open-ended searching"],
+    give: {
+      youToThem: "You remind them that seeing isn't everything",
+      themToYou: "They help you see what's actually there",
+    },
+    question: "What would it mean to see clearly AND stay open?",
+  },
+  "citizen+conscience": {
+    thesis: "The Citizen trusts the architecture. The Conscience tests the walls for cracks.",
+    align: ["You both believe in good systems", "You both want things to work well"],
+    clash: ["One trusts the architecture. One tests it for cracks.", "Optimism vs. vigilance"],
+    give: {
+      youToThem: "You keep them hopeful about what's possible",
+      themToYou: "They keep you honest about what's actually happening",
+    },
+    question: "What would a system look like that earned both your trust?",
+    warning: "The Conscience may exhaust the Citizen with constant critique",
+  },
+  "citizen+shaper": {
+    thesis: "Both believe in what's possible. One trusts the system, one wants to rebuild it.",
+    align: ["You both believe in what's possible", "Optimism comes naturally to both"],
+    clash: ["One trusts the system. One wants to rebuild it.", "Working within vs. tearing down"],
+    give: {
+      youToThem: "You bring change and momentum",
+      themToYou: "They bring stability and perspective",
+    },
+    question: "When does the system need reform, and when does it need revolution?",
+  },
+  "cleareyed+presence": {
+    thesis: "One speaks the truth. One holds the space. Together, they create room for what's real.",
+    align: ["You both see what's really there", "Authenticity matters to both of you"],
+    clash: ["One speaks the truth. One holds the space.", "Speaking vs. witnessing"],
+    give: {
+      youToThem: "You help them speak what they see",
+      themToYou: "They make space for your truth to land",
+    },
+    question: "What truth needs to be spoken, and what truth needs to be held?",
+  },
+  "conscience+embers": {
+    thesis: "One watches the present. One guards the past. Between them, nothing is forgotten.",
+    align: ["You both guard what matters", "Vigilance is a shared value"],
+    clash: ["One watches the present. One guards the past.", "Present dangers vs. historical wisdom"],
+    give: {
+      youToThem: "You help them watch what happens now",
+      themToYou: "They remember why you watch",
+    },
+    question: "What from the past do we need to remember to see the present clearly?",
+  },
+  "embers+presence": {
+    thesis: "One looks back. One stays present. Together, they hold the thread of time.",
+    align: ["You both value what endures", "Continuity matters to both of you"],
+    clash: ["One looks back. One stays present.", "Memory vs. presence"],
+    give: {
+      youToThem: "You remind them where they are",
+      themToYou: "They remind you where you came from",
+    },
+    question: "What do you carry from the past that helps you be present?",
+  },
+  "embers+shaper": {
+    thesis: "One races toward tomorrow. The other holds yesterday close. Between them, the present gets attention.",
+    align: ["You both care deeply about what gets built", "Legacy matters to both of you"],
+    clash: ["One races forward, the other holds back", "Innovation vs. preservation"],
+    give: {
+      youToThem: "You remind them what to carry forward",
+      themToYou: "They remind you what you're building toward",
+    },
+    question: "What from the past is worth carrying into the future you're building?",
+    warning: "The Shaper may dismiss what the Embers-keeper treasures",
+  },
+  "friction+unbound": {
+    thesis: "One craves resistance. One transcends it. Together, they explore what difficulty is for.",
+    align: ["You both reject easy comfort", "Growth through challenge matters"],
+    clash: ["One craves resistance. One transcends it.", "Embodied struggle vs. transcendence"],
+    give: {
+      youToThem: "You expand their friction beyond the physical",
+      themToYou: "They ground your transcendence in something real",
+    },
+    question: "What difficulty is worth keeping?",
+  },
+  "mender+swimmer": {
+    thesis: "The Swimmer lives in questions. The Mender needs to fix things. One pauses, the other acts.",
+    align: ["You both see what needs attention", "Care drives both of you"],
+    clash: ["One acts. One questions.", "Fixing vs. understanding"],
+    give: {
+      youToThem: "You help them understand why things break",
+      themToYou: "They push you to decide when understanding is enough",
+    },
+    question: "When does understanding become procrastination?",
+  },
+  "presence+unbound": {
+    thesis: "The Keeper stays embodied. The Unbound wants to transcend. They're arguing about what it means to be here.",
+    align: ["You both seek truth beyond the surface", "Depth matters to both of you"],
+    clash: ["One stays embodied. One wants to transcend.", "Here vs. beyond"],
+    give: {
+      youToThem: "You remind them of what's possible beyond form",
+      themToYou: "They remind you of what's here",
+    },
+    question: "What would you lose if you transcended? What would you gain if you stayed?",
+    warning: "You may talk past each other about what presence means",
+  },
+  "rooted+shaper": {
+    thesis: "The Shapers want to tear it down and rebuild. The Rooted ask: what was wrong with it?",
+    align: ["You both have strong convictions", "Neither of you compromises easily"],
+    clash: ["One wants to tear it down. One wants to sit with it.", "Action vs. stillness"],
+    give: {
+      youToThem: "You keep them moving when stillness becomes stagnation",
+      themToYou: "They keep you grounded when movement becomes escape",
+    },
+    question: "What would it take for you to truly hear each other?",
+    warning: "This pair may struggle to find common ground",
+  },
+  "shaper+swimmer": {
+    thesis: "The Shaper builds. The Swimmer questions why. Between them, nothing goes unexamined.",
+    align: ["You both reject easy answers", "Depth matters more than speed"],
+    clash: ["One builds. One questions.", "Creating vs. inquiring"],
+    give: {
+      youToThem: "You make them bring ideas to life",
+      themToYou: "They make you examine your creations",
+    },
+    question: "What have you built that you've never questioned?",
+  },
+  // Same-archetype dynamics
+  "shaper+shaper": {
+    thesis: "Two builders. You'll create something—if you stop redesigning it.",
+    align: ["You both understand the urge to build", "Change energizes both of you"],
+    clash: ["Two visions, one project", "You may compete for control"],
+    give: {
+      youToThem: "You push each other to keep building",
+      themToYou: "They understand your restlessness",
+    },
+    question: "What would you build if you had to agree on every detail?",
+    warning: "Two Shapers may tear down each other's work",
+  },
+  "rooted+rooted": {
+    thesis: "Two in stillness. Peaceful—but who makes the first move?",
+    align: ["You both value stillness", "No one is rushing anyone"],
+    clash: ["Neither wants to push", "Inertia can become comfortable"],
+    give: {
+      youToThem: "You validate their stillness",
+      themToYou: "They validate yours",
+    },
+    question: "What are you both avoiding by staying still?",
+  },
+  "conscience+conscience": {
+    thesis: "Two watchmen. Nothing escapes you. Exhausting, but safe.",
+    align: ["You both see what others miss", "Vigilance is shared"],
+    clash: ["You may watch each other too closely", "Trust can be hard to build"],
+    give: {
+      youToThem: "You understand their suspicion",
+      themToYou: "They watch your back",
+    },
+    question: "Who watches the watchmen? What happens when you watch each other?",
+  },
+  "citizen+citizen": {
+    thesis: "Two at ease. This utopia floats. Who drops anchor?",
+    align: ["You both trust in abundance", "Ease comes naturally"],
+    clash: ["No one is pushing for more", "Comfort can become complacency"],
+    give: {
+      youToThem: "You share in the abundance",
+      themToYou: "They don't make you feel guilty for enjoying it",
+    },
+    question: "What would shake you both out of comfort?",
+  },
+  "swimmer+swimmer": {
+    thesis: "Two in deep water. You'll question everything. Even this.",
+    align: ["You both love the questions", "Neither needs answers quickly"],
+    clash: ["You may question instead of act", "Infinite regression is possible"],
+    give: {
+      youToThem: "You go deeper together",
+      themToYou: "They don't rush you toward conclusions",
+    },
+    question: "What question have you been circling together?",
+  },
+  "architect+architect": {
+    thesis: "Two systems thinkers. Great structures. Who lives in them?",
+    align: ["You both think in systems", "Design matters deeply"],
+    clash: ["Two blueprints, one building", "Whose system wins?"],
+    give: {
+      youToThem: "You understand their love of structure",
+      themToYou: "They can critique your systems intelligently",
+    },
+    question: "What would it mean to build a system together?",
+  },
+  "presence+presence": {
+    thesis: "Two keepers. So much holding space. Who acts?",
+    align: ["You both value being present", "Neither rushes the other"],
+    clash: ["Who moves first?", "Presence can become paralysis"],
+    give: {
+      youToThem: "You hold space for them",
+      themToYou: "They hold space for you",
+    },
+    question: "What action have you both been avoiding?",
+  },
+  "embers+embers": {
+    thesis: "Two archivists. The past is very well preserved here.",
+    align: ["You both remember what matters", "History lives between you"],
+    clash: ["Which memories matter most?", "The archive can become a fortress"],
+    give: {
+      youToThem: "You honor their memories",
+      themToYou: "They honor yours",
+    },
+    question: "What from the future deserves your attention?",
+  },
+  "friction+friction": {
+    thesis: "Two who crave difficulty. This should be interesting.",
+    align: ["You both need resistance", "Challenge is welcome"],
+    clash: ["You may create difficulty for each other", "Competition can escalate"],
+    give: {
+      youToThem: "You give them the challenge they crave",
+      themToYou: "They don't let you get comfortable",
+    },
+    question: "What difficulty are you creating that isn't necessary?",
+    warning: "Two Friction types may exhaust each other",
+  },
+  "unbound+unbound": {
+    thesis: "Two transcenders. You've both left the building.",
+    align: ["You both reach beyond limits", "Transcendence is shared language"],
+    clash: ["Where do you land?", "Transcendence without grounding can drift"],
+    give: {
+      youToThem: "You understand their reaching",
+      themToYou: "They don't judge your yearning",
+    },
+    question: "What would ground you both without limiting you?",
+  },
+  "alive+alive": {
+    thesis: "Two sensation-seekers. Buckle up.",
+    align: ["You both want to feel everything", "Experience is the point"],
+    clash: ["Whose experience takes priority?", "Sensation can become consumption"],
+    give: {
+      youToThem: "You amplify each other's aliveness",
+      themToYou: "They don't judge your hunger for experience",
+    },
+    question: "What have you felt together that neither could feel alone?",
+  },
+  "mender+mender": {
+    thesis: "Two fixers. Everything here will work. Eventually.",
+    align: ["You both see what's broken", "Repair is sacred"],
+    clash: ["What gets fixed first?", "You may neglect what's working"],
+    give: {
+      youToThem: "You appreciate their repairs",
+      themToYou: "They appreciate yours",
+    },
+    question: "What are you both avoiding by always fixing?",
+  },
+  "cleareyed+cleareyed": {
+    thesis: "Two truth-tellers. No one's getting away with anything.",
+    align: ["You both value honesty", "Truth is not negotiable"],
+    clash: ["Whose truth prevails?", "Honesty without tenderness is cruelty"],
+    give: {
+      youToThem: "You can handle their truth",
+      themToYou: "They can handle yours",
+    },
+    question: "What truth are you both avoiding?",
+  },
+  "between+between": {
+    thesis: "Two still figuring it out. At least you're not alone.",
+    align: ["You both hold uncertainty", "Neither judges the other for not knowing"],
+    clash: ["Who moves first?", "Not-knowing can become permanent"],
+    give: {
+      youToThem: "You validate their uncertainty",
+      themToYou: "They validate yours",
+    },
+    question: "What would it mean to figure it out together?",
+  },
+};
+
+// Get expanded pair dynamic with new structure
+export function getExpandedPairDynamic(a: string, b: string): PairDynamic | null {
+  const key = [a, b].sort().join("+");
+  return expandedPairDynamics[key] || null;
+}
+
+// Generate a fallback PairDynamic based on archetype positions
+export function generateFallbackPairDynamic(a: string, b: string): PairDynamic {
+  const posA = archetypePositions[a];
+  const posB = archetypePositions[b];
+  const archA = archetypes[a];
+  const archB = archetypes[b];
+
+  // Calculate distance
+  const dx = (posB?.x || 0) - (posA?.x || 0);
+  const dy = (posB?.y || 0) - (posA?.y || 0);
+  const distance = Math.sqrt(dx * dx + dy * dy);
+
+  // Get question based on distance
+  const { category } = getPairDistance(a, b);
+  const questions = relationshipQuestions[category];
+  const key = [a, b].sort().join("+");
+  const index = key.split("").reduce((acc, char) => acc + char.charCodeAt(0), 0) % questions.length;
+  const question = questions[index];
+
+  if (distance < 0.4) {
+    // Close together - similar worldviews
+    return {
+      thesis: "You speak the same language. The question is whether you can hear what neither of you is saying.",
+      align: ["You see the world similarly", "Shared values come naturally"],
+      clash: ["You might reinforce each other's blind spots", "Echo chamber risk"],
+      give: {
+        youToThem: "Comfort in being understood",
+        themToYou: "Validation of your worldview",
+      },
+      question,
+    };
+  } else if (distance > 1.0) {
+    // Far apart - opposite worldviews
+    return {
+      thesis: `One ${archA?.superpower?.toLowerCase() || "sees one way"}. The other ${archB?.superpower?.toLowerCase() || "sees another"}. Between you, a more complete picture.`,
+      align: ["You cover each other's blind spots", "Different strengths combine"],
+      clash: ["Your instincts pull in opposite directions", "What feels obvious to you puzzles them"],
+      give: {
+        youToThem: archA?.superpower || "Your perspective",
+        themToYou: archB?.superpower || "Their perspective",
+      },
+      question,
+      warning: "This distance creates friction. It can be creative or destructive.",
+    };
+  } else {
+    // Medium distance
+    return {
+      thesis: "Different paths to similar questions. Together, you see more than either would alone.",
+      align: ["Different approaches to similar questions", "Complementary perspectives"],
+      clash: ["Your methods differ even when your goals align", "Process disagreements"],
+      give: {
+        youToThem: "A different angle on shared concerns",
+        themToYou: "Another way of seeing what you both care about",
+      },
+      question,
+    };
+  }
+}
+
+// Unified function to get PairDynamic (new structure) - tries expanded first, then generates
+export function getPairDynamicExpanded(a: string, b: string): PairDynamic {
+  const key = [a, b].sort().join("+");
+  return expandedPairDynamics[key] || generateFallbackPairDynamic(a, b);
+}
+
 export const detailedPairDynamics: Record<string, DetailedPairDynamic> = {
   "alive+conscience": {
     align: ["You both feel things deeply"],
