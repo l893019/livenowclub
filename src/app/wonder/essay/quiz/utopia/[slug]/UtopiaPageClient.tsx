@@ -281,7 +281,7 @@ export function UtopiaPageClient({
             <button className={styles.yourCard} onClick={() => setCurrentView("profile")}>
               <div className={styles.yourCardDot} style={{ backgroundColor: arch.color }} />
               <div className={styles.yourCardContent}>
-                <span className={styles.yourCardLabel}>You</span>
+                <span className={styles.yourCardLabel}>{arch.name}</span>
                 <p className={styles.yourCardQuote}>{arch.utopia}</p>
               </div>
             </button>
