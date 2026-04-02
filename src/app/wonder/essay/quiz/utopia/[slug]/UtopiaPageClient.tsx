@@ -60,6 +60,8 @@ export function UtopiaPageClient({
       if (youId !== userId) {
         setViewAsUserId(youId);
       }
+      // Clear URL params to prevent issues on refresh/navigation
+      window.history.replaceState({}, "", window.location.pathname);
     }
   }, []);
 
@@ -90,7 +92,9 @@ export function UtopiaPageClient({
 
   const handleMemberClick = useCallback(
     (memberId: string) => {
-      if (memberId === currentUserId) {
+      // Always check localStorage directly to avoid stale state issues
+      const actualUserId = localStorage.getItem("quiz-user-id");
+      if (memberId === actualUserId) {
         // Clicking yourself shows your profile
         setCurrentView("profile");
       } else {
@@ -98,7 +102,7 @@ export function UtopiaPageClient({
         setCurrentView("relationship");
       }
     },
-    [currentUserId]
+    []
   );
 
   const handleBackToGroup = () => {
@@ -112,6 +116,7 @@ export function UtopiaPageClient({
   };
 
   const handleBackToRadar = () => {
+    setViewAsUserId(null); // Clear any deep link perspective
     setCurrentView("radar");
   };
 
@@ -203,8 +208,10 @@ export function UtopiaPageClient({
   }
 
   // Profile view (current user's archetype)
-  if (currentView === "profile" && currentUserId) {
-    const me = members.find((m) => m.id === currentUserId);
+  // Always use localStorage directly to avoid any stale state issues
+  const actualUserIdForProfile = typeof window !== "undefined" ? localStorage.getItem("quiz-user-id") : null;
+  if (currentView === "profile" && actualUserIdForProfile) {
+    const me = members.find((m) => m.id === actualUserIdForProfile);
     const archetype = me ? archetypes[me.archetype] : null;
 
     if (me && archetype) {
