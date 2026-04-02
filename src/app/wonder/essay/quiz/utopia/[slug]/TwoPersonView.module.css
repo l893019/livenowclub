@@ -1,153 +1,115 @@
-/* TwoPersonView.module.css */
-
 .container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0 24px;
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
 }
 
 .header {
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .label {
-  display: block;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: rgba(45, 42, 38, 0.45);
-  margin-bottom: 12px;
+  color: #e8178a;
+  display: block;
+  margin-bottom: 8px;
 }
 
-.title {
-  font-size: 1.8rem;
-  font-weight: 300;
-  letter-spacing: -0.02em;
-  margin: 0 0 8px;
-  color: #2d2a26;
+.names {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
 }
 
-.subtitle {
-  font-size: 1rem;
+.people {
+  font-size: 0.9rem;
   color: rgba(45, 42, 38, 0.6);
-  font-style: italic;
-  margin: 0;
 }
 
-.radarSection {
+.radar {
   display: flex;
   justify-content: center;
   margin-bottom: 32px;
 }
 
-.people {
-  display: flex;
-  justify-content: center;
-  gap: 48px;
-  margin-bottom: 40px;
-  padding: 24px;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-}
-
-.person {
-  text-align: center;
-}
-
-.personDot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  margin: 0 auto 8px;
-}
-
-.personName {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #2d2a26;
-  margin-bottom: 4px;
-}
-
-.personArchetype {
-  font-size: 0.85rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.analysis {
-  background: white;
-  border-radius: 16px;
-  padding: 28px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+.reading {
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .section {
   margin-bottom: 24px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-.section:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border-bottom: none;
 }
 
 .sectionLabel {
-  display: block;
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.15em;
   color: rgba(45, 42, 38, 0.45);
-  margin-bottom: 12px;
-}
-
-.list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.list li {
-  position: relative;
-  padding-left: 16px;
-  font-size: 1rem;
-  color: #2d2a26;
-  line-height: 1.6;
   margin-bottom: 8px;
 }
 
-.list li:before {
-  content: "·";
-  position: absolute;
-  left: 0;
-  color: #e8178a;
-  font-weight: bold;
-}
-
-.list li:last-child {
-  margin-bottom: 0;
-}
-
-.sectionText {
-  font-size: 1rem;
-  color: rgba(45, 42, 38, 0.8);
-  line-height: 1.6;
+.list {
+  list-style: none;
+  padding: 0;
   margin: 0;
 }
 
-@media (max-width: 480px) {
-  .people {
-    flex-direction: column;
-    gap: 24px;
-  }
+.list li {
+  font-size: 0.95rem;
+  color: rgba(45, 42, 38, 0.8);
+  line-height: 1.6;
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 6px;
+}
 
-  .title {
-    font-size: 1.4rem;
-  }
+.list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #e8178a;
+}
+
+.giveText,
+.needText {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: rgba(45, 42, 38, 0.8);
+  line-height: 1.7;
+}
+
+.bookCard {
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.bookTitle {
+  font-style: italic;
+  color: #2d2a26;
+}
+
+.bookAuthor {
+  color: rgba(45, 42, 38, 0.6);
+}
+
+.bookLink {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #e8178a;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.bookLink:hover {
+  opacity: 0.7;
 }
