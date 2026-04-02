@@ -165,17 +165,14 @@
 }
 
 /* Dark mode radar styles - override light defaults */
-.radarContainer :global(.RadarChart_ring__*),
 .radarContainer :global([class*="ring"]) {
   stroke: rgba(245, 245, 245, 0.08) !important;
 }
 
-.radarContainer :global(.RadarChart_axis__*),
 .radarContainer :global([class*="axis"]) {
   stroke: rgba(245, 245, 245, 0.15) !important;
 }
 
-.radarContainer :global(.RadarChart_label__*),
 .radarContainer :global([class*="label"]) {
   color: rgba(245, 245, 245, 0.4) !important;
 }

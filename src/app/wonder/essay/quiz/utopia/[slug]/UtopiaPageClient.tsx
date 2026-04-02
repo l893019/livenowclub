@@ -1,9 +1,14 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 import { JoinAnimation } from "./JoinAnimation";
+import { GroupRadarStep } from "./steps/GroupRadarStep";
+import { GroupReadingStep } from "./steps/GroupReadingStep";
 import { RelationshipStep } from "./steps/RelationshipStep";
+import { TwoPersonView } from "./TwoPersonView";
 import type { UtopiaMember } from "@/lib/utopia";
+import styles from "./UtopiaPageClient.module.css";
 
 type JoinInfo = {
   slug: string;
@@ -16,21 +21,22 @@ type UtopiaPageClientProps = {
   slug: string;
   utopiaName: string;
   members: UtopiaMember[];
-  children: React.ReactNode;
+  shareUrl: string;
 };
+
+type View = "radar" | "reading" | "relationship";
 
 export function UtopiaPageClient({
   slug,
   utopiaName,
   members,
-  children,
+  shareUrl,
 }: UtopiaPageClientProps) {
   const [showJoinAnimation, setShowJoinAnimation] = useState(false);
   const [joinInfo, setJoinInfo] = useState<JoinInfo | null>(null);
   const [existingMembers, setExistingMembers] = useState<UtopiaMember[]>([]);
+  const [currentView, setCurrentView] = useState<View>("radar");
   const [selectedMemberId, setSelectedMemberId] = useState<string | null>(null);
-
-  // Get current user ID for relationship view
   const [currentUserId, setCurrentUserId] = useState<string | null>(null);
 
   useEffect(() => {
@@ -39,22 +45,18 @@ export function UtopiaPageClient({
   }, []);
 
   useEffect(() => {
-    // Check for just-joined-utopia in sessionStorage
     const stored = sessionStorage.getItem("just-joined-utopia");
     if (stored) {
       try {
         const info = JSON.parse(stored) as JoinInfo;
-        // Verify this is the same utopia
         if (info.slug === slug) {
           setJoinInfo(info);
-          // Find the new member and separate from existing
           const newMember = members.find((m) => m.id === info.userId);
           if (newMember) {
             const existing = members.filter((m) => m.id !== info.userId);
             setExistingMembers(existing);
             setShowJoinAnimation(true);
           }
-          // Clear it so it doesn't show again
           sessionStorage.removeItem("just-joined-utopia");
         }
       } catch (e) {
@@ -69,9 +71,9 @@ export function UtopiaPageClient({
 
   const handleMemberClick = useCallback(
     (memberId: string) => {
-      // Only show relationship if it's not clicking yourself
       if (memberId !== currentUserId) {
         setSelectedMemberId(memberId);
+        setCurrentView("relationship");
       }
     },
     [currentUserId]
@@ -79,9 +81,18 @@ export function UtopiaPageClient({
 
   const handleBackToGroup = () => {
     setSelectedMemberId(null);
+    setCurrentView("radar");
   };
 
-  // Get navigation for relationship step (prev/next through other members)
+  const handleShowReading = () => {
+    setCurrentView("reading");
+  };
+
+  const handleBackToRadar = () => {
+    setCurrentView("radar");
+  };
+
+  // Navigation for relationship step
   const otherMembers = members.filter((m) => m.id !== currentUserId);
   const selectedIndex = selectedMemberId
     ? otherMembers.findIndex((m) => m.id === selectedMemberId)
@@ -99,24 +110,21 @@ export function UtopiaPageClient({
     }
   };
 
-  // Listen for member click events from radar components
-  useEffect(() => {
-    const handler = (e: CustomEvent<{ memberId: string }>) => {
-      handleMemberClick(e.detail.memberId);
-    };
-    window.addEventListener(
-      "utopia-member-click",
-      handler as EventListener
-    );
-    return () => {
-      window.removeEventListener(
-        "utopia-member-click",
-        handler as EventListener
-      );
-    };
-  }, [handleMemberClick]);
+  const handleShare = async () => {
+    const shareText = `Join ${utopiaName} — a utopia of ${members.length}.`;
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: utopiaName, text: shareText, url: shareUrl });
+      } catch {
+        // User cancelled or error
+      }
+    } else {
+      await navigator.clipboard.writeText(shareUrl);
+      alert("Link copied to clipboard!");
+    }
+  };
 
-  // Show join animation if applicable
+  // Join animation
   if (showJoinAnimation && joinInfo) {
     const newMember = members.find((m) => m.id === joinInfo.userId);
     if (newMember) {
@@ -131,8 +139,25 @@ export function UtopiaPageClient({
     }
   }
 
-  // Show relationship view if a member is selected
-  if (selectedMemberId && currentUserId) {
+  // Two-person utopia: special enhanced view
+  if (members.length === 2) {
+    return (
+      <div className={styles.container}>
+        <Header />
+        <main className={styles.main}>
+          <TwoPersonView members={members} utopiaName={utopiaName} />
+          <ShareSection
+            shareUrl={shareUrl}
+            onShare={handleShare}
+          />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  // Relationship view
+  if (currentView === "relationship" && selectedMemberId && currentUserId) {
     const you = members.find((m) => m.id === currentUserId);
     const them = members.find((m) => m.id === selectedMemberId);
 
@@ -142,11 +167,7 @@ export function UtopiaPageClient({
           you={you}
           them={them}
           onBack={handleBackToGroup}
-          onNext={
-            selectedIndex < otherMembers.length - 1
-              ? handleNextMember
-              : undefined
-          }
+          onNext={selectedIndex < otherMembers.length - 1 ? handleNextMember : undefined}
           onPrev={selectedIndex > 0 ? handlePrevMember : undefined}
           hasNext={selectedIndex < otherMembers.length - 1}
           hasPrev={selectedIndex > 0}
@@ -155,12 +176,109 @@ export function UtopiaPageClient({
     }
   }
 
-  return <>{children}</>;
+  // Group reading view
+  if (currentView === "reading") {
+    return (
+      <div className={styles.container}>
+        <Header />
+        <button className={styles.backButton} onClick={handleBackToRadar}>
+          ← Back to radar
+        </button>
+        <main className={styles.readingMain}>
+          <GroupReadingStep members={members} />
+          <div className={styles.shareWrapper}>
+            <ShareSection shareUrl={shareUrl} onShare={handleShare} />
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  // Main radar view (default)
+  return (
+    <div className={styles.container}>
+      <Header />
+      <main className={styles.main}>
+        <div className={styles.hero}>
+          <span className={styles.label}>Your Utopia</span>
+          <h1 className={styles.title}>{utopiaName}</h1>
+          <p className={styles.count}>
+            {members.length} {members.length === 1 ? "person" : "people"}
+          </p>
+        </div>
+
+        <GroupRadarStep
+          members={members}
+          utopiaName={utopiaName}
+          onMemberClick={handleMemberClick}
+          highlightMemberId={selectedMemberId || undefined}
+        />
+
+        <div className={styles.actions}>
+          <button className={styles.btnSecondary} onClick={handleShowReading}>
+            See Group Reading
+          </button>
+          <button className={styles.btnPrimary} onClick={handleShare}>
+            Invite Someone
+          </button>
+        </div>
+
+        <p className={styles.hint}>Tap any dot to see your relationship</p>
+      </main>
+      <Footer />
+    </div>
+  );
 }
 
-// Export a function to trigger member click from other components
-export function triggerMemberClick(memberId: string) {
-  window.dispatchEvent(
-    new CustomEvent("utopia-member-click", { detail: { memberId } })
+function Header() {
+  return (
+    <header className={styles.header}>
+      <Link href="/" className={styles.logo}>
+        <img src="/images/logo-handwritten.png" alt="The Live Now Club" className={styles.logoImg} />
+      </Link>
+      <nav className={styles.nav}>
+        <Link href="/read">Read</Link>
+        <Link href="/navigate">Navigate</Link>
+        <Link href="/wonder">Wonder</Link>
+        <Link href="/connect">Connect</Link>
+      </nav>
+    </header>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className={styles.footer}>
+      <nav className={styles.footerNav}>
+        <Link href="/read">Read</Link>
+        <Link href="/navigate">Navigate</Link>
+        <Link href="/wonder">Wonder</Link>
+        <Link href="/connect">Connect</Link>
+      </nav>
+      <p className={styles.footerCopy}>&copy; 2026 Louise Ireland</p>
+    </footer>
+  );
+}
+
+function ShareSection({ shareUrl, onShare }: { shareUrl: string; onShare: () => void }) {
+  return (
+    <div className={styles.shareSection}>
+      <h2 className={styles.shareTitle}>Invite someone</h2>
+      <p className={styles.shareSubtitle}>
+        See how your utopia changes when new worldviews join.
+      </p>
+      <a href={shareUrl} className={styles.shareLink} target="_blank" rel="noopener noreferrer">
+        {shareUrl}
+      </a>
+      <div className={styles.shareActions}>
+        <button className={styles.btnPrimary} onClick={onShare}>
+          Share Link
+        </button>
+        <Link href="/wonder/essay/quiz/my-utopias" className={styles.btnSecondary}>
+          My Utopias
+        </Link>
+      </div>
+    </div>
   );
 }
