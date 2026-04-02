@@ -1,0 +1,279 @@
+/* src/app/wonder/essay/quiz/utopia/[slug]/UtopiaCards.module.css */
+
+/* Container */
+.container {
+  position: relative;
+}
+
+.viewport {
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+}
+
+/* Cards */
+.card {
+  flex: 0 0 100%;
+  min-width: 0;
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  margin-right: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.cardImage {
+  width: calc(100% + 48px);
+  margin: -24px -24px 16px;
+  border-radius: 20px 20px 0 0;
+  display: block;
+}
+
+/* Typography */
+.label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(45, 42, 38, 0.5);
+  margin-bottom: 6px;
+}
+
+.sectionLabel {
+  display: block;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(45, 42, 38, 0.45);
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin: 0 0 16px;
+  color: #2d2a26;
+}
+
+/* Content sections */
+.vision {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #2d2a26;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.dynamic {
+  font-size: 0.95rem;
+  color: rgba(45, 42, 38, 0.7);
+  line-height: 1.5;
+  margin: 0 0 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.section {
+  margin-bottom: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.sectionText {
+  font-size: 0.95rem;
+  color: #2d2a26;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.utopia {
+  font-size: 1rem;
+  font-style: italic;
+  color: #2d2a26;
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: rgba(45, 42, 38, 0.7);
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+
+.blindspot {
+  font-size: 0.9rem;
+  color: rgba(45, 42, 38, 0.6);
+  line-height: 1.5;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Composition list */
+.compositionItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.compositionDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.compositionName {
+  font-size: 0.9rem;
+  color: #2d2a26;
+}
+
+.compositionCount {
+  font-size: 0.8rem;
+  color: rgba(45, 42, 38, 0.5);
+}
+
+/* Members */
+.membersList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.memberName {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  color: #2d2a26;
+  background: #faf6f1;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.memberTag {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #e8178a;
+  font-weight: 500;
+}
+
+/* Missing voices */
+.missingVoice {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.missingVoice:last-child {
+  margin-bottom: 0;
+}
+
+.missingName {
+  font-weight: 500;
+}
+
+.missingInsight {
+  color: rgba(45, 42, 38, 0.7);
+}
+
+/* Book */
+.bookText {
+  font-size: 0.95rem;
+  color: #2d2a26;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px 0 8px;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid rgba(45, 42, 38, 0.15);
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #2d2a26;
+}
+
+.arrow:hover:not(:disabled) {
+  border-color: #e8178a;
+  color: #e8178a;
+  transform: scale(1.05);
+}
+
+.arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(45, 42, 38, 0.2);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dot:hover {
+  background: rgba(45, 42, 38, 0.4);
+}
+
+.dotActive {
+  width: 24px;
+  border-radius: 4px;
+  background: #e8178a;
+}
+
+.counter {
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(45, 42, 38, 0.4);
+  padding-bottom: 8px;
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+  .card {
+    padding: 28px;
+  }
+
+  .cardImage {
+    width: calc(100% + 56px);
+    margin: -28px -28px 20px;
+  }
+
+  .arrow {
+    width: 44px;
+    height: 44px;
+  }
+}
