@@ -3,6 +3,8 @@ import Link from "next/link";
 import ShareButton from "./ShareButton";
 import CreateUtopiaSection from "./CreateUtopiaSection";
 import UtopiaReadyBanner from "./UtopiaReadyBanner";
+import { ResultPageClient } from "./ResultPageClient";
+import { RadarChart } from "@/components/RadarChart";
 
 // Map compatibility descriptions to archetype keys
 const compatibilityMap: Record<string, string> = {
@@ -321,8 +323,15 @@ export default async function QuizResultPage({ searchParams }: Props) {
     ? `https://livenowclub.vercel.app/wonder/essay/quiz/result?a=${archetypeKey}&s=${shadowKey}`
     : `https://livenowclub.vercel.app/wonder/essay/quiz/result?a=${archetypeKey}`;
 
+  const imageUrl = `/wonder/essay/quiz/images/utopia-${archetypeKey}.png`;
+
   return (
-    <>
+    <ResultPageClient
+      archetypeName={data.name}
+      archetypeColor={data.color}
+      utopiaText={data.utopia}
+      imageUrl={imageUrl}
+    >
       <style>{`
         :root {
           --bg-deep: #faf6f1;
@@ -451,6 +460,18 @@ export default async function QuizResultPage({ searchParams }: Props) {
           line-height: 1.8;
           color: var(--text);
           margin-bottom: 40px;
+        }
+        .radar-section {
+          margin-bottom: 40px;
+          text-align: center;
+        }
+        .radar-label {
+          font-size: 10px;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.15em;
+          color: var(--text-muted);
+          margin-bottom: 16px;
         }
         .blind-spot {
           max-width: 500px;
@@ -700,6 +721,11 @@ export default async function QuizResultPage({ searchParams }: Props) {
           <p className="utopia-text">{data.utopia}</p>
         </div>
 
+        <div className="radar-section">
+          <div className="radar-label">Your Position</div>
+          <RadarChart size={280} highlightArchetype={archetypeKey} />
+        </div>
+
         <p className="result-description">{data.description}</p>
 
         <div className="blind-spot">
@@ -789,6 +815,6 @@ export default async function QuizResultPage({ searchParams }: Props) {
       </footer>
 
       <UtopiaReadyBanner />
-    </>
+    </ResultPageClient>
   );
 }

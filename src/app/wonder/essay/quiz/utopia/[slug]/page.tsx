@@ -7,6 +7,8 @@ import { archetypes } from "@/lib/archetypes";
 import ShareButton from "./ShareButton";
 import PlanetVisualization from "./PlanetVisualization";
 import { UtopiaCards } from "./UtopiaCards";
+import { RadarChart } from "@/components/RadarChart";
+import { archetypePositions, getGroupCenterOfGravity } from "@/lib/radar-positions";
 
 // Copy for same archetype pairs
 const pairSameCopy: Record<string, string> = {
@@ -266,6 +268,12 @@ export default async function UtopiaPage({ params }: Props) {
           line-height: 1.6;
         }
 
+        .radar-wrapper {
+          margin: 32px auto 0;
+          display: flex;
+          justify-content: center;
+        }
+
         .section {
           margin-bottom: 48px;
         }
@@ -504,6 +512,23 @@ export default async function UtopiaPage({ params }: Props) {
           </div>
 
           <p className="one-liner">{oneLiner}</p>
+
+          {/* Radar chart showing member positions */}
+          <div className="radar-wrapper">
+            <RadarChart
+              size={280}
+              userDots={room.members.map((m) => ({
+                id: m.id,
+                name: m.name || "Anonymous",
+                position: archetypePositions[m.archetype] || { x: 0, y: 0 },
+                color: archetypes[m.archetype]?.color || "#888",
+              }))}
+              centerOfGravity={getGroupCenterOfGravity(
+                room.members.map((m) => archetypePositions[m.archetype] || { x: 0, y: 0 })
+              )}
+              showAllArchetypes={false}
+            />
+          </div>
         </div>
 
         {/* Members - Swipeable Cards */}
