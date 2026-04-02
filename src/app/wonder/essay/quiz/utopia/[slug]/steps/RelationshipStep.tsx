@@ -4,12 +4,9 @@ import { RadarChart } from "@/components/RadarChart";
 import { archetypePositions } from "@/lib/radar-positions";
 import {
   archetypes,
-  getDetailedPairDynamic,
-  generateFallbackDynamic,
+  getPairDynamicExpanded,
   getPairDistance,
   distanceDescriptions,
-  getRelationshipQuestion,
-  getOpeningThesis,
 } from "@/lib/archetypes";
 import type { UtopiaMember } from "@/lib/utopia";
 import styles from "./RelationshipStep.module.css";
@@ -58,16 +55,12 @@ export function RelationshipStep({
     }
   };
 
-  // Get dynamic content
-  const dynamic =
-    getDetailedPairDynamic(you.archetype, them.archetype) ||
-    generateFallbackDynamic(you.archetype, them.archetype);
+  // Get dynamic content using expanded structure
+  const dynamic = getPairDynamicExpanded(you.archetype, them.archetype);
 
-  // Get new content
-  const thesis = getOpeningThesis(you.archetype, them.archetype);
+  // Get distance info
   const { category: distanceCategory } = getPairDistance(you.archetype, them.archetype);
   const distanceText = distanceDescriptions[distanceCategory];
-  const question = getRelationshipQuestion(you.archetype, them.archetype);
 
   const userDots = [
     {
@@ -113,7 +106,7 @@ export function RelationshipStep({
       </div>
 
       {/* Opening Thesis */}
-      <p className={styles.thesis}>"{thesis}"</p>
+      <p className={styles.thesis}>"{dynamic.thesis}"</p>
 
       {/* Content Sections */}
       <div className={styles.content}>
@@ -161,14 +154,31 @@ export function RelationshipStep({
         {/* What You Give Each Other */}
         <section className={styles.section}>
           <h3 className={styles.sectionLabel}>What You Give Each Other</h3>
-          <p className={styles.giveText}>{dynamic.give}</p>
+          <div className={styles.giveCards}>
+            <div className={styles.giveCard}>
+              <span className={styles.giveName} style={{ color: yourArchetype?.color }}>{you.name || "You"}</span>
+              <p className={styles.giveText}>{dynamic.give.youToThem}</p>
+            </div>
+            <div className={styles.giveCard}>
+              <span className={styles.giveName} style={{ color: theirArchetype?.color }}>{them.name || "Them"}</span>
+              <p className={styles.giveText}>{dynamic.give.themToYou}</p>
+            </div>
+          </div>
         </section>
 
         {/* A Question for You Both */}
         <section className={styles.questionSection}>
           <h3 className={styles.sectionLabel}>A Question for You Both</h3>
-          <p className={styles.questionText}>"{question}"</p>
+          <p className={styles.questionText}>"{dynamic.question}"</p>
         </section>
+
+        {/* Warning Section (for high-tension pairs) */}
+        {dynamic.warning && (
+          <section className={styles.warningSection}>
+            <h3 className={styles.sectionLabel}>Watch Out For</h3>
+            <p className={styles.warningText}>{dynamic.warning}</p>
+          </section>
+        )}
       </div>
 
       {/* Share button */}
