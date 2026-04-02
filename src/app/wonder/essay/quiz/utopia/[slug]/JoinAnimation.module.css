@@ -1,0 +1,136 @@
+/* JoinAnimation.module.css */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: #0a0a0a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.chart {
+  opacity: 0;
+  animation: fadeIn 0.8s ease 0.3s forwards;
+}
+
+.ring {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 1;
+}
+
+.axis {
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 1;
+}
+
+.newDot {
+  opacity: 0;
+  transform-origin: center;
+  animation: dotAppear 0.8s ease forwards;
+}
+
+@keyframes dotAppear {
+  0% {
+    opacity: 0;
+    r: 0;
+  }
+  50% {
+    opacity: 1;
+    r: 14;
+  }
+  100% {
+    opacity: 1;
+    r: 10;
+  }
+}
+
+.fadeOut {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.newCenter {
+  opacity: 0;
+  animation: centerAppear 0.8s ease forwards;
+}
+
+@keyframes centerAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.welcome {
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.yourName {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+
+.yourArchetype {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.skip {
+  position: absolute;
+  bottom: 40px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  padding: 12px 24px;
+}
+
+.skip:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

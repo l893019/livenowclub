@@ -2196,6 +2196,13 @@
 
           const data = await response.json();
           if (data.success) {
+            // Store join info for animation on group page
+            sessionStorage.setItem('just-joined-utopia', JSON.stringify({
+              slug: invite.slug,
+              userId: userId,
+              archetype: userResult.archetype,
+              name: userResult.name || 'Anonymous'
+            }));
             // Redirect directly to utopia page
             window.location.href = `/wonder/essay/quiz/utopia/${invite.slug}`;
             return;

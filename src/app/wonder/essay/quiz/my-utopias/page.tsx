@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { MiniRadarChart } from "@/components/MiniRadarChart";
 
 type UtopiaMember = {
   id: string;
@@ -17,31 +18,6 @@ type UtopiaRoom = {
   members: UtopiaMember[];
   createdAt: string;
 };
-
-// Mini planet component for dashboard
-function MiniPlanet({ memberCount }: { memberCount: number }) {
-  // Choose planet image based on group size
-  const planetImage =
-    memberCount <= 1
-      ? "/wonder/essay/quiz/images/planet-solo.png"
-      : memberCount <= 4
-        ? "/wonder/essay/quiz/images/planet-group.png"
-        : "/wonder/essay/quiz/images/planet-full.png";
-
-  return (
-    <img
-      src={planetImage}
-      alt="Utopia planet"
-      width={80}
-      height={80}
-      style={{
-        borderRadius: "50%",
-        objectFit: "cover",
-        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
-      }}
-    />
-  );
-}
 
 export default function MyUtopiasPage() {
   const [utopias, setUtopias] = useState<UtopiaRoom[]>([]);
@@ -173,7 +149,7 @@ export default function MyUtopiasPage() {
           box-shadow: 0 8px 32px rgba(232,23,138,0.12);
         }
 
-        .utopia-card-planet {
+        .utopia-card-chart {
           margin-bottom: 16px;
         }
 
@@ -336,8 +312,8 @@ export default function MyUtopiasPage() {
                 href={`/wonder/essay/quiz/utopia/${utopia.slug}`}
                 className="utopia-card"
               >
-                <div className="utopia-card-planet">
-                  <MiniPlanet memberCount={utopia.members.length} />
+                <div className="utopia-card-chart">
+                  <MiniRadarChart members={utopia.members} size={80} />
                 </div>
                 <div className="utopia-card-name">{utopia.name}</div>
                 <div className="utopia-card-count">

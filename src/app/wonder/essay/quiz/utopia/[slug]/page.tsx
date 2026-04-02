@@ -9,6 +9,8 @@ import PlanetVisualization from "./PlanetVisualization";
 import { UtopiaCards } from "./UtopiaCards";
 import { RadarChart } from "@/components/RadarChart";
 import { archetypePositions, getGroupCenterOfGravity } from "@/lib/radar-positions";
+import { UtopiaPageClient } from "./UtopiaPageClient";
+import { TwoPersonView } from "./TwoPersonView";
 
 // Copy for same archetype pairs
 const pairSameCopy: Record<string, string> = {
@@ -170,7 +172,11 @@ export default async function UtopiaPage({ params }: Props) {
   const shareText = `Join ${room.name} — a utopia of ${room.members.length}.`;
 
   return (
-    <>
+    <UtopiaPageClient
+      slug={slug}
+      utopiaName={room.name}
+      members={room.members}
+    >
       <style>{`
         :root {
           --bg-deep: #faf6f1;
@@ -531,15 +537,21 @@ export default async function UtopiaPage({ params }: Props) {
           </div>
         </div>
 
-        {/* Members - Swipeable Cards */}
-        <div className="section">
-          <h2 className="section-title">Who&apos;s Here</h2>
-          <UtopiaCards
-            members={room.members}
-            createdBy={room.createdBy}
-            utopiaName={room.name}
-          />
-        </div>
+        {/* Two-Person View or Members Cards */}
+        {room.members.length === 2 ? (
+          <div className="section">
+            <TwoPersonView members={room.members} utopiaName={room.name} />
+          </div>
+        ) : (
+          <div className="section">
+            <h2 className="section-title">Who&apos;s Here</h2>
+            <UtopiaCards
+              members={room.members}
+              createdBy={room.createdBy}
+              utopiaName={room.name}
+            />
+          </div>
+        )}
 
         {/* Missing archetypes (only show a few) */}
         {missing.length > 0 && missing.length <= 10 && (
@@ -594,6 +606,6 @@ export default async function UtopiaPage({ params }: Props) {
         </nav>
         <p className="footer-copy">&copy; 2026 Louise Ireland</p>
       </footer>
-    </>
+    </UtopiaPageClient>
   );
 }
