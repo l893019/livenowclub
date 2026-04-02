@@ -1162,6 +1162,39 @@
       color: rgba(255,255,255,0.4);
     }
 
+    /* PERSISTENT ESSAY LINK */
+    .essay-link {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      z-index: 1000;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 10px 16px;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      transition: all 0.2s;
+    }
+    .essay-link:hover {
+      color: var(--accent-pink);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+    .essay-link em {
+      font-style: italic;
+    }
+    @media (max-width: 600px) {
+      .essay-link {
+        bottom: 16px;
+        left: 16px;
+        right: 16px;
+        text-align: center;
+      }
+    }
+
     /* MOBILE */
     @media (max-width: 600px) {
       .quiz-main { padding: 100px 20px 60px; }
@@ -1215,6 +1248,9 @@
       </span>
     </button>
   </header>
+
+  <!-- PERSISTENT ESSAY LINK -->
+  <a href="/wonder/essay" class="essay-link">Read <em>When Purpose Is All We Have Left</em> →</a>
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="toggleMobileMenu()">
@@ -1530,11 +1566,12 @@
     <!-- FOOTER -->
     <footer>
       <nav class="footer-nav">
-        <a href="/read">Essays</a>
-        <a href="/about">About</a>
-        <a href="https://livenowclub.substack.com" target="_blank" rel="noopener noreferrer">Substack</a>
+        <a href="/read">Read</a>
+        <a href="/navigate">Navigate</a>
+        <a href="/wonder">Wonder</a>
+        <a href="/connect">Connect</a>
       </nav>
-      <p class="footer-copy">&copy; 2025 Louise Ireland</p>
+      <p class="footer-copy">&copy; 2026 Louise Ireland</p>
     </footer>
   </div>
 
