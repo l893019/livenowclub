@@ -7,6 +7,7 @@ import { GroupRadarStep } from "./steps/GroupRadarStep";
 import { GroupReadingStep } from "./steps/GroupReadingStep";
 import { RelationshipStep } from "./steps/RelationshipStep";
 import { TwoPersonView } from "./TwoPersonView";
+import { YourArchetypeCard, JoinUtopiaCard } from "./YourArchetypeCard";
 import { archetypes } from "@/lib/archetypes";
 import type { UtopiaMember } from "@/lib/utopia";
 import styles from "./UtopiaPageClient.module.css";
@@ -272,22 +273,16 @@ export function UtopiaPageClient({
           currentUserId={currentUserId}
         />
 
-        {/* Your archetype card */}
-        {currentUserId && (() => {
-          const me = members.find((m) => m.id === currentUserId);
-          const arch = me ? archetypes[me.archetype] : null;
-          if (!me || !arch) return null;
-          return (
-            <button className={styles.yourCard} onClick={() => setCurrentView("profile")}>
-              <div className={styles.yourCardDot} style={{ backgroundColor: arch.color }} />
-              <div className={styles.yourCardContent}>
-                <span className={styles.yourCardLabel}>{arch.name}</span>
-                <p className={styles.yourCardQuote}>{arch.utopia.replace(/^Their/, "Your")}</p>
-                <span className={styles.yourCardLink}>See your profile →</span>
-              </div>
-            </button>
-          );
-        })()}
+        {/* Your archetype card or Join CTA */}
+        {currentUserId ? (
+          (() => {
+            const me = members.find((m) => m.id === currentUserId);
+            if (!me) return <JoinUtopiaCard slug={slug} utopiaName={utopiaName} memberCount={members.length} />;
+            return <YourArchetypeCard member={me} onClick={() => setCurrentView("profile")} />;
+          })()
+        ) : (
+          <JoinUtopiaCard slug={slug} utopiaName={utopiaName} memberCount={members.length} />
+        )}
 
         <div className={styles.actions}>
           <button className={styles.btnSecondary} onClick={handleShowReading}>

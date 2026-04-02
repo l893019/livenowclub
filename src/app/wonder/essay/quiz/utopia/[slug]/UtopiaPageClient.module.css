@@ -250,6 +250,29 @@
   font-weight: 500;
 }
 
+/* Join utopia card for visitors */
+.joinCard {
+  width: 100%;
+  max-width: 360px;
+  padding: 24px;
+  margin-top: 32px;
+  background: white;
+  border: 1px solid rgba(45, 42, 38, 0.1);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.joinCardText {
+  font-size: 0.95rem;
+  color: rgba(45, 42, 38, 0.75);
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+}
+
+.joinCard .btnPrimary {
+  width: 100%;
+}
+
 .myUtopias {
   margin-top: 16px;
   font-size: 0.85rem;

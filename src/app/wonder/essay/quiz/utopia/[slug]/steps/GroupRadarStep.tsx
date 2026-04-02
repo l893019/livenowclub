@@ -123,6 +123,48 @@ export function GroupRadarStep({
   const radarSize = 320;
   const padding = 40;
 
+  // Calculate label positions with collision detection
+  const labelData = useMemo(() => {
+    const labels = visibleMembers.map((member) => {
+      const pos = archetypePositions[member.archetype] || { x: 0, y: 0 };
+      const svgCoords = toSvgCoords(pos, radarSize, padding);
+      const labelOnLeft = svgCoords.cx > radarSize / 2;
+      const isCurrentUser = member.id === currentUserId;
+      const displayName = isCurrentUser ? "You" : (member.name || "Anonymous");
+
+      return {
+        id: member.id,
+        cx: svgCoords.cx,
+        cy: svgCoords.cy,
+        labelOnLeft,
+        displayName,
+        yOffset: 0, // Will be adjusted for collisions
+      };
+    });
+
+    // Sort by Y position to detect overlaps
+    const sorted = [...labels].sort((a, b) => a.cy - b.cy);
+
+    // Check for collisions and offset labels
+    for (let i = 1; i < sorted.length; i++) {
+      const prev = sorted[i - 1];
+      const curr = sorted[i];
+
+      // If same side and Y positions are within 20px, offset
+      if (prev.labelOnLeft === curr.labelOnLeft && Math.abs(curr.cy - prev.cy) < 20) {
+        // Also check X proximity
+        if (Math.abs(curr.cx - prev.cx) < 60) {
+          curr.yOffset = (prev.yOffset || 0) + 18;
+        }
+      }
+    }
+
+    // Convert back to map for easy lookup
+    const labelMap = new Map<string, { yOffset: number }>();
+    labels.forEach((l) => labelMap.set(l.id, { yOffset: l.yOffset }));
+    return labelMap;
+  }, [visibleMembers, currentUserId]);
+
   return (
     <div className={styles.container}>
       {/* Radar with clickable overlays */}
@@ -134,6 +176,19 @@ export function GroupRadarStep({
             centerOfGravity={centerOfGravity}
             showAllArchetypes={false}
           />
+
+          {/* Center of gravity indicator */}
+          {centerOfGravity && (
+            <div
+              className={styles.cogLabel}
+              style={{
+                left: toSvgCoords(centerOfGravity, radarSize, padding).cx,
+                top: toSvgCoords(centerOfGravity, radarSize, padding).cy + 20,
+              }}
+            >
+              center
+            </div>
+          )}
 
           {/* Clickable overlay buttons for each member with name labels */}
           {visibleMembers.map((member, index) => {
@@ -149,20 +204,27 @@ export function GroupRadarStep({
             // Show "You" for current user, otherwise show name
             const displayName = isCurrentUser ? "You" : (member.name || "Anonymous");
 
+            // Get collision offset
+            const labelInfo = labelData.get(member.id);
+            const yOffset = labelInfo?.yOffset || 0;
+
             return (
               <button
                 key={member.id}
                 className={`${styles.dotButton} ${isNewest ? styles.pulseIn : ""} ${isCurrentUser ? styles.youDot : ""}`}
                 style={{
-                  left: svgCoords.cx - 15,
-                  top: svgCoords.cy - 15,
+                  left: svgCoords.cx - 20,
+                  top: svgCoords.cy - 20,
                 }}
                 onClick={() => onMemberClick(member.id)}
                 aria-label={isCurrentUser ? "Your position" : `View ${member.name}'s profile`}
               >
                 <span
                   className={`${styles.dotLabel} ${labelOnLeft ? styles.labelLeft : styles.labelRight} ${isCurrentUser ? styles.youLabel : ""}`}
-                  style={{ color: arch?.color || "#fff" }}
+                  style={{
+                    color: arch?.color || "#fff",
+                    transform: `translateY(${yOffset}px)`,
+                  }}
                 >
                   {displayName}
                 </span>
@@ -176,6 +238,9 @@ export function GroupRadarStep({
       <div className={`${styles.summary} ${showSummary ? styles.visible : ""}`}>
         <p className={styles.summaryText}>{summary}</p>
       </div>
+
+      {/* Tap hint */}
+      <p className={styles.tapHint}>Tap any dot to explore</p>
     </div>
   );
 }
