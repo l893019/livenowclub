@@ -282,7 +282,7 @@ export function UtopiaPageClient({
               <div className={styles.yourCardDot} style={{ backgroundColor: arch.color }} />
               <div className={styles.yourCardContent}>
                 <span className={styles.yourCardLabel}>{arch.name}</span>
-                <p className={styles.yourCardQuote}>{arch.utopia}</p>
+                <p className={styles.yourCardQuote}>{arch.utopia.replace(/^Their/, "Your")}</p>
               </div>
             </button>
           );
