@@ -272,10 +272,23 @@ export function UtopiaPageClient({
           currentUserId={currentUserId}
         />
 
+        {/* Your archetype card */}
+        {currentUserId && (() => {
+          const me = members.find((m) => m.id === currentUserId);
+          const arch = me ? archetypes[me.archetype] : null;
+          if (!me || !arch) return null;
+          return (
+            <button className={styles.yourCard} onClick={() => setCurrentView("profile")}>
+              <div className={styles.yourCardDot} style={{ backgroundColor: arch.color }} />
+              <div className={styles.yourCardContent}>
+                <span className={styles.yourCardLabel}>You</span>
+                <p className={styles.yourCardQuote}>{arch.utopia}</p>
+              </div>
+            </button>
+          );
+        })()}
+
         <div className={styles.actions}>
-          <button className={styles.btnSecondary} onClick={() => setCurrentView("profile")}>
-            Your Profile
-          </button>
           <button className={styles.btnSecondary} onClick={handleShowReading}>
             Group Reading
           </button>

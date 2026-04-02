@@ -187,6 +187,60 @@
   text-align: center;
 }
 
+/* Your archetype card */
+.yourCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  max-width: 360px;
+  padding: 20px;
+  margin-top: 32px;
+  background: white;
+  border: 1px solid rgba(45, 42, 38, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.yourCard:hover {
+  border-color: rgba(232, 23, 138, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.yourCardDot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.yourCardContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.yourCardLabel {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(45, 42, 38, 0.5);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.yourCardQuote {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #2d2a26;
+  margin: 0;
+  line-height: 1.5;
+}
+
 .myUtopias {
   margin-top: 16px;
   font-size: 0.85rem;
