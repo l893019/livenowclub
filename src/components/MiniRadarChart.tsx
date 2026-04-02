@@ -3,6 +3,7 @@
 import { archetypes } from "@/lib/archetypes";
 import {
   archetypePositions,
+  axisLabels,
   getGroupCenterOfGravity,
   toSvgCoords,
   type RadarPosition,
@@ -15,7 +16,7 @@ type MiniRadarChartProps = {
 };
 
 export function MiniRadarChart({ members, size = 80 }: MiniRadarChartProps) {
-  const padding = 8;
+  const padding = 14; // Extra padding for labels
   const center = size / 2;
   const innerRadius = (size - padding * 2) / 2;
 
@@ -55,6 +56,20 @@ export function MiniRadarChart({ members, size = 80 }: MiniRadarChartProps) {
           y2={size - padding}
           className={styles.axis}
         />
+
+        {/* Axis labels */}
+        <text x={center} y={padding - 2} className={styles.axisLabel} textAnchor="middle">
+          {axisLabels.north}
+        </text>
+        <text x={center} y={size - padding + 10} className={styles.axisLabel} textAnchor="middle">
+          {axisLabels.south}
+        </text>
+        <text x={size - padding + 4} y={center + 3} className={styles.axisLabel} textAnchor="start">
+          {axisLabels.east}
+        </text>
+        <text x={padding - 4} y={center + 3} className={styles.axisLabel} textAnchor="end">
+          {axisLabels.west}
+        </text>
 
         {/* Member dots */}
         {members.map((m, i) => {

@@ -161,7 +161,7 @@ export function GoDeepStep({
       {/* Essay Link */}
       <div className={styles.essayLink}>
         <Link href="/wonder/essay" className={styles.essayLinkText}>
-          Read the essay &rarr;
+          Read <em>When Purpose Is All We Have Left</em> &rarr;
         </Link>
       </div>
     </div>

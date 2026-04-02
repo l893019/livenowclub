@@ -81,7 +81,7 @@ const archetypes: Record<string, {
   swimmer: {
     name: "Swimmer in Deep Water",
     description: "You resist the urge to resolve. Most people see a problem and want to solve it. You see a question and want to live inside it. The edges of understanding are where the interesting things happen, and you've always been drawn there. You are comfortable with ambiguity in a world that punishes it, and you suspect that this comfort is its own form of wisdom.",
-    utopia: "Your utopia is a civilization of philosophers. Their single ambition is to reach the deepest level of questioning ever achieved.",
+    utopia: "Your utopia is a civilization of philosophers. Your single ambition is to reach the deepest level of questioning ever achieved.",
     blindSpot: "You can sit with a question so long that it becomes an excuse to never act. At some point, not-knowing becomes its own form of cowardice.",
     color: "#6b8fef",
     books: [

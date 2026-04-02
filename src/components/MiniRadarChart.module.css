@@ -29,3 +29,12 @@
 .center {
   opacity: 0.9;
 }
+
+.axisLabel {
+  font-size: 6px;
+  font-family: 'Satoshi', system-ui, sans-serif;
+  fill: rgba(45, 42, 38, 0.4);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
