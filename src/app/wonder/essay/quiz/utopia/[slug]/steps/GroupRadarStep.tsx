@@ -154,12 +154,16 @@ export function GroupRadarStep({
             showAllArchetypes={false}
           />
 
-          {/* Clickable overlay buttons for each member */}
+          {/* Clickable overlay buttons for each member with name labels */}
           {visibleMembers.map((member, index) => {
             const pos = archetypePositions[member.archetype] || { x: 0, y: 0 };
             const svgCoords = toSvgCoords(pos, radarSize, padding);
             const isNewest = index === newestMemberIndex;
             const isYou = member.id === highlightMemberId;
+            const arch = archetypes[member.archetype];
+
+            // Position label to avoid overlap with radar edges
+            const labelOnLeft = svgCoords.cx > radarSize / 2;
 
             return (
               <button
@@ -172,7 +176,12 @@ export function GroupRadarStep({
                 onClick={() => onMemberClick(member.id)}
                 aria-label={`View ${member.name}'s profile`}
               >
-                <span className={styles.srOnly}>{member.name}</span>
+                <span
+                  className={`${styles.dotLabel} ${labelOnLeft ? styles.labelLeft : styles.labelRight}`}
+                  style={{ color: arch?.color || "#fff" }}
+                >
+                  {member.name || "Anonymous"}
+                </span>
               </button>
             );
           })}
