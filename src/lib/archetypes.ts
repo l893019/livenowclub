@@ -363,30 +363,80 @@ export type DetailedPairDynamic = {
 };
 
 export const detailedPairDynamics: Record<string, DetailedPairDynamic> = {
-  "embers+shaper": {
-    align: ["You both care deeply about what gets built"],
-    clash: ["One races forward, the other holds back"],
-    give: "They remind you what you're building toward. You remind them what to carry forward.",
+  "alive+conscience": {
+    align: ["You both feel things deeply"],
+    clash: ["One wants to feel. One wants to watch."],
+    give: "They keep you grounded. You remind them to live.",
   },
-  "rooted+shaper": {
-    align: ["You both have strong convictions"],
-    clash: ["One wants to tear it down. One wants to sit with it."],
-    give: "They keep you grounded. You keep them moving.",
+  "alive+rooted": {
+    align: ["You both know what matters"],
+    clash: ["One moves constantly. One stays still."],
+    give: "They slow you down. You wake them up.",
+  },
+  "architect+mender": {
+    align: ["You both think in systems"],
+    clash: ["One designs new. One fixes old."],
+    give: "They repair what you build. You give their repairs a home.",
+  },
+  "architect+swimmer": {
+    align: ["You both care about getting it right"],
+    clash: ["One builds systems. One questions them."],
+    give: "They push you to structure your questions. You keep their systems honest.",
+  },
+  "between+cleareyed": {
+    align: ["You both live with uncertainty"],
+    clash: ["One sees clearly. One is still looking."],
+    give: "They help you see. You remind them that seeing isn't everything.",
   },
   "citizen+conscience": {
     align: ["You both believe in good systems"],
     clash: ["One trusts the architecture. One tests it for cracks."],
     give: "They keep you honest. You keep them hopeful.",
   },
-  "presence+unbound": {
-    align: ["You both seek truth beyond the surface"],
-    clash: ["One stays embodied. One wants to transcend."],
-    give: "They remind you of what's here. You remind them of what's possible.",
+  "citizen+shaper": {
+    align: ["You both believe in what's possible"],
+    clash: ["One trusts the system. One wants to rebuild it."],
+    give: "They bring stability. You bring change.",
+  },
+  "cleareyed+presence": {
+    align: ["You both see what's really there"],
+    clash: ["One speaks the truth. One holds the space."],
+    give: "They make space for your truth. You help them speak it.",
+  },
+  "conscience+embers": {
+    align: ["You both guard what matters"],
+    clash: ["One watches the present. One guards the past."],
+    give: "They remember why you watch. You help them watch what happens now.",
+  },
+  "embers+presence": {
+    align: ["You both value what endures"],
+    clash: ["One looks back. One stays present."],
+    give: "They remind you where you came from. You remind them where you are.",
+  },
+  "embers+shaper": {
+    align: ["You both care deeply about what gets built"],
+    clash: ["One races forward, the other holds back"],
+    give: "They remind you what you're building toward. You remind them what to carry forward.",
+  },
+  "friction+unbound": {
+    align: ["You both reject easy comfort"],
+    clash: ["One craves resistance. One transcends it."],
+    give: "They ground your transcendence. You expand their friction.",
   },
   "mender+swimmer": {
     align: ["You both see what needs attention"],
     clash: ["One acts. One questions."],
     give: "They push you to decide. You help them understand why.",
+  },
+  "presence+unbound": {
+    align: ["You both seek truth beyond the surface"],
+    clash: ["One stays embodied. One wants to transcend."],
+    give: "They remind you of what's here. You remind them of what's possible.",
+  },
+  "rooted+shaper": {
+    align: ["You both have strong convictions"],
+    clash: ["One wants to tear it down. One wants to sit with it."],
+    give: "They keep you grounded. You keep them moving.",
   },
   "shaper+swimmer": {
     align: ["You both reject easy answers"],
