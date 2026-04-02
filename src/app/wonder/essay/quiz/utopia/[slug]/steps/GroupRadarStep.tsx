@@ -80,24 +80,12 @@ export function GroupRadarStep({
   highlightMemberId,
   currentUserId,
 }: GroupRadarStepProps) {
-  const [visibleCount, setVisibleCount] = useState(0);
-  const [showSummary, setShowSummary] = useState(false);
+  // Skip animation on revisit - show all dots immediately
+  const [visibleCount, setVisibleCount] = useState(members.length);
+  const [showSummary, setShowSummary] = useState(true);
 
-  // Animate dots appearing one by one
-  useEffect(() => {
-    if (visibleCount < members.length) {
-      const timer = setTimeout(() => {
-        setVisibleCount((prev) => prev + 1);
-      }, 400);
-      return () => clearTimeout(timer);
-    } else if (visibleCount === members.length && members.length > 0) {
-      // Show summary after all dots appear
-      const timer = setTimeout(() => {
-        setShowSummary(true);
-      }, 600);
-      return () => clearTimeout(timer);
-    }
-  }, [visibleCount, members.length]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const _ = utopiaName; // Keep prop for API compatibility
 
   // Visible members based on animation state
   const visibleMembers = members.slice(0, visibleCount);
@@ -137,15 +125,6 @@ export function GroupRadarStep({
 
   return (
     <div className={styles.container}>
-      {/* Header */}
-      <div className={styles.header}>
-        <span className={styles.label}>Your Utopia</span>
-        <h2 className={styles.title}>{utopiaName}</h2>
-        <p className={styles.memberCount}>
-          {members.length} {members.length === 1 ? "member" : "members"}
-        </p>
-      </div>
-
       {/* Radar with clickable overlays */}
       <div className={styles.radarSection}>
         <div className={styles.radarContainer}>
@@ -196,11 +175,6 @@ export function GroupRadarStep({
       {/* Summary text */}
       <div className={`${styles.summary} ${showSummary ? styles.visible : ""}`}>
         <p className={styles.summaryText}>{summary}</p>
-      </div>
-
-      {/* Hint */}
-      <div className={`${styles.hint} ${showSummary ? styles.visible : ""}`}>
-        <p>Tap a dot to see your relationship</p>
       </div>
     </div>
   );

@@ -216,6 +216,14 @@ export function UtopiaPageClient({
                   <em>{archetype.book.title}</em> by {archetype.book.author}
                 </p>
               </div>
+              <div className={styles.profileActions}>
+                <Link href="/wonder/essay/quiz/result" className={styles.btnSecondary}>
+                  See Full Result
+                </Link>
+                <Link href="/wonder/essay/quiz/my-utopias" className={styles.btnSecondary}>
+                  My Utopias
+                </Link>
+              </div>
             </div>
           </main>
           <Footer />
@@ -273,7 +281,11 @@ export function UtopiaPageClient({
           </button>
         </div>
 
-        <p className={styles.hint}>Tap any dot to see your relationship</p>
+        <p className={styles.hint}>Tap any dot to explore</p>
+
+        <Link href="/wonder/essay/quiz/my-utopias" className={styles.myUtopias}>
+          My Utopias →
+        </Link>
       </main>
       <Footer />
     </div>
