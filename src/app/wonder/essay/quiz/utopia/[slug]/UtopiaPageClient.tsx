@@ -40,6 +40,8 @@ export function UtopiaPageClient({
   const [currentView, setCurrentView] = useState<View>("radar");
   const [selectedMemberId, setSelectedMemberId] = useState<string | null>(null);
   const [currentUserId, setCurrentUserId] = useState<string | null>(null);
+  // For deep links: view relationship as a specific person (without changing your identity)
+  const [viewAsUserId, setViewAsUserId] = useState<string | null>(null);
 
   useEffect(() => {
     const userId = localStorage.getItem("quiz-user-id");
@@ -52,12 +54,11 @@ export function UtopiaPageClient({
     const themId = params.get("them");
 
     if (view === "relationship" && youId && themId) {
-      // Set the selected member and view
       setSelectedMemberId(themId);
       setCurrentView("relationship");
-      // Override currentUserId with the "you" from URL for viewing
+      // Set viewAs for deep link (preserves actual identity in currentUserId)
       if (youId !== userId) {
-        setCurrentUserId(youId);
+        setViewAsUserId(youId);
       }
     }
   }, []);
@@ -102,6 +103,7 @@ export function UtopiaPageClient({
 
   const handleBackToGroup = () => {
     setSelectedMemberId(null);
+    setViewAsUserId(null); // Clear deep link perspective
     setCurrentView("radar");
   };
 
@@ -178,8 +180,10 @@ export function UtopiaPageClient({
   }
 
   // Relationship view
-  if (currentView === "relationship" && selectedMemberId && currentUserId) {
-    const you = members.find((m) => m.id === currentUserId);
+  // Use viewAsUserId for deep links, otherwise currentUserId
+  const relationshipYouId = viewAsUserId || currentUserId;
+  if (currentView === "relationship" && selectedMemberId && relationshipYouId) {
+    const you = members.find((m) => m.id === relationshipYouId);
     const them = members.find((m) => m.id === selectedMemberId);
 
     if (you && them) {
