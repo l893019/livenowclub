@@ -178,7 +178,7 @@ export function GroupRadarStep({
                   left: svgCoords.cx - 15,
                   top: svgCoords.cy - 15,
                 }}
-                onClick={() => !isCurrentUser && onMemberClick(member.id)}
+                onClick={() => onMemberClick(member.id)}
                 aria-label={isCurrentUser ? "Your position" : `View ${member.name}'s profile`}
               >
                 <span

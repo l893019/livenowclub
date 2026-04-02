@@ -7,6 +7,7 @@ import { GroupRadarStep } from "./steps/GroupRadarStep";
 import { GroupReadingStep } from "./steps/GroupReadingStep";
 import { RelationshipStep } from "./steps/RelationshipStep";
 import { TwoPersonView } from "./TwoPersonView";
+import { archetypes } from "@/lib/archetypes";
 import type { UtopiaMember } from "@/lib/utopia";
 import styles from "./UtopiaPageClient.module.css";
 
@@ -24,7 +25,7 @@ type UtopiaPageClientProps = {
   shareUrl: string;
 };
 
-type View = "radar" | "reading" | "relationship";
+type View = "radar" | "reading" | "relationship" | "profile";
 
 export function UtopiaPageClient({
   slug,
@@ -71,7 +72,10 @@ export function UtopiaPageClient({
 
   const handleMemberClick = useCallback(
     (memberId: string) => {
-      if (memberId !== currentUserId) {
+      if (memberId === currentUserId) {
+        // Clicking yourself shows your profile
+        setCurrentView("profile");
+      } else {
         setSelectedMemberId(memberId);
         setCurrentView("relationship");
       }
@@ -172,6 +176,50 @@ export function UtopiaPageClient({
           hasNext={selectedIndex < otherMembers.length - 1}
           hasPrev={selectedIndex > 0}
         />
+      );
+    }
+  }
+
+  // Profile view (current user's archetype)
+  if (currentView === "profile" && currentUserId) {
+    const me = members.find((m) => m.id === currentUserId);
+    const archetype = me ? archetypes[me.archetype] : null;
+
+    if (me && archetype) {
+      return (
+        <div className={styles.container}>
+          <Header />
+          <button className={styles.backButton} onClick={handleBackToRadar}>
+            ← Back to radar
+          </button>
+          <main className={styles.profileMain}>
+            <div className={styles.profileCard} style={{ borderColor: archetype.color }}>
+              <span className={styles.profileLabel} style={{ color: archetype.color }}>
+                You are
+              </span>
+              <h1 className={styles.profileName} style={{ color: archetype.color }}>
+                {archetype.name}
+              </h1>
+              <p className={styles.profileUtopia}>{archetype.utopia}</p>
+              <p className={styles.profileDescription}>{archetype.description}</p>
+              <div className={styles.profileSection}>
+                <h3 className={styles.profileSectionTitle}>Your superpower</h3>
+                <p className={styles.profileSectionText}>{archetype.superpower}</p>
+              </div>
+              <div className={styles.profileSection}>
+                <h3 className={styles.profileSectionTitle}>Your blind spot</h3>
+                <p className={styles.profileSectionText}>{archetype.blindSpot}</p>
+              </div>
+              <div className={styles.profileSection}>
+                <h3 className={styles.profileSectionTitle}>A book for you</h3>
+                <p className={styles.profileSectionText}>
+                  <em>{archetype.book.title}</em> by {archetype.book.author}
+                </p>
+              </div>
+            </div>
+          </main>
+          <Footer />
+        </div>
       );
     }
   }
