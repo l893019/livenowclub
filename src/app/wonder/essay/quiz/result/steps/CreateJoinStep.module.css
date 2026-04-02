@@ -1,0 +1,268 @@
+/* CreateJoinStep.module.css */
+/* Create or join utopia step with option cards and name input */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  background-color: #faf6f1;
+}
+
+.content {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Typography */
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d2a26;
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: rgba(45, 42, 38, 0.6);
+  text-align: center;
+  margin: 0 0 2rem 0;
+  line-height: 1.5;
+}
+
+/* Option cards (choose mode) */
+.optionCards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.optionCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid rgba(45, 42, 38, 0.1);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.04),
+    0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.optionCard:hover {
+  border-color: rgba(232, 23, 138, 0.3);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.08),
+    0 2px 6px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
+}
+
+.optionCard:focus-visible {
+  outline: 2px solid #e8178a;
+  outline-offset: 2px;
+}
+
+.optionCard:active {
+  transform: translateY(0);
+}
+
+.optionIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  color: #e8178a;
+  background: rgba(232, 23, 138, 0.08);
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.optionTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d2a26;
+  margin-bottom: 0.25rem;
+}
+
+.optionDescription {
+  font-size: 0.9rem;
+  color: rgba(45, 42, 38, 0.6);
+  text-align: center;
+}
+
+/* Create form (create mode) */
+.createForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inputLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(45, 42, 38, 0.5);
+  margin-bottom: 0.25rem;
+}
+
+.textInput {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  color: #2d2a26;
+  background: #fff;
+  border: 1px solid rgba(45, 42, 38, 0.2);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.textInput:focus {
+  outline: none;
+  border-color: #e8178a;
+  box-shadow: 0 0 0 3px rgba(232, 23, 138, 0.1);
+}
+
+.textInput:disabled {
+  background: rgba(45, 42, 38, 0.05);
+  color: rgba(45, 42, 38, 0.5);
+  cursor: not-allowed;
+}
+
+.textInput::placeholder {
+  color: rgba(45, 42, 38, 0.4);
+}
+
+/* Error message */
+.errorMessage {
+  font-size: 0.9rem;
+  color: #dc2626;
+  margin: 0.5rem 0 0 0;
+  text-align: center;
+}
+
+/* Create actions */
+.createActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.createButton {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: #e8178a;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.createButton:hover:not(:disabled) {
+  background: #d11077;
+  transform: translateY(-1px);
+}
+
+.createButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.createButton:focus-visible {
+  outline: 2px solid #e8178a;
+  outline-offset: 2px;
+}
+
+.createButton:disabled {
+  background: rgba(232, 23, 138, 0.4);
+  cursor: not-allowed;
+}
+
+.backButton {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2d2a26;
+  background: transparent;
+  border: 1px solid rgba(45, 42, 38, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.backButton:hover:not(:disabled) {
+  background: rgba(45, 42, 38, 0.05);
+  border-color: rgba(45, 42, 38, 0.3);
+}
+
+.backButton:active:not(:disabled) {
+  background: rgba(45, 42, 38, 0.08);
+}
+
+.backButton:focus-visible {
+  outline: 2px solid #e8178a;
+  outline-offset: 2px;
+}
+
+.backButton:disabled {
+  color: rgba(45, 42, 38, 0.4);
+  cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (min-width: 640px) {
+  .content {
+    max-width: 440px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .optionCard {
+    padding: 2rem;
+  }
+
+  .optionIcon {
+    width: 56px;
+    height: 56px;
+    font-size: 1.75rem;
+  }
+
+  .optionTitle {
+    font-size: 1.2rem;
+  }
+
+  .optionDescription {
+    font-size: 0.95rem;
+  }
+
+  .textInput {
+    padding: 1.125rem 1.5rem;
+    font-size: 1.05rem;
+  }
+}
