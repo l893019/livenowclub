@@ -160,3 +160,77 @@ export const archetypes: Record<string, Archetype> = {
 };
 
 export const archetypeKeys = Object.keys(archetypes);
+
+// Handcrafted pair dynamics - key format: "archA+archB" (alphabetical)
+export const pairDynamics: Record<string, string> = {
+  // Shaper tensions
+  "embers+shaper": "One races toward tomorrow. The other holds yesterday close. Between them, the present gets attention.",
+  "rooted+shaper": "The Shapers want to tear it down and rebuild. The Rooted ask: what was wrong with it?",
+
+  // Conscience tensions
+  "citizen+conscience": "The Citizen trusts the architecture. The Conscience tests the walls for cracks.",
+  "alive+conscience": "One wants to feel everything. The other keeps asking: but should we?",
+
+  // Presence tensions
+  "presence+unbound": "The Keeper stays embodied. The Unbound wants to transcend. They're arguing about what it means to be here.",
+
+  // Swimmer tensions
+  "mender+swimmer": "The Swimmer lives in questions. The Mender needs to fix things. One pauses, the other acts.",
+
+  // Friction tensions
+  "friction+rooted": "One craves difficulty. One chose stillness. They don't understand each other at all.",
+
+  // Architect dynamics
+  "architect+shaper": "Both builders, different blueprints. The Architect wants consensus. The Shaper wants to start over.",
+  "architect+mender": "Systems thinkers both. One designs new ones, one fixes old ones. They probably need each other.",
+
+  // Citizen dynamics
+  "alive+citizen": "Both believe in abundance. One wants access, the other wants experience. A generous worldview.",
+  "citizen+swimmer": "The Citizen builds. The Swimmer questions. Both necessary, both frustrated with each other.",
+
+  // Embers dynamics
+  "between+embers": "The archive and the threshold. One knows where we came from. The other isn't sure where we're going.",
+  "embers+mender": "Keepers both. One preserves memory, one preserves function. The museum and the workshop.",
+
+  // Unbound dynamics
+  "swimmer+unbound": "Both comfortable with ambiguity. They might talk for hours and enjoy every minute.",
+  "alive+unbound": "Sensation-seekers, different methods. One through the body, one past it.",
+
+  // Cleareyed dynamics
+  "cleareyed+conscience": "Truth-tellers both. The Conscience watches systems. Clear-Eyed watches everything.",
+  "cleareyed+swimmer": "Both live in clarity, different kinds. Facts vs. questions. They respect each other.",
+
+  // Rooted dynamics
+  "presence+rooted": "Stillness and attention. They understand something the others don't.",
+  "mender+rooted": "The patient ones. They'll be here when the dust settles.",
+
+  // Between dynamics
+  "between+swimmer": "Uncertainty specialists. Neither one is sure, and they're fine with that.",
+
+  // Same-archetype dynamics
+  "shaper+shaper": "Two builders. You'll create something—if you stop redesigning it.",
+  "rooted+rooted": "Two in stillness. Peaceful—but who makes the first move?",
+  "conscience+conscience": "Two watchmen. Nothing escapes you. Exhausting, but safe.",
+  "citizen+citizen": "Two at ease. This utopia floats. Who drops anchor?",
+  "swimmer+swimmer": "Two in deep water. You'll question everything. Even this.",
+  "architect+architect": "Two systems thinkers. Great structures. Who lives in them?",
+  "presence+presence": "Two keepers. So much holding space. Who acts?",
+  "embers+embers": "Two archivists. The past is very well preserved here.",
+  "friction+friction": "Two who crave difficulty. This should be interesting.",
+  "unbound+unbound": "Two transcenders. You've both left the building.",
+  "alive+alive": "Two sensation-seekers. Buckle up.",
+  "mender+mender": "Two fixers. Everything here will work. Eventually.",
+  "cleareyed+cleareyed": "Two truth-tellers. No one's getting away with anything.",
+  "between+between": "Two still figuring it out. At least you're not alone.",
+};
+
+// Helper to get pair key (alphabetically sorted)
+function getPairKey(a: string, b: string): string {
+  return [a, b].sort().join("+");
+}
+
+// Get dynamic for a pair of archetypes
+export function getPairDynamic(a: string, b: string): string | null {
+  const key = getPairKey(a, b);
+  return pairDynamics[key] || null;
+}
