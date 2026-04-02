@@ -39,6 +39,12 @@ export function ResultPageClient({
     journeyKey.current += 1; // Force remount to respect new initialStep
   }, []);
 
+  // Callback for GoDeepStep's "Build Your Utopia" button - jumps to step 3 (CreateJoinStep)
+  const handleBuildUtopia = useCallback(() => {
+    setCurrentStep(3);
+    journeyKey.current += 1;
+  }, []);
+
   const handleStepChange = useCallback((stepIndex: number) => {
     setCurrentStep(stepIndex);
   }, []);
@@ -54,13 +60,13 @@ export function ResultPageClient({
     },
     {
       id: "deeper",
-      component: <GoDeepStep archetypeKey={archetypeKey} imageUrl={imageUrl} compatibility={compatibility} books={books} blindSpot={blindSpot} />,
+      component: <GoDeepStep archetypeKey={archetypeKey} imageUrl={imageUrl} compatibility={compatibility} books={books} blindSpot={blindSpot} onContinue={handleBuildUtopia} />,
     },
     {
       id: "create",
       component: <CreateJoinStep archetypeKey={archetypeKey} />,
     },
-  ], [archetypeKey, imageUrl, handleGoDeeper, compatibility, books, blindSpot]);
+  ], [archetypeKey, imageUrl, handleGoDeeper, handleBuildUtopia, compatibility, books, blindSpot]);
 
   return (
     <>

@@ -10,6 +10,7 @@ type GoDeepStepProps = {
   compatibility: { ally: string; tension: string; need: string };
   books: { title: string; author: string; reason: string }[];
   blindSpot: string;
+  onContinue?: () => void;
 };
 
 // Map compatibility descriptions to archetype keys
@@ -36,6 +37,7 @@ export function GoDeepStep({
   compatibility,
   books,
   blindSpot,
+  onContinue,
 }: GoDeepStepProps) {
   const archetype = archetypes[archetypeKey];
 
@@ -143,6 +145,18 @@ export function GoDeepStep({
           />
         </div>
       </section>
+
+      {/* Build Utopia CTA */}
+      {onContinue && (
+        <div className={styles.ctaSection}>
+          <button className={styles.ctaButton} onClick={onContinue}>
+            Build Your Utopia
+          </button>
+          <p className={styles.ctaSubtext}>
+            Create a space and invite others to join
+          </p>
+        </div>
+      )}
 
       {/* Essay Link */}
       <div className={styles.essayLink}>
