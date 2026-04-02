@@ -47,9 +47,30 @@ export function GoDeepStep({
   const tensionKey = compatibilityMap[compatibility.tension];
   const needKey = compatibilityMap[compatibility.need];
 
-  const allyArchetype = archetypes[allyKey];
-  const tensionArchetype = archetypes[tensionKey];
-  const needArchetype = archetypes[needKey];
+  const allyArchetype = allyKey ? archetypes[allyKey] : undefined;
+  const tensionArchetype = tensionKey ? archetypes[tensionKey] : undefined;
+  const needArchetype = needKey ? archetypes[needKey] : undefined;
+
+  // Helper to render compatibility link - only links if we have a valid key
+  const renderCompatibilityLink = (
+    key: string | undefined,
+    archetype: (typeof archetypes)[string] | undefined,
+    fallbackText: string
+  ) => {
+    if (key && archetype) {
+      return (
+        <Link
+          href={`/wonder/essay/quiz/result?a=${key}`}
+          className={styles.compatibilityLink}
+          style={{ color: archetype.color }}
+        >
+          {archetype.name}
+        </Link>
+      );
+    }
+    // Fallback: render as plain text when mapping is undefined
+    return <span className={styles.compatibilityLink}>{fallbackText}</span>;
+  };
 
   return (
     <div className={styles.container}>
@@ -67,33 +88,19 @@ export function GoDeepStep({
         <div className={styles.compatibilityList}>
           <div className={styles.compatibilityItem}>
             <span className={styles.compatibilityType}>You'll click with</span>
-            <Link
-              href={`/wonder/essay/quiz/result?a=${allyKey}`}
-              className={styles.compatibilityLink}
-              style={{ color: allyArchetype?.color }}
-            >
-              {allyArchetype?.name || compatibility.ally}
-            </Link>
+            {renderCompatibilityLink(allyKey, allyArchetype, compatibility.ally)}
           </div>
           <div className={styles.compatibilityItem}>
             <span className={styles.compatibilityType}>You'll clash with</span>
-            <Link
-              href={`/wonder/essay/quiz/result?a=${tensionKey}`}
-              className={styles.compatibilityLink}
-              style={{ color: tensionArchetype?.color }}
-            >
-              {tensionArchetype?.name || compatibility.tension}
-            </Link>
+            {renderCompatibilityLink(
+              tensionKey,
+              tensionArchetype,
+              compatibility.tension
+            )}
           </div>
           <div className={styles.compatibilityItem}>
             <span className={styles.compatibilityType}>You secretly need</span>
-            <Link
-              href={`/wonder/essay/quiz/result?a=${needKey}`}
-              className={styles.compatibilityLink}
-              style={{ color: needArchetype?.color }}
-            >
-              {needArchetype?.name || compatibility.need}
-            </Link>
+            {renderCompatibilityLink(needKey, needArchetype, compatibility.need)}
           </div>
         </div>
       </section>
@@ -118,6 +125,7 @@ export function GoDeepStep({
                 className={styles.bookLink}
               >
                 Find on Bookshop.org
+                <span className={styles.srOnly}>(opens in new tab)</span>
               </a>
             </div>
           ))}
