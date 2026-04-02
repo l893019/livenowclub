@@ -143,6 +143,15 @@
   text-align: right;
 }
 
+.youLabel {
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.youDot {
+  z-index: 10;
+}
+
 /* Summary */
 .summary {
   text-align: center;

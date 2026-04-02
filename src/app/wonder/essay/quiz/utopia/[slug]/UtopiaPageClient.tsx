@@ -213,6 +213,7 @@ export function UtopiaPageClient({
           utopiaName={utopiaName}
           onMemberClick={handleMemberClick}
           highlightMemberId={selectedMemberId || undefined}
+          currentUserId={currentUserId}
         />
 
         <div className={styles.actions}>

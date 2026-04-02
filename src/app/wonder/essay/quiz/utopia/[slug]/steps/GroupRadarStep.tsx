@@ -17,6 +17,7 @@ type GroupRadarStepProps = {
   utopiaName: string;
   onMemberClick: (memberId: string) => void;
   highlightMemberId?: string;
+  currentUserId?: string | null;
 };
 
 // Quadrant definitions based on radar-positions.ts axes
@@ -77,6 +78,7 @@ export function GroupRadarStep({
   utopiaName,
   onMemberClick,
   highlightMemberId,
+  currentUserId,
 }: GroupRadarStepProps) {
   const [visibleCount, setVisibleCount] = useState(0);
   const [showSummary, setShowSummary] = useState(false);
@@ -159,28 +161,31 @@ export function GroupRadarStep({
             const pos = archetypePositions[member.archetype] || { x: 0, y: 0 };
             const svgCoords = toSvgCoords(pos, radarSize, padding);
             const isNewest = index === newestMemberIndex;
-            const isYou = member.id === highlightMemberId;
+            const isCurrentUser = member.id === currentUserId;
             const arch = archetypes[member.archetype];
 
             // Position label to avoid overlap with radar edges
             const labelOnLeft = svgCoords.cx > radarSize / 2;
 
+            // Show "You" for current user, otherwise show name
+            const displayName = isCurrentUser ? "You" : (member.name || "Anonymous");
+
             return (
               <button
                 key={member.id}
-                className={`${styles.dotButton} ${isNewest ? styles.pulseIn : ""} ${isYou ? styles.youDot : ""}`}
+                className={`${styles.dotButton} ${isNewest ? styles.pulseIn : ""} ${isCurrentUser ? styles.youDot : ""}`}
                 style={{
                   left: svgCoords.cx - 15,
                   top: svgCoords.cy - 15,
                 }}
-                onClick={() => onMemberClick(member.id)}
-                aria-label={`View ${member.name}'s profile`}
+                onClick={() => !isCurrentUser && onMemberClick(member.id)}
+                aria-label={isCurrentUser ? "Your position" : `View ${member.name}'s profile`}
               >
                 <span
-                  className={`${styles.dotLabel} ${labelOnLeft ? styles.labelLeft : styles.labelRight}`}
+                  className={`${styles.dotLabel} ${labelOnLeft ? styles.labelLeft : styles.labelRight} ${isCurrentUser ? styles.youLabel : ""}`}
                   style={{ color: arch?.color || "#fff" }}
                 >
-                  {member.name || "Anonymous"}
+                  {displayName}
                 </span>
               </button>
             );
