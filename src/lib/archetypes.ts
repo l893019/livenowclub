@@ -1231,4 +1231,3 @@ export function getOpeningThesis(a: string, b: string): string {
   }
   return "Different paths to similar questions. Together, you see more than either would alone.";
 }
-// Force redeploy Thu Apr  2 16:07:35 PDT 2026
