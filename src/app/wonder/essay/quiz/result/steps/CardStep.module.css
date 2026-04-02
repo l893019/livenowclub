@@ -1,0 +1,159 @@
+/* CardStep.module.css */
+/* Light-themed shareable card for Instagram Stories screenshots */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  background-color: #faf6f1;
+}
+
+/* The shareable card */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 340px;
+  padding: 2rem 1.5rem;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.06),
+    0 1px 4px rgba(0, 0, 0, 0.04);
+  margin-bottom: 2rem;
+}
+
+/* Archetype name */
+.archetypeName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: -0.01em;
+}
+
+/* Island image */
+.islandImage {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Utopia quote */
+.utopiaQuote {
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.6;
+  text-align: center;
+  color: #2d2a26;
+  margin: 0 0 1.5rem 0;
+  max-width: 280px;
+}
+
+/* Mini radar container */
+.radarContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+/* Branding */
+.branding {
+  font-size: 0.75rem;
+  color: #9b9590;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+/* Actions below card */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 340px;
+}
+
+/* Share button - primary pink */
+.shareButton {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: #e8178a;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.shareButton:hover {
+  background: #d11077;
+  transform: translateY(-1px);
+}
+
+.shareButton:active {
+  transform: translateY(0);
+}
+
+.shareButton:focus-visible {
+  outline: 2px solid #e8178a;
+  outline-offset: 2px;
+}
+
+/* Continue button - secondary */
+.continueButton {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2d2a26;
+  background: transparent;
+  border: 1px solid rgba(45, 42, 38, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.continueButton:hover {
+  background: rgba(45, 42, 38, 0.05);
+  border-color: rgba(45, 42, 38, 0.3);
+}
+
+.continueButton:active {
+  background: rgba(45, 42, 38, 0.08);
+}
+
+.continueButton:focus-visible {
+  outline: 2px solid #e8178a;
+  outline-offset: 2px;
+}
+
+/* Responsive adjustments */
+@media (min-width: 640px) {
+  .card {
+    padding: 2.5rem 2rem;
+  }
+
+  .archetypeName {
+    font-size: 1.5rem;
+  }
+
+  .islandImage {
+    width: 220px;
+    height: 220px;
+  }
+
+  .utopiaQuote {
+    font-size: 1rem;
+    max-width: 300px;
+  }
+}
