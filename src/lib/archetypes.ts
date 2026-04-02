@@ -1,5 +1,7 @@
 // src/lib/archetypes.ts
 
+import { archetypePositions } from "@/lib/radar-positions";
+
 export type Book = {
   title: string;
   author: string;
@@ -348,4 +350,89 @@ export function getGroupBook(keys: string[], counts?: Record<string, number>): B
   // Pick from the most represented archetype
   const sorted = [...keys].sort((a, b) => (counts?.[b] || 1) - (counts?.[a] || 1));
   return archetypes[sorted[0]]?.book || null;
+}
+
+// =============================================================================
+// DETAILED PAIR DYNAMICS FOR RELATIONSHIP VIEW
+// =============================================================================
+
+export type DetailedPairDynamic = {
+  align: string[];
+  clash: string[];
+  give: string;
+};
+
+export const detailedPairDynamics: Record<string, DetailedPairDynamic> = {
+  "embers+shaper": {
+    align: ["You both care deeply about what gets built"],
+    clash: ["One races forward, the other holds back"],
+    give: "They remind you what you're building toward. You remind them what to carry forward.",
+  },
+  "rooted+shaper": {
+    align: ["You both have strong convictions"],
+    clash: ["One wants to tear it down. One wants to sit with it."],
+    give: "They keep you grounded. You keep them moving.",
+  },
+  "citizen+conscience": {
+    align: ["You both believe in good systems"],
+    clash: ["One trusts the architecture. One tests it for cracks."],
+    give: "They keep you honest. You keep them hopeful.",
+  },
+  "presence+unbound": {
+    align: ["You both seek truth beyond the surface"],
+    clash: ["One stays embodied. One wants to transcend."],
+    give: "They remind you of what's here. You remind them of what's possible.",
+  },
+  "mender+swimmer": {
+    align: ["You both see what needs attention"],
+    clash: ["One acts. One questions."],
+    give: "They push you to decide. You help them understand why.",
+  },
+  "shaper+swimmer": {
+    align: ["You both reject easy answers"],
+    clash: ["One builds. One questions."],
+    give: "They make you examine your creations. You make them bring ideas to life.",
+  },
+};
+
+// Helper to get detailed pair dynamic
+export function getDetailedPairDynamic(a: string, b: string): DetailedPairDynamic | null {
+  const key = [a, b].sort().join("+");
+  return detailedPairDynamics[key] || null;
+}
+
+// Generate a fallback dynamic based on archetype positions
+export function generateFallbackDynamic(a: string, b: string): DetailedPairDynamic {
+  const posA = archetypePositions[a];
+  const posB = archetypePositions[b];
+  const archA = archetypes[a];
+  const archB = archetypes[b];
+
+  // Calculate distance
+  const dx = (posB?.x || 0) - (posA?.x || 0);
+  const dy = (posB?.y || 0) - (posA?.y || 0);
+  const distance = Math.sqrt(dx * dx + dy * dy);
+
+  let align: string[];
+  let clash: string[];
+  let give: string;
+
+  if (distance < 0.4) {
+    // Close together - similar worldviews
+    align = ["You see the world similarly", "Shared values come naturally"];
+    clash = ["You might reinforce each other's blind spots"];
+    give = "Comfort in being understood. The risk of an echo chamber.";
+  } else if (distance > 1.0) {
+    // Far apart - opposite worldviews
+    align = ["You cover each other's blind spots"];
+    clash = ["Your instincts pull in opposite directions", "What feels obvious to you puzzles them"];
+    give = `They bring ${archB?.superpower || "their perspective"}. You bring ${archA?.superpower || "yours"}.`;
+  } else {
+    // Medium distance
+    align = ["Different approaches to similar questions"];
+    clash = ["Your methods differ even when your goals align"];
+    give = `Together, you see more than either would alone.`;
+  }
+
+  return { align, clash, give };
 }
