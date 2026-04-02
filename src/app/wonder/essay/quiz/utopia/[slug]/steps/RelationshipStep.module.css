@@ -1,8 +1,11 @@
+/* RelationshipStep.module.css */
+/* Light theme relationship reading */
+
 .container {
   min-height: 100vh;
-  padding: 80px 24px;
-  background: #0a0a0a;
-  color: white;
+  padding: 80px 24px 120px;
+  background: #faf6f1;
+  color: #2d2a26;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,7 +17,7 @@
   left: 24px;
   background: none;
   border: none;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(45, 42, 38, 0.5);
   font-size: 0.9rem;
   cursor: pointer;
   font-family: inherit;
@@ -22,32 +25,64 @@
 }
 
 .backButton:hover {
-  color: white;
+  color: #2d2a26;
 }
 
+/* Header */
 .header {
   text-align: center;
   margin-bottom: 24px;
 }
 
 .title {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.times {
+  color: rgba(45, 42, 38, 0.3);
   font-weight: 300;
-  margin-bottom: 4px;
 }
 
 .subtitle {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+  color: rgba(45, 42, 38, 0.5);
+  font-weight: 400;
 }
 
-.radarWrapper {
-  margin-bottom: 32px;
+/* Radar Card */
+.radarCard {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.06),
+    0 1px 4px rgba(0, 0, 0, 0.04);
+  margin-bottom: 28px;
 }
 
-.reading {
+/* Opening Thesis */
+.thesis {
+  font-size: 1.15rem;
+  font-style: italic;
+  text-align: center;
+  color: #2d2a26;
+  line-height: 1.7;
   max-width: 400px;
+  margin: 0 0 32px 0;
+  padding: 0 16px;
+}
+
+/* Content Sections */
+.content {
   width: 100%;
+  max-width: 440px;
 }
 
 .section {
@@ -55,24 +90,66 @@
 }
 
 .sectionLabel {
-  font-size: 11px;
+  font-size: 0.7rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(45, 42, 38, 0.45);
   margin-bottom: 12px;
 }
 
+.sectionText {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(45, 42, 38, 0.85);
+}
+
+/* Superpower Cards */
+.superpowerCards {
+  display: flex;
+  gap: 12px;
+}
+
+.superpowerCard {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  padding: 14px 16px;
+  border-left: 3px solid #888;
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.04),
+    0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.superpowerName {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(45, 42, 38, 0.5);
+  margin-bottom: 6px;
+}
+
+.superpowerText {
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #2d2a26;
+}
+
+/* Bullet List */
 .bulletList {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .bulletList li {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(45, 42, 38, 0.85);
   line-height: 1.6;
-  padding-left: 16px;
+  padding-left: 20px;
   position: relative;
   margin-bottom: 8px;
 }
@@ -84,32 +161,56 @@
   color: #e8178a;
 }
 
+/* Give Text */
 .giveText {
   font-size: 1rem;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(45, 42, 38, 0.85);
   line-height: 1.7;
 }
 
+/* Question Section */
+.questionSection {
+  background: #fff8f0;
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 28px;
+}
+
+.questionSection .sectionLabel {
+  margin-bottom: 10px;
+}
+
+.questionText {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #2d2a26;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Share Button */
 .shareButton {
-  margin-top: 32px;
-  padding: 14px 28px;
+  margin-top: 8px;
+  padding: 16px 32px;
   background: #e8178a;
   border: none;
   border-radius: 50px;
   color: white;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   font-family: inherit;
   transition: all 0.2s;
+  box-shadow: 0 4px 16px rgba(232, 23, 138, 0.25);
 }
 
 .shareButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(232, 23, 138, 0.3);
+  box-shadow: 0 6px 24px rgba(232, 23, 138, 0.35);
 }
 
+/* Swipe Navigation */
 .swipeNav {
   position: fixed;
   bottom: 32px;
@@ -118,31 +219,73 @@
   display: flex;
   align-items: center;
   gap: 16px;
+  background: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.08),
+    0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
 .swipeHint {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(45, 42, 38, 0.5);
 }
 
 .swipeButton {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.05);
-  color: white;
+  border: 1px solid rgba(45, 42, 38, 0.15);
+  background: transparent;
+  color: #2d2a26;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .swipeButton:hover:not(:disabled) {
   border-color: #e8178a;
-  background: rgba(232, 23, 138, 0.1);
+  color: #e8178a;
+  background: rgba(232, 23, 138, 0.05);
 }
 
 .swipeButton:disabled {
   opacity: 0.3;
   cursor: not-allowed;
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+  .container {
+    padding: 100px 32px 140px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .radarCard {
+    padding: 32px;
+  }
+
+  .thesis {
+    font-size: 1.25rem;
+    max-width: 480px;
+  }
+
+  .content {
+    max-width: 500px;
+  }
+
+  .superpowerCard {
+    padding: 18px 20px;
+  }
+
+  .questionSection {
+    padding: 24px 28px;
+  }
 }

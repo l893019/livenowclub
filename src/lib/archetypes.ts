@@ -486,3 +486,81 @@ export function generateFallbackDynamic(a: string, b: string): DetailedPairDynam
 
   return { align, clash, give };
 }
+
+// Distance categories for relationship analysis
+export type DistanceCategory = "close" | "medium" | "far";
+
+export function getPairDistance(a: string, b: string): { category: DistanceCategory; value: number } {
+  const posA = archetypePositions[a];
+  const posB = archetypePositions[b];
+
+  const dx = (posB?.x || 0) - (posA?.x || 0);
+  const dy = (posB?.y || 0) - (posA?.y || 0);
+  const distance = Math.sqrt(dx * dx + dy * dy);
+
+  if (distance < 0.4) return { category: "close", value: distance };
+  if (distance > 1.0) return { category: "far", value: distance };
+  return { category: "medium", value: distance };
+}
+
+export const distanceDescriptions: Record<DistanceCategory, string> = {
+  close: "You sit near each other on the map. Similar worldviews bring comfort—and the risk of reinforcing each other's blind spots.",
+  medium: "You sit at a comfortable distance. Different enough to learn from each other, close enough to understand.",
+  far: "You sit far apart on the map. This distance creates creative tension—you'll challenge each other's assumptions.",
+};
+
+// Question bank for relationship reflection
+export const relationshipQuestions: Record<DistanceCategory, string[]> = {
+  close: [
+    "What blind spot might you both be missing?",
+    "When did you last genuinely disagree about something that mattered?",
+    "Who do you need in your life to challenge what you both take for granted?",
+  ],
+  medium: [
+    "What has this person shown you that you couldn't see alone?",
+    "Where do your different approaches actually complement each other?",
+    "What question would you ask them that you've been avoiding?",
+  ],
+  far: [
+    "When you disagree, who speaks first? What would happen if you switched?",
+    "What have they been right about that you initially dismissed?",
+    "What would it cost you to fully understand their perspective?",
+  ],
+};
+
+// Get a question for a pair based on their distance
+export function getRelationshipQuestion(a: string, b: string): string {
+  const { category } = getPairDistance(a, b);
+  const questions = relationshipQuestions[category];
+  // Use a deterministic selection based on the pair
+  const key = [a, b].sort().join("+");
+  const index = key.split("").reduce((acc, char) => acc + char.charCodeAt(0), 0) % questions.length;
+  return questions[index];
+}
+
+// Get opening thesis - use pairDynamics if available, otherwise generate
+export function getOpeningThesis(a: string, b: string): string {
+  const key = [a, b].sort().join("+");
+
+  // Check pairDynamics first
+  if (pairDynamics[key]) {
+    return pairDynamics[key];
+  }
+
+  // Check detailedPairDynamics give text
+  if (detailedPairDynamics[key]) {
+    return detailedPairDynamics[key].give;
+  }
+
+  // Generate based on distance
+  const { category } = getPairDistance(a, b);
+  const archA = archetypes[a];
+  const archB = archetypes[b];
+
+  if (category === "close") {
+    return "You speak the same language. The question is whether you can hear what neither of you is saying.";
+  } else if (category === "far") {
+    return `One ${archA?.superpower?.toLowerCase() || "sees one way"}. The other ${archB?.superpower?.toLowerCase() || "sees another"}. Between you, a more complete picture.`;
+  }
+  return "Different paths to similar questions. Together, you see more than either would alone.";
+}

@@ -6,6 +6,10 @@ import {
   archetypes,
   getDetailedPairDynamic,
   generateFallbackDynamic,
+  getPairDistance,
+  distanceDescriptions,
+  getRelationshipQuestion,
+  getOpeningThesis,
 } from "@/lib/archetypes";
 import type { UtopiaMember } from "@/lib/utopia";
 import styles from "./RelationshipStep.module.css";
@@ -54,10 +58,16 @@ export function RelationshipStep({
     }
   };
 
-  // Get dynamic (detailed or fallback)
+  // Get dynamic content
   const dynamic =
     getDetailedPairDynamic(you.archetype, them.archetype) ||
     generateFallbackDynamic(you.archetype, them.archetype);
+
+  // Get new content
+  const thesis = getOpeningThesis(you.archetype, them.archetype);
+  const { category: distanceCategory } = getPairDistance(you.archetype, them.archetype);
+  const distanceText = distanceDescriptions[distanceCategory];
+  const question = getRelationshipQuestion(you.archetype, them.archetype);
 
   const userDots = [
     {
@@ -81,28 +91,56 @@ export function RelationshipStep({
         ← Back to group
       </button>
 
+      {/* Header */}
       <div className={styles.header}>
         <h2 className={styles.title}>
-          <span style={{ color: yourArchetype?.color }}>You</span>
-          {" × "}
+          <span style={{ color: yourArchetype?.color }}>{you.name || "You"}</span>
+          <span className={styles.times}>×</span>
           <span style={{ color: theirArchetype?.color }}>{them.name || "Anonymous"}</span>
         </h2>
         <p className={styles.subtitle}>
-          {yourArchetype?.name?.split(" ")[0]} × {theirArchetype?.name?.split(" ")[0]}
+          {yourArchetype?.name} & {theirArchetype?.name}
         </p>
       </div>
 
-      <div className={styles.radarWrapper}>
+      {/* Radar Card */}
+      <div className={styles.radarCard}>
         <RadarChart
-          size={240}
+          size={280}
           userDots={userDots}
           showAllArchetypes={false}
         />
       </div>
 
-      <div className={styles.reading}>
+      {/* Opening Thesis */}
+      <p className={styles.thesis}>"{thesis}"</p>
+
+      {/* Content Sections */}
+      <div className={styles.content}>
+        {/* The Distance */}
         <section className={styles.section}>
-          <h3 className={styles.sectionLabel}>Where you align</h3>
+          <h3 className={styles.sectionLabel}>The Distance</h3>
+          <p className={styles.sectionText}>{distanceText}</p>
+        </section>
+
+        {/* Superpowers */}
+        <section className={styles.section}>
+          <h3 className={styles.sectionLabel}>Your Superpowers</h3>
+          <div className={styles.superpowerCards}>
+            <div className={styles.superpowerCard} style={{ borderLeftColor: yourArchetype?.color }}>
+              <span className={styles.superpowerName}>{you.name || "You"}</span>
+              <span className={styles.superpowerText}>{yourArchetype?.superpower}</span>
+            </div>
+            <div className={styles.superpowerCard} style={{ borderLeftColor: theirArchetype?.color }}>
+              <span className={styles.superpowerName}>{them.name || "Them"}</span>
+              <span className={styles.superpowerText}>{theirArchetype?.superpower}</span>
+            </div>
+          </div>
+        </section>
+
+        {/* Where You Align */}
+        <section className={styles.section}>
+          <h3 className={styles.sectionLabel}>Where You Align</h3>
           <ul className={styles.bulletList}>
             {dynamic.align.map((point, i) => (
               <li key={i}>{point}</li>
@@ -110,8 +148,9 @@ export function RelationshipStep({
           </ul>
         </section>
 
+        {/* Where You'll Clash */}
         <section className={styles.section}>
-          <h3 className={styles.sectionLabel}>Where you'll clash</h3>
+          <h3 className={styles.sectionLabel}>Where You'll Clash</h3>
           <ul className={styles.bulletList}>
             {dynamic.clash.map((point, i) => (
               <li key={i}>{point}</li>
@@ -119,15 +158,22 @@ export function RelationshipStep({
           </ul>
         </section>
 
+        {/* What You Give Each Other */}
         <section className={styles.section}>
-          <h3 className={styles.sectionLabel}>What you give each other</h3>
+          <h3 className={styles.sectionLabel}>What You Give Each Other</h3>
           <p className={styles.giveText}>{dynamic.give}</p>
+        </section>
+
+        {/* A Question for You Both */}
+        <section className={styles.questionSection}>
+          <h3 className={styles.sectionLabel}>A Question for You Both</h3>
+          <p className={styles.questionText}>"{question}"</p>
         </section>
       </div>
 
       {/* Share button */}
       <button className={styles.shareButton} onClick={handleShare}>
-        Share this relationship
+        Share This Relationship
       </button>
 
       {/* Swipe navigation */}
@@ -140,7 +186,7 @@ export function RelationshipStep({
           >
             ←
           </button>
-          <span className={styles.swipeHint}>Swipe for other members</span>
+          <span className={styles.swipeHint}>Other members</span>
           <button
             className={styles.swipeButton}
             onClick={onNext}
