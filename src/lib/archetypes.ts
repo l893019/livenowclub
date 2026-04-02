@@ -207,6 +207,9 @@ export const pairDynamics: Record<string, string> = {
   // Between dynamics
   "between+swimmer": "Uncertainty specialists. Neither one is sure, and they're fine with that.",
 
+  // Shaper + Swimmer
+  "shaper+swimmer": "The Shaper builds. The Swimmer questions why. Between them, nothing goes unexamined.",
+
   // Same-archetype dynamics
   "shaper+shaper": "Two builders. You'll create something—if you stop redesigning it.",
   "rooted+rooted": "Two in stillness. Peaceful—but who makes the first move?",
@@ -280,20 +283,20 @@ export function getBlendedVision(keys: string[]): string {
     return archetypes[keys[0]]?.utopia || "";
   }
 
-  // For 2-3 archetypes, combine their core concepts
+  // For 2+ archetypes, extract key concepts and blend them
   const concepts = keys.slice(0, 3).map(k => {
     const utopia = archetypes[k]?.utopia || "";
-    // Extract the distinctive part after "Their utopia"
-    const match = utopia.match(/Their utopia[^.]*?([a-z].*)/i);
-    if (match) return match[1].replace(/\.$/, "");
-    return utopia.replace(/^Their utopia /, "").replace(/\.$/, "");
+    // Remove "Their utopia " prefix and clean up
+    return utopia
+      .replace(/^Their utopia\s+/i, "")
+      .replace(/\.$/, "");
   });
 
   if (concepts.length === 2) {
-    return `A place where ${concepts[0]}, and where ${concepts[1]}.`;
+    return `${concepts[0]}. And yet, ${concepts[1].charAt(0).toLowerCase() + concepts[1].slice(1)}.`;
   }
 
-  return `A place where ${concepts[0]}, where ${concepts[1]}, and where ${concepts[2]}.`;
+  return `${concepts[0]}. ${concepts[1]}. ${concepts[2]}.`;
 }
 
 // Get superpowers weighted by representation
