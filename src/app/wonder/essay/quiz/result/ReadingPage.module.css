@@ -1,0 +1,312 @@
+/* ReadingPage.module.css - Scrollable analytical reading */
+
+.reading {
+  min-height: 100vh;
+  background: #faf6f1;
+  padding: 3rem 1.5rem 4rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(45, 42, 38, 0.5);
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-size: 2.25rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+
+.tagline {
+  font-size: 1.125rem;
+  font-style: italic;
+  color: rgba(45, 42, 38, 0.75);
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #2d2a26;
+  margin: 0 0 1rem;
+  letter-spacing: 0.02em;
+}
+
+.divider {
+  height: 1px;
+  background: rgba(45, 42, 38, 0.1);
+  margin: 2.5rem 0;
+}
+
+/* Typography */
+.description {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: #2d2a26;
+  text-align: center;
+}
+
+.bodyText {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(45, 42, 38, 0.85);
+}
+
+/* Core Beliefs */
+.beliefs {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.beliefs li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(45, 42, 38, 0.85);
+}
+
+.beliefs li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(45, 42, 38, 0.25);
+}
+
+/* Superpower */
+.highlight {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: italic;
+  margin: 0 0 1.25rem;
+  text-transform: capitalize;
+}
+
+.expandedContent {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(45, 42, 38, 0.85);
+}
+
+.expandedContent p {
+  margin: 0 0 1rem;
+}
+
+.expandedContent p:last-child {
+  margin-bottom: 0;
+}
+
+/* Radar Chart */
+.radarContainer {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0 2rem;
+}
+
+/* Relationships */
+.relationships {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.relationshipCard {
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  border: 1px solid rgba(45, 42, 38, 0.08);
+}
+
+.relationshipLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(45, 42, 38, 0.5);
+  margin: 0 0 0.5rem;
+  font-weight: 500;
+}
+
+.archName {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.archName:hover {
+  opacity: 0.8;
+}
+
+.relationshipDesc {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: rgba(45, 42, 38, 0.75);
+  margin: 0;
+}
+
+/* Books */
+.books {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.bookCard {
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  border: 1px solid rgba(45, 42, 38, 0.08);
+}
+
+.bookTitle {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: #2d2a26;
+  margin: 0 0 0.25rem;
+}
+
+.bookAuthor {
+  font-size: 0.875rem;
+  color: rgba(45, 42, 38, 0.6);
+  margin: 0 0 0.75rem;
+}
+
+.bookReason {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: rgba(45, 42, 38, 0.75);
+  margin: 0 0 0.75rem;
+}
+
+.bookLink {
+  display: inline-block;
+  font-size: 0.8125rem;
+  color: #e8178a;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.bookLink:hover {
+  text-decoration: underline;
+}
+
+/* CTA Section */
+.ctaSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  margin: 2rem 0;
+  padding: 2rem 0;
+}
+
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  background: #2d2a26;
+  color: #faf6f1;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.primaryBtn:hover {
+  background: #1a1816;
+}
+
+.primaryBtn:active {
+  transform: scale(0.98);
+}
+
+.secondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  color: rgba(45, 42, 38, 0.7);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  border: 1px solid rgba(45, 42, 38, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.secondaryBtn:hover {
+  border-color: rgba(45, 42, 38, 0.4);
+  color: rgba(45, 42, 38, 0.9);
+}
+
+/* Essay Link */
+.essayLink {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.essayLinkText {
+  font-size: 0.9375rem;
+  color: rgba(45, 42, 38, 0.6);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.essayLinkText:hover {
+  color: #2d2a26;
+}
+
+.essayLinkText em {
+  font-style: italic;
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+  .reading {
+    padding: 4rem 2rem 5rem;
+  }
+
+  .name {
+    font-size: 2.75rem;
+  }
+
+  .tagline {
+    font-size: 1.25rem;
+  }
+
+  .description {
+    font-size: 1.375rem;
+  }
+}

@@ -1,12 +1,8 @@
 "use client";
 
-import { useState, useCallback, useRef, useMemo } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { RevealAnimation } from "./RevealAnimation";
-import { JourneyContainer } from "./JourneyContainer";
-import { RadarExplainStep } from "./steps/RadarExplainStep";
-import { CardStep } from "./steps/CardStep";
-import { GoDeepStep } from "./steps/GoDeepStep";
-import { CreateJoinStep } from "./steps/CreateJoinStep";
+import { ReadingPage } from "./ReadingPage";
 
 type ResultPageClientProps = {
   archetypeName: string;
@@ -25,48 +21,23 @@ export function ResultPageClient({
   archetypeColor,
   utopiaText,
   imageUrl,
-  blindSpot,
-  compatibility,
-  books,
 }: ResultPageClientProps) {
   const [showReveal, setShowReveal] = useState(true);
-  const [currentStep, setCurrentStep] = useState(0);
-  const journeyKey = useRef(0);
 
-  // Callback for CardStep's "Go Deeper" button - jumps to step 2 (GoDeepStep)
-  const handleGoDeeper = useCallback(() => {
-    setCurrentStep(2);
-    journeyKey.current += 1; // Force remount to respect new initialStep
+  // Auto-advance reveal after 4 seconds, or tap to continue
+  useEffect(() => {
+    if (!showReveal) return;
+
+    const timer = setTimeout(() => {
+      setShowReveal(false);
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }, [showReveal]);
+
+  const handleRevealComplete = useCallback(() => {
+    setShowReveal(false);
   }, []);
-
-  // Callback for GoDeepStep's "Build Your Utopia" button - jumps to step 3 (CreateJoinStep)
-  const handleBuildUtopia = useCallback(() => {
-    setCurrentStep(3);
-    journeyKey.current += 1;
-  }, []);
-
-  const handleStepChange = useCallback((stepIndex: number) => {
-    setCurrentStep(stepIndex);
-  }, []);
-
-  const steps = useMemo(() => [
-    {
-      id: "radar",
-      component: <RadarExplainStep archetypeKey={archetypeKey} imageUrl={imageUrl} />,
-    },
-    {
-      id: "card",
-      component: <CardStep archetypeKey={archetypeKey} imageUrl={imageUrl} onContinue={handleGoDeeper} onBuildUtopia={handleBuildUtopia} />,
-    },
-    {
-      id: "deeper",
-      component: <GoDeepStep archetypeKey={archetypeKey} imageUrl={imageUrl} compatibility={compatibility} books={books} blindSpot={blindSpot} onContinue={handleBuildUtopia} />,
-    },
-    {
-      id: "create",
-      component: <CreateJoinStep archetypeKey={archetypeKey} />,
-    },
-  ], [archetypeKey, imageUrl, handleGoDeeper, handleBuildUtopia, compatibility, books, blindSpot]);
 
   return (
     <>
@@ -102,18 +73,11 @@ export function ResultPageClient({
           archetypeColor={archetypeColor}
           utopiaText={utopiaText}
           imageUrl={imageUrl}
-          onComplete={() => setShowReveal(false)}
+          onComplete={handleRevealComplete}
         />
       )}
 
-      {!showReveal && (
-        <JourneyContainer
-          key={journeyKey.current}
-          steps={steps}
-          initialStep={currentStep}
-          onStepChange={handleStepChange}
-        />
-      )}
+      {!showReveal && <ReadingPage archetypeKey={archetypeKey} />}
     </>
   );
 }
