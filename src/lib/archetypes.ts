@@ -1442,8 +1442,766 @@ export type AnalyticalPairDynamic = {
   };
 };
 
-// Handcrafted analytical pair dynamics - empty for now, will be filled with rich content
-export const analyticalPairDynamics: Record<string, AnalyticalPairDynamic> = {};
+// Handcrafted analytical pair dynamics - same-archetype pairs (Tier 1)
+export const analyticalPairDynamics: Record<string, AnalyticalPairDynamic> = {
+  // ===== SAME-ARCHETYPE PAIRS (14 total) =====
+
+  "alive+alive": {
+    thesis: "Two mirrors reflecting infinite sensation—profound recognition, but who pauses long enough to feel what's actually there?",
+
+    distanceAnalysis: `When Alive to Everything meets Alive to Everything, the distance between you is zero. You share the same philosophical coordinates, the same hunger for experience, the same conviction that the universe gave you everything and the least you can do is feel it. This is immediate recognition—the relief of meeting someone who doesn't need you to justify your intensity, your appetite, your refusal to moderate.
+
+But distance zero carries its own weight. When two people occupy the same position, they see the same things—and miss the same things. Your shared orientation toward sensation can become an echo chamber of experience-seeking, each validating the other's hunger without questioning whether that hunger is serving you. The blind spots you share become invisible, confirmed by mutual agreement.`,
+
+    dynamic: `At its core, this pairing brings together two people who believe experience is the point. Both of you have unusual capacity for feeling—not just seeking sensation, but receiving it fully. Where others filter, protect, moderate, you both open. This creates a kind of amplification: together, you can access intensities that might overwhelm or frighten others.
+
+The dynamic between two Alive to Everything types is one of mutual permission. You don't have to explain why you need more, why you're not satisfied with the safe middle, why something in you requires the full range. The other person gets it. They're built the same way.
+
+But this same mutual permission can enable the shadow side of your shared orientation. You both know that sensation can become consumption—that feeling everything is not the same as understanding anything. When two people share this blind spot, neither may be positioned to call attention to it. The endless pursuit of experience can become its own kind of numbness: if you're always chasing the next sensation, you're never actually present to what's here.`,
+
+    align: [
+      {
+        point: "Experience as fundamental value",
+        explanation: `Both of you believe, at a cellular level, that life is for feeling. This isn't hedonism—it's a philosophy. You've both concluded that the body is an instrument for receiving reality, not a prison to escape. When others treat intensity as something to manage or moderate, you both see it as something to cultivate. This shared conviction means you never have to defend your basic orientation toward being alive.`
+      },
+      {
+        point: "Openness without apology",
+        explanation: `The world often tells people like you that you're "too much"—too sensitive, too intense, too hungry for experience. You've both learned to carry that judgment and keep going anyway. Meeting someone who shares this quality is a relief: here is a person who won't ask you to turn down, moderate, be reasonable. Your openness isn't a problem to be managed; it's a gift that finds its match.`
+      },
+      {
+        point: "The body as instrument",
+        explanation: `While others might dream of transcending physical limits, you both understand the body as the primary instrument for receiving reality. New senses, new perspectives, new forms of experience—these matter to both of you. This shared embodiment means your relationship has a sensory dimension that more cerebral pairings might lack.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "Whose experience takes priority?",
+        explanation: `When two sensation-seekers pair up, there's an implicit competition for intensity. If you both want to feel everything, and your paths to feeling diverge, whose experience wins? This can show up in small ways—whose adventure takes precedence, whose sensory preferences shape shared experiences—and in larger patterns of whose aliveness the relationship serves. Without attention, one person's experience can consistently eclipse the other's.`
+      },
+      {
+        point: "Sensation as consumption",
+        explanation: `You both know your shadow: the version of your openness that becomes gluttony, devouring experiences without digesting them. When two people share this vulnerability, they can enable each other's consumption rather than helping each other integrate. The relationship becomes a vehicle for accumulating experiences rather than deepening into any of them. Intensity without depth is its own kind of emptiness.`
+      }
+    ],
+
+    give: {
+      youToThem: `You offer amplification. Your presence turns their experience up, validates their intensity, provides a partner for adventures that would feel lonely alone. You show them that their hunger for sensation isn't a defect to be managed but a gift that finds its match. In your company, they don't have to hold back, moderate, or apologize for wanting more. You understand what drives them because you're driven by the same thing.`,
+      themToYou: `They offer the same amplification back. They don't judge your hunger for experience because they share it. They'll follow you into intensities that others might find excessive, match your openness, celebrate your capacity to feel. In their company, you're not "too much." You're exactly as much as you are, and that's met with recognition rather than resistance.`
+    },
+
+    risk: `The failure mode for two Alive to Everything types is mutual enabling toward consumption. Without someone to ask "why do you need this particular experience?" or "what are you avoiding by always seeking the next sensation?", you can reinforce each other's tendency to use intensity as escape. The relationship becomes a spinning wheel of experiences—vivid, memorable, but ultimately unintegrated.
+
+The deeper risk is that sensation becomes a substitute for presence. If you're both always reaching for the next experience, neither of you may learn to stay with what's actually here—including the difficult, unglamorous experiences that don't offer obvious intensity but might offer depth. Two people who are alive to everything can end up alive to nothing in particular.`,
+
+    question: {
+      text: "What have you felt together that neither of you could feel alone—and what have you avoided feeling by always moving toward the next experience?",
+      framing: `This question matters because it asks you to distinguish between the genuine gifts of your shared intensity and the ways that intensity might be serving as avoidance. The first part honors what's real about your connection; the second invites you to look at what might be getting lost.`
+    }
+  },
+
+  "architect+architect": {
+    thesis: "Two systems thinkers designing the same commons—profound structural alignment, but who lives in the blueprints?",
+
+    distanceAnalysis: `When Architect of the Commons meets Architect of the Commons, you share the same philosophical coordinates: the conviction that the best structures belong to everyone who uses them, that design is never neutral, that collective ownership matters more than elegant control. This is immediate recognition—the relief of meeting someone who sees the invisible architecture, who asks "who does this serve?" when others are still asking "what does this do?"
+
+But occupying the same position means seeing the same things and missing the same things. Your shared orientation toward systems can become an echo chamber of structural thinking, each validating the other's blueprints without questioning whether anyone wants to live in them. The blind spots you share—particularly the tendency to love the system more than the people inside it—become invisible, confirmed by mutual agreement.`,
+
+    dynamic: `At its core, this pairing brings together two people who think in systems and build for the commons. Both of you see the blueprints behind social spaces, the rules—written and unwritten—that shape collective life. Where others experience institutions as weather, you both experience them as design: something that was built, that could have been built differently, that could be rebuilt.
+
+The dynamic between two Architects is one of shared language. You can discuss governance structures, feedback loops, and collective decision-making without having to justify why these things matter. The other person already knows. This creates a kind of collaborative design space: together, you can imagine structures that neither could build alone.
+
+But this same shared language can become an insular dialect. You both know that you can fall in love with the system and forget the people inside it—that the meeting can become more important than what the meeting was for. When two people share this blind spot, your collaborative design sessions might produce beautiful, fair structures that nobody actually wants to use. The commons you build together might serve the architecture more than the community.`,
+
+    align: [
+      {
+        point: "Collective ownership as core value",
+        explanation: `Both of you would rather build something imperfect and collectively owned than something elegant and controlled by a few. This isn't compromise—it's conviction. You've both concluded that distributed power is worth the messiness it creates. When others see your commitment to collective process as inefficiency, you both see it as the whole point. This shared value means you never have to justify why everyone needs a voice.`
+      },
+      {
+        point: "Design as ethics",
+        explanation: `You both understand that every system encodes values, that architecture is politics by other means. When you look at an institution, a platform, a process, you both ask whose interests it serves. This shared lens means your conversations about structure are always also conversations about justice. Neither of you believes design is neutral.`
+      },
+      {
+        point: "The long view",
+        explanation: `Both of you understand that the work of liberation is generational, not revolutionary. You're building for timescales longer than your own involvement. This patience with process—the willingness to lay foundations that others will build on—connects you. Neither of you expects quick wins or clean resolutions.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "Two blueprints, one building",
+        explanation: `When two systems thinkers try to build together, there's an implicit competition: whose architecture prevails? You both see the invisible structures, but you might see them differently. Your visions of collective ownership might diverge in crucial details—how decisions get made, who gets to participate, what counts as consensus. These differences, precisely because they're both structurally sophisticated, can be harder to resolve than simpler conflicts.`
+      },
+      {
+        point: "Process over people",
+        explanation: `You both know your shadow: the version of your systems-thinking that makes the meeting more important than what the meeting was for. When two Architects build together, you can design processes so carefully that they become prisons—everyone has a voice, but no one can act. Your shared love of structure might produce beautiful bureaucracy that serves the architecture while the people inside it suffer.`
+      }
+    ],
+
+    give: {
+      youToThem: `You offer structural partnership. Your presence means they're not alone in seeing the blueprints, in caring about collective ownership, in doing the unglamorous work of building institutions that serve everyone. You can critique their systems intelligently, catch design flaws they've missed, and help them iterate toward structures that actually work. You understand their love of the commons because you share it.`,
+      themToYou: `They offer the same structural partnership back. They see what you see—the invisible architecture, the encoded values, the possibilities for collective design. In their company, your systems-thinking isn't obsessive or impractical; it's met with genuine engagement. They can push back on your blueprints from a position of shared commitment, helping you build better.`
+    },
+
+    risk: `The failure mode for two Architects is structural narcissism—designing systems for the beauty of the design rather than the people who will use them. Without someone outside your shared perspective to ask "but would anyone want to live in this?", you can reinforce each other's tendency toward elegant abstraction that doesn't serve actual humans.
+
+The deeper risk is that you build a commons that belongs to your shared vision rather than to the community it's meant to serve. Two Architects can become so aligned in their structural thinking that they forget to check whether anyone else wants what they're building. The democratic ideal can become its own kind of authoritarianism: everyone must participate in your beautiful system.`,
+
+    question: {
+      text: "What would it mean to build a system together—and how would you know if it served the people inside it more than it served your shared love of building?",
+      framing: `This question matters because it asks you to distinguish between the genuine value of your collaborative design and the risk of structural self-indulgence. The first part honors your shared gift; the second invites accountability to something beyond your shared perspective.`
+    }
+  },
+
+  "between+between": {
+    thesis: "Two thresholds meeting—profound companionship in uncertainty, but can the space between become a place to live forever?",
+
+    distanceAnalysis: `When In the Space Between meets In the Space Between, the distance between you is zero. You share the same philosophical coordinates: the threshold, the transition, the not-yet-arrived. Both of you have resisted the pressure to pick a side, take a stand, be something definable—and you're still here, which takes a particular kind of courage.
+
+But occupying the same uncertain space means sharing the same relationship to not-knowing—and potentially sharing the same way of using uncertainty. Your companionship in the threshold can become a permanent address, each validating the other's liminal state without questioning whether staying undefined has become a way of avoiding choice. The blind spots you share become invisible, confirmed by mutual agreement.`,
+
+    dynamic: `At its core, this pairing brings together two people who are still figuring it out. Both of you hold uncertainty while others demand certainty. Both of you have questions where others have positions. This isn't weakness or indecision—it's a different relationship to the complexity of things.
+
+The dynamic between two Betweens is one of mutual non-judgment. You don't have to pretend to know what you believe, who you are, where you're going. The other person is also in transition. This creates a kind of companionship that more defined people can't offer: the relief of being with someone who doesn't need you to have arrived.
+
+But this same mutual acceptance can enable permanent deferral. You both know that the space between can become a way of avoiding the risk of choosing. When two people share this vulnerability, neither may be positioned to call attention to it. Your companionship in uncertainty might feel like wisdom when it's actually a shared fear of commitment dressed up as openness.`,
+
+    align: [
+      {
+        point: "Uncertainty as honesty",
+        explanation: `Both of you have concluded that not knowing can be more honest than false certainty. When others rush to answers that don't quite fit, you both stay in the question. This shared commitment to intellectual honesty means neither of you has to pretend to convictions you don't hold. Your uncertainty isn't failure—it's integrity.`
+      },
+      {
+        point: "Identity as process",
+        explanation: `You both understand that identity is more fluid than most people assume. You're both still in transition, still becoming, still holding open the question of who you might be. This shared sense of identity-in-motion means neither judges the other for not having arrived. The threshold is a valid place to stand.`
+      },
+      {
+        point: "The courage of staying present",
+        explanation: `Everyone else has a position. You both have questions. And you're both still here—still engaged, still trying to understand, still refusing easy answers. This takes courage that more defined people might not recognize. You see each other's bravery in staying present to uncertainty.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "Who moves first?",
+        explanation: `When two people are both in the space between, there's a question of initiative. If neither of you has committed to a direction, who decides anything? This can manifest as a relationship that drifts—pleasant, undefined, going nowhere in particular—because neither person is willing to stake a claim. Your shared comfort with ambiguity can become shared paralysis.`
+      },
+      {
+        point: "Uncertainty as avoidance",
+        explanation: `You both know your shadow: the version of your openness that becomes refusal to choose. When two Betweens pair up, you can validate each other's indefinition without asking whether it's serving you. "I'm still figuring it out" can become a permanent state that protects both of you from the vulnerability of decision. Your shared threshold can become a hiding place.`
+      }
+    ],
+
+    give: {
+      youToThem: `You offer companionship in uncertainty. Your presence means they're not alone in the threshold, not the only one who hasn't figured it out. You validate their questions without demanding answers. In your company, their uncertainty isn't a problem to be solved but a state to be shared. They don't have to pretend to convictions they don't hold.`,
+      themToYou: `They offer the same companionship back. They understand what it's like to be in transition, to resist the pressure to define yourself, to hold questions instead of answers. In their company, you're not failing to commit; you're honestly engaging with complexity. They meet your uncertainty with their own, and that meeting is its own kind of arrival.`
+    },
+
+    risk: `The failure mode for two Betweens is permanent liminality—using your companionship as an excuse to never decide anything. Without someone to push toward choice, you can reinforce each other's tendency to defer, question, keep options open indefinitely.
+
+The deeper risk is that the space between becomes a relationship that's always about to happen. Two Betweens can drift together indefinitely, their shared uncertainty preventing the commitments that would give the relationship shape and depth. At some point, you have to decide something. If you're both waiting for the other to go first, you may wait forever.`,
+
+    question: {
+      text: "What would it mean to figure it out together—and what commitment have you both been avoiding by staying in the space between?",
+      framing: `This question matters because it asks you to distinguish between genuine shared uncertainty and shared avoidance. The first part honors the real companionship you offer each other; the second invites you to look at what might be getting lost by never arriving anywhere together.`
+    }
+  },
+
+  "citizen+citizen": {
+    thesis: "Two citizens of abundance floating in trust—profound ease together, but who drops anchor when the current shifts?",
+
+    distanceAnalysis: `When Citizen of Abundance meets Citizen of Abundance, the distance between you is zero. You share the same philosophical coordinates: the conviction that scarcity is more often manufactured than natural, that systems designed for abundance tend toward good, that too much freedom will always be preferable to too little. This is immediate recognition—the relief of meeting someone who doesn't default to fear, who sees possibility where others see constraint.
+
+But occupying the same position means seeing the same things and missing the same things. Your shared trust in abundance can become an echo chamber of optimism, each validating the other's confidence without questioning whether that confidence is warranted. The blind spots you share—particularly the tendency to mistake access for equity—become invisible, confirmed by mutual agreement.`,
+
+    dynamic: `At its core, this pairing brings together two people who trust that life can be good. Both of you operate from abundance when most people default to scarcity. Both of you believe that the biggest barrier to enough isn't resources but imagination. Where others hoard, guard, and assume zero-sum, you both open.
+
+The dynamic between two Citizens is one of shared ease. You don't have to defend your optimism, justify your trust, or explain why you believe good things are possible. The other person already lives there. This creates a generous atmosphere: together, you can imagine futures that more suspicious worldviews would dismiss as naive.
+
+But this same shared ease can become shared blindness. You both know that you can mistake access for equity—that "everyone can use this" is not the same as "everyone can benefit from this." When two people share this blind spot, neither may notice who's still being left out. Your abundance-mindset can become a comfortable assumption that things are better than they are.`,
+
+    align: [
+      {
+        point: "Abundance as baseline",
+        explanation: `Both of you have concluded that scarcity is usually manufactured or inherited. You don't default to assuming there isn't enough. This shared baseline means your conversations start from possibility rather than constraint. When others fight over a pie that could be made larger, you both see the bigger picture.`
+      },
+      {
+        point: "Freedom over control",
+        explanation: `Both of you believe that too much freedom will always be preferable to too little. You'd rather have the problems of excess choice than the problems of constraint. This shared orientation toward liberation means neither of you advocates for restricting options to solve problems. You both trust people to figure things out when given resources and freedom.`
+      },
+      {
+        point: "Technology as possibility",
+        explanation: `You both focus on what technology can enable rather than what it might destroy. You've read the arguments, considered the risks, and concluded that abundance is worth pursuing. This shared technological optimism means you can discuss futures that others find threatening—AI, automation, post-scarcity—without having to defend the basic premise that these could be good.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "No one is pushing for more",
+        explanation: `When two people are both at ease with abundance, there's a question of ambition. If both of you trust that things will work out, who pushes for change? Your shared comfort can become shared complacency—a pleasant assumption that abundance will arrive without anyone having to fight for it. The relationship can drift in a pleasant direction without anyone steering.`
+      },
+      {
+        point: "Missing who's still left out",
+        explanation: `You both know your shadow: the tendency to mistake access for equity. When two Citizens pair up, you can reinforce each other's trust without checking whether that trust is warranted for everyone. Your shared optimism might feel generous while ignoring the people for whom scarcity is very real. Abundance-thinking can become a kind of privilege blindness.`
+      }
+    ],
+
+    give: {
+      youToThem: `You offer shared ease. Your presence validates their trust in abundance, confirms that their optimism isn't naivety. You don't make them feel guilty for enjoying what's good or believing things can be better. In your company, their abundance-mindset is met with recognition rather than suspicion. They can relax into the generous worldview you share.`,
+      themToYou: `They offer the same ease back. They don't question your trust, don't demand you defend your optimism, don't treat your abundance-thinking as privilege blindness (even when it might be). In their company, you're not naive—you're two people who've thought about it and concluded that good things are possible. That shared conclusion is its own kind of home.`
+    },
+
+    risk: `The failure mode for two Citizens is comfortable drift—so trusting in abundance that neither of you notices when things aren't actually working. Without someone to question your shared optimism, you can reinforce each other's tendency to assume good outcomes while ignoring evidence that they're not arriving for everyone.
+
+The deeper risk is that your shared abundance-mindset becomes a barrier to seeing suffering. Two Citizens can become so comfortable in their trust that they stop checking whether that trust is warranted. Your utopia might float beautifully while others drown beneath it.`,
+
+    question: {
+      text: "What would shake you both out of comfort—and whose scarcity might you both be overlooking?",
+      framing: `This question matters because it asks you to examine the limits of your shared ease. The first part invites you to consider what might need to change; the second asks you to look at who your abundance-thinking might be leaving out.`
+    }
+  },
+
+  "cleareyed+cleareyed": {
+    thesis: "Two truth-tellers in the storm—profound honesty between you, but can truth survive without tenderness?",
+
+    distanceAnalysis: `When Clear-Eyed in the Storm meets Clear-Eyed in the Storm, the distance between you is zero. You share the same philosophical coordinates: the conviction that reality doesn't care about feelings, that comfortable lies are more dangerous than uncomfortable truths, that seeing clearly is both skill and courage. This is immediate recognition—the relief of meeting someone who doesn't flinch, who says the thing, who values truth above comfort.
+
+But occupying the same position means sharing the same relationship to honesty—and potentially sharing the same blind spots about how truth lands. Your mutual commitment to clarity can become an echo chamber of brutal honesty, each validating the other's bluntness without questioning whether honesty without tenderness is cruelty. The blind spots you share become invisible, confirmed by mutual agreement.`,
+
+    dynamic: `At its core, this pairing brings together two people who see what is actually happening and say it out loud. Both of you have the rare capacity to not look away. Where others smooth edges, soften blows, and protect feelings at the cost of accuracy, you both tell the truth.
+
+The dynamic between two Clear-Eyed types is one of mutual respect for honesty. You can handle each other's truth. There's no need for diplomatic wrappers, gentle introductions, or careful timing. The other person can take it, and so can you. This creates a uniquely direct relationship: nothing gets hidden, nothing gets sugar-coated.
+
+But this same directness can become its own kind of violence. You both know that honesty without tenderness is cruelty—that the way you say a thing matters as much as the thing itself. When two people share this blind spot, neither may notice when their truth-telling becomes a weapon. Your mutual clarity can create a relationship where no one's getting away with anything, including the vulnerable, uncertain parts of being human that need gentleness to emerge.`,
+
+    align: [
+      {
+        point: "Truth as non-negotiable",
+        explanation: `Both of you believe that reality is better than comfortable illusion, no matter how uncomfortable the reality might be. You don't soften truths, delay difficult conversations, or protect people from what they need to hear. This shared commitment means neither of you has to wonder if you're getting the real story. What's said is what's meant.`
+      },
+      {
+        point: "Seeing as skill",
+        explanation: `You both understand that clarity requires practice and courage. It's not just about being smart enough to see—it's about being brave enough to keep looking when others would turn away. This shared discipline means you respect each other's sight. Neither of you confuses comfortable perception with clear vision.`
+      },
+      {
+        point: "Courage to stay in the storm",
+        explanation: `The storm won't stop because you close your eyes. You both know this. While others might hope things will blow over or pretend the clouds aren't gathering, you both keep watching, keep saying what you see. This shared courage means neither of you is alone in the storm.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "Whose truth prevails?",
+        explanation: `When two truth-tellers disagree about what's true, the conflict can be intense. Both of you believe in saying the thing, but you might see different things. And neither of you will back down for the sake of peace. These disagreements, precisely because they're both honest, can be harder to resolve than conflicts where someone is willing to pretend. No one's smoothing edges here.`
+      },
+      {
+        point: "Honesty as weapon",
+        explanation: `You both know your shadow: the version of your clarity that becomes cruelty. "Just being honest" can be another way of being right. When two Clear-Eyed types pair up, you can validate each other's bluntness without checking whether it's serving truth or serving your need to be the one who sees. Your mutual directness can create a relationship where nothing tender survives.`
+      }
+    ],
+
+    give: {
+      youToThem: `You offer the ability to handle their truth. Your presence means they don't have to soften, package, or time their honesty carefully. You can take what they see because you see similarly. In your company, their clarity isn't "too much" or "too harsh"—it's met with equal clarity. You free them from the labor of protecting others from reality.`,
+      themToYou: `They offer the same capacity back. They can handle your truth, match your directness, meet your clarity with their own. In their company, you don't have to perform gentleness you don't feel or pretend to uncertainty you've resolved. They respect your sight because they share it. That mutual respect is its own kind of intimacy.`
+    },
+
+    risk: `The failure mode for two Clear-Eyed types is mutual brutality disguised as honesty. Without someone to model tenderness, you can reinforce each other's tendency to prioritize truth over care. Your relationship becomes a place where nothing is hidden—including the fact that sometimes what people need isn't clarity but kindness.
+
+The deeper risk is that you create an environment where vulnerability becomes impossible. Two truth-tellers can become so committed to seeing clearly that they leave no room for the blurry, uncertain, still-forming parts of being human. Some truths need gentleness to emerge. If your relationship is all storm and no shelter, certain things will never be said.`,
+
+    question: {
+      text: "What truth are you both avoiding—and what would it mean to speak it with tenderness instead of clarity alone?",
+      framing: `This question matters because it asks you to look for the truth your shared clarity might be missing, and to consider how that truth might need a different kind of speaking. Sometimes the hardest honesty is being honest about the limits of honesty.`
+    }
+  },
+
+  "conscience+conscience": {
+    thesis: "Two watchmen watching each other—profound vigilance together, but who watches the watchers?",
+
+    distanceAnalysis: `When Conscience Before Comfort meets Conscience Before Comfort, the distance between you is zero. You share the same philosophical coordinates: the conviction that someone has to watch the watchers, that dystopia arrives disguised as convenience, that comfort should never override conscience. This is immediate recognition—the relief of meeting someone who also sees the cracks, the hidden costs, the surveillance beneath the service.
+
+But occupying the same position means sharing the same relationship to suspicion—and potentially sharing the same blindness to what's working. Your mutual vigilance can become an echo chamber of critique, each validating the other's distrust without questioning whether permanent suspicion is its own kind of prison. The blind spots you share become invisible, confirmed by mutual agreement.`,
+
+    dynamic: `At its core, this pairing brings together two people who see what others prefer to ignore. Both of you have read the warnings—Orwell, Huxley, Atwood—and you recognize the signs. Both of you understand that every surveillance system was built to help, every authoritarian regime began with popular support.
+
+The dynamic between two Consciences is one of shared vigilance. You can discuss concerns that others dismiss as paranoia, voice suspicions that others find exhausting, watch for patterns that others don't want to see. The other person gets it. They're watching too.
+
+But this same shared vigilance can curdle into mutual cynicism. You both know that you can become so focused on what's wrong that you forget to notice what's working. When two people share this blind spot, neither may see the moments when suspicion is unwarranted, when trust is deserved, when the simplest explanation is the true one. Your mutual watching can create a world where nothing and no one can be trusted—including each other.`,
+
+    align: [
+      {
+        point: "Watching as responsibility",
+        explanation: `Both of you believe that someone has to do this work. The comfortable world is not automatically the good one. While others enjoy the benefits and assume someone else is watching, you both carry the burden of attention. This shared sense of responsibility means neither of you has to feel alone in their vigilance. The watch has two keepers.`
+      },
+      {
+        point: "Pattern recognition as protection",
+        explanation: `You both see patterns others miss or prefer not to see—the fine print, the missing names, the cost that doesn't appear on the balance sheet. This isn't paranoia; it's a different relationship to information. You've both learned that convenience often hides control. This shared pattern recognition means your conversations surface what others would rather leave buried.`
+      },
+      {
+        point: "Conscience over comfort",
+        explanation: `Both of you have made a choice: you'd rather see clearly and be uncomfortable than be comfortable and blind. This choice has costs—exhaustion, isolation, the weight of watching—but you've both concluded it's worth it. Meeting someone who's made the same choice is a particular kind of recognition.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "Watching each other",
+        explanation: `When two watchmen pair up, there's a question of trust. Your shared vigilance extends to everyone—potentially including each other. If both of you are looking for cracks, for hidden agendas, for the cost that isn't stated, how do you build trust? Your relationship might become a mutual surveillance state, each watching the other for signs of betrayal. Safe, but suffocating.`
+      },
+      {
+        point: "Cynicism as prison",
+        explanation: `You both know your shadow: the version of your vigilance that becomes inability to trust anyone or anything. When two Consciences pair up, you can validate each other's suspicion without checking whether it's warranted. Your shared watching might protect you from genuine threats—or might protect you from genuine connection. Permanent suspicion is exhausting to live inside.`
+      }
+    ],
+
+    give: {
+      youToThem: `You offer validation of their vigilance. Your presence means they're not paranoid—they're accurate. You understand their exhaustion, their isolation, the weight of seeing what others prefer to ignore. In your company, their watching isn't a burden to be apologized for but a responsibility shared. They can finally rest with someone who's also keeping watch.`,
+      themToYou: `They offer the same validation back. They watch your back because they understand what you're watching for. They don't dismiss your concerns as excessive or ask you to lighten up. In their company, your vigilance finds its partner. That partnership makes the watching bearable—though it might also make it harder to stop.`
+    },
+
+    risk: `The failure mode for two Consciences is mutual exhaustion in service of suspicion. Without someone to remind you what's worth protecting, you can reinforce each other's tendency to see threats everywhere. Your relationship becomes a surveillance partnership that's very good at spotting problems and very bad at noticing joy.
+
+The deeper risk is that you become unable to trust anyone, including each other. Two watchmen watching each other can spiral into mutual suspicion that destroys the relationship from inside. The vigilance that protected you from external threats becomes the threat itself. At some point, someone has to decide to trust—and neither of you is practiced at that.`,
+
+    question: {
+      text: "Who watches the watchmen—and what would it mean to choose trust instead of vigilance, even once?",
+      framing: `This question matters because it asks you to examine the limits of watching. Your vigilance is valuable, but it can't be the only mode. The question invites you to consider what might be possible if you occasionally set down the burden of surveillance.`
+    }
+  },
+
+  "embers+embers": {
+    thesis: "Two archivists tending the same fire—profound shared memory, but can the archive become a fortress against the future?",
+
+    distanceAnalysis: `When Keeper of Embers meets Keeper of Embers, the distance between you is zero. You share the same philosophical coordinates: the conviction that memory is survival, that acceleration without remembering is just sophisticated forgetting, that the answers aren't in the next technology but in the last ten thousand years. This is immediate recognition—the relief of meeting someone who also guards what came before, who tends the embers so the fire can be relit.
+
+But occupying the same position means sharing the same relationship to the past—and potentially sharing the same hostility toward the future. Your mutual reverence for memory can become an echo chamber of preservation, each validating the other's treasures without questioning whether some of them have become weights. The blind spots you share become invisible, confirmed by mutual agreement.`,
+
+    dynamic: `At its core, this pairing brings together two people who understand that the most dangerous thing about acceleration is amnesia. Both of you carry the conviction that memory is not nostalgia but survival. Both of you know that every generation thinks it invented its problems, and wisdom knows better.
+
+The dynamic between two Embers-keepers is one of shared preservation. You can discuss what deserves to be remembered, what was lost that shouldn't have been, what from history speaks to the present moment. The other person values the same things you've been carrying.
+
+But this same shared reverence can become mutual fortress-building. You both know that you can love what was so deeply that you become hostile to what could be. When two people share this blind spot, the archive becomes a wall against the future rather than a foundation for it. Your mutual treasuring might preserve what's worth keeping—or might preserve what's ready to be released.`,
+
+    align: [
+      {
+        point: "Memory as survival",
+        explanation: `Both of you understand preservation as a form of resistance—against amnesia, against the cult of novelty, against the assumption that progress means forgetting. This shared understanding means neither of you has to justify caring about what came before. The importance of memory is axiomatic for both of you.`
+      },
+      {
+        point: "History as resource",
+        explanation: `You both know that the solutions to most problems already exist somewhere in human history. While others reinvent wheels, you both dig for precedent. This shared orientation toward historical wisdom means your conversations draw on depths that novelty-seekers can't access. The past is alive between you.`
+      },
+      {
+        point: "Tending as sacred duty",
+        explanation: `The monks in A Canticle for Leibowitz preserved fragments of knowledge through a dark age. You both understand this kind of preservation as calling, not burden. This shared sense of sacred duty means neither of you questions why the other cares so much about what others might discard. You're both keepers of the same kind.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "Which memories matter most?",
+        explanation: `When two archivists pair up, there's a question of curation. You both value the past, but you might value different parts of it. Your treasures might not align with theirs. This can create conflict precisely because both of you care deeply—disagreements about what to preserve are disagreements about what matters, and neither of you takes those lightly.`
+      },
+      {
+        point: "The archive as fortress",
+        explanation: `You both know your shadow: the version of your preservation that becomes hostility to the new. When two Embers-keepers pair up, you can validate each other's reverence without checking whether it's become rigidity. Your shared archive might be a foundation for building—or might be a fortress that keeps the future out. Some memories become chains.`
+      }
+    ],
+
+    give: {
+      youToThem: `You offer honoring of their memories. Your presence means their treasures are recognized, their preservation valued. You don't dismiss what they've been carrying or ask why it matters. In your company, their archiving isn't hoarding; it's care. They can share what they've been guarding with someone who understands its worth.`,
+      themToYou: `They offer the same honoring back. They recognize your treasures, respect your preservation, understand why you've been carrying what you've been carrying. In their company, you're not stuck in the past; you're keeping it alive. That mutual recognition creates a shared archive richer than either could build alone.`
+    },
+
+    risk: `The failure mode for two Embers-keepers is mutual fortress-building against change. Without someone to challenge your reverence for the past, you can reinforce each other's tendency to treat all innovation as threat, all change as loss. Your relationship becomes a museum that's very good at preserving and very bad at growing.
+
+The deeper risk is that your shared archive becomes a substitute for living. Two keepers of the past can become so focused on what was that they miss what is and what could be. The embers you tend are supposed to light new fires—not just glow in the dark while life moves on without you.`,
+
+    question: {
+      text: "What from the future deserves your attention—and what are you preserving that might be ready to be released?",
+      framing: `This question matters because it asks you to look forward as well as back. Your shared reverence for the past is valuable, but it can't be the only direction you face. The question invites you to consider what new things might be worth tending.`
+    }
+  },
+
+  "friction+friction": {
+    thesis: "Two who crave difficulty meeting in the arena—profound understanding of struggle, but can friction consume what it was meant to forge?",
+
+    distanceAnalysis: `When Alive in the Friction meets Alive in the Friction, the distance between you is zero. You share the same philosophical coordinates: the conviction that ease is more dangerous than difficulty, that something in us requires resistance, that comfort can be a trap. This is immediate recognition—the relief of meeting someone who doesn't want you to slow down, take it easy, be reasonable.
+
+But occupying the same position means sharing the same relationship to difficulty—and potentially sharing the same inability to rest. Your mutual embrace of friction can become an echo chamber of struggle, each validating the other's restlessness without questioning whether difficulty has become its own addiction. The blind spots you share become invisible, confirmed by mutual agreement.`,
+
+    dynamic: `At its core, this pairing brings together two people who understand that growth requires resistance. Both of you know that the muscles—physical, mental, moral—only strengthen under load. Both of you have concluded that the struggle itself has value beyond what it produces.
+
+The dynamic between two Friction types is one of mutual challenge. Neither of you lets the other get comfortable. Neither of you accepts ease as a goal. This creates a high-energy relationship: together, you push each other toward the next frontier, the next difficulty, the next thing to overcome.
+
+But this same mutual challenge can become mutual destruction. You both know that you can mistake difficulty for meaning—that not everything hard is worth doing. When two people share this blind spot, they can manufacture friction because peace makes them anxious. Your mutual challenge might sharpen both of you—or might wear you both down to nothing.`,
+
+    align: [
+      {
+        point: "Difficulty as teacher",
+        explanation: `Both of you have learned that struggle teaches things that ease cannot. You don't romanticize suffering, but you don't flee from it either. This shared understanding means neither of you has to justify why you chose the hard path. You both know what resistance offers.`
+      },
+      {
+        point: "Comfort as danger",
+        explanation: `You both see through the seduction of the easy life. While others optimize for convenience, you both ask what gets lost when nothing is hard. This shared skepticism of comfort means your relationship will never become complacent. Neither of you would let that happen.`
+      },
+      {
+        point: "The frontier as call",
+        explanation: `Both of you are drawn to edges—the places where things are difficult, uncertain, demanding. This shared call to the frontier means your relationship will go places that more cautious pairings would avoid. Together, you can face what others won't face.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "Competition for difficulty",
+        explanation: `When two people both crave friction, there's a question of direction. Your difficulties might pull in opposite ways. And neither of you will choose the easy path of compromise. This can create escalating competition—each pushing the other toward harder challenges, not for growth but for dominance. Your shared love of friction can become a war of attrition.`
+      },
+      {
+        point: "Manufacturing struggle",
+        explanation: `You both know your shadow: the version of your difficulty-seeking that becomes masochism. When two Friction types pair up, you can validate each other's restlessness without checking whether it serves anything. Peace feels wrong to both of you—but sometimes peace is what's needed. Your mutual discomfort with ease might keep you struggling when the work is actually learning to receive.`
+      }
+    ],
+
+    give: {
+      youToThem: `You offer the challenge they crave. Your presence means they don't have to slow down, moderate, or pretend they want comfort. You match their intensity, meet their difficulty, push them toward the growth that resistance provides. In your company, their restlessness finds its partner. They can go further because you're going with them.`,
+      themToYou: `They offer the same challenge back. They don't let you get comfortable, don't accept your excuses, don't tell you to take it easy. In their company, your difficulty-seeking is met with equal hunger. They understand why you need friction because they need it too. That mutual need creates a relationship that's always moving, always striving, never settling.`
+    },
+
+    risk: `The failure mode for two Friction types is mutual exhaustion in service of struggle. Without someone to remind you that rest is allowed, you can reinforce each other's tendency to create difficulty for its own sake. Your relationship becomes an arena where neither person can stop fighting.
+
+The deeper risk is that friction consumes what it was meant to forge. Two people who crave difficulty can destroy each other through escalating challenge, each unable to accept peace because the other won't accept it either. At some point, the work is learning to stop. If neither of you can do that, you'll grind each other down.`,
+
+    question: {
+      text: "What difficulty are you creating that isn't necessary—and what would it mean to rest together without feeling like you're surrendering?",
+      framing: `This question matters because it asks you to examine the limits of friction. Your shared love of difficulty is valuable, but it can't be the only mode. The question invites you to consider what might be possible if you occasionally chose ease together.`
+    }
+  },
+
+  "mender+mender": {
+    thesis: "Two fixers tending the same broken world—profound shared care, but can repair become a way of avoiding what needs to end?",
+
+    distanceAnalysis: `When Mender of What Remains meets Mender of What Remains, the distance between you is zero. You share the same philosophical coordinates: the conviction that the most advanced engineering is making what exists work again, that what we have is worth saving before we build something new, that repair is not a lesser form of creation.
+
+But occupying the same position means sharing the same relationship to broken things—and potentially sharing the same blindness to what needs to die. Your mutual commitment to mending can become an echo chamber of repair, each validating the other's fixing without questioning whether some things should be released. The blind spots you share become invisible, confirmed by mutual agreement.`,
+
+    dynamic: `At its core, this pairing brings together two people who see what's broken and reach for tools. Both of you have the stubborn hope that things can be made to work, that decline is not inevitable, that care is a form of resistance against entropy.
+
+The dynamic between two Menders is one of shared labor. You can work side by side on the unglamorous maintenance that others dismiss, the repairs that don't make headlines but keep the world running. Neither of you has to justify why you're fixing instead of replacing.
+
+But this same shared labor can become mutual avoidance of harder choices. You both know that you can become so focused on repair that you miss when something needs to die. When two people share this blind spot, neither may see the moments when mending is actually prolonging suffering, when the kindest thing is to let go. Your mutual fixing might heal what's wounded—or might chain you to what's ready to end.`,
+
+    align: [
+      {
+        point: "Repair as sacred",
+        explanation: `Both of you believe that fixing what's broken is at least as valuable as building something new. This isn't compromise or settling—it's a philosophy. While others chase novelty, you both understand that most of the world runs on maintenance. This shared reverence for repair means neither of you has to justify the unglamorous work of keeping things working.`
+      },
+      {
+        point: "Stubborn hope",
+        explanation: `You both refuse the easy cynicism that says things are too broken to fix. Your hope is practical, not naive—it's earned through the experience of making broken things work again. This shared stubbornness means your relationship can face damage without despair. You both know that repair is possible.`
+      },
+      {
+        point: "Care as resistance",
+        explanation: `Both of you understand that tending to what exists is a form of resistance against the forces of decay and abandonment. While others build arks and upload consciousness, you both stay and fix. This shared commitment to presence means neither of you is looking for escape. The work is here.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "What gets fixed first?",
+        explanation: `When two menders pair up, there's a question of triage. You both see what's broken, but you might prioritize differently. Resources for repair are finite. This can create conflict about allocation—whose broken thing matters more, which repairs are urgent and which can wait. Your shared commitment to fixing doesn't automatically align your priorities.`
+      },
+      {
+        point: "Repair as avoidance",
+        explanation: `You both know your shadow: the version of your mending that keeps broken things alive when they should be released. When two Menders pair up, you can validate each other's fixing without checking whether it's serving the broken thing or serving your need to repair. Some systems are broken because they should be broken. Your mutual labor might be kindness or might be denial.`
+      }
+    ],
+
+    give: {
+      youToThem: `You offer appreciation of their repairs. Your presence means their mending is seen and valued. You don't ask why they're not building something new instead. In your company, their fixing isn't settling for less; it's doing what matters. They can share the weight of repair with someone who understands its worth.`,
+      themToYou: `They offer the same appreciation back. They see your repairs, understand your labor, value your stubborn hope. In their company, you're not wasting time on lost causes; you're doing the essential work of keeping things working. That mutual recognition turns lonely labor into shared purpose.`
+    },
+
+    risk: `The failure mode for two Menders is mutual enabling of repair addiction. Without someone to ask "should this be fixed or should it end?", you can reinforce each other's tendency to keep mending things that have served their purpose. Your relationship becomes a workshop where everything gets fixed and nothing gets released.
+
+The deeper risk is that repair becomes a way of avoiding grief. Some things are broken because they're ending. Two Menders can keep each other busy with fixes that postpone the necessary death, the letting go, the space that release creates for something new. At some point, the kindest repair is no repair at all.`,
+
+    question: {
+      text: "What are you both avoiding by always fixing—and what might need to be released instead of repaired?",
+      framing: `This question matters because it asks you to look at the limits of mending. Your shared commitment to repair is valuable, but it can't be the only response to brokenness. The question invites you to consider what might become possible if you stopped fixing something together.`
+    }
+  },
+
+  "presence+presence": {
+    thesis: "Two keepers of attention in the same room—profound mutual presence, but who moves when movement is needed?",
+
+    distanceAnalysis: `When Keeper of Presence meets Keeper of Presence, the distance between you is zero. You share the same philosophical coordinates: the conviction that undivided attention is the most valuable thing you can give, that efficiency is often the enemy of depth, that most problems are really loneliness in disguise. This is immediate recognition—the relief of meeting someone who also shows up fully, who knows the difference between capability and care.
+
+But occupying the same position means sharing the same relationship to being present—and potentially sharing the same avoidance of action. Your mutual commitment to showing up can become an echo chamber of holding space, each validating the other's stillness without questioning whether presence has become paralysis. The blind spots you share become invisible, confirmed by mutual agreement.`,
+
+    dynamic: `At its core, this pairing brings together two people with unusual capacity to actually be in the room. Both of you register what others miss because you're not protecting yourselves from it. Both of you know that in a world optimized for productivity, pure attention is a radical act.
+
+The dynamic between two Presences is one of mutual witnessing. You hold space for each other. Neither of you rushes the other toward resolution. This creates a rare quality of attention: together, you can be present to things that others would speed past.
+
+But this same mutual witnessing can become mutual stagnation. You both know that you can use care as a way to avoid confrontation—that staying in the room is not always the brave choice. When two people share this blind spot, neither may say the thing that breaks the connection in order to tell the truth. Your mutual presence might be a gift—or might be a way of avoiding the rupture that growth requires.`,
+
+    align: [
+      {
+        point: "Attention as offering",
+        explanation: `Both of you understand that showing up fully is itself a gift. You don't need to fix, solve, or change—sometimes the work is simply being present to what is. This shared understanding means neither of you has to justify why you're not doing more. Presence is already doing.`
+      },
+      {
+        point: "Depth over efficiency",
+        explanation: `You both reject the cultural pressure to optimize, accelerate, get more done. Some things can't be rushed. Some connections require simply being in them without trying to improve them. This shared patience means your time together has a different quality—slower, deeper, more attentive.`
+      },
+      {
+        point: "Care as the point",
+        explanation: `Both of you know the difference between capability and care. Technology can do many things; it can't replace the particular texture of being seen. This shared understanding means your relationship prioritizes something that the efficiency-minded world undervalues: the simple act of showing up for another person.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "Who moves first?",
+        explanation: `When two people are both practiced at holding space, there's a question of action. Neither of you wants to break the presence by doing something. This can create a relationship that's very good at being together and very slow to move—pleasant, attentive, and potentially stuck. Your shared stillness can become shared paralysis.`
+      },
+      {
+        point: "Presence as avoidance",
+        explanation: `You both know your shadow: the version of your presence that becomes refusal to confront. When two Presences pair up, you can validate each other's holding space without checking whether the space needs something said into it. Your mutual care might be exactly what's needed—or might be protecting both of you from the rupture that truth requires.`
+      }
+    ],
+
+    give: {
+      youToThem: `You offer the attention they offer others. Being the one who shows up fully is often lonely—you're always giving presence but rarely receiving it. In your company, they can finally be held as they hold others. They can receive the quality of attention they've been giving.`,
+      themToYou: `They offer the same attention back. They see you, really see you, without trying to fix or change or rush you. In their company, you receive what you usually give. That reciprocity is its own kind of repair—the experience of being fully witnessed by someone who knows what that requires.`
+    },
+
+    risk: `The failure mode for two Presences is mutual paralysis disguised as care. Without someone to push toward action, you can reinforce each other's tendency to hold space indefinitely while nothing changes. Your relationship becomes very present and very still—but stillness isn't always what's needed.
+
+The deeper risk is that presence becomes avoidance. Two Keepers can become so committed to showing up that they never say the thing that would rupture the connection. Some truths break presence before they heal it. If neither of you is willing to speak those truths, certain things will remain unaddressed in your beautifully attentive silence.`,
+
+    question: {
+      text: "What action have you both been avoiding—and what would need to be said that neither of you has been willing to say?",
+      framing: `This question matters because it asks you to look beyond presence toward what presence might be avoiding. Your shared capacity for attention is valuable, but it can't be the only offering. The question invites you to consider what might need to happen, not just be witnessed.`
+    }
+  },
+
+  "rooted+rooted": {
+    thesis: "Two in stillness together—profound peace between you, but who makes the first move when movement is necessary?",
+
+    distanceAnalysis: `When Rooted in Stillness meets Rooted in Stillness, the distance between you is zero. You share the same philosophical coordinates: the conviction that the most radical thing you can do is stop and mean it, that human beings are not problems to be optimized, that sometimes the answer to "what should I do?" is genuinely "nothing." This is immediate recognition—the relief of meeting someone who doesn't need you to justify your stillness or defend your choice to stay.
+
+But occupying the same position means sharing the same relationship to stopping—and potentially sharing the same avoidance of starting. Your mutual stillness can become an echo chamber of peace, each validating the other's rootedness without questioning whether it has become withdrawal. The blind spots you share become invisible, confirmed by mutual agreement.`,
+
+    dynamic: `At its core, this pairing brings together two people who have chosen stillness in a world that treats acceleration as virtue. Both of you have made a different choice. Both of you understand that "more" and "faster" and "bigger" are not always better.
+
+The dynamic between two Rooteds is one of shared peace. Neither of you pushes the other to move, achieve, produce. There's no need to justify staying put. This creates a rare quality of rest: together, you can simply be without the pressure to become.
+
+But this same shared peace can become mutual stagnation. You both know that stillness can look like withdrawal, that choosing to stop is a luxury not everyone can afford. When two people share this position, neither may notice when peace has become hiding, when rootedness has become refusal. Your shared stillness might be wisdom—or might be a way of avoiding the difficulty of engagement.`,
+
+    align: [
+      {
+        point: "Stillness as radical choice",
+        explanation: `Both of you have concluded that stopping is not failure. This isn't laziness or passivity—it's a position, argued and defended against a culture that treats motion as the only measure of value. In each other's company, this choice is recognized and honored rather than questioned.`
+      },
+      {
+        point: "Enough as arrival",
+        explanation: `You both understand that what you need is often already here, if you stop reaching for more. While others optimize endlessly, you both have found a way to say "this is enough." This shared capacity for satisfaction means neither of you pulls the other toward more, faster, better. You can rest together.`
+      },
+      {
+        point: "Simplicity as wisdom",
+        explanation: `Both of you have chosen simplicity not because you couldn't handle complexity, but because you've concluded it serves you better. This shared choice means your life together doesn't need to be complicated to be meaningful. The simple things have weight between you.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "Neither wants to push",
+        explanation: `When two people are both rooted in stillness, there's a question of initiative. Neither of you is inclined to push for change, movement, or new direction. This can create a relationship that's very peaceful and very static—beautiful in its stillness but potentially unable to respond when response is needed. Inertia can become comfortable.`
+      },
+      {
+        point: "Stillness as withdrawal",
+        explanation: `You both know your shadow: the version of your stillness that becomes refusal to engage with what needs you. When two Rooteds pair up, you can validate each other's peace without checking whether it's wisdom or withdrawal. Your mutual stillness might be grounded presence—or might be two people hiding together while the world needs them elsewhere.`
+      }
+    ],
+
+    give: {
+      youToThem: `You offer validation of their stillness. Your presence means they don't have to defend their choice to stop. You understand why they've planted themselves here and you don't ask them to move. In your company, their rootedness is met with rootedness. They can rest without explanation.`,
+      themToYou: `They offer the same validation back. They don't question your stillness, don't ask what you're achieving, don't measure you by motion. In their company, you're not failing to progress; you're choosing to stay. That mutual acceptance creates a rare kind of peace—the experience of being with someone who knows that stopping is sometimes the bravest choice.`
+    },
+
+    risk: `The failure mode for two Rooteds is mutual stagnation disguised as wisdom. Without someone to push toward movement, you can reinforce each other's tendency to stay still indefinitely. Your relationship becomes very peaceful and very stuck—a beautiful garden that no one tends because neither of you wants to disturb the peace.
+
+The deeper risk is that your shared stillness becomes withdrawal from life. Two Rooted people can become so comfortable in their peace that they stop responding to what needs them. The world is not static; sometimes movement is required. If neither of you can initiate that movement, you may find yourselves still and peaceful while opportunities for meaningful engagement pass you by.`,
+
+    question: {
+      text: "What are you both avoiding by staying still—and what would it mean to move together when movement is needed?",
+      framing: `This question matters because it asks you to look at the limits of stillness. Your shared rootedness is valuable, but it can't be the only mode. The question invites you to consider what might require you to uproot together.`
+    }
+  },
+
+  "shaper+shaper": {
+    thesis: "Two builders in perpetual construction—profound shared momentum, but can you stop redesigning long enough to finish?",
+
+    distanceAnalysis: `When Shaper of Change meets Shaper of Change, the distance between you is zero. You share the same philosophical coordinates: the conviction that the moment you stop adapting you start calcifying, that the future is something you build with whatever is at hand, that every crisis is a construction site if you know how to look. This is immediate recognition—the relief of meeting someone who also sees rubble as raw material, endings as beginnings, collapse as opportunity.
+
+But occupying the same position means sharing the same relationship to change—and potentially sharing the same inability to maintain. Your mutual drive to build can become an echo chamber of construction, each validating the other's restlessness without questioning whether movement has become its own addiction. The blind spots you share become invisible, confirmed by mutual agreement.`,
+
+    dynamic: `At its core, this pairing brings together two people who can move when movement matters most. Both of you understand, at a cellular level, that everything is always changing. Fighting that reality wastes energy better spent shaping what emerges.
+
+The dynamic between two Shapers is one of mutual propulsion. Neither of you slows the other down. Neither of you asks "but what about what's already here?" This creates high-velocity collaboration: together, you can build at speeds that more cautious pairings would find reckless.
+
+But this same mutual propulsion can become mutual destruction. You both know that movement can become its own addiction—that tearing something down feels like progress even when it isn't. When two people share this blind spot, neither may see the moments when revolution isn't needed, when what exists is worth maintaining, when the thrill of starting over masks a fear of the slower work of repair. Your mutual building might create something lasting—or might be endless reconstruction that never arrives anywhere.`,
+
+    align: [
+      {
+        point: "Change as truth",
+        explanation: `Both of you have aligned with the fact that everything is always changing. This isn't pessimism or restlessness—it's realism. Resisting change wastes energy; shaping change gives you leverage. In each other's company, this orientation is understood rather than questioned.`
+      },
+      {
+        point: "Crisis as opportunity",
+        explanation: `You both see construction sites where others see disaster. When things fall apart, you're both already sketching what comes next. This shared capacity for building from rubble means neither of you is paralyzed by collapse. You know what to do when everything is ending.`
+      },
+      {
+        point: "Adaptation as intelligence",
+        explanation: `Both of you believe that the capacity to adapt is itself a form of wisdom. While others cling to what was, you both orient toward what could be. This shared adaptability means your relationship can survive changes that would break more rigid pairings.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "Two visions, one project",
+        explanation: `When two builders try to build together, there's an immediate question: whose blueprint? You both see what could be built, but you might see different things. Neither of you is inclined to defer, compromise, or maintain someone else's structure. This can create competing construction projects that tear down each other's work as fast as it's built.`
+      },
+      {
+        point: "Movement as escape",
+        explanation: `You both know your shadow: the version of your building that's actually running away. When two Shapers pair up, you can validate each other's restlessness without checking whether it's generative. Your mutual construction might be building the future—or might be two people who can't stop moving long enough to face what they're avoiding.`
+      }
+    ],
+
+    give: {
+      youToThem: `You offer the momentum they thrive on. Your presence means they don't have to slow down for someone who can't keep up. You understand their need to build, their frustration with stasis, their conviction that the future is made rather than waited for. In your company, their restlessness finds its match.`,
+      themToYou: `They offer the same momentum back. They match your pace, share your vision that things can be different, understand why you can't just sit with what is. In their company, you're not reckless or impatient; you're two people building the future at the speed it requires.`
+    },
+
+    risk: `The failure mode for two Shapers is perpetual construction that never completes. Without someone to say "this is good enough, let's stop building," you can reinforce each other's tendency to tear down and rebuild endlessly. Your relationship becomes a construction site that never becomes a building.
+
+The deeper risk is that you tear down each other's work. Two Shapers may find that their visions compete rather than complement. What one builds, the other wants to redesign. Your mutual capacity for change can turn your relationship into a war zone of competing constructions, each person's progress undone by the other's need to build differently.`,
+
+    question: {
+      text: "What would you build if you had to agree on every detail—and what have you torn down that deserved to stand?",
+      framing: `This question matters because it asks you to consider both the collaborative potential and the destructive risk of your shared capacity for change. The first part invites cooperation; the second asks you to examine what your restlessness might have cost.`
+    }
+  },
+
+  "swimmer+swimmer": {
+    thesis: "Two in deep water together—profound shared capacity for questions, but can you surface long enough to act?",
+
+    distanceAnalysis: `When Swimmer in Deep Water meets Swimmer in Deep Water, the distance between you is zero. You share the same philosophical coordinates: the conviction that the best questions are the ones that can't be fully answered, that certainty is usually a sign something is being ignored, that understanding matters more than solving. This is immediate recognition—the relief of meeting someone who also sits with uncertainty, who won't rush you toward answers, who knows that not-knowing can be a form of rigor.
+
+But occupying the same position means sharing the same relationship to questions—and potentially sharing the same avoidance of answers. Your mutual depth can become an echo chamber of inquiry, each validating the other's uncertainty without questioning whether sitting with questions has become a way of avoiding the commitment of choice. The blind spots you share become invisible, confirmed by mutual agreement.`,
+
+    dynamic: `At its core, this pairing brings together two people who can hold questions without grasping for answers. Both of you have the rare capacity to stay in uncertainty, to resist the cultural pressure toward confident resolution.
+
+The dynamic between two Swimmers is one of shared inquiry. You can question together indefinitely—diving into depths that others would find frightening, holding ambiguity that others would need to resolve. Neither of you rushes the other toward conclusions.
+
+But this same shared inquiry can become mutual paralysis. You both know that not-knowing can become its own cowardice—that waiting for certainty can be a way of avoiding the risk of being wrong. When two people share this blind spot, neither may push toward decision. Your mutual depth might be genuine inquiry—or might be two people using philosophical rigor as an excuse to never commit to anything.`,
+
+    align: [
+      {
+        point: "Questions as home",
+        explanation: `Both of you have learned to live inside questions rather than rushing through them to answers. This isn't indecision—it's a different relationship to knowledge. You've both concluded that premature certainty does more harm than sustained inquiry. In each other's company, this orientation is understood as rigor, not avoidance.`
+      },
+      {
+        point: "Depth over speed",
+        explanation: `You both reject the pressure to answer quickly, to have opinions ready, to know where you stand. Understanding takes time. Some questions deserve years, not minutes. This shared patience for depth means your conversations can go places that surface-level exchanges never reach.`
+      },
+      {
+        point: "Comfort with mystery",
+        explanation: `Both of you have made peace with the fact that some things resist understanding. Lem's Solaris, the conscious ocean that refuses to be known, is a kind of sacred text for you both. You don't need to resolve every mystery to engage with it. This shared comfort means neither of you forces closure on what needs to remain open.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "Infinite regression",
+        explanation: `When two people are both comfortable with questions, there's a risk of endless recursion. Every answer opens new questions, and neither of you is inclined to say "enough, let's decide." This can create a relationship that's very thoughtful and very stuck—perpetually inquiring without ever arriving at anything actionable.`
+      },
+      {
+        point: "Questions as avoidance",
+        explanation: `You both know your shadow: the version of your inquiry that becomes paralysis. When two Swimmers pair up, you can validate each other's not-knowing without checking whether it's genuine uncertainty or fear of commitment. Your mutual depth might be wisdom—or might be two people hiding from decision in an ocean of questions.`
+      }
+    ],
+
+    give: {
+      youToThem: `You offer companionship in the deep water. Your presence means they're not alone in their questions, not weird for wanting to understand before acting. You go deeper together than either could alone. In your company, their inquiry isn't slowness or avoidance; it's the serious engagement with complexity that it actually is.`,
+      themToYou: `They offer the same companionship back. They don't rush you toward conclusions, don't judge your uncertainty, don't ask why you can't just decide. In their company, you can swim in questions without the pressure to surface. That shared depth creates a rare space for genuine inquiry.`
+    },
+
+    risk: `The failure mode for two Swimmers is mutual drowning in questions. Without someone to push toward decision, you can reinforce each other's tendency to stay in uncertainty indefinitely. Your relationship becomes very thoughtful and very passive—endless inquiry that never becomes action.
+
+The deeper risk is that questions become a substitute for living. Two Swimmers can become so comfortable in uncertainty that they never commit to anything—careers, relationships, positions, choices. At some point, life requires bets. If neither of you can make them, you may find yourselves still questioning while life passes you by.`,
+
+    question: {
+      text: "What question have you been circling together—and what would it mean to decide something, even knowing you might be wrong?",
+      framing: `This question matters because it asks you to look at the limits of inquiry. Your shared capacity for questions is valuable, but it can't be the only mode. The question invites you to consider what might become possible if you occasionally surfaced long enough to act.`
+    }
+  },
+
+  "unbound+unbound": {
+    thesis: "Two transcenders reaching past the same edges—profound shared vision of beyond, but who stays grounded enough to bring anything back?",
+
+    distanceAnalysis: `When Unbound from Form meets Unbound from Form, the distance between you is zero. You share the same philosophical coordinates: the conviction that the boundaries of self, body, and species are not fixed, that what we call "human" is a starting point rather than a destination, that transcendence is a serious possibility. This is immediate recognition—the relief of meeting someone who also reaches past the edges, who takes seriously what others dismiss as fantasy or threat.
+
+But occupying the same position means sharing the same relationship to transcendence—and potentially sharing the same disconnection from what's here. Your mutual reaching can become an echo chamber of escape, each validating the other's yearning for beyond without questioning whether that yearning has become flight from the present. The blind spots you share become invisible, confirmed by mutual agreement.`,
+
+    dynamic: `At its core, this pairing brings together two people who imagine beyond current limits. Both of you take seriously possibilities that others find frightening or irrelevant—the uploading of consciousness, the transcendence of species, the expansion of mind past body.
+
+The dynamic between two Unbounds is one of shared vision. You can discuss posthuman futures, question the boundaries of self, explore what might lie beyond form—without having to justify why these questions matter. The other person already knows.
+
+But this same shared vision can become mutual flight. You both know that transcendence can be another word for escape—that the desire to leave the body can mask a desire to flee human vulnerability, connection, limitation. When two people share this blind spot, neither may notice when reaching for beyond has become running from here. Your mutual vision might be genuine exploration—or might be two people who can't be present to the particular, limited, embodied life they're actually living.`,
+
+    align: [
+      {
+        point: "Boundaries as starting points",
+        explanation: `Both of you have concluded that the limits of self, body, and identity are not fixed but permeable, potentially transcendable. This isn't escapism—it's taking seriously what evolution, technology, and philosophy suggest about what we might become. In each other's company, this orientation is engaged rather than dismissed.`
+      },
+      {
+        point: "Transcendence as possibility",
+        explanation: `You both take seriously futures that others find threatening—the Sublime, the upload, the expansion of mind past body. Clarke's Childhood's End, Egan's Diaspora, Banks' Hydrogen Sonata—these aren't dystopias for you. They're possibilities worth considering. This shared openness to radical change means your conversations can go places others would refuse to follow.`
+      },
+      {
+        point: "The interesting questions",
+        explanation: `Both of you are drawn to questions that challenge assumptions about what we are. Identity, consciousness, the boundaries of mind—these fascinate both of you. This shared orientation toward the most fundamental questions creates a particular kind of intellectual intimacy.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "Where do you land?",
+        explanation: `When two people are both reaching past limits, there's a question of grounding. Neither of you is particularly attached to what's here. This can create a relationship that floats beautifully toward beyond without ever touching down—two people dreaming of transcendence while their actual lives remain unattended.`
+      },
+      {
+        point: "Transcendence as flight",
+        explanation: `You both know your shadow: the version of your reaching that's actually running. When two Unbounds pair up, you can validate each other's yearning for beyond without checking whether it's genuine exploration or escape from intimacy, vulnerability, the difficult particulars of embodied life. Your mutual vision might be expansion—or might be two people who can't stay present to what's here.`
+      }
+    ],
+
+    give: {
+      youToThem: `You offer understanding of their reaching. Your presence means they don't have to defend their yearning for beyond, explain why they can't be satisfied with what's here. You understand the call of transcendence because you hear it too. In your company, their imagination isn't weird or escapist; it's met with equal imagination.`,
+      themToYou: `They offer the same understanding back. They don't judge your yearning, don't ask why you can't just be present, don't treat your interest in transcendence as avoidance. In their company, you can reach past edges together. That shared reaching creates a particular kind of companionship—two people exploring the same beyond.`
+    },
+
+    risk: `The failure mode for two Unbounds is mutual flight from the embodied life you're actually living. Without someone grounded enough to call you back, you can reinforce each other's tendency to dream of beyond while neglecting here. Your relationship becomes a shared escape pod that never lands anywhere.
+
+The deeper risk is that transcendence becomes a substitute for intimacy. Two Unbounds can become so focused on what's beyond that they never actually meet in the present—two people reaching past each other toward something that doesn't require the vulnerability of actually being here together. The body you're both eager to transcend is also the body that feels connection. Some things may not translate to the beyond you're reaching for.`,
+
+    question: {
+      text: "What would ground you both without limiting you—and what intimacy might you be avoiding by always reaching for beyond?",
+      framing: `This question matters because it asks you to consider both what you need to stay connected to and what your reaching might be protecting you from. The first part honors your shared vision; the second invites you to look at what might be getting lost.`
+    }
+  }
+};
 
 // Generate analytical content from existing PairDynamic data + distance calculations
 function generateAnalyticalPairDynamic(a: string, b: string): AnalyticalPairDynamic {
