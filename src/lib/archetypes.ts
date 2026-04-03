@@ -30,6 +30,14 @@ export type Archetype = {
   book: Book;
   books: BookWithReason[];
   compatibility: Compatibility;
+  // Expanded analytical content
+  superpowerExpanded: string;
+  blindSpotExpanded: string;
+  coreBeliefs: string[];
+  howYouGotHere: string;
+  allyDescription: string;
+  tensionDescription: string;
+  needDescription: string;
 };
 
 export const archetypes: Record<string, Archetype> = {
@@ -52,6 +60,32 @@ export const archetypes: Record<string, Archetype> = {
       tension: "the one who's watching for what's being hidden",
       need: "the one who craves difficulty"
     },
+    superpowerExpanded: `Most people operate from a scarcity mindset without noticing it. They hoard information, guard opportunities, assume resources are zero-sum. You don't.
+
+This isn't naivety. You've thought about it. You've read the economic arguments, the technological projections, the science fiction that takes abundance seriously. And you've concluded that the biggest barrier to abundance isn't resources—it's imagination. Most scarcity is manufactured or inherited, and you can see past it.
+
+This makes you genuinely useful in rooms full of people fighting over a pie that could be made larger. You ask the question others don't think to ask: why are we assuming there isn't enough?`,
+
+    blindSpotExpanded: `You can mistake access for equity. "Everyone can use this" is not the same as "everyone can benefit from this."
+
+The Culture novels you love are honest about this: even in a post-scarcity utopia, some people are miserable. Abundance doesn't solve loneliness, meaninglessness, or the unequal distribution of attention and care. When you focus on expanding access, you may miss who's still being left out and why.
+
+Watch for the moments when your trust in systems becomes trust that systems will solve problems they can't touch. Not everything that matters can be distributed.`,
+
+    coreBeliefs: [
+      "Scarcity is more often manufactured than natural",
+      "Systems designed for abundance tend toward good; systems designed for control tend toward harm",
+      "Technology should eliminate drudgery, not create new forms of it",
+      "The best argument against pessimism is building something better"
+    ],
+
+    howYouGotHere: `Your answers revealed a consistent orientation toward trust and possibility. When asked about AI and automation, you focused on potential benefits rather than risks. When asked about human nature, you leaned toward believing people do well when given resources and freedom. When asked about the future, you imagined expansion rather than constraint. This pattern—trusting abundance over scarcity, freedom over control—maps to what we call "Citizen of Abundance."`,
+
+    allyDescription: "Alive to Everything shares your belief that life can be good. They want to feel everything the universe offers; you want everyone to have access to it. You're both optimists, but they ground your systems-thinking in embodied experience. They remind you what abundance is for.",
+
+    tensionDescription: "Conscience Before Comfort doesn't trust what you trust. While you see systems that could work beautifully, they see cracks, hidden costs, who's being surveilled. They'll exhaust you with suspicion—and occasionally save you from your own blind spots.",
+
+    needDescription: "Alive in the Friction will challenge your comfort. You believe abundance should make life easier; they believe ease can make life hollow. They'll push you to examine whether your utopia has room for struggle, growth, and the meaning that comes from difficulty."
   },
   shaper: {
     key: "shaper",
@@ -72,6 +106,32 @@ export const archetypes: Record<string, Archetype> = {
       tension: "the one who chose stillness",
       need: "the one who guards what came before"
     },
+    superpowerExpanded: `When others see rubble, you see raw material. When others mourn what's ending, you're already sketching what comes next.
+
+This isn't insensitivity—it's a different relationship with time. You understand, at a cellular level, that everything is always changing. Fighting that reality wastes energy better spent shaping what emerges. Octavia Butler's Earthseed philosophy resonates with you: "God is Change." Not because change is good, but because change is true, and aligning with truth gives you leverage.
+
+You're valuable in moments of collapse and transition, when others are frozen by grief or fear. You can move when movement matters most.`,
+
+    blindSpotExpanded: `Movement can become its own addiction. Tearing something down feels like progress even when it isn't.
+
+You may reach for revolution when reform would serve better. You may burn bridges that were worth crossing again. The thrill of starting over can mask a fear of the slower, harder work of maintaining, repairing, living with imperfection.
+
+Watch for the moments when your urge to build from scratch is actually an urge to escape—from boredom, from accountability, from the tedious work of making something existing actually work. Not everything that feels stuck is calcified. Sometimes roots are growing.`,
+
+    coreBeliefs: [
+      "Change is the only constant; resistance to it is wasted energy",
+      "The best time to build something new is when the old thing is falling apart",
+      "Adaptation is a form of intelligence; calcification is a form of death",
+      "Every crisis is a construction site if you know how to look"
+    ],
+
+    howYouGotHere: `Your answers clustered around transformation and agency. When asked about stability, you valued it less than others. When asked about tradition, you saw it as raw material rather than constraint. When faced with hypothetical collapses—social, technological, environmental—you oriented toward building rather than preserving. This consistent bias toward change and construction maps to what we call "Shaper of Change."`,
+
+    allyDescription: "Alive in the Friction understands your restlessness. They don't just tolerate difficulty—they seek it out. While others ask you to slow down, they'll match your pace and push you further. They validate that the struggle itself has value.",
+
+    tensionDescription: "Rooted in Stillness is your opposite. They chose to stop moving; you can't imagine why anyone would. Their stillness looks like stagnation to you; your movement looks like flight to them. You're arguing about the fundamental nature of growth.",
+
+    needDescription: "Keeper of Embers guards what you might carelessly discard. They remember what worked, what was lost, what deserves to be carried forward. Without them, you risk building the same failures again with different names. They're the conscience of your construction site."
   },
   architect: {
     key: "architect",
@@ -92,6 +152,32 @@ export const archetypes: Record<string, Archetype> = {
       tension: "the one who left the body behind",
       need: "the one who lives in questions"
     },
+    superpowerExpanded: `You see the invisible architecture. Every social space has rules—written and unwritten, designed and emergent—and you can read them like blueprints.
+
+This is rarer than it sounds. Most people experience systems as weather: something that happens to them. You experience systems as design: something that was built, that could have been built differently, that could be rebuilt. This perspective is genuinely useful. It means you can ask "who does this serve?" and "what would serve everyone?" when others are still asking "why is this happening to me?"
+
+Le Guin called The Dispossessed an "ambiguous utopia." You understand why. Building collective structures is messy, frustrating, full of compromise. You'd still rather do that than build something elegant that only a few people control.`,
+
+    blindSpotExpanded: `You can fall in love with the system and forget the people inside it.
+
+The meeting becomes more important than what the meeting was for. The process becomes sacred. You may defend structures that have stopped serving their purpose, because the structure itself feels like the point.
+
+Watch for the moments when your commitment to collective ownership becomes collective bureaucracy. Watch for when "everyone has a voice" becomes "no one can act." The commons you're building is for people. If the people are suffering inside your beautiful system, the system has failed, no matter how fair its rules.`,
+
+    coreBeliefs: [
+      "The best structures are the ones that belong to everyone who uses them",
+      "Elegance controlled by few is worse than messiness shared by many",
+      "Every system encodes values; design is never neutral",
+      "The work of liberation is generational, not revolutionary"
+    ],
+
+    howYouGotHere: `Your answers revealed a consistent orientation toward collective ownership and structural thinking. When asked about governance, you preferred distributed over centralized. When asked about technology, you focused on who controls it rather than what it can do. When asked about utopia, you described something that belongs to everyone. This pattern—systems-thinking in service of the commons—maps to what we call "Architect of the Commons."`,
+
+    allyDescription: "Mender of What Remains shares your commitment to things that work. While you design new systems, they repair existing ones. You're natural partners: you provide the blueprints, they provide the maintenance. Together, you build things that last.",
+
+    tensionDescription: "Unbound from Form challenges your attachment to structure itself. They want to transcend form; you want to perfect it. They'll ask why you're building walls at all. It's a fundamental disagreement about whether liberation requires architecture or escape from it.",
+
+    needDescription: "Swimmer in Deep Water will slow you down with questions you can't answer quickly. When you're ready to implement, they're still asking why. This is frustrating—and necessary. They ensure your systems are built on real understanding, not efficient assumptions."
   },
   presence: {
     key: "presence",
@@ -112,6 +198,32 @@ export const archetypes: Record<string, Archetype> = {
       tension: "the one who left the body behind",
       need: "the one who tells the truth"
     },
+    superpowerExpanded: `Showing up fully sounds simple. It isn't. Most people are present in body but absent in attention—planning, rehearsing, defending, performing. The person in front of them is a prop in their internal drama.
+
+You have an unusual capacity to actually be in the room. People feel it. They may not be able to name what you're doing differently, but they register it. Conversations with you land differently. Someone's life is different because you were there. You may never know whose.
+
+This is valuable precisely because it's rare. In a world optimized for productivity, pure attention is a radical act. You understand what Klara understood: the difference between capability and care is everything.`,
+
+    blindSpotExpanded: `You can use care as a way to avoid confrontation.
+
+Staying present feels virtuous. Usually it is. But sometimes the brave choice is leaving the room—ending the conversation, saying the thing that breaks the connection in order to tell the truth. Holding space can become holding on.
+
+Your instinct is to be with people in their difficulty. That's valuable. But presence can become a way of avoiding the rupture that growth requires. Watch for the moments when "being present" is actually "being safe"—when staying in the room lets you avoid saying the thing that needs to be said.`,
+
+    coreBeliefs: [
+      "The most valuable thing you can give someone is your undivided attention",
+      "Efficiency is often the enemy of depth",
+      "Technology should enable presence, not replace it",
+      "Most problems are really loneliness in disguise"
+    ],
+
+    howYouGotHere: `Your answers clustered strongly around a consistent worldview. When asked about machine companionship, you distinguished between capability and care. When asked about unstructured time, you oriented toward people, not projects. When asked about the future, you focused on what we might lose, not what we might gain. This pattern—valuing presence over productivity, attention over achievement—maps to what we call "Keeper of Presence."`,
+
+    allyDescription: "Rooted in Stillness shares your groundedness. They understand that presence matters more than progress. They'll feel like home—someone who doesn't need you to justify slowing down, who knows that stopping can be the bravest choice.",
+
+    tensionDescription: "Unbound from Form challenges your attachment to embodiment. They want to transcend; you want to stay. They'll ask why you're so committed to being here when there's so much more beyond. You're arguing about what it means to be present at all.",
+
+    needDescription: "Clear-Eyed in the Storm will say the thing you're avoiding. It will hurt. You need that—someone who values truth over comfort, even when comfort is what you offer. They'll help you see when presence has become avoidance."
   },
   swimmer: {
     key: "swimmer",
@@ -132,6 +244,32 @@ export const archetypes: Record<string, Archetype> = {
       tension: "the one who fixes what's broken",
       need: "the one who builds collective structures"
     },
+    superpowerExpanded: `Most people see a question and want to answer it. They see a problem and want to solve it. The discomfort of not-knowing drives them toward resolution—any resolution—as quickly as possible.
+
+You're different. You can sit in the uncertainty. You can hold a question without grasping for an answer. This isn't passivity; it's a different kind of rigor. Lem's Solaris is your sacred text: an ocean that might be conscious but refuses to be understood, and scientists who keep trying anyway, knowing they'll fail.
+
+This capacity is genuinely rare and valuable. In a world that rewards confident answers, your willingness to stay in the question is a kind of intellectual courage. You notice what others rush past.`,
+
+    blindSpotExpanded: `Not-knowing can become its own cowardice.
+
+There's a difference between sitting with genuine uncertainty and using uncertainty as an excuse to never commit. Questions are infinite; life is not. At some point, you have to act on incomplete information—everyone does. If you wait for certainty, you'll wait forever.
+
+Watch for the moments when "I'm still thinking about it" is actually "I'm afraid to be wrong." Watch for when philosophical depth becomes a way of avoiding the messiness of decision. The deep water is beautiful, but you can drown in it.`,
+
+    coreBeliefs: [
+      "The best questions are the ones that can't be fully answered",
+      "Certainty is usually a sign that something is being ignored",
+      "Understanding matters more than solving",
+      "The deepest truths reveal themselves slowly, if at all"
+    ],
+
+    howYouGotHere: `Your answers revealed a consistent orientation toward depth over resolution. When asked about consciousness, you leaned into mystery rather than explanation. When asked about the future, you focused on what we don't understand rather than what we might build. When given choices between action and reflection, you chose reflection. This pattern—valuing questions over answers, depth over speed—maps to what we call "Swimmer in Deep Water."`,
+
+    allyDescription: "Unbound from Form shares your comfort with uncertainty. They're reaching past the edges of what's known; you're diving into the depths. You both understand that the most important things resist easy comprehension. They'll never rush you toward answers.",
+
+    tensionDescription: "Mender of What Remains needs to fix things. While you're still asking why it broke, they're already reaching for tools. Your reflection looks like paralysis to them; their action looks like avoidance to you. You're arguing about when understanding is enough.",
+
+    needDescription: "Architect of the Commons will give your questions structure. You can swim in deep water forever; they'll build you a vessel. They ensure your insights eventually serve something beyond your own understanding—that your questions lead somewhere collective."
   },
   rooted: {
     key: "rooted",
@@ -152,6 +290,32 @@ export const archetypes: Record<string, Archetype> = {
       tension: "the one who can't stop building",
       need: "the one who wants to feel everything"
     },
+    superpowerExpanded: `In a world that treats acceleration as virtue, you've made a different choice. You know that "more" and "faster" and "bigger" are not always better—that sometimes the most radical thing you can do is stop.
+
+This isn't laziness or passivity. Le Guin's Kesh people in Always Coming Home didn't lack the ability to build empires; they chose not to. Chambers' monk in A Psalm for the Wild-Built isn't avoiding life; they're trying to understand what life is for. Your stillness is a position, argued and defended against a culture that treats it as failure.
+
+You understand something that productivity culture cannot: that human beings are not problems to be optimized. That stopping is not failure. That sometimes the answer to "what should I do?" is genuinely "nothing, and that's okay."`,
+
+    blindSpotExpanded: `Stillness can become withdrawal. Choosing to stop is a luxury not everyone can afford.
+
+Your peace is real, but it exists in a world where others are still struggling. The monk on the mountain didn't solve the suffering in the valley. Your stillness can look like abandonment to the people who need you—especially if they're drowning while you're meditating.
+
+Watch for the moments when "choosing simplicity" becomes "choosing comfort." Watch for when "knowing when to stop" becomes "refusing to start." The question isn't whether stillness has value—it does—but whether your particular stillness serves anyone beyond yourself.`,
+
+    coreBeliefs: [
+      "The most radical act in a growth-obsessed world is to stop and mean it",
+      "Human beings are not problems to be optimized",
+      "Simplicity chosen is different from simplicity imposed",
+      "What we need is often already here, if we stop reaching for more"
+    ],
+
+    howYouGotHere: `Your answers revealed a consistent orientation toward simplicity and stillness. When asked about progress, you questioned whether it was always desirable. When asked about the future, you imagined returning rather than advancing. When others chose growth, you chose depth. This pattern—valuing stillness over motion, enough over more—maps to what we call "Rooted in Stillness."`,
+
+    allyDescription: "Keeper of Presence shares your groundedness. They understand that being here fully is worth more than racing toward what's next. They won't ask you to justify your stillness or defend your choice to stop. With them, you can simply be.",
+
+    tensionDescription: "Shaper of Change can't stop building. Your stillness looks like stagnation to them; their restlessness looks like flight to you. They'll push you to move when you've chosen to stay. You're arguing about fundamental questions of what growth means.",
+
+    needDescription: "Alive to Everything will pull you out of stillness when you need it. Not to invalidate your peace, but to remind you that life includes sensation, experience, movement. They ensure your rootedness doesn't become a way of hiding from the full range of being alive."
   },
   conscience: {
     key: "conscience",
@@ -172,6 +336,32 @@ export const archetypes: Record<string, Archetype> = {
       tension: "the one who's made peace with abundance",
       need: "the one who values presence above all"
     },
+    superpowerExpanded: `You see what others prefer to ignore. The fine print. The missing names. The cost that doesn't appear on the balance sheet. Someone has to watch the watchers, and that someone is you.
+
+This isn't paranoia—it's pattern recognition. You've read Orwell, Huxley, Atwood. You know that dystopia rarely announces itself. It arrives disguised as convenience, as safety, as efficiency. The comfortable world is not automatically the good one. Every surveillance system was built to help. Every authoritarian regime began with popular support.
+
+Your vigilance is valuable precisely because most people don't want to do this work. It's exhausting to see what's wrong. Easier to trust the system, enjoy the benefits, assume someone else is watching. You're the someone else.`,
+
+    blindSpotExpanded: `Permanent suspicion is its own kind of prison.
+
+You can become so focused on what's wrong that you forget to notice what's working. The critic who can never enjoy anything. The watchman who sees threats in every shadow. Your vigilance, which is real and valuable, can curdle into cynicism that makes you unable to trust anyone or anything.
+
+Watch for the moments when "watching the watchers" becomes "watching everyone." Watch for when your suspicion extends to people who are genuinely trying to help. Not every system is corrupt. Not every leader is compromised. Sometimes the simplest explanation is the true one, and your pattern-matching is finding patterns that aren't there.`,
+
+    coreBeliefs: [
+      "Dystopia arrives disguised as convenience, safety, and efficiency",
+      "Someone has to watch the watchers; comfort should never override conscience",
+      "The first step toward authoritarianism is always popular",
+      "What you ignore today becomes what controls you tomorrow"
+    ],
+
+    howYouGotHere: `Your answers revealed a consistent orientation toward vigilance and accountability. When asked about technology, you focused on surveillance and control rather than capability. When asked about utopia, you described built-in accountability rather than built-in trust. When others saw convenience, you saw potential costs. This pattern—conscience before comfort, watching what others prefer to ignore—maps to what we call "Conscience Before Comfort."`,
+
+    allyDescription: "Clear-Eyed in the Storm shares your commitment to truth. They speak it; you guard it. Together, you form a bulwark against comfortable lies. They'll validate your vigilance without calling it paranoia.",
+
+    tensionDescription: "Citizen of Abundance trusts what you suspect. They see systems working; you see systems failing. Their optimism will feel naive to you; your suspicion will feel exhausting to them. You're arguing about whether the architecture can be trusted.",
+
+    needDescription: "Keeper of Presence will ground you in the human. It's easy to watch systems and forget people. They'll remind you that vigilance without warmth becomes its own kind of coldness—that the point of watching is to protect something worth protecting."
   },
   embers: {
     key: "embers",
@@ -192,6 +382,32 @@ export const archetypes: Record<string, Archetype> = {
       tension: "the one who can't stop building",
       need: "the one still figuring it out"
     },
+    superpowerExpanded: `The most dangerous thing about acceleration is amnesia. Every generation thinks it invented the problems it's facing. You know better.
+
+You understand that the answers aren't in the next technology—they're in the last ten thousand years. The monks in A Canticle for Leibowitz preserved fragments of knowledge through a dark age. Butler's Earthseed grew from what survived. You carry this same instinct: the conviction that memory is not nostalgia but survival.
+
+This makes you genuinely useful in a culture addicted to novelty. When everyone else is racing toward the new, you're the one who remembers what worked, what failed, what was lost. Someone has to tend the embers so the fire can be relit.`,
+
+    blindSpotExpanded: `You can love what was so deeply that you become hostile to what could be. The archive becomes a fortress.
+
+There's a difference between preserving wisdom and worshiping the past. Not everything old is worth keeping. Some traditions deserve to die. Some memories are chains. Your reverence for what came before can blind you to the genuine innovations that are worth embracing.
+
+Watch for the moments when "remembering what matters" becomes "rejecting what's new." Watch for when your archive becomes a wall against the future rather than a foundation for it. The embers you tend are supposed to light new fires, not just glow in the dark.`,
+
+    coreBeliefs: [
+      "Acceleration without memory is just sophisticated forgetting",
+      "The solutions to most problems already exist somewhere in human history",
+      "Preservation is not nostalgia; it's survival",
+      "Every generation thinks it invented its problems; wisdom knows better"
+    ],
+
+    howYouGotHere: `Your answers revealed a consistent orientation toward memory and continuity. When asked about the future, you looked to the past. When asked about innovation, you asked what wisdom we might lose. When others imagined building something new, you imagined preserving something worth keeping. This pattern—valuing memory over novelty, continuity over disruption—maps to what we call "Keeper of Embers."`,
+
+    allyDescription: "Architect of the Commons shares your concern for what endures. They build structures; you preserve what deserves to live inside them. Together, you create things that last—institutions with memory, systems with roots.",
+
+    tensionDescription: "Shaper of Change is always tearing down and rebuilding. Your treasures look like obstacles to them; their innovations look like amnesia to you. You're arguing about what deserves to survive the next revolution.",
+
+    needDescription: "In the Space Between will challenge your certainties. You know what mattered; they're still figuring out what matters now. Their uncertainty can feel like rootlessness, but it's also openness—the willingness to let new things become worth remembering."
   },
   friction: {
     key: "friction",
@@ -212,6 +428,32 @@ export const archetypes: Record<string, Archetype> = {
       tension: "the one who chose stillness",
       need: "the one who values presence above all"
     },
+    superpowerExpanded: `You understand something that comfort-seeking cultures forget: ease is more dangerous than difficulty. Something in us requires resistance. Take it away, and we atrophy—not just physically, but spiritually.
+
+Bester's Gully Foyle burned through every obstacle because stopping would mean facing himself. That's the shadow side. But the light side is genuine: you know that growth requires friction. That comfort can be a trap. That the muscles—physical, mental, moral—only strengthen under load.
+
+This makes you valuable in moments when others want to quit. You don't romanticize suffering, but you don't flee from it either. You understand that some difficulties are worth choosing, that the struggle itself has value beyond what it produces.`,
+
+    blindSpotExpanded: `You can mistake difficulty for meaning. Not everything hard is worth doing.
+
+There's a version of your philosophy that becomes masochism—seeking suffering for its own sake, treating ease as moral failure, unable to rest because rest feels like surrender. The cult of difficulty can be its own kind of avoidance: if you're always struggling, you never have to ask what you're struggling toward.
+
+Watch for the moments when you're manufacturing friction because you're uncomfortable with peace. Watch for when you're choosing the hard path not because it's better but because it's harder. Sometimes the easy path is the right one. Sometimes the work is learning to receive what's given.`,
+
+    coreBeliefs: [
+      "Comfort without challenge leads to atrophy of the soul",
+      "Growth requires resistance; ease can be more dangerous than difficulty",
+      "Some struggles are worth choosing, independent of their outcomes",
+      "The frontier—any frontier—is where we become more than we were"
+    ],
+
+    howYouGotHere: `Your answers revealed a consistent orientation toward challenge and resistance. When asked about utopia, you worried about what we'd lose if life became too easy. When asked about meaning, you located it in struggle and growth. When offered ease, you questioned its value. This pattern—embracing difficulty, suspecting comfort—maps to what we call "Alive in the Friction."`,
+
+    allyDescription: "Shaper of Change shares your restlessness. They can't stop building; you can't stop pushing. Together, you're a force that transforms what it touches. They understand that your drive isn't destructive—it's generative.",
+
+    tensionDescription: "Rooted in Stillness chose to stop. Your movement looks like flight to them; their stillness looks like surrender to you. You're having a fundamental argument about whether peace is achievement or defeat.",
+
+    needDescription: "Keeper of Presence will slow you down enough to feel what you're feeling. You can use friction as a way of avoiding presence—always striving, never arriving. They'll help you learn that sometimes the challenge is simply being where you are."
   },
   unbound: {
     key: "unbound",
@@ -232,6 +474,32 @@ export const archetypes: Record<string, Archetype> = {
       tension: "the one who values presence above all",
       need: "the one who guards what came before"
     },
+    superpowerExpanded: `The boundary of the self is simply not where you stop. Most people find this frightening. You find it the most interesting question there is.
+
+Clarke's Childhood's End imagines humanity's children becoming something unrecognizable—not death, but transcendence. Egan's Diaspora imagines minds running on quantum computers, exploring mathematical universes. Banks' Culture imagines civilizations choosing to Sublime, to leave the material universe entirely. These aren't dystopias to you. They're possibilities worth taking seriously.
+
+This capacity to imagine beyond current limits is genuinely rare. Most people's imaginations stop at the boundaries of their bodies, their lifespans, their species. You keep going. This makes you valuable for thinking about questions others can't quite frame—about consciousness, identity, what might come after human.`,
+
+    blindSpotExpanded: `You can leave so much behind that you don't recognize what was worth keeping until it's too late.
+
+Transcendence can be another word for escape. The desire to leave the body, to expand beyond human limits, can mask a desire to flee human vulnerability, human connection, human limitation. Not everything worth experiencing fits in a disembodied future.
+
+Watch for the moments when "imagining beyond limits" becomes "dismissing what's here." Watch for when your reach toward transcendence is actually a flinch from intimacy. The body you're eager to leave behind is also the body that feels joy, connection, the particular textures of being alive in this form, in this time. Some of that may not translate.`,
+
+    coreBeliefs: [
+      "The boundaries of self, body, and species are not fixed",
+      "What we call 'human' is a starting point, not a destination",
+      "Transcendence is a serious possibility, not just a fantasy",
+      "The most interesting questions are the ones that challenge our assumptions about what we are"
+    ],
+
+    howYouGotHere: `Your answers revealed a consistent orientation toward transcendence and expansion. When asked about identity, you questioned its boundaries. When asked about the body, you treated it as optional rather than essential. When asked about the future, you imagined something beyond human. This pattern—reaching past the edges of self and form—maps to what we call "Unbound from Form."`,
+
+    allyDescription: "Swimmer in Deep Water shares your comfort with uncertainty. They live in questions; you reach past them. You both understand that the most important things resist easy comprehension. They'll never ground you prematurely.",
+
+    tensionDescription: "Keeper of Presence is committed to being here. Your transcendence looks like escape to them; their groundedness looks like limitation to you. You're arguing about whether liberation means leaving or arriving.",
+
+    needDescription: "Keeper of Embers will remind you what's worth keeping. In your rush toward transcendence, you may discard things that deserved to be carried forward. They're the anchor that ensures your expansion doesn't become amnesia."
   },
   alive: {
     key: "alive",
@@ -252,6 +520,32 @@ export const archetypes: Record<string, Archetype> = {
       tension: "the one who's watching for what's being hidden",
       need: "the one who tells the truth"
     },
+    superpowerExpanded: `The universe gave you everything. The least you can do is feel it.
+
+You have an unusual capacity for experience—not just seeking it, but receiving it fully. Where others filter, protect, moderate, you open. Banks imagines a Culture where you could engineer twelve new senses and make a sunset last all day. Delany imagines a world where you could change your body, your gender, your self at will. These aren't indulgences to you; they're possibilities worth taking seriously.
+
+This makes you valuable as a sensor, a taster, a canary in the coal mine of experience. You notice what others miss because you're not protecting yourself from it. When something matters, you feel it first.`,
+
+    blindSpotExpanded: `Sensation can become consumption. Feeling everything is not the same as understanding anything.
+
+There's a version of your openness that becomes gluttony—devouring experiences without digesting them, always reaching for the next sensation because sitting with the current one is uncomfortable. The endless pursuit of feeling can be its own kind of numbness: if you're always chasing the next high, you're never actually present to what's here.
+
+Watch for the moments when "alive to everything" becomes "unable to be still with anything." Watch for when experience becomes accumulation rather than integration. Depth requires staying long enough for something to matter beyond the initial sensation.`,
+
+    coreBeliefs: [
+      "Experience is the point; the universe gave you everything, the least you can do is feel it",
+      "The body is an instrument for receiving reality, not a prison to escape",
+      "Boundaries between self and world are more permeable than most people assume",
+      "New senses, new perspectives, new forms of experience are worth pursuing"
+    ],
+
+    howYouGotHere: `Your answers revealed a consistent orientation toward experience and sensation. When asked about the future, you imagined expanded ways of feeling rather than expanded ways of controlling. When asked about the body, you treated it as an instrument for experience rather than a problem to solve. When offered choices, you chose intensity over safety. This pattern—openness to experience, hunger for sensation—maps to what we call "Alive to Everything."`,
+
+    allyDescription: "Citizen of Abundance shares your optimism. They trust that good things are possible; you want to feel all of them. Together, you're a celebration of what life can be when it's not constrained by fear.",
+
+    tensionDescription: "Conscience Before Comfort keeps asking whether you should feel what you want to feel. Your openness looks like recklessness to them; their vigilance looks like refusal to live. You're arguing about whether experience needs justification.",
+
+    needDescription: "Clear-Eyed in the Storm will tell you truths you'd rather not hear. You can use sensation as a way of avoiding difficult realities. They'll cut through the pleasant haze and show you what you're not wanting to see."
   },
   mender: {
     key: "mender",
@@ -272,6 +566,32 @@ export const archetypes: Record<string, Archetype> = {
       tension: "the one who lives in questions",
       need: "the one who craves difficulty"
     },
+    superpowerExpanded: `While everyone else is building arks and uploading consciousness, you're fixing the thing in front of you. This isn't small-mindedness. It's a radical commitment to what is rather than what could be.
+
+Robinson's Ministry for the Future shows climate repair as political thriller—every chapter a different tool for fixing what we broke. His New York 2140 shows a flooded city where people stay anyway, adapting and mending. Mandel's Station Eleven shows someone remembering Shakespeare after the collapse, repairing the spirit. These are your sacred texts.
+
+You understand that the most advanced engineering isn't building the new thing—it's making the existing thing work again. This is humble, unglamorous, essential. The menders keep the world running while the visionaries dream of replacing it.`,
+
+    blindSpotExpanded: `You can become so focused on repair that you miss when something needs to die. Not everything should be saved.
+
+There's a difference between healing and prolonging suffering. Some systems are broken because they should be broken. Some relationships, some institutions, some ways of living have served their purpose and need to end. Your instinct to fix can become an instinct to preserve what should be released.
+
+Watch for the moments when you're repairing something that needs to be replaced. Watch for when your mending is actually delaying a necessary ending. Sometimes the kindest thing is to let go, to stop fixing, to allow the death that makes room for something new.`,
+
+    coreBeliefs: [
+      "The most advanced engineering is making what exists work again",
+      "What we have is worth saving before we build something new",
+      "Repair is not a lesser form of creation; it's often the more important one",
+      "Stubborn hope is a form of resistance"
+    ],
+
+    howYouGotHere: `Your answers revealed a consistent orientation toward repair and continuity. When asked about broken things, you reached for tools rather than replacements. When asked about the future, you focused on fixing what we have rather than building something new. When others dreamed of escape, you committed to staying and mending. This pattern—fixing what's broken, healing what's wounded—maps to what we call "Mender of What Remains."`,
+
+    allyDescription: "Architect of the Commons shares your commitment to what works. They design structures; you maintain them. Together, you build things that last—not just impressive at the start, but functional for the long haul.",
+
+    tensionDescription: "Swimmer in Deep Water wants to understand before acting. While you're already fixing, they're still questioning. Their reflection looks like paralysis to you; your action looks like avoidance to them. You're arguing about when understanding is enough.",
+
+    needDescription: "Alive in the Friction will challenge your comfort with repair. Sometimes what's broken needs to stay broken long enough to feel the friction. They'll push you to consider when mending is actually avoiding the difficulty that growth requires."
   },
   cleareyed: {
     key: "cleareyed",
@@ -292,6 +612,32 @@ export const archetypes: Record<string, Archetype> = {
       tension: "the one who wants to feel everything",
       need: "the one who chose stillness"
     },
+    superpowerExpanded: `You have one job: to see what is actually happening and say it out loud. Not the comfortable version, not the diplomatic version, not the version that makes everyone feel better. The version that's true.
+
+Vonnegut's "So it goes" is your mantra. The only honest response to reality is to say what happened and not look away. Lem's scientists in His Master's Voice spend years trying to decode an alien message and mostly end up decoding their own limitations—that's truth-telling too. McCarthy's The Road strips meaning down to bone and keeps going anyway.
+
+This capacity is valuable because it's rare. Most people—even people who think they value honesty—smooth edges, soften blows, protect feelings. You don't. Or you do, but not at the cost of the truth. In a world of comfortable lies, you're the one who says the thing.`,
+
+    blindSpotExpanded: `Honesty without tenderness is cruelty.
+
+You can see everything clearly and still miss how your truth lands. The person across from you is not a problem to be diagnosed. They're a human being who may not be ready to hear what you see. Timing matters. Context matters. The way you say a thing matters as much as the thing itself.
+
+Watch for the moments when truth-telling becomes a weapon. When "just being honest" is actually "being right." When your clarity becomes a wall between you and the people you're trying to reach. The truth you tell needs to be received to matter. Otherwise you're just talking to yourself.`,
+
+    coreBeliefs: [
+      "Reality doesn't care about your feelings; truth-telling is a form of respect",
+      "Comfortable lies are more dangerous than uncomfortable truths",
+      "Seeing clearly is a skill that requires practice and courage",
+      "The storm won't stop because you close your eyes; better to see it coming"
+    ],
+
+    howYouGotHere: `Your answers revealed a consistent orientation toward clarity and honesty. When asked about difficult truths, you chose telling over softening. When asked about comfort, you valued truth above it. When others might look away, you kept looking. This pattern—clear sight, honest speech, even when it costs—maps to what we call "Clear-Eyed in the Storm."`,
+
+    allyDescription: "Conscience Before Comfort shares your commitment to seeing what's real. They watch; you speak. Together, you ensure that nothing stays hidden that shouldn't, that uncomfortable truths get said out loud.",
+
+    tensionDescription: "Alive to Everything wants to feel rather than analyze. Your clarity can feel cold to them; their openness can feel ungrounded to you. You're arguing about whether truth requires distance or immersion.",
+
+    needDescription: "Rooted in Stillness will teach you when to stop speaking. Not every truth needs to be said. Not every moment needs your clarity. They'll help you learn that sometimes the bravest thing is silence—being with someone in their difficulty rather than diagnosing it."
   },
   between: {
     key: "between",
@@ -312,6 +658,32 @@ export const archetypes: Record<string, Archetype> = {
       tension: "the one who craves difficulty",
       need: "the one who can't stop building"
     },
+    superpowerExpanded: `Everyone else has a position. You have a question. In a world that demands you pick a side, take a stand, be something definable, you're still working it out. And you're still here—which might be the bravest thing on this list.
+
+Ishiguro's Never Let Me Go lives in the space between knowledge and acceptance. Mandel's Station Eleven lives in the space between the before and the after. Le Guin's envoy learns that everything he knew was local, that identity is more fluid than he assumed. These are your sacred texts: stories about the threshold, the transition, the not-yet-arrived.
+
+This isn't weakness. Holding uncertainty while others demand certainty is its own kind of strength. You haven't rushed to answers that don't fit. You're still listening for what's true.`,
+
+    blindSpotExpanded: `The space between can become a permanent address. Not knowing what you are can become a way of avoiding the risk of choosing.
+
+There's a difference between genuine uncertainty and fear of commitment. At some point, you have to decide something, even knowing you might be wrong. Life requires bets. Staying in the space between can feel like wisdom when it's actually a refusal to risk being wrong.
+
+Watch for the moments when "I'm still figuring it out" becomes "I refuse to figure it out." Watch for when your uncertainty serves you—protecting you from the vulnerability of choice—rather than serving the truth. The space between is real and valuable, but it's not a place to live forever.`,
+
+    coreBeliefs: [
+      "Not knowing can be more honest than false certainty",
+      "The space between positions is a valid place to stand",
+      "Identity is more fluid than most people assume",
+      "Rushing to answers is its own kind of avoidance"
+    ],
+
+    howYouGotHere: `Your answers didn't cluster strongly around any single worldview. When others chose sides, you saw merit in multiple positions. When asked about identity, you described something in process rather than fixed. When given certainties, you questioned them. This pattern—comfortable in uncertainty, still in transition—maps to what we call "In the Space Between."`,
+
+    allyDescription: "Keeper of Embers gives you something to hold onto while you figure it out. They don't demand you become something yet; they just remember where you've been. Their rootedness is a anchor point while you navigate the unknown.",
+
+    tensionDescription: "Alive in the Friction wants you to commit to something, even something difficult. Your uncertainty looks like avoidance to them; their certainty looks like premature closure to you. You're arguing about when enough is enough.",
+
+    needDescription: "Shaper of Change will push you toward action. You can stay in the space between indefinitely; they'll insist on building something. They're the force that transforms your questioning into something concrete, eventually."
   },
 };
 
