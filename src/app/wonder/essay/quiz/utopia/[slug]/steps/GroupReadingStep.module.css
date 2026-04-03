@@ -59,7 +59,8 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 12px;
+  padding: 12px 14px;
+  min-height: 44px;
   background: white;
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
@@ -310,7 +311,7 @@
 /* Responsive - Mobile */
 @media (max-width: 480px) {
   .reading {
-    padding: 4.5rem 1.25rem 7rem;
+    padding: 4.5rem 1rem 7rem;
   }
 
   .title {
@@ -318,15 +319,30 @@
   }
 
   .radarCard {
-    padding: 20px;
+    padding: 16px;
+  }
+
+  .breakdownItem {
+    padding: 10px 12px;
   }
 
   .questionSection {
-    padding: 1.25rem 1.5rem;
+    padding: 1.25rem 1.25rem;
   }
 
   .ctaSection {
     flex-direction: column;
+  }
+
+  /* Ensure adequate touch targets on mobile */
+  .inviteButton {
+    min-height: 48px;
+    padding: 0.875rem 1.75rem;
+  }
+
+  .shareButton {
+    min-height: 44px;
+    padding: 0.75rem 1.5rem;
   }
 }
 

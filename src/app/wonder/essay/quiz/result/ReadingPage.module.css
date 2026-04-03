@@ -292,7 +292,53 @@
   font-style: italic;
 }
 
-/* Responsive */
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+  .reading {
+    padding: 2.5rem 1rem 3rem;
+  }
+
+  .name {
+    font-size: 1.875rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 1.125rem;
+  }
+
+  .highlight {
+    font-size: 1.25rem;
+  }
+
+  .relationshipCard,
+  .bookCard {
+    padding: 1rem;
+  }
+
+  /* Ensure adequate touch targets */
+  .primaryBtn {
+    min-height: 48px;
+    padding: 0.875rem 2rem;
+  }
+
+  .secondaryBtn {
+    min-height: 44px;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .bookLink {
+    padding: 0.5rem 0;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* Responsive - Desktop */
 @media (min-width: 640px) {
   .reading {
     padding: 4rem 2rem 5rem;
