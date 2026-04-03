@@ -4,9 +4,7 @@ import { RadarChart } from "@/components/RadarChart";
 import { archetypePositions } from "@/lib/radar-positions";
 import {
   archetypes,
-  getPairDynamicExpanded,
-  getPairDistance,
-  distanceDescriptions,
+  getAnalyticalPairDynamic,
 } from "@/lib/archetypes";
 import type { UtopiaMember } from "@/lib/utopia";
 import styles from "./RelationshipStep.module.css";
@@ -55,12 +53,8 @@ export function RelationshipStep({
     }
   };
 
-  // Get dynamic content using expanded structure
-  const dynamic = getPairDynamicExpanded(you.archetype, them.archetype);
-
-  // Get distance info
-  const { category: distanceCategory } = getPairDistance(you.archetype, them.archetype);
-  const distanceText = distanceDescriptions[distanceCategory];
+  // Get analytical dynamic content
+  const dynamic = getAnalyticalPairDynamic(you.archetype, them.archetype);
 
   const userDots = [
     {
@@ -79,112 +73,135 @@ export function RelationshipStep({
   ];
 
   return (
-    <div className={styles.container}>
+    <div className={styles.reading}>
       <button className={styles.backButton} onClick={onBack}>
         ← Back to group
       </button>
 
       {/* Header */}
-      <div className={styles.header}>
-        <h2 className={styles.title}>
+      <header className={styles.header}>
+        <h1 className={styles.title}>
           <span style={{ color: yourArchetype?.color }}>{you.name || "You"}</span>
           <span className={styles.times}>×</span>
           <span style={{ color: theirArchetype?.color }}>{them.name || "Anonymous"}</span>
-        </h2>
+        </h1>
         <p className={styles.subtitle}>
           {yourArchetype?.name} & {theirArchetype?.name}
         </p>
-      </div>
+      </header>
 
       {/* Radar Card */}
-      <div className={styles.radarCard}>
-        <RadarChart
-          size={280}
-          userDots={userDots}
-          showAllArchetypes={false}
-        />
+      <div className={styles.radarContainer}>
+        <div className={styles.radarCard}>
+          <RadarChart
+            size={280}
+            userDots={userDots}
+            showAllArchetypes={false}
+          />
+        </div>
       </div>
 
       {/* Opening Thesis */}
       <p className={styles.thesis}>"{dynamic.thesis}"</p>
 
-      {/* Content Sections */}
-      <div className={styles.content}>
-        {/* The Distance */}
-        <section className={styles.section}>
-          <h3 className={styles.sectionLabel}>The Distance</h3>
-          <p className={styles.sectionText}>{distanceText}</p>
-        </section>
+      <div className={styles.divider} />
 
-        {/* Superpowers */}
-        <section className={styles.section}>
-          <h3 className={styles.sectionLabel}>Your Superpowers</h3>
-          <div className={styles.superpowerCards}>
-            <div className={styles.superpowerCard} style={{ borderLeftColor: yourArchetype?.color }}>
-              <span className={styles.superpowerName}>{you.name || "You"}</span>
-              <span className={styles.superpowerText}>{yourArchetype?.superpower}</span>
-            </div>
-            <div className={styles.superpowerCard} style={{ borderLeftColor: theirArchetype?.color }}>
-              <span className={styles.superpowerName}>{them.name || "Them"}</span>
-              <span className={styles.superpowerText}>{theirArchetype?.superpower}</span>
-            </div>
+      {/* THE DISTANCE */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>The Distance</h2>
+        <div className={styles.bodyText}>
+          {dynamic.distanceAnalysis.split("\n\n").map((para, i) => (
+            <p key={i}>{para}</p>
+          ))}
+        </div>
+      </section>
+
+      <div className={styles.divider} />
+
+      {/* THE DYNAMIC */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>The Dynamic</h2>
+        <div className={styles.bodyText}>
+          {dynamic.dynamic.split("\n\n").map((para, i) => (
+            <p key={i}>{para}</p>
+          ))}
+        </div>
+      </section>
+
+      <div className={styles.divider} />
+
+      {/* WHERE YOU ALIGN */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>Where You Align</h2>
+        {dynamic.align.map((item, i) => (
+          <div key={i} className={styles.expandedPoint}>
+            <h3 className={styles.pointHeading}>{item.point}</h3>
+            <p className={styles.bodyTextBlock}>{item.explanation}</p>
           </div>
-        </section>
+        ))}
+      </section>
 
-        {/* Where You Align */}
-        <section className={styles.section}>
-          <h3 className={styles.sectionLabel}>Where You Align</h3>
-          <ul className={styles.bulletList}>
-            {dynamic.align.map((point, i) => (
-              <li key={i}>{point}</li>
-            ))}
-          </ul>
-        </section>
+      <div className={styles.divider} />
 
-        {/* Where You'll Clash */}
-        <section className={styles.section}>
-          <h3 className={styles.sectionLabel}>Where You'll Clash</h3>
-          <ul className={styles.bulletList}>
-            {dynamic.clash.map((point, i) => (
-              <li key={i}>{point}</li>
-            ))}
-          </ul>
-        </section>
-
-        {/* What You Give Each Other */}
-        <section className={styles.section}>
-          <h3 className={styles.sectionLabel}>What You Give Each Other</h3>
-          <div className={styles.giveCards}>
-            <div className={styles.giveCard}>
-              <span className={styles.giveName} style={{ color: yourArchetype?.color }}>{you.name || "You"}</span>
-              <p className={styles.giveText}>{dynamic.give.youToThem}</p>
-            </div>
-            <div className={styles.giveCard}>
-              <span className={styles.giveName} style={{ color: theirArchetype?.color }}>{them.name || "Them"}</span>
-              <p className={styles.giveText}>{dynamic.give.themToYou}</p>
-            </div>
+      {/* WHERE YOU'LL CLASH */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>Where You'll Clash</h2>
+        {dynamic.clash.map((item, i) => (
+          <div key={i} className={styles.expandedPoint}>
+            <h3 className={styles.pointHeading}>{item.point}</h3>
+            <p className={styles.bodyTextBlock}>{item.explanation}</p>
           </div>
-        </section>
+        ))}
+      </section>
 
-        {/* A Question for You Both */}
-        <section className={styles.questionSection}>
-          <h3 className={styles.sectionLabel}>A Question for You Both</h3>
-          <p className={styles.questionText}>"{dynamic.question}"</p>
-        </section>
+      <div className={styles.divider} />
 
-        {/* Warning Section (for high-tension pairs) */}
-        {dynamic.warning && (
-          <section className={styles.warningSection}>
-            <h3 className={styles.sectionLabel}>Watch Out For</h3>
-            <p className={styles.warningText}>{dynamic.warning}</p>
-          </section>
-        )}
+      {/* WHAT YOU EXCHANGE */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>What You Exchange</h2>
+
+        <div className={styles.exchangeBlock}>
+          <h4 className={styles.exchangeName} style={{ color: yourArchetype?.color }}>
+            What {you.name || "You"} gives {them.name || "Them"}
+          </h4>
+          <p className={styles.bodyTextBlock}>{dynamic.give.youToThem}</p>
+        </div>
+
+        <div className={styles.exchangeBlock}>
+          <h4 className={styles.exchangeName} style={{ color: theirArchetype?.color }}>
+            What {them.name || "Them"} gives {you.name || "You"}
+          </h4>
+          <p className={styles.bodyTextBlock}>{dynamic.give.themToYou}</p>
+        </div>
+      </section>
+
+      <div className={styles.divider} />
+
+      {/* THE RISK */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>The Risk</h2>
+        <div className={styles.bodyText}>
+          {dynamic.risk.split("\n\n").map((para, i) => (
+            <p key={i}>{para}</p>
+          ))}
+        </div>
+      </section>
+
+      <div className={styles.divider} />
+
+      {/* A QUESTION FOR YOU BOTH */}
+      <section className={styles.questionSection}>
+        <h2 className={styles.sectionTitle}>A Question for You Both</h2>
+        <p className={styles.questionText}>"{dynamic.question.text}"</p>
+        <p className={styles.questionFraming}>{dynamic.question.framing}</p>
+      </section>
+
+      {/* Share Button */}
+      <div className={styles.ctaSection}>
+        <button className={styles.shareButton} onClick={handleShare}>
+          Share This Reading
+        </button>
       </div>
-
-      {/* Share button */}
-      <button className={styles.shareButton} onClick={handleShare}>
-        Share This Relationship
-      </button>
 
       {/* Swipe navigation */}
       {(hasNext || hasPrev) && (
