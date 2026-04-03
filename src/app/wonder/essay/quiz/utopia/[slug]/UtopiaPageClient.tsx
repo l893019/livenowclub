@@ -270,7 +270,7 @@ export function UtopiaPageClient({
           ← Back to radar
         </button>
         <main className={styles.readingMain}>
-          <GroupReadingStep members={members} />
+          <GroupReadingStep members={members} utopiaName={utopiaName} utopiaSlug={slug} />
           <div className={styles.shareWrapper}>
             <ShareSection shareUrl={shareUrl} onShare={handleShare} />
           </div>

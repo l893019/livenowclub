@@ -1,107 +1,372 @@
-.container {
+/* GroupReadingStep.module.css */
+/* Full analytical group reading - matches RelationshipStep styling */
+
+.reading {
   min-height: 100vh;
-  padding: 100px 24px 120px;
   background: #faf6f1;
-  max-width: 600px;
+  padding: 5rem 1.5rem 8rem;
+  max-width: 640px;
   margin: 0 auto;
+  position: relative;
 }
 
-.section {
-  margin-bottom: 40px;
-}
-
-.sectionLabel {
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: rgba(45, 42, 38, 0.45);
-  margin-bottom: 12px;
+/* Header */
+.header {
   text-align: center;
+  margin-bottom: 2rem;
 }
 
-.strengthsCard,
-.blindSpotCard,
-.bookCard {
-  background: white;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-  text-align: center;
-}
-
-.strengthsText {
-  font-size: 1.1rem;
+.title {
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin: 0 0 0.5rem;
   color: #2d2a26;
-  line-height: 1.7;
-  text-transform: capitalize;
+  line-height: 1.3;
 }
 
-.blindSpotCard {
-  background: rgba(0, 0, 0, 0.03);
+.subtitle {
+  font-size: 0.95rem;
+  color: rgba(45, 42, 38, 0.5);
+  font-weight: 400;
+  margin: 0;
 }
 
-.blindSpotText {
-  font-size: 1.05rem;
+/* Radar */
+.radarContainer {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0 2rem;
+}
+
+.radarCard {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.06),
+    0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Archetype Breakdown List */
+.breakdownList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.breakdownItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.breakdownDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.breakdownName {
+  font-size: 0.9rem;
+  color: #2d2a26;
+  flex: 1;
+}
+
+.breakdownCount {
+  font-size: 0.85rem;
+  color: rgba(45, 42, 38, 0.5);
+}
+
+/* Sections */
+.section {
+  margin-bottom: 0;
+}
+
+.sectionTitle {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #2d2a26;
+  margin: 0 0 1rem;
+  letter-spacing: 0.02em;
+}
+
+.divider {
+  height: 1px;
+  background: rgba(45, 42, 38, 0.1);
+  margin: 2.5rem 0;
+}
+
+/* Body Text */
+.bodyText {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(45, 42, 38, 0.85);
+}
+
+.bodyText p {
+  margin: 0 0 1rem;
+}
+
+.bodyText p:last-child {
+  margin-bottom: 0;
+}
+
+/* Superpower Title */
+.superpowerTitle {
+  font-size: 1.25rem;
   font-style: italic;
-  color: rgba(45, 42, 38, 0.8);
-  line-height: 1.7;
+  color: #2d2a26;
+  margin: 0 0 1rem;
+  text-align: center;
 }
 
-.missingList {
+/* Missing Voices */
+.missingVoice {
+  margin-bottom: 2rem;
+}
+
+.missingVoice:last-child {
+  margin-bottom: 0;
+}
+
+.missingVoiceName {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 0 0.25rem;
+}
+
+.missingVoiceTagline {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: rgba(45, 42, 38, 0.6);
+  margin: 0 0 0.75rem;
+}
+
+/* Internal Tensions */
+.tension {
+  margin-bottom: 2rem;
+}
+
+.tension:last-child {
+  margin-bottom: 0;
+}
+
+.tensionHeader {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.tensionX {
+  color: rgba(45, 42, 38, 0.3);
+  font-weight: 300;
+}
+
+.tensionLevel {
+  color: rgba(45, 42, 38, 0.5);
+  font-weight: 400;
+}
+
+.tensionThesis {
+  font-size: 1rem;
+  font-style: italic;
+  color: rgba(45, 42, 38, 0.75);
+  margin: 0 0 0.75rem;
+}
+
+/* Question Section */
+.questionSection {
+  background: #fff8f0;
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 0;
+}
+
+.questionSection .sectionTitle {
+  margin-bottom: 1rem;
+}
+
+.questionContext {
+  font-size: 0.9375rem;
+  color: rgba(45, 42, 38, 0.75);
+  line-height: 1.65;
+  margin: 0 0 1rem;
+}
+
+.questionText {
+  font-size: 1.125rem;
+  font-style: italic;
+  color: #2d2a26;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Invite Section */
+.inviteIntro {
+  font-size: 0.95rem;
+  color: rgba(45, 42, 38, 0.6);
+  margin: 0 0 0.75rem;
+  text-align: center;
+}
+
+.recommendedArchetype {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.recommendedName {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin: 0 0 0.25rem;
+}
+
+.recommendedTagline {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: rgba(45, 42, 38, 0.6);
+  margin: 0;
+}
+
+/* CTA Section */
+.ctaSection {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  margin: 2.5rem 0 0;
+  align-items: center;
 }
 
-.missingItem {
-  background: white;
-  border-radius: 12px;
-  padding: 16px 20px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-}
-
-.missingName {
-  font-size: 12px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  text-decoration: none;
-  transition: opacity 0.2s;
-}
-
-.missingName:hover {
-  opacity: 0.7;
-}
-
-.missingInsight {
-  font-size: 0.95rem;
-  color: rgba(45, 42, 38, 0.7);
-  margin-top: 4px;
-  line-height: 1.6;
-}
-
-.bookTitle {
+.inviteButton {
+  padding: 1rem 2rem;
+  background: #e8178a;
+  border: none;
+  border-radius: 50px;
+  color: white;
   font-size: 1rem;
-  margin-bottom: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+  box-shadow: 0 4px 16px rgba(232, 23, 138, 0.25);
+  width: 100%;
+  max-width: 280px;
 }
 
-.bookTitleText {
-  font-style: italic;
+.inviteButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(232, 23, 138, 0.35);
+}
+
+.shareButton {
+  padding: 0.875rem 1.75rem;
+  background: transparent;
+  border: 1px solid rgba(45, 42, 38, 0.2);
+  border-radius: 50px;
+  color: rgba(45, 42, 38, 0.7);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+  width: 100%;
+  max-width: 280px;
+}
+
+.shareButton:hover {
+  border-color: rgba(45, 42, 38, 0.4);
   color: #2d2a26;
 }
 
-.bookAuthor {
-  color: rgba(45, 42, 38, 0.6);
+/* Empty State */
+.emptyState {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
-.bookLink {
-  font-size: 0.85rem;
-  color: #e8178a;
-  text-decoration: none;
-  transition: opacity 0.2s;
+.emptyState p {
+  font-size: 1rem;
+  color: rgba(45, 42, 38, 0.7);
+  line-height: 1.6;
+  margin: 0 0 0.5rem;
 }
 
-.bookLink:hover {
-  opacity: 0.7;
+.emptyState p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+  .reading {
+    padding: 4.5rem 1.25rem 7rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .radarCard {
+    padding: 20px;
+  }
+
+  .questionSection {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .ctaSection {
+    flex-direction: column;
+  }
+}
+
+/* Responsive - Desktop */
+@media (min-width: 640px) {
+  .reading {
+    padding: 5rem 2rem 9rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .radarCard {
+    padding: 32px;
+  }
+
+  .sectionTitle {
+    font-size: 1.25rem;
+  }
+
+  .bodyText {
+    font-size: 1.0625rem;
+  }
+
+  .questionSection {
+    padding: 2rem 2.25rem;
+  }
+
+  .questionText {
+    font-size: 1.25rem;
+  }
+
+  .ctaSection {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .inviteButton,
+  .shareButton {
+    width: auto;
+  }
 }
