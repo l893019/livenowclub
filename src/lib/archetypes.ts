@@ -2200,6 +2200,441 @@ The deeper risk is that transcendence becomes a substitute for intimacy. Two Unb
       text: "What would ground you both without limiting you—and what intimacy might you be avoiding by always reaching for beyond?",
       framing: `This question matters because it asks you to consider both what you need to stay connected to and what your reaching might be protecting you from. The first part honors your shared vision; the second invites you to look at what might be getting lost.`
     }
+  },
+
+  // ===== OPPOSITE-ARCHETYPE PAIRS (8 total) =====
+  // These pairs sit at maximum philosophical distance (distance > 1.0)
+
+  "embers+shaper": {
+    thesis: "One builds to change the world; the other guards to preserve it. The future and the past, locked in permanent negotiation.",
+
+    distanceAnalysis: `Keeper of Embers and Shaper of Change occupy opposite ends of a fundamental axis: time orientation. The Shaper lives in the future tense, already imagining what comes next, treating the present as raw material for transformation. The Keeper lives in the past tense, already remembering what came before, treating the present as a thread in an unbroken line of inheritance. This isn't merely a difference in preference—it's a difference in what each believes matters most about being human.
+
+The distance between you maps onto one of philosophy's oldest tensions: preservation versus transformation. The Shaper asks "what can we build?" while the Keeper asks "what must we not lose?" These questions sound compatible until resources are scarce—until the Shaper needs to demolish the old building to make room for the new one, until the Keeper realizes the only way to preserve something is to prevent its replacement. Then the fundamental incompatibility reveals itself: you're not just prioritizing differently. You're operating from different definitions of progress.`,
+
+    dynamic: `At its core, this pairing creates a permanent argument about what deserves to survive. The Shaper sees change as life itself—"adapt or calcify" is their motto. Stagnation is death. The moment you stop building, you start dying. The Keeper sees memory as life itself—without continuity, there is no identity, no wisdom, no foundation. The moment you stop remembering, you've already lost.
+
+This makes every shared decision a negotiation across this gap. When the Shaper proposes tearing something down to build anew, the Keeper experiences it as violence against meaning. When the Keeper proposes preserving what exists, the Shaper experiences it as surrender to entropy. Neither is wrong. Both are seeing something real. The Shaper is right that clinging to the past can become its own death—the archive as mausoleum. The Keeper is right that endless revolution can become its own amnesia—the construction site that builds the same mistakes with different names.
+
+The gift of this pairing is that it forces both of you to defend your instincts, to articulate what you're actually protecting or pursuing. The Shaper, challenged by the Keeper, must answer: "What wisdom am I discarding in my rush to build? What has been tried before? What failed, and why?" The Keeper, challenged by the Shaper, must answer: "What am I preserving out of genuine value versus mere familiarity? When did this tradition serve people, and does it still?" These are questions neither would ask alone.`,
+
+    align: [
+      {
+        point: "Both believe something matters beyond the immediate moment",
+        explanation: `Despite your opposing time orientations, you share a conviction that the present moment is not self-justifying. The Shaper builds for a future they may never see; the Keeper preserves for descendants who will never thank them. Both of you are working for something larger than yourselves, something that extends beyond your individual lifespans. This shared sense of being part of a larger story—even if you disagree about which direction the story goes—creates unexpected common ground.`
+      },
+      {
+        point: "Both take stewardship seriously",
+        explanation: `Whether you're building or preserving, you both understand yourselves as stewards rather than owners. The Shaper isn't building for ego gratification but because they believe the built thing will serve something larger. The Keeper isn't preserving for nostalgia but because they believe the preserved thing carries wisdom that must survive them. This shared sense of responsibility—the understanding that what you do matters for people you'll never meet—connects you across your differences.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "What counts as progress",
+        explanation: `This is the fundamental disagreement: the Shaper believes progress means building something new, while the Keeper believes progress means not losing something old. When the Shaper looks at a crumbling institution and sees raw material for transformation, the Keeper sees wisdom being abandoned. When the Keeper looks at an ancient practice being preserved and sees cultural continuity, the Shaper sees calcification preventing growth. You're not just disagreeing about tactics—you're disagreeing about what "better" means.`
+      },
+      {
+        point: "The value of disruption",
+        explanation: `The Shaper believes disruption can be generative—that breaking the old system is sometimes the necessary first step toward building a better one. The Keeper believes disruption destroys faster than it creates—that the Shaper's confidence in building from rubble ignores how much was lost in the demolition. This clash often plays out in specific decisions: whether to reform an institution or replace it, whether to adapt a tradition or preserve it unchanged, whether change should be incremental or revolutionary.`
+      },
+      {
+        point: "What gets sacrificed",
+        explanation: `The Shaper is willing to sacrifice continuity for transformation. The Keeper is willing to sacrifice innovation for preservation. Each believes the other's sacrifice is too costly. The Shaper watches the Keeper defend traditions that seem to have outlived their usefulness and sees resources wasted on the already-dead. The Keeper watches the Shaper discard practices that carry accumulated wisdom and sees irreplaceable knowledge being thrown away. Both sacrifices are real. Both losses are real.`
+      }
+    ],
+
+    give: {
+      youToThem: `You offer the Shaper roots. Their instinct is to build from scratch, but scratch doesn't exist—everything is built on something. You remind them what that something is. You carry the memory of what was tried before, what worked and what failed, what patterns repeat across generations. Without you, the Shaper risks building beautiful structures on foundations that have already proven unstable. You're not trying to stop them from building; you're trying to ensure they don't build the same collapses again.`,
+      themToYou: `They offer you liberation from the weight of the past. Your instinct is to preserve, but not everything old is worth keeping—some traditions were always unjust, some practices have been superseded by better ones, some memories are chains. The Shaper challenges you to distinguish between genuine wisdom and mere familiarity, between traditions that serve and traditions that suffocate. They remind you that the embers you tend are supposed to light new fires, not just glow in the dark.`
+    },
+
+    risk: `The failure mode of this pairing is mutual contempt disguised as principle. The Shaper starts seeing the Keeper as a reactionary obstacle, someone too attached to what was to imagine what could be. The Keeper starts seeing the Shaper as a reckless destroyer, someone too intoxicated by change to appreciate what's being lost. The argument shifts from productive tension to positional warfare, where each is defending their identity rather than engaging with the other's actual concerns.
+
+The deeper risk is that you stop listening to what's valid in the other's perspective. The Shaper stops asking "what should be preserved?" The Keeper stops asking "what needs to change?" At that point, you're no longer complementing each other—you're just two people locked in opposition, each becoming a more extreme version of themselves because the other represents everything they reject.`,
+
+    question: {
+      text: "What would it look like to build something new that carries forward what matters most from what came before—and how would you decide together what 'matters most' means?",
+      framing: `This question matters because it refuses the false binary between preservation and transformation. It asks you to imagine a synthesis that honors both orientations—and, crucially, to negotiate together what deserves that honor. The answer can't come from either perspective alone.`
+    }
+  },
+
+  "rooted+shaper": {
+    thesis: "Stillness meets perpetual motion. One asks 'why are we running?' while the other asks 'why are we standing still?'",
+
+    distanceAnalysis: `Rooted in Stillness and Shaper of Change sit at maximum philosophical distance because they embody opposite answers to a fundamental question: what is the relationship between action and meaning? The Shaper believes meaning emerges from creation—you matter because you build, transform, leave marks on the world. The Rooted believes meaning exists independent of action—you matter simply by being present, by refusing the cultural imperative to always produce more.
+
+This isn't a difference that can be resolved by finding the right balance. The Shaper genuinely believes that stopping is a form of dying—that the person who stops building is calcifying, surrendering to entropy. The Rooted genuinely believes that constant building is a form of fleeing—that the person who can't stop is running from something they refuse to face. Each experiences the other's way of being as not just different but fundamentally mistaken about what life is for.`,
+
+    dynamic: `At its core, this pairing forces a confrontation with one of modernity's deepest assumptions: that productivity equals worth. The Shaper has internalized this equation, not thoughtlessly but philosophically—they believe that humans are creative beings who flourish through making, that our unique gift is the ability to reshape the world. The Rooted has rejected this equation, also not thoughtlessly but philosophically—they believe the equation is a trap, that the compulsion to always produce more is a cultural sickness disguised as virtue.
+
+When these two meet, the Shaper sees the Rooted as someone who has given up—not peaceful but defeated, not wise but retreated. The Rooted sees the Shaper as someone who can't face stillness—not creative but compulsive, not building toward something but running from themselves. Both are seeing something real. The Shaper is right that the Rooted's stillness can become withdrawal, a way of avoiding engagement with a world that needs changing. The Rooted is right that the Shaper's motion can become flight, a way of avoiding presence with a life that needs living.
+
+The gift of this tension is that it forces each of you to examine your own relationship with action. The Shaper must ask: "Am I building because it serves something, or because I can't bear to stop?" The Rooted must ask: "Am I still because it's the wise choice, or because I'm afraid to move?" These questions only arise when you're in genuine dialogue with someone who embodies the opposite answer.`,
+
+    align: [
+      {
+        point: "Both have chosen deliberately",
+        explanation: `Neither of you arrived at your position by accident or passivity. The Shaper didn't become a builder because they couldn't imagine anything else—they chose building after considering alternatives. The Rooted didn't become still because they failed at motion—they chose stillness after experiencing its opposite. This shared sense of deliberate choice, of having arrived at your position through thought rather than drift, creates an unexpected respect across your differences. You may disagree about conclusions, but you recognize someone who has actually thought about it.`
+      },
+      {
+        point: "Both reject the default",
+        explanation: `The default in modern culture is neither pure motion nor pure stillness—it's anxious oscillation, busy without purpose, resting without presence. The Shaper rejects this by committing fully to creation. The Rooted rejects this by committing fully to presence. In your different ways, you've both said "no" to the hollow productivity that passes for meaning in most lives. This shared rejection of the cultural default connects you, even as you've chosen opposite alternatives to it.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "What constitutes a life well-lived",
+        explanation: `The Shaper measures a life by what it creates, transforms, leaves behind. When they imagine their final days, they want to look back on a world they've changed. The Rooted measures a life by its quality of presence, its depth of being. When they imagine their final days, they want to have actually lived the days they were given. These are genuinely different visions of flourishing, and they create friction whenever you must make shared decisions about how to spend limited time and energy.`
+      },
+      {
+        point: "The meaning of rest",
+        explanation: `For the Shaper, rest is instrumental—you rest to build better tomorrow. Stillness without purpose is wasted time, life unlived. For the Rooted, rest is meaningful in itself—you don't rest for something, you rest as a way of being fully present. The Shaper's instrumental view of rest feels hollow to the Rooted; the Rooted's end-in-itself view of rest feels lazy to the Shaper. Neither can understand why the other can't see something so obvious.`
+      },
+      {
+        point: "Response to problems",
+        explanation: `When something is wrong, the Shaper's instinct is to fix it—to build, change, transform. Sitting with a problem feels like defeat. The Rooted's instinct is to understand it first—to be present to what is rather than immediately reaching for what should be. Acting without understanding feels like avoidance. This clash shows up constantly: the Shaper thinks the Rooted is passively accepting what should be changed; the Rooted thinks the Shaper is anxiously doing to avoid simply being.`
+      }
+    ],
+
+    give: {
+      youToThem: `You offer the Shaper permission to stop. Their culture has told them that worth comes from production, that rest is for the depleted, that stillness is stagnation. You model a different possibility: that a human being is not a productivity machine, that stopping can be a choice rather than a failure, that there is something valuable in simply being present that cannot be achieved through constant doing. You don't invalidate their building—you remind them there's something worth building for, and it requires presence to appreciate.`,
+      themToYou: `They offer you the challenge of engagement. Your stillness is real and valuable, but it exists in a world where things are broken, where people are suffering, where some problems require action to address. The Shaper reminds you that presence without engagement can become withdrawal, that the monk on the mountain didn't solve the suffering in the valley. They challenge you to distinguish between stillness as wisdom and stillness as hiding from the difficult work of changing what needs changing.`
+    },
+
+    risk: `The failure mode of this pairing is mutual dismissal. The Shaper stops taking the Rooted seriously—sees them as someone who has retreated from real life, whose "wisdom" is actually just dressed-up surrender. The Rooted stops taking the Shaper seriously—sees them as someone trapped in compulsion, whose "creativity" is actually just anxious flight from themselves. At this point, you're no longer learning from each other—you're just confirming your existing worldviews by having someone to reject.
+
+The deeper risk is that you each become more extreme in reaction to the other. The Shaper, confronted with someone who questions productivity itself, doubles down on building to prove their life has meaning. The Rooted, confronted with someone who won't stop moving, retreats further into stillness to prove they don't need to. Instead of the productive tension that could help both of you grow, you end up reinforcing each other's blind spots.`,
+
+    question: {
+      text: "What would it look like to act from stillness rather than despite it—to build something worth building precisely because you've stopped long enough to know what matters?",
+      framing: `This question matters because it points toward a synthesis that neither perspective can reach alone. It asks whether creation and presence might not be opposites but complements—whether the deepest building might emerge from the deepest stillness, and whether true presence might include engaged action.`
+    }
+  },
+
+  "friction+rooted": {
+    thesis: "One chose stillness. The other craves difficulty. Are they describing the same peace from opposite directions, or fundamentally different lives?",
+
+    distanceAnalysis: `Alive in the Friction and Rooted in Stillness occupy opposite positions on the axis of engagement with resistance. The Friction-seeker believes that meaning emerges from struggle—that ease is more dangerous than difficulty, that something essential in us requires opposition to stay alive. The Rooted believes that meaning exists in presence—that the compulsion toward struggle can be its own trap, that stopping is sometimes the bravest and most meaningful choice.
+
+What makes this distance so profound is that each sees the other's core value as the thing they've deliberately rejected. The Friction-seeker has rejected ease because they believe it leads to atrophy of the soul. The Rooted has rejected struggle for its own sake because they believe it becomes an addiction that prevents presence. When you meet, you're not just encountering different preferences—you're encountering someone who has thought carefully about your deepest value and concluded it's a mistake.`,
+
+    dynamic: `At its core, this pairing creates a fundamental argument about what human beings actually need. The Friction-seeker believes we need resistance—that muscles only strengthen under load, that growth requires challenge, that ease slowly kills the capacity for engagement. The Rooted believes we need presence—that the compulsion to always struggle prevents us from being where we are, that rest is not failure but completion, that there is something valuable in simply being that effort cannot achieve.
+
+The dynamic between you is one of mutual bewilderment that can become mutual provocation. The Friction-seeker looks at the Rooted and genuinely cannot understand why someone would choose stillness when they could choose difficulty. Don't they feel the atrophy? The emptiness? The Rooted looks at the Friction-seeker and genuinely cannot understand why someone would seek struggle when they could find peace. Don't they feel the exhaustion? The flight?
+
+But this mutual bewilderment can also become mutual illumination. The Friction-seeker, in conversation with the Rooted, may discover that their craving for difficulty has become compulsive—that they seek struggle not because it serves them but because they don't know how to stop. The Rooted, in conversation with the Friction-seeker, may discover that their stillness has become avoidance—that they've chosen peace not because it's wise but because engagement feels too hard.`,
+
+    align: [
+      {
+        point: "Both have rejected the default busyness",
+        explanation: `Modern life offers a third option that neither of you has chosen: anxious productivity without meaningful challenge, motion without purpose, busy-ness that is neither true struggle nor true rest. The Friction-seeker rejects this by insisting that if you're going to work hard, it should be at something genuinely difficult. The Rooted rejects this by insisting that if you're going to stop, you should actually stop rather than fidget. In your different ways, you've both refused the hollow middle ground of meaningless effort.`
+      },
+      {
+        point: "Both seek authenticity over comfort",
+        explanation: `The Friction-seeker doesn't seek difficulty because it's comfortable—they seek it because they believe it's true to what humans need. The Rooted doesn't seek stillness because it's easy—they seek it because they believe it's true to what life actually is. Both of you prioritize something real over something merely pleasant. This shared commitment to authenticity, even when it's challenging, connects you across your different conclusions.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "What 'growth' means",
+        explanation: `The Friction-seeker believes growth requires challenge—that you become stronger, wiser, more alive through struggle. Without resistance, you stagnate. The Rooted believes growth can happen in stillness—that depth requires stopping long enough to let understanding arise, that constant challenge can prevent the integration that makes growth meaningful. You're not just disagreeing about how to grow; you're disagreeing about what growth even is.`
+      },
+      {
+        point: "The role of ease",
+        explanation: `The Friction-seeker treats ease as dangerous—a trap that looks like reward but is actually atrophy in disguise. The Rooted treats ease as potentially wise—sometimes the right response is to stop trying so hard, to receive rather than strive. When the Friction-seeker sees the Rooted at rest, they see someone falling into the trap. When the Rooted sees the Friction-seeker seeking struggle, they see someone addicted to effort.`
+      },
+      {
+        point: "What we're running from",
+        explanation: `Each suspects the other of avoidance. The Friction-seeker suspects that the Rooted's stillness is actually fear of challenge—that they've dressed up retreat as wisdom. The Rooted suspects that the Friction-seeker's struggle is actually fear of presence—that they've dressed up flight as growth. Both suspicions might be partially true, which makes them hard to dismiss. The friction in this relationship often centers on this mutual accusation of running.`
+      }
+    ],
+
+    give: {
+      youToThem: `If you're the Friction-seeker, you offer the Rooted a challenge to their stillness—not to destroy it, but to test it. Is their peace genuine or merely comfortable? Can they meet difficulty without losing their center? You reveal whether their stillness is rooted deep enough to withstand the storms, or whether it's actually just avoidance of anything that might disturb them. The gift is the test itself.`,
+      themToYou: `If you're the Rooted, you offer the Friction-seeker a different kind of challenge: the challenge of stopping. Can they sit with stillness? Can they be present without reaching for the next difficulty? You reveal whether their struggle-seeking serves genuine growth or is actually an escape from the vulnerability of just being here. Sometimes the hardest thing is doing nothing. The gift is the question: what are you running from?`
+    },
+
+    risk: `The failure mode of this pairing is escalation in opposite directions. The Friction-seeker, confronted with someone who questions the value of struggle, seeks ever more extreme challenges to prove their way is right. The Rooted, confronted with someone who won't stop striving, retreats further into stillness to prove their peace is real. Instead of productive tension, you get polarization—each of you becoming a caricature in reaction to the other.
+
+The deeper risk is that you stop being curious about each other's perspective. The Friction-seeker decides the Rooted has nothing to teach them—their stillness is just surrender with better marketing. The Rooted decides the Friction-seeker has nothing to teach them—their striving is just addiction with philosophical justification. At that point, the relationship becomes a dead end: two people confirmed in their existing views rather than expanded by encountering difference.`,
+
+    question: {
+      text: "What difficulty would you choose if you knew it would lead to deeper peace—and what peace would you accept if you knew it included genuine challenge?",
+      framing: `This question matters because it asks whether your categories might be less opposed than they seem. It invites the Friction-seeker to consider that the deepest struggles might serve stillness, and invites the Rooted to consider that genuine peace might include embracing difficulty. The answer requires both perspectives to speak.`
+    }
+  },
+
+  "embers+unbound": {
+    thesis: "The guardian of memory meets the dreamer of transcendence. One looks back to preserve; the other looks forward to leave everything behind.",
+
+    distanceAnalysis: `Keeper of Embers and Unbound from Form represent opposite orientations toward human inheritance. The Keeper believes that the accumulated wisdom of generations—the traditions, practices, memories, and meanings that have been passed down—is precious and must be tended. The Unbound believes that the boundaries of what we are, including the boundaries of inherited identity, are limitations to be transcended rather than treasures to be preserved.
+
+This distance runs deeper than preference. The Keeper's entire project depends on valuing continuity—the thread that connects ancestor to descendant, past to future, what was to what is. The Unbound's entire project depends on valuing transcendence—the possibility of becoming something so different that the categories of the past no longer apply. Each finds the other's deepest commitment fundamentally misguided: the Keeper sees the Unbound as recklessly discarding what cannot be recovered; the Unbound sees the Keeper as lovingly preserving what ought to be outgrown.`,
+
+    dynamic: `At its core, this pairing creates a fundamental argument about what deserves to survive as humans change. The Keeper tends embers—keeps alive the wisdom, practices, and meanings that might otherwise be lost. The Unbound imagines futures where the very concept of "embers" might not translate—where consciousness runs on different substrates, identity works differently, and the human form is optional.
+
+The dynamic between you is one of deep mutual incomprehension that can become either contempt or fascination. The Keeper looks at the Unbound and sees someone so eager to escape that they'll throw away everything that makes us human. What good is transcendence if it means forgetting who we were? The Unbound looks at the Keeper and sees someone so attached to what was that they can't imagine what could be. What good is memory if it chains us to limitations we could surpass?
+
+But genuine dialogue between these positions is rare and valuable precisely because it's difficult. The Keeper, challenged by the Unbound, must ask: what in my treasured inheritance is genuinely wise, and what is merely familiar? What would I want to survive into any future worth having? The Unbound, challenged by the Keeper, must ask: what might I be losing in my rush toward transcendence? What wisdom have I dismissed as limitation that might actually be worth carrying forward?`,
+
+    align: [
+      {
+        point: "Both take the long view",
+        explanation: `The Keeper thinks in generations—they're tending embers so fires can be relit long after they're gone. The Unbound thinks in evolutionary timescales—they're imagining what we might become across thousands or millions of years. Both of you are oriented toward something larger than the individual lifespan, something that extends beyond your personal experience. This shared temporal scope creates unexpected common ground: you're both thinking about what endures, even if you disagree about what should.`
+      },
+      {
+        point: "Both take inheritance seriously",
+        explanation: `The Keeper values inheritance enough to preserve it. The Unbound values it enough to carefully consider what to transcend. Neither of you treats the human past as irrelevant—you just have opposite responses to it. This shared seriousness about what we've received means that your arguments, when you have them, are substantive rather than dismissive. You're both engaging with the question of what our inheritance means.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "What 'human' means",
+        explanation: `The Keeper believes being human means being connected to what came before—that identity is woven from inherited meanings, practices, and memories. The Unbound believes being human might be a starting point rather than a destination—that our identity can expand beyond its current form. When the Keeper says "this is what makes us human," the Unbound says "why should we be limited to that?" This is a fundamental disagreement about the nature of identity itself.`
+      },
+      {
+        point: "The weight of the past",
+        explanation: `The Keeper experiences the past as treasure—accumulated wisdom that must be carefully preserved and transmitted. The Unbound experiences the past as weight—accumulated limitations that must be carefully examined and potentially transcended. When the Keeper celebrates preservation, the Unbound sees attachment. When the Unbound celebrates transcendence, the Keeper sees abandonment.`
+      },
+      {
+        point: "What gets lost",
+        explanation: `The Keeper fears that the Unbound will discard things that can never be recovered—that in the rush toward transcendence, irreplaceable wisdom will be thrown away. The Unbound fears that the Keeper will preserve things that prevent becoming—that in the devotion to what was, the possibility of what could be gets suffocated. Both fears are legitimate. Both losses are real possibilities.`
+      }
+    ],
+
+    give: {
+      youToThem: `If you're the Keeper, you offer the Unbound something to remember when they transcend. Your archive isn't a chain—it's a record of what consciousness has already discovered, already felt, already tried. You offer the possibility that transcendence doesn't have to mean forgetting, that whatever we become might be richer for carrying forward what we've learned. You're not trying to prevent their reaching; you're trying to ensure they bring something worth carrying.`,
+      themToYou: `If you're the Unbound, you offer the Keeper liberation from the weight of preservation. Not everything old deserves to survive—some traditions were always unjust, some memories are chains, some inherited wisdom is actually inherited limitation. You offer the possibility that letting go can be faithful rather than faithless, that the best way to honor the fire might sometimes be to let it transform into something new rather than tending the same embers forever.`
+    },
+
+    risk: `The failure mode of this pairing is dismissal masquerading as philosophy. The Keeper decides the Unbound is simply running from real life—their transcendence is just escape dressed up as evolution. The Unbound decides the Keeper is simply afraid of change—their preservation is just fear dressed up as wisdom. Once you've dismissed each other this way, genuine dialogue becomes impossible.
+
+The deeper risk is that you stop asking the questions that only arise in this tension. The Keeper stops asking "what should be allowed to change?" The Unbound stops asking "what should be preserved across any change?" These are crucial questions that neither of you can answer alone, and they only emerge when you're genuinely engaged with someone who embodies the opposite orientation.`,
+
+    question: {
+      text: "If you could preserve exactly one thing through any transformation—one insight, one practice, one piece of wisdom—what would it be, and how would you know it was worth carrying?",
+      framing: `This question matters because it forces both perspectives into genuine dialogue. The Keeper must select what's most essential rather than preserving everything. The Unbound must admit that something is worth preserving rather than transcending everything. The answer requires both of you to think carefully about value.`
+    }
+  },
+
+  "citizen+conscience": {
+    thesis: "One trusts the architecture. The other tests the walls for cracks. Both are watching—for completely different things.",
+
+    distanceAnalysis: `Citizen of Abundance and Conscience Before Comfort represent opposite default stances toward systems: trust versus suspicion. The Citizen has concluded, after genuine thought, that systems designed for abundance tend toward good—that trusting the architecture usually serves you better than constantly testing it. The Conscience has concluded, after genuine thought, that dystopia arrives disguised as convenience—that trusting the architecture is exactly how you get captured by it.
+
+This distance is particularly charged because each believes the other is making a dangerous mistake. The Citizen thinks the Conscience's permanent suspicion is not just exhausting but self-defeating—that it creates the very atmosphere of distrust that makes good systems impossible. The Conscience thinks the Citizen's trust is not just naive but complicit—that it provides cover for the systems that should be questioned. Neither position is thoughtless. Both are responses to genuine patterns they've observed in the world.`,
+
+    dynamic: `At its core, this pairing creates a permanent debate about the appropriate relationship to power. The Citizen looks at a well-designed system and sees evidence that humans can build things that work for everyone. The Conscience looks at the same system and sees a question: who benefits from you thinking this works? Both are asking legitimate questions. Both are seeing something real.
+
+The dynamic between you is one of mutual frustration that can calcify into mutual dismissal. The Citizen experiences the Conscience as someone who can never enjoy anything, never trust anything, never let their guard down long enough to appreciate when something is actually working. The Conscience experiences the Citizen as someone who can't see what's obvious—the cracks in the architecture, the hidden costs, the people being surveilled or excluded.
+
+But this tension is genuinely productive when both parties stay engaged. The Citizen, challenged by the Conscience, must ask: what am I not seeing because I trust too easily? What costs am I ignoring because I'm focused on benefits? The Conscience, challenged by the Citizen, must ask: what am I not seeing because I suspect too readily? What's working that I'm dismissing as suspicious?`,
+
+    align: [
+      {
+        point: "Both believe systems matter",
+        explanation: `The Citizen pays attention to systems because they believe good design makes good lives possible. The Conscience pays attention to systems because they believe design is never neutral—it always serves someone. Neither of you treats institutional architecture as irrelevant background. You're both system-watchers; you just have opposite expectations about what you'll find.`
+      },
+      {
+        point: "Both want systems that serve everyone",
+        explanation: `The Citizen's trust comes from hoping for systems of genuine abundance—not abundance for some at the cost of others. The Conscience's suspicion comes from wanting systems that actually serve everyone rather than claiming to while they don't. Your endpoints are the same; your assessments of the current situation differ. This shared goal creates the possibility of productive dialogue rather than pure opposition.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "Default orientation",
+        explanation: `The Citizen's default is trust with verification; the Conscience's default is suspicion with persuasion. When encountering a new system, the Citizen asks "how does this work?" while the Conscience asks "who does this serve?" These questions aren't incompatible, but they lead to very different initial responses. The Citizen experiences the Conscience's immediate suspicion as corrosive. The Conscience experiences the Citizen's immediate trust as dangerous.`
+      },
+      {
+        point: "What counts as evidence",
+        explanation: `The Citizen takes functionality as evidence that a system is working. The Conscience takes functionality as insufficient—they want to know who's watching, who's excluded, what's being hidden. When the Citizen points to benefits, the Conscience says "yes, but what about the costs?" When the Conscience points to risks, the Citizen says "yes, but look at what's working." You're weighting evidence differently because you're asking different questions.`
+      },
+      {
+        point: "The cost of the stance itself",
+        explanation: `The Citizen believes permanent suspicion is exhausting and self-defeating—that if you can never trust anything, you can never build anything worth having. The Conscience believes naive trust is dangerous and complicit—that if you trust systems designed to exploit you, you become part of the problem. Each sees the other's stance as carrying costs that make it unsustainable.`
+      }
+    ],
+
+    give: {
+      youToThem: `If you're the Citizen, you offer the Conscience relief from permanent vigilance. Not everything is a trap. Some systems really do work for most people most of the time. Your trust models the possibility that good architecture is possible—that the Conscience's vigilance might succeed, might actually contribute to building systems worth trusting. You're not asking them to stop watching; you're modeling what it would look like if their watching had worked.`,
+      themToYou: `If you're the Conscience, you offer the Citizen the questions they're not asking. Your suspicion isn't paranoia—it's pattern recognition. You've read the history; you know how dystopia arrives. You offer the Citizen the uncomfortable possibility that the architecture they trust might have cracks they can't see, costs they're not counting, beneficiaries they haven't questioned. The gift is the question, even when it's unwelcome.`
+    },
+
+    risk: `The failure mode of this pairing is caricature. The Citizen starts treating the Conscience as paranoid—someone who can't function in normal society, whose suspicion has become pathological. The Conscience starts treating the Citizen as a dupe—someone too comfortable to see what's obvious, whose trust makes them complicit in whatever's being hidden. Once you've reduced each other to caricatures, genuine dialogue ends.
+
+The deeper risk is that you stop informing each other's perspective. The Citizen needs the Conscience's questions to avoid being naive. The Conscience needs the Citizen's trust to avoid being paralyzed. If you polarize completely, you each lose access to what the other sees—and your individual perspectives become more dangerous without the corrective.`,
+
+    question: {
+      text: "What would it take to build a system you could both trust—the Citizen because it works, the Conscience because its workings are transparent?",
+      framing: `This question matters because it points toward a shared project: architecture that earns trust through transparency rather than demanding trust through obscurity. It asks you to imagine together rather than debate across a fixed divide.`
+    }
+  },
+
+  "alive+conscience": {
+    thesis: "One wants to feel everything. The other keeps asking: but should we? Experience meets vigilance in a permanent negotiation.",
+
+    distanceAnalysis: `Alive to Everything and Conscience Before Comfort represent opposite primary orientations: toward experience versus toward evaluation. The Alive person's first instinct is to feel—to open themselves to what's available, to taste the universe's offerings. The Conscience's first instinct is to evaluate—to question whether this experience is safe, ethical, who it serves, what it hides. Neither instinct is wrong, but they create fundamentally different relationships with the world.
+
+This distance is particularly interesting because both positions claim authenticity. The Alive person believes authenticity means experiencing fully—that filtering, questioning, and evaluating create a barrier between you and what's real. The Conscience believes authenticity means seeing clearly—that experiencing without evaluating is surrender to whatever's presented to you, which might be manufactured or manipulated. Each sees the other's version of authenticity as a kind of inauthenticity.`,
+
+    dynamic: `At its core, this pairing creates a tension between immersion and analysis that shows up in almost every shared experience. The Alive person wants to feel the thing—the sunset, the meal, the music, the moment. The Conscience wants to understand the thing—who made it, why, what's hidden in it, what it's doing to them. Neither is wrong. Both are missing something the other sees.
+
+The dynamic often becomes frustrating for both parties. The Alive person feels like the Conscience ruins experiences by analyzing them—like someone who can't enjoy a meal without researching the restaurant's labor practices. The Conscience feels like the Alive person is vulnerable to manipulation—like someone so hungry for sensation that they'll consume whatever's offered without asking who's serving and why.
+
+But this frustration can become productive if both parties stay engaged. The Alive person, challenged by the Conscience, may discover that some experiences they've been consuming aren't serving them—that their openness has made them vulnerable to exploitation. The Conscience, challenged by the Alive person, may discover that some experiences don't need evaluation—that their vigilance has prevented them from actually living.`,
+
+    align: [
+      {
+        point: "Both believe life should be lived fully",
+        explanation: `The Alive person believes full living means experiencing fully—opening to what's available rather than filtering it. The Conscience believes full living means seeing clearly—understanding what's real rather than accepting appearances. These are different emphases, but they share a commitment to not sleepwalking through life. Neither of you is advocating for dullness or numbness.`
+      },
+      {
+        point: "Both distrust certain kinds of comfort",
+        explanation: `The Alive person distrusts the comfort of not feeling—the numbness that passes for safety. The Conscience distrusts the comfort of not questioning—the trust that passes for peace. You've both rejected types of ease that most people accept. This shared rejection of common comforts creates unexpected common ground.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "The relationship between experience and evaluation",
+        explanation: `The Alive person believes evaluation interferes with experience—that you can't fully feel something while you're analyzing it. The Conscience believes experience without evaluation is dangerous—that feeling something fully doesn't tell you whether you should. This isn't a minor disagreement; it affects how you approach nearly everything. The Alive person sees the Conscience as unable to be present; the Conscience sees the Alive person as unable to be careful.`
+      },
+      {
+        point: "Vulnerability",
+        explanation: `The Alive person treats vulnerability as necessary for full experience—you have to be open to be touched by things. The Conscience treats vulnerability as requiring justification—you should know what you're opening to before you open. This creates constant friction: the Alive person feels like the Conscience is closed off; the Conscience feels like the Alive person is reckless.`
+      },
+      {
+        point: "What ruins an experience",
+        explanation: `For the Alive person, what ruins an experience is analysis—stepping back from feeling to examine what you're feeling. For the Conscience, what ruins an experience is deception—discovering later that what you felt was manufactured or manipulated. You're afraid of different things, and your strategies for avoiding those fears conflict.`
+      }
+    ],
+
+    give: {
+      youToThem: `If you're Alive to Everything, you offer the Conscience the reminder that life is for living. Their vigilance serves something—but what? At some point, the watching must give way to the living. You model the possibility that some experiences don't require analysis, that presence without suspicion is possible and valuable. You offer them permission to feel without first understanding everything about what they're feeling.`,
+      themToYou: `If you're the Conscience, you offer the Alive person the questions that protect their openness. Not all experiences are what they seem. Some sensations are manufactured to exploit exactly the kind of openness you embody. Your vigilance isn't meant to close them down but to help them open wisely—to feel what's real rather than what's been designed to manipulate their feeling.`
+    },
+
+    risk: `The failure mode of this pairing is mutual dismissal that prevents growth. The Alive person writes off the Conscience as someone who can't live—a permanent analyst trapped in their own suspicion. The Conscience writes off the Alive person as someone who can't see—a permanent consumer vulnerable to whatever's offered. Once you've dismissed each other, you stop having the conversations that could help both of you.
+
+The deeper risk is that you each become more extreme without the other's corrective. The Alive person, unchallenged by vigilance, becomes increasingly uncritical in their experience-seeking. The Conscience, unchallenged by presence, becomes increasingly incapable of actually living. Your opposite orientations could balance each other; instead, they push you further apart.`,
+
+    question: {
+      text: "What would it mean to feel something fully while seeing it clearly—to be both completely present and completely aware of what you're present to?",
+      framing: `This question matters because it refuses the dichotomy between experience and evaluation. It asks whether there might be a way of being that includes both your orientations rather than forcing a choice between them. The answer requires both of your capacities.`
+    }
+  },
+
+  "conscience+friction": {
+    thesis: "The one who watches for what's hidden meets the one who seeks difficulty for its own sake. Vigilance confronts vitality in a clash of purpose.",
+
+    distanceAnalysis: `Conscience Before Comfort and Alive in the Friction represent opposite relationships with struggle. The Conscience watches for struggle imposed by others—the hidden costs, the manufactured difficulties, the systems designed to exploit. The Friction-seeker seeks struggle as a chosen practice—the deliberate difficulty that builds strength, the resistance that creates growth. To the Conscience, seeking difficulty looks naive; why would you choose struggle when so much struggle is unchosen and unjust? To the Friction-seeker, watching for hidden costs looks paralyzed; why would you spend your energy on vigilance when you could spend it on growth?
+
+This distance reflects different theories of what makes life meaningful. The Conscience believes meaning comes from justice—from seeing clearly, exposing what's hidden, protecting the vulnerable from exploitation. The Friction-seeker believes meaning comes from vitality—from meeting challenges, growing through difficulty, becoming stronger through resistance. Both are coherent philosophies. Both see the other's priority as potentially missing the point.`,
+
+    dynamic: `At its core, this pairing creates an argument about where to direct one's energy. The Conscience directs energy toward watching—toward vigilance, exposure, accountability. The Friction-seeker directs energy toward striving—toward challenge, growth, becoming. When they look at the same situation, they ask different questions. The Conscience asks "what's being hidden here?" The Friction-seeker asks "what's worth struggling for here?"
+
+The dynamic often becomes one of mutual bafflement. The Conscience watches the Friction-seeker throw themselves against difficulties and wonders why they don't question who created those difficulties and why. The Friction-seeker watches the Conscience analyze power structures and wonders why they don't just push against something instead of constantly exposing what's wrong with pushing.
+
+But this bafflement can become productive when both stay engaged. The Conscience, challenged by the Friction-seeker, may discover that their vigilance has become a substitute for actually engaging with life—that watching is easier than doing. The Friction-seeker, challenged by the Conscience, may discover that their struggle-seeking has become uncritical—that they've been striving without asking who benefits from their striving.`,
+
+    align: [
+      {
+        point: "Both reject passive comfort",
+        explanation: `The Conscience rejects the comfort of not seeing—the ease that comes from not asking hard questions. The Friction-seeker rejects the comfort of not striving—the ease that comes from not challenging themselves. Both of you have decided that some forms of comfort are traps. This shared suspicion of certain kinds of ease creates unexpected common ground.`
+      },
+      {
+        point: "Both believe in engagement over withdrawal",
+        explanation: `The Conscience engages by watching, questioning, exposing. The Friction-seeker engages by striving, struggling, pushing. Neither of you has chosen withdrawal as a life strategy. You're both in the arena, just playing different games within it.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "The value of difficulty",
+        explanation: `The Friction-seeker values difficulty as inherently growthful—struggle builds character, resistance creates strength. The Conscience questions this framing: not all difficulty is growthful. Some difficulty is manufactured to exploit you. Some struggle just wears you down. The Friction-seeker's faith in difficulty looks naive to the Conscience; the Conscience's questioning of difficulty looks enervating to the Friction-seeker.`
+      },
+      {
+        point: "Where to focus attention",
+        explanation: `The Conscience focuses attention on systems—who designed this challenge? Who benefits from your struggling with it? What's hidden in the difficulty you're embracing? The Friction-seeker focuses attention on the experience of struggle itself—does it make you stronger? Does it feel alive? Is there growth? These different focuses create constant friction about what matters.`
+      },
+      {
+        point: "What constitutes action",
+        explanation: `The Friction-seeker sees physical or mental striving as real action. The Conscience's watching and questioning can look like mere analysis—not actually doing anything. The Conscience sees vigilance and exposure as real action. The Friction-seeker's struggling can look like running on a treadmill—lots of effort, going nowhere. Each devalues the other's primary mode of engagement.`
+      }
+    ],
+
+    give: {
+      youToThem: `If you're the Conscience, you offer the Friction-seeker the questions that make their struggle meaningful. Not all difficulty is worth embracing. Some challenges are manufactured to exploit exactly the kind of vigor you embody. Your vigilance helps them distinguish between struggle that serves growth and struggle that serves someone else's interests. You're not trying to stop their striving; you're trying to ensure it serves them.`,
+      themToYou: `If you're the Friction-seeker, you offer the Conscience the reminder that life requires action, not just watching. At some point, you have to stop exposing what's wrong and start pushing against something. Your vitality models the possibility that engagement isn't just analysis—that sometimes you have to struggle with the systems the Conscience only critiques. You're not dismissing their vigilance; you're showing what comes after seeing clearly.`
+    },
+
+    risk: `The failure mode of this pairing is mutual contempt. The Friction-seeker decides the Conscience is all talk—someone who analyzes endlessly but never actually does anything, whose vigilance is a substitute for vitality. The Conscience decides the Friction-seeker is a useful idiot—someone who strives energetically in whatever direction they're pointed, too busy struggling to ask who benefits from their struggles. Once contempt sets in, learning stops.
+
+The deeper risk is that you reinforce each other's weaknesses by rejecting each other's strengths. The Friction-seeker, dismissing vigilance as paralysis, becomes increasingly uncritical about what they struggle for. The Conscience, dismissing striving as naive, becomes increasingly passive in their own engagement with life. Your opposition makes both of you more one-dimensional.`,
+
+    question: {
+      text: "What difficulty would be worth choosing if you knew exactly who benefits and why—and what vigilance would be complete if it led you to embrace struggle rather than just expose it?",
+      framing: `This question matters because it integrates both orientations. It asks the Friction-seeker to include the Conscience's questions in their choosing. It asks the Conscience to include the Friction-seeker's action in their watching. Neither perspective alone can answer it.`
+    }
+  },
+
+  "rooted+unbound": {
+    thesis: "Earthbound stillness meets the dreamer who would leave the body behind. One chose to stay; the other yearns to go.",
+
+    distanceAnalysis: `Rooted in Stillness and Unbound from Form occupy perhaps the most extreme philosophical distance in this system: the fully embodied versus the aspiring transcendent. The Rooted has made peace with limits—with the body, the earth, the constraints of physical existence. They've concluded that the deepest wisdom isn't found by reaching beyond but by settling in. The Unbound experiences those same limits as starting points—boundaries to be explored, questioned, eventually transcended. They've concluded that the deepest possibilities lie beyond the forms we currently inhabit.
+
+This distance reflects fundamentally different answers to the question of what human existence is for. The Rooted believes existence is for presence—for being fully here, now, in this body, on this earth. The Unbound believes existence is for becoming—for evolving toward forms we can barely imagine, for transcending the categories that currently define us. Each finds the other's answer not just different but fundamentally confused about what matters.`,
+
+    dynamic: `At its core, this pairing creates an argument about the nature and value of limits. The Rooted has found peace within limits; the Unbound seeks peace beyond them. The Rooted sees the body as home; the Unbound sees it as starting point. The Rooted values presence in this world; the Unbound imagines worlds beyond this one.
+
+The dynamic between you is one of fundamental mutual incomprehension that can become either deep frustration or unexpected fascination. The Rooted looks at the Unbound and sees someone fleeing—someone so uncomfortable with the actual conditions of human life that they've constructed elaborate fantasies of escape. The Unbound looks at the Rooted and sees someone stuck—someone so attached to their current form that they can't imagine becoming anything more.
+
+But this incomprehension can also become illumination. The Rooted, in dialogue with the Unbound, confronts the question: is my stillness genuine wisdom, or am I afraid of what I might become? The Unbound, in dialogue with the Rooted, confronts the question: is my reaching genuine vision, or am I running from what I already am? These questions only arise when you're genuinely engaged with someone who has chosen the opposite path.`,
+
+    align: [
+      {
+        point: "Both have thought carefully about what they want",
+        explanation: `The Rooted didn't fall into stillness accidentally; they chose it after encountering alternatives. The Unbound didn't dream of transcendence naively; they've grappled with what staying would mean. Both of you have examined your position rather than simply accepting it. This shared philosophical seriousness creates respect across disagreement.`
+      },
+      {
+        point: "Both are responding to the same question",
+        explanation: `At the deepest level, you're both responding to the fundamental question of human existence: given that we're embodied beings with limits, how should we relate to those limits? The Rooted says "embrace them." The Unbound says "transcend them." These are opposite answers, but they're answers to the same question—which means you're engaged in the same conversation, even if you've reached different conclusions.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "The value of embodiment",
+        explanation: `The Rooted sees embodiment as the ground of meaning—the body isn't a prison but a home, and the deepest experiences are the ones available to embodied beings. The Unbound sees embodiment as a constraint—valuable for now, but not the final word on what we can be or experience. This isn't a difference that can be split down the middle. Either the body is the site of meaning or it's a waystation.`
+      },
+      {
+        point: "The meaning of 'beyond'",
+        explanation: `When the Unbound talks about going beyond current limits, the Rooted hears escape—fleeing from the difficult work of being present here. When the Rooted talks about staying with what is, the Unbound hears stagnation—refusing the call to become more than we currently are. Neither experiences the other's "beyond" or "here" the way it's intended.`
+      },
+      {
+        point: "What we're for",
+        explanation: `The Rooted believes human existence is for presence—for being here fully, which requires accepting limits rather than transcending them. The Unbound believes human existence is for becoming—for evolving toward possibilities we can barely imagine, which requires transcending limits rather than accepting them. This is a fundamental disagreement about the purpose of being alive.`
+      }
+    ],
+
+    give: {
+      youToThem: `If you're Rooted in Stillness, you offer the Unbound an anchor. Their reaching toward transcendence is real, but what grounds it? What gives their aspiration meaning? You model the possibility that there's something worth staying for—that the body they want to transcend is also capable of experiences that might not translate to whatever comes next. You're not trying to stop their reaching; you're asking what they're reaching from.`,
+      themToYou: `If you're Unbound from Form, you offer the Rooted a challenge: is your stillness peace or limitation? You model the possibility that human existence isn't the final word—that the contentment they've found might be one station on a longer journey rather than the destination itself. You're not dismissing what they've achieved; you're asking whether it's everything they could become.`
+    },
+
+    risk: `The failure mode of this pairing is contempt on both sides. The Rooted decides the Unbound is fundamentally unwell—someone so uncomfortable in their own skin that they've invented philosophical justifications for escape. The Unbound decides the Rooted is fundamentally limited—someone so afraid of growth that they've invented philosophical justifications for staying small. Once contempt sets in, the productive tension becomes destructive rejection.
+
+The deeper risk is that you stop learning from each other's perspective. The Rooted needs the Unbound's challenge to ensure their stillness is genuine peace rather than comfortable stagnation. The Unbound needs the Rooted's challenge to ensure their transcendence is genuine vision rather than disguised flight. Without this mutual challenge, you each become more extreme and less examined.`,
+
+    question: {
+      text: "What experience is only possible in a body—and what experience might be possible beyond one? How would you know the difference matters?",
+      framing: `This question matters because it asks both of you to take the other's perspective seriously. The Rooted must consider what might be lost by never reaching; the Unbound must consider what might be lost by always leaving. Neither can answer alone.`
+    }
   }
 };
 
