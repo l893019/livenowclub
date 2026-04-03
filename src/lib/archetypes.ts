@@ -2635,6 +2635,521 @@ The deeper risk is that you stop learning from each other's perspective. The Roo
       text: "What experience is only possible in a body—and what experience might be possible beyond one? How would you know the difference matters?",
       framing: `This question matters because it asks both of you to take the other's perspective seriously. The Rooted must consider what might be lost by never reaching; the Unbound must consider what might be lost by always leaving. Neither can answer alone.`
     }
+  },
+
+  // ===== ADJACENT-ARCHETYPE PAIRS (10 total) =====
+  // These pairs have distance < 0.4 — natural allies with easy resonance
+
+  "citizen+shaper": {
+    thesis: "Two fluent speakers of the same optimistic language. Beautiful conversations about what's possible—but who asks whether it should be built at all?",
+
+    distanceAnalysis: `When Citizen of Abundance meets Shaper of What's Next, the philosophical distance between you is minimal. You both believe in possibility. You both see constraint as something to be overcome rather than accepted. You both orient toward futures that don't exist yet with confidence that they could. This is easy recognition—the relief of meeting someone whose basic assumption is that things can get better.
+
+But close proximity creates its own challenges. When two people share the same optimistic baseline, certain questions never get asked. The Citizen trusts systems designed for abundance; the Shaper builds systems designed for transformation. Neither is positioned to ask whether the system should exist at all. Your shared confidence in positive futures might be wisdom—or might be a blind spot you're both standing in together.`,
+
+    dynamic: `At its core, this pairing brings together two people who believe in building. The Citizen brings trust in existing abundance—the conviction that we already have what we need if we can just distribute it properly. The Shaper brings confidence in future abundance—the conviction that we can create what doesn't exist yet. Together, you cover the full spectrum of constructive optimism.
+
+The dynamic between you is one of mutual amplification. The Citizen's trust gives the Shaper a foundation to build on; the Shaper's vision gives the Citizen something to believe in. This creates productive energy: together, you can imagine and execute in ways that neither could alone.
+
+But this same amplification can become an echo chamber. Without someone asking harder questions—about unintended consequences, about who gets left behind, about whether building is always the right response—you can reinforce each other's blind spots. Your shared language of possibility might be exactly what's needed, or might be a comfortable dialect that keeps you from hearing dissent.`,
+
+    align: [
+      {
+        point: "Possibility as baseline",
+        explanation: `Both of you start from the assumption that better futures are achievable. This isn't naive optimism—it's a philosophical commitment that shapes how you engage with problems. Where others see walls, you both see doors. This shared baseline means you never have to justify hope to each other.`
+      },
+      {
+        point: "Systems thinking",
+        explanation: `The Citizen trusts good systems; the Shaper builds them. You both understand that individual action matters less than structural design. This shared systems orientation means your conversations naturally move to leverage points, feedback loops, and scalable solutions.`
+      },
+      {
+        point: "Constructive rather than critical",
+        explanation: `Neither of you is primarily a critic. You both prefer building to tearing down, creating to analyzing. This shared constructive orientation means your collaborations tend to produce things rather than just discussions about things. The energy moves forward.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "Trust vs. transformation",
+        explanation: `The Citizen tends to trust existing systems and work within them; the Shaper tends to see existing systems as raw material for transformation. This difference is subtle but real. When a system isn't working, the Citizen asks how to fix it; the Shaper asks whether to replace it entirely. Your solutions to the same problem might diverge significantly.`
+      },
+      {
+        point: "Whose vision prevails?",
+        explanation: `Both of you have visions of better futures, but those visions might not align in detail. The Citizen's abundance might look different from the Shaper's transformation. When your optimisms conflict, who adjusts? This tension is usually manageable, but it exists beneath the surface of your easy agreement.`
+      }
+    ],
+
+    give: {
+      youToThem: `If you're the Citizen, you offer the Shaper grounding. Their transformative vision is powerful, but it needs a foundation of trust—belief that the world can receive what they're building. You model that trust. You show them that abundance already exists in some forms, that they're building into fertile ground rather than hostile territory.`,
+      themToYou: `If you're the Shaper, you offer the Citizen direction. Their trust in abundance is generous, but trust without vision can become complacency. You show them what abundance could become, what's possible beyond what already exists. You give their trust somewhere to go.`
+    },
+
+    risk: `The failure mode for this pairing is mutual reinforcement of uncritical optimism. Without someone to ask harder questions, you can amplify each other's confidence into blind spots. The Citizen's trust combines with the Shaper's vision to create beautiful plans that no one has stress-tested. Who asks about unintended consequences? Who speaks for those who might be harmed by your abundance?
+
+The deeper risk is that your shared language of possibility becomes a filter that screens out dissent. Critics start to seem negative, cautious voices seem fearful, and you both dismiss perspectives that don't share your optimistic baseline. The echo chamber becomes comfortable precisely because it never challenges you.`,
+
+    question: {
+      text: "What are you both assuming will work out—and who might be harmed if it doesn't?",
+      framing: `This question matters because it asks you to examine the shadow side of your shared optimism. Your confidence in positive futures is a gift, but it can also be a blind spot. Who isn't included in your vision of abundance? What could go wrong that neither of you is watching for?`
+    }
+  },
+
+  "citizen+friction": {
+    thesis: "Easy resonance, instant understanding—the Citizen's trust meets the Friction-seeker's challenge. The question is whether comfort becomes complacency or whether productive tension emerges.",
+
+    distanceAnalysis: `When Citizen of Abundance meets Alive in the Friction, the distance between you is smaller than it might appear. You both believe in engagement with the world as it is. The Citizen engages through trust; the Friction-seeker engages through challenge. But both of you are fundamentally engaged—neither retreats into cynicism or paralysis.
+
+This shared engagement creates easy initial connection. You both want to be in the arena, just in different ways. The Citizen assumes the arena is basically good; the Friction-seeker assumes the arena requires struggle. But you're both in it, which matters more than you might think.`,
+
+    dynamic: `At its core, this pairing brings together two forms of active engagement. The Citizen brings trust that systems can be good, that abundance is possible, that positive outcomes are achievable. The Friction-seeker brings the conviction that ease is suspicious, that struggle is necessary, that challenge is how we grow.
+
+The dynamic between you is one of productive tension. The Citizen's trust can soften the Friction-seeker's relentless challenge; the Friction-seeker's resistance can sharpen the Citizen's comfortable assumptions. Together, you might find a middle ground that neither would discover alone—engaged optimism that doesn't become complacent.
+
+But this productive tension requires conscious attention. Without it, you might simply talk past each other—the Citizen wondering why everything has to be so hard, the Friction-seeker wondering why the Citizen won't fight for anything. Your shared engagement can become parallel play rather than genuine partnership.`,
+
+    align: [
+      {
+        point: "Engagement with reality",
+        explanation: `Neither of you retreats from the world. The Citizen engages through building and trusting; the Friction-seeker engages through challenging and testing. But both of you are fundamentally in the game, not on the sidelines. This shared engagement creates a foundation for mutual respect.`
+      },
+      {
+        point: "Belief in improvement",
+        explanation: `The Citizen believes things can be better through good systems; the Friction-seeker believes things can be better through productive struggle. Both of you reject fatalism. This shared belief in improvement—even if you disagree about how improvement happens—connects you.`
+      },
+      {
+        point: "Action orientation",
+        explanation: `Neither of you is satisfied with analysis alone. The Citizen wants to build abundance; the Friction-seeker wants to test limits. Both of you prefer doing to merely thinking. This shared bias toward action means your collaborations tend to produce movement.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "Trust vs. testing",
+        explanation: `The Citizen's default is to trust systems and assume good intent; the Friction-seeker's default is to test systems and assume they need challenge. When facing a new institution, technology, or relationship, you'll instinctively approach it differently. The Citizen says "let's see what this can do." The Friction-seeker says "let's see if this can withstand pressure."`
+      }
+    ],
+
+    give: {
+      youToThem: `If you're the Citizen, you offer the Friction-seeker permission to rest. Their relentless challenge is valuable, but it's also exhausting. You model the possibility that not everything requires struggle, that some good things can be received rather than fought for. Your trust is a gift to someone who finds it hard to trust.`,
+      themToYou: `If you're the Friction-seeker, you offer the Citizen necessary challenge. Their trust is generous, but it can become naive. You test their assumptions, push back on their optimism, and help them distinguish between systems that deserve trust and systems that are exploiting it. Your friction keeps their trust honest.`
+    },
+
+    risk: `The failure mode for this pairing is mutual frustration. The Citizen starts to see the Friction-seeker as exhaustingly negative—why does everything have to be a battle? The Friction-seeker starts to see the Citizen as dangerously naive—why won't they fight for anything? Without conscious bridge-building, your different approaches can become sources of contempt rather than complementary strengths.
+
+The deeper risk is that you reinforce each other's comfortable positions rather than learning from each other. The Citizen stays trusting without developing discernment; the Friction-seeker stays challenging without developing ease. You like each other despite your differences rather than growing through them.`,
+
+    question: {
+      text: "When is trust the right response, and when is challenge? How do you decide together?",
+      framing: `This question matters because it asks you to develop shared judgment rather than defaulting to your individual tendencies. Neither trust nor challenge is always right. The question is whether you can help each other know which response fits the moment.`
+    }
+  },
+
+  "alive+unbound": {
+    thesis: "Sensory intensity meets transcendent vision—two ways of reaching beyond ordinary experience. Beautiful shared adventures, but who tends the ordinary life you're both escaping?",
+
+    distanceAnalysis: `When Alive to Everything meets Unbound from Form, the philosophical distance between you is small. You're both reaching beyond the ordinary, beyond the moderate, beyond the safe middle. The Alive type reaches through sensation—more experience, deeper feeling, fuller presence to what's here. The Unbound type reaches through transcendence—beyond current limits, past the boundaries of self and body. You're both expansive.
+
+This shared expansiveness creates immediate recognition. Neither of you is satisfied with the normal operating parameters of human experience. But your expansions point in different directions—one deeper into embodiment, one past it. This difference matters less than you might think, because you both understand the hunger for more.`,
+
+    dynamic: `At its core, this pairing brings together two forms of reaching past limits. The Alive type wants to feel everything the body can feel; the Unbound type wants to become everything the self can become. Both of you are oriented toward intensity, expansion, the edges of human experience.
+
+The dynamic between you is one of mutual permission. The Alive type doesn't judge the Unbound's desire to transcend; the Unbound doesn't judge the Alive's hunger for sensation. You both understand wanting more than ordinary life offers. This creates a generous space where neither has to defend their appetite.
+
+But this mutual permission can enable escape. If both of you are always reaching for more—whether through sensation or transcendence—who tends the ordinary life that supports your adventures? Who does the dishes, pays the bills, shows up for the unglamorous moments? Your shared expansiveness might be wisdom or might be coordinated flight from what's difficult about being human.`,
+
+    align: [
+      {
+        point: "Hunger for more",
+        explanation: `Neither of you is satisfied with moderate experience. The Alive type wants more sensation; the Unbound wants more consciousness. Both of you look at ordinary human life and ask "is this all there is?" This shared hunger creates immediate understanding—you both know what it's like to want what others seem content without.`
+      },
+      {
+        point: "Comfort with intensity",
+        explanation: `Both of you can handle experiences that would overwhelm others. The Alive type can hold overwhelming sensation; the Unbound can hold overwhelming expansion. This shared capacity for intensity means you can accompany each other into territories that would leave more moderate people behind.`
+      },
+      {
+        point: "Rejection of the ordinary",
+        explanation: `Neither of you believes that normal life is the whole story. You both sense that there's more—whether that "more" is found in deeper feeling or expanded consciousness. This shared rejection of ordinariness is a bond, even if your visions of the extraordinary differ.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "Body as destination vs. waystation",
+        explanation: `The Alive type sees the body as the primary instrument for experiencing reality—more senses, more feeling, more embodiment is the path to fulfillment. The Unbound sees the body as a starting point to be transcended—the upload, the expansion of consciousness past physical limits. When push comes to shove, you're heading in opposite directions even though you're both heading somewhere.`
+      },
+      {
+        point: "Present vs. future",
+        explanation: `The Alive type is fundamentally present-oriented—this sensation, this moment, this experience. The Unbound is fundamentally future-oriented—what we might become, what consciousness might grow into. Your adventures together might pull in different directions: deeper into now vs. further into possibility.`
+      }
+    ],
+
+    give: {
+      youToThem: `If you're Alive to Everything, you offer the Unbound grounding in embodiment. Their vision of transcendence is beautiful, but what are they transcending from? You model the richness available in the body, the consciousness that's possible right here. You help them feel what they might be too eager to leave behind.`,
+      themToYou: `If you're Unbound from Form, you offer the Alive type vision beyond sensation. Their hunger for experience is powerful, but is experience all there is? You model the possibility that consciousness itself might expand, that there might be ways of being that don't depend on a body experiencing sensations. You expand their horizon.`
+    },
+
+    risk: `The failure mode for this pairing is coordinated escape. If both of you are always reaching for more—more sensation, more transcendence—you can enable each other's avoidance of ordinary life. The relationship becomes a vehicle for adventures that look beautiful but leave the actual work of being human undone. Who anchors you both when the reaching becomes running?
+
+The deeper risk is that you mistake intensity for intimacy. Both of you are good at powerful experiences, but powerful experiences aren't the same as deep relationship. Some of the most important moments in connection are quiet, ordinary, unglamorous. If neither of you can be present to those moments, your relationship might be exciting but strangely hollow.`,
+
+    question: {
+      text: "What ordinary experience have you been avoiding together—and what might you discover if you stayed with it instead of reaching for more?",
+      framing: `This question matters because it asks you both to turn toward what you typically turn away from. Your shared capacity for extraordinary experience is a gift, but it can also be a hiding place. What's in the ordinary that you've both been missing?`
+    }
+  },
+
+  "alive+friction": {
+    thesis: "Two intensity-seekers who understand that life should burn. Profound mutual recognition—but can the fire sustain without consuming what it was meant to forge?",
+
+    distanceAnalysis: `When Alive to Everything meets Alive in the Friction, you're meeting on familiar ground. You both believe that intensity is the point. The Alive type seeks intensity through sensation—more experience, deeper feeling, fuller presence to what's available. The Friction-seeker seeks intensity through challenge—more resistance, harder problems, greater obstacles to overcome. You're both allergic to the tepid middle.
+
+This shared orientation toward intensity creates immediate recognition. Neither of you has to explain why you can't be satisfied with comfort, why moderate experiences feel like half-measures, why something in you requires the full range. You both know. The only difference is the flavor of intensity you seek.`,
+
+    dynamic: `At its core, this pairing brings together two people who refuse to turn down. The Alive type won't moderate their appetite for sensation; the Friction-seeker won't moderate their appetite for challenge. Together, you create a high-energy field that most people would find exhausting but you both find home.
+
+The dynamic between you is one of mutual amplification. You push each other toward more—more experience, more difficulty, more intensity in whatever form. Neither of you suggests slowing down; neither judges the other's hunger. This creates a relationship that runs hot, always.
+
+But this same amplification can become acceleration toward burnout. If neither of you has brakes, if both of you only know how to add fuel, the fire can consume what it was meant to forge. You might be sharpening each other—or you might be wearing each other down. The line between productive intensity and mutual destruction isn't always clear from inside the flame.`,
+
+    align: [
+      {
+        point: "Intensity as non-negotiable",
+        explanation: `Neither of you will accept a life turned down. The Alive type needs sensory intensity; the Friction-seeker needs challenge intensity. Both of you have concluded that the safe middle is its own kind of death. This shared refusal to moderate creates profound mutual recognition.`
+      },
+      {
+        point: "Aliveness as evidence",
+        explanation: `Both of you use intensity as evidence that you're actually living. The Alive type knows they're alive when they're feeling fully; the Friction-seeker knows they're alive when they're struggling productively. You both understand that comfort can be a kind of numbness, that ease can be a kind of sleep.`
+      },
+      {
+        point: "Capacity for extremes",
+        explanation: `Both of you can operate in territories that others would flee. The Alive type can hold overwhelming sensation; the Friction-seeker can hold overwhelming challenge. This shared capacity for extremes means you can accompany each other into intensities that would leave gentler people behind.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "Receiving vs. fighting",
+        explanation: `The Alive type's intensity is fundamentally receptive—they want to feel what's there, to be open to experience. The Friction-seeker's intensity is fundamentally active—they want to engage, challenge, overcome. Sometimes you'll want different things from the same moment: one of you wants to receive it, the other wants to wrestle with it.`
+      }
+    ],
+
+    give: {
+      youToThem: `If you're Alive to Everything, you offer the Friction-seeker a different relationship to intensity. Their challenge-seeking is powerful, but not everything is a battle. You model the possibility of receiving intensity rather than fighting for it—of being filled by experience rather than struggling against it.`,
+      themToYou: `If you're Alive in the Friction, you offer the Alive type edge and direction. Their openness to sensation is generous, but openness alone can become passive consumption. You model the possibility of engaging with intensity rather than just receiving it—of being shaped by difficulty rather than just experiencing sensation.`
+    },
+
+    risk: `The failure mode for this pairing is mutual exhaustion disguised as aliveness. If neither of you knows how to stop, if both of you only validate more intensity, you can burn out together while telling yourselves you're living fully. The fire needs fuel, and eventually the fuel runs out. Who notices when intensity becomes self-destruction?
+
+The deeper risk is that you create a relationship where nothing soft can survive. Both of you run hot, but relationships also need cool moments—tenderness, rest, the ordinary rhythms of care. If your shared intensity burns away everything gentle, you might find yourselves very alive but also very alone together.`,
+
+    question: {
+      text: "What would rest look like between you—and what are you both avoiding by always reaching for more intensity?",
+      framing: `This question matters because it asks you to explore the territory you both tend to avoid. Your shared capacity for intensity is a gift, but it's not the only mode. What becomes possible if you occasionally choose stillness together?`
+    }
+  },
+
+  "mender+presence": {
+    thesis: "Two who show up for what's broken—one through fixing, one through witnessing. Easy resonance in the shared commitment to care, but who tends to what can't be repaired or held?",
+
+    distanceAnalysis: `When Mender of What Remains meets Keeper of Presence, the philosophical distance between you is minimal. You both believe in showing up. The Mender shows up with tools—they see what's broken and reach for repair. The Keeper shows up with attention—they see what's present and offer witness. Both of you are fundamentally oriented toward care.
+
+This shared orientation toward care creates immediate recognition. Neither of you abandons what needs attention. Neither of you walks past brokenness or suffering without responding. You both understand that the world needs people who stay when others leave. You differ only in how you stay.`,
+
+    dynamic: `At its core, this pairing brings together two forms of devotion. The Mender is devoted to repair—the stubborn hope that broken things can be made whole again. The Keeper is devoted to presence—the conviction that undivided attention is itself a form of healing. Together, you cover the full spectrum of how care can be expressed.
+
+The dynamic between you is one of complementary service. The Mender fixes what can be fixed; the Keeper holds what can only be witnessed. Neither dismisses the other's form of care. This creates a generous space where different expressions of love are all honored.
+
+But this same complementarity can become division of labor that leaves gaps. What about the things that can't be fixed or held? What about the care that requires something other than repair or presence? Your shared commitment to what's here might miss what needs to change fundamentally—not be mended, not be witnessed, but be released or transformed entirely.`,
+
+    align: [
+      {
+        point: "Showing up as core value",
+        explanation: `Neither of you abandons what needs attention. The Mender stays to fix; the Keeper stays to witness. Both of you have chosen presence over avoidance, care over convenience. This shared commitment to showing up is the foundation of your connection.`
+      },
+      {
+        point: "Care as action",
+        explanation: `Both of you believe that care must be expressed through doing something—whether that's repair or attention. Neither of you thinks good intentions are enough. The Mender's hands and the Keeper's witness are both forms of active care. This shared bias toward doing creates mutual respect.`
+      },
+      {
+        point: "Patience with what takes time",
+        explanation: `Both of you understand that real care isn't quick. The Mender knows that good repair takes patience; the Keeper knows that genuine presence can't be rushed. Neither of you expects instant results. This shared patience means you can work together on long timescales.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "Fixing vs. holding",
+        explanation: `When faced with brokenness, the Mender instinctively reaches for tools; the Keeper instinctively offers attention. Sometimes both are needed, but sometimes the responses conflict. The Mender might try to fix what just needs witness; the Keeper might offer presence when action is required. Learning when to apply which response is the ongoing work of this pairing.`
+      }
+    ],
+
+    give: {
+      youToThem: `If you're the Mender, you offer the Keeper a different form of care. Their presence is beautiful, but sometimes things need to actually change, not just be witnessed. You model the possibility of making things better through action—of care that doesn't just hold space but transforms what's in it.`,
+      themToYou: `If you're the Keeper, you offer the Mender permission to stop fixing. Their repair is valuable, but not everything can be fixed—and the urge to fix can sometimes be avoidance of simply being with what's broken. You model the possibility of care without action, of presence as enough.`
+    },
+
+    risk: `The failure mode for this pairing is dividing the world into what you each handle and missing what falls between. The Mender takes the fixable; the Keeper takes the unfixable. But some things need both—and some things need neither. They need release, transformation, or simple ending. Your shared commitment to care might keep you tending what needs to die.
+
+The deeper risk is that your care becomes its own avoidance. If the Mender is always fixing and the Keeper is always witnessing, when do either of you simply rest? Care for others can be a way of avoiding care for selves. Your shared devotion is beautiful, but it can also be depleting.`,
+
+    question: {
+      text: "What in your shared care needs neither repair nor witness—and what would it mean to simply let it be, or let it go?",
+      framing: `This question matters because it asks you to find the limits of your shared mode. Your devotion to care is a gift, but care takes many forms. What might you both be avoiding by always showing up in your familiar ways?`
+    }
+  },
+
+  "presence+rooted": {
+    thesis: "Two who believe in being over doing—profound alignment in stillness, but can presence and rootedness together become a fortress against necessary change?",
+
+    distanceAnalysis: `When Keeper of Presence meets Rooted in Stillness, you're occupying adjacent territory. You both believe that being matters more than doing, that presence matters more than productivity, that stillness has value the busy world dismisses. The Keeper brings the gift of attention; the Rooted brings the gift of groundedness. You're both oriented toward what's here rather than what's next.
+
+This shared orientation toward being creates immediate recognition. Neither of you needs to justify slowness, stillness, or the choice to stay rather than strive. You both understand that the constant pressure to do more is often a flight from what's already present. In each other, you find permission to simply be.`,
+
+    dynamic: `At its core, this pairing brings together two forms of stillness. The Keeper is still in attention—they give full presence to what's before them. The Rooted is still in position—they stay where they are while the world rushes past. Together, you create a zone of calm that most people would find uncomfortable but you both find home.
+
+The dynamic between you is one of mutual permission. The Keeper doesn't ask the Rooted to move; the Rooted doesn't ask the Keeper to act. You validate each other's commitment to being over doing. This creates a peaceful space where neither has to justify their stillness.
+
+But this same mutual permission can become mutual enabling of stagnation. If neither of you ever pushes toward action, toward change, toward the discomfort of becoming different, your stillness can calcify into rigidity. The peace you share might be genuine equanimity—or might be avoidance dressed as wisdom.`,
+
+    align: [
+      {
+        point: "Being over doing",
+        explanation: `Both of you have concluded that presence matters more than productivity. The Keeper's attention and the Rooted's groundedness are both expressions of this shared conviction. Neither of you believes that worth is measured by output. This fundamental alignment creates a foundation for genuine understanding.`
+      },
+      {
+        point: "Skepticism of striving",
+        explanation: `Both of you question the cultural assumption that constant movement is good. The Keeper knows that attention requires stillness; the Rooted knows that wisdom requires staying put. You both see through the busy-ness that others mistake for meaning.`
+      },
+      {
+        point: "Value of the present moment",
+        explanation: `Neither of you is always planning the future or regretting the past. The Keeper is present to what's here; the Rooted is committed to where they are. This shared orientation toward now means your time together has a quality of attention that more future-focused pairs might lack.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "Presence vs. position",
+        explanation: `The Keeper's stillness is about attention—being fully present wherever they are. The Rooted's stillness is about location—staying in the same place, with the same commitments. These are related but different forms of stillness. The Keeper might bring presence to change; the Rooted might resist change entirely. When movement becomes necessary, you might diverge.`
+      }
+    ],
+
+    give: {
+      youToThem: `If you're the Keeper, you offer the Rooted flexibility within stillness. Their groundedness is valuable, but staying put can become rigidity. You model the possibility of bringing full presence to wherever you are—including, sometimes, new places. Presence doesn't require position.`,
+      themToYou: `If you're Rooted in Stillness, you offer the Keeper commitment. Their attention is generous, but attention can wander. You model the possibility of staying—not just being present but being reliably, consistently here. Your rootedness gives their presence a home.`
+    },
+
+    risk: `The failure mode for this pairing is beautiful stagnation. If both of you validate stillness without questioning it, you can become stuck together in ways that feel like peace but are actually avoidance. The world requires movement sometimes. Change is sometimes necessary. Who notices when your shared stillness has become a refusal to grow?
+
+The deeper risk is that you create a cocoon that protects you from life's demands. Two people committed to being over doing can construct a life that looks peaceful but is actually contracted. You might be deeply present together while missing the larger movements of your lives—the changes that want to happen, the growth that requires discomfort.`,
+
+    question: {
+      text: "What necessary change have you been avoiding together—and what stillness might emerge on the other side of it?",
+      framing: `This question matters because it asks you to distinguish between genuine peace and comfortable avoidance. Your shared commitment to being is a gift, but being sometimes requires becoming. What's the next version of your stillness that you haven't yet had the courage to enter?`
+    }
+  },
+
+  "embers+rooted": {
+    thesis: "Two grounded keepers meeting on stable ground—the archivist of memory and the guardian of place. Easy resonance in shared solidity, but who makes sure the foundation isn't becoming a prison?",
+
+    distanceAnalysis: `When Keeper of Embers meets Rooted in Stillness, you're both oriented toward preservation. The Embers-keeper preserves what came before—memory, tradition, the wisdom of the past. The Rooted preserves where they stand—place, position, the commitments they've made. You're both guardians against loss in a world that forgets too easily.
+
+This shared orientation toward preservation creates immediate recognition. Neither of you chases novelty. Neither of you assumes that new is better. You both understand that something valuable is lost when we're always rushing forward. In each other, you find someone who also holds on.`,
+
+    dynamic: `At its core, this pairing brings together two forms of keeping. The Embers-keeper guards the fire of memory; the Rooted guards the ground of place. Together, you create a zone of stability that most people would find constraining but you both find essential.
+
+The dynamic between you is one of mutual valuation. The Embers-keeper values the Rooted's commitment to staying; the Rooted values the Embers-keeper's commitment to remembering. Neither dismisses the other's preservation as hoarding or stubbornness. You understand each other's holding as care.
+
+But this same mutual valuation can become mutual reinforcement of rigidity. If neither of you ever lets go—of memories, of positions, of the way things have been—your shared holding can become a weight. The archive and the foundation are supposed to serve life, but they can become substitutes for it.`,
+
+    align: [
+      {
+        point: "Preservation as value",
+        explanation: `Both of you believe that holding on is sometimes the most important thing you can do. The Embers-keeper holds memory; the Rooted holds ground. In a culture that values disruption and novelty, this shared commitment to preservation connects you deeply.`
+      },
+      {
+        point: "Skepticism of change for its own sake",
+        explanation: `Neither of you is impressed by novelty alone. The Embers-keeper knows that wisdom lives in what's been tested; the Rooted knows that stability requires staying put. You both see through the cult of the new that others worship.`
+      },
+      {
+        point: "Depth over breadth",
+        explanation: `Both of you prefer going deeper into what you have rather than spreading wider into what you don't. The Embers-keeper deepens into the past; the Rooted deepens into place. This shared orientation toward depth means your relationship can develop richness that more restless pairs miss.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "Past vs. present anchoring",
+        explanation: `The Embers-keeper is anchored in time—what came before, what must be remembered. The Rooted is anchored in space—where they are, what commitments they've made. These anchors usually align, but they can diverge. When the past requires leaving the present place, or when staying put requires releasing old memories, whose anchor holds?`
+      }
+    ],
+
+    give: {
+      youToThem: `If you're the Keeper of Embers, you offer the Rooted historical depth. Their commitment to place is solid, but place exists in time. You connect their ground to all the ground that came before, all the people who stood where they stand. You give their rootedness roots.`,
+      themToYou: `If you're Rooted in Stillness, you offer the Embers-keeper a home for memory. Their archive is precious, but archives need places to live. You provide the stable ground where memory can be tended, the consistency that lets preservation happen. You ground their keeping.`
+    },
+
+    risk: `The failure mode for this pairing is fossilization. If both of you are committed to holding on—to memory, to place, to the way things have been—you can become so stable that nothing can grow. The past and the present merge into a single unchanging block. Who notices when your shared solidity has become rigidity? Who makes space for what wants to emerge?
+
+The deeper risk is that you create a beautiful monument and forget to live in it. Two keepers keeping together can produce impressive preservation while the actual life being preserved grows stale. The fire the Embers-keeper tends is supposed to warm people, not just glow in a museum. The ground the Rooted stands on is supposed to support growth, not just resist change.`,
+
+    question: {
+      text: "What new thing wants to grow from your shared ground—and what old thing might need to be composted to feed it?",
+      framing: `This question matters because it asks you to turn your keeping toward the future, not just the past and present. Your shared stability is a gift, but stability serves life best when it enables growth. What's ready to be released so something new can take root?`
+    }
+  },
+
+  "cleareyed+swimmer": {
+    thesis: "Two truth-seekers with different methods—one sees directly, one questions endlessly. Easy resonance in shared commitment to reality, but who decides when truth has been found?",
+
+    distanceAnalysis: `When Clear-Eyed in the Storm meets Swimmer in Deep Water, you're both oriented toward truth. The Clear-Eyed type pursues truth through direct seeing—they look at what's there and name it. The Swimmer pursues truth through questions—they explore beneath surfaces, holding uncertainty while insight develops. You're both committed to reality over comfortable illusion.
+
+This shared commitment to truth creates immediate recognition. Neither of you accepts easy answers. Neither of you chooses comfort over accuracy. You both understand that knowing requires courage—whether that's the courage to see clearly or the courage to keep asking. In each other, you find a fellow traveler toward what's real.`,
+
+    dynamic: `At its core, this pairing brings together two forms of truth-seeking. The Clear-Eyed type cuts through confusion with direct vision; the Swimmer moves through confusion with patient inquiry. Together, you might find a fuller picture than either could alone—the Clear-Eyed's sight informed by the Swimmer's depth, the Swimmer's questions sharpened by the Clear-Eyed's clarity.
+
+The dynamic between you is one of complementary investigation. The Clear-Eyed says what they see; the Swimmer asks what hasn't been seen yet. Neither dismisses the other's method. This creates productive inquiry where direct vision and persistent questioning work together.
+
+But this same complementarity can create tension around closure. The Clear-Eyed type tends toward conclusion—they see, they speak, they move on. The Swimmer tends toward continuation—there's always another question, another depth to explore. Who decides when truth has been found? Your shared commitment to reality might not translate to shared timing about when investigation ends.`,
+
+    align: [
+      {
+        point: "Truth over comfort",
+        explanation: `Both of you have chosen to face what's real rather than what's pleasant. The Clear-Eyed won't look away from uncomfortable truths; the Swimmer won't stop questioning when questions become difficult. This shared prioritization of truth creates a foundation of mutual respect.`
+      },
+      {
+        point: "Depth matters",
+        explanation: `Neither of you is satisfied with surface appearances. The Clear-Eyed sees through illusions to what's actually there; the Swimmer dives beneath surfaces to what lies hidden. This shared commitment to depth means your conversations can go places that more superficial pairs wouldn't reach.`
+      },
+      {
+        point: "Courage in inquiry",
+        explanation: `Both of you understand that truth-seeking requires bravery. The Clear-Eyed must have courage to say what they see; the Swimmer must have courage to stay in uncertainty. You recognize each other's bravery because you share it, even in different forms.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "Certainty vs. inquiry",
+        explanation: `The Clear-Eyed type tends toward conclusions—they see clearly and speak definitively. The Swimmer tends toward questions—clarity is always provisional, there's always more to explore. This can create friction: the Clear-Eyed may feel the Swimmer is avoiding conclusions; the Swimmer may feel the Clear-Eyed is closing too quickly. How do you know when investigation should end?`
+      }
+    ],
+
+    give: {
+      youToThem: `If you're Clear-Eyed, you offer the Swimmer grounding in decision. Their inquiry is valuable, but inquiry without conclusion can become paralysis. You model the possibility of seeing clearly enough to act, of truth definite enough to stand on. You give their swimming a shore to reach.`,
+      themToYou: `If you're the Swimmer, you offer the Clear-Eyed humility about certainty. Their direct vision is powerful, but what if they're missing something? You model the possibility that truth is deeper than any single seeing, that patient questioning reveals what quick clarity misses. You give their seeing depth.`
+    },
+
+    risk: `The failure mode for this pairing is mutual frustration about closure. The Clear-Eyed type becomes impatient with the Swimmer's endless inquiry—at some point, you have to decide what you see and act on it. The Swimmer becomes frustrated with the Clear-Eyed's premature certainty—how can they be so sure when there's always more to question? Without explicit negotiation about when investigation ends, you can talk past each other indefinitely.
+
+The deeper risk is that you fail to integrate your methods. The Clear-Eyed keeps seeing without deepening; the Swimmer keeps questioning without concluding. You coexist rather than learn from each other. The real gift of this pairing—vision informed by depth, inquiry that eventually lands—goes unrealized.`,
+
+    question: {
+      text: "What truth have you both been circling—and what would it mean to name it together, even if naming feels premature?",
+      framing: `This question matters because it asks you to find shared ground between seeing and questioning. Your different methods both serve truth. What happens when you combine them—when the Clear-Eyed's sight meets the Swimmer's depth and together you speak what you've found?`
+    }
+  },
+
+  "swimmer+unbound": {
+    thesis: "Two navigators of unmapped territory—the questioner of depths and the transcender of limits. Beautiful explorations together, but who anchors the expedition when both prefer the journey to arrival?",
+
+    distanceAnalysis: `When Swimmer in Deep Water meets Unbound from Form, you're both comfortable beyond conventional boundaries. The Swimmer is comfortable in intellectual depths—holding questions that others would resolve too quickly, exploring territory that has no map. The Unbound is comfortable in existential expansion—imagining forms of consciousness and being that transcend current limits. You're both explorers of the unknown.
+
+This shared comfort with the unmapped creates immediate recognition. Neither of you needs solid ground to feel safe. Neither of you insists on conclusions before the inquiry is complete. You both understand that some truths can only be found by venturing beyond where others stop. In each other, you find a fellow traveler who doesn't need a destination.`,
+
+    dynamic: `At its core, this pairing brings together two forms of venturing beyond. The Swimmer ventures into intellectual depths; the Unbound ventures into existential possibilities. Together, you can explore territories that would terrify more grounded souls—questions without answers, possibilities without precedent.
+
+The dynamic between you is one of mutual permission to keep going. The Swimmer doesn't ask the Unbound to come back to earth; the Unbound doesn't ask the Swimmer to surface with conclusions. You validate each other's appetite for the beyond, whatever form that takes.
+
+But this same mutual permission can become mutual abandonment of ground. If neither of you anchors the expedition, if both of you only value the journey, you can drift together into territories so abstract they lose contact with lived reality. The depths and the heights can both become escapes from the middle—from the actual life you're living while you explore.`,
+
+    align: [
+      {
+        point: "Comfort with the unknown",
+        explanation: `Neither of you requires certainty to feel secure. The Swimmer can hold questions indefinitely; the Unbound can imagine possibilities without knowing if they're achievable. This shared tolerance for uncertainty means your explorations aren't cut short by anxiety about not-knowing.`
+      },
+      {
+        point: "Imagination as tool",
+        explanation: `Both of you use imagination seriously—not as escape but as exploration. The Swimmer imagines possibilities beneath the surface of things; the Unbound imagines possibilities beyond the limits of things. This shared use of imagination as a serious tool connects you.`
+      },
+      {
+        point: "Beyond the conventional",
+        explanation: `Neither of you is satisfied with ordinary answers to extraordinary questions. The Swimmer keeps questioning when others would stop; the Unbound keeps reaching when others would settle. You both understand that the most important truths might lie outside conventional territory.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "Depth vs. transcendence",
+        explanation: `The Swimmer goes down—into complexity, nuance, the depths of a question. The Unbound goes out—past limits, toward possibilities that don't exist yet. These movements aren't opposed, but they're different. When your explorations diverge, which direction do you follow? Whose unmapped territory gets explored?`
+      }
+    ],
+
+    give: {
+      youToThem: `If you're the Swimmer, you offer the Unbound intellectual rigor. Their transcendent vision is beautiful, but is it grounded in anything? You model the possibility of exploring beyond limits while still asking hard questions, of imagination disciplined by inquiry. You give their reaching depth.`,
+      themToYou: `If you're Unbound from Form, you offer the Swimmer horizon expansion. Their questioning is powerful, but questions asked within too narrow a frame miss larger possibilities. You model the possibility of questioning that includes transcendence, of depth that reaches toward the stars. You give their swimming scope.`
+    },
+
+    risk: `The failure mode for this pairing is beautiful disconnection from reality. If both of you only value exploration—the Swimmer's endless questions, the Unbound's limitless reaching—you can drift together into abstraction so pure it loses contact with lived life. The questions never land; the transcendence never touches ground. You might be brilliant together and also irrelevant.
+
+The deeper risk is that you enable each other's avoidance of commitment. The Swimmer avoids conclusions; the Unbound avoids limits. Together, you can create a relationship that's always expanding and never settling, always exploring and never arriving. At some point, life requires choosing. If neither of you can anchor the expedition, you might explore forever without finding home.`,
+
+    question: {
+      text: "What have your explorations been avoiding—and what would it mean to bring your discoveries back to the ordinary life you share?",
+      framing: `This question matters because it asks you to complete the explorer's journey. Going out is only half the work; the other half is bringing something back. What have you found in your shared depths and heights that could enrich the actual life you're living together?`
+    }
+  },
+
+  "architect+mender": {
+    thesis: "Two systems thinkers meeting at the intersection of design and repair—one builds new structures, one restores old ones. Easy resonance in shared understanding of how things work, but whose vision of the system prevails?",
+
+    distanceAnalysis: `When Architect of the Commons meets Mender of What Remains, you share a fundamental orientation toward systems. The Architect sees systems as things to be designed—structures that could exist but don't yet, commons that could serve everyone if built properly. The Mender sees systems as things to be maintained—structures that already exist and deserve care, infrastructure that keeps working because someone keeps fixing it. You both think in systems.
+
+This shared systems-thinking creates immediate recognition. Neither of you looks at the world in purely individual terms. Neither of you ignores structure in favor of personality. You both understand that most of what happens is shaped by systems—designed or inherited, functional or failing. In each other, you find someone who sees the same blueprints.`,
+
+    dynamic: `At its core, this pairing brings together two relationships to structure. The Architect designs for futures that don't exist yet; the Mender cares for structures that already do. Together, you might create a more complete approach—new designs informed by repair wisdom, maintenance oriented toward better futures.
+
+The dynamic between you is one of complementary vision. The Architect sees what could be built; the Mender sees what needs to be fixed. Neither dismisses the other's focus. This creates productive space where building and repairing work together.
+
+But this same complementarity can create tension about priorities. The Architect may see the Mender's repairs as putting effort into systems that should be replaced; the Mender may see the Architect's new designs as abandoning systems that just need care. When resources are finite, do you build new or fix old? Your shared systems-thinking doesn't automatically resolve this tension.`,
+
+    align: [
+      {
+        point: "Systems thinking",
+        explanation: `Both of you see the structures beneath the surface. The Architect designs them; the Mender maintains them. This shared attention to how things work—not just what they are—creates a foundation for deep understanding. You both know that changing individuals matters less than changing systems.`
+      },
+      {
+        point: "Belief in function",
+        explanation: `Both of you believe that things can work properly. The Architect believes in good design; the Mender believes in good repair. Neither of you is cynical about the possibility of functional systems. This shared optimism about structure connects you.`
+      },
+      {
+        point: "Care expressed through work",
+        explanation: `Neither of you just thinks about systems—you do something about them. The Architect's design is a form of care; the Mender's repair is a form of care. You both understand that love for the commons requires labor.`
+      }
+    ],
+
+    clash: [
+      {
+        point: "Build new vs. fix old",
+        explanation: `The Architect is oriented toward creation—designing structures that don't exist yet. The Mender is oriented toward preservation—caring for structures that already do. When a system is failing, the Architect may want to replace it; the Mender may want to restore it. Whose approach is right? The answer depends on context, but you'll instinctively lean different directions.`
+      },
+      {
+        point: "Whose system matters?",
+        explanation: `The Architect's new design serves their vision of the commons; the Mender's repair preserves what already exists. These aren't always compatible. The Mender may be maintaining something the Architect thinks should be redesigned. The tension isn't about method but about what deserves investment.`
+      }
+    ],
+
+    give: {
+      youToThem: `If you're the Architect, you offer the Mender vision for what their repairs could become. Their maintenance is valuable, but maintenance in service of what? You show them that the systems they're fixing could be transformed, that repair can be a step toward something better rather than just preservation of what is.`,
+      themToYou: `If you're the Mender, you offer the Architect respect for what already exists. Their designs are beautiful, but they don't start from nothing—there's always existing infrastructure, previous attempts, systems that people depend on right now. You ground their vision in what's actually there, showing them that building and repairing can work together.`
+    },
+
+    risk: `The failure mode for this pairing is parallel work that never integrates. The Architect designs new systems; the Mender repairs old ones; neither informs the other's work. The new designs don't learn from repair wisdom; the repairs don't orient toward better futures. You coexist rather than collaborate.
+
+The deeper risk is that you compete for resources rather than combining forces. In a world of limited attention and energy, do you spend it on the Architect's new design or the Mender's maintenance of the old? This can become a quiet power struggle disguised as methodological difference. The question isn't which approach is right but how they might work together.`,
+
+    question: {
+      text: "How might your building and their repairing serve the same commons—and what would a system look like that you designed and maintained together?",
+      framing: `This question matters because it asks you to integrate your different orientations rather than choosing between them. The commons needs both new design and ongoing care. What becomes possible when you stop seeing these as competing and start seeing them as complementary?`
+    }
   }
 };
 
