@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { archetypes, type Archetype } from "@/lib/archetypes";
 import { RadarChart } from "@/components/RadarChart";
+import { CreateJoinStep } from "./steps/CreateJoinStep";
 import styles from "./ReadingPage.module.css";
 
 type ReadingPageProps = {
@@ -28,6 +30,7 @@ const compatibilityMap: Record<string, string> = {
 };
 
 export function ReadingPage({ archetypeKey }: ReadingPageProps) {
+  const [showCreateUtopia, setShowCreateUtopia] = useState(false);
   const archetype = archetypes[archetypeKey];
 
   if (!archetype) {
@@ -36,6 +39,11 @@ export function ReadingPage({ archetypeKey }: ReadingPageProps) {
         <p>Archetype not found.</p>
       </div>
     );
+  }
+
+  // Show utopia creation flow
+  if (showCreateUtopia) {
+    return <CreateJoinStep archetypeKey={archetypeKey} />;
   }
 
   // Get ally, tension, and need archetypes
@@ -201,12 +209,12 @@ export function ReadingPage({ archetypeKey }: ReadingPageProps) {
 
       {/* CTA */}
       <section className={styles.ctaSection}>
-        <Link
-          href={`/wonder/essay/quiz/utopia/${archetypeKey}`}
+        <button
           className={styles.primaryBtn}
+          onClick={() => setShowCreateUtopia(true)}
         >
           Create Your Utopia
-        </Link>
+        </button>
         <button
           className={styles.secondaryBtn}
           onClick={() => {
