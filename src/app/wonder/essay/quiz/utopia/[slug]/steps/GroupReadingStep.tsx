@@ -122,19 +122,18 @@ export function GroupReadingStep({
           </div>
         </div>
 
-        {/* Archetype Breakdown */}
-        <div className={styles.breakdownList}>
-          {analysis.composition.frequencies.map((freq) => {
-            const arch = archetypes[freq.archetype];
+        {/* Member List */}
+        <div className={styles.memberList}>
+          {members.map((member) => {
+            const arch = archetypes[member.archetype];
             return (
-              <div key={freq.archetype} className={styles.breakdownItem}>
+              <div key={member.id} className={styles.memberItem}>
+                <span className={styles.memberName}>{member.name || "Anonymous"}</span>
                 <span
-                  className={styles.breakdownDot}
-                  style={{ backgroundColor: arch?.color || "#888" }}
-                />
-                <span className={styles.breakdownName}>{arch?.name || freq.archetype}</span>
-                <span className={styles.breakdownCount}>
-                  {freq.count} ({Math.round(freq.percentage)}%)
+                  className={styles.memberArchetype}
+                  style={{ color: arch?.color || "#888" }}
+                >
+                  {arch?.name || member.archetype}
                 </span>
               </div>
             );
