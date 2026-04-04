@@ -5,7 +5,6 @@ import Link from "next/link";
 import { archetypes, type Archetype } from "@/lib/archetypes";
 import { RadarChart } from "@/components/RadarChart";
 import { CreateJoinStep } from "./steps/CreateJoinStep";
-import UtopiaReadyBanner from "./UtopiaReadyBanner";
 import styles from "./ReadingPage.module.css";
 
 type CreatedUtopia = {
@@ -226,40 +225,47 @@ export function ReadingPage({ archetypeKey }: ReadingPageProps) {
 
       <div className={styles.divider} />
 
-      {/* CTA */}
+      {/* Compare Worldviews CTA */}
       <section className={styles.ctaSection}>
-        {existingUtopia ? (
-          <Link
-            href={`/wonder/essay/quiz/utopia/${existingUtopia.slug}`}
-            className={styles.primaryBtn}
-          >
-            Go to Your Utopia
-          </Link>
-        ) : (
+        <h2 className={styles.sectionTitle}>Compare Worldviews</h2>
+        <p className={styles.ctaDescription}>
+          See how your worldview fits with friends, family, and coworkers.
+          Create a group and invite others to take the quiz.
+        </p>
+        <div className={styles.ctaButtons}>
+          {existingUtopia ? (
+            <Link
+              href={`/wonder/essay/quiz/utopia/${existingUtopia.slug}`}
+              className={styles.primaryBtn}
+            >
+              Go to Your Group
+            </Link>
+          ) : (
+            <button
+              className={styles.primaryBtn}
+              onClick={() => setShowCreateUtopia(true)}
+            >
+              Create a Group
+            </button>
+          )}
           <button
-            className={styles.primaryBtn}
-            onClick={() => setShowCreateUtopia(true)}
+            className={styles.secondaryBtn}
+            onClick={() => {
+              if (navigator.share) {
+                navigator.share({
+                  title: `I'm ${archetype.name}`,
+                  text: archetype.utopia,
+                  url: window.location.href,
+                });
+              } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert("Link copied to clipboard!");
+              }
+            }}
           >
-            Create Your Utopia
+            Share Result
           </button>
-        )}
-        <button
-          className={styles.secondaryBtn}
-          onClick={() => {
-            if (navigator.share) {
-              navigator.share({
-                title: `I'm ${archetype.name}`,
-                text: archetype.utopia,
-                url: window.location.href,
-              });
-            } else {
-              navigator.clipboard.writeText(window.location.href);
-              alert("Link copied to clipboard!");
-            }
-          }}
-        >
-          Share Result
-        </button>
+        </div>
       </section>
 
       {/* Essay Link */}
@@ -268,9 +274,6 @@ export function ReadingPage({ archetypeKey }: ReadingPageProps) {
           Read <em>When Purpose Is All We Have Left</em> &rarr;
         </Link>
       </div>
-
-      {/* Banner for existing utopia */}
-      <UtopiaReadyBanner />
     </div>
   );
 }

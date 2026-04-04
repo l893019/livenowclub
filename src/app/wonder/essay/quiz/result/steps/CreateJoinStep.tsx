@@ -6,7 +6,6 @@ import styles from "./CreateJoinStep.module.css";
 
 type CreateJoinStepProps = {
   archetypeKey: string;
-  inviteSlug?: string | null;
 };
 
 const suggestedNames: Record<string, string> = {
@@ -26,23 +25,15 @@ const suggestedNames: Record<string, string> = {
   between: "The Liminal",
 };
 
-type Mode = "choose" | "create";
 type CreateStatus = "idle" | "loading" | "error";
 
-export function CreateJoinStep({ archetypeKey, inviteSlug }: CreateJoinStepProps) {
+export function CreateJoinStep({ archetypeKey }: CreateJoinStepProps) {
   const router = useRouter();
-  const [mode, setMode] = useState<Mode>("choose");
-  const [utopiaName, setUtopiaName] = useState(
-    suggestedNames[archetypeKey] || "My Utopia"
+  const [groupName, setGroupName] = useState(
+    suggestedNames[archetypeKey] || "My Group"
   );
   const [status, setStatus] = useState<CreateStatus>("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-
-  const handleJoin = useCallback(() => {
-    if (inviteSlug) {
-      router.push(`/wonder/essay/quiz/utopia/${inviteSlug}/join`);
-    }
-  }, [inviteSlug, router]);
 
   const handleCreate = useCallback(async () => {
     setStatus("loading");
@@ -63,17 +54,17 @@ export function CreateJoinStep({ archetypeKey, inviteSlug }: CreateJoinStepProps
         },
         body: JSON.stringify({
           userId,
-          customName: utopiaName,
+          customName: groupName,
         }),
       });
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || "Failed to create utopia");
+        throw new Error(data.error || "Failed to create group");
       }
 
-      // Redirect to the new utopia page
+      // Redirect to the new group page
       router.push(`/wonder/essay/quiz/utopia/${data.room.slug}`);
     } catch (error) {
       setStatus("error");
@@ -81,70 +72,32 @@ export function CreateJoinStep({ archetypeKey, inviteSlug }: CreateJoinStepProps
         error instanceof Error ? error.message : "Something went wrong"
       );
     }
-  }, [utopiaName, router]);
+  }, [groupName, router]);
 
   const handleBack = useCallback(() => {
-    setMode("choose");
-    setStatus("idle");
-    setErrorMessage(null);
-  }, []);
+    router.back();
+  }, [router]);
 
-  if (mode === "choose") {
-    return (
-      <div className={styles.container}>
-        <div className={styles.content}>
-          <h2 className={styles.title}>What would you like to do?</h2>
-          <p className={styles.subtitle}>
-            Build your own utopia or join one you've been invited to.
-          </p>
-
-          <div className={styles.optionCards}>
-            <button
-              className={styles.optionCard}
-              onClick={() => setMode("create")}
-            >
-              <span className={styles.optionIcon}>+</span>
-              <span className={styles.optionTitle}>Build a Utopia</span>
-              <span className={styles.optionDescription}>
-                Create a new space and invite others
-              </span>
-            </button>
-
-            {inviteSlug && (
-              <button className={styles.optionCard} onClick={handleJoin}>
-                <span className={styles.optionIcon}>&rarr;</span>
-                <span className={styles.optionTitle}>Join a Utopia</span>
-                <span className={styles.optionDescription}>
-                  Accept your invitation
-                </span>
-              </button>
-            )}
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // Create mode
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <h2 className={styles.title}>Name Your Utopia</h2>
+        <h2 className={styles.title}>Create a Group</h2>
         <p className={styles.subtitle}>
-          We suggest a name based on your archetype, but feel free to change it.
+          Compare worldviews with friends, family, or coworkers.
+          Name your group and share the invite link.
         </p>
 
         <div className={styles.createForm}>
-          <label htmlFor="utopia-name" className={styles.inputLabel}>
-            Utopia Name
+          <label htmlFor="group-name" className={styles.inputLabel}>
+            Group Name
           </label>
           <input
-            id="utopia-name"
+            id="group-name"
             type="text"
-            value={utopiaName}
-            onChange={(e) => setUtopiaName(e.target.value)}
+            value={groupName}
+            onChange={(e) => setGroupName(e.target.value)}
             className={styles.textInput}
-            placeholder="Enter a name for your utopia"
+            placeholder="Enter a name for your group"
             disabled={status === "loading"}
             maxLength={50}
           />
@@ -157,9 +110,9 @@ export function CreateJoinStep({ archetypeKey, inviteSlug }: CreateJoinStepProps
             <button
               className={styles.createButton}
               onClick={handleCreate}
-              disabled={status === "loading" || !utopiaName.trim()}
+              disabled={status === "loading" || !groupName.trim()}
             >
-              {status === "loading" ? "Creating..." : "Create Utopia"}
+              {status === "loading" ? "Creating..." : "Create Group"}
             </button>
             <button
               className={styles.backButton}

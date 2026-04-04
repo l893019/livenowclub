@@ -1274,24 +1274,19 @@
         </div>
       </div>
 
-      <!-- NAME YOUR UTOPIA -->
+      <!-- YOUR NAME -->
       <div class="screen" id="screen-name">
         <div class="name-content">
-          <div class="name-label">Create your utopia</div>
-          <p class="name-subtitle">You'll invite others to join after you discover your worldview.</p>
+          <div class="name-label">Before we begin</div>
+          <p class="name-subtitle">7 questions to discover your worldview.</p>
           <div class="name-fields">
-            <div class="name-field">
-              <label for="utopia-name-input" class="name-field-label">Utopia name</label>
-              <input type="text" id="utopia-name-input" class="utopia-name-input" maxlength="50" />
-            </div>
             <div class="name-field">
               <label for="user-name-input" class="name-field-label">Your name <span class="optional">(optional)</span></label>
               <input type="text" id="user-name-input" class="utopia-name-input" placeholder="How should we introduce you?" maxlength="30" />
             </div>
           </div>
           <div class="name-actions">
-            <button class="start-btn" onclick="startQuizWithName()">Continue</button>
-            <button class="skip-btn" onclick="startQuizWithoutName()">Skip — I just want my result</button>
+            <button class="start-btn" onclick="startQuiz()">Start Quiz</button>
           </div>
         </div>
       </div>
@@ -1927,8 +1922,7 @@
     // User identity
     let userId = localStorage.getItem('quiz-user-id');
     let userResult = null;
-    let pendingUtopiaName = null; // Name for utopia to create after quiz
-    let pendingUserName = null; // User's display name for utopia
+    let pendingUserName = null; // User's display name
     try {
       const stored = localStorage.getItem('quiz-user-result');
       if (stored) userResult = JSON.parse(stored);
@@ -1993,28 +1987,16 @@
       showScreen('screen-name');
     }
 
-    function startQuizWithName() {
-      const utopiaNameInput = document.getElementById('utopia-name-input');
-      const userNameInput = document.getElementById('user-name-input');
-      const utopiaName = utopiaNameInput.value.trim();
-      const userName = userNameInput.value.trim();
-
-      if (utopiaName) {
-        pendingUtopiaName = utopiaName;
-      }
-      if (userName) {
-        pendingUserName = userName;
-      }
-      startQuiz();
-    }
-
-    function startQuizWithoutName() {
-      pendingUtopiaName = null;
-      pendingUserName = null;
-      startQuiz();
-    }
-
     function startQuiz() {
+      // Capture user name if provided
+      const userNameInput = document.getElementById('user-name-input');
+      if (userNameInput) {
+        const userName = userNameInput.value.trim();
+        if (userName) {
+          pendingUserName = userName;
+        }
+      }
+
       currentQuestion = 1;
       updateProgress(1);
       showScreen('screen-1');
@@ -2249,45 +2231,22 @@
         }
       }
 
-      // Check if they named a utopia to create
-      if (pendingUtopiaName && userId) {
+      // Update user name if provided
+      if (pendingUserName && userResult) {
+        userResult.name = pendingUserName;
+        localStorage.setItem('quiz-user-result', JSON.stringify(userResult));
         try {
-          // Use the name they entered on the naming screen
-          if (pendingUserName && userResult) {
-            userResult.name = pendingUserName;
-            localStorage.setItem('quiz-user-result', JSON.stringify(userResult));
-            // Update API with name
-            await fetch('/api/utopia/save-result', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ result: userResult })
-            });
-          }
-
-          // Create the utopia
-          const response = await fetch('/api/utopia/create', {
+          await fetch('/api/utopia/save-result', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              userId,
-              customName: pendingUtopiaName
-            })
+            body: JSON.stringify({ result: userResult })
           });
-
-          const data = await response.json();
-          if (data.success && data.room) {
-            // Store utopia info for result page to show banner
-            sessionStorage.setItem('created-utopia', JSON.stringify({
-              slug: data.room.slug,
-              name: data.room.name
-            }));
-          }
         } catch (error) {
-          console.error('Failed to create utopia:', error);
+          console.error('Failed to update user name:', error);
         }
       }
 
-      // Always go to result page first (with utopia banner if applicable)
+      // Go to result page
       window.location.href = `/wonder/essay/quiz/result?a=${primary}&s=${shadow}`;
     }
 

@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const room = await getUtopia(slug);
 
   if (!room) {
-    return { title: "Utopia Not Found" };
+    return { title: "Group Not Found" };
   }
 
   const founder = room.members.find(m => m.id === room.createdBy);
@@ -37,11 +37,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const founderArchetype = founder?.archetype ? archetypeData[founder.archetype]?.name : "";
 
   return {
-    title: `Join ${room.name}`,
-    description: `${founderName} invited you to join ${room.name}. Take the quiz to enter.`,
+    title: `Compare Worldviews with ${room.name}`,
+    description: `${founderName} invited you to compare worldviews. Take the quiz to see how your perspectives fit together.`,
     openGraph: {
-      title: `Join ${room.name}`,
-      description: `${founderName}, a ${founderArchetype}, invited you to join their utopia.`,
+      title: `Compare Worldviews with ${room.name}`,
+      description: `${founderName}, a ${founderArchetype}, wants to compare worldviews with you.`,
       url: `https://livenowclub.com/wonder/essay/quiz/utopia/${slug}/join`,
       type: "website",
     },
@@ -67,16 +67,16 @@ export default async function JoinUtopiaPage({ params }: Props) {
 
   let populationText = "";
   if (population === 1) {
-    populationText = "You'll be the second to enter.";
+    populationText = "You'll be the second to compare.";
   } else if (population === 2) {
-    populationText = `Join ${founderName} and ${otherMembers[0]?.name || "another"}.`;
+    populationText = `Compare with ${founderName} and ${otherMembers[0]?.name || "another"}.`;
   } else {
     const names = otherMembers.slice(0, 2).map(m => m.name).join(", ");
     const remaining = population - 3;
     if (remaining > 0) {
-      populationText = `Join ${founderName}, ${names}, and ${remaining} ${remaining === 1 ? "other" : "others"}.`;
+      populationText = `Compare with ${founderName}, ${names}, and ${remaining} ${remaining === 1 ? "other" : "others"}.`;
     } else {
-      populationText = `Join ${founderName} and ${names}.`;
+      populationText = `Compare with ${founderName} and ${names}.`;
     }
   }
 
@@ -271,27 +271,27 @@ export default async function JoinUtopiaPage({ params }: Props) {
       </header>
 
       <main className="join-container">
-        <div className="join-label">You&apos;ve been invited to</div>
+        <div className="join-label">Compare worldviews with</div>
         <h1 className="utopia-name">{room.name}</h1>
         <p className="founder-info">
-          Founded by {founderName}, a <span className="founder-archetype">{founderArchetypeName}</span>
+          Created by {founderName}, a <span className="founder-archetype">{founderArchetypeName}</span>
         </p>
         <p className="population">{populationText}</p>
 
         <div className="options">
           <Link href={`/wonder/essay/quiz?join=${slug}`} className="option-card primary">
-            <div className="option-title">Join This Utopia</div>
+            <div className="option-title">Join This Group</div>
             <div className="option-desc">
-              Take the quiz and see how your worldviews combine.
+              Take the quiz and see how your worldviews fit together.
             </div>
           </Link>
 
           <div className="divider">or</div>
 
           <Link href="/wonder/essay/quiz" className="option-card">
-            <div className="option-title">Build Your Own</div>
+            <div className="option-title">Create Your Own Group</div>
             <div className="option-desc">
-              Take the quiz and create your own utopia to invite others into.
+              Take the quiz and invite others to compare worldviews.
             </div>
           </Link>
         </div>
