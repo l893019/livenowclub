@@ -1,11 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { archetypes, type Archetype } from "@/lib/archetypes";
 import { RadarChart } from "@/components/RadarChart";
 import { CreateJoinStep } from "./steps/CreateJoinStep";
+import UtopiaReadyBanner from "./UtopiaReadyBanner";
 import styles from "./ReadingPage.module.css";
+
+type CreatedUtopia = {
+  slug: string;
+  name: string;
+};
 
 type ReadingPageProps = {
   archetypeKey: string;
@@ -31,7 +37,20 @@ const compatibilityMap: Record<string, string> = {
 
 export function ReadingPage({ archetypeKey }: ReadingPageProps) {
   const [showCreateUtopia, setShowCreateUtopia] = useState(false);
+  const [existingUtopia, setExistingUtopia] = useState<CreatedUtopia | null>(null);
   const archetype = archetypes[archetypeKey];
+
+  // Check if utopia was already created (user named it before quiz)
+  useEffect(() => {
+    const stored = sessionStorage.getItem("created-utopia");
+    if (stored) {
+      try {
+        setExistingUtopia(JSON.parse(stored));
+      } catch (e) {
+        console.error("Failed to parse created-utopia:", e);
+      }
+    }
+  }, []);
 
   if (!archetype) {
     return (
@@ -41,8 +60,8 @@ export function ReadingPage({ archetypeKey }: ReadingPageProps) {
     );
   }
 
-  // Show utopia creation flow
-  if (showCreateUtopia) {
+  // Show utopia creation flow (only if no existing utopia)
+  if (showCreateUtopia && !existingUtopia) {
     return <CreateJoinStep archetypeKey={archetypeKey} />;
   }
 
@@ -209,12 +228,21 @@ export function ReadingPage({ archetypeKey }: ReadingPageProps) {
 
       {/* CTA */}
       <section className={styles.ctaSection}>
-        <button
-          className={styles.primaryBtn}
-          onClick={() => setShowCreateUtopia(true)}
-        >
-          Create Your Utopia
-        </button>
+        {existingUtopia ? (
+          <Link
+            href={`/wonder/essay/quiz/utopia/${existingUtopia.slug}`}
+            className={styles.primaryBtn}
+          >
+            Go to Your Utopia
+          </Link>
+        ) : (
+          <button
+            className={styles.primaryBtn}
+            onClick={() => setShowCreateUtopia(true)}
+          >
+            Create Your Utopia
+          </button>
+        )}
         <button
           className={styles.secondaryBtn}
           onClick={() => {
@@ -240,6 +268,9 @@ export function ReadingPage({ archetypeKey }: ReadingPageProps) {
           Read <em>When Purpose Is All We Have Left</em> &rarr;
         </Link>
       </div>
+
+      {/* Banner for existing utopia */}
+      <UtopiaReadyBanner />
     </div>
   );
 }
