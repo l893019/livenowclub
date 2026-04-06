@@ -1,12 +1,43 @@
-/* ReadingPage.module.css - Scrollable analytical reading */
+/* ReadingPage.module.css - Matches quiz aesthetic */
 
 .reading {
   min-height: 100vh;
   background: #faf6f1;
   padding: 3rem 1.5rem 4rem;
-  max-width: 640px;
+  max-width: 680px;
   margin: 0 auto;
   position: relative;
+}
+
+/* Background landscape - subtle, faded */
+.bgLandscape {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50vh;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgLandscape img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bgLandscape::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 0%, #faf6f1 100%);
+}
+
+/* Content wrapper to sit above background */
+.content {
+  position: relative;
+  z-index: 1;
 }
 
 /* Back Button */
@@ -29,7 +60,7 @@
 }
 
 .backButton:hover {
-  color: #2d2a26;
+  color: #e8178a;
 }
 
 /* When back button present, add top padding */
@@ -43,28 +74,83 @@
   margin-bottom: 2.5rem;
 }
 
+/* Pink uppercase label */
 .label {
-  font-size: 0.875rem;
+  font-size: 11px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: rgba(45, 42, 38, 0.5);
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.25em;
+  color: #e8178a;
+  margin-bottom: 16px;
 }
 
+/* Gradient name */
 .name {
-  font-size: 2.25rem;
-  font-weight: 500;
+  font-family: 'Satoshi', system-ui, sans-serif;
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 400;
   line-height: 1.2;
-  margin: 0 0 1rem;
+  margin: 0 0 8px;
+  background: linear-gradient(135deg, #e8178a 0%, #ff6b6b 50%, #f4a03f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .tagline {
-  font-size: 1.125rem;
+  font-size: 1.1rem;
   font-style: italic;
-  color: rgba(45, 42, 38, 0.75);
-  line-height: 1.5;
+  color: rgba(45, 42, 38, 0.6);
+  line-height: 1.6;
   max-width: 500px;
   margin: 0 auto;
+}
+
+/* Utopia Card */
+.utopiaCard {
+  background: white;
+  border: 1px solid rgba(232, 23, 138, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.utopiaImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.utopiaLabel {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e8178a;
+  padding: 24px 24px 12px;
+}
+
+.utopiaText {
+  font-family: 'Satoshi', system-ui, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.7;
+  color: #2d2a26;
+  padding: 0 24px 28px;
+  margin: 0;
+  max-width: 500px;
+}
+
+/* Description */
+.description {
+  font-family: 'Satoshi', system-ui, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: #2d2a26;
+  margin-bottom: 32px;
+  text-align: left;
 }
 
 /* Sections */
@@ -73,31 +159,75 @@
 }
 
 .sectionTitle {
-  font-size: 1.125rem;
+  font-size: 10px;
   font-weight: 500;
-  color: #2d2a26;
-  margin: 0 0 1rem;
-  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #e8178a;
+  margin: 0 0 12px;
 }
 
 .divider {
   height: 1px;
-  background: rgba(45, 42, 38, 0.1);
+  background: rgba(232, 23, 138, 0.12);
   margin: 2.5rem 0;
 }
 
-/* Typography */
-.description {
-  font-size: 1.25rem;
-  line-height: 1.7;
-  color: #2d2a26;
-  text-align: center;
+/* Blind Spot - coral accent */
+.blindSpot {
+  background: rgba(255, 107, 107, 0.08);
+  border-left: 3px solid #ff6b6b;
+  padding: 20px 24px;
+  margin-bottom: 32px;
+  border-radius: 0 8px 8px 0;
 }
 
+.blindSpotLabel {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #ff6b6b;
+  margin-bottom: 8px;
+}
+
+.blindSpotText {
+  font-family: 'Satoshi', system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #2d2a26;
+  margin: 0;
+}
+
+/* Body Text */
 .bodyText {
   font-size: 1rem;
   line-height: 1.75;
   color: rgba(45, 42, 38, 0.85);
+}
+
+/* Superpower */
+.highlight {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: italic;
+  margin: 0 0 1.25rem;
+  color: #2d2a26;
+}
+
+.expandedContent {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(45, 42, 38, 0.85);
+}
+
+.expandedContent p {
+  margin: 0 0 1rem;
+}
+
+.expandedContent p:last-child {
+  margin-bottom: 0;
 }
 
 /* Core Beliefs */
@@ -124,30 +254,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: rgba(45, 42, 38, 0.25);
-}
-
-/* Superpower */
-.highlight {
-  font-size: 1.5rem;
-  font-weight: 400;
-  font-style: italic;
-  margin: 0 0 1.25rem;
-  text-transform: capitalize;
-}
-
-.expandedContent {
-  font-size: 1rem;
-  line-height: 1.75;
-  color: rgba(45, 42, 38, 0.85);
-}
-
-.expandedContent p {
-  margin: 0 0 1rem;
-}
-
-.expandedContent p:last-child {
-  margin-bottom: 0;
+  background: #e8178a;
 }
 
 /* Radar Chart */
@@ -157,74 +264,111 @@
   margin: 1.5rem 0 2rem;
 }
 
-/* Relationships */
+/* Compatibility / Relationships */
+.compatibility {
+  background: white;
+  border: 1px solid rgba(232, 23, 138, 0.12);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+
+.compatibilityLabel {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e8178a;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
 .relationships {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0;
 }
 
 .relationshipCard {
-  padding: 1.25rem;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 8px;
-  border: 1px solid rgba(45, 42, 38, 0.08);
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(232, 23, 138, 0.12);
+}
+
+.relationshipCard:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.relationshipCard:first-child {
+  padding-top: 0;
 }
 
 .relationshipLabel {
-  font-size: 0.75rem;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: rgba(45, 42, 38, 0.5);
-  margin: 0 0 0.5rem;
+  margin: 0 0 8px;
   font-weight: 500;
 }
 
 .archName {
   display: block;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 500;
-  margin-bottom: 0.5rem;
+  margin-bottom: 4px;
+  color: #2d2a26;
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .archName:hover {
-  opacity: 0.8;
+  color: #e8178a;
 }
 
 .relationshipDesc {
-  font-size: 0.9375rem;
+  font-size: 0.9rem;
   line-height: 1.6;
-  color: rgba(45, 42, 38, 0.75);
+  color: rgba(45, 42, 38, 0.7);
   margin: 0;
 }
 
 /* Books */
+.booksSection {
+  margin-bottom: 32px;
+}
+
+.booksWhy {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(45, 42, 38, 0.75);
+  margin: 0 0 16px;
+}
+
 .books {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 12px;
 }
 
 .bookCard {
-  padding: 1.25rem;
-  background: rgba(255, 255, 255, 0.6);
+  padding: 16px 20px;
+  background: white;
+  border: 1px solid rgba(232, 23, 138, 0.12);
   border-radius: 8px;
-  border: 1px solid rgba(45, 42, 38, 0.08);
 }
 
 .bookTitle {
-  font-size: 1.0625rem;
+  font-size: 1rem;
   font-weight: 500;
   color: #2d2a26;
-  margin: 0 0 0.25rem;
+  margin: 0;
 }
 
 .bookAuthor {
   font-size: 0.875rem;
-  color: rgba(45, 42, 38, 0.6);
-  margin: 0 0 0.75rem;
+  color: rgba(45, 42, 38, 0.5);
+  margin: 0;
 }
 
 .bookReason {
@@ -244,6 +388,47 @@
 
 .bookLink:hover {
   text-decoration: underline;
+}
+
+/* Go Deeper */
+.goDeeper {
+  margin-bottom: 32px;
+}
+
+.goDeeperLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.goDeeperLink {
+  display: block;
+  padding: 16px 20px;
+  background: white;
+  border: 1px solid rgba(232, 23, 138, 0.12);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.goDeeperLink:hover {
+  border-color: #e8178a;
+  transform: translateX(8px);
+  box-shadow: 0 4px 20px rgba(232, 23, 138, 0.12);
+}
+
+.goDeeperLinkTitle {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2d2a26;
+  margin-bottom: 2px;
+}
+
+.goDeeperLinkSub {
+  display: block;
+  font-size: 0.875rem;
+  color: rgba(45, 42, 38, 0.5);
 }
 
 /* CTA Section */
@@ -272,7 +457,7 @@
 .ctaButtons {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 12px;
   align-items: center;
 }
 
@@ -280,44 +465,67 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 2.5rem;
-  background: #2d2a26;
-  color: #faf6f1;
-  font-size: 1rem;
+  gap: 8px;
+  padding: 16px 48px;
+  background: #e8178a;
+  color: white;
+  font-family: 'Satoshi', system-ui, sans-serif;
+  font-size: 13px;
   font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.2s ease, transform 0.1s ease;
+  transition: all 0.3s ease;
 }
 
 .primaryBtn:hover {
-  background: #1a1816;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(232, 23, 138, 0.3);
 }
 
 .primaryBtn:active {
-  transform: scale(0.98);
+  transform: translateY(0);
 }
 
 .secondaryBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.5rem;
+  padding: 12px 24px;
   background: transparent;
-  color: rgba(45, 42, 38, 0.7);
-  font-size: 0.9375rem;
+  color: rgba(45, 42, 38, 0.6);
+  font-size: 0.9rem;
   font-weight: 400;
-  border: 1px solid rgba(45, 42, 38, 0.2);
-  border-radius: 8px;
+  border: none;
   cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .secondaryBtn:hover {
-  border-color: rgba(45, 42, 38, 0.4);
-  color: rgba(45, 42, 38, 0.9);
+  color: #e8178a;
+}
+
+/* Actions Row */
+.actionsRow {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.actionLink {
+  font-size: 0.875rem;
+  color: rgba(45, 42, 38, 0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.actionLink:hover {
+  color: #e8178a;
 }
 
 /* Essay Link */
@@ -334,7 +542,7 @@
 }
 
 .essayLinkText:hover {
-  color: #2d2a26;
+  color: #e8178a;
 }
 
 .essayLinkText em {
@@ -348,35 +556,45 @@
   }
 
   .name {
-    font-size: 1.875rem;
+    font-size: 1.75rem;
   }
 
   .tagline {
     font-size: 1rem;
   }
 
+  .utopiaText {
+    font-size: 1.05rem;
+    padding: 0 20px 24px;
+  }
+
   .description {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 
   .highlight {
     font-size: 1.25rem;
   }
 
-  .relationshipCard,
+  .compatibility {
+    padding: 20px;
+  }
+
   .bookCard {
-    padding: 1rem;
+    padding: 14px 16px;
   }
 
   /* Ensure adequate touch targets */
   .primaryBtn {
     min-height: 48px;
-    padding: 0.875rem 2rem;
+    padding: 14px 36px;
+    width: 100%;
+    max-width: 280px;
   }
 
   .secondaryBtn {
     min-height: 44px;
-    padding: 0.75rem 1.25rem;
+    padding: 12px 20px;
   }
 
   .bookLink {
@@ -394,14 +612,26 @@
   }
 
   .name {
-    font-size: 2.75rem;
+    font-size: 3rem;
   }
 
   .tagline {
+    font-size: 1.2rem;
+  }
+
+  .utopiaText {
     font-size: 1.25rem;
   }
 
   .description {
-    font-size: 1.375rem;
+    font-size: 1.1rem;
+  }
+
+  .goDeeperLinks {
+    flex-direction: row;
+  }
+
+  .goDeeperLink {
+    flex: 1;
   }
 }

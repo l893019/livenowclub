@@ -1,95 +1,182 @@
+/* RevealAnimation.module.css - Matches quiz aesthetic */
+
 .overlay {
   position: fixed;
   inset: 0;
-  background: #0a0a0a;
+  background: #faf6f1;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+  overflow: hidden;
 }
 
-.youAre {
-  font-size: clamp(0.9rem, 2.5vw, 1rem);
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: rgba(255, 255, 255, 0.5);
-  opacity: 0;
-  animation: fadeIn 0.8s ease forwards;
-  margin-bottom: 12px;
-}
-
-.youAreFadeOut {
-  animation: fadeOut 0.5s ease forwards;
-}
-
-.name {
-  font-size: clamp(1.6rem, 5vw, 2.5rem);
-  font-weight: 400;
-  text-align: center;
-  letter-spacing: 0.05em;
-  opacity: 0;
-  animation: fadeIn 1s ease forwards;
-  transition: transform 0.8s ease, font-size 0.8s ease;
-  padding: 0 24px;
-}
-
-.nameUp {
-  transform: translateY(-30vh);
-  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-}
-
-.image {
-  width: 280px;
-  height: 280px;
-  object-fit: contain;
-  opacity: 0;
-  animation: fadeIn 1s ease forwards;
-  transition: transform 0.8s ease, width 0.8s ease, height 0.8s ease;
-}
-
-.imageShrink {
-  transform: translateY(-10vh);
-  width: 200px;
-  height: 200px;
-}
-
-.utopia {
-  font-size: 1.3rem;
-  font-style: italic;
-  color: rgba(255, 255, 255, 0.9);
-  text-align: center;
-  max-width: 400px;
-  padding: 0 24px;
-  opacity: 0;
-  animation: fadeIn 1s ease forwards;
-  line-height: 1.6;
-}
-
-.tapToContinue {
+/* Background landscape - subtle, faded */
+.bgLandscape {
   position: absolute;
-  bottom: 40px;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60vh;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgLandscape img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bgGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 0%, #faf6f1 100%);
+}
+
+/* Content container */
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* "Your Archetype" label */
+.label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #e8178a;
+  margin-bottom: 16px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.label.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Archetype name - gradient text */
+.name {
+  font-family: 'Satoshi', system-ui, sans-serif;
+  font-size: clamp(2rem, 7vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0 0 32px 0;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #e8178a 0%, #ff6b6b 50%, #f4a03f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease 0.1s, transform 0.8s ease 0.1s;
+}
+
+.name.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Utopia card */
+.utopiaCard {
+  background: white;
+  border: 1px solid rgba(232, 23, 138, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 32px;
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.utopiaCard.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.utopiaImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.utopiaLabel {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e8178a;
+  padding: 24px 24px 12px;
+}
+
+.utopiaText {
+  font-family: 'Satoshi', system-ui, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.7;
+  color: #2d2a26;
+  padding: 0 24px 28px;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.utopiaText.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Continue button */
+.continueBtn {
   background: none;
   border: none;
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-family: 'Satoshi', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(45, 42, 38, 0.4);
   cursor: pointer;
   padding: 12px 24px;
+  margin-top: 16px;
+  opacity: 0;
+  transition: opacity 0.5s ease, color 0.2s ease;
 }
 
-.tapToContinue:hover {
-  color: rgba(255, 255, 255, 0.7);
+.continueBtn.visible {
+  opacity: 1;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+.continueBtn:hover {
+  color: #e8178a;
 }
 
-@keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .content {
+    padding: 16px;
+  }
+
+  .utopiaCard {
+    max-width: 100%;
+  }
+
+  .utopiaText {
+    font-size: 1rem;
+    padding: 0 20px 24px;
+  }
 }

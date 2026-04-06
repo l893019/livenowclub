@@ -104,8 +104,15 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
   const isViewingOther = !!personName;
   const labelText = isViewingOther ? `${personName} is` : "You are";
 
+  const imageUrl = `/wonder/essay/quiz/images/utopia-${archetypeKey}.png`;
+
   return (
     <div className={styles.reading}>
+      {/* Background landscape */}
+      <div className={styles.bgLandscape}>
+        <img src={imageUrl} alt="" />
+      </div>
+
       {/* Back button when in inline context */}
       {onBack && (
         <button className={styles.backButton} onClick={onBack}>
@@ -116,16 +123,18 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
       {/* Header */}
       <header className={styles.header}>
         <p className={styles.label}>{labelText}</p>
-        <h1 className={styles.name} style={{ color: archetype.color }}>
-          {archetype.name}
-        </h1>
-        <p className={styles.tagline}>{archetype.utopia}</p>
+        <h1 className={styles.name}>{archetype.name}</h1>
       </header>
 
+      {/* Utopia Card */}
+      <div className={styles.utopiaCard}>
+        <img src={imageUrl} alt={archetype.name} className={styles.utopiaImage} />
+        <div className={styles.utopiaLabel}>Your Utopia</div>
+        <p className={styles.utopiaText}>{archetype.utopia}</p>
+      </div>
+
       {/* Core Description */}
-      <section className={styles.section}>
-        <p className={styles.description}>{archetype.description}</p>
-      </section>
+      <p className={styles.description}>{archetype.description}</p>
 
       {/* Relationship comparison for viral loop (when ?compare= is present) */}
       {compareUserId && hasQuizUserId && (
@@ -177,15 +186,11 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
 
       <div className={styles.divider} />
 
-      {/* Your Blind Spot */}
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Your Blind Spot</h2>
-        <div className={styles.expandedContent}>
-          {archetype.blindSpotExpanded.split("\n\n").map((para, i) => (
-            <p key={i}>{para}</p>
-          ))}
-        </div>
-      </section>
+      {/* Your Blind Spot - coral accent */}
+      <div className={styles.blindSpot}>
+        <div className={styles.blindSpotLabel}>Your Blind Spot</div>
+        <p className={styles.blindSpotText}>{archetype.blindSpot}</p>
+      </div>
 
       <div className={styles.divider} />
 
@@ -195,11 +200,15 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
         <div className={styles.radarContainer}>
           <RadarChart size={280} highlightArchetype={archetypeKey} />
         </div>
+      </section>
 
+      {/* Your People - compatibility section */}
+      <div className={styles.compatibility}>
+        <div className={styles.compatibilityLabel}>Your People</div>
         <div className={styles.relationships}>
           {allyArchetype && (
             <div className={styles.relationshipCard}>
-              <h4 className={styles.relationshipLabel}>You'll recognize</h4>
+              <h4 className={styles.relationshipLabel}>Your Natural Ally</h4>
               <Link
                 href={`/wonder/essay/quiz/result?a=${allyKey}`}
                 className={styles.archName}
@@ -215,7 +224,7 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
 
           {tensionArchetype && (
             <div className={styles.relationshipCard}>
-              <h4 className={styles.relationshipLabel}>You'll clash with</h4>
+              <h4 className={styles.relationshipLabel}>Your Tension</h4>
               <Link
                 href={`/wonder/essay/quiz/result?a=${tensionKey}`}
                 className={styles.archName}
@@ -231,7 +240,7 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
 
           {needArchetype && (
             <div className={styles.relationshipCard}>
-              <h4 className={styles.relationshipLabel}>You might need</h4>
+              <h4 className={styles.relationshipLabel}>Your Counterweight</h4>
               <Link
                 href={`/wonder/essay/quiz/result?a=${needKey}`}
                 className={styles.archName}
@@ -245,7 +254,7 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
             </div>
           )}
         </div>
-      </section>
+      </div>
 
       <div className={styles.divider} />
 

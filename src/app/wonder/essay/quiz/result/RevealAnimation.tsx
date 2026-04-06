@@ -18,54 +18,58 @@ export function RevealAnimation({
   imageUrl,
   onComplete,
 }: RevealAnimationProps) {
-  const [phase, setPhase] = useState<"youAre" | "name" | "image" | "text" | "done">("youAre");
+  const [phase, setPhase] = useState(0);
 
   useEffect(() => {
     const timers = [
-      setTimeout(() => setPhase("name"), 800),
-      setTimeout(() => setPhase("image"), 2500),
-      setTimeout(() => setPhase("text"), 4000),
-      setTimeout(() => {
-        setPhase("done");
-        onComplete();
-      }, 6500),
+      setTimeout(() => setPhase(1), 100),   // Label fades in
+      setTimeout(() => setPhase(2), 800),   // Name fades in
+      setTimeout(() => setPhase(3), 2000),  // Image fades in
+      setTimeout(() => setPhase(4), 3200),  // Utopia text fades in
+      setTimeout(() => setPhase(5), 5500),  // Ready to continue
     ];
     return () => timers.forEach(clearTimeout);
-  }, [onComplete]);
-
-  if (phase === "done") return null;
-
-  const showName = phase !== "youAre";
-  const showImage = phase === "image" || phase === "text";
-  const nameMovedUp = phase === "image" || phase === "text";
+  }, []);
 
   return (
-    <div className={styles.overlay}>
-      <div className={`${styles.youAre} ${showName ? styles.youAreFadeOut : ""}`}>
-        You are
+    <div className={styles.overlay} onClick={phase >= 4 ? onComplete : undefined}>
+      {/* Background landscape */}
+      <div className={styles.bgLandscape}>
+        <img src={imageUrl} alt="" />
+        <div className={styles.bgGradient} />
       </div>
 
-      {showName && (
-        <div className={`${styles.name} ${nameMovedUp ? styles.nameUp : ""}`}>
-          <span style={{ color: archetypeColor }}>{archetypeName}</span>
+      <div className={styles.content}>
+        {/* "Your Archetype" label */}
+        <div className={`${styles.label} ${phase >= 1 ? styles.visible : ""}`}>
+          Your Archetype
         </div>
-      )}
 
-      {showImage && (
-        <img
-          src={imageUrl}
-          alt={archetypeName}
-          className={`${styles.image} ${phase === "text" ? styles.imageShrink : ""}`}
-        />
-      )}
+        {/* Archetype name with gradient */}
+        <h1
+          className={`${styles.name} ${phase >= 2 ? styles.visible : ""}`}
+          style={{ "--archetype-color": archetypeColor } as React.CSSProperties}
+        >
+          {archetypeName}
+        </h1>
 
-      {phase === "text" && (
-        <p className={styles.utopia}>{utopiaText}</p>
-      )}
+        {/* Utopia card */}
+        <div className={`${styles.utopiaCard} ${phase >= 3 ? styles.visible : ""}`}>
+          <img src={imageUrl} alt={archetypeName} className={styles.utopiaImage} />
+          <div className={styles.utopiaLabel}>Your Utopia</div>
+          <p className={`${styles.utopiaText} ${phase >= 4 ? styles.visible : ""}`}>
+            {utopiaText}
+          </p>
+        </div>
 
-      <button className={styles.tapToContinue} onClick={onComplete}>
-        Tap to continue
-      </button>
+        {/* Tap to continue */}
+        <button
+          className={`${styles.continueBtn} ${phase >= 5 ? styles.visible : ""}`}
+          onClick={onComplete}
+        >
+          Tap to continue
+        </button>
+      </div>
     </div>
   );
 }
