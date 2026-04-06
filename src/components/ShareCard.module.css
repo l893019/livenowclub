@@ -168,6 +168,12 @@
   letter-spacing: 0.02em;
 }
 
+/* Buttons Container */
+.buttons {
+  display: flex;
+  gap: 12px;
+}
+
 /* Save Button */
 .saveButton {
   padding: 12px 24px;
@@ -193,4 +199,27 @@
   opacity: 0.6;
   cursor: not-allowed;
   transform: none;
+}
+
+/* Share Button */
+.shareButton {
+  padding: 12px 24px;
+  border: 1px solid rgba(45, 42, 38, 0.2);
+  border-radius: 8px;
+  background: transparent;
+  color: rgba(45, 42, 38, 0.7);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.shareButton:hover {
+  border-color: rgba(45, 42, 38, 0.4);
+  color: #2d2a26;
+  transform: translateY(-1px);
+}
+
+.shareButton:active {
+  transform: translateY(0);
 }

@@ -64,6 +64,26 @@ export function ShareCard({ archetypeKey, userName, position }: ShareCardProps) 
     }
   };
 
+  const handleShare = async () => {
+    const shareUrl = `${window.location.origin}/wonder/essay/quiz`;
+    const shareText = `I'm a ${archetype.name}. What are you?`;
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: `My Worldview: ${archetype.name}`,
+          text: shareText,
+          url: shareUrl,
+        });
+      } catch {
+        // User cancelled or error
+      }
+    } else {
+      await navigator.clipboard.writeText(`${shareText} ${shareUrl}`);
+      alert("Link copied to clipboard!");
+    }
+  };
+
   if (!archetype) {
     return <div className={styles.error}>Unknown archetype</div>;
   }
@@ -175,15 +195,23 @@ export function ShareCard({ archetypeKey, userName, position }: ShareCardProps) 
         <p className={styles.url}>livenowclub.com/quiz</p>
       </div>
 
-      {/* Save Button (outside the card so it's not in the screenshot) */}
-      <button
-        onClick={handleSaveImage}
-        disabled={isSaving}
-        className={styles.saveButton}
-        style={{ backgroundColor: archetype.color }}
-      >
-        {isSaving ? "Saving..." : "Save Image"}
-      </button>
+      {/* Action buttons (outside the card so they're not in the screenshot) */}
+      <div className={styles.buttons}>
+        <button
+          onClick={handleSaveImage}
+          disabled={isSaving}
+          className={styles.saveButton}
+          style={{ backgroundColor: archetype.color }}
+        >
+          {isSaving ? "Saving..." : "Save Image"}
+        </button>
+        <button
+          onClick={handleShare}
+          className={styles.shareButton}
+        >
+          Share
+        </button>
+      </div>
     </div>
   );
 }
