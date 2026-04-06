@@ -53,12 +53,17 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
   const [showCreateUtopia, setShowCreateUtopia] = useState(false);
   const [existingUtopia, setExistingUtopia] = useState<CreatedUtopia | null>(null);
   const [hasQuizUserId, setHasQuizUserId] = useState<boolean | null>(null);
+  const [isSharedLink, setIsSharedLink] = useState(false);
   const archetype = archetypes[archetypeKey];
 
-  // Check if user has taken the quiz (has quiz-user-id in localStorage)
+  // Check if user has taken the quiz AND if this is a shared link
   useEffect(() => {
     const userId = localStorage.getItem("quiz-user-id");
     setHasQuizUserId(!!userId);
+
+    // Check for ?n= param which indicates a shared link with someone's name
+    const urlParams = new URLSearchParams(window.location.search);
+    setIsSharedLink(!!urlParams.get("n"));
   }, []);
 
   // Check if utopia was already created (user named it before quiz)
@@ -131,7 +136,8 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
       )}
 
       {/* Quiz CTA for non-quiz-takers (after first section, not buried at bottom) */}
-      {hasQuizUserId === false && <QuizCTA />}
+      {/* Only show CTA if viewing a shared link (has ?n= param) AND haven't taken quiz */}
+      {hasQuizUserId === false && (isSharedLink || personName) && <QuizCTA />}
 
       <div className={styles.divider} />
 
