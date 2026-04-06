@@ -6,15 +6,22 @@ import styles from "./QuizCTA.module.css";
 type QuizCTAProps = {
   variant?: "result" | "relationship";
   personName?: string;
+  /** User ID to compare with after quiz completion (viral loop) */
+  compareUserId?: string;
 };
 
-export function QuizCTA({ variant = "result", personName }: QuizCTAProps) {
+export function QuizCTA({ variant = "result", personName, compareUserId }: QuizCTAProps) {
+  // Build quiz URL with optional compare parameter
+  const quizUrl = compareUserId
+    ? `/wonder/essay/quiz?compare=${compareUserId}`
+    : "/wonder/essay/quiz";
+
   if (variant === "relationship" && personName) {
     return (
       <div className={styles.cta}>
         <h3 className={styles.headline}>See how you relate to {personName}</h3>
         <p className={styles.subtext}>Take the quiz to discover your dynamic.</p>
-        <Link href="/wonder/essay/quiz" className={styles.button}>
+        <Link href={quizUrl} className={styles.button}>
           Take the Quiz
         </Link>
       </div>
@@ -25,7 +32,7 @@ export function QuizCTA({ variant = "result", personName }: QuizCTAProps) {
     <div className={styles.cta}>
       <h3 className={styles.headline}>What&apos;s your worldview?</h3>
       <p className={styles.subtext}>7 questions. 2 minutes.</p>
-      <Link href="/wonder/essay/quiz" className={styles.button}>
+      <Link href={quizUrl} className={styles.button}>
         Take the Quiz
       </Link>
     </div>

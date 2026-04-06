@@ -2246,6 +2246,15 @@
         }
       }
 
+      // Check if there's a relationship comparison pending (viral loop)
+      const compareUserId = sessionStorage.getItem('relationship-compare');
+      if (compareUserId) {
+        sessionStorage.removeItem('relationship-compare');
+        // Redirect to result page with compare parameter
+        window.location.href = `/wonder/essay/quiz/result?a=${primary}&s=${shadow}&compare=${compareUserId}`;
+        return;
+      }
+
       // Go to result page
       window.location.href = `/wonder/essay/quiz/result?a=${primary}&s=${shadow}`;
     }
@@ -2316,11 +2325,12 @@
       }
     }
 
-    // Check for utopia invite on page load
+    // Check for utopia invite or relationship compare on page load
     function checkForInvite() {
       const params = new URLSearchParams(window.location.search);
       const inviteSlug = params.get('join');
       const invitedBy = params.get('by');
+      const compareUserId = params.get('compare');
 
       if (inviteSlug) {
         // Clear existing user identity so each person joining gets a fresh ID
@@ -2343,6 +2353,18 @@
           ? `<span>${decodeURIComponent(invitedBy)} invited you to join their utopia</span>`
           : `<span>Take the quiz to join this utopia</span>`;
         document.querySelector('.quiz-main').prepend(banner);
+      }
+
+      // Check for relationship comparison flow (viral loop)
+      if (compareUserId) {
+        // Clear existing user identity so each person gets a fresh ID
+        localStorage.removeItem('quiz-user-id');
+        localStorage.removeItem('quiz-user-result');
+        userId = null;
+        userResult = null;
+
+        // Store compare user ID for after quiz completion
+        sessionStorage.setItem('relationship-compare', compareUserId);
       }
     }
 

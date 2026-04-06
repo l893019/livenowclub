@@ -53,6 +53,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 export default async function QuizResultPage({ searchParams }: Props) {
   const params = await searchParams;
   const archetypeKey = typeof params.a === 'string' ? params.a : 'citizen';
+  const compareUserId = typeof params.compare === 'string' ? params.compare : undefined;
   const data = archetypes[archetypeKey] || archetypes.citizen;
 
   const imageUrl = `/wonder/essay/quiz/images/utopia-${archetypeKey}.png`;
@@ -67,6 +68,7 @@ export default async function QuizResultPage({ searchParams }: Props) {
       blindSpot={data.blindSpot}
       compatibility={data.compatibility}
       books={data.books}
+      compareUserId={compareUserId}
     />
   );
 }

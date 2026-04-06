@@ -6,6 +6,7 @@ import { archetypes, type Archetype } from "@/lib/archetypes";
 import { RadarChart } from "@/components/RadarChart";
 import { CreateJoinStep } from "./steps/CreateJoinStep";
 import { QuizCTA } from "./QuizCTA";
+import { RelationshipComparison } from "./RelationshipComparison";
 import styles from "./ReadingPage.module.css";
 
 type CreatedUtopia = {
@@ -26,6 +27,8 @@ type ReadingPageProps = {
   groupContext?: GroupContext;
   /** Optional: whose reading this is (for displaying "their" reading) */
   personName?: string;
+  /** Optional: user ID to show relationship comparison with (viral loop) */
+  compareUserId?: string;
 };
 
 // Map compatibility descriptions to archetype keys
@@ -46,7 +49,7 @@ const compatibilityMap: Record<string, string> = {
   "the one still figuring it out": "between",
 };
 
-export function ReadingPage({ archetypeKey, onBack, groupContext, personName }: ReadingPageProps) {
+export function ReadingPage({ archetypeKey, onBack, groupContext, personName, compareUserId }: ReadingPageProps) {
   const [showCreateUtopia, setShowCreateUtopia] = useState(false);
   const [existingUtopia, setExistingUtopia] = useState<CreatedUtopia | null>(null);
   const [hasQuizUserId, setHasQuizUserId] = useState<boolean | null>(null);
@@ -118,6 +121,14 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName }: 
       <section className={styles.section}>
         <p className={styles.description}>{archetype.description}</p>
       </section>
+
+      {/* Relationship comparison for viral loop (when ?compare= is present) */}
+      {compareUserId && hasQuizUserId && (
+        <RelationshipComparison
+          yourArchetypeKey={archetypeKey}
+          compareUserId={compareUserId}
+        />
+      )}
 
       {/* Quiz CTA for non-quiz-takers (after first section, not buried at bottom) */}
       {hasQuizUserId === false && <QuizCTA />}

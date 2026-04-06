@@ -204,6 +204,9 @@ export function UtopiaPageClient({
     const them = members.find((m) => m.id === selectedMemberId);
 
     if (you && them) {
+      // Show CTA if viewer is on a deep link (viewAsUserId is set) and hasn't taken quiz (no currentUserId)
+      const viewerHasNotTakenQuiz = !!viewAsUserId && !currentUserId;
+
       return (
         <RelationshipStep
           you={you}
@@ -216,6 +219,7 @@ export function UtopiaPageClient({
           hasNext={selectedIndex < otherMembers.length - 1}
           hasPrev={selectedIndex > 0}
           onViewTheirReading={handleViewTheirReading}
+          viewerHasNotTakenQuiz={viewerHasNotTakenQuiz}
         />
       );
     }

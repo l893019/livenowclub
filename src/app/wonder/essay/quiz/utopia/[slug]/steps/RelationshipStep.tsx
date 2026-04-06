@@ -7,6 +7,7 @@ import {
   getAnalyticalPairDynamic,
 } from "@/lib/archetypes";
 import type { UtopiaMember } from "@/lib/utopia";
+import { QuizCTA } from "@/app/wonder/essay/quiz/result/QuizCTA";
 import styles from "./RelationshipStep.module.css";
 
 type RelationshipStepProps = {
@@ -21,6 +22,8 @@ type RelationshipStepProps = {
   hasPrev?: boolean;
   /** Callback when user wants to see the other person's full reading */
   onViewTheirReading?: () => void;
+  /** If true, the current viewer hasn't taken the quiz - show CTA */
+  viewerHasNotTakenQuiz?: boolean;
 };
 
 export function RelationshipStep({
@@ -34,6 +37,7 @@ export function RelationshipStep({
   hasNext,
   hasPrev,
   onViewTheirReading,
+  viewerHasNotTakenQuiz,
 }: RelationshipStepProps) {
   const yourArchetype = archetypes[you.archetype];
   const theirArchetype = archetypes[them.archetype];
@@ -108,6 +112,15 @@ export function RelationshipStep({
 
       {/* Opening Thesis */}
       <p className={styles.thesis}>"{dynamic.thesis}"</p>
+
+      {/* CTA for viewers who haven't taken the quiz */}
+      {viewerHasNotTakenQuiz && (
+        <QuizCTA
+          variant="relationship"
+          personName={you.name || "them"}
+          compareUserId={you.id}
+        />
+      )}
 
       <div className={styles.divider} />
 

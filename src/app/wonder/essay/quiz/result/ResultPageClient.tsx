@@ -13,6 +13,7 @@ type ResultPageClientProps = {
   blindSpot: string;
   compatibility: { ally: string; tension: string; need: string };
   books: { title: string; author: string; reason: string }[];
+  compareUserId?: string;
 };
 
 export function ResultPageClient({
@@ -21,6 +22,7 @@ export function ResultPageClient({
   archetypeColor,
   utopiaText,
   imageUrl,
+  compareUserId,
 }: ResultPageClientProps) {
   const [showReveal, setShowReveal] = useState(true);
 
@@ -77,7 +79,7 @@ export function ResultPageClient({
         />
       )}
 
-      {!showReveal && <ReadingPage archetypeKey={archetypeKey} />}
+      {!showReveal && <ReadingPage archetypeKey={archetypeKey} compareUserId={compareUserId} />}
     </>
   );
 }
