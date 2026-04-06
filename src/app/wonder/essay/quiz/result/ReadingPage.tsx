@@ -12,8 +12,19 @@ type CreatedUtopia = {
   name: string;
 };
 
+type GroupContext = {
+  utopiaSlug: string;
+  utopiaName: string;
+};
+
 type ReadingPageProps = {
   archetypeKey: string;
+  /** If provided, renders a back button instead of navigating away */
+  onBack?: () => void;
+  /** If provided, changes CTAs to be group-aware */
+  groupContext?: GroupContext;
+  /** Optional: whose reading this is (for displaying "their" reading) */
+  personName?: string;
 };
 
 // Map compatibility descriptions to archetype keys
@@ -34,7 +45,7 @@ const compatibilityMap: Record<string, string> = {
   "the one still figuring it out": "between",
 };
 
-export function ReadingPage({ archetypeKey }: ReadingPageProps) {
+export function ReadingPage({ archetypeKey, onBack, groupContext, personName }: ReadingPageProps) {
   const [showCreateUtopia, setShowCreateUtopia] = useState(false);
   const [existingUtopia, setExistingUtopia] = useState<CreatedUtopia | null>(null);
   const archetype = archetypes[archetypeKey];
@@ -73,11 +84,22 @@ export function ReadingPage({ archetypeKey }: ReadingPageProps) {
   const tensionArchetype = tensionKey ? archetypes[tensionKey] : undefined;
   const needArchetype = needKey ? archetypes[needKey] : undefined;
 
+  // Determine if this is viewing someone else's reading
+  const isViewingOther = !!personName;
+  const labelText = isViewingOther ? `${personName} is` : "You are";
+
   return (
     <div className={styles.reading}>
+      {/* Back button when in inline context */}
+      {onBack && (
+        <button className={styles.backButton} onClick={onBack}>
+          ← Back
+        </button>
+      )}
+
       {/* Header */}
       <header className={styles.header}>
-        <p className={styles.label}>You are</p>
+        <p className={styles.label}>{labelText}</p>
         <h1 className={styles.name} style={{ color: archetype.color }}>
           {archetype.name}
         </h1>
@@ -230,10 +252,31 @@ export function ReadingPage({ archetypeKey }: ReadingPageProps) {
         <h2 className={styles.sectionTitle}>Compare Worldviews</h2>
         <p className={styles.ctaDescription}>
           See how your worldview fits with friends, family, and coworkers.
-          Create a group and invite others to take the quiz.
+          {groupContext
+            ? ` Invite others to join ${groupContext.utopiaName}.`
+            : " Create a group and invite others to take the quiz."}
         </p>
         <div className={styles.ctaButtons}>
-          {existingUtopia ? (
+          {groupContext ? (
+            <button
+              className={styles.primaryBtn}
+              onClick={() => {
+                const shareUrl = `${window.location.origin}/wonder/essay/quiz/utopia/${groupContext.utopiaSlug}/join`;
+                if (navigator.share) {
+                  navigator.share({
+                    title: `Join ${groupContext.utopiaName}`,
+                    text: `I'm a ${archetype.name}. What are you? Join my group and find out.`,
+                    url: shareUrl,
+                  });
+                } else {
+                  navigator.clipboard.writeText(shareUrl);
+                  alert("Invite link copied to clipboard!");
+                }
+              }}
+            >
+              Invite to {groupContext.utopiaName}
+            </button>
+          ) : existingUtopia ? (
             <Link
               href={`/wonder/essay/quiz/utopia/${existingUtopia.slug}`}
               className={styles.primaryBtn}
@@ -253,7 +296,7 @@ export function ReadingPage({ archetypeKey }: ReadingPageProps) {
             onClick={() => {
               if (navigator.share) {
                 navigator.share({
-                  title: `I'm ${archetype.name}`,
+                  title: `${isViewingOther ? `${personName} is` : "I'm"} ${archetype.name}`,
                   text: archetype.utopia,
                   url: window.location.href,
                 });

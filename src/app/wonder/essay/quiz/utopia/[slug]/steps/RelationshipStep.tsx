@@ -13,22 +13,27 @@ type RelationshipStepProps = {
   you: UtopiaMember;
   them: UtopiaMember;
   utopiaSlug: string;
+  utopiaName: string;
   onBack: () => void;
   onNext?: () => void;
   onPrev?: () => void;
   hasNext?: boolean;
   hasPrev?: boolean;
+  /** Callback when user wants to see the other person's full reading */
+  onViewTheirReading?: () => void;
 };
 
 export function RelationshipStep({
   you,
   them,
   utopiaSlug,
+  utopiaName,
   onBack,
   onNext,
   onPrev,
   hasNext,
   hasPrev,
+  onViewTheirReading,
 }: RelationshipStepProps) {
   const yourArchetype = archetypes[you.archetype];
   const theirArchetype = archetypes[them.archetype];
@@ -202,6 +207,21 @@ export function RelationshipStep({
           Share This Reading
         </button>
       </div>
+
+      {/* Link to their full reading */}
+      {onViewTheirReading && (
+        <div className={styles.theirReadingSection}>
+          <p className={styles.theirReadingPrompt}>
+            Want to understand {them.name || "them"} better?
+          </p>
+          <button
+            className={styles.theirReadingLink}
+            onClick={onViewTheirReading}
+          >
+            See their full reading →
+          </button>
+        </div>
+      )}
 
       {/* Swipe navigation */}
       {(hasNext || hasPrev) && (

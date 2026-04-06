@@ -8,6 +8,7 @@ import { GroupReadingStep } from "./steps/GroupReadingStep";
 import { RelationshipStep } from "./steps/RelationshipStep";
 import { TwoPersonView } from "./TwoPersonView";
 import { YourArchetypeCard, JoinUtopiaCard } from "./YourArchetypeCard";
+import { ReadingPage } from "@/app/wonder/essay/quiz/result/ReadingPage";
 import { archetypes } from "@/lib/archetypes";
 import type { UtopiaMember } from "@/lib/utopia";
 import styles from "./UtopiaPageClient.module.css";
@@ -26,7 +27,7 @@ type UtopiaPageClientProps = {
   shareUrl: string;
 };
 
-type View = "radar" | "reading" | "relationship" | "profile";
+type View = "radar" | "reading" | "relationship" | "profile" | "their-reading";
 
 export function UtopiaPageClient({
   slug,
@@ -42,6 +43,8 @@ export function UtopiaPageClient({
   const [currentUserId, setCurrentUserId] = useState<string | null>(null);
   // For deep links: view relationship as a specific person (without changing your identity)
   const [viewAsUserId, setViewAsUserId] = useState<string | null>(null);
+  // Track the previous view for back navigation from their-reading
+  const [previousView, setPreviousView] = useState<View>("radar");
 
   useEffect(() => {
     const userId = localStorage.getItem("quiz-user-id");
@@ -118,6 +121,15 @@ export function UtopiaPageClient({
   const handleBackToRadar = () => {
     setViewAsUserId(null); // Clear any deep link perspective
     setCurrentView("radar");
+  };
+
+  const handleViewTheirReading = () => {
+    setPreviousView(currentView);
+    setCurrentView("their-reading");
+  };
+
+  const handleBackFromTheirReading = () => {
+    setCurrentView(previousView);
   };
 
   // Navigation for relationship step
@@ -197,66 +209,53 @@ export function UtopiaPageClient({
           you={you}
           them={them}
           utopiaSlug={slug}
+          utopiaName={utopiaName}
           onBack={handleBackToGroup}
           onNext={selectedIndex < otherMembers.length - 1 ? handleNextMember : undefined}
           onPrev={selectedIndex > 0 ? handlePrevMember : undefined}
           hasNext={selectedIndex < otherMembers.length - 1}
           hasPrev={selectedIndex > 0}
+          onViewTheirReading={handleViewTheirReading}
         />
       );
     }
   }
 
-  // Profile view (current user's archetype)
+  // Their reading view (viewing another member's full reading)
+  if (currentView === "their-reading" && selectedMemberId) {
+    const them = members.find((m) => m.id === selectedMemberId);
+
+    if (them) {
+      return (
+        <ReadingPage
+          archetypeKey={them.archetype}
+          onBack={handleBackFromTheirReading}
+          groupContext={{
+            utopiaSlug: slug,
+            utopiaName: utopiaName,
+          }}
+          personName={them.name || "Anonymous"}
+        />
+      );
+    }
+  }
+
+  // Profile view (current user's full reading inline)
   // Always use localStorage directly to avoid any stale state issues
   const actualUserIdForProfile = typeof window !== "undefined" ? localStorage.getItem("quiz-user-id") : null;
   if (currentView === "profile" && actualUserIdForProfile) {
     const me = members.find((m) => m.id === actualUserIdForProfile);
-    const archetype = me ? archetypes[me.archetype] : null;
 
-    if (me && archetype) {
+    if (me) {
       return (
-        <div className={styles.container}>
-          <Header />
-          <button className={styles.backButton} onClick={handleBackToRadar}>
-            ← Back to radar
-          </button>
-          <main className={styles.profileMain}>
-            <div className={styles.profileCard} style={{ borderColor: archetype.color }}>
-              <span className={styles.profileLabel} style={{ color: archetype.color }}>
-                You are
-              </span>
-              <h1 className={styles.profileName} style={{ color: archetype.color }}>
-                {archetype.name}
-              </h1>
-              <p className={styles.profileUtopia}>{archetype.utopia}</p>
-              <p className={styles.profileDescription}>{archetype.description}</p>
-              <div className={styles.profileSection}>
-                <h3 className={styles.profileSectionTitle}>Your superpower</h3>
-                <p className={styles.profileSectionText}>{archetype.superpower}</p>
-              </div>
-              <div className={styles.profileSection}>
-                <h3 className={styles.profileSectionTitle}>Your blind spot</h3>
-                <p className={styles.profileSectionText}>{archetype.blindSpot}</p>
-              </div>
-              <div className={styles.profileSection}>
-                <h3 className={styles.profileSectionTitle}>A book for you</h3>
-                <p className={styles.profileSectionText}>
-                  <em>{archetype.book.title}</em> by {archetype.book.author}
-                </p>
-              </div>
-              <div className={styles.profileActions}>
-                <Link href={`/wonder/essay/quiz/result?a=${me.archetype}`} className={styles.btnSecondary}>
-                  See Full Result
-                </Link>
-                <Link href="/wonder/essay/quiz/my-utopias" className={styles.btnSecondary}>
-                  My Utopias
-                </Link>
-              </div>
-            </div>
-          </main>
-          <Footer />
-        </div>
+        <ReadingPage
+          archetypeKey={me.archetype}
+          onBack={handleBackToRadar}
+          groupContext={{
+            utopiaSlug: slug,
+            utopiaName: utopiaName,
+          }}
+        />
       );
     }
   }
