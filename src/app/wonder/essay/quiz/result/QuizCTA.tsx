@@ -30,8 +30,8 @@ export function QuizCTA({ variant = "result", personName, compareUserId }: QuizC
 
   return (
     <div className={styles.cta}>
-      <h3 className={styles.headline}>What&apos;s your worldview?</h3>
-      <p className={styles.subtext}>7 questions. 2 minutes.</p>
+      <h3 className={styles.headline}>Compare worldviews</h3>
+      <p className={styles.subtext}>Take the quiz to see how you fit together.</p>
       <Link href={quizUrl} className={styles.button}>
         Take the Quiz
       </Link>
