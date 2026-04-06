@@ -106,6 +106,11 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
 
   const imageUrl = `/wonder/essay/quiz/images/utopia-${archetypeKey}.png`;
 
+  // Replace "Their" with "Your" when viewing your own result
+  const utopiaText = isViewingOther
+    ? archetype.utopia
+    : archetype.utopia.replace(/^Their /i, "Your ");
+
   return (
     <div className={styles.reading}>
       {/* Background landscape */}
@@ -129,8 +134,8 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
       {/* Utopia Card */}
       <div className={styles.utopiaCard}>
         <img src={imageUrl} alt={archetype.name} className={styles.utopiaImage} />
-        <div className={styles.utopiaLabel}>Your Utopia</div>
-        <p className={styles.utopiaText}>{archetype.utopia}</p>
+        <div className={styles.utopiaLabel}>{isViewingOther ? "Their Utopia" : "Your Utopia"}</div>
+        <p className={styles.utopiaText}>{utopiaText}</p>
       </div>
 
       {/* Core Description */}

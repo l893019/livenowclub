@@ -73,7 +73,7 @@ export function ResultPageClient({
         <RevealAnimation
           archetypeName={archetypeName}
           archetypeColor={archetypeColor}
-          utopiaText={utopiaText}
+          utopiaText={utopiaText.replace(/^Their /i, "Your ")}
           imageUrl={imageUrl}
           onComplete={handleRevealComplete}
         />
