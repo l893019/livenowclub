@@ -75,20 +75,32 @@ export function GroupReadingStep({
   };
 
   const handleInvite = async () => {
-    const inviteUrl = `${window.location.origin}/wonder/essay/quiz/utopia/${utopiaSlug}`;
+    const inviteUrl = `${window.location.origin}/wonder/essay/quiz/utopia/${utopiaSlug}/join`;
+
+    // Get current user's archetype for personalized share text
+    const currentUserId = typeof window !== "undefined" ? localStorage.getItem("quiz-user-id") : null;
+    const me = members.find((m) => m.id === currentUserId);
+    const myArchetype = me ? archetypes[me.archetype] : null;
+    const myArchetypeName = myArchetype?.name || "a unique worldview";
+
+    // Share text includes archetype: "I'm a Swimmer in Deep Water. What are you?"
+    const shareText = me
+      ? `I'm a ${myArchetypeName}. What are you? Take the quiz and join my group.`
+      : `Take the quiz and join our utopia`;
 
     if (navigator.share) {
       try {
         await navigator.share({
           title: `Join ${utopiaName}`,
-          text: `Take the quiz and join our utopia`,
+          text: shareText,
           url: inviteUrl,
         });
       } catch {
         // User cancelled
       }
     } else {
-      await navigator.clipboard.writeText(inviteUrl);
+      const fullText = `${shareText}\n\n${inviteUrl}`;
+      await navigator.clipboard.writeText(fullText);
       alert("Invite link copied to clipboard!");
     }
   };

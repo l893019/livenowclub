@@ -18,6 +18,7 @@ type JoinInfo = {
   userId: string;
   archetype: string;
   name: string;
+  inviterId?: string | null;
 };
 
 type UtopiaPageClientProps = {
@@ -91,6 +92,14 @@ export function UtopiaPageClient({
 
   const handleAnimationComplete = () => {
     setShowJoinAnimation(false);
+    // Auto-show relationship with inviter after animation (immediate payoff)
+    if (joinInfo?.inviterId) {
+      const inviter = members.find((m) => m.id === joinInfo.inviterId);
+      if (inviter) {
+        setSelectedMemberId(joinInfo.inviterId);
+        setCurrentView("relationship");
+      }
+    }
   };
 
   const handleMemberClick = useCallback(
@@ -151,7 +160,16 @@ export function UtopiaPageClient({
   };
 
   const handleShare = async () => {
-    const shareText = `Join ${utopiaName} — a utopia of ${members.length}.`;
+    // Get current user's archetype for personalized share text
+    const me = members.find((m) => m.id === currentUserId);
+    const myArchetype = me ? archetypes[me.archetype] : null;
+    const myArchetypeName = myArchetype?.name || "a unique worldview";
+
+    // Share text includes archetype: "I'm a Swimmer in Deep Water. What are you? Take the quiz and join my group."
+    const shareText = me
+      ? `I'm a ${myArchetypeName}. What are you? Take the quiz and join my group.`
+      : `Join ${utopiaName} — a utopia of ${members.length}.`;
+
     if (navigator.share) {
       try {
         await navigator.share({ title: utopiaName, text: shareText, url: shareUrl });
@@ -159,7 +177,9 @@ export function UtopiaPageClient({
         // User cancelled or error
       }
     } else {
-      await navigator.clipboard.writeText(shareUrl);
+      // Copy both text and URL for better sharing
+      const fullText = `${shareText}\n\n${shareUrl}`;
+      await navigator.clipboard.writeText(fullText);
       alert("Link copied to clipboard!");
     }
   };

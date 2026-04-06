@@ -2220,7 +2220,8 @@
               slug: invite.slug,
               userId: userId,
               archetype: userResult.archetype,
-              name: userResult.name || 'Anonymous'
+              name: userResult.name || 'Anonymous',
+              inviterId: invite.inviterId || null // Store who invited them for auto-relationship
             }));
             // Redirect directly to utopia page
             window.location.href = `/wonder/essay/quiz/utopia/${invite.slug}`;
@@ -2330,6 +2331,7 @@
       const params = new URLSearchParams(window.location.search);
       const inviteSlug = params.get('join');
       const invitedBy = params.get('by');
+      const inviterId = params.get('inviter'); // Inviter's user ID for auto-relationship after joining
       const compareUserId = params.get('compare');
 
       if (inviteSlug) {
@@ -2343,7 +2345,8 @@
         // Store invite info for after quiz completion
         sessionStorage.setItem('utopia-invite', JSON.stringify({
           slug: inviteSlug,
-          invitedBy: invitedBy
+          invitedBy: invitedBy,
+          inviterId: inviterId // Store inviter's user ID
         }));
 
         // Always show invite banner

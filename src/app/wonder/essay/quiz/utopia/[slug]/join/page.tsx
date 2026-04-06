@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getUtopia } from "@/lib/utopia";
+import { InviterRadarPreview } from "./InviterRadarPreview";
 
 const archetypeData: Record<string, { name: string; color: string }> = {
   citizen: { name: "Citizen of Abundance", color: "#3db9a4" },
@@ -37,11 +38,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const founderArchetype = founder?.archetype ? archetypeData[founder.archetype]?.name : "";
 
   return {
-    title: `Compare Worldviews with ${room.name}`,
-    description: `${founderName} invited you to compare worldviews. Take the quiz to see how your perspectives fit together.`,
+    title: `${founderName} invited you | ${room.name}`,
+    description: `${founderName} is a ${founderArchetype}. Take the quiz to see how your worldviews fit together.`,
     openGraph: {
-      title: `Compare Worldviews with ${room.name}`,
-      description: `${founderName}, a ${founderArchetype}, wants to compare worldviews with you.`,
+      title: `${founderName} invited you to compare worldviews`,
+      description: `They're a ${founderArchetype}. Take the quiz to see how your worldviews fit together.`,
       url: `https://livenowclub.com/wonder/essay/quiz/utopia/${slug}/join`,
       type: "website",
     },
@@ -61,24 +62,7 @@ export default async function JoinUtopiaPage({ params }: Props) {
   const founderArchetype = founder?.archetype || "citizen";
   const founderArchetypeName = archetypeData[founderArchetype]?.name || founderArchetype;
   const founderColor = archetypeData[founderArchetype]?.color || "#e8178a";
-
-  const population = room.members.length;
-  const otherMembers = room.members.filter(m => m.id !== room.createdBy);
-
-  let populationText = "";
-  if (population === 1) {
-    populationText = "You'll be the second to compare.";
-  } else if (population === 2) {
-    populationText = `Compare with ${founderName} and ${otherMembers[0]?.name || "another"}.`;
-  } else {
-    const names = otherMembers.slice(0, 2).map(m => m.name).join(", ");
-    const remaining = population - 3;
-    if (remaining > 0) {
-      populationText = `Compare with ${founderName}, ${names}, and ${remaining} ${remaining === 1 ? "other" : "others"}.`;
-    } else {
-      populationText = `Compare with ${founderName} and ${names}.`;
-    }
-  }
+  const founderId = founder?.id || room.createdBy;
 
   return (
     <>
@@ -134,102 +118,87 @@ export default async function JoinUtopiaPage({ params }: Props) {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          padding: 120px 24px 80px;
+          padding: 100px 24px 80px;
           text-align: center;
         }
 
-        .join-label {
-          font-size: 11px;
-          font-weight: 500;
-          text-transform: uppercase;
-          letter-spacing: 0.15em;
-          color: var(--text-muted);
-          margin-bottom: 16px;
-        }
-
-        .utopia-name {
-          font-size: clamp(2rem, 6vw, 3rem);
-          font-weight: 300;
-          letter-spacing: -0.02em;
+        .inviter-section {
           margin-bottom: 24px;
         }
 
-        .founder-info {
-          font-size: 1.1rem;
-          color: var(--text-dim);
+        .inviter-name {
+          font-size: clamp(1.5rem, 4vw, 2rem);
+          font-weight: 400;
+          letter-spacing: -0.01em;
           margin-bottom: 8px;
         }
 
-        .founder-archetype {
+        .inviter-archetype {
+          font-size: 1.2rem;
           color: var(--founder-color);
           font-style: italic;
+          margin-bottom: 12px;
         }
 
-        .population {
+        .inviter-prompt {
           font-size: 1rem;
+          color: var(--text-dim);
+          max-width: 320px;
+          margin: 0 auto;
+          line-height: 1.6;
+        }
+
+        .radar-preview {
+          margin: 32px 0;
+        }
+
+        .group-name {
+          font-size: 0.85rem;
           color: var(--text-muted);
-          margin-bottom: 48px;
+          margin-bottom: 32px;
         }
 
-        .options {
-          display: flex;
-          flex-direction: column;
-          gap: 24px;
-          max-width: 400px;
-          width: 100%;
-        }
-
-        .option-card {
-          display: block;
-          background: white;
-          border: 2px solid transparent;
-          border-radius: 16px;
-          padding: 28px 24px;
+        .group-name-link {
+          color: var(--text-muted);
           text-decoration: none;
-          transition: all 0.3s;
-          text-align: center;
+          border-bottom: 1px solid var(--text-muted);
+          transition: color 0.2s, border-color 0.2s;
         }
 
-        .option-card:hover {
+        .group-name-link:hover {
+          color: var(--accent-pink);
           border-color: var(--accent-pink);
-          transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(232,23,138,0.15);
         }
 
-        .option-card.primary {
+        .cta-button {
+          display: inline-block;
           background: var(--accent-pink);
           color: white;
-        }
-
-        .option-card.primary:hover {
-          background: #d01579;
-          border-color: #d01579;
-        }
-
-        .option-title {
           font-size: 1.1rem;
           font-weight: 500;
-          margin-bottom: 8px;
+          padding: 18px 40px;
+          border-radius: 50px;
+          text-decoration: none;
+          transition: all 0.3s;
+          box-shadow: 0 4px 20px rgba(232,23,138,0.25);
         }
 
-        .option-card.primary .option-title {
-          color: white;
+        .cta-button:hover {
+          background: #d01579;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 30px rgba(232,23,138,0.35);
         }
 
-        .option-desc {
-          font-size: 0.95rem;
-          color: var(--text-dim);
-          line-height: 1.5;
-        }
-
-        .option-card.primary .option-desc {
-          color: rgba(255,255,255,0.85);
-        }
-
-        .divider {
+        .secondary-link {
+          display: block;
+          margin-top: 24px;
           font-size: 0.9rem;
-          color: var(--text-muted);
-          text-transform: lowercase;
+          color: var(--text-dim);
+          text-decoration: none;
+        }
+
+        .secondary-link:hover {
+          color: var(--accent-pink);
         }
 
         .footer {
@@ -250,8 +219,11 @@ export default async function JoinUtopiaPage({ params }: Props) {
           .header { padding: 12px 16px; }
           .nav { gap: 16px; }
           .nav a { font-size: 10px; }
-          .utopia-name { font-size: 1.8rem; }
-          .options { padding: 0 16px; }
+          .inviter-name { font-size: 1.5rem; }
+          .cta-button {
+            padding: 16px 32px;
+            font-size: 1rem;
+          }
         }
       `}</style>
 
@@ -271,30 +243,36 @@ export default async function JoinUtopiaPage({ params }: Props) {
       </header>
 
       <main className="join-container">
-        <div className="join-label">Compare worldviews with</div>
-        <h1 className="utopia-name">{room.name}</h1>
-        <p className="founder-info">
-          Created by {founderName}, a <span className="founder-archetype">{founderArchetypeName}</span>
-        </p>
-        <p className="population">{populationText}</p>
-
-        <div className="options">
-          <Link href={`/wonder/essay/quiz?join=${slug}`} className="option-card primary">
-            <div className="option-title">Join This Group</div>
-            <div className="option-desc">
-              Take the quiz and see how your worldviews fit together.
-            </div>
-          </Link>
-
-          <div className="divider">or</div>
-
-          <Link href="/wonder/essay/quiz" className="option-card">
-            <div className="option-title">Create Your Own Group</div>
-            <div className="option-desc">
-              Take the quiz and invite others to compare worldviews.
-            </div>
-          </Link>
+        <div className="inviter-section">
+          <h1 className="inviter-name">{founderName} invited you</h1>
+          <p className="inviter-archetype">They&apos;re a {founderArchetypeName}.</p>
+          <p className="inviter-prompt">
+            Take the quiz to see how your worldviews fit together.
+          </p>
         </div>
+
+        <div className="radar-preview">
+          <InviterRadarPreview
+            inviterArchetype={founderArchetype}
+            inviterColor={founderColor}
+            inviterName={founderName}
+          />
+        </div>
+
+        <p className="group-name">
+          Joining <span className="group-name-link">{room.name}</span>
+        </p>
+
+        <Link
+          href={`/wonder/essay/quiz?join=${slug}&inviter=${founderId}`}
+          className="cta-button"
+        >
+          Take the Quiz & Join
+        </Link>
+
+        <Link href="/wonder/essay/quiz" className="secondary-link">
+          or create your own group →
+        </Link>
       </main>
 
       <footer className="footer">
