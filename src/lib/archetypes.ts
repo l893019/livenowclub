@@ -38,6 +38,9 @@ export type Archetype = {
   allyDescription: string;
   tensionDescription: string;
   needDescription: string;
+  // Share card fields
+  pull: string;  // What draws them (short phrase)
+  edge: string;  // Their unique advantage (short phrase)
 };
 
 export const archetypes: Record<string, Archetype> = {
@@ -85,7 +88,10 @@ Watch for the moments when your trust in systems becomes trust that systems will
 
     tensionDescription: "Conscience Before Comfort doesn't trust what you trust. While you see systems that could work beautifully, they see cracks, hidden costs, who's being surveilled. They'll exhaust you with suspicion—and occasionally save you from your own blind spots.",
 
-    needDescription: "Alive in the Friction will challenge your comfort. You believe abundance should make life easier; they believe ease can make life hollow. They'll push you to examine whether your utopia has room for struggle, growth, and the meaning that comes from difficulty."
+    needDescription: "Alive in the Friction will challenge your comfort. You believe abundance should make life easier; they believe ease can make life hollow. They'll push you to examine whether your utopia has room for struggle, growth, and the meaning that comes from difficulty.",
+
+    pull: "toward possibility",
+    edge: "you see systems others don't"
   },
   shaper: {
     key: "shaper",
@@ -131,7 +137,10 @@ Watch for the moments when your urge to build from scratch is actually an urge t
 
     tensionDescription: "Rooted in Stillness is your opposite. They chose to stop moving; you can't imagine why anyone would. Their stillness looks like stagnation to you; your movement looks like flight to them. You're arguing about the fundamental nature of growth.",
 
-    needDescription: "Keeper of Embers guards what you might carelessly discard. They remember what worked, what was lost, what deserves to be carried forward. Without them, you risk building the same failures again with different names. They're the conscience of your construction site."
+    needDescription: "Keeper of Embers guards what you might carelessly discard. They remember what worked, what was lost, what deserves to be carried forward. Without them, you risk building the same failures again with different names. They're the conscience of your construction site.",
+
+    pull: "toward transformation",
+    edge: "you build from rubble"
   },
   architect: {
     key: "architect",
@@ -177,7 +186,10 @@ Watch for the moments when your commitment to collective ownership becomes colle
 
     tensionDescription: "Unbound from Form challenges your attachment to structure itself. They want to transcend form; you want to perfect it. They'll ask why you're building walls at all. It's a fundamental disagreement about whether liberation requires architecture or escape from it.",
 
-    needDescription: "Swimmer in Deep Water will slow you down with questions you can't answer quickly. When you're ready to implement, they're still asking why. This is frustrating—and necessary. They ensure your systems are built on real understanding, not efficient assumptions."
+    needDescription: "Swimmer in Deep Water will slow you down with questions you can't answer quickly. When you're ready to implement, they're still asking why. This is frustrating—and necessary. They ensure your systems are built on real understanding, not efficient assumptions.",
+
+    pull: "toward collective ownership",
+    edge: "you see the invisible architecture"
   },
   presence: {
     key: "presence",
@@ -223,7 +235,10 @@ Your instinct is to be with people in their difficulty. That's valuable. But pre
 
     tensionDescription: "Unbound from Form challenges your attachment to embodiment. They want to transcend; you want to stay. They'll ask why you're so committed to being here when there's so much more beyond. You're arguing about what it means to be present at all.",
 
-    needDescription: "Clear-Eyed in the Storm will say the thing you're avoiding. It will hurt. You need that—someone who values truth over comfort, even when comfort is what you offer. They'll help you see when presence has become avoidance."
+    needDescription: "Clear-Eyed in the Storm will say the thing you're avoiding. It will hurt. You need that—someone who values truth over comfort, even when comfort is what you offer. They'll help you see when presence has become avoidance.",
+
+    pull: "toward connection",
+    edge: "you show up when others don't"
   },
   swimmer: {
     key: "swimmer",
@@ -269,7 +284,10 @@ Watch for the moments when "I'm still thinking about it" is actually "I'm afraid
 
     tensionDescription: "Mender of What Remains needs to fix things. While you're still asking why it broke, they're already reaching for tools. Your reflection looks like paralysis to them; their action looks like avoidance to you. You're arguing about when understanding is enough.",
 
-    needDescription: "Architect of the Commons will give your questions structure. You can swim in deep water forever; they'll build you a vessel. They ensure your insights eventually serve something beyond your own understanding—that your questions lead somewhere collective."
+    needDescription: "Architect of the Commons will give your questions structure. You can swim in deep water forever; they'll build you a vessel. They ensure your insights eventually serve something beyond your own understanding—that your questions lead somewhere collective.",
+
+    pull: "toward questions",
+    edge: "you see what builders miss"
   },
   rooted: {
     key: "rooted",
@@ -315,7 +333,10 @@ Watch for the moments when "choosing simplicity" becomes "choosing comfort." Wat
 
     tensionDescription: "Shaper of Change can't stop building. Your stillness looks like stagnation to them; their restlessness looks like flight to you. They'll push you to move when you've chosen to stay. You're arguing about fundamental questions of what growth means.",
 
-    needDescription: "Alive to Everything will pull you out of stillness when you need it. Not to invalidate your peace, but to remind you that life includes sensation, experience, movement. They ensure your rootedness doesn't become a way of hiding from the full range of being alive."
+    needDescription: "Alive to Everything will pull you out of stillness when you need it. Not to invalidate your peace, but to remind you that life includes sensation, experience, movement. They ensure your rootedness doesn't become a way of hiding from the full range of being alive.",
+
+    pull: "toward stillness",
+    edge: "you know when to stop"
   },
   conscience: {
     key: "conscience",
@@ -361,7 +382,10 @@ Watch for the moments when "watching the watchers" becomes "watching everyone." 
 
     tensionDescription: "Citizen of Abundance trusts what you suspect. They see systems working; you see systems failing. Their optimism will feel naive to you; your suspicion will feel exhausting to them. You're arguing about whether the architecture can be trusted.",
 
-    needDescription: "Keeper of Presence will ground you in the human. It's easy to watch systems and forget people. They'll remind you that vigilance without warmth becomes its own kind of coldness—that the point of watching is to protect something worth protecting."
+    needDescription: "Keeper of Presence will ground you in the human. It's easy to watch systems and forget people. They'll remind you that vigilance without warmth becomes its own kind of coldness—that the point of watching is to protect something worth protecting.",
+
+    pull: "toward truth",
+    edge: "you see what's hidden"
   },
   embers: {
     key: "embers",
@@ -407,7 +431,10 @@ Watch for the moments when "remembering what matters" becomes "rejecting what's 
 
     tensionDescription: "Shaper of Change is always tearing down and rebuilding. Your treasures look like obstacles to them; their innovations look like amnesia to you. You're arguing about what deserves to survive the next revolution.",
 
-    needDescription: "In the Space Between will challenge your certainties. You know what mattered; they're still figuring out what matters now. Their uncertainty can feel like rootlessness, but it's also openness—the willingness to let new things become worth remembering."
+    needDescription: "In the Space Between will challenge your certainties. You know what mattered; they're still figuring out what matters now. Their uncertainty can feel like rootlessness, but it's also openness—the willingness to let new things become worth remembering.",
+
+    pull: "toward memory",
+    edge: "you remember what others forget"
   },
   friction: {
     key: "friction",
@@ -453,7 +480,10 @@ Watch for the moments when you're manufacturing friction because you're uncomfor
 
     tensionDescription: "Rooted in Stillness chose to stop. Your movement looks like flight to them; their stillness looks like surrender to you. You're having a fundamental argument about whether peace is achievement or defeat.",
 
-    needDescription: "Keeper of Presence will slow you down enough to feel what you're feeling. You can use friction as a way of avoiding presence—always striving, never arriving. They'll help you learn that sometimes the challenge is simply being where you are."
+    needDescription: "Keeper of Presence will slow you down enough to feel what you're feeling. You can use friction as a way of avoiding presence—always striving, never arriving. They'll help you learn that sometimes the challenge is simply being where you are.",
+
+    pull: "toward difficulty",
+    edge: "you grow where others stall"
   },
   unbound: {
     key: "unbound",
@@ -499,7 +529,10 @@ Watch for the moments when "imagining beyond limits" becomes "dismissing what's 
 
     tensionDescription: "Keeper of Presence is committed to being here. Your transcendence looks like escape to them; their groundedness looks like limitation to you. You're arguing about whether liberation means leaving or arriving.",
 
-    needDescription: "Keeper of Embers will remind you what's worth keeping. In your rush toward transcendence, you may discard things that deserved to be carried forward. They're the anchor that ensures your expansion doesn't become amnesia."
+    needDescription: "Keeper of Embers will remind you what's worth keeping. In your rush toward transcendence, you may discard things that deserved to be carried forward. They're the anchor that ensures your expansion doesn't become amnesia.",
+
+    pull: "toward transcendence",
+    edge: "you see past the edges"
   },
   alive: {
     key: "alive",
@@ -545,7 +578,10 @@ Watch for the moments when "alive to everything" becomes "unable to be still wit
 
     tensionDescription: "Conscience Before Comfort keeps asking whether you should feel what you want to feel. Your openness looks like recklessness to them; their vigilance looks like refusal to live. You're arguing about whether experience needs justification.",
 
-    needDescription: "Clear-Eyed in the Storm will tell you truths you'd rather not hear. You can use sensation as a way of avoiding difficult realities. They'll cut through the pleasant haze and show you what you're not wanting to see."
+    needDescription: "Clear-Eyed in the Storm will tell you truths you'd rather not hear. You can use sensation as a way of avoiding difficult realities. They'll cut through the pleasant haze and show you what you're not wanting to see.",
+
+    pull: "toward sensation",
+    edge: "you feel what others miss"
   },
   mender: {
     key: "mender",
@@ -591,7 +627,10 @@ Watch for the moments when you're repairing something that needs to be replaced.
 
     tensionDescription: "Swimmer in Deep Water wants to understand before acting. While you're already fixing, they're still questioning. Their reflection looks like paralysis to you; your action looks like avoidance to them. You're arguing about when understanding is enough.",
 
-    needDescription: "Alive in the Friction will challenge your comfort with repair. Sometimes what's broken needs to stay broken long enough to feel the friction. They'll push you to consider when mending is actually avoiding the difficulty that growth requires."
+    needDescription: "Alive in the Friction will challenge your comfort with repair. Sometimes what's broken needs to stay broken long enough to feel the friction. They'll push you to consider when mending is actually avoiding the difficulty that growth requires.",
+
+    pull: "toward repair",
+    edge: "you fix what others abandon"
   },
   cleareyed: {
     key: "cleareyed",
@@ -637,7 +676,10 @@ Watch for the moments when truth-telling becomes a weapon. When "just being hone
 
     tensionDescription: "Alive to Everything wants to feel rather than analyze. Your clarity can feel cold to them; their openness can feel ungrounded to you. You're arguing about whether truth requires distance or immersion.",
 
-    needDescription: "Rooted in Stillness will teach you when to stop speaking. Not every truth needs to be said. Not every moment needs your clarity. They'll help you learn that sometimes the bravest thing is silence—being with someone in their difficulty rather than diagnosing it."
+    needDescription: "Rooted in Stillness will teach you when to stop speaking. Not every truth needs to be said. Not every moment needs your clarity. They'll help you learn that sometimes the bravest thing is silence—being with someone in their difficulty rather than diagnosing it.",
+
+    pull: "toward clarity",
+    edge: "you say what others won't"
   },
   between: {
     key: "between",
@@ -683,7 +725,10 @@ Watch for the moments when "I'm still figuring it out" becomes "I refuse to figu
 
     tensionDescription: "Alive in the Friction wants you to commit to something, even something difficult. Your uncertainty looks like avoidance to them; their certainty looks like premature closure to you. You're arguing about when enough is enough.",
 
-    needDescription: "Shaper of Change will push you toward action. You can stay in the space between indefinitely; they'll insist on building something. They're the force that transforms your questioning into something concrete, eventually."
+    needDescription: "Shaper of Change will push you toward action. You can stay in the space between indefinitely; they'll insist on building something. They're the force that transforms your questioning into something concrete, eventually.",
+
+    pull: "toward openness",
+    edge: "you stay when others close"
   },
 };
 

@@ -1,0 +1,196 @@
+/* ShareCard.module.css */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.card {
+  width: 320px;
+  padding: 32px 24px;
+  background: #faf6f1;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.error {
+  padding: 24px;
+  color: #d64545;
+  text-align: center;
+}
+
+/* Chart Container */
+.chartContainer {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin-bottom: 8px;
+}
+
+.chart {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.ring {
+  fill: none;
+  stroke: rgba(45, 42, 38, 0.08);
+  stroke-width: 1;
+}
+
+.axis {
+  stroke: rgba(45, 42, 38, 0.15);
+  stroke-width: 1;
+}
+
+.userDot {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Axis Labels */
+.axisLabel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  white-space: nowrap;
+}
+
+.axisPrimary {
+  font-size: 8px;
+  font-weight: 500;
+  color: #2d2a26;
+  letter-spacing: 0.02em;
+}
+
+.axisSecondary {
+  font-size: 6px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(45, 42, 38, 0.4);
+}
+
+.axisNorth {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.axisSouth {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.axisEast {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: left;
+}
+
+.axisWest {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: right;
+}
+
+/* Divider */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(45, 42, 38, 0.1);
+  margin: 16px 0;
+}
+
+/* Archetype Name */
+.archetypeName {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin: 0 0 4px 0;
+}
+
+/* User Name */
+.userName {
+  font-size: 12px;
+  color: rgba(45, 42, 38, 0.6);
+  margin: 0 0 12px 0;
+}
+
+/* Percentages */
+.percentages {
+  font-size: 12px;
+  color: rgba(45, 42, 38, 0.7);
+  margin-bottom: 16px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.dot {
+  color: rgba(45, 42, 38, 0.3);
+}
+
+/* Traits */
+.traits {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.trait {
+  font-size: 13px;
+  color: #2d2a26;
+  margin: 0 0 6px 0;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.traitLabel {
+  color: rgba(45, 42, 38, 0.5);
+}
+
+/* URL */
+.url {
+  font-size: 11px;
+  color: rgba(45, 42, 38, 0.4);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* Save Button */
+.saveButton {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.saveButton:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.saveButton:active {
+  transform: translateY(0);
+}
+
+.saveButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}

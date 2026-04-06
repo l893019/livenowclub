@@ -115,3 +115,36 @@ export function toSvgCoords(
     cy: center - pos.y * (usableSize / 2), // Flip Y for SVG (Y increases downward)
   };
 }
+
+// Calculate axis percentages from radar position
+// x axis: -1 = 100% perceive, +1 = 100% build, 0 = 50/50
+// y axis: -1 = 100% ground, +1 = 100% reach, 0 = 50/50
+export type AxisPercentages = {
+  perceivePercent: number;
+  buildPercent: number;
+  groundPercent: number;
+  reachPercent: number;
+};
+
+export function getAxisPercentages(pos: RadarPosition): AxisPercentages {
+  // Convert x from [-1, 1] to perceive/build percentages
+  // x = -1 means 100% perceive, 0% build
+  // x = 0 means 50% perceive, 50% build
+  // x = 1 means 0% perceive, 100% build
+  const buildPercent = Math.round(((pos.x + 1) / 2) * 100);
+  const perceivePercent = 100 - buildPercent;
+
+  // Convert y from [-1, 1] to ground/reach percentages
+  // y = -1 means 100% ground, 0% reach
+  // y = 0 means 50% ground, 50% reach
+  // y = 1 means 0% ground, 100% reach
+  const reachPercent = Math.round(((pos.y + 1) / 2) * 100);
+  const groundPercent = 100 - reachPercent;
+
+  return {
+    perceivePercent,
+    buildPercent,
+    groundPercent,
+    reachPercent,
+  };
+}
