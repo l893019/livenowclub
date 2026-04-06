@@ -1,0 +1,69 @@
+/* QuizCTA.module.css - CTA card for non-quiz-takers */
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(135deg, rgba(232, 23, 138, 0.06) 0%, rgba(107, 143, 239, 0.06) 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(45, 42, 38, 0.08);
+  margin: 1.5rem 0;
+}
+
+.headline {
+  font-size: 1.375rem;
+  font-weight: 500;
+  color: #2d2a26;
+  margin: 0 0 0.5rem;
+  line-height: 1.3;
+}
+
+.subtext {
+  font-size: 1rem;
+  color: rgba(45, 42, 38, 0.65);
+  margin: 0 0 1.25rem;
+  line-height: 1.5;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  background: #2d2a26;
+  color: #faf6f1;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  min-height: 48px;
+}
+
+.button:hover {
+  background: #1a1816;
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .cta {
+    padding: 1.5rem 1rem;
+    margin: 1rem 0;
+  }
+
+  .headline {
+    font-size: 1.25rem;
+  }
+
+  .subtext {
+    font-size: 0.9375rem;
+  }
+}

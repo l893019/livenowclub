@@ -10,20 +10,32 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const params = await searchParams;
   const archetypeKey = typeof params.a === 'string' ? params.a : 'citizen';
   const shadowKey = typeof params.s === 'string' ? params.s : null;
+  const userName = typeof params.n === 'string' ? params.n : null;
   const data = archetypes[archetypeKey] || archetypes.citizen;
 
-  const title = "What's your post-scarcity worldview?";
-  const ogImage = `https://livenowclub.vercel.app/wonder/essay/quiz/images/utopia-${archetypeKey}.png`;
+  // Personalized title for shared results: "[Name] is a Swimmer in Deep Water. What are you?"
+  // Falls back to generic title if no name provided
+  const ogTitle = userName
+    ? `${userName} is a ${data.name}. What are you?`
+    : "What's your post-scarcity worldview?";
 
-  const pageUrl = shadowKey
-    ? `https://livenowclub.vercel.app/wonder/essay/quiz/result?a=${archetypeKey}&s=${shadowKey}`
-    : `https://livenowclub.vercel.app/wonder/essay/quiz/result?a=${archetypeKey}`;
+  // Use OG API for dynamic image generation with name if provided
+  const ogImage = userName
+    ? `https://livenowclub.vercel.app/api/og?archetype=${archetypeKey}&name=${encodeURIComponent(userName)}`
+    : `https://livenowclub.vercel.app/api/og?archetype=${archetypeKey}`;
+
+  // Build page URL with all params
+  const urlParams = new URLSearchParams();
+  urlParams.set('a', archetypeKey);
+  if (shadowKey) urlParams.set('s', shadowKey);
+  if (userName) urlParams.set('n', userName);
+  const pageUrl = `https://livenowclub.vercel.app/wonder/essay/quiz/result?${urlParams.toString()}`;
 
   return {
     title: `${data.name} | Sci-Fi Worldview Quiz`,
     description: data.utopia,
     openGraph: {
-      title,
+      title: ogTitle,
       description: data.utopia,
       images: [ogImage],
       url: pageUrl,
@@ -31,7 +43,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     },
     twitter: {
       card: 'summary_large_image',
-      title,
+      title: ogTitle,
       description: data.utopia,
       images: [ogImage],
     },

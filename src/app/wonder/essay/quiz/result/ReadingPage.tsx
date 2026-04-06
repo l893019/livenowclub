@@ -5,6 +5,7 @@ import Link from "next/link";
 import { archetypes, type Archetype } from "@/lib/archetypes";
 import { RadarChart } from "@/components/RadarChart";
 import { CreateJoinStep } from "./steps/CreateJoinStep";
+import { QuizCTA } from "./QuizCTA";
 import styles from "./ReadingPage.module.css";
 
 type CreatedUtopia = {
@@ -48,7 +49,14 @@ const compatibilityMap: Record<string, string> = {
 export function ReadingPage({ archetypeKey, onBack, groupContext, personName }: ReadingPageProps) {
   const [showCreateUtopia, setShowCreateUtopia] = useState(false);
   const [existingUtopia, setExistingUtopia] = useState<CreatedUtopia | null>(null);
+  const [hasQuizUserId, setHasQuizUserId] = useState<boolean | null>(null);
   const archetype = archetypes[archetypeKey];
+
+  // Check if user has taken the quiz (has quiz-user-id in localStorage)
+  useEffect(() => {
+    const userId = localStorage.getItem("quiz-user-id");
+    setHasQuizUserId(!!userId);
+  }, []);
 
   // Check if utopia was already created (user named it before quiz)
   useEffect(() => {
@@ -110,6 +118,9 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName }: 
       <section className={styles.section}>
         <p className={styles.description}>{archetype.description}</p>
       </section>
+
+      {/* Quiz CTA for non-quiz-takers (after first section, not buried at bottom) */}
+      {hasQuizUserId === false && <QuizCTA />}
 
       <div className={styles.divider} />
 

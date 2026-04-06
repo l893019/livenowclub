@@ -80,6 +80,7 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const archetype = searchParams.get('archetype') || 'citizen';
   const shadow = searchParams.get('shadow');
+  const name = searchParams.get('name');
 
   const data = archetypes[archetype] || archetypes.citizen;
   const shadowData = shadow ? archetypes[shadow] : null;
@@ -128,6 +129,20 @@ export async function GET(request: NextRequest) {
         >
           {data.utopia}
         </div>
+
+        {/* Person's name if provided */}
+        {name && (
+          <div
+            style={{
+              fontSize: 20,
+              color: 'rgba(45,42,38,0.6)',
+              marginBottom: 8,
+              letterSpacing: '0.05em',
+            }}
+          >
+            {name} is a
+          </div>
+        )}
 
         {/* Archetype name(s) */}
         <div
@@ -187,7 +202,7 @@ export async function GET(request: NextRequest) {
           )}
         </div>
 
-        {/* CTA */}
+        {/* CTA - personalized when name is provided */}
         <div
           style={{
             position: 'absolute',
@@ -196,7 +211,7 @@ export async function GET(request: NextRequest) {
             color: 'rgba(45,42,38,0.6)',
           }}
         >
-          What's your post-scarcity worldview? Take the quiz →
+          {name ? 'What are you? Take the quiz →' : "What's your post-scarcity worldview? Take the quiz →"}
         </div>
 
         {/* Accent bar - gradient if shadow exists */}
