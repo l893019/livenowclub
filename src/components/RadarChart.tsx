@@ -159,18 +159,30 @@ export function RadarChart({
       </svg>
 
       {/* Axis labels */}
-      <span className={`${styles.label} ${styles.labelNorth}`}>
-        {axisLabels.north}
-      </span>
-      <span className={`${styles.label} ${styles.labelSouth}`}>
-        {axisLabels.south}
-      </span>
-      <span className={`${styles.label} ${styles.labelEast}`}>
-        {axisLabels.east}
-      </span>
-      <span className={`${styles.label} ${styles.labelWest}`}>
-        {axisLabels.west}
-      </span>
+      <div className={`${styles.labelGroup} ${styles.labelNorth}`}>
+        <span className={styles.labelPrimary}>{axisLabels.north.primary}</span>
+        <span className={styles.labelSecondary}>
+          {axisLabels.north.secondary}
+        </span>
+      </div>
+      <div className={`${styles.labelGroup} ${styles.labelSouth}`}>
+        <span className={styles.labelPrimary}>{axisLabels.south.primary}</span>
+        <span className={styles.labelSecondary}>
+          {axisLabels.south.secondary}
+        </span>
+      </div>
+      <div className={`${styles.labelGroup} ${styles.labelEast}`}>
+        <span className={styles.labelPrimary}>{axisLabels.east.primary}</span>
+        <span className={styles.labelSecondary}>
+          {axisLabels.east.secondary}
+        </span>
+      </div>
+      <div className={`${styles.labelGroup} ${styles.labelWest}`}>
+        <span className={styles.labelPrimary}>{axisLabels.west.primary}</span>
+        <span className={styles.labelSecondary}>
+          {axisLabels.west.secondary}
+        </span>
+      </div>
     </div>
   );
 }

@@ -25,12 +25,12 @@ export const archetypePositions: Record<string, RadarPosition> = {
   between: { x: 0.0, y: 0.0 },
 };
 
-// Axis labels for the compass
+// Axis labels for the compass (primary = larger, secondary = smaller/muted)
 export const axisLabels = {
-  north: "Transcend",
-  south: "Root",
-  east: "Build",
-  west: "Witness",
+  north: { primary: "what could be", secondary: "reach" },
+  south: { primary: "what is", secondary: "ground" },
+  east: { primary: "what's next", secondary: "build" },
+  west: { primary: "what's true", secondary: "perceive" },
 };
 
 // Axis descriptions (for the explanation step)

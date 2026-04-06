@@ -57,18 +57,18 @@ export function MiniRadarChart({ members, size = 80 }: MiniRadarChartProps) {
           className={styles.axis}
         />
 
-        {/* Axis labels */}
+        {/* Axis labels (using secondary/short labels for mini chart) */}
         <text x={center} y={padding - 2} className={styles.axisLabel} textAnchor="middle">
-          {axisLabels.north}
+          {axisLabels.north.secondary}
         </text>
         <text x={center} y={size - padding + 10} className={styles.axisLabel} textAnchor="middle">
-          {axisLabels.south}
+          {axisLabels.south.secondary}
         </text>
         <text x={size - padding + 4} y={center + 3} className={styles.axisLabel} textAnchor="start">
-          {axisLabels.east}
+          {axisLabels.east.secondary}
         </text>
         <text x={padding - 4} y={center + 3} className={styles.axisLabel} textAnchor="end">
-          {axisLabels.west}
+          {axisLabels.west.secondary}
         </text>
 
         {/* Member dots */}
