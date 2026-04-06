@@ -46,7 +46,7 @@ export type Archetype = {
 export const archetypes: Record<string, Archetype> = {
   citizen: {
     key: "citizen",
-    name: "Citizen of Abundance",
+    name: "The Abundant",
     color: "#3db9a4",
     utopia: "Their utopia has no word for \"job.\" It fell out of the language three centuries ago.",
     description: "They trust that intelligence, properly distributed, tends toward good. Too much freedom will always be preferable to too little.",
@@ -95,7 +95,7 @@ Watch for the moments when your trust in systems becomes trust that systems will
   },
   shaper: {
     key: "shaper",
-    name: "Shaper of Change",
+    name: "The Builder",
     color: "#f4a03f",
     utopia: "Their utopia is never finished. Everything is always changing.",
     description: "The moment you stop adapting, you start calcifying. The future is something you build with whatever is at hand, including the wreckage.",
@@ -144,7 +144,7 @@ Watch for the moments when your urge to build from scratch is actually an urge t
   },
   architect: {
     key: "architect",
-    name: "Architect of the Commons",
+    name: "The Architect",
     color: "#9b8fef",
     utopia: "Their utopia belongs to everyone and answers to no one.",
     description: "They'd rather build something imperfect and collectively owned than something elegant and controlled by a few.",
@@ -193,7 +193,7 @@ Watch for the moments when your commitment to collective ownership becomes colle
   },
   presence: {
     key: "presence",
-    name: "Keeper of Presence",
+    name: "The Present",
     color: "#e8178a",
     utopia: "Their utopia decided that undivided attention is the most valuable thing in the universe.",
     description: "They know the difference between capability and care, and they've never confused the two.",
@@ -242,7 +242,7 @@ Your instinct is to be with people in their difficulty. That's valuable. But pre
   },
   swimmer: {
     key: "swimmer",
-    name: "Swimmer in Deep Water",
+    name: "The Questioner",
     color: "#6b8fef",
     utopia: "Their utopia is a civilization of philosophers whose single ambition is the deepest level of questioning.",
     description: "Most people see a problem and want to solve it. They see a question and want to live inside it.",
@@ -291,7 +291,7 @@ Watch for the moments when "I'm still thinking about it" is actually "I'm afraid
   },
   rooted: {
     key: "rooted",
-    name: "Rooted in Stillness",
+    name: "The Rooted",
     color: "#7ed6a4",
     utopia: "Their utopia returned to a simpler way of life, on purpose, knowing what it gave up.",
     description: "The most radical thing you can do in a world optimized for output is to stop, and mean it.",
@@ -340,7 +340,7 @@ Watch for the moments when "choosing simplicity" becomes "choosing comfort." Wat
   },
   conscience: {
     key: "conscience",
-    name: "Conscience Before Comfort",
+    name: "The Witness",
     color: "#d64545",
     utopia: "Their utopia built accountability into the architecture. Every leader's decisions are projected onto the sky.",
     description: "They see what others prefer to ignore. Someone has to watch the watchers.",
@@ -389,7 +389,7 @@ Watch for the moments when "watching the watchers" becomes "watching everyone." 
   },
   embers: {
     key: "embers",
-    name: "Keeper of Embers",
+    name: "The Keeper",
     color: "#c97d3a",
     utopia: "Their utopia's most protected resource is not water or energy. It's memory.",
     description: "The most dangerous thing about acceleration is amnesia. The answers aren't in the next technology—they're in the last ten thousand years.",
@@ -438,7 +438,7 @@ Watch for the moments when "remembering what matters" becomes "rejecting what's 
   },
   friction: {
     key: "friction",
-    name: "Alive in the Friction",
+    name: "The Challenger",
     color: "#ff6b35",
     utopia: "Their utopia kept one part of the world deliberately dangerous, because too much safety kills something essential.",
     description: "Ease is more dangerous than difficulty. Something in us requires resistance.",
@@ -487,7 +487,7 @@ Watch for the moments when you're manufacturing friction because you're uncomfor
   },
   unbound: {
     key: "unbound",
-    name: "Unbound from Form",
+    name: "The Transcendent",
     color: "#a855f7",
     utopia: "Their utopia transcended the physical. They exist as pure consciousness now.",
     description: "The boundary of the self is simply not where they stop. Most people find this frightening. They find it the most interesting question there is.",
@@ -536,7 +536,7 @@ Watch for the moments when "imagining beyond limits" becomes "dismissing what's 
   },
   alive: {
     key: "alive",
-    name: "Alive to Everything",
+    name: "The Feeler",
     color: "#f472b6",
     utopia: "Their utopia engineered twelve new senses and a sunset that lasts all day.",
     description: "Change your form, change your perspective, taste every experience. The universe gave you everything. The least you can do is feel it.",
@@ -585,7 +585,7 @@ Watch for the moments when "alive to everything" becomes "unable to be still wit
   },
   mender: {
     key: "mender",
-    name: "Mender of What Remains",
+    name: "The Mender",
     color: "#10b981",
     utopia: "Their utopia decided the most advanced engineering was making what already exists work again.",
     description: "While everyone else is building arks and uploading consciousness, they're fixing the thing in front of them.",
@@ -634,7 +634,7 @@ Watch for the moments when you're repairing something that needs to be replaced.
   },
   cleareyed: {
     key: "cleareyed",
-    name: "Clear-Eyed in the Storm",
+    name: "The Truth-Teller",
     color: "#64748b",
     utopia: "Their utopia has one person whose only job is to tell the truth. They answer to no one.",
     description: "They have one job: to see what is actually happening and say it out loud. The version that's true.",
@@ -683,7 +683,7 @@ Watch for the moments when truth-telling becomes a weapon. When "just being hone
   },
   between: {
     key: "between",
-    name: "In the Space Between",
+    name: "The Liminal",
     color: "#8b8b8b",
     utopia: "Their utopia just started to exist. Nothing is built yet. It's the beginning of an idea.",
     description: "Everyone else has a position. They have a question. And they're still here, which might be the bravest thing on this list.",
