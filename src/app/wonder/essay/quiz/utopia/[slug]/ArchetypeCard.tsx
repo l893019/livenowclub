@@ -24,6 +24,7 @@ export function ArchetypeCard({
   currentUserId,
 }: ArchetypeCardProps) {
   const data = archetypes[archetypeKey];
+  const includesCurrentUser = members.some((m) => m.id === currentUserId);
 
   if (!data) return null;
 
@@ -54,7 +55,7 @@ export function ArchetypeCard({
       </div>
 
       <div>
-        <span className={styles.sectionLabel}>Their utopia</span>
+        <span className={styles.sectionLabel}>{includesCurrentUser ? "Your utopia" : "Their utopia"}</span>
         <p className={styles.utopia}>{data.utopia}</p>
       </div>
 
