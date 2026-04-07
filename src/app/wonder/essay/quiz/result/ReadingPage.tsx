@@ -148,8 +148,7 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
         <section className={styles.ctaSection}>
           <h2 className={styles.sectionTitle}>Compare Worldviews</h2>
           <p className={styles.ctaDescription}>
-            See how your worldview fits with friends, family, and coworkers.
-            {hasQuizUserId ? " Create a group and invite others to take the quiz." : " Take the quiz to discover yours."}
+            See how your worldview fits with friends, family, and coworkers. Create a group and invite others to take the quiz.
           </p>
           <div className={styles.ctaButtons}>
             {hasQuizUserId === false ? (
