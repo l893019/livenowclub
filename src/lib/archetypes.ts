@@ -82,13 +82,13 @@ Watch for the moments when your trust in systems becomes trust that systems will
       "The best argument against pessimism is building something better"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward trust and possibility. When asked about AI and automation, you focused on potential benefits rather than risks. When asked about human nature, you leaned toward believing people do well when given resources and freedom. When asked about the future, you imagined expansion rather than constraint. This pattern—trusting abundance over scarcity, freedom over control—maps to what we call "Citizen of Abundance."`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward trust and possibility. When asked about AI and automation, you focused on potential benefits rather than risks. When asked about human nature, you leaned toward believing people do well when given resources and freedom. When asked about the future, you imagined expansion rather than constraint. This pattern—trusting abundance over scarcity, freedom over control—maps to what we call "The Abundant."`,
 
-    allyDescription: "Alive to Everything shares your belief that life can be good. They want to feel everything the universe offers; you want everyone to have access to it. You're both optimists, but they ground your systems-thinking in embodied experience. They remind you what abundance is for.",
+    allyDescription: "The Feeler shares your belief that life can be good. They want to feel everything the universe offers; you want everyone to have access to it. You're both optimists, but they ground your systems-thinking in embodied experience. They remind you what abundance is for.",
 
-    tensionDescription: "Conscience Before Comfort doesn't trust what you trust. While you see systems that could work beautifully, they see cracks, hidden costs, who's being surveilled. They'll exhaust you with suspicion—and occasionally save you from your own blind spots.",
+    tensionDescription: "The Witness doesn't trust what you trust. While you see systems that could work beautifully, they see cracks, hidden costs, who's being surveilled. They'll exhaust you with suspicion—and occasionally save you from your own blind spots.",
 
-    needDescription: "Alive in the Friction will challenge your comfort. You believe abundance should make life easier; they believe ease can make life hollow. They'll push you to examine whether your utopia has room for struggle, growth, and the meaning that comes from difficulty.",
+    needDescription: "The Challenger will challenge your comfort. You believe abundance should make life easier; they believe ease can make life hollow. They'll push you to examine whether your utopia has room for struggle, growth, and the meaning that comes from difficulty.",
 
     pull: "toward possibility",
     edge: "you see systems others don't"
@@ -131,13 +131,13 @@ Watch for the moments when your urge to build from scratch is actually an urge t
       "Every crisis is a construction site if you know how to look"
     ],
 
-    howYouGotHere: `Your answers clustered around transformation and agency. When asked about stability, you valued it less than others. When asked about tradition, you saw it as raw material rather than constraint. When faced with hypothetical collapses—social, technological, environmental—you oriented toward building rather than preserving. This consistent bias toward change and construction maps to what we call "Shaper of Change."`,
+    howYouGotHere: `Your answers clustered around transformation and agency. When asked about stability, you valued it less than others. When asked about tradition, you saw it as raw material rather than constraint. When faced with hypothetical collapses—social, technological, environmental—you oriented toward building rather than preserving. This consistent bias toward change and construction maps to what we call "The Builder."`,
 
-    allyDescription: "Alive in the Friction understands your restlessness. They don't just tolerate difficulty—they seek it out. While others ask you to slow down, they'll match your pace and push you further. They validate that the struggle itself has value.",
+    allyDescription: "The Challenger understands your restlessness. They don't just tolerate difficulty—they seek it out. While others ask you to slow down, they'll match your pace and push you further. They validate that the struggle itself has value.",
 
-    tensionDescription: "Rooted in Stillness is your opposite. They chose to stop moving; you can't imagine why anyone would. Their stillness looks like stagnation to you; your movement looks like flight to them. You're arguing about the fundamental nature of growth.",
+    tensionDescription: "The Rooted is your opposite. They chose to stop moving; you can't imagine why anyone would. Their stillness looks like stagnation to you; your movement looks like flight to them. You're arguing about the fundamental nature of growth.",
 
-    needDescription: "Keeper of Embers guards what you might carelessly discard. They remember what worked, what was lost, what deserves to be carried forward. Without them, you risk building the same failures again with different names. They're the conscience of your construction site.",
+    needDescription: "The Keeper guards what you might carelessly discard. They remember what worked, what was lost, what deserves to be carried forward. Without them, you risk building the same failures again with different names. They're the conscience of your construction site.",
 
     pull: "toward transformation",
     edge: "you build from rubble"
@@ -180,13 +180,13 @@ Watch for the moments when your commitment to collective ownership becomes colle
       "The work of liberation is generational, not revolutionary"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward collective ownership and structural thinking. When asked about governance, you preferred distributed over centralized. When asked about technology, you focused on who controls it rather than what it can do. When asked about utopia, you described something that belongs to everyone. This pattern—systems-thinking in service of the commons—maps to what we call "Architect of the Commons."`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward collective ownership and structural thinking. When asked about governance, you preferred distributed over centralized. When asked about technology, you focused on who controls it rather than what it can do. When asked about utopia, you described something that belongs to everyone. This pattern—systems-thinking in service of the commons—maps to what we call "The Architect."`,
 
-    allyDescription: "Mender of What Remains shares your commitment to things that work. While you design new systems, they repair existing ones. You're natural partners: you provide the blueprints, they provide the maintenance. Together, you build things that last.",
+    allyDescription: "The Mender shares your commitment to things that work. While you design new systems, they repair existing ones. You're natural partners: you provide the blueprints, they provide the maintenance. Together, you build things that last.",
 
-    tensionDescription: "Unbound from Form challenges your attachment to structure itself. They want to transcend form; you want to perfect it. They'll ask why you're building walls at all. It's a fundamental disagreement about whether liberation requires architecture or escape from it.",
+    tensionDescription: "The Transcendent challenges your attachment to structure itself. They want to transcend form; you want to perfect it. They'll ask why you're building walls at all. It's a fundamental disagreement about whether liberation requires architecture or escape from it.",
 
-    needDescription: "Swimmer in Deep Water will slow you down with questions you can't answer quickly. When you're ready to implement, they're still asking why. This is frustrating—and necessary. They ensure your systems are built on real understanding, not efficient assumptions.",
+    needDescription: "The Questioner will slow you down with questions you can't answer quickly. When you're ready to implement, they're still asking why. This is frustrating—and necessary. They ensure your systems are built on real understanding, not efficient assumptions.",
 
     pull: "toward collective ownership",
     edge: "you see the invisible architecture"
@@ -229,13 +229,13 @@ Your instinct is to be with people in their difficulty. That's valuable. But pre
       "Most problems are really loneliness in disguise"
     ],
 
-    howYouGotHere: `Your answers clustered strongly around a consistent worldview. When asked about machine companionship, you distinguished between capability and care. When asked about unstructured time, you oriented toward people, not projects. When asked about the future, you focused on what we might lose, not what we might gain. This pattern—valuing presence over productivity, attention over achievement—maps to what we call "Keeper of Presence."`,
+    howYouGotHere: `Your answers clustered strongly around a consistent worldview. When asked about machine companionship, you distinguished between capability and care. When asked about unstructured time, you oriented toward people, not projects. When asked about the future, you focused on what we might lose, not what we might gain. This pattern—valuing presence over productivity, attention over achievement—maps to what we call "The Present."`,
 
-    allyDescription: "Rooted in Stillness shares your groundedness. They understand that presence matters more than progress. They'll feel like home—someone who doesn't need you to justify slowing down, who knows that stopping can be the bravest choice.",
+    allyDescription: "The Rooted shares your groundedness. They understand that presence matters more than progress. They'll feel like home—someone who doesn't need you to justify slowing down, who knows that stopping can be the bravest choice.",
 
-    tensionDescription: "Unbound from Form challenges your attachment to embodiment. They want to transcend; you want to stay. They'll ask why you're so committed to being here when there's so much more beyond. You're arguing about what it means to be present at all.",
+    tensionDescription: "The Transcendent challenges your attachment to embodiment. They want to transcend; you want to stay. They'll ask why you're so committed to being here when there's so much more beyond. You're arguing about what it means to be present at all.",
 
-    needDescription: "Clear-Eyed in the Storm will say the thing you're avoiding. It will hurt. You need that—someone who values truth over comfort, even when comfort is what you offer. They'll help you see when presence has become avoidance.",
+    needDescription: "The Truth-Teller will say the thing you're avoiding. It will hurt. You need that—someone who values truth over comfort, even when comfort is what you offer. They'll help you see when presence has become avoidance.",
 
     pull: "toward connection",
     edge: "you show up when others don't"
@@ -278,13 +278,13 @@ Watch for the moments when "I'm still thinking about it" is actually "I'm afraid
       "The deepest truths reveal themselves slowly, if at all"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward depth over resolution. When asked about consciousness, you leaned into mystery rather than explanation. When asked about the future, you focused on what we don't understand rather than what we might build. When given choices between action and reflection, you chose reflection. This pattern—valuing questions over answers, depth over speed—maps to what we call "Swimmer in Deep Water."`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward depth over resolution. When asked about consciousness, you leaned into mystery rather than explanation. When asked about the future, you focused on what we don't understand rather than what we might build. When given choices between action and reflection, you chose reflection. This pattern—valuing questions over answers, depth over speed—maps to what we call "The Questioner."`,
 
-    allyDescription: "Unbound from Form shares your comfort with uncertainty. They're reaching past the edges of what's known; you're diving into the depths. You both understand that the most important things resist easy comprehension. They'll never rush you toward answers.",
+    allyDescription: "The Transcendent shares your comfort with uncertainty. They're reaching past the edges of what's known; you're diving into the depths. You both understand that the most important things resist easy comprehension. They'll never rush you toward answers.",
 
-    tensionDescription: "Mender of What Remains needs to fix things. While you're still asking why it broke, they're already reaching for tools. Your reflection looks like paralysis to them; their action looks like avoidance to you. You're arguing about when understanding is enough.",
+    tensionDescription: "The Mender needs to fix things. While you're still asking why it broke, they're already reaching for tools. Your reflection looks like paralysis to them; their action looks like avoidance to you. You're arguing about when understanding is enough.",
 
-    needDescription: "Architect of the Commons will give your questions structure. You can swim in deep water forever; they'll build you a vessel. They ensure your insights eventually serve something beyond your own understanding—that your questions lead somewhere collective.",
+    needDescription: "The Architect will give your questions structure. You can swim in deep water forever; they'll build you a vessel. They ensure your insights eventually serve something beyond your own understanding—that your questions lead somewhere collective.",
 
     pull: "toward questions",
     edge: "you see what builders miss"
@@ -327,13 +327,13 @@ Watch for the moments when "choosing simplicity" becomes "choosing comfort." Wat
       "What we need is often already here, if we stop reaching for more"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward simplicity and stillness. When asked about progress, you questioned whether it was always desirable. When asked about the future, you imagined returning rather than advancing. When others chose growth, you chose depth. This pattern—valuing stillness over motion, enough over more—maps to what we call "Rooted in Stillness."`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward simplicity and stillness. When asked about progress, you questioned whether it was always desirable. When asked about the future, you imagined returning rather than advancing. When others chose growth, you chose depth. This pattern—valuing stillness over motion, enough over more—maps to what we call "The Rooted."`,
 
-    allyDescription: "Keeper of Presence shares your groundedness. They understand that being here fully is worth more than racing toward what's next. They won't ask you to justify your stillness or defend your choice to stop. With them, you can simply be.",
+    allyDescription: "The Present shares your groundedness. They understand that being here fully is worth more than racing toward what's next. They won't ask you to justify your stillness or defend your choice to stop. With them, you can simply be.",
 
-    tensionDescription: "Shaper of Change can't stop building. Your stillness looks like stagnation to them; their restlessness looks like flight to you. They'll push you to move when you've chosen to stay. You're arguing about fundamental questions of what growth means.",
+    tensionDescription: "The Builder can't stop building. Your stillness looks like stagnation to them; their restlessness looks like flight to you. They'll push you to move when you've chosen to stay. You're arguing about fundamental questions of what growth means.",
 
-    needDescription: "Alive to Everything will pull you out of stillness when you need it. Not to invalidate your peace, but to remind you that life includes sensation, experience, movement. They ensure your rootedness doesn't become a way of hiding from the full range of being alive.",
+    needDescription: "The Feeler will pull you out of stillness when you need it. Not to invalidate your peace, but to remind you that life includes sensation, experience, movement. They ensure your rootedness doesn't become a way of hiding from the full range of being alive.",
 
     pull: "toward stillness",
     edge: "you know when to stop"
@@ -376,13 +376,13 @@ Watch for the moments when "watching the watchers" becomes "watching everyone." 
       "What you ignore today becomes what controls you tomorrow"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward vigilance and accountability. When asked about technology, you focused on surveillance and control rather than capability. When asked about utopia, you described built-in accountability rather than built-in trust. When others saw convenience, you saw potential costs. This pattern—conscience before comfort, watching what others prefer to ignore—maps to what we call "Conscience Before Comfort."`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward vigilance and accountability. When asked about technology, you focused on surveillance and control rather than capability. When asked about utopia, you described built-in accountability rather than built-in trust. When others saw convenience, you saw potential costs. This pattern—conscience before comfort, watching what others prefer to ignore—maps to what we call "The Witness."`,
 
-    allyDescription: "Clear-Eyed in the Storm shares your commitment to truth. They speak it; you guard it. Together, you form a bulwark against comfortable lies. They'll validate your vigilance without calling it paranoia.",
+    allyDescription: "The Truth-Teller shares your commitment to truth. They speak it; you guard it. Together, you form a bulwark against comfortable lies. They'll validate your vigilance without calling it paranoia.",
 
-    tensionDescription: "Citizen of Abundance trusts what you suspect. They see systems working; you see systems failing. Their optimism will feel naive to you; your suspicion will feel exhausting to them. You're arguing about whether the architecture can be trusted.",
+    tensionDescription: "The Abundant trusts what you suspect. They see systems working; you see systems failing. Their optimism will feel naive to you; your suspicion will feel exhausting to them. You're arguing about whether the architecture can be trusted.",
 
-    needDescription: "Keeper of Presence will ground you in the human. It's easy to watch systems and forget people. They'll remind you that vigilance without warmth becomes its own kind of coldness—that the point of watching is to protect something worth protecting.",
+    needDescription: "The Present will ground you in the human. It's easy to watch systems and forget people. They'll remind you that vigilance without warmth becomes its own kind of coldness—that the point of watching is to protect something worth protecting.",
 
     pull: "toward truth",
     edge: "you see what's hidden"
@@ -425,13 +425,13 @@ Watch for the moments when "remembering what matters" becomes "rejecting what's 
       "Every generation thinks it invented its problems; wisdom knows better"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward memory and continuity. When asked about the future, you looked to the past. When asked about innovation, you asked what wisdom we might lose. When others imagined building something new, you imagined preserving something worth keeping. This pattern—valuing memory over novelty, continuity over disruption—maps to what we call "Keeper of Embers."`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward memory and continuity. When asked about the future, you looked to the past. When asked about innovation, you asked what wisdom we might lose. When others imagined building something new, you imagined preserving something worth keeping. This pattern—valuing memory over novelty, continuity over disruption—maps to what we call "The Keeper."`,
 
-    allyDescription: "Architect of the Commons shares your concern for what endures. They build structures; you preserve what deserves to live inside them. Together, you create things that last—institutions with memory, systems with roots.",
+    allyDescription: "The Architect shares your concern for what endures. They build structures; you preserve what deserves to live inside them. Together, you create things that last—institutions with memory, systems with roots.",
 
-    tensionDescription: "Shaper of Change is always tearing down and rebuilding. Your treasures look like obstacles to them; their innovations look like amnesia to you. You're arguing about what deserves to survive the next revolution.",
+    tensionDescription: "The Builder is always tearing down and rebuilding. Your treasures look like obstacles to them; their innovations look like amnesia to you. You're arguing about what deserves to survive the next revolution.",
 
-    needDescription: "In the Space Between will challenge your certainties. You know what mattered; they're still figuring out what matters now. Their uncertainty can feel like rootlessness, but it's also openness—the willingness to let new things become worth remembering.",
+    needDescription: "The Liminal will challenge your certainties. You know what mattered; they're still figuring out what matters now. Their uncertainty can feel like rootlessness, but it's also openness—the willingness to let new things become worth remembering.",
 
     pull: "toward memory",
     edge: "you remember what others forget"
@@ -474,13 +474,13 @@ Watch for the moments when you're manufacturing friction because you're uncomfor
       "The frontier—any frontier—is where we become more than we were"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward challenge and resistance. When asked about utopia, you worried about what we'd lose if life became too easy. When asked about meaning, you located it in struggle and growth. When offered ease, you questioned its value. This pattern—embracing difficulty, suspecting comfort—maps to what we call "Alive in the Friction."`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward challenge and resistance. When asked about utopia, you worried about what we'd lose if life became too easy. When asked about meaning, you located it in struggle and growth. When offered ease, you questioned its value. This pattern—embracing difficulty, suspecting comfort—maps to what we call "The Challenger."`,
 
-    allyDescription: "Shaper of Change shares your restlessness. They can't stop building; you can't stop pushing. Together, you're a force that transforms what it touches. They understand that your drive isn't destructive—it's generative.",
+    allyDescription: "The Builder shares your restlessness. They can't stop building; you can't stop pushing. Together, you're a force that transforms what it touches. They understand that your drive isn't destructive—it's generative.",
 
-    tensionDescription: "Rooted in Stillness chose to stop. Your movement looks like flight to them; their stillness looks like surrender to you. You're having a fundamental argument about whether peace is achievement or defeat.",
+    tensionDescription: "The Rooted chose to stop. Your movement looks like flight to them; their stillness looks like surrender to you. You're having a fundamental argument about whether peace is achievement or defeat.",
 
-    needDescription: "Keeper of Presence will slow you down enough to feel what you're feeling. You can use friction as a way of avoiding presence—always striving, never arriving. They'll help you learn that sometimes the challenge is simply being where you are.",
+    needDescription: "The Present will slow you down enough to feel what you're feeling. You can use friction as a way of avoiding presence—always striving, never arriving. They'll help you learn that sometimes the challenge is simply being where you are.",
 
     pull: "toward difficulty",
     edge: "you grow where others stall"
@@ -523,13 +523,13 @@ Watch for the moments when "imagining beyond limits" becomes "dismissing what's 
       "The most interesting questions are the ones that challenge our assumptions about what we are"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward transcendence and expansion. When asked about identity, you questioned its boundaries. When asked about the body, you treated it as optional rather than essential. When asked about the future, you imagined something beyond human. This pattern—reaching past the edges of self and form—maps to what we call "Unbound from Form."`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward transcendence and expansion. When asked about identity, you questioned its boundaries. When asked about the body, you treated it as optional rather than essential. When asked about the future, you imagined something beyond human. This pattern—reaching past the edges of self and form—maps to what we call "The Transcendent."`,
 
-    allyDescription: "Swimmer in Deep Water shares your comfort with uncertainty. They live in questions; you reach past them. You both understand that the most important things resist easy comprehension. They'll never ground you prematurely.",
+    allyDescription: "The Questioner shares your comfort with uncertainty. They live in questions; you reach past them. You both understand that the most important things resist easy comprehension. They'll never ground you prematurely.",
 
-    tensionDescription: "Keeper of Presence is committed to being here. Your transcendence looks like escape to them; their groundedness looks like limitation to you. You're arguing about whether liberation means leaving or arriving.",
+    tensionDescription: "The Present is committed to being here. Your transcendence looks like escape to them; their groundedness looks like limitation to you. You're arguing about whether liberation means leaving or arriving.",
 
-    needDescription: "Keeper of Embers will remind you what's worth keeping. In your rush toward transcendence, you may discard things that deserved to be carried forward. They're the anchor that ensures your expansion doesn't become amnesia.",
+    needDescription: "The Keeper will remind you what's worth keeping. In your rush toward transcendence, you may discard things that deserved to be carried forward. They're the anchor that ensures your expansion doesn't become amnesia.",
 
     pull: "toward transcendence",
     edge: "you see past the edges"
@@ -572,13 +572,13 @@ Watch for the moments when "alive to everything" becomes "unable to be still wit
       "New senses, new perspectives, new forms of experience are worth pursuing"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward experience and sensation. When asked about the future, you imagined expanded ways of feeling rather than expanded ways of controlling. When asked about the body, you treated it as an instrument for experience rather than a problem to solve. When offered choices, you chose intensity over safety. This pattern—openness to experience, hunger for sensation—maps to what we call "Alive to Everything."`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward experience and sensation. When asked about the future, you imagined expanded ways of feeling rather than expanded ways of controlling. When asked about the body, you treated it as an instrument for experience rather than a problem to solve. When offered choices, you chose intensity over safety. This pattern—openness to experience, hunger for sensation—maps to what we call "The Feeler."`,
 
-    allyDescription: "Citizen of Abundance shares your optimism. They trust that good things are possible; you want to feel all of them. Together, you're a celebration of what life can be when it's not constrained by fear.",
+    allyDescription: "The Abundant shares your optimism. They trust that good things are possible; you want to feel all of them. Together, you're a celebration of what life can be when it's not constrained by fear.",
 
-    tensionDescription: "Conscience Before Comfort keeps asking whether you should feel what you want to feel. Your openness looks like recklessness to them; their vigilance looks like refusal to live. You're arguing about whether experience needs justification.",
+    tensionDescription: "The Witness keeps asking whether you should feel what you want to feel. Your openness looks like recklessness to them; their vigilance looks like refusal to live. You're arguing about whether experience needs justification.",
 
-    needDescription: "Clear-Eyed in the Storm will tell you truths you'd rather not hear. You can use sensation as a way of avoiding difficult realities. They'll cut through the pleasant haze and show you what you're not wanting to see.",
+    needDescription: "The Truth-Teller will tell you truths you'd rather not hear. You can use sensation as a way of avoiding difficult realities. They'll cut through the pleasant haze and show you what you're not wanting to see.",
 
     pull: "toward sensation",
     edge: "you feel what others miss"
@@ -621,13 +621,13 @@ Watch for the moments when you're repairing something that needs to be replaced.
       "Stubborn hope is a form of resistance"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward repair and continuity. When asked about broken things, you reached for tools rather than replacements. When asked about the future, you focused on fixing what we have rather than building something new. When others dreamed of escape, you committed to staying and mending. This pattern—fixing what's broken, healing what's wounded—maps to what we call "Mender of What Remains."`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward repair and continuity. When asked about broken things, you reached for tools rather than replacements. When asked about the future, you focused on fixing what we have rather than building something new. When others dreamed of escape, you committed to staying and mending. This pattern—fixing what's broken, healing what's wounded—maps to what we call "The Mender."`,
 
-    allyDescription: "Architect of the Commons shares your commitment to what works. They design structures; you maintain them. Together, you build things that last—not just impressive at the start, but functional for the long haul.",
+    allyDescription: "The Architect shares your commitment to what works. They design structures; you maintain them. Together, you build things that last—not just impressive at the start, but functional for the long haul.",
 
-    tensionDescription: "Swimmer in Deep Water wants to understand before acting. While you're already fixing, they're still questioning. Their reflection looks like paralysis to you; your action looks like avoidance to them. You're arguing about when understanding is enough.",
+    tensionDescription: "The Questioner wants to understand before acting. While you're already fixing, they're still questioning. Their reflection looks like paralysis to you; your action looks like avoidance to them. You're arguing about when understanding is enough.",
 
-    needDescription: "Alive in the Friction will challenge your comfort with repair. Sometimes what's broken needs to stay broken long enough to feel the friction. They'll push you to consider when mending is actually avoiding the difficulty that growth requires.",
+    needDescription: "The Challenger will challenge your comfort with repair. Sometimes what's broken needs to stay broken long enough to feel the friction. They'll push you to consider when mending is actually avoiding the difficulty that growth requires.",
 
     pull: "toward repair",
     edge: "you fix what others abandon"
@@ -670,13 +670,13 @@ Watch for the moments when truth-telling becomes a weapon. When "just being hone
       "The storm won't stop because you close your eyes; better to see it coming"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward clarity and honesty. When asked about difficult truths, you chose telling over softening. When asked about comfort, you valued truth above it. When others might look away, you kept looking. This pattern—clear sight, honest speech, even when it costs—maps to what we call "Clear-Eyed in the Storm."`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward clarity and honesty. When asked about difficult truths, you chose telling over softening. When asked about comfort, you valued truth above it. When others might look away, you kept looking. This pattern—clear sight, honest speech, even when it costs—maps to what we call "The Truth-Teller."`,
 
-    allyDescription: "Conscience Before Comfort shares your commitment to seeing what's real. They watch; you speak. Together, you ensure that nothing stays hidden that shouldn't, that uncomfortable truths get said out loud.",
+    allyDescription: "The Witness shares your commitment to seeing what's real. They watch; you speak. Together, you ensure that nothing stays hidden that shouldn't, that uncomfortable truths get said out loud.",
 
-    tensionDescription: "Alive to Everything wants to feel rather than analyze. Your clarity can feel cold to them; their openness can feel ungrounded to you. You're arguing about whether truth requires distance or immersion.",
+    tensionDescription: "The Feeler wants to feel rather than analyze. Your clarity can feel cold to them; their openness can feel ungrounded to you. You're arguing about whether truth requires distance or immersion.",
 
-    needDescription: "Rooted in Stillness will teach you when to stop speaking. Not every truth needs to be said. Not every moment needs your clarity. They'll help you learn that sometimes the bravest thing is silence—being with someone in their difficulty rather than diagnosing it.",
+    needDescription: "The Rooted will teach you when to stop speaking. Not every truth needs to be said. Not every moment needs your clarity. They'll help you learn that sometimes the bravest thing is silence—being with someone in their difficulty rather than diagnosing it.",
 
     pull: "toward clarity",
     edge: "you say what others won't"
@@ -719,13 +719,13 @@ Watch for the moments when "I'm still figuring it out" becomes "I refuse to figu
       "Rushing to answers is its own kind of avoidance"
     ],
 
-    howYouGotHere: `Your answers didn't cluster strongly around any single worldview. When others chose sides, you saw merit in multiple positions. When asked about identity, you described something in process rather than fixed. When given certainties, you questioned them. This pattern—comfortable in uncertainty, still in transition—maps to what we call "In the Space Between."`,
+    howYouGotHere: `Your answers didn't cluster strongly around any single worldview. When others chose sides, you saw merit in multiple positions. When asked about identity, you described something in process rather than fixed. When given certainties, you questioned them. This pattern—comfortable in uncertainty, still in transition—maps to what we call "The Liminal."`,
 
-    allyDescription: "Keeper of Embers gives you something to hold onto while you figure it out. They don't demand you become something yet; they just remember where you've been. Their rootedness is a anchor point while you navigate the unknown.",
+    allyDescription: "The Keeper gives you something to hold onto while you figure it out. They don't demand you become something yet; they just remember where you've been. Their rootedness is a anchor point while you navigate the unknown.",
 
-    tensionDescription: "Alive in the Friction wants you to commit to something, even something difficult. Your uncertainty looks like avoidance to them; their certainty looks like premature closure to you. You're arguing about when enough is enough.",
+    tensionDescription: "The Challenger wants you to commit to something, even something difficult. Your uncertainty looks like avoidance to them; their certainty looks like premature closure to you. You're arguing about when enough is enough.",
 
-    needDescription: "Shaper of Change will push you toward action. You can stay in the space between indefinitely; they'll insist on building something. They're the force that transforms your questioning into something concrete, eventually.",
+    needDescription: "The Builder will push you toward action. You can stay in the space between indefinitely; they'll insist on building something. They're the force that transforms your questioning into something concrete, eventually.",
 
     pull: "toward openness",
     edge: "you stay when others close"
@@ -1494,13 +1494,13 @@ export const analyticalPairDynamics: Record<string, AnalyticalPairDynamic> = {
   "alive+alive": {
     thesis: "Two mirrors reflecting infinite sensation—profound recognition, but who pauses long enough to feel what's actually there?",
 
-    distanceAnalysis: `When Alive to Everything meets Alive to Everything, the distance between you is zero. You share the same philosophical coordinates, the same hunger for experience, the same conviction that the universe gave you everything and the least you can do is feel it. This is immediate recognition—the relief of meeting someone who doesn't need you to justify your intensity, your appetite, your refusal to moderate.
+    distanceAnalysis: `When The Feeler meets The Feeler, the distance between you is zero. You share the same philosophical coordinates, the same hunger for experience, the same conviction that the universe gave you everything and the least you can do is feel it. This is immediate recognition—the relief of meeting someone who doesn't need you to justify your intensity, your appetite, your refusal to moderate.
 
 But distance zero carries its own weight. When two people occupy the same position, they see the same things—and miss the same things. Your shared orientation toward sensation can become an echo chamber of experience-seeking, each validating the other's hunger without questioning whether that hunger is serving you. The blind spots you share become invisible, confirmed by mutual agreement.`,
 
     dynamic: `At its core, this pairing brings together two people who believe experience is the point. Both of you have unusual capacity for feeling—not just seeking sensation, but receiving it fully. Where others filter, protect, moderate, you both open. This creates a kind of amplification: together, you can access intensities that might overwhelm or frighten others.
 
-The dynamic between two Alive to Everything types is one of mutual permission. You don't have to explain why you need more, why you're not satisfied with the safe middle, why something in you requires the full range. The other person gets it. They're built the same way.
+The dynamic between two The Feeler types is one of mutual permission. You don't have to explain why you need more, why you're not satisfied with the safe middle, why something in you requires the full range. The other person gets it. They're built the same way.
 
 But this same mutual permission can enable the shadow side of your shared orientation. You both know that sensation can become consumption—that feeling everything is not the same as understanding anything. When two people share this blind spot, neither may be positioned to call attention to it. The endless pursuit of experience can become its own kind of numbness: if you're always chasing the next sensation, you're never actually present to what's here.`,
 
@@ -1535,7 +1535,7 @@ But this same mutual permission can enable the shadow side of your shared orient
       themToYou: `They offer the same amplification back. They don't judge your hunger for experience because they share it. They'll follow you into intensities that others might find excessive, match your openness, celebrate your capacity to feel. In their company, you're not "too much." You're exactly as much as you are, and that's met with recognition rather than resistance.`
     },
 
-    risk: `The failure mode for two Alive to Everything types is mutual enabling toward consumption. Without someone to ask "why do you need this particular experience?" or "what are you avoiding by always seeking the next sensation?", you can reinforce each other's tendency to use intensity as escape. The relationship becomes a spinning wheel of experiences—vivid, memorable, but ultimately unintegrated.
+    risk: `The failure mode for two The Feeler types is mutual enabling toward consumption. Without someone to ask "why do you need this particular experience?" or "what are you avoiding by always seeking the next sensation?", you can reinforce each other's tendency to use intensity as escape. The relationship becomes a spinning wheel of experiences—vivid, memorable, but ultimately unintegrated.
 
 The deeper risk is that sensation becomes a substitute for presence. If you're both always reaching for the next experience, neither of you may learn to stay with what's actually here—including the difficult, unglamorous experiences that don't offer obvious intensity but might offer depth. Two people who are alive to everything can end up alive to nothing in particular.`,
 
@@ -1548,7 +1548,7 @@ The deeper risk is that sensation becomes a substitute for presence. If you're b
   "architect+architect": {
     thesis: "Two systems thinkers designing the same commons—profound structural alignment, but who lives in the blueprints?",
 
-    distanceAnalysis: `When Architect of the Commons meets Architect of the Commons, you share the same philosophical coordinates: the conviction that the best structures belong to everyone who uses them, that design is never neutral, that collective ownership matters more than elegant control. This is immediate recognition—the relief of meeting someone who sees the invisible architecture, who asks "who does this serve?" when others are still asking "what does this do?"
+    distanceAnalysis: `When The Architect meets The Architect, you share the same philosophical coordinates: the conviction that the best structures belong to everyone who uses them, that design is never neutral, that collective ownership matters more than elegant control. This is immediate recognition—the relief of meeting someone who sees the invisible architecture, who asks "who does this serve?" when others are still asking "what does this do?"
 
 But occupying the same position means seeing the same things and missing the same things. Your shared orientation toward systems can become an echo chamber of structural thinking, each validating the other's blueprints without questioning whether anyone wants to live in them. The blind spots you share—particularly the tendency to love the system more than the people inside it—become invisible, confirmed by mutual agreement.`,
 
@@ -1602,7 +1602,7 @@ The deeper risk is that you build a commons that belongs to your shared vision r
   "between+between": {
     thesis: "Two thresholds meeting—profound companionship in uncertainty, but can the space between become a place to live forever?",
 
-    distanceAnalysis: `When In the Space Between meets In the Space Between, the distance between you is zero. You share the same philosophical coordinates: the threshold, the transition, the not-yet-arrived. Both of you have resisted the pressure to pick a side, take a stand, be something definable—and you're still here, which takes a particular kind of courage.
+    distanceAnalysis: `When The Liminal meets The Liminal, the distance between you is zero. You share the same philosophical coordinates: the threshold, the transition, the not-yet-arrived. Both of you have resisted the pressure to pick a side, take a stand, be something definable—and you're still here, which takes a particular kind of courage.
 
 But occupying the same uncertain space means sharing the same relationship to not-knowing—and potentially sharing the same way of using uncertainty. Your companionship in the threshold can become a permanent address, each validating the other's liminal state without questioning whether staying undefined has become a way of avoiding choice. The blind spots you share become invisible, confirmed by mutual agreement.`,
 
@@ -1656,7 +1656,7 @@ The deeper risk is that the space between becomes a relationship that's always a
   "citizen+citizen": {
     thesis: "Two citizens of abundance floating in trust—profound ease together, but who drops anchor when the current shifts?",
 
-    distanceAnalysis: `When Citizen of Abundance meets Citizen of Abundance, the distance between you is zero. You share the same philosophical coordinates: the conviction that scarcity is more often manufactured than natural, that systems designed for abundance tend toward good, that too much freedom will always be preferable to too little. This is immediate recognition—the relief of meeting someone who doesn't default to fear, who sees possibility where others see constraint.
+    distanceAnalysis: `When The Abundant meets The Abundant, the distance between you is zero. You share the same philosophical coordinates: the conviction that scarcity is more often manufactured than natural, that systems designed for abundance tend toward good, that too much freedom will always be preferable to too little. This is immediate recognition—the relief of meeting someone who doesn't default to fear, who sees possibility where others see constraint.
 
 But occupying the same position means seeing the same things and missing the same things. Your shared trust in abundance can become an echo chamber of optimism, each validating the other's confidence without questioning whether that confidence is warranted. The blind spots you share—particularly the tendency to mistake access for equity—become invisible, confirmed by mutual agreement.`,
 
@@ -1710,7 +1710,7 @@ The deeper risk is that your shared abundance-mindset becomes a barrier to seein
   "cleareyed+cleareyed": {
     thesis: "Two truth-tellers in the storm—profound honesty between you, but can truth survive without tenderness?",
 
-    distanceAnalysis: `When Clear-Eyed in the Storm meets Clear-Eyed in the Storm, the distance between you is zero. You share the same philosophical coordinates: the conviction that reality doesn't care about feelings, that comfortable lies are more dangerous than uncomfortable truths, that seeing clearly is both skill and courage. This is immediate recognition—the relief of meeting someone who doesn't flinch, who says the thing, who values truth above comfort.
+    distanceAnalysis: `When The Truth-Teller meets The Truth-Teller, the distance between you is zero. You share the same philosophical coordinates: the conviction that reality doesn't care about feelings, that comfortable lies are more dangerous than uncomfortable truths, that seeing clearly is both skill and courage. This is immediate recognition—the relief of meeting someone who doesn't flinch, who says the thing, who values truth above comfort.
 
 But occupying the same position means sharing the same relationship to honesty—and potentially sharing the same blind spots about how truth lands. Your mutual commitment to clarity can become an echo chamber of brutal honesty, each validating the other's bluntness without questioning whether honesty without tenderness is cruelty. The blind spots you share become invisible, confirmed by mutual agreement.`,
 
@@ -1764,7 +1764,7 @@ The deeper risk is that you create an environment where vulnerability becomes im
   "conscience+conscience": {
     thesis: "Two watchmen watching each other—profound vigilance together, but who watches the watchers?",
 
-    distanceAnalysis: `When Conscience Before Comfort meets Conscience Before Comfort, the distance between you is zero. You share the same philosophical coordinates: the conviction that someone has to watch the watchers, that dystopia arrives disguised as convenience, that comfort should never override conscience. This is immediate recognition—the relief of meeting someone who also sees the cracks, the hidden costs, the surveillance beneath the service.
+    distanceAnalysis: `When The Witness meets The Witness, the distance between you is zero. You share the same philosophical coordinates: the conviction that someone has to watch the watchers, that dystopia arrives disguised as convenience, that comfort should never override conscience. This is immediate recognition—the relief of meeting someone who also sees the cracks, the hidden costs, the surveillance beneath the service.
 
 But occupying the same position means sharing the same relationship to suspicion—and potentially sharing the same blindness to what's working. Your mutual vigilance can become an echo chamber of critique, each validating the other's distrust without questioning whether permanent suspicion is its own kind of prison. The blind spots you share become invisible, confirmed by mutual agreement.`,
 
@@ -1818,7 +1818,7 @@ The deeper risk is that you become unable to trust anyone, including each other.
   "embers+embers": {
     thesis: "Two archivists tending the same fire—profound shared memory, but can the archive become a fortress against the future?",
 
-    distanceAnalysis: `When Keeper of Embers meets Keeper of Embers, the distance between you is zero. You share the same philosophical coordinates: the conviction that memory is survival, that acceleration without remembering is just sophisticated forgetting, that the answers aren't in the next technology but in the last ten thousand years. This is immediate recognition—the relief of meeting someone who also guards what came before, who tends the embers so the fire can be relit.
+    distanceAnalysis: `When The Keeper meets The Keeper, the distance between you is zero. You share the same philosophical coordinates: the conviction that memory is survival, that acceleration without remembering is just sophisticated forgetting, that the answers aren't in the next technology but in the last ten thousand years. This is immediate recognition—the relief of meeting someone who also guards what came before, who tends the embers so the fire can be relit.
 
 But occupying the same position means sharing the same relationship to the past—and potentially sharing the same hostility toward the future. Your mutual reverence for memory can become an echo chamber of preservation, each validating the other's treasures without questioning whether some of them have become weights. The blind spots you share become invisible, confirmed by mutual agreement.`,
 
@@ -1872,7 +1872,7 @@ The deeper risk is that your shared archive becomes a substitute for living. Two
   "friction+friction": {
     thesis: "Two who crave difficulty meeting in the arena—profound understanding of struggle, but can friction consume what it was meant to forge?",
 
-    distanceAnalysis: `When Alive in the Friction meets Alive in the Friction, the distance between you is zero. You share the same philosophical coordinates: the conviction that ease is more dangerous than difficulty, that something in us requires resistance, that comfort can be a trap. This is immediate recognition—the relief of meeting someone who doesn't want you to slow down, take it easy, be reasonable.
+    distanceAnalysis: `When The Challenger meets The Challenger, the distance between you is zero. You share the same philosophical coordinates: the conviction that ease is more dangerous than difficulty, that something in us requires resistance, that comfort can be a trap. This is immediate recognition—the relief of meeting someone who doesn't want you to slow down, take it easy, be reasonable.
 
 But occupying the same position means sharing the same relationship to difficulty—and potentially sharing the same inability to rest. Your mutual embrace of friction can become an echo chamber of struggle, each validating the other's restlessness without questioning whether difficulty has become its own addiction. The blind spots you share become invisible, confirmed by mutual agreement.`,
 
@@ -1926,7 +1926,7 @@ The deeper risk is that friction consumes what it was meant to forge. Two people
   "mender+mender": {
     thesis: "Two fixers tending the same broken world—profound shared care, but can repair become a way of avoiding what needs to end?",
 
-    distanceAnalysis: `When Mender of What Remains meets Mender of What Remains, the distance between you is zero. You share the same philosophical coordinates: the conviction that the most advanced engineering is making what exists work again, that what we have is worth saving before we build something new, that repair is not a lesser form of creation.
+    distanceAnalysis: `When The Mender meets The Mender, the distance between you is zero. You share the same philosophical coordinates: the conviction that the most advanced engineering is making what exists work again, that what we have is worth saving before we build something new, that repair is not a lesser form of creation.
 
 But occupying the same position means sharing the same relationship to broken things—and potentially sharing the same blindness to what needs to die. Your mutual commitment to mending can become an echo chamber of repair, each validating the other's fixing without questioning whether some things should be released. The blind spots you share become invisible, confirmed by mutual agreement.`,
 
@@ -1980,7 +1980,7 @@ The deeper risk is that repair becomes a way of avoiding grief. Some things are 
   "presence+presence": {
     thesis: "Two keepers of attention in the same room—profound mutual presence, but who moves when movement is needed?",
 
-    distanceAnalysis: `When Keeper of Presence meets Keeper of Presence, the distance between you is zero. You share the same philosophical coordinates: the conviction that undivided attention is the most valuable thing you can give, that efficiency is often the enemy of depth, that most problems are really loneliness in disguise. This is immediate recognition—the relief of meeting someone who also shows up fully, who knows the difference between capability and care.
+    distanceAnalysis: `When The Present meets The Present, the distance between you is zero. You share the same philosophical coordinates: the conviction that undivided attention is the most valuable thing you can give, that efficiency is often the enemy of depth, that most problems are really loneliness in disguise. This is immediate recognition—the relief of meeting someone who also shows up fully, who knows the difference between capability and care.
 
 But occupying the same position means sharing the same relationship to being present—and potentially sharing the same avoidance of action. Your mutual commitment to showing up can become an echo chamber of holding space, each validating the other's stillness without questioning whether presence has become paralysis. The blind spots you share become invisible, confirmed by mutual agreement.`,
 
@@ -2034,7 +2034,7 @@ The deeper risk is that presence becomes avoidance. Two Keepers can become so co
   "rooted+rooted": {
     thesis: "Two in stillness together—profound peace between you, but who makes the first move when movement is necessary?",
 
-    distanceAnalysis: `When Rooted in Stillness meets Rooted in Stillness, the distance between you is zero. You share the same philosophical coordinates: the conviction that the most radical thing you can do is stop and mean it, that human beings are not problems to be optimized, that sometimes the answer to "what should I do?" is genuinely "nothing." This is immediate recognition—the relief of meeting someone who doesn't need you to justify your stillness or defend your choice to stay.
+    distanceAnalysis: `When The Rooted meets The Rooted, the distance between you is zero. You share the same philosophical coordinates: the conviction that the most radical thing you can do is stop and mean it, that human beings are not problems to be optimized, that sometimes the answer to "what should I do?" is genuinely "nothing." This is immediate recognition—the relief of meeting someone who doesn't need you to justify your stillness or defend your choice to stay.
 
 But occupying the same position means sharing the same relationship to stopping—and potentially sharing the same avoidance of starting. Your mutual stillness can become an echo chamber of peace, each validating the other's rootedness without questioning whether it has become withdrawal. The blind spots you share become invisible, confirmed by mutual agreement.`,
 
@@ -2088,7 +2088,7 @@ The deeper risk is that your shared stillness becomes withdrawal from life. Two 
   "shaper+shaper": {
     thesis: "Two builders in perpetual construction—profound shared momentum, but can you stop redesigning long enough to finish?",
 
-    distanceAnalysis: `When Shaper of Change meets Shaper of Change, the distance between you is zero. You share the same philosophical coordinates: the conviction that the moment you stop adapting you start calcifying, that the future is something you build with whatever is at hand, that every crisis is a construction site if you know how to look. This is immediate recognition—the relief of meeting someone who also sees rubble as raw material, endings as beginnings, collapse as opportunity.
+    distanceAnalysis: `When The Builder meets The Builder, the distance between you is zero. You share the same philosophical coordinates: the conviction that the moment you stop adapting you start calcifying, that the future is something you build with whatever is at hand, that every crisis is a construction site if you know how to look. This is immediate recognition—the relief of meeting someone who also sees rubble as raw material, endings as beginnings, collapse as opportunity.
 
 But occupying the same position means sharing the same relationship to change—and potentially sharing the same inability to maintain. Your mutual drive to build can become an echo chamber of construction, each validating the other's restlessness without questioning whether movement has become its own addiction. The blind spots you share become invisible, confirmed by mutual agreement.`,
 
@@ -2142,7 +2142,7 @@ The deeper risk is that you tear down each other's work. Two Shapers may find th
   "swimmer+swimmer": {
     thesis: "Two in deep water together—profound shared capacity for questions, but can you surface long enough to act?",
 
-    distanceAnalysis: `When Swimmer in Deep Water meets Swimmer in Deep Water, the distance between you is zero. You share the same philosophical coordinates: the conviction that the best questions are the ones that can't be fully answered, that certainty is usually a sign something is being ignored, that understanding matters more than solving. This is immediate recognition—the relief of meeting someone who also sits with uncertainty, who won't rush you toward answers, who knows that not-knowing can be a form of rigor.
+    distanceAnalysis: `When The Questioner meets The Questioner, the distance between you is zero. You share the same philosophical coordinates: the conviction that the best questions are the ones that can't be fully answered, that certainty is usually a sign something is being ignored, that understanding matters more than solving. This is immediate recognition—the relief of meeting someone who also sits with uncertainty, who won't rush you toward answers, who knows that not-knowing can be a form of rigor.
 
 But occupying the same position means sharing the same relationship to questions—and potentially sharing the same avoidance of answers. Your mutual depth can become an echo chamber of inquiry, each validating the other's uncertainty without questioning whether sitting with questions has become a way of avoiding the commitment of choice. The blind spots you share become invisible, confirmed by mutual agreement.`,
 
@@ -2196,7 +2196,7 @@ The deeper risk is that questions become a substitute for living. Two Swimmers c
   "unbound+unbound": {
     thesis: "Two transcenders reaching past the same edges—profound shared vision of beyond, but who stays grounded enough to bring anything back?",
 
-    distanceAnalysis: `When Unbound from Form meets Unbound from Form, the distance between you is zero. You share the same philosophical coordinates: the conviction that the boundaries of self, body, and species are not fixed, that what we call "human" is a starting point rather than a destination, that transcendence is a serious possibility. This is immediate recognition—the relief of meeting someone who also reaches past the edges, who takes seriously what others dismiss as fantasy or threat.
+    distanceAnalysis: `When The Transcendent meets The Transcendent, the distance between you is zero. You share the same philosophical coordinates: the conviction that the boundaries of self, body, and species are not fixed, that what we call "human" is a starting point rather than a destination, that transcendence is a serious possibility. This is immediate recognition—the relief of meeting someone who also reaches past the edges, who takes seriously what others dismiss as fantasy or threat.
 
 But occupying the same position means sharing the same relationship to transcendence—and potentially sharing the same disconnection from what's here. Your mutual reaching can become an echo chamber of escape, each validating the other's yearning for beyond without questioning whether that yearning has become flight from the present. The blind spots you share become invisible, confirmed by mutual agreement.`,
 
@@ -2253,7 +2253,7 @@ The deeper risk is that transcendence becomes a substitute for intimacy. Two Unb
   "embers+shaper": {
     thesis: "One builds to change the world; the other guards to preserve it. The future and the past, locked in permanent negotiation.",
 
-    distanceAnalysis: `Keeper of Embers and Shaper of Change occupy opposite ends of a fundamental axis: time orientation. The Shaper lives in the future tense, already imagining what comes next, treating the present as raw material for transformation. The Keeper lives in the past tense, already remembering what came before, treating the present as a thread in an unbroken line of inheritance. This isn't merely a difference in preference—it's a difference in what each believes matters most about being human.
+    distanceAnalysis: `The Keeper and The Builder occupy opposite ends of a fundamental axis: time orientation. The Shaper lives in the future tense, already imagining what comes next, treating the present as raw material for transformation. The Keeper lives in the past tense, already remembering what came before, treating the present as a thread in an unbroken line of inheritance. This isn't merely a difference in preference—it's a difference in what each believes matters most about being human.
 
 The distance between you maps onto one of philosophy's oldest tensions: preservation versus transformation. The Shaper asks "what can we build?" while the Keeper asks "what must we not lose?" These questions sound compatible until resources are scarce—until the Shaper needs to demolish the old building to make room for the new one, until the Keeper realizes the only way to preserve something is to prevent its replacement. Then the fundamental incompatibility reveals itself: you're not just prioritizing differently. You're operating from different definitions of progress.`,
 
@@ -2307,7 +2307,7 @@ The deeper risk is that you stop listening to what's valid in the other's perspe
   "rooted+shaper": {
     thesis: "Stillness meets perpetual motion. One asks 'why are we running?' while the other asks 'why are we standing still?'",
 
-    distanceAnalysis: `Rooted in Stillness and Shaper of Change sit at maximum philosophical distance because they embody opposite answers to a fundamental question: what is the relationship between action and meaning? The Shaper believes meaning emerges from creation—you matter because you build, transform, leave marks on the world. The Rooted believes meaning exists independent of action—you matter simply by being present, by refusing the cultural imperative to always produce more.
+    distanceAnalysis: `The Rooted and The Builder sit at maximum philosophical distance because they embody opposite answers to a fundamental question: what is the relationship between action and meaning? The Shaper believes meaning emerges from creation—you matter because you build, transform, leave marks on the world. The Rooted believes meaning exists independent of action—you matter simply by being present, by refusing the cultural imperative to always produce more.
 
 This isn't a difference that can be resolved by finding the right balance. The Shaper genuinely believes that stopping is a form of dying—that the person who stops building is calcifying, surrendering to entropy. The Rooted genuinely believes that constant building is a form of fleeing—that the person who can't stop is running from something they refuse to face. Each experiences the other's way of being as not just different but fundamentally mistaken about what life is for.`,
 
@@ -2361,7 +2361,7 @@ The deeper risk is that you each become more extreme in reaction to the other. T
   "friction+rooted": {
     thesis: "One chose stillness. The other craves difficulty. Are they describing the same peace from opposite directions, or fundamentally different lives?",
 
-    distanceAnalysis: `Alive in the Friction and Rooted in Stillness occupy opposite positions on the axis of engagement with resistance. The Friction-seeker believes that meaning emerges from struggle—that ease is more dangerous than difficulty, that something essential in us requires opposition to stay alive. The Rooted believes that meaning exists in presence—that the compulsion toward struggle can be its own trap, that stopping is sometimes the bravest and most meaningful choice.
+    distanceAnalysis: `The Challenger and The Rooted occupy opposite positions on the axis of engagement with resistance. The Friction-seeker believes that meaning emerges from struggle—that ease is more dangerous than difficulty, that something essential in us requires opposition to stay alive. The Rooted believes that meaning exists in presence—that the compulsion toward struggle can be its own trap, that stopping is sometimes the bravest and most meaningful choice.
 
 What makes this distance so profound is that each sees the other's core value as the thing they've deliberately rejected. The Friction-seeker has rejected ease because they believe it leads to atrophy of the soul. The Rooted has rejected struggle for its own sake because they believe it becomes an addiction that prevents presence. When you meet, you're not just encountering different preferences—you're encountering someone who has thought carefully about your deepest value and concluded it's a mistake.`,
 
@@ -2415,7 +2415,7 @@ The deeper risk is that you stop being curious about each other's perspective. T
   "embers+unbound": {
     thesis: "The guardian of memory meets the dreamer of transcendence. One looks back to preserve; the other looks forward to leave everything behind.",
 
-    distanceAnalysis: `Keeper of Embers and Unbound from Form represent opposite orientations toward human inheritance. The Keeper believes that the accumulated wisdom of generations—the traditions, practices, memories, and meanings that have been passed down—is precious and must be tended. The Unbound believes that the boundaries of what we are, including the boundaries of inherited identity, are limitations to be transcended rather than treasures to be preserved.
+    distanceAnalysis: `The Keeper and The Transcendent represent opposite orientations toward human inheritance. The Keeper believes that the accumulated wisdom of generations—the traditions, practices, memories, and meanings that have been passed down—is precious and must be tended. The Unbound believes that the boundaries of what we are, including the boundaries of inherited identity, are limitations to be transcended rather than treasures to be preserved.
 
 This distance runs deeper than preference. The Keeper's entire project depends on valuing continuity—the thread that connects ancestor to descendant, past to future, what was to what is. The Unbound's entire project depends on valuing transcendence—the possibility of becoming something so different that the categories of the past no longer apply. Each finds the other's deepest commitment fundamentally misguided: the Keeper sees the Unbound as recklessly discarding what cannot be recovered; the Unbound sees the Keeper as lovingly preserving what ought to be outgrown.`,
 
@@ -2469,7 +2469,7 @@ The deeper risk is that you stop asking the questions that only arise in this te
   "citizen+conscience": {
     thesis: "One trusts the architecture. The other tests the walls for cracks. Both are watching—for completely different things.",
 
-    distanceAnalysis: `Citizen of Abundance and Conscience Before Comfort represent opposite default stances toward systems: trust versus suspicion. The Citizen has concluded, after genuine thought, that systems designed for abundance tend toward good—that trusting the architecture usually serves you better than constantly testing it. The Conscience has concluded, after genuine thought, that dystopia arrives disguised as convenience—that trusting the architecture is exactly how you get captured by it.
+    distanceAnalysis: `The Abundant and The Witness represent opposite default stances toward systems: trust versus suspicion. The Citizen has concluded, after genuine thought, that systems designed for abundance tend toward good—that trusting the architecture usually serves you better than constantly testing it. The Conscience has concluded, after genuine thought, that dystopia arrives disguised as convenience—that trusting the architecture is exactly how you get captured by it.
 
 This distance is particularly charged because each believes the other is making a dangerous mistake. The Citizen thinks the Conscience's permanent suspicion is not just exhausting but self-defeating—that it creates the very atmosphere of distrust that makes good systems impossible. The Conscience thinks the Citizen's trust is not just naive but complicit—that it provides cover for the systems that should be questioned. Neither position is thoughtless. Both are responses to genuine patterns they've observed in the world.`,
 
@@ -2523,7 +2523,7 @@ The deeper risk is that you stop informing each other's perspective. The Citizen
   "alive+conscience": {
     thesis: "One wants to feel everything. The other keeps asking: but should we? Experience meets vigilance in a permanent negotiation.",
 
-    distanceAnalysis: `Alive to Everything and Conscience Before Comfort represent opposite primary orientations: toward experience versus toward evaluation. The Alive person's first instinct is to feel—to open themselves to what's available, to taste the universe's offerings. The Conscience's first instinct is to evaluate—to question whether this experience is safe, ethical, who it serves, what it hides. Neither instinct is wrong, but they create fundamentally different relationships with the world.
+    distanceAnalysis: `The Feeler and The Witness represent opposite primary orientations: toward experience versus toward evaluation. The Alive person's first instinct is to feel—to open themselves to what's available, to taste the universe's offerings. The Conscience's first instinct is to evaluate—to question whether this experience is safe, ethical, who it serves, what it hides. Neither instinct is wrong, but they create fundamentally different relationships with the world.
 
 This distance is particularly interesting because both positions claim authenticity. The Alive person believes authenticity means experiencing fully—that filtering, questioning, and evaluating create a barrier between you and what's real. The Conscience believes authenticity means seeing clearly—that experiencing without evaluating is surrender to whatever's presented to you, which might be manufactured or manipulated. Each sees the other's version of authenticity as a kind of inauthenticity.`,
 
@@ -2560,7 +2560,7 @@ But this frustration can become productive if both parties stay engaged. The Ali
     ],
 
     give: {
-      youToThem: `If you're Alive to Everything, you offer the Conscience the reminder that life is for living. Their vigilance serves something—but what? At some point, the watching must give way to the living. You model the possibility that some experiences don't require analysis, that presence without suspicion is possible and valuable. You offer them permission to feel without first understanding everything about what they're feeling.`,
+      youToThem: `If you're The Feeler, you offer the Conscience the reminder that life is for living. Their vigilance serves something—but what? At some point, the watching must give way to the living. You model the possibility that some experiences don't require analysis, that presence without suspicion is possible and valuable. You offer them permission to feel without first understanding everything about what they're feeling.`,
       themToYou: `If you're the Conscience, you offer the Alive person the questions that protect their openness. Not all experiences are what they seem. Some sensations are manufactured to exploit exactly the kind of openness you embody. Your vigilance isn't meant to close them down but to help them open wisely—to feel what's real rather than what's been designed to manipulate their feeling.`
     },
 
@@ -2577,7 +2577,7 @@ The deeper risk is that you each become more extreme without the other's correct
   "conscience+friction": {
     thesis: "The one who watches for what's hidden meets the one who seeks difficulty for its own sake. Vigilance confronts vitality in a clash of purpose.",
 
-    distanceAnalysis: `Conscience Before Comfort and Alive in the Friction represent opposite relationships with struggle. The Conscience watches for struggle imposed by others—the hidden costs, the manufactured difficulties, the systems designed to exploit. The Friction-seeker seeks struggle as a chosen practice—the deliberate difficulty that builds strength, the resistance that creates growth. To the Conscience, seeking difficulty looks naive; why would you choose struggle when so much struggle is unchosen and unjust? To the Friction-seeker, watching for hidden costs looks paralyzed; why would you spend your energy on vigilance when you could spend it on growth?
+    distanceAnalysis: `The Witness and The Challenger represent opposite relationships with struggle. The Conscience watches for struggle imposed by others—the hidden costs, the manufactured difficulties, the systems designed to exploit. The Friction-seeker seeks struggle as a chosen practice—the deliberate difficulty that builds strength, the resistance that creates growth. To the Conscience, seeking difficulty looks naive; why would you choose struggle when so much struggle is unchosen and unjust? To the Friction-seeker, watching for hidden costs looks paralyzed; why would you spend your energy on vigilance when you could spend it on growth?
 
 This distance reflects different theories of what makes life meaningful. The Conscience believes meaning comes from justice—from seeing clearly, exposing what's hidden, protecting the vulnerable from exploitation. The Friction-seeker believes meaning comes from vitality—from meeting challenges, growing through difficulty, becoming stronger through resistance. Both are coherent philosophies. Both see the other's priority as potentially missing the point.`,
 
@@ -2631,7 +2631,7 @@ The deeper risk is that you reinforce each other's weaknesses by rejecting each 
   "rooted+unbound": {
     thesis: "Earthbound stillness meets the dreamer who would leave the body behind. One chose to stay; the other yearns to go.",
 
-    distanceAnalysis: `Rooted in Stillness and Unbound from Form occupy perhaps the most extreme philosophical distance in this system: the fully embodied versus the aspiring transcendent. The Rooted has made peace with limits—with the body, the earth, the constraints of physical existence. They've concluded that the deepest wisdom isn't found by reaching beyond but by settling in. The Unbound experiences those same limits as starting points—boundaries to be explored, questioned, eventually transcended. They've concluded that the deepest possibilities lie beyond the forms we currently inhabit.
+    distanceAnalysis: `The Rooted and The Transcendent occupy perhaps the most extreme philosophical distance in this system: the fully embodied versus the aspiring transcendent. The Rooted has made peace with limits—with the body, the earth, the constraints of physical existence. They've concluded that the deepest wisdom isn't found by reaching beyond but by settling in. The Unbound experiences those same limits as starting points—boundaries to be explored, questioned, eventually transcended. They've concluded that the deepest possibilities lie beyond the forms we currently inhabit.
 
 This distance reflects fundamentally different answers to the question of what human existence is for. The Rooted believes existence is for presence—for being fully here, now, in this body, on this earth. The Unbound believes existence is for becoming—for evolving toward forms we can barely imagine, for transcending the categories that currently define us. Each finds the other's answer not just different but fundamentally confused about what matters.`,
 
@@ -2668,8 +2668,8 @@ But this incomprehension can also become illumination. The Rooted, in dialogue w
     ],
 
     give: {
-      youToThem: `If you're Rooted in Stillness, you offer the Unbound an anchor. Their reaching toward transcendence is real, but what grounds it? What gives their aspiration meaning? You model the possibility that there's something worth staying for—that the body they want to transcend is also capable of experiences that might not translate to whatever comes next. You're not trying to stop their reaching; you're asking what they're reaching from.`,
-      themToYou: `If you're Unbound from Form, you offer the Rooted a challenge: is your stillness peace or limitation? You model the possibility that human existence isn't the final word—that the contentment they've found might be one station on a longer journey rather than the destination itself. You're not dismissing what they've achieved; you're asking whether it's everything they could become.`
+      youToThem: `If you're The Rooted, you offer the Unbound an anchor. Their reaching toward transcendence is real, but what grounds it? What gives their aspiration meaning? You model the possibility that there's something worth staying for—that the body they want to transcend is also capable of experiences that might not translate to whatever comes next. You're not trying to stop their reaching; you're asking what they're reaching from.`,
+      themToYou: `If you're The Transcendent, you offer the Rooted a challenge: is your stillness peace or limitation? You model the possibility that human existence isn't the final word—that the contentment they've found might be one station on a longer journey rather than the destination itself. You're not dismissing what they've achieved; you're asking whether it's everything they could become.`
     },
 
     risk: `The failure mode of this pairing is contempt on both sides. The Rooted decides the Unbound is fundamentally unwell—someone so uncomfortable in their own skin that they've invented philosophical justifications for escape. The Unbound decides the Rooted is fundamentally limited—someone so afraid of growth that they've invented philosophical justifications for staying small. Once contempt sets in, the productive tension becomes destructive rejection.
@@ -2688,7 +2688,7 @@ The deeper risk is that you stop learning from each other's perspective. The Roo
   "citizen+shaper": {
     thesis: "Two fluent speakers of the same optimistic language. Beautiful conversations about what's possible—but who asks whether it should be built at all?",
 
-    distanceAnalysis: `When Citizen of Abundance meets Shaper of What's Next, the philosophical distance between you is minimal. You both believe in possibility. You both see constraint as something to be overcome rather than accepted. You both orient toward futures that don't exist yet with confidence that they could. This is easy recognition—the relief of meeting someone whose basic assumption is that things can get better.
+    distanceAnalysis: `When The Abundant meets Shaper of What's Next, the philosophical distance between you is minimal. You both believe in possibility. You both see constraint as something to be overcome rather than accepted. You both orient toward futures that don't exist yet with confidence that they could. This is easy recognition—the relief of meeting someone whose basic assumption is that things can get better.
 
 But close proximity creates its own challenges. When two people share the same optimistic baseline, certain questions never get asked. The Citizen trusts systems designed for abundance; the Shaper builds systems designed for transformation. Neither is positioned to ask whether the system should exist at all. Your shared confidence in positive futures might be wisdom—or might be a blind spot you're both standing in together.`,
 
@@ -2742,7 +2742,7 @@ The deeper risk is that your shared language of possibility becomes a filter tha
   "citizen+friction": {
     thesis: "Easy resonance, instant understanding—the Citizen's trust meets the Friction-seeker's challenge. The question is whether comfort becomes complacency or whether productive tension emerges.",
 
-    distanceAnalysis: `When Citizen of Abundance meets Alive in the Friction, the distance between you is smaller than it might appear. You both believe in engagement with the world as it is. The Citizen engages through trust; the Friction-seeker engages through challenge. But both of you are fundamentally engaged—neither retreats into cynicism or paralysis.
+    distanceAnalysis: `When The Abundant meets The Challenger, the distance between you is smaller than it might appear. You both believe in engagement with the world as it is. The Citizen engages through trust; the Friction-seeker engages through challenge. But both of you are fundamentally engaged—neither retreats into cynicism or paralysis.
 
 This shared engagement creates easy initial connection. You both want to be in the arena, just in different ways. The Citizen assumes the arena is basically good; the Friction-seeker assumes the arena requires struggle. But you're both in it, which matters more than you might think.`,
 
@@ -2792,7 +2792,7 @@ The deeper risk is that you reinforce each other's comfortable positions rather 
   "alive+unbound": {
     thesis: "Sensory intensity meets transcendent vision—two ways of reaching beyond ordinary experience. Beautiful shared adventures, but who tends the ordinary life you're both escaping?",
 
-    distanceAnalysis: `When Alive to Everything meets Unbound from Form, the philosophical distance between you is small. You're both reaching beyond the ordinary, beyond the moderate, beyond the safe middle. The Alive type reaches through sensation—more experience, deeper feeling, fuller presence to what's here. The Unbound type reaches through transcendence—beyond current limits, past the boundaries of self and body. You're both expansive.
+    distanceAnalysis: `When The Feeler meets The Transcendent, the philosophical distance between you is small. You're both reaching beyond the ordinary, beyond the moderate, beyond the safe middle. The Alive type reaches through sensation—more experience, deeper feeling, fuller presence to what's here. The Unbound type reaches through transcendence—beyond current limits, past the boundaries of self and body. You're both expansive.
 
 This shared expansiveness creates immediate recognition. Neither of you is satisfied with the normal operating parameters of human experience. But your expansions point in different directions—one deeper into embodiment, one past it. This difference matters less than you might think, because you both understand the hunger for more.`,
 
@@ -2829,8 +2829,8 @@ But this mutual permission can enable escape. If both of you are always reaching
     ],
 
     give: {
-      youToThem: `If you're Alive to Everything, you offer the Unbound grounding in embodiment. Their vision of transcendence is beautiful, but what are they transcending from? You model the richness available in the body, the consciousness that's possible right here. You help them feel what they might be too eager to leave behind.`,
-      themToYou: `If you're Unbound from Form, you offer the Alive type vision beyond sensation. Their hunger for experience is powerful, but is experience all there is? You model the possibility that consciousness itself might expand, that there might be ways of being that don't depend on a body experiencing sensations. You expand their horizon.`
+      youToThem: `If you're The Feeler, you offer the Unbound grounding in embodiment. Their vision of transcendence is beautiful, but what are they transcending from? You model the richness available in the body, the consciousness that's possible right here. You help them feel what they might be too eager to leave behind.`,
+      themToYou: `If you're The Transcendent, you offer the Alive type vision beyond sensation. Their hunger for experience is powerful, but is experience all there is? You model the possibility that consciousness itself might expand, that there might be ways of being that don't depend on a body experiencing sensations. You expand their horizon.`
     },
 
     risk: `The failure mode for this pairing is coordinated escape. If both of you are always reaching for more—more sensation, more transcendence—you can enable each other's avoidance of ordinary life. The relationship becomes a vehicle for adventures that look beautiful but leave the actual work of being human undone. Who anchors you both when the reaching becomes running?
@@ -2846,7 +2846,7 @@ The deeper risk is that you mistake intensity for intimacy. Both of you are good
   "alive+friction": {
     thesis: "Two intensity-seekers who understand that life should burn. Profound mutual recognition—but can the fire sustain without consuming what it was meant to forge?",
 
-    distanceAnalysis: `When Alive to Everything meets Alive in the Friction, you're meeting on familiar ground. You both believe that intensity is the point. The Alive type seeks intensity through sensation—more experience, deeper feeling, fuller presence to what's available. The Friction-seeker seeks intensity through challenge—more resistance, harder problems, greater obstacles to overcome. You're both allergic to the tepid middle.
+    distanceAnalysis: `When The Feeler meets The Challenger, you're meeting on familiar ground. You both believe that intensity is the point. The Alive type seeks intensity through sensation—more experience, deeper feeling, fuller presence to what's available. The Friction-seeker seeks intensity through challenge—more resistance, harder problems, greater obstacles to overcome. You're both allergic to the tepid middle.
 
 This shared orientation toward intensity creates immediate recognition. Neither of you has to explain why you can't be satisfied with comfort, why moderate experiences feel like half-measures, why something in you requires the full range. You both know. The only difference is the flavor of intensity you seek.`,
 
@@ -2879,8 +2879,8 @@ But this same amplification can become acceleration toward burnout. If neither o
     ],
 
     give: {
-      youToThem: `If you're Alive to Everything, you offer the Friction-seeker a different relationship to intensity. Their challenge-seeking is powerful, but not everything is a battle. You model the possibility of receiving intensity rather than fighting for it—of being filled by experience rather than struggling against it.`,
-      themToYou: `If you're Alive in the Friction, you offer the Alive type edge and direction. Their openness to sensation is generous, but openness alone can become passive consumption. You model the possibility of engaging with intensity rather than just receiving it—of being shaped by difficulty rather than just experiencing sensation.`
+      youToThem: `If you're The Feeler, you offer the Friction-seeker a different relationship to intensity. Their challenge-seeking is powerful, but not everything is a battle. You model the possibility of receiving intensity rather than fighting for it—of being filled by experience rather than struggling against it.`,
+      themToYou: `If you're The Challenger, you offer the Alive type edge and direction. Their openness to sensation is generous, but openness alone can become passive consumption. You model the possibility of engaging with intensity rather than just receiving it—of being shaped by difficulty rather than just experiencing sensation.`
     },
 
     risk: `The failure mode for this pairing is mutual exhaustion disguised as aliveness. If neither of you knows how to stop, if both of you only validate more intensity, you can burn out together while telling yourselves you're living fully. The fire needs fuel, and eventually the fuel runs out. Who notices when intensity becomes self-destruction?
@@ -2896,7 +2896,7 @@ The deeper risk is that you create a relationship where nothing soft can survive
   "mender+presence": {
     thesis: "Two who show up for what's broken—one through fixing, one through witnessing. Easy resonance in the shared commitment to care, but who tends to what can't be repaired or held?",
 
-    distanceAnalysis: `When Mender of What Remains meets Keeper of Presence, the philosophical distance between you is minimal. You both believe in showing up. The Mender shows up with tools—they see what's broken and reach for repair. The Keeper shows up with attention—they see what's present and offer witness. Both of you are fundamentally oriented toward care.
+    distanceAnalysis: `When The Mender meets The Present, the philosophical distance between you is minimal. You both believe in showing up. The Mender shows up with tools—they see what's broken and reach for repair. The Keeper shows up with attention—they see what's present and offer witness. Both of you are fundamentally oriented toward care.
 
 This shared orientation toward care creates immediate recognition. Neither of you abandons what needs attention. Neither of you walks past brokenness or suffering without responding. You both understand that the world needs people who stay when others leave. You differ only in how you stay.`,
 
@@ -2946,7 +2946,7 @@ The deeper risk is that your care becomes its own avoidance. If the Mender is al
   "presence+rooted": {
     thesis: "Two who believe in being over doing—profound alignment in stillness, but can presence and rootedness together become a fortress against necessary change?",
 
-    distanceAnalysis: `When Keeper of Presence meets Rooted in Stillness, you're occupying adjacent territory. You both believe that being matters more than doing, that presence matters more than productivity, that stillness has value the busy world dismisses. The Keeper brings the gift of attention; the Rooted brings the gift of groundedness. You're both oriented toward what's here rather than what's next.
+    distanceAnalysis: `When The Present meets The Rooted, you're occupying adjacent territory. You both believe that being matters more than doing, that presence matters more than productivity, that stillness has value the busy world dismisses. The Keeper brings the gift of attention; the Rooted brings the gift of groundedness. You're both oriented toward what's here rather than what's next.
 
 This shared orientation toward being creates immediate recognition. Neither of you needs to justify slowness, stillness, or the choice to stay rather than strive. You both understand that the constant pressure to do more is often a flight from what's already present. In each other, you find permission to simply be.`,
 
@@ -2980,7 +2980,7 @@ But this same mutual permission can become mutual enabling of stagnation. If nei
 
     give: {
       youToThem: `If you're the Keeper, you offer the Rooted flexibility within stillness. Their groundedness is valuable, but staying put can become rigidity. You model the possibility of bringing full presence to wherever you are—including, sometimes, new places. Presence doesn't require position.`,
-      themToYou: `If you're Rooted in Stillness, you offer the Keeper commitment. Their attention is generous, but attention can wander. You model the possibility of staying—not just being present but being reliably, consistently here. Your rootedness gives their presence a home.`
+      themToYou: `If you're The Rooted, you offer the Keeper commitment. Their attention is generous, but attention can wander. You model the possibility of staying—not just being present but being reliably, consistently here. Your rootedness gives their presence a home.`
     },
 
     risk: `The failure mode for this pairing is beautiful stagnation. If both of you validate stillness without questioning it, you can become stuck together in ways that feel like peace but are actually avoidance. The world requires movement sometimes. Change is sometimes necessary. Who notices when your shared stillness has become a refusal to grow?
@@ -2996,7 +2996,7 @@ The deeper risk is that you create a cocoon that protects you from life's demand
   "embers+rooted": {
     thesis: "Two grounded keepers meeting on stable ground—the archivist of memory and the guardian of place. Easy resonance in shared solidity, but who makes sure the foundation isn't becoming a prison?",
 
-    distanceAnalysis: `When Keeper of Embers meets Rooted in Stillness, you're both oriented toward preservation. The Embers-keeper preserves what came before—memory, tradition, the wisdom of the past. The Rooted preserves where they stand—place, position, the commitments they've made. You're both guardians against loss in a world that forgets too easily.
+    distanceAnalysis: `When The Keeper meets The Rooted, you're both oriented toward preservation. The Embers-keeper preserves what came before—memory, tradition, the wisdom of the past. The Rooted preserves where they stand—place, position, the commitments they've made. You're both guardians against loss in a world that forgets too easily.
 
 This shared orientation toward preservation creates immediate recognition. Neither of you chases novelty. Neither of you assumes that new is better. You both understand that something valuable is lost when we're always rushing forward. In each other, you find someone who also holds on.`,
 
@@ -3029,8 +3029,8 @@ But this same mutual valuation can become mutual reinforcement of rigidity. If n
     ],
 
     give: {
-      youToThem: `If you're the Keeper of Embers, you offer the Rooted historical depth. Their commitment to place is solid, but place exists in time. You connect their ground to all the ground that came before, all the people who stood where they stand. You give their rootedness roots.`,
-      themToYou: `If you're Rooted in Stillness, you offer the Embers-keeper a home for memory. Their archive is precious, but archives need places to live. You provide the stable ground where memory can be tended, the consistency that lets preservation happen. You ground their keeping.`
+      youToThem: `If you're the The Keeper, you offer the Rooted historical depth. Their commitment to place is solid, but place exists in time. You connect their ground to all the ground that came before, all the people who stood where they stand. You give their rootedness roots.`,
+      themToYou: `If you're The Rooted, you offer the Embers-keeper a home for memory. Their archive is precious, but archives need places to live. You provide the stable ground where memory can be tended, the consistency that lets preservation happen. You ground their keeping.`
     },
 
     risk: `The failure mode for this pairing is fossilization. If both of you are committed to holding on—to memory, to place, to the way things have been—you can become so stable that nothing can grow. The past and the present merge into a single unchanging block. Who notices when your shared solidity has become rigidity? Who makes space for what wants to emerge?
@@ -3046,7 +3046,7 @@ The deeper risk is that you create a beautiful monument and forget to live in it
   "cleareyed+swimmer": {
     thesis: "Two truth-seekers with different methods—one sees directly, one questions endlessly. Easy resonance in shared commitment to reality, but who decides when truth has been found?",
 
-    distanceAnalysis: `When Clear-Eyed in the Storm meets Swimmer in Deep Water, you're both oriented toward truth. The Clear-Eyed type pursues truth through direct seeing—they look at what's there and name it. The Swimmer pursues truth through questions—they explore beneath surfaces, holding uncertainty while insight develops. You're both committed to reality over comfortable illusion.
+    distanceAnalysis: `When The Truth-Teller meets The Questioner, you're both oriented toward truth. The Clear-Eyed type pursues truth through direct seeing—they look at what's there and name it. The Swimmer pursues truth through questions—they explore beneath surfaces, holding uncertainty while insight develops. You're both committed to reality over comfortable illusion.
 
 This shared commitment to truth creates immediate recognition. Neither of you accepts easy answers. Neither of you chooses comfort over accuracy. You both understand that knowing requires courage—whether that's the courage to see clearly or the courage to keep asking. In each other, you find a fellow traveler toward what's real.`,
 
@@ -3096,7 +3096,7 @@ The deeper risk is that you fail to integrate your methods. The Clear-Eyed keeps
   "swimmer+unbound": {
     thesis: "Two navigators of unmapped territory—the questioner of depths and the transcender of limits. Beautiful explorations together, but who anchors the expedition when both prefer the journey to arrival?",
 
-    distanceAnalysis: `When Swimmer in Deep Water meets Unbound from Form, you're both comfortable beyond conventional boundaries. The Swimmer is comfortable in intellectual depths—holding questions that others would resolve too quickly, exploring territory that has no map. The Unbound is comfortable in existential expansion—imagining forms of consciousness and being that transcend current limits. You're both explorers of the unknown.
+    distanceAnalysis: `When The Questioner meets The Transcendent, you're both comfortable beyond conventional boundaries. The Swimmer is comfortable in intellectual depths—holding questions that others would resolve too quickly, exploring territory that has no map. The Unbound is comfortable in existential expansion—imagining forms of consciousness and being that transcend current limits. You're both explorers of the unknown.
 
 This shared comfort with the unmapped creates immediate recognition. Neither of you needs solid ground to feel safe. Neither of you insists on conclusions before the inquiry is complete. You both understand that some truths can only be found by venturing beyond where others stop. In each other, you find a fellow traveler who doesn't need a destination.`,
 
@@ -3130,7 +3130,7 @@ But this same mutual permission can become mutual abandonment of ground. If neit
 
     give: {
       youToThem: `If you're the Swimmer, you offer the Unbound intellectual rigor. Their transcendent vision is beautiful, but is it grounded in anything? You model the possibility of exploring beyond limits while still asking hard questions, of imagination disciplined by inquiry. You give their reaching depth.`,
-      themToYou: `If you're Unbound from Form, you offer the Swimmer horizon expansion. Their questioning is powerful, but questions asked within too narrow a frame miss larger possibilities. You model the possibility of questioning that includes transcendence, of depth that reaches toward the stars. You give their swimming scope.`
+      themToYou: `If you're The Transcendent, you offer the Swimmer horizon expansion. Their questioning is powerful, but questions asked within too narrow a frame miss larger possibilities. You model the possibility of questioning that includes transcendence, of depth that reaches toward the stars. You give their swimming scope.`
     },
 
     risk: `The failure mode for this pairing is beautiful disconnection from reality. If both of you only value exploration—the Swimmer's endless questions, the Unbound's limitless reaching—you can drift together into abstraction so pure it loses contact with lived life. The questions never land; the transcendence never touches ground. You might be brilliant together and also irrelevant.
@@ -3146,7 +3146,7 @@ The deeper risk is that you enable each other's avoidance of commitment. The Swi
   "architect+mender": {
     thesis: "Two systems thinkers meeting at the intersection of design and repair—one builds new structures, one restores old ones. Easy resonance in shared understanding of how things work, but whose vision of the system prevails?",
 
-    distanceAnalysis: `When Architect of the Commons meets Mender of What Remains, you share a fundamental orientation toward systems. The Architect sees systems as things to be designed—structures that could exist but don't yet, commons that could serve everyone if built properly. The Mender sees systems as things to be maintained—structures that already exist and deserve care, infrastructure that keeps working because someone keeps fixing it. You both think in systems.
+    distanceAnalysis: `When The Architect meets The Mender, you share a fundamental orientation toward systems. The Architect sees systems as things to be designed—structures that could exist but don't yet, commons that could serve everyone if built properly. The Mender sees systems as things to be maintained—structures that already exist and deserve care, infrastructure that keeps working because someone keeps fixing it. You both think in systems.
 
 This shared systems-thinking creates immediate recognition. Neither of you looks at the world in purely individual terms. Neither of you ignores structure in favor of personality. You both understand that most of what happens is shaped by systems—designed or inherited, functional or failing. In each other, you find someone who sees the same blueprints.`,
 

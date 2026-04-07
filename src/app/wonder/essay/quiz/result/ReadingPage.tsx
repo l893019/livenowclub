@@ -144,53 +144,55 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
       )}
 
       {/* Compare Worldviews CTA - smart button based on quiz status */}
-      <section className={styles.ctaSection}>
-        <h2 className={styles.sectionTitle}>Compare Worldviews</h2>
-        <p className={styles.ctaDescription}>
-          See how your worldview fits with friends, family, and coworkers.
-          {hasQuizUserId ? " Create a group and invite others to take the quiz." : " Take the quiz to discover yours."}
-        </p>
-        <div className={styles.ctaButtons}>
-          {hasQuizUserId === false ? (
-            <Link href="/wonder/essay/quiz" className={styles.primaryBtn}>
-              Take the Quiz
-            </Link>
-          ) : groupContext ? (
-            <button
-              className={styles.primaryBtn}
-              onClick={() => {
-                const shareUrl = `${window.location.origin}/wonder/essay/quiz/utopia/${groupContext.utopiaSlug}/join`;
-                if (navigator.share) {
-                  navigator.share({
-                    title: `Join ${groupContext.utopiaName}`,
-                    text: `I'm ${archetype.name}. What are you? Join my group and find out.`,
-                    url: shareUrl,
-                  });
-                } else {
-                  navigator.clipboard.writeText(shareUrl);
-                  alert("Invite link copied to clipboard!");
-                }
-              }}
-            >
-              Invite to {groupContext.utopiaName}
-            </button>
-          ) : existingUtopia ? (
-            <Link
-              href={`/wonder/essay/quiz/utopia/${existingUtopia.slug}`}
-              className={styles.primaryBtn}
-            >
-              Go to Your Group
-            </Link>
-          ) : (
-            <button
-              className={styles.primaryBtn}
-              onClick={() => setShowCreateUtopia(true)}
-            >
-              Create a Group
-            </button>
-          )}
-        </div>
-      </section>
+      {hasQuizUserId !== null && (
+        <section className={styles.ctaSection}>
+          <h2 className={styles.sectionTitle}>Compare Worldviews</h2>
+          <p className={styles.ctaDescription}>
+            See how your worldview fits with friends, family, and coworkers.
+            {hasQuizUserId ? " Create a group and invite others to take the quiz." : " Take the quiz to discover yours."}
+          </p>
+          <div className={styles.ctaButtons}>
+            {hasQuizUserId === false ? (
+              <Link href="/wonder/essay/quiz" className={styles.primaryBtn}>
+                Take the Quiz
+              </Link>
+            ) : groupContext ? (
+              <button
+                className={styles.primaryBtn}
+                onClick={() => {
+                  const shareUrl = `${window.location.origin}/wonder/essay/quiz/utopia/${groupContext.utopiaSlug}/join`;
+                  if (navigator.share) {
+                    navigator.share({
+                      title: `Join ${groupContext.utopiaName}`,
+                      text: `I'm ${archetype.name}. What are you? Join my group and find out.`,
+                      url: shareUrl,
+                    });
+                  } else {
+                    navigator.clipboard.writeText(shareUrl);
+                    alert("Invite link copied to clipboard!");
+                  }
+                }}
+              >
+                Invite to {groupContext.utopiaName}
+              </button>
+            ) : existingUtopia ? (
+              <Link
+                href={`/wonder/essay/quiz/utopia/${existingUtopia.slug}`}
+                className={styles.primaryBtn}
+              >
+                Go to Your Group
+              </Link>
+            ) : (
+              <button
+                className={styles.primaryBtn}
+                onClick={() => setShowCreateUtopia(true)}
+              >
+                Create a Group
+              </button>
+            )}
+          </div>
+        </section>
+      )}
 
       <div className={styles.divider} />
 
