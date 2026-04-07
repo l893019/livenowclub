@@ -314,9 +314,15 @@
   color: #2d2a26;
   transition: all 0.2s;
   text-align: left;
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
-.profileLinkBtn:hover {
+.profileLinkBtn:hover,
+.profileLinkBtn:active {
   border-color: #e8178a;
   background: rgba(232, 23, 138, 0.03);
 }
