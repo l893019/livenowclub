@@ -5,7 +5,6 @@ import Link from "next/link";
 import { archetypes, type Archetype } from "@/lib/archetypes";
 import { RadarChart } from "@/components/RadarChart";
 import { CreateJoinStep } from "./steps/CreateJoinStep";
-import { QuizCTA } from "./QuizCTA";
 import { RelationshipComparison } from "./RelationshipComparison";
 import styles from "./ReadingPage.module.css";
 
@@ -53,17 +52,12 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
   const [showCreateUtopia, setShowCreateUtopia] = useState(false);
   const [existingUtopia, setExistingUtopia] = useState<CreatedUtopia | null>(null);
   const [hasQuizUserId, setHasQuizUserId] = useState<boolean | null>(null);
-  const [isSharedLink, setIsSharedLink] = useState(false);
   const archetype = archetypes[archetypeKey];
 
-  // Check if user has taken the quiz AND if this is a shared link
+  // Check if user has taken the quiz
   useEffect(() => {
     const userId = localStorage.getItem("quiz-user-id");
     setHasQuizUserId(!!userId);
-
-    // Check for ?n= param which indicates a shared link with someone's name
-    const urlParams = new URLSearchParams(window.location.search);
-    setIsSharedLink(!!urlParams.get("n"));
   }, []);
 
   // Check if utopia was already created (user named it before quiz)
@@ -149,9 +143,54 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
         />
       )}
 
-      {/* Quiz CTA for non-quiz-takers (after first section, not buried at bottom) */}
-      {/* Only show CTA if viewing a shared link (has ?n= param) AND haven't taken quiz */}
-      {hasQuizUserId === false && (isSharedLink || personName) && <QuizCTA />}
+      {/* Compare Worldviews CTA - smart button based on quiz status */}
+      <section className={styles.ctaSection}>
+        <h2 className={styles.sectionTitle}>Compare Worldviews</h2>
+        <p className={styles.ctaDescription}>
+          See how your worldview fits with friends, family, and coworkers.
+          {hasQuizUserId ? " Create a group and invite others to take the quiz." : " Take the quiz to discover yours."}
+        </p>
+        <div className={styles.ctaButtons}>
+          {hasQuizUserId === false ? (
+            <Link href="/wonder/essay/quiz" className={styles.primaryBtn}>
+              Take the Quiz
+            </Link>
+          ) : groupContext ? (
+            <button
+              className={styles.primaryBtn}
+              onClick={() => {
+                const shareUrl = `${window.location.origin}/wonder/essay/quiz/utopia/${groupContext.utopiaSlug}/join`;
+                if (navigator.share) {
+                  navigator.share({
+                    title: `Join ${groupContext.utopiaName}`,
+                    text: `I'm ${archetype.name}. What are you? Join my group and find out.`,
+                    url: shareUrl,
+                  });
+                } else {
+                  navigator.clipboard.writeText(shareUrl);
+                  alert("Invite link copied to clipboard!");
+                }
+              }}
+            >
+              Invite to {groupContext.utopiaName}
+            </button>
+          ) : existingUtopia ? (
+            <Link
+              href={`/wonder/essay/quiz/utopia/${existingUtopia.slug}`}
+              className={styles.primaryBtn}
+            >
+              Go to Your Group
+            </Link>
+          ) : (
+            <button
+              className={styles.primaryBtn}
+              onClick={() => setShowCreateUtopia(true)}
+            >
+              Create a Group
+            </button>
+          )}
+        </div>
+      </section>
 
       <div className={styles.divider} />
 
@@ -284,72 +323,6 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
               </a>
             </div>
           ))}
-        </div>
-      </section>
-
-      <div className={styles.divider} />
-
-      {/* Compare Worldviews CTA */}
-      <section className={styles.ctaSection}>
-        <h2 className={styles.sectionTitle}>Compare Worldviews</h2>
-        <p className={styles.ctaDescription}>
-          See how your worldview fits with friends, family, and coworkers.
-          {groupContext
-            ? ` Invite others to join ${groupContext.utopiaName}.`
-            : " Create a group and invite others to take the quiz."}
-        </p>
-        <div className={styles.ctaButtons}>
-          {groupContext ? (
-            <button
-              className={styles.primaryBtn}
-              onClick={() => {
-                const shareUrl = `${window.location.origin}/wonder/essay/quiz/utopia/${groupContext.utopiaSlug}/join`;
-                if (navigator.share) {
-                  navigator.share({
-                    title: `Join ${groupContext.utopiaName}`,
-                    text: `I'm a ${archetype.name}. What are you? Join my group and find out.`,
-                    url: shareUrl,
-                  });
-                } else {
-                  navigator.clipboard.writeText(shareUrl);
-                  alert("Invite link copied to clipboard!");
-                }
-              }}
-            >
-              Invite to {groupContext.utopiaName}
-            </button>
-          ) : existingUtopia ? (
-            <Link
-              href={`/wonder/essay/quiz/utopia/${existingUtopia.slug}`}
-              className={styles.primaryBtn}
-            >
-              Go to Your Group
-            </Link>
-          ) : (
-            <button
-              className={styles.primaryBtn}
-              onClick={() => setShowCreateUtopia(true)}
-            >
-              Create a Group
-            </button>
-          )}
-          <button
-            className={styles.secondaryBtn}
-            onClick={() => {
-              if (navigator.share) {
-                navigator.share({
-                  title: `${isViewingOther ? `${personName} is` : "I'm"} ${archetype.name}`,
-                  text: archetype.utopia,
-                  url: window.location.href,
-                });
-              } else {
-                navigator.clipboard.writeText(window.location.href);
-                alert("Link copied to clipboard!");
-              }
-            }}
-          >
-            Share Result
-          </button>
         </div>
       </section>
 
