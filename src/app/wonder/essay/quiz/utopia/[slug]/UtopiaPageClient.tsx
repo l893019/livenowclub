@@ -201,11 +201,40 @@ export function UtopiaPageClient({
 
   // Two-person utopia: special enhanced view
   if (members.length === 2) {
+    const [personA, personB] = members;
+    const archA = archetypes[personA.archetype];
+    const archB = archetypes[personB.archetype];
+
     return (
       <div className={styles.container}>
         <Header />
         <main className={styles.main}>
           <TwoPersonView members={members} utopiaName={utopiaName} />
+
+          {/* Profile links for each person */}
+          <div className={styles.profileLinks}>
+            <button
+              className={styles.profileLinkBtn}
+              onClick={() => {
+                setSelectedMemberId(personA.id);
+                setCurrentView("their-reading");
+              }}
+            >
+              <span className={styles.profileDot} style={{ backgroundColor: archA?.color }} />
+              <span>See {personA.name || "their"}'s full profile →</span>
+            </button>
+            <button
+              className={styles.profileLinkBtn}
+              onClick={() => {
+                setSelectedMemberId(personB.id);
+                setCurrentView("their-reading");
+              }}
+            >
+              <span className={styles.profileDot} style={{ backgroundColor: archB?.color }} />
+              <span>See {personB.name || "their"}'s full profile →</span>
+            </button>
+          </div>
+
           <ShareSection
             shareUrl={shareUrl}
             onShare={handleShare}
