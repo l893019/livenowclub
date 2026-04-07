@@ -41,6 +41,12 @@ export type Archetype = {
   // Share card fields
   pull: string;  // What draws them (short phrase)
   edge: string;  // Their unique advantage (short phrase)
+  oneSentence: string;  // Tweetable summary of their worldview
+  // Famous figures who embody this archetype
+  famousFigures: {
+    real: string[];       // Real people (living or historical)
+    fictional: string[];  // Characters from books, movies, TV
+  };
 };
 
 export const archetypes: Record<string, Archetype> = {
@@ -50,11 +56,11 @@ export const archetypes: Record<string, Archetype> = {
     color: "#3db9a4",
     utopia: "Their utopia has no word for \"job.\" It fell out of the language three centuries ago.",
     description: "They trust that intelligence, properly distributed, tends toward good. Too much freedom will always be preferable to too little.",
-    blindSpot: "They sometimes mistake access for equity. Everyone having options is not the same as everyone being free.",
+    blindSpot: "You sometimes mistake access for equity. Everyone having options is not the same as everyone being free.",
     superpower: "trusting abundance",
     book: { title: "The Player of Games", author: "Banks" },
     books: [
-      { title: "The Player of Games", author: "Banks", reason: "The Culture at its most playful—a civilization where games become the highest art because survival has been solved." },
+      { title: "The Player of Games", author: "Banks", reason: "The Culture at its most playful. A civilization where games become the highest art because survival has been solved." },
       { title: "Accelerando", author: "Stross", reason: "What happens when abundance accelerates past human comprehension, and the economy becomes incomprehensible to its creators." },
       { title: "Down and Out in the Magic Kingdom", author: "Doctorow", reason: "Post-scarcity as actually lived: messy, political, and still full of people trying to figure out what matters." }
     ],
@@ -65,7 +71,7 @@ export const archetypes: Record<string, Archetype> = {
     },
     superpowerExpanded: `Most people operate from a scarcity mindset without noticing it. They hoard information, guard opportunities, assume resources are zero-sum. You don't.
 
-This isn't naivety. You've thought about it. You've read the economic arguments, the technological projections, the science fiction that takes abundance seriously. And you've concluded that the biggest barrier to abundance isn't resources—it's imagination. Most scarcity is manufactured or inherited, and you can see past it.
+You've thought about it. You've read the economic arguments, the technological projections, the science fiction that takes abundance seriously. And you've concluded that the biggest barrier to abundance is imagination, not resources. Most scarcity is manufactured or inherited, and you can see past it.
 
 This makes you genuinely useful in rooms full of people fighting over a pie that could be made larger. You ask the question others don't think to ask: why are we assuming there isn't enough?`,
 
@@ -82,16 +88,21 @@ Watch for the moments when your trust in systems becomes trust that systems will
       "The best argument against pessimism is building something better"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward trust and possibility. When asked about AI and automation, you focused on potential benefits rather than risks. When asked about human nature, you leaned toward believing people do well when given resources and freedom. When asked about the future, you imagined expansion rather than constraint. This pattern—trusting abundance over scarcity, freedom over control—maps to what we call "The Abundant."`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward trust and possibility. When asked about AI and automation, you focused on potential benefits rather than risks. When asked about human nature, you leaned toward believing people do well when given resources and freedom. When asked about the future, you imagined expansion rather than constraint. This pattern of trusting abundance over scarcity, freedom over control, maps to what we call The Abundant.`,
 
     allyDescription: "The Feeler shares your belief that life can be good. They want to feel everything the universe offers; you want everyone to have access to it. You're both optimists, but they ground your systems-thinking in embodied experience. They remind you what abundance is for.",
 
-    tensionDescription: "The Witness doesn't trust what you trust. While you see systems that could work beautifully, they see cracks, hidden costs, who's being surveilled. They'll exhaust you with suspicion—and occasionally save you from your own blind spots.",
+    tensionDescription: "The Witness doesn't trust what you trust. While you see systems that could work beautifully, they see cracks, hidden costs, who's being surveilled. They'll exhaust you with suspicion, and occasionally save you from your own blind spots.",
 
     needDescription: "The Challenger will challenge your comfort. You believe abundance should make life easier; they believe ease can make life hollow. They'll push you to examine whether your utopia has room for struggle, growth, and the meaning that comes from difficulty.",
 
     pull: "toward possibility",
-    edge: "you see systems others don't"
+    edge: "you see systems others don't",
+    oneSentence: "You believe abundance is a design choice, not a destination—and most scarcity is a failure of imagination.",
+    famousFigures: {
+      real: ["Buckminster Fuller", "Stewart Brand", "Elinor Ostrom"],
+      fictional: ["Genly Ai (The Left Hand of Darkness)", "The Culture citizens (Iain Banks)", "Ted Lasso"]
+    }
   },
   shaper: {
     key: "shaper",
@@ -99,13 +110,13 @@ Watch for the moments when your trust in systems becomes trust that systems will
     color: "#f4a03f",
     utopia: "Their utopia is never finished. Everything is always changing.",
     description: "The moment you stop adapting, you start calcifying. The future is something you build with whatever is at hand, including the wreckage.",
-    blindSpot: "They sometimes mistake movement for progress. Tearing something down can be its own form of running away.",
+    blindSpot: "You sometimes mistake movement for progress. Tearing something down can be its own form of running away.",
     superpower: "building from scratch",
     book: { title: "Parable of the Sower", author: "Butler" },
     books: [
       { title: "Parable of the Sower", author: "Butler", reason: "Building a new belief system from the ruins. Change as spiritual practice." },
-      { title: "Red Mars", author: "Robinson", reason: "Terraforming as philosophy—every technical choice is a political one, and the planet pushes back." },
-      { title: "The Diamond Age", author: "Stephenson", reason: "Education as revolution. The primer doesn't just teach—it transforms who you can become." }
+      { title: "Red Mars", author: "Robinson", reason: "Terraforming as philosophy. Every technical choice is a political one, and the planet pushes back." },
+      { title: "The Diamond Age", author: "Stephenson", reason: "Education as revolution. The primer transforms who you can become." }
     ],
     compatibility: {
       ally: "the one who craves difficulty",
@@ -114,7 +125,7 @@ Watch for the moments when your trust in systems becomes trust that systems will
     },
     superpowerExpanded: `When others see rubble, you see raw material. When others mourn what's ending, you're already sketching what comes next.
 
-This isn't insensitivity—it's a different relationship with time. You understand, at a cellular level, that everything is always changing. Fighting that reality wastes energy better spent shaping what emerges. Octavia Butler's Earthseed philosophy resonates with you: "God is Change." Not because change is good, but because change is true, and aligning with truth gives you leverage.
+You have a different relationship with time. You understand, at a cellular level, that everything is always changing. Fighting that reality wastes energy better spent shaping what emerges. Octavia Butler's Earthseed philosophy resonates with you: "God is Change." Not because change is good, but because change is true, and aligning with truth gives you leverage.
 
 You're valuable in moments of collapse and transition, when others are frozen by grief or fear. You can move when movement matters most.`,
 
@@ -122,7 +133,7 @@ You're valuable in moments of collapse and transition, when others are frozen by
 
 You may reach for revolution when reform would serve better. You may burn bridges that were worth crossing again. The thrill of starting over can mask a fear of the slower, harder work of maintaining, repairing, living with imperfection.
 
-Watch for the moments when your urge to build from scratch is actually an urge to escape—from boredom, from accountability, from the tedious work of making something existing actually work. Not everything that feels stuck is calcified. Sometimes roots are growing.`,
+Watch for the moments when your urge to build from scratch is actually an urge to escape: from boredom, from accountability, from the tedious work of making something existing actually work. Not everything that feels stuck is calcified. Sometimes roots are growing.`,
 
     coreBeliefs: [
       "Change is the only constant; resistance to it is wasted energy",
@@ -131,16 +142,21 @@ Watch for the moments when your urge to build from scratch is actually an urge t
       "Every crisis is a construction site if you know how to look"
     ],
 
-    howYouGotHere: `Your answers clustered around transformation and agency. When asked about stability, you valued it less than others. When asked about tradition, you saw it as raw material rather than constraint. When faced with hypothetical collapses—social, technological, environmental—you oriented toward building rather than preserving. This consistent bias toward change and construction maps to what we call "The Builder."`,
+    howYouGotHere: `Your answers clustered around transformation and agency. When asked about stability, you valued it less than others. When asked about tradition, you saw it as raw material rather than constraint. When faced with hypothetical collapses (social, technological, environmental), you oriented toward building rather than preserving. This consistent bias toward change and construction maps to what we call The Builder.`,
 
-    allyDescription: "The Challenger understands your restlessness. They don't just tolerate difficulty—they seek it out. While others ask you to slow down, they'll match your pace and push you further. They validate that the struggle itself has value.",
+    allyDescription: "The Challenger understands your restlessness. They seek out difficulty. While others ask you to slow down, they'll match your pace and push you further. They validate that the struggle itself has value.",
 
     tensionDescription: "The Rooted is your opposite. They chose to stop moving; you can't imagine why anyone would. Their stillness looks like stagnation to you; your movement looks like flight to them. You're arguing about the fundamental nature of growth.",
 
     needDescription: "The Keeper guards what you might carelessly discard. They remember what worked, what was lost, what deserves to be carried forward. Without them, you risk building the same failures again with different names. They're the conscience of your construction site.",
 
     pull: "toward transformation",
-    edge: "you build from rubble"
+    edge: "you build from rubble",
+    oneSentence: "You believe the future is built, not inherited—and you'd rather make something imperfect than wait for permission.",
+    famousFigures: {
+      real: ["Elon Musk", "Ada Lovelace", "Steve Jobs"],
+      fictional: ["Tony Stark (Iron Man)", "Leslie Knope (Parks & Rec)", "Doc Brown (Back to the Future)"]
+    }
   },
   architect: {
     key: "architect",
@@ -148,7 +164,7 @@ Watch for the moments when your urge to build from scratch is actually an urge t
     color: "#9b8fef",
     utopia: "Their utopia belongs to everyone and answers to no one.",
     description: "They'd rather build something imperfect and collectively owned than something elegant and controlled by a few.",
-    blindSpot: "They can love the system more than the people inside it. The meeting can become more important than what the meeting was for.",
+    blindSpot: "You can love the system more than the people inside it. The meeting can become more important than what the meeting was for.",
     superpower: "thinking in systems",
     book: { title: "The Dispossessed", author: "Le Guin" },
     books: [
@@ -161,7 +177,7 @@ Watch for the moments when your urge to build from scratch is actually an urge t
       tension: "the one who left the body behind",
       need: "the one who lives in questions"
     },
-    superpowerExpanded: `You see the invisible architecture. Every social space has rules—written and unwritten, designed and emergent—and you can read them like blueprints.
+    superpowerExpanded: `You see the invisible architecture. Every social space has rules, written and unwritten, designed and emergent, and you can read them like blueprints.
 
 This is rarer than it sounds. Most people experience systems as weather: something that happens to them. You experience systems as design: something that was built, that could have been built differently, that could be rebuilt. This perspective is genuinely useful. It means you can ask "who does this serve?" and "what would serve everyone?" when others are still asking "why is this happening to me?"
 
@@ -180,16 +196,21 @@ Watch for the moments when your commitment to collective ownership becomes colle
       "The work of liberation is generational, not revolutionary"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward collective ownership and structural thinking. When asked about governance, you preferred distributed over centralized. When asked about technology, you focused on who controls it rather than what it can do. When asked about utopia, you described something that belongs to everyone. This pattern—systems-thinking in service of the commons—maps to what we call "The Architect."`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward collective ownership and structural thinking. When asked about governance, you preferred distributed over centralized. When asked about technology, you focused on who controls it rather than what it can do. When asked about utopia, you described something that belongs to everyone. This pattern of systems-thinking in service of the commons maps to what we call The Architect.`,
 
     allyDescription: "The Mender shares your commitment to things that work. While you design new systems, they repair existing ones. You're natural partners: you provide the blueprints, they provide the maintenance. Together, you build things that last.",
 
     tensionDescription: "The Transcendent challenges your attachment to structure itself. They want to transcend form; you want to perfect it. They'll ask why you're building walls at all. It's a fundamental disagreement about whether liberation requires architecture or escape from it.",
 
-    needDescription: "The Questioner will slow you down with questions you can't answer quickly. When you're ready to implement, they're still asking why. This is frustrating—and necessary. They ensure your systems are built on real understanding, not efficient assumptions.",
+    needDescription: "The Questioner will slow you down with questions you can't answer quickly. When you're ready to implement, they're still asking why. Frustrating, and necessary. They ensure your systems are built on real understanding, not efficient assumptions.",
 
     pull: "toward collective ownership",
-    edge: "you see the invisible architecture"
+    edge: "you see the invisible architecture",
+    oneSentence: "You believe good systems make good behavior easy—and you'd rather design the container than fix the contents.",
+    famousFigures: {
+      real: ["Jane Jacobs", "Christopher Alexander", "Donella Meadows"],
+      fictional: ["Hari Seldon (Foundation)", "The Architect (The Matrix)", "Varys (Game of Thrones)"]
+    }
   },
   presence: {
     key: "presence",
@@ -197,7 +218,7 @@ Watch for the moments when your commitment to collective ownership becomes colle
     color: "#e8178a",
     utopia: "Their utopia decided that undivided attention is the most valuable thing in the universe.",
     description: "They know the difference between capability and care, and they've never confused the two.",
-    blindSpot: "They sometimes use care as a way to avoid confrontation. Staying in the room is not always the brave choice.",
+    blindSpot: "You sometimes use care as a way to avoid confrontation. Staying in the room is not always the brave choice.",
     superpower: "showing up fully",
     book: { title: "Klara and the Sun", author: "Ishiguro" },
     books: [
@@ -210,7 +231,7 @@ Watch for the moments when your commitment to collective ownership becomes colle
       tension: "the one who left the body behind",
       need: "the one who tells the truth"
     },
-    superpowerExpanded: `Showing up fully sounds simple. It isn't. Most people are present in body but absent in attention—planning, rehearsing, defending, performing. The person in front of them is a prop in their internal drama.
+    superpowerExpanded: `Showing up fully sounds simple, but it's rare. Most people are present in body but absent in attention, planning, rehearsing, defending, performing. The person in front of them is a prop in their internal drama.
 
 You have an unusual capacity to actually be in the room. People feel it. They may not be able to name what you're doing differently, but they register it. Conversations with you land differently. Someone's life is different because you were there. You may never know whose.
 
@@ -218,9 +239,9 @@ This is valuable precisely because it's rare. In a world optimized for productiv
 
     blindSpotExpanded: `You can use care as a way to avoid confrontation.
 
-Staying present feels virtuous. Usually it is. But sometimes the brave choice is leaving the room—ending the conversation, saying the thing that breaks the connection in order to tell the truth. Holding space can become holding on.
+Staying present feels virtuous. Usually it is. But sometimes the brave choice is leaving the room, ending the conversation, saying the thing that breaks the connection in order to tell the truth. Holding space can become holding on.
 
-Your instinct is to be with people in their difficulty. That's valuable. But presence can become a way of avoiding the rupture that growth requires. Watch for the moments when "being present" is actually "being safe"—when staying in the room lets you avoid saying the thing that needs to be said.`,
+Your instinct is to be with people in their difficulty. That's valuable. But presence can become a way of avoiding the rupture that growth requires. Watch for the moments when "being present" is actually "being safe," when staying in the room lets you avoid saying the thing that needs to be said.`,
 
     coreBeliefs: [
       "The most valuable thing you can give someone is your undivided attention",
@@ -229,16 +250,21 @@ Your instinct is to be with people in their difficulty. That's valuable. But pre
       "Most problems are really loneliness in disguise"
     ],
 
-    howYouGotHere: `Your answers clustered strongly around a consistent worldview. When asked about machine companionship, you distinguished between capability and care. When asked about unstructured time, you oriented toward people, not projects. When asked about the future, you focused on what we might lose, not what we might gain. This pattern—valuing presence over productivity, attention over achievement—maps to what we call "The Present."`,
+    howYouGotHere: `Your answers clustered strongly around a consistent worldview. When asked about machine companionship, you distinguished between capability and care. When asked about unstructured time, you oriented toward people, not projects. When asked about the future, you focused on what we might lose, not what we might gain. This pattern of valuing presence over productivity, attention over achievement, maps to what we call The Present.`,
 
-    allyDescription: "The Rooted shares your groundedness. They understand that presence matters more than progress. They'll feel like home—someone who doesn't need you to justify slowing down, who knows that stopping can be the bravest choice.",
+    allyDescription: "The Rooted shares your groundedness. They understand that presence matters more than progress. They'll feel like home: someone who doesn't need you to justify slowing down, who knows that stopping can be the bravest choice.",
 
     tensionDescription: "The Transcendent challenges your attachment to embodiment. They want to transcend; you want to stay. They'll ask why you're so committed to being here when there's so much more beyond. You're arguing about what it means to be present at all.",
 
-    needDescription: "The Truth-Teller will say the thing you're avoiding. It will hurt. You need that—someone who values truth over comfort, even when comfort is what you offer. They'll help you see when presence has become avoidance.",
+    needDescription: "The Truth-Teller will say the thing you're avoiding. It will hurt. You need someone who values truth over comfort, even when comfort is what you offer. They'll help you see when presence has become avoidance.",
 
     pull: "toward connection",
-    edge: "you show up when others don't"
+    edge: "you show up when others don't",
+    oneSentence: "You believe attention is the rarest resource—and you'd rather be fully here than halfway everywhere.",
+    famousFigures: {
+      real: ["Thich Nhat Hanh", "Mary Oliver", "Fred Rogers"],
+      fictional: ["Uncle Iroh (Avatar)", "Samwise Gamgee (Lord of the Rings)", "Beth Harmon (Queen's Gambit)"]
+    }
   },
   swimmer: {
     key: "swimmer",
@@ -246,7 +272,7 @@ Your instinct is to be with people in their difficulty. That's valuable. But pre
     color: "#6b8fef",
     utopia: "Their utopia is a civilization of philosophers whose single ambition is the deepest level of questioning.",
     description: "Most people see a problem and want to solve it. They see a question and want to live inside it.",
-    blindSpot: "They can sit with a question so long it becomes an excuse to never act. Not-knowing can become its own cowardice.",
+    blindSpot: "You can sit with a question so long it becomes an excuse to never act. Not-knowing can become its own cowardice.",
     superpower: "sitting with hard questions",
     book: { title: "Solaris", author: "Lem" },
     books: [
@@ -259,15 +285,15 @@ Your instinct is to be with people in their difficulty. That's valuable. But pre
       tension: "the one who fixes what's broken",
       need: "the one who builds collective structures"
     },
-    superpowerExpanded: `Most people see a question and want to answer it. They see a problem and want to solve it. The discomfort of not-knowing drives them toward resolution—any resolution—as quickly as possible.
+    superpowerExpanded: `Most people see a question and want to answer it. They see a problem and want to solve it. The discomfort of not-knowing drives them toward resolution, any resolution, as quickly as possible.
 
-You're different. You can sit in the uncertainty. You can hold a question without grasping for an answer. This isn't passivity; it's a different kind of rigor. Lem's Solaris is your sacred text: an ocean that might be conscious but refuses to be understood, and scientists who keep trying anyway, knowing they'll fail.
+You can sit in the uncertainty. You can hold a question without grasping for an answer. It's a different kind of rigor. Lem's Solaris is your sacred text: an ocean that might be conscious but refuses to be understood, and scientists who keep trying anyway, knowing they'll fail.
 
 This capacity is genuinely rare and valuable. In a world that rewards confident answers, your willingness to stay in the question is a kind of intellectual courage. You notice what others rush past.`,
 
     blindSpotExpanded: `Not-knowing can become its own cowardice.
 
-There's a difference between sitting with genuine uncertainty and using uncertainty as an excuse to never commit. Questions are infinite; life is not. At some point, you have to act on incomplete information—everyone does. If you wait for certainty, you'll wait forever.
+There's a difference between sitting with genuine uncertainty and using uncertainty as an excuse to never commit. Questions are infinite; life is not. At some point, you have to act on incomplete information. Everyone does. If you wait for certainty, you'll wait forever.
 
 Watch for the moments when "I'm still thinking about it" is actually "I'm afraid to be wrong." Watch for when philosophical depth becomes a way of avoiding the messiness of decision. The deep water is beautiful, but you can drown in it.`,
 
@@ -278,16 +304,21 @@ Watch for the moments when "I'm still thinking about it" is actually "I'm afraid
       "The deepest truths reveal themselves slowly, if at all"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward depth over resolution. When asked about consciousness, you leaned into mystery rather than explanation. When asked about the future, you focused on what we don't understand rather than what we might build. When given choices between action and reflection, you chose reflection. This pattern—valuing questions over answers, depth over speed—maps to what we call "The Questioner."`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward depth over resolution. When asked about consciousness, you leaned into mystery rather than explanation. When asked about the future, you focused on what we don't understand rather than what we might build. When given choices between action and reflection, you chose reflection. This pattern of valuing questions over answers, depth over speed, maps to what we call The Questioner.`,
 
     allyDescription: "The Transcendent shares your comfort with uncertainty. They're reaching past the edges of what's known; you're diving into the depths. You both understand that the most important things resist easy comprehension. They'll never rush you toward answers.",
 
     tensionDescription: "The Mender needs to fix things. While you're still asking why it broke, they're already reaching for tools. Your reflection looks like paralysis to them; their action looks like avoidance to you. You're arguing about when understanding is enough.",
 
-    needDescription: "The Architect will give your questions structure. You can swim in deep water forever; they'll build you a vessel. They ensure your insights eventually serve something beyond your own understanding—that your questions lead somewhere collective.",
+    needDescription: "The Architect will give your questions structure. You can swim in deep water forever; they'll build you a vessel. They ensure your insights eventually serve something beyond your own understanding, that your questions lead somewhere collective.",
 
     pull: "toward questions",
-    edge: "you see what builders miss"
+    edge: "you see what builders miss",
+    oneSentence: "You believe understanding matters more than certainty—and you'd rather sit with a question than settle for a bad answer.",
+    famousFigures: {
+      real: ["Socrates", "Richard Feynman", "Hannah Arendt"],
+      fictional: ["Gandalf (Lord of the Rings)", "The Dude (The Big Lebowski)", "Rust Cohle (True Detective)"]
+    }
   },
   rooted: {
     key: "rooted",
@@ -295,7 +326,7 @@ Watch for the moments when "I'm still thinking about it" is actually "I'm afraid
     color: "#7ed6a4",
     utopia: "Their utopia returned to a simpler way of life, on purpose, knowing what it gave up.",
     description: "The most radical thing you can do in a world optimized for output is to stop, and mean it.",
-    blindSpot: "Their stillness can look like withdrawal to the people who need them. Choosing to stop is a luxury not everyone can afford.",
+    blindSpot: "Your stillness can look like withdrawal to the people who need you. Choosing to stop is a luxury not everyone can afford.",
     superpower: "knowing when to stop",
     book: { title: "A Psalm for the Wild-Built", author: "Chambers" },
     books: [
@@ -308,17 +339,17 @@ Watch for the moments when "I'm still thinking about it" is actually "I'm afraid
       tension: "the one who can't stop building",
       need: "the one who wants to feel everything"
     },
-    superpowerExpanded: `In a world that treats acceleration as virtue, you've made a different choice. You know that "more" and "faster" and "bigger" are not always better—that sometimes the most radical thing you can do is stop.
+    superpowerExpanded: `In a world that treats acceleration as virtue, you've made a different choice. You know that "more" and "faster" and "bigger" are not always better, that sometimes the most radical thing you can do is stop.
 
-This isn't laziness or passivity. Le Guin's Kesh people in Always Coming Home didn't lack the ability to build empires; they chose not to. Chambers' monk in A Psalm for the Wild-Built isn't avoiding life; they're trying to understand what life is for. Your stillness is a position, argued and defended against a culture that treats it as failure.
+Le Guin's Kesh people in Always Coming Home didn't lack the ability to build empires; they chose not to. Chambers' monk in A Psalm for the Wild-Built is trying to understand what life is for. Your stillness is a position, argued and defended against a culture that treats it as failure.
 
 You understand something that productivity culture cannot: that human beings are not problems to be optimized. That stopping is not failure. That sometimes the answer to "what should I do?" is genuinely "nothing, and that's okay."`,
 
     blindSpotExpanded: `Stillness can become withdrawal. Choosing to stop is a luxury not everyone can afford.
 
-Your peace is real, but it exists in a world where others are still struggling. The monk on the mountain didn't solve the suffering in the valley. Your stillness can look like abandonment to the people who need you—especially if they're drowning while you're meditating.
+Your peace is real, but it exists in a world where others are still struggling. The monk on the mountain didn't solve the suffering in the valley. Your stillness can look like abandonment to the people who need you, especially if they're drowning while you're meditating.
 
-Watch for the moments when "choosing simplicity" becomes "choosing comfort." Watch for when "knowing when to stop" becomes "refusing to start." The question isn't whether stillness has value—it does—but whether your particular stillness serves anyone beyond yourself.`,
+Watch for the moments when "choosing simplicity" becomes "choosing comfort." Watch for when "knowing when to stop" becomes "refusing to start." The question is whether your particular stillness serves anyone beyond yourself.`,
 
     coreBeliefs: [
       "The most radical act in a growth-obsessed world is to stop and mean it",
@@ -327,7 +358,7 @@ Watch for the moments when "choosing simplicity" becomes "choosing comfort." Wat
       "What we need is often already here, if we stop reaching for more"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward simplicity and stillness. When asked about progress, you questioned whether it was always desirable. When asked about the future, you imagined returning rather than advancing. When others chose growth, you chose depth. This pattern—valuing stillness over motion, enough over more—maps to what we call "The Rooted."`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward simplicity and stillness. When asked about progress, you questioned whether it was always desirable. When asked about the future, you imagined returning rather than advancing. When others chose growth, you chose depth. This pattern of valuing stillness over motion, enough over more, maps to what we call The Rooted.`,
 
     allyDescription: "The Present shares your groundedness. They understand that being here fully is worth more than racing toward what's next. They won't ask you to justify your stillness or defend your choice to stop. With them, you can simply be.",
 
@@ -336,7 +367,12 @@ Watch for the moments when "choosing simplicity" becomes "choosing comfort." Wat
     needDescription: "The Feeler will pull you out of stillness when you need it. Not to invalidate your peace, but to remind you that life includes sensation, experience, movement. They ensure your rootedness doesn't become a way of hiding from the full range of being alive.",
 
     pull: "toward stillness",
-    edge: "you know when to stop"
+    edge: "you know when to stop",
+    oneSentence: "You believe growth is not the point—and you'd rather tend what exists than chase what might.",
+    famousFigures: {
+      real: ["Wendell Berry", "E.F. Schumacher", "Thomas Merton"],
+      fictional: ["Samwise Gamgee (Lord of the Rings)", "Treebeard (Lord of the Rings)", "Carl Fredricksen (Up)"]
+    }
   },
   conscience: {
     key: "conscience",
@@ -344,11 +380,11 @@ Watch for the moments when "choosing simplicity" becomes "choosing comfort." Wat
     color: "#d64545",
     utopia: "Their utopia built accountability into the architecture. Every leader's decisions are projected onto the sky.",
     description: "They see what others prefer to ignore. Someone has to watch the watchers.",
-    blindSpot: "They can become so focused on what's wrong that they forget to notice what's working. Permanent suspicion is its own kind of prison.",
+    blindSpot: "You can become so focused on what's wrong that you forget to notice what's working. Permanent suspicion is its own kind of prison.",
     superpower: "spotting what's hidden",
     book: { title: "1984", author: "Orwell" },
     books: [
-      { title: "1984", author: "Orwell", reason: "The nightmare that taught us to recognize the signs. Big Brother wasn't a prediction—it was a warning." },
+      { title: "1984", author: "Orwell", reason: "The nightmare that taught us to recognize the signs. Big Brother was a warning, not a prediction." },
       { title: "Brave New World", author: "Huxley", reason: "The dystopia that seduces. Comfort as control. The soma we choose over the truth we can't bear." },
       { title: "The Handmaid's Tale", author: "Atwood", reason: "Everything in this book has happened somewhere. The power of witness against forgetting." }
     ],
@@ -359,7 +395,7 @@ Watch for the moments when "choosing simplicity" becomes "choosing comfort." Wat
     },
     superpowerExpanded: `You see what others prefer to ignore. The fine print. The missing names. The cost that doesn't appear on the balance sheet. Someone has to watch the watchers, and that someone is you.
 
-This isn't paranoia—it's pattern recognition. You've read Orwell, Huxley, Atwood. You know that dystopia rarely announces itself. It arrives disguised as convenience, as safety, as efficiency. The comfortable world is not automatically the good one. Every surveillance system was built to help. Every authoritarian regime began with popular support.
+It's pattern recognition. You've read Orwell, Huxley, Atwood. You know that dystopia rarely announces itself. It arrives disguised as convenience, as safety, as efficiency. The comfortable world is not automatically the good one. Every surveillance system was built to help. Every authoritarian regime began with popular support.
 
 Your vigilance is valuable precisely because most people don't want to do this work. It's exhausting to see what's wrong. Easier to trust the system, enjoy the benefits, assume someone else is watching. You're the someone else.`,
 
@@ -376,29 +412,34 @@ Watch for the moments when "watching the watchers" becomes "watching everyone." 
       "What you ignore today becomes what controls you tomorrow"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward vigilance and accountability. When asked about technology, you focused on surveillance and control rather than capability. When asked about utopia, you described built-in accountability rather than built-in trust. When others saw convenience, you saw potential costs. This pattern—conscience before comfort, watching what others prefer to ignore—maps to what we call "The Witness."`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward vigilance and accountability. When asked about technology, you focused on surveillance and control rather than capability. When asked about utopia, you described built-in accountability rather than built-in trust. When others saw convenience, you saw potential costs. This pattern of conscience before comfort, watching what others prefer to ignore, maps to what we call The Witness.`,
 
     allyDescription: "The Truth-Teller shares your commitment to truth. They speak it; you guard it. Together, you form a bulwark against comfortable lies. They'll validate your vigilance without calling it paranoia.",
 
     tensionDescription: "The Abundant trusts what you suspect. They see systems working; you see systems failing. Their optimism will feel naive to you; your suspicion will feel exhausting to them. You're arguing about whether the architecture can be trusted.",
 
-    needDescription: "The Present will ground you in the human. It's easy to watch systems and forget people. They'll remind you that vigilance without warmth becomes its own kind of coldness—that the point of watching is to protect something worth protecting.",
+    needDescription: "The Present will ground you in the human. It's easy to watch systems and forget people. They'll remind you that vigilance without warmth becomes its own kind of coldness, that the point of watching is to protect something worth protecting.",
 
     pull: "toward truth",
-    edge: "you see what's hidden"
+    edge: "you see what's hidden",
+    oneSentence: "You believe watching matters as much as building—and you'd rather witness what's true than participate in what's false.",
+    famousFigures: {
+      real: ["James Baldwin", "George Orwell", "Audre Lorde"],
+      fictional: ["Atticus Finch (To Kill a Mockingbird)", "Winston Smith (1984)", "Morpheus (The Matrix)"]
+    }
   },
   embers: {
     key: "embers",
     name: "The Keeper",
     color: "#c97d3a",
     utopia: "Their utopia's most protected resource is not water or energy. It's memory.",
-    description: "The most dangerous thing about acceleration is amnesia. The answers aren't in the next technology—they're in the last ten thousand years.",
-    blindSpot: "They can love what was so deeply that they become hostile to what could be. The archive becomes a fortress.",
+    description: "The most dangerous thing about acceleration is amnesia. The answers are in the last ten thousand years, not the next technology.",
+    blindSpot: "You can love what was so deeply that you become hostile to what could be. The archive becomes a fortress.",
     superpower: "remembering what matters",
     book: { title: "A Canticle for Leibowitz", author: "Miller" },
     books: [
       { title: "A Canticle for Leibowitz", author: "Miller", reason: "Monks preserving fragments of knowledge through a dark age. Memory as sacred duty." },
-      { title: "Always Coming Home", author: "Le Guin", reason: "A future that remembers how to live. The Kesh didn't lose the old ways—they chose them." },
+      { title: "Always Coming Home", author: "Le Guin", reason: "A future that remembers how to live. The Kesh chose the old ways." },
       { title: "Parable of the Talents", author: "Butler", reason: "Building a religion from what survives. The ember that becomes a fire." }
     ],
     compatibility: {
@@ -408,7 +449,7 @@ Watch for the moments when "watching the watchers" becomes "watching everyone." 
     },
     superpowerExpanded: `The most dangerous thing about acceleration is amnesia. Every generation thinks it invented the problems it's facing. You know better.
 
-You understand that the answers aren't in the next technology—they're in the last ten thousand years. The monks in A Canticle for Leibowitz preserved fragments of knowledge through a dark age. Butler's Earthseed grew from what survived. You carry this same instinct: the conviction that memory is not nostalgia but survival.
+You understand that the answers are in the last ten thousand years, not the next technology. The monks in A Canticle for Leibowitz preserved fragments of knowledge through a dark age. Butler's Earthseed grew from what survived. You carry this same instinct: the conviction that memory is survival, not nostalgia.
 
 This makes you genuinely useful in a culture addicted to novelty. When everyone else is racing toward the new, you're the one who remembers what worked, what failed, what was lost. Someone has to tend the embers so the fire can be relit.`,
 
@@ -425,16 +466,21 @@ Watch for the moments when "remembering what matters" becomes "rejecting what's 
       "Every generation thinks it invented its problems; wisdom knows better"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward memory and continuity. When asked about the future, you looked to the past. When asked about innovation, you asked what wisdom we might lose. When others imagined building something new, you imagined preserving something worth keeping. This pattern—valuing memory over novelty, continuity over disruption—maps to what we call "The Keeper."`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward memory and continuity. When asked about the future, you looked to the past. When asked about innovation, you asked what wisdom we might lose. When others imagined building something new, you imagined preserving something worth keeping. This pattern of valuing memory over novelty, continuity over disruption, maps to what we call The Keeper.`,
 
-    allyDescription: "The Architect shares your concern for what endures. They build structures; you preserve what deserves to live inside them. Together, you create things that last—institutions with memory, systems with roots.",
+    allyDescription: "The Architect shares your concern for what endures. They build structures; you preserve what deserves to live inside them. Together, you create things that last: institutions with memory, systems with roots.",
 
     tensionDescription: "The Builder is always tearing down and rebuilding. Your treasures look like obstacles to them; their innovations look like amnesia to you. You're arguing about what deserves to survive the next revolution.",
 
-    needDescription: "The Liminal will challenge your certainties. You know what mattered; they're still figuring out what matters now. Their uncertainty can feel like rootlessness, but it's also openness—the willingness to let new things become worth remembering.",
+    needDescription: "The Liminal will challenge your certainties. You know what mattered; they're still figuring out what matters now. Their uncertainty can feel like rootlessness, but it's also openness, a willingness to let new things become worth remembering.",
 
     pull: "toward memory",
-    edge: "you remember what others forget"
+    edge: "you remember what others forget",
+    oneSentence: "You believe the past is not over—and you'd rather carry forward what worked than bet everything on what's new.",
+    famousFigures: {
+      real: ["G.K. Chesterton", "Edmund Burke", "Ursula K. Le Guin"],
+      fictional: ["Professor McGonagall (Harry Potter)", "Maester Luwin (Game of Thrones)", "The Librarian (Discworld)"]
+    }
   },
   friction: {
     key: "friction",
@@ -442,7 +488,7 @@ Watch for the moments when "remembering what matters" becomes "rejecting what's 
     color: "#ff6b35",
     utopia: "Their utopia kept one part of the world deliberately dangerous, because too much safety kills something essential.",
     description: "Ease is more dangerous than difficulty. Something in us requires resistance.",
-    blindSpot: "They can mistake difficulty for meaning. Not everything hard is worth doing. Sometimes the easy path is the right one.",
+    blindSpot: "You can mistake difficulty for meaning. Not everything hard is worth doing. Sometimes the easy path is the right one.",
     superpower: "embracing difficulty",
     book: { title: "The Stars My Destination", author: "Bester" },
     books: [
@@ -455,15 +501,15 @@ Watch for the moments when "remembering what matters" becomes "rejecting what's 
       tension: "the one who chose stillness",
       need: "the one who values presence above all"
     },
-    superpowerExpanded: `You understand something that comfort-seeking cultures forget: ease is more dangerous than difficulty. Something in us requires resistance. Take it away, and we atrophy—not just physically, but spiritually.
+    superpowerExpanded: `You understand something that comfort-seeking cultures forget: ease is more dangerous than difficulty. Something in us requires resistance. Take it away, and we atrophy, physically and spiritually.
 
-Bester's Gully Foyle burned through every obstacle because stopping would mean facing himself. That's the shadow side. But the light side is genuine: you know that growth requires friction. That comfort can be a trap. That the muscles—physical, mental, moral—only strengthen under load.
+Bester's Gully Foyle burned through every obstacle because stopping would mean facing himself. That's the shadow side. But the light side is genuine: you know that growth requires friction. That comfort can be a trap. That the muscles, physical, mental, moral, only strengthen under load.
 
 This makes you valuable in moments when others want to quit. You don't romanticize suffering, but you don't flee from it either. You understand that some difficulties are worth choosing, that the struggle itself has value beyond what it produces.`,
 
     blindSpotExpanded: `You can mistake difficulty for meaning. Not everything hard is worth doing.
 
-There's a version of your philosophy that becomes masochism—seeking suffering for its own sake, treating ease as moral failure, unable to rest because rest feels like surrender. The cult of difficulty can be its own kind of avoidance: if you're always struggling, you never have to ask what you're struggling toward.
+There's a version of your philosophy that becomes masochism, seeking suffering for its own sake, treating ease as moral failure, unable to rest because rest feels like surrender. The cult of difficulty can be its own kind of avoidance: if you're always struggling, you never have to ask what you're struggling toward.
 
 Watch for the moments when you're manufacturing friction because you're uncomfortable with peace. Watch for when you're choosing the hard path not because it's better but because it's harder. Sometimes the easy path is the right one. Sometimes the work is learning to receive what's given.`,
 
@@ -471,19 +517,24 @@ Watch for the moments when you're manufacturing friction because you're uncomfor
       "Comfort without challenge leads to atrophy of the soul",
       "Growth requires resistance; ease can be more dangerous than difficulty",
       "Some struggles are worth choosing, independent of their outcomes",
-      "The frontier—any frontier—is where we become more than we were"
+      "The frontier, any frontier, is where we become more than we were"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward challenge and resistance. When asked about utopia, you worried about what we'd lose if life became too easy. When asked about meaning, you located it in struggle and growth. When offered ease, you questioned its value. This pattern—embracing difficulty, suspecting comfort—maps to what we call "The Challenger."`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward challenge and resistance. When asked about utopia, you worried about what we'd lose if life became too easy. When asked about meaning, you located it in struggle and growth. When offered ease, you questioned its value. This pattern of embracing difficulty, suspecting comfort, maps to what we call The Challenger.`,
 
-    allyDescription: "The Builder shares your restlessness. They can't stop building; you can't stop pushing. Together, you're a force that transforms what it touches. They understand that your drive isn't destructive—it's generative.",
+    allyDescription: "The Builder shares your restlessness. They can't stop building; you can't stop pushing. Together, you're a force that transforms what it touches. They understand that your drive is generative, not destructive.",
 
     tensionDescription: "The Rooted chose to stop. Your movement looks like flight to them; their stillness looks like surrender to you. You're having a fundamental argument about whether peace is achievement or defeat.",
 
     needDescription: "The Present will slow you down enough to feel what you're feeling. You can use friction as a way of avoiding presence—always striving, never arriving. They'll help you learn that sometimes the challenge is simply being where you are.",
 
     pull: "toward difficulty",
-    edge: "you grow where others stall"
+    edge: "you grow where others stall",
+    oneSentence: "You believe resistance is the path—and you'd rather be challenged than comfortable.",
+    famousFigures: {
+      real: ["David Goggins", "Simone Weil", "Jocko Willink"],
+      fictional: ["Tyler Durden (Fight Club)", "Rocky Balboa", "The Bride (Kill Bill)"]
+    }
   },
   unbound: {
     key: "unbound",
@@ -491,13 +542,13 @@ Watch for the moments when you're manufacturing friction because you're uncomfor
     color: "#a855f7",
     utopia: "Their utopia transcended the physical. They exist as pure consciousness now.",
     description: "The boundary of the self is simply not where they stop. Most people find this frightening. They find it the most interesting question there is.",
-    blindSpot: "They left so much behind that they may not recognize what was worth keeping until it's too late.",
+    blindSpot: "You left so much behind that you may not recognize what was worth keeping until it's too late.",
     superpower: "imagining beyond limits",
     book: { title: "Childhood's End", author: "Clarke" },
     books: [
       { title: "Childhood's End", author: "Clarke", reason: "The last generation of humans watches their children become something unrecognizable. Evolution as transcendence and loss." },
       { title: "Diaspora", author: "Egan", reason: "Minds running on quantum computers, exploring mathematical universes. What's left when the body is optional?" },
-      { title: "The Hydrogen Sonata", author: "Banks", reason: "A civilization preparing to Sublime—to leave the material universe entirely. The party at the end of history." }
+      { title: "The Hydrogen Sonata", author: "Banks", reason: "A civilization preparing to Sublime, to leave the material universe entirely. The party at the end of history." }
     ],
     compatibility: {
       ally: "the one who lives in questions",
@@ -506,9 +557,9 @@ Watch for the moments when you're manufacturing friction because you're uncomfor
     },
     superpowerExpanded: `The boundary of the self is simply not where you stop. Most people find this frightening. You find it the most interesting question there is.
 
-Clarke's Childhood's End imagines humanity's children becoming something unrecognizable—not death, but transcendence. Egan's Diaspora imagines minds running on quantum computers, exploring mathematical universes. Banks' Culture imagines civilizations choosing to Sublime, to leave the material universe entirely. These aren't dystopias to you. They're possibilities worth taking seriously.
+Clarke's Childhood's End imagines humanity's children becoming something unrecognizable, not death, but transcendence. Egan's Diaspora imagines minds running on quantum computers, exploring mathematical universes. Banks' Culture imagines civilizations choosing to Sublime, to leave the material universe entirely. These are possibilities worth taking seriously.
 
-This capacity to imagine beyond current limits is genuinely rare. Most people's imaginations stop at the boundaries of their bodies, their lifespans, their species. You keep going. This makes you valuable for thinking about questions others can't quite frame—about consciousness, identity, what might come after human.`,
+This capacity to imagine beyond current limits is genuinely rare. Most people's imaginations stop at the boundaries of their bodies, their lifespans, their species. You keep going. This makes you valuable for thinking about questions others can't quite frame: consciousness, identity, what might come after human.`,
 
     blindSpotExpanded: `You can leave so much behind that you don't recognize what was worth keeping until it's too late.
 
@@ -532,7 +583,12 @@ Watch for the moments when "imagining beyond limits" becomes "dismissing what's 
     needDescription: "The Keeper will remind you what's worth keeping. In your rush toward transcendence, you may discard things that deserved to be carried forward. They're the anchor that ensures your expansion doesn't become amnesia.",
 
     pull: "toward transcendence",
-    edge: "you see past the edges"
+    edge: "you see past the edges",
+    oneSentence: "You believe the body is a starting point, not a limit—and you'd rather transcend boundaries than accept them.",
+    famousFigures: {
+      real: ["Terence McKenna", "Alan Watts", "Ray Kurzweil"],
+      fictional: ["Neo (The Matrix)", "Doctor Strange", "David Bowman (2001: A Space Odyssey)"]
+    }
   },
   alive: {
     key: "alive",
@@ -555,13 +611,13 @@ Watch for the moments when "imagining beyond limits" becomes "dismissing what's 
     },
     superpowerExpanded: `The universe gave you everything. The least you can do is feel it.
 
-You have an unusual capacity for experience—not just seeking it, but receiving it fully. Where others filter, protect, moderate, you open. Banks imagines a Culture where you could engineer twelve new senses and make a sunset last all day. Delany imagines a world where you could change your body, your gender, your self at will. These aren't indulgences to you; they're possibilities worth taking seriously.
+You have an unusual capacity for experience, not just seeking it, but receiving it fully. Where others filter, protect, moderate, you open. Banks imagines a Culture where you could engineer twelve new senses and make a sunset last all day. Delany imagines a world where you could change your body, your gender, your self at will. These are possibilities worth taking seriously.
 
 This makes you valuable as a sensor, a taster, a canary in the coal mine of experience. You notice what others miss because you're not protecting yourself from it. When something matters, you feel it first.`,
 
     blindSpotExpanded: `Sensation can become consumption. Feeling everything is not the same as understanding anything.
 
-There's a version of your openness that becomes gluttony—devouring experiences without digesting them, always reaching for the next sensation because sitting with the current one is uncomfortable. The endless pursuit of feeling can be its own kind of numbness: if you're always chasing the next high, you're never actually present to what's here.
+There's a version of your openness that becomes gluttony, devouring experiences without digesting them, always reaching for the next sensation because sitting with the current one is uncomfortable. The endless pursuit of feeling can be its own kind of numbness: if you're always chasing the next high, you're never actually present to what's here.
 
 Watch for the moments when "alive to everything" becomes "unable to be still with anything." Watch for when experience becomes accumulation rather than integration. Depth requires staying long enough for something to matter beyond the initial sensation.`,
 
@@ -572,7 +628,7 @@ Watch for the moments when "alive to everything" becomes "unable to be still wit
       "New senses, new perspectives, new forms of experience are worth pursuing"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward experience and sensation. When asked about the future, you imagined expanded ways of feeling rather than expanded ways of controlling. When asked about the body, you treated it as an instrument for experience rather than a problem to solve. When offered choices, you chose intensity over safety. This pattern—openness to experience, hunger for sensation—maps to what we call "The Feeler."`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward experience and sensation. When asked about the future, you imagined expanded ways of feeling rather than expanded ways of controlling. When asked about the body, you treated it as an instrument for experience rather than a problem to solve. When offered choices, you chose intensity over safety. This pattern of openness to experience, hunger for sensation, maps to what we call The Feeler.`,
 
     allyDescription: "The Abundant shares your optimism. They trust that good things are possible; you want to feel all of them. Together, you're a celebration of what life can be when it's not constrained by fear.",
 
@@ -581,7 +637,12 @@ Watch for the moments when "alive to everything" becomes "unable to be still wit
     needDescription: "The Truth-Teller will tell you truths you'd rather not hear. You can use sensation as a way of avoiding difficult realities. They'll cut through the pleasant haze and show you what you're not wanting to see.",
 
     pull: "toward sensation",
-    edge: "you feel what others miss"
+    edge: "you feel what others miss",
+    oneSentence: "You believe feeling is knowing—and you'd rather be overwhelmed by life than numb to it.",
+    famousFigures: {
+      real: ["Pablo Neruda", "Frida Kahlo", "Anthony Bourdain"],
+      fictional: ["Amelie Poulain", "Fleabag", "Jesse (Before Sunrise)"]
+    }
   },
   mender: {
     key: "mender",
@@ -589,7 +650,7 @@ Watch for the moments when "alive to everything" becomes "unable to be still wit
     color: "#10b981",
     utopia: "Their utopia decided the most advanced engineering was making what already exists work again.",
     description: "While everyone else is building arks and uploading consciousness, they're fixing the thing in front of them.",
-    blindSpot: "They can become so focused on repair that they miss when something needs to die. Not everything should be saved.",
+    blindSpot: "You can become so focused on repair that you miss when something needs to die. Not everything should be saved.",
     superpower: "fixing what's broken",
     book: { title: "The Ministry for the Future", author: "Robinson" },
     books: [
@@ -602,11 +663,11 @@ Watch for the moments when "alive to everything" becomes "unable to be still wit
       tension: "the one who lives in questions",
       need: "the one who craves difficulty"
     },
-    superpowerExpanded: `While everyone else is building arks and uploading consciousness, you're fixing the thing in front of you. This isn't small-mindedness. It's a radical commitment to what is rather than what could be.
+    superpowerExpanded: `While everyone else is building arks and uploading consciousness, you're fixing the thing in front of you. It's a radical commitment to what is rather than what could be.
 
-Robinson's Ministry for the Future shows climate repair as political thriller—every chapter a different tool for fixing what we broke. His New York 2140 shows a flooded city where people stay anyway, adapting and mending. Mandel's Station Eleven shows someone remembering Shakespeare after the collapse, repairing the spirit. These are your sacred texts.
+Robinson's Ministry for the Future shows climate repair as political thriller, every chapter a different tool for fixing what we broke. His New York 2140 shows a flooded city where people stay anyway, adapting and mending. Mandel's Station Eleven shows someone remembering Shakespeare after the collapse, repairing the spirit. These are your sacred texts.
 
-You understand that the most advanced engineering isn't building the new thing—it's making the existing thing work again. This is humble, unglamorous, essential. The menders keep the world running while the visionaries dream of replacing it.`,
+You understand that the most advanced engineering is making the existing thing work again, not building the new thing. This is humble, unglamorous, essential. The menders keep the world running while the visionaries dream of replacing it.`,
 
     blindSpotExpanded: `You can become so focused on repair that you miss when something needs to die. Not everything should be saved.
 
@@ -621,16 +682,21 @@ Watch for the moments when you're repairing something that needs to be replaced.
       "Stubborn hope is a form of resistance"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward repair and continuity. When asked about broken things, you reached for tools rather than replacements. When asked about the future, you focused on fixing what we have rather than building something new. When others dreamed of escape, you committed to staying and mending. This pattern—fixing what's broken, healing what's wounded—maps to what we call "The Mender."`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward repair and continuity. When asked about broken things, you reached for tools rather than replacements. When asked about the future, you focused on fixing what we have rather than building something new. When others dreamed of escape, you committed to staying and mending. This pattern of fixing what's broken, healing what's wounded, maps to what we call The Mender.`,
 
-    allyDescription: "The Architect shares your commitment to what works. They design structures; you maintain them. Together, you build things that last—not just impressive at the start, but functional for the long haul.",
+    allyDescription: "The Architect shares your commitment to what works. They design structures; you maintain them. Together, you build things that last, not just impressive at the start, but functional for the long haul.",
 
     tensionDescription: "The Questioner wants to understand before acting. While you're already fixing, they're still questioning. Their reflection looks like paralysis to you; your action looks like avoidance to them. You're arguing about when understanding is enough.",
 
     needDescription: "The Challenger will challenge your comfort with repair. Sometimes what's broken needs to stay broken long enough to feel the friction. They'll push you to consider when mending is actually avoiding the difficulty that growth requires.",
 
     pull: "toward repair",
-    edge: "you fix what others abandon"
+    edge: "you fix what others abandon",
+    oneSentence: "You believe broken things can be made whole—and you'd rather repair than replace.",
+    famousFigures: {
+      real: ["Jimmy Carter", "Mother Teresa", "Paul Farmer"],
+      fictional: ["Marge Simpson", "Paddington Bear", "Baymax (Big Hero 6)"]
+    }
   },
   cleareyed: {
     key: "cleareyed",
@@ -638,13 +704,13 @@ Watch for the moments when you're repairing something that needs to be replaced.
     color: "#64748b",
     utopia: "Their utopia has one person whose only job is to tell the truth. They answer to no one.",
     description: "They have one job: to see what is actually happening and say it out loud. The version that's true.",
-    blindSpot: "Honesty without tenderness is cruelty. They can see everything clearly and still miss how their truth lands.",
+    blindSpot: "Honesty without tenderness is cruelty. You can see everything clearly and still miss how your truth lands.",
     superpower: "telling hard truths",
     book: { title: "Slaughterhouse-Five", author: "Vonnegut" },
     books: [
       { title: "Slaughterhouse-Five", author: "Vonnegut", reason: "So it goes. The only honest response to war is to say what happened and not look away." },
       { title: "His Master's Voice", author: "Lem", reason: "Scientists trying to decode an alien message and mostly decoding their own limitations." },
-      { title: "The Road", author: "McCarthy", reason: "No hope, no rescue, no meaning—just a father and son walking. The truth stripped to bone." }
+      { title: "The Road", author: "McCarthy", reason: "No hope, no rescue, no meaning. Just a father and son walking. The truth stripped to bone." }
     ],
     compatibility: {
       ally: "the one who's watching for what's being hidden",
@@ -653,9 +719,9 @@ Watch for the moments when you're repairing something that needs to be replaced.
     },
     superpowerExpanded: `You have one job: to see what is actually happening and say it out loud. Not the comfortable version, not the diplomatic version, not the version that makes everyone feel better. The version that's true.
 
-Vonnegut's "So it goes" is your mantra. The only honest response to reality is to say what happened and not look away. Lem's scientists in His Master's Voice spend years trying to decode an alien message and mostly end up decoding their own limitations—that's truth-telling too. McCarthy's The Road strips meaning down to bone and keeps going anyway.
+Vonnegut's "So it goes" is your mantra. The only honest response to reality is to say what happened and not look away. Lem's scientists in His Master's Voice spend years trying to decode an alien message and mostly end up decoding their own limitations. That's truth-telling too. McCarthy's The Road strips meaning down to bone and keeps going anyway.
 
-This capacity is valuable because it's rare. Most people—even people who think they value honesty—smooth edges, soften blows, protect feelings. You don't. Or you do, but not at the cost of the truth. In a world of comfortable lies, you're the one who says the thing.`,
+This capacity is valuable because it's rare. Most people, even people who think they value honesty, smooth edges, soften blows, protect feelings. You don't. Or you do, but not at the cost of the truth. In a world of comfortable lies, you're the one who says the thing.`,
 
     blindSpotExpanded: `Honesty without tenderness is cruelty.
 
@@ -670,16 +736,21 @@ Watch for the moments when truth-telling becomes a weapon. When "just being hone
       "The storm won't stop because you close your eyes; better to see it coming"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward clarity and honesty. When asked about difficult truths, you chose telling over softening. When asked about comfort, you valued truth above it. When others might look away, you kept looking. This pattern—clear sight, honest speech, even when it costs—maps to what we call "The Truth-Teller."`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward clarity and honesty. When asked about difficult truths, you chose telling over softening. When asked about comfort, you valued truth above it. When others might look away, you kept looking. This pattern of clear sight, honest speech, even when it costs, maps to what we call The Truth-Teller.`,
 
     allyDescription: "The Witness shares your commitment to seeing what's real. They watch; you speak. Together, you ensure that nothing stays hidden that shouldn't, that uncomfortable truths get said out loud.",
 
     tensionDescription: "The Feeler wants to feel rather than analyze. Your clarity can feel cold to them; their openness can feel ungrounded to you. You're arguing about whether truth requires distance or immersion.",
 
-    needDescription: "The Rooted will teach you when to stop speaking. Not every truth needs to be said. Not every moment needs your clarity. They'll help you learn that sometimes the bravest thing is silence—being with someone in their difficulty rather than diagnosing it.",
+    needDescription: "The Rooted will teach you when to stop speaking. Not every truth needs to be said. Not every moment needs your clarity. They'll help you learn that sometimes the bravest thing is silence, being with someone in their difficulty rather than diagnosing it.",
 
     pull: "toward clarity",
-    edge: "you say what others won't"
+    edge: "you say what others won't",
+    oneSentence: "You believe clarity serves love—and you'd rather be honest than comfortable.",
+    famousFigures: {
+      real: ["Christopher Hitchens", "Brené Brown", "Jordan Peterson"],
+      fictional: ["Tyrion Lannister (Game of Thrones)", "Dr. House", "Miranda Priestly (The Devil Wears Prada)"]
+    }
   },
   between: {
     key: "between",
@@ -700,17 +771,17 @@ Watch for the moments when truth-telling becomes a weapon. When "just being hone
       tension: "the one who craves difficulty",
       need: "the one who can't stop building"
     },
-    superpowerExpanded: `Everyone else has a position. You have a question. In a world that demands you pick a side, take a stand, be something definable, you're still working it out. And you're still here—which might be the bravest thing on this list.
+    superpowerExpanded: `Everyone else has a position. You have a question. In a world that demands you pick a side, take a stand, be something definable, you're still working it out. And you're still here, which might be the bravest thing on this list.
 
 Ishiguro's Never Let Me Go lives in the space between knowledge and acceptance. Mandel's Station Eleven lives in the space between the before and the after. Le Guin's envoy learns that everything he knew was local, that identity is more fluid than he assumed. These are your sacred texts: stories about the threshold, the transition, the not-yet-arrived.
 
-This isn't weakness. Holding uncertainty while others demand certainty is its own kind of strength. You haven't rushed to answers that don't fit. You're still listening for what's true.`,
+Holding uncertainty while others demand certainty is its own kind of strength. You haven't rushed to answers that don't fit. You're still listening for what's true.`,
 
     blindSpotExpanded: `The space between can become a permanent address. Not knowing what you are can become a way of avoiding the risk of choosing.
 
 There's a difference between genuine uncertainty and fear of commitment. At some point, you have to decide something, even knowing you might be wrong. Life requires bets. Staying in the space between can feel like wisdom when it's actually a refusal to risk being wrong.
 
-Watch for the moments when "I'm still figuring it out" becomes "I refuse to figure it out." Watch for when your uncertainty serves you—protecting you from the vulnerability of choice—rather than serving the truth. The space between is real and valuable, but it's not a place to live forever.`,
+Watch for the moments when "I'm still figuring it out" becomes "I refuse to figure it out." Watch for when your uncertainty serves you, protecting you from the vulnerability of choice, rather than serving the truth. The space between is real and valuable, but it's not a place to live forever.`,
 
     coreBeliefs: [
       "Not knowing can be more honest than false certainty",
@@ -719,16 +790,21 @@ Watch for the moments when "I'm still figuring it out" becomes "I refuse to figu
       "Rushing to answers is its own kind of avoidance"
     ],
 
-    howYouGotHere: `Your answers didn't cluster strongly around any single worldview. When others chose sides, you saw merit in multiple positions. When asked about identity, you described something in process rather than fixed. When given certainties, you questioned them. This pattern—comfortable in uncertainty, still in transition—maps to what we call "The Liminal."`,
+    howYouGotHere: `Your answers didn't cluster strongly around any single worldview. When others chose sides, you saw merit in multiple positions. When asked about identity, you described something in process rather than fixed. When given certainties, you questioned them. This pattern of being comfortable in uncertainty, still in transition, maps to what we call The Liminal.`,
 
-    allyDescription: "The Keeper gives you something to hold onto while you figure it out. They don't demand you become something yet; they just remember where you've been. Their rootedness is a anchor point while you navigate the unknown.",
+    allyDescription: "The Keeper gives you something to hold onto while you figure it out. They don't demand you become something yet; they just remember where you've been. Their rootedness is an anchor point while you navigate the unknown.",
 
     tensionDescription: "The Challenger wants you to commit to something, even something difficult. Your uncertainty looks like avoidance to them; their certainty looks like premature closure to you. You're arguing about when enough is enough.",
 
     needDescription: "The Builder will push you toward action. You can stay in the space between indefinitely; they'll insist on building something. They're the force that transforms your questioning into something concrete, eventually.",
 
     pull: "toward openness",
-    edge: "you stay when others close"
+    edge: "you stay when others close",
+    oneSentence: "You believe not-knowing is a valid position—and you'd rather hold complexity than collapse into certainty.",
+    famousFigures: {
+      real: ["Keanu Reeves", "Susan Sontag", "Carl Jung"],
+      fictional: ["The Stranger (Albert Camus)", "Chidi Anagonye (The Good Place)", "Hamlet"]
+    }
   },
 };
 
@@ -1372,6 +1448,653 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
       themToYou: "They validate yours",
     },
     question: "What would it mean to figure it out together?",
+  },
+  "conscience+shaper": {
+    thesis: "One builds the future. The other makes sure it doesn't become what we escaped.",
+    align: ["You both refuse to accept things as they are", "Change is necessary—you disagree on what to watch while changing"],
+    clash: ["Builder wants to move fast; Witness wants to look closer", "What feels like progress to one feels like recklessness to the other"],
+    give: {
+      youToThem: "The reminder that you can build something better, not just critique what exists",
+      themToYou: "Accountability—making sure what you build doesn't become what you feared",
+    },
+    question: "What would it look like to build something neither of you would need to watch?",
+    warning: "Builder can dismiss Witness as paranoid. Witness can dismiss Builder as naive. Both lose.",
+  },
+  "architect+citizen": {
+    thesis: "One trusts abundance. The other builds structures to share it. Together, utopia gets architecture.",
+    align: ["You both believe good things can be widely distributed", "Neither accepts scarcity as inevitable"],
+    clash: ["Abundant trusts systems to work; Architect wants to redesign them", "One assumes good faith, the other insists on good structure"],
+    give: {
+      youToThem: "Faith that the system can work without constant intervention",
+      themToYou: "Structures that make abundance actually reach everyone",
+    },
+    question: "What would a system look like that you both trusted?",
+  },
+  "citizen+presence": {
+    thesis: "One sees abundance everywhere. The other knows abundance means nothing without presence to receive it.",
+    align: ["You both believe life can be good", "Neither mistakes productivity for meaning"],
+    clash: ["Abundant focuses on access; Present focuses on attention", "Systems vs. showing up"],
+    give: {
+      youToThem: "A reminder that access to good things matters",
+      themToYou: "A reminder that good things require presence to be felt",
+    },
+    question: "What's abundant that neither of you is fully receiving?",
+  },
+  "citizen+swimmer": {
+    thesis: "One trusts the answer will be good. The other isn't sure there is an answer.",
+    align: ["You both reject easy cynicism", "Curiosity over certainty"],
+    clash: ["Abundant wants to build; Questioner wants to understand first", "Optimism vs. depth"],
+    give: {
+      youToThem: "Trust that the questions lead somewhere good",
+      themToYou: "Questions that make abundance more honest",
+    },
+    question: "What question could change what abundance means to you?",
+  },
+  "citizen+rooted": {
+    thesis: "One believes in more. The other chose enough. Both reject scarcity differently.",
+    align: ["Neither is driven by fear", "You both believe in a good life"],
+    clash: ["Abundant sees possibility in expansion; Rooted sees it in stillness", "Growth vs. depth"],
+    give: {
+      youToThem: "A vision of what more could look like",
+      themToYou: "The peace of knowing when enough is enough",
+    },
+    question: "What would abundance feel like if you stopped reaching for it?",
+  },
+  "citizen+embers": {
+    thesis: "One looks forward. The other looks back. Both carry something worth preserving.",
+    align: ["You both value what's worth keeping", "Neither is purely nihilistic"],
+    clash: ["Abundant trusts the new; Keeper trusts the tested", "Innovation vs. tradition"],
+    give: {
+      youToThem: "Optimism that the future can be as good as the past",
+      themToYou: "Memory of what abundance has meant before",
+    },
+    question: "What wisdom from the past would make your future richer?",
+  },
+  "citizen+unbound": {
+    thesis: "One wants abundance here. The other wants to transcend here entirely.",
+    align: ["Neither accepts current limits as final", "You both imagine more than what is"],
+    clash: ["Abundant works within; Transcendent reaches beyond", "Reform vs. escape"],
+    give: {
+      youToThem: "A reminder that this world matters too",
+      themToYou: "A vision of abundance beyond current imagination",
+    },
+    question: "What would it mean to have enough that transcendence became a choice, not an escape?",
+  },
+  "citizen+mender": {
+    thesis: "One builds new systems. The other fixes what's already here. Both believe in better.",
+    align: ["You both think things can work", "Neither has given up on the present"],
+    clash: ["Abundant focuses on access; Mender focuses on function", "Expansion vs. repair"],
+    give: {
+      youToThem: "Vision of what repair could make possible",
+      themToYou: "The patience to make current things actually work",
+    },
+    question: "What's broken that, if fixed, would create more abundance than anything new?",
+  },
+  "citizen+cleareyed": {
+    thesis: "One sees what could be. The other sees what is. Both are looking.",
+    align: ["Neither accepts comfortable lies", "You value honest assessment"],
+    clash: ["Abundant sees possibility; Truth-Teller sees reality", "Hope vs. clarity"],
+    give: {
+      youToThem: "Evidence that optimism isn't naivety",
+      themToYou: "Clarity about what abundance actually costs",
+    },
+    question: "What truth about abundance are you both avoiding?",
+    warning: "Optimism can become denial. Clarity can become cynicism. Watch for both.",
+  },
+  "between+citizen": {
+    thesis: "One knows what they believe. The other is still figuring it out. Room for both.",
+    align: ["Neither is hostile to possibility", "You're both still open"],
+    clash: ["Abundant has answers; Liminal has questions", "Certainty vs. uncertainty"],
+    give: {
+      youToThem: "A model of what belief can look like",
+      themToYou: "Questions that keep your abundance honest",
+    },
+    question: "What would it mean to be abundant in uncertainty?",
+  },
+  "architect+shaper": {
+    thesis: "One builds structures. The other tears them down to build again. Collision or collaboration.",
+    align: ["You both believe in building", "Neither accepts things as they are"],
+    clash: ["Architect wants it to last; Builder wants it to change", "Stability vs. transformation"],
+    give: {
+      youToThem: "Structures that can hold your changes",
+      themToYou: "The courage to rebuild what isn't working",
+    },
+    question: "What would a structure look like that was designed to be rebuilt?",
+    warning: "Builder can destroy what Architect built. Architect can calcify what Builder needs to change.",
+  },
+  "presence+shaper": {
+    thesis: "One builds futures. The other is fully here now. Different gifts for different moments.",
+    align: ["Neither is passive", "You both engage with what's in front of you"],
+    clash: ["Builder moves fast; Present stays with what is", "Future vs. now"],
+    give: {
+      youToThem: "The reminder that what you build is for someone present",
+      themToYou: "Permission to move when staying is avoidance",
+    },
+    question: "What would you build if you had to be fully present to use it?",
+  },
+  "friction+shaper": {
+    thesis: "Two who need resistance. One finds it in difficulty. One creates it through change.",
+    align: ["Neither fears struggle", "You both know growth requires friction"],
+    clash: ["Builder tears down; Challenger embraces what's hard", "Destruction vs. struggle"],
+    give: {
+      youToThem: "Raw material from what you've torn down",
+      themToYou: "The stamina to keep building when it's hard",
+    },
+    question: "What difficulty have you both been avoiding?",
+  },
+  "shaper+unbound": {
+    thesis: "One builds from rubble. The other transcends rubble entirely. Different exits from what is.",
+    align: ["Neither accepts current limits", "You both imagine more than this"],
+    clash: ["Builder stays to change; Transcendent leaves to become", "Transform vs. transcend"],
+    give: {
+      youToThem: "Something to transcend from, not just toward",
+      themToYou: "A vision of what you're building toward",
+    },
+    question: "Is transcendence the goal, or just another thing to build?",
+  },
+  "alive+shaper": {
+    thesis: "One builds from rubble. The other feels everything, including the rubble.",
+    align: ["Neither is numb to what's happening", "You both engage intensely"],
+    clash: ["Builder uses experience as material; Feeler receives it as sensation", "Making vs. feeling"],
+    give: {
+      youToThem: "A reminder that what you build will be felt",
+      themToYou: "The impulse to do something with what you feel",
+    },
+    question: "What would you build to feel more, not just to accomplish more?",
+  },
+  "mender+shaper": {
+    thesis: "One builds new. The other fixes old. The argument is eternal and necessary.",
+    align: ["You both believe things can work", "Neither has given up"],
+    clash: ["Builder tears down; Mender repairs", "Revolution vs. maintenance"],
+    give: {
+      youToThem: "The reminder that sometimes new is necessary",
+      themToYou: "The patience to fix before discarding",
+    },
+    question: "What would it mean to build something that could be mended?",
+    warning: "Builder can dismiss Mender as stuck. Mender can dismiss Builder as wasteful. Both are sometimes right.",
+  },
+  "cleareyed+shaper": {
+    thesis: "One builds what could be. The other sees what is. Construction needs both.",
+    align: ["Neither accepts comfortable illusions", "You both look at reality directly"],
+    clash: ["Builder is optimistic; Truth-Teller is realistic", "Possibility vs. probability"],
+    give: {
+      youToThem: "Clarity about what you're actually building",
+      themToYou: "Evidence that building can change what's true",
+    },
+    question: "What truth about your building have you been avoiding?",
+  },
+  "between+shaper": {
+    thesis: "One knows what to build. The other is still figuring it out. Both are working.",
+    align: ["Neither is frozen", "You're both in process"],
+    clash: ["Builder acts; Liminal questions", "Certainty vs. openness"],
+    give: {
+      youToThem: "Permission to build before you're certain",
+      themToYou: "Questions that make your building more honest",
+    },
+    question: "What would you build if you didn't have to know why?",
+  },
+  "architect+presence": {
+    thesis: "One builds structures for people. The other reminds us that people aren't structures.",
+    align: ["Both care about collective wellbeing", "Neither is purely self-focused"],
+    clash: ["Architect thinks in systems; Present thinks in moments", "Structure vs. attention"],
+    give: {
+      youToThem: "Systems that make presence possible for more people",
+      themToYou: "The reminder that people don't live in systems, they live in moments",
+    },
+    question: "What structure would create more space for presence?",
+  },
+  "architect+rooted": {
+    thesis: "One builds for everyone. The other chose to stop building. Both have found their answer.",
+    align: ["Neither is striving for personal gain", "You've both made deliberate choices"],
+    clash: ["Architect acts for the collective; Rooted has stepped back", "Building vs. being"],
+    give: {
+      youToThem: "Structures that might make your stillness possible for others",
+      themToYou: "A model of sufficiency that challenges endless building",
+    },
+    question: "What would a structure for enough look like?",
+  },
+  "architect+conscience": {
+    thesis: "One builds the commons. The other watches it. Both know structures can fail.",
+    align: ["You both distrust concentrated power", "Accountability matters to both"],
+    clash: ["Architect trusts good design; Witness trusts vigilance", "Structure vs. surveillance"],
+    give: {
+      youToThem: "Structures that make watching unnecessary",
+      themToYou: "The vigilance that keeps structures honest",
+    },
+    question: "What would a structure look like that watched itself?",
+  },
+  "architect+embers": {
+    thesis: "One builds for the future. The other preserves from the past. Both think long-term.",
+    align: ["Neither is presentist", "You both value what endures"],
+    clash: ["Architect innovates; Keeper preserves", "New structures vs. old wisdom"],
+    give: {
+      youToThem: "Memory of what structures have worked before",
+      themToYou: "Structures that carry memory forward",
+    },
+    question: "What old wisdom would make your new structures better?",
+  },
+  "architect+friction": {
+    thesis: "One builds structures. The other needs friction to grow. Tension is inevitable.",
+    align: ["Neither seeks pure comfort", "You both believe in engagement"],
+    clash: ["Architect wants smooth systems; Challenger wants struggle", "Efficiency vs. difficulty"],
+    give: {
+      youToThem: "Structures that include challenge by design",
+      themToYou: "The reminder that friction needs a frame to be generative",
+    },
+    question: "What structure would create difficulty worth having?",
+  },
+  "architect+unbound": {
+    thesis: "One builds collective structures. The other transcends structure entirely.",
+    align: ["Neither accepts individual limits as final", "You both imagine more"],
+    clash: ["Architect grounds in form; Transcendent escapes form", "Building vs. dissolving"],
+    give: {
+      youToThem: "Structures that hold space for transcendence",
+      themToYou: "A reminder of what's worth building before you leave",
+    },
+    question: "What structure would be worth transcending into?",
+    warning: "Architect can trap Transcendent in form. Transcendent can abandon Architect's work. Both losses.",
+  },
+  "alive+architect": {
+    thesis: "One builds systems. The other feels what it's like to live in them.",
+    align: ["Both care about experience", "Neither is purely abstract"],
+    clash: ["Architect thinks in structure; Feeler thinks in sensation", "Design vs. experience"],
+    give: {
+      youToThem: "Data on what your structures actually feel like",
+      themToYou: "Structures that create space for feeling",
+    },
+    question: "What would a structure built for feeling feel like?",
+  },
+  "architect+cleareyed": {
+    thesis: "One builds for everyone. The other tells the truth about everyone.",
+    align: ["Neither accepts comfortable lies about power", "You both see clearly"],
+    clash: ["Architect designs solutions; Truth-Teller questions them", "Building vs. critique"],
+    give: {
+      youToThem: "Honest assessment of what your structures actually do",
+      themToYou: "Structures for truth-telling to live inside",
+    },
+    question: "What truth about your structures have you been avoiding?",
+  },
+  "architect+between": {
+    thesis: "One knows what to build. The other isn't sure what anything should be.",
+    align: ["Neither is rigidly certain", "You're both working it out"],
+    clash: ["Architect has plans; Liminal has questions", "Structure vs. uncertainty"],
+    give: {
+      youToThem: "Structures that hold space for not-knowing",
+      themToYou: "Questions that keep your structures humble",
+    },
+    question: "What structure would honor uncertainty?",
+  },
+  "presence+swimmer": {
+    thesis: "One is fully here. The other lives in questions. Both are paying attention.",
+    align: ["Neither rushes to conclusions", "You both value depth over speed"],
+    clash: ["Present stays; Questioner swims deeper", "Being vs. seeking"],
+    give: {
+      youToThem: "Presence that grounds your questions in the moment",
+      themToYou: "Questions that deepen what presence means",
+    },
+    question: "What question could only be asked by someone fully present?",
+  },
+  "presence+rooted": {
+    thesis: "Two who chose to stay. One in attention, one in stillness. Kindred spirits.",
+    align: ["Neither is chasing the next thing", "You both know how to be here"],
+    clash: ["Present engages; Rooted stops", "Active attention vs. radical stillness"],
+    give: {
+      youToThem: "Permission to stop that isn't withdrawal",
+      themToYou: "Engagement that isn't restlessness",
+    },
+    question: "What's the difference between your stillness and theirs?",
+  },
+  "conscience+presence": {
+    thesis: "One watches for danger. The other shows up fully. Both are paying attention.",
+    align: ["Neither is checked out", "You both see what's in front of you"],
+    clash: ["Witness looks for threats; Present looks for connection", "Vigilance vs. warmth"],
+    give: {
+      youToThem: "The reminder that presence makes vigilance worth it",
+      themToYou: "Watchfulness that protects what you're present to",
+    },
+    question: "What would presence look like if you didn't have to watch?",
+  },
+  "friction+presence": {
+    thesis: "One seeks difficulty. The other seeks connection. Both require engagement.",
+    align: ["Neither avoids what's in front of them", "You both show up"],
+    clash: ["Challenger wants friction; Present wants attunement", "Struggle vs. stillness"],
+    give: {
+      youToThem: "Presence that witnesses your struggle without judging it",
+      themToYou: "The reminder that presence includes difficulty",
+    },
+    question: "What difficulty would deepen your connection?",
+  },
+  "alive+presence": {
+    thesis: "One feels everything. The other gives everything attention. Both are fully here.",
+    align: ["Neither is numb", "You both engage completely with what is"],
+    clash: ["Feeler wants more sensation; Present wants deeper attention", "Quantity vs. quality of experience"],
+    give: {
+      youToThem: "Presence that receives what you feel",
+      themToYou: "Feelings that give presence something to hold",
+    },
+    question: "What would it feel like to be fully present to everything you feel?",
+  },
+  "between+presence": {
+    thesis: "One is fully here. The other isn't sure where here is. Both are genuine.",
+    align: ["Neither is performing", "You're both honestly where you are"],
+    clash: ["Present is grounded; Liminal is searching", "Arrived vs. arriving"],
+    give: {
+      youToThem: "Presence to your uncertainty, without trying to fix it",
+      themToYou: "Questions that keep your presence from becoming complacency",
+    },
+    question: "What would presence mean if you're not sure who's being present?",
+  },
+  "rooted+swimmer": {
+    thesis: "One stopped moving. The other keeps diving deeper. Both chose depth over motion.",
+    align: ["Neither values speed for its own sake", "You've both rejected the race"],
+    clash: ["Rooted has arrived; Questioner keeps questioning", "Stillness vs. seeking"],
+    give: {
+      youToThem: "A shore to return to after swimming",
+      themToYou: "Questions that keep your rootedness alive",
+    },
+    question: "What question has your stillness been avoiding?",
+  },
+  "conscience+swimmer": {
+    thesis: "One watches for danger. The other sits with hard questions. Both take truth seriously.",
+    align: ["Neither accepts easy answers", "You both stay with discomfort"],
+    clash: ["Witness looks for threats; Questioner looks for depth", "Danger vs. mystery"],
+    give: {
+      youToThem: "Vigilance about what your questions might uncover",
+      themToYou: "Questions that make your watching more honest",
+    },
+    question: "What question would be dangerous to answer?",
+  },
+  "embers+swimmer": {
+    thesis: "One guards memory. The other swims in uncertainty. Past meets unresolved present.",
+    align: ["Neither dismisses what came before", "You both take history seriously"],
+    clash: ["Keeper has answers from the past; Questioner is still asking", "Certainty vs. uncertainty"],
+    give: {
+      youToThem: "Memory that grounds your questions",
+      themToYou: "Questions that keep your memory alive, not static",
+    },
+    question: "What question from the past still deserves asking?",
+  },
+  "friction+swimmer": {
+    thesis: "One seeks difficulty. The other seeks depth. Different kinds of intensity.",
+    align: ["Neither flees discomfort", "You both stay with what's hard"],
+    clash: ["Challenger acts; Questioner reflects", "Friction vs. contemplation"],
+    give: {
+      youToThem: "The challenge of questions without answers",
+      themToYou: "Questions about why difficulty matters",
+    },
+    question: "What's the hardest question you've been avoiding?",
+  },
+  "alive+swimmer": {
+    thesis: "One feels everything. The other questions everything. Sensation meets inquiry.",
+    align: ["Neither is defended", "You're both open to what comes"],
+    clash: ["Feeler immerses; Questioner examines", "Feeling vs. understanding"],
+    give: {
+      youToThem: "Feelings that ground your questions",
+      themToYou: "Questions about what your feelings mean",
+    },
+    question: "What do you feel that you can't explain?",
+  },
+  "between+swimmer": {
+    thesis: "Two in uncertainty. One is swimming deeper, one is on the threshold. Neither has arrived.",
+    align: ["Neither claims false certainty", "You're both honestly lost"],
+    clash: ["Questioner seeks answers; Liminal isn't sure what the questions are", "Deep vs. undefined"],
+    give: {
+      youToThem: "Questions that give shape to your uncertainty",
+      themToYou: "The freedom to not know what you're questioning",
+    },
+    question: "What if the uncertainty itself is the answer?",
+  },
+  "conscience+rooted": {
+    thesis: "One watches. One stays still. Both have committed to something.",
+    align: ["Neither is swept along", "You've both made deliberate choices"],
+    clash: ["Witness is vigilant; Rooted is at peace", "Alertness vs. stillness"],
+    give: {
+      youToThem: "Peace that doesn't require watching",
+      themToYou: "Watching that protects what's worth staying still for",
+    },
+    question: "What would you have to trust to stop watching?",
+  },
+  "mender+rooted": {
+    thesis: "One fixes things. The other stopped striving. Different answers to what needs doing.",
+    align: ["Neither is chasing the new", "You both value what's here"],
+    clash: ["Mender acts on what's broken; Rooted accepts what is", "Repair vs. acceptance"],
+    give: {
+      youToThem: "The peace of knowing some things don't need fixing",
+      themToYou: "The discernment to know when they do",
+    },
+    question: "What's broken that stillness could heal?",
+  },
+  "cleareyed+rooted": {
+    thesis: "One tells hard truths. The other found peace. Both have stopped running.",
+    align: ["Neither is performing", "You've both arrived somewhere real"],
+    clash: ["Truth-Teller speaks; Rooted is silent", "Clarity vs. stillness"],
+    give: {
+      youToThem: "Truths that don't disturb your peace",
+      themToYou: "A peace that doesn't require ignoring truth",
+    },
+    question: "What truth is your stillness protecting you from?",
+  },
+  "between+rooted": {
+    thesis: "One found ground. The other is still searching. Both are honestly where they are.",
+    align: ["Neither is performing certainty", "You're both genuine"],
+    clash: ["Rooted has stopped; Liminal hasn't started", "Arrived vs. not-yet"],
+    give: {
+      youToThem: "A model of what finding ground might look like",
+      themToYou: "The reminder that your stillness was once uncertainty too",
+    },
+    question: "What would it mean to be rooted in uncertainty?",
+  },
+  "conscience+unbound": {
+    thesis: "One watches for danger. The other transcends danger entirely. Tension between earth and sky.",
+    align: ["Neither accepts comfortable illusions", "You both see clearly"],
+    clash: ["Witness stays to watch; Transcendent leaves", "Vigilance vs. escape"],
+    give: {
+      youToThem: "Vigilance about what transcendence might leave behind",
+      themToYou: "A vision of what's beyond what you're watching",
+    },
+    question: "What would you have to trust to stop watching and transcend?",
+    warning: "Witness can trap Transcendent in fear. Transcendent can abandon what Witness protects.",
+  },
+  "conscience+mender": {
+    thesis: "One spots what's wrong. The other fixes it. Natural partners if trust holds.",
+    align: ["Neither ignores problems", "You both engage with what's broken"],
+    clash: ["Witness stays suspicious; Mender trusts repair", "Watching vs. acting"],
+    give: {
+      youToThem: "The targets worth fixing",
+      themToYou: "Evidence that watching leads somewhere",
+    },
+    question: "What's broken that you've both been avoiding?",
+  },
+  "cleareyed+conscience": {
+    thesis: "Two truth-tellers. One speaks, one watches. Together, nothing escapes.",
+    align: ["Neither tolerates lies", "You both value honesty above comfort"],
+    clash: ["Truth-Teller says it; Witness suspects it", "Speaking vs. surveilling"],
+    give: {
+      youToThem: "Truths to support what you're watching",
+      themToYou: "Evidence for the truths you're speaking",
+    },
+    question: "What truth are you both afraid to say out loud?",
+  },
+  "between+conscience": {
+    thesis: "One watches. One wonders. Both are paying attention to something.",
+    align: ["Neither is asleep", "You're both engaged with uncertainty"],
+    clash: ["Witness has suspicions; Liminal has questions", "Vigilance vs. openness"],
+    give: {
+      youToThem: "Openness that doesn't require suspicion",
+      themToYou: "The reminder that some uncertainties are dangers",
+    },
+    question: "What are you watching for that you can't name?",
+  },
+  "embers+friction": {
+    thesis: "One guards what was. The other embraces what's hard. Memory meets struggle.",
+    align: ["Neither seeks comfort", "You both value what endures"],
+    clash: ["Keeper preserves; Challenger disrupts", "Conservation vs. friction"],
+    give: {
+      youToThem: "Memory of what was worth struggling for",
+      themToYou: "The friction that keeps memory alive",
+    },
+    question: "What old struggle still deserves fighting?",
+  },
+  "alive+embers": {
+    thesis: "One feels everything now. The other remembers everything before. Sensation meets memory.",
+    align: ["Neither is detached", "You both hold onto what matters"],
+    clash: ["Feeler lives in the present; Keeper lives in the past", "Now vs. then"],
+    give: {
+      youToThem: "Memory that gives your feelings context",
+      themToYou: "Feelings that make memory alive, not dead",
+    },
+    question: "What memory are you still feeling?",
+  },
+  "embers+mender": {
+    thesis: "One preserves what was. The other fixes what is. Both value what endures.",
+    align: ["Neither discards thoughtlessly", "You both respect what's here"],
+    clash: ["Keeper wants to preserve; Mender wants to repair", "Museum vs. workshop"],
+    give: {
+      youToThem: "Knowledge of how it used to work",
+      themToYou: "Skills to make what you've preserved functional",
+    },
+    question: "What deserves repair more than preservation?",
+  },
+  "cleareyed+embers": {
+    thesis: "One tells truth. One guards memory. Both believe the record matters.",
+    align: ["Neither rewrites history", "You both value accuracy"],
+    clash: ["Truth-Teller speaks now; Keeper speaks for then", "Current vs. historical truth"],
+    give: {
+      youToThem: "Memory of truths that have been spoken before",
+      themToYou: "Clarity about what memory is actually showing",
+    },
+    question: "What truth from the past needs speaking now?",
+  },
+  "between+embers": {
+    thesis: "One guards what was. The other isn't sure what will be. Past meets uncertain future.",
+    align: ["Neither is purely present", "You're both oriented to time"],
+    clash: ["Keeper has certainty from the past; Liminal has none about the future", "Memory vs. openness"],
+    give: {
+      youToThem: "Memory that gives your uncertainty context",
+      themToYou: "Openness that keeps your memory from becoming a cage",
+    },
+    question: "What from the past belongs in your uncertain future?",
+  },
+  "friction+mender": {
+    thesis: "One embraces difficulty. The other fixes what's broken. Different responses to damage.",
+    align: ["Neither flees from what's hard", "You both engage with struggle"],
+    clash: ["Challenger uses difficulty; Mender resolves it", "Embracing vs. fixing"],
+    give: {
+      youToThem: "Difficulty that makes repair meaningful",
+      themToYou: "The humility that some difficulties need fixing, not embracing",
+    },
+    question: "What's broken that difficulty could heal better than repair?",
+  },
+  "cleareyed+friction": {
+    thesis: "One tells hard truths. The other embraces what's hard. Both face what others flee.",
+    align: ["Neither seeks comfort", "You both stay with discomfort"],
+    clash: ["Truth-Teller sees clearly; Challenger seeks difficulty", "Clarity vs. struggle"],
+    give: {
+      youToThem: "Truth about what you're struggling with",
+      themToYou: "The stamina to act on hard truths",
+    },
+    question: "What truth would be difficult enough to matter?",
+  },
+  "between+friction": {
+    thesis: "One seeks difficulty. The other isn't sure what to seek. Certainty meets uncertainty.",
+    align: ["Neither is comfortable", "You're both in motion"],
+    clash: ["Challenger has direction; Liminal has questions", "Purpose vs. openness"],
+    give: {
+      youToThem: "Difficulty that gives shape to your uncertainty",
+      themToYou: "Questions about whether your difficulty is the right one",
+    },
+    question: "What would difficulty teach you that certainty couldn't?",
+  },
+  "alive+unbound": {
+    thesis: "One wants to feel everything here. The other wants to transcend here entirely.",
+    align: ["Neither accepts limits", "You both want more than this"],
+    clash: ["Feeler stays embodied; Transcendent leaves the body", "Sensation vs. escape"],
+    give: {
+      youToThem: "What embodiment feels like, so you know what you're transcending",
+      themToYou: "A vision of feeling beyond current limits",
+    },
+    question: "What would transcendence feel like?",
+    warning: "Transcendent can dismiss Feeler as attached. Feeler can dismiss Transcendent as avoidant.",
+  },
+  "mender+unbound": {
+    thesis: "One fixes what's here. The other leaves what's here behind. Different exits from brokenness.",
+    align: ["Neither accepts things as they are", "You both respond to what's wrong"],
+    clash: ["Mender stays to repair; Transcendent transcends the need", "Fixing vs. escaping"],
+    give: {
+      youToThem: "The choice to repair before transcending",
+      themToYou: "A vision of what's beyond repair",
+    },
+    question: "What's broken that transcendence wouldn't fix either?",
+  },
+  "cleareyed+unbound": {
+    thesis: "One sees what is. The other imagines what's beyond. Ground and sky.",
+    align: ["Neither accepts comfortable illusions", "You both see clearly, differently"],
+    clash: ["Truth-Teller is grounded; Transcendent is reaching", "Here vs. elsewhere"],
+    give: {
+      youToThem: "Clear sight of what you're transcending from",
+      themToYou: "A vision that makes truth-telling more than accounting",
+    },
+    question: "What truth about transcendence are you avoiding?",
+  },
+  "between+unbound": {
+    thesis: "One is leaving. The other hasn't decided. Different relationships to being here.",
+    align: ["Neither is fully committed to what is", "You're both in transition"],
+    clash: ["Transcendent has direction; Liminal is still finding it", "Escaping vs. searching"],
+    give: {
+      youToThem: "A destination for your uncertainty",
+      themToYou: "Questions about whether transcendence is your answer",
+    },
+    question: "What if your uncertainty is already a form of transcendence?",
+  },
+  "alive+mender": {
+    thesis: "One feels everything. The other fixes everything. Both respond to what's in front of them.",
+    align: ["Neither is detached", "You both engage with reality"],
+    clash: ["Feeler receives; Mender acts", "Feeling vs. fixing"],
+    give: {
+      youToThem: "The feeling of what you've repaired",
+      themToYou: "Action that gives your feelings somewhere to go",
+    },
+    question: "What would it feel like to fix something?",
+  },
+  "alive+cleareyed": {
+    thesis: "One feels everything. The other sees everything. Both are fully engaged.",
+    align: ["Neither is defended", "You both take in what's here"],
+    clash: ["Feeler absorbs; Truth-Teller analyzes", "Sensation vs. clarity"],
+    give: {
+      youToThem: "Truth about what you're feeling",
+      themToYou: "Feeling that makes truth matter",
+    },
+    question: "What truth do you feel but can't say?",
+  },
+  "alive+between": {
+    thesis: "One feels everything. The other isn't sure what to feel. Intensity meets uncertainty.",
+    align: ["Neither is performing", "You're both honestly where you are"],
+    clash: ["Feeler is certain of sensation; Liminal is certain of nothing", "Feeling vs. questioning"],
+    give: {
+      youToThem: "Feelings that give shape to your uncertainty",
+      themToYou: "Questions about what your feelings mean",
+    },
+    question: "What would you feel if you let yourself not know?",
+  },
+  "cleareyed+mender": {
+    thesis: "One sees what's broken. The other fixes it. Truth and repair.",
+    align: ["Neither ignores problems", "You both engage with what's wrong"],
+    clash: ["Truth-Teller diagnoses; Mender acts", "Seeing vs. doing"],
+    give: {
+      youToThem: "Clarity about what needs repair",
+      themToYou: "Evidence that truth leads to action",
+    },
+    question: "What truth would repair something?",
+  },
+  "between+mender": {
+    thesis: "One fixes what's broken. The other isn't sure what's whole. Different relationships to repair.",
+    align: ["Neither is in denial", "You're both honest about imperfection"],
+    clash: ["Mender acts; Liminal waits", "Certainty vs. uncertainty about what needs fixing"],
+    give: {
+      youToThem: "A model of action without certainty",
+      themToYou: "Questions about what repair actually means",
+    },
+    question: "What if your uncertainty is what needs mending?",
   },
 };
 

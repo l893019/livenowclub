@@ -83,6 +83,7 @@ export function GroupRadarStep({
   // Skip animation on revisit - show all dots immediately
   const [visibleCount, setVisibleCount] = useState(members.length);
   const [showSummary, setShowSummary] = useState(true);
+  const [hoveredMemberId, setHoveredMemberId] = useState<string | null>(null);
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const _ = utopiaName; // Keep prop for API compatibility
@@ -196,6 +197,7 @@ export function GroupRadarStep({
             const svgCoords = toSvgCoords(pos, radarSize, padding);
             const isNewest = index === newestMemberIndex;
             const isCurrentUser = member.id === currentUserId;
+            const isHovered = member.id === hoveredMemberId;
             const arch = archetypes[member.archetype];
 
             // Position label to avoid overlap with radar edges
@@ -211,16 +213,18 @@ export function GroupRadarStep({
             return (
               <button
                 key={member.id}
-                className={`${styles.dotButton} ${isNewest ? styles.pulseIn : ""} ${isCurrentUser ? styles.youDot : ""}`}
+                className={`${styles.dotButton} ${isNewest ? styles.pulseIn : ""} ${isCurrentUser ? styles.youDot : ""} ${isHovered ? styles.dotHovered : ""}`}
                 style={{
                   left: svgCoords.cx - 20,
                   top: svgCoords.cy - 20,
                 }}
                 onClick={() => onMemberClick(member.id)}
+                onMouseEnter={() => setHoveredMemberId(member.id)}
+                onMouseLeave={() => setHoveredMemberId(null)}
                 aria-label={isCurrentUser ? "Your position" : `View ${member.name}'s profile`}
               >
                 <span
-                  className={`${styles.dotLabel} ${labelOnLeft ? styles.labelLeft : styles.labelRight} ${isCurrentUser ? styles.youLabel : ""}`}
+                  className={`${styles.dotLabel} ${labelOnLeft ? styles.labelLeft : styles.labelRight} ${isCurrentUser ? styles.youLabel : ""} ${isHovered ? styles.labelHovered : ""}`}
                   style={{
                     color: arch?.color || "#fff",
                     transform: `translateY(${yOffset}px)`,
@@ -234,13 +238,43 @@ export function GroupRadarStep({
         </div>
       </div>
 
+      {/* Interactive member legend */}
+      <div className={styles.legend}>
+        {members.map((member) => {
+          const arch = archetypes[member.archetype];
+          const isCurrentUser = member.id === currentUserId;
+          const isHovered = member.id === hoveredMemberId;
+          const displayName = isCurrentUser ? "You" : (member.name || "Anonymous");
+          const shortArchName = arch?.name?.replace(/^The /, "") || member.archetype;
+
+          return (
+            <button
+              key={member.id}
+              className={`${styles.legendItem} ${isCurrentUser ? styles.legendItemYou : ""} ${isHovered ? styles.legendItemHovered : ""}`}
+              onClick={() => onMemberClick(member.id)}
+              onMouseEnter={() => setHoveredMemberId(member.id)}
+              onMouseLeave={() => setHoveredMemberId(null)}
+            >
+              <span
+                className={styles.legendDot}
+                style={{ backgroundColor: arch?.color || "#888" }}
+              />
+              <span className={styles.legendName}>{displayName}</span>
+              <span className={styles.legendArchetype} style={{ color: arch?.color }}>
+                {shortArchName}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+
       {/* Summary text */}
       <div className={`${styles.summary} ${showSummary ? styles.visible : ""}`}>
         <p className={styles.summaryText}>{summary}</p>
       </div>
 
       {/* Tap hint */}
-      <p className={styles.tapHint}>Tap any dot to explore</p>
+      <p className={styles.tapHint}>Tap anyone to compare worldviews</p>
     </div>
   );
 }

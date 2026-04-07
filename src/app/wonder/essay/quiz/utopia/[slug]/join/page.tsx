@@ -3,22 +3,23 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getUtopia } from "@/lib/utopia";
 import { InviterRadarPreview } from "./InviterRadarPreview";
+import Header from "@/components/Header";
 
 const archetypeData: Record<string, { name: string; color: string }> = {
-  citizen: { name: "Citizen of Abundance", color: "#3db9a4" },
-  shaper: { name: "Shaper of Change", color: "#f4a03f" },
-  architect: { name: "Architect of the Commons", color: "#9b8fef" },
-  presence: { name: "Keeper of Presence", color: "#e8178a" },
-  swimmer: { name: "Swimmer in Deep Water", color: "#6b8fef" },
-  rooted: { name: "Rooted in Stillness", color: "#7ed6a4" },
-  conscience: { name: "Conscience Before Comfort", color: "#d64545" },
-  embers: { name: "Keeper of Embers", color: "#c97d3a" },
-  friction: { name: "Alive in the Friction", color: "#ff6b35" },
-  unbound: { name: "Unbound from Form", color: "#a855f7" },
-  alive: { name: "Alive to Everything", color: "#f472b6" },
-  mender: { name: "Mender of What Remains", color: "#10b981" },
-  cleareyed: { name: "Clear-Eyed in the Storm", color: "#64748b" },
-  between: { name: "In the Space Between", color: "#8b8b8b" },
+  citizen: { name: "The Abundant", color: "#3db9a4" },
+  shaper: { name: "The Builder", color: "#f4a03f" },
+  architect: { name: "The Architect", color: "#9b8fef" },
+  presence: { name: "The Present", color: "#e8178a" },
+  swimmer: { name: "The Questioner", color: "#6b8fef" },
+  rooted: { name: "The Rooted", color: "#7ed6a4" },
+  conscience: { name: "The Witness", color: "#d64545" },
+  embers: { name: "The Keeper", color: "#c97d3a" },
+  friction: { name: "The Challenger", color: "#ff6b35" },
+  unbound: { name: "The Transcendent", color: "#a855f7" },
+  alive: { name: "The Feeler", color: "#f472b6" },
+  mender: { name: "The Mender", color: "#10b981" },
+  cleareyed: { name: "The Truth-Teller", color: "#64748b" },
+  between: { name: "The Liminal", color: "#8b8b8b" },
 };
 
 type Props = {
@@ -37,14 +38,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const founderName = founder?.name || "Someone";
   const founderArchetype = founder?.archetype ? archetypeData[founder.archetype]?.name : "";
 
+  const ogImage = `https://livenowclub.com/api/og/utopia/${slug}`;
+
   return {
     title: `${founderName} invited you | ${room.name}`,
-    description: `${founderName} is a ${founderArchetype}. Take the quiz to see how your worldviews fit together.`,
+    description: `${founderName} is ${founderArchetype}. Take the quiz to see how your worldviews fit together.`,
     openGraph: {
       title: `${founderName} invited you to compare worldviews`,
-      description: `They're a ${founderArchetype}. Take the quiz to see how your worldviews fit together.`,
+      description: `They're ${founderArchetype}. Take the quiz to see how your worldviews fit together.`,
       url: `https://livenowclub.com/wonder/essay/quiz/utopia/${slug}/join`,
       type: "website",
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${founderName} invited you to compare worldviews`,
+      description: `They're ${founderArchetype}. Take the quiz to see how your worldviews fit together.`,
+      images: [ogImage],
     },
   };
 }
@@ -86,32 +96,6 @@ export default async function JoinUtopiaPage({ params }: Props) {
           font-weight: 300;
           min-height: 100vh;
         }
-        .header {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          z-index: 1000;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 16px 32px;
-          background: rgba(250, 247, 242, 0.95);
-          backdrop-filter: blur(20px);
-        }
-        .logo-img { height: 40px; width: auto; }
-        .nav { display: flex; gap: 24px; }
-        .nav a {
-          font-size: 12px;
-          font-weight: 400;
-          text-transform: uppercase;
-          letter-spacing: 0.1em;
-          color: var(--text-dim);
-          text-decoration: none;
-          transition: color 0.2s;
-        }
-        .nav a:hover { color: var(--accent-pink); }
-
         .join-container {
           min-height: 100vh;
           display: flex;
@@ -216,9 +200,6 @@ export default async function JoinUtopiaPage({ params }: Props) {
         }
 
         @media (max-width: 640px) {
-          .header { padding: 12px 16px; }
-          .nav { gap: 16px; }
-          .nav a { font-size: 10px; }
           .inviter-name { font-size: 1.5rem; }
           .cta-button {
             padding: 16px 32px;
@@ -230,17 +211,7 @@ export default async function JoinUtopiaPage({ params }: Props) {
       <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
       <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet" />
 
-      <header className="header">
-        <Link href="/" className="logo">
-          <img src="/images/logo-handwritten.png" alt="The Live Now Club" className="logo-img" />
-        </Link>
-        <nav className="nav">
-          <Link href="/read">Read</Link>
-          <Link href="/navigate">Navigate</Link>
-          <Link href="/wonder">Wonder</Link>
-          <Link href="/connect">Connect</Link>
-        </nav>
-      </header>
+      <Header />
 
       <main className="join-container">
         <div className="inviter-section">

@@ -4,8 +4,7 @@ import { RadarChart } from "@/components/RadarChart";
 import { archetypePositions, getGroupCenterOfGravity } from "@/lib/radar-positions";
 import {
   archetypes,
-  getDetailedPairDynamic,
-  generateFallbackDynamic,
+  getPairDynamicExpanded,
   getGroupBook,
 } from "@/lib/archetypes";
 import type { UtopiaMember } from "@/lib/utopia";
@@ -23,9 +22,11 @@ export function TwoPersonView({ members, utopiaName }: TwoPersonViewProps) {
   const archA = archetypes[personA.archetype];
   const archB = archetypes[personB.archetype];
 
-  const dynamic =
-    getDetailedPairDynamic(personA.archetype, personB.archetype) ||
-    generateFallbackDynamic(personA.archetype, personB.archetype);
+  // Extract short names (e.g., "Abundant" from "The Abundant")
+  const shortNameA = archA?.name?.replace(/^The /, "") || personA.archetype;
+  const shortNameB = archB?.name?.replace(/^The /, "") || personB.archetype;
+
+  const dynamic = getPairDynamicExpanded(personA.archetype, personB.archetype);
 
   const book = getGroupBook([personA.archetype, personB.archetype]);
 
@@ -41,9 +42,9 @@ export function TwoPersonView({ members, utopiaName }: TwoPersonViewProps) {
       <div className={styles.header}>
         <span className={styles.label}>A Utopia of Two</span>
         <h2 className={styles.names}>
-          <span style={{ color: archA?.color }}>{archA?.name?.split(" ")[0]}</span>
+          <span style={{ color: archA?.color }}>{shortNameA}</span>
           {" × "}
-          <span style={{ color: archB?.color }}>{archB?.name?.split(" ")[0]}</span>
+          <span style={{ color: archB?.color }}>{shortNameB}</span>
         </h2>
         <p className={styles.people}>
           {personA.name || "Anonymous"} & {personB.name || "Anonymous"}
@@ -62,6 +63,10 @@ export function TwoPersonView({ members, utopiaName }: TwoPersonViewProps) {
       </div>
 
       <div className={styles.reading}>
+        <section className={styles.thesisSection}>
+          <p className={styles.thesis}>{dynamic.thesis}</p>
+        </section>
+
         <section className={styles.section}>
           <h3 className={styles.sectionLabel}>Where you align</h3>
           <ul className={styles.list}>
@@ -82,15 +87,35 @@ export function TwoPersonView({ members, utopiaName }: TwoPersonViewProps) {
 
         <section className={styles.section}>
           <h3 className={styles.sectionLabel}>What you give each other</h3>
-          <p className={styles.giveText}>{dynamic.give}</p>
+          <div className={styles.giveCards}>
+            <div className={styles.giveCard}>
+              <span className={styles.giveName} style={{ color: archA?.color }}>
+                {personA.name || shortNameA}
+              </span>
+              <span className={styles.giveArrow}>→</span>
+              <p className={styles.giveText}>{dynamic.give.youToThem}</p>
+            </div>
+            <div className={styles.giveCard}>
+              <span className={styles.giveName} style={{ color: archB?.color }}>
+                {personB.name || shortNameB}
+              </span>
+              <span className={styles.giveArrow}>→</span>
+              <p className={styles.giveText}>{dynamic.give.themToYou}</p>
+            </div>
+          </div>
         </section>
 
         <section className={styles.section}>
-          <h3 className={styles.sectionLabel}>What this pair needs</h3>
-          <p className={styles.needText}>
-            Someone to challenge both of you. A third perspective to break the loop.
-          </p>
+          <h3 className={styles.sectionLabel}>A question for you both</h3>
+          <p className={styles.questionText}>{dynamic.question}</p>
         </section>
+
+        {dynamic.warning && (
+          <section className={styles.section}>
+            <h3 className={styles.sectionLabel}>Watch out for</h3>
+            <p className={styles.warningText}>{dynamic.warning}</p>
+          </section>
+        )}
 
         {book && (
           <section className={styles.section}>

@@ -5,72 +5,72 @@ export const runtime = 'edge';
 
 const archetypes: Record<string, { name: string; utopia: string; color: string }> = {
   citizen: {
-    name: "Citizen of Abundance",
+    name: "The Abundant",
     utopia: "Your utopia has no word for \"job.\" They used to, but it fell out of the language three centuries ago.",
     color: "#3db9a4"
   },
   shaper: {
-    name: "Shaper of Change",
+    name: "The Builder",
     utopia: "Your utopia is never finished. Everything is always changing.",
     color: "#f4a03f"
   },
   architect: {
-    name: "Architect of the Commons",
+    name: "The Architect",
     utopia: "Your utopia belongs to everyone and answers to no one.",
     color: "#9b8fef"
   },
   presence: {
-    name: "Keeper of Presence",
+    name: "The Present",
     utopia: "Your utopia decided that the most valuable thing in the universe was undivided attention.",
     color: "#e8178a"
   },
   swimmer: {
-    name: "Swimmer in Deep Water",
+    name: "The Questioner",
     utopia: "Your utopia is a civilization of philosophers.",
     color: "#6b8fef"
   },
   rooted: {
-    name: "Rooted in Stillness",
+    name: "The Rooted",
     utopia: "Your utopia returned to a simpler way of life, on purpose.",
     color: "#7ed6a4"
   },
   conscience: {
-    name: "Conscience Before Comfort",
+    name: "The Witness",
     utopia: "Your utopia built accountability into the architecture.",
     color: "#d64545"
   },
   embers: {
-    name: "Keeper of Embers",
+    name: "The Keeper",
     utopia: "Your utopia's most protected resource is not water or energy. It's memory.",
     color: "#c97d3a"
   },
   friction: {
-    name: "Alive in the Friction",
+    name: "The Challenger",
     utopia: "Your utopia kept one part of the world deliberately dangerous.",
     color: "#ff6b35"
   },
   unbound: {
-    name: "Unbound from Form",
+    name: "The Transcendent",
     utopia: "Your utopia transcended the physical. You exist as pure consciousness now.",
     color: "#a855f7"
   },
   alive: {
-    name: "Alive to Everything",
+    name: "The Feeler",
     utopia: "Your utopia engineered twelve new senses and a sunset that lasts all day.",
     color: "#f472b6"
   },
   mender: {
-    name: "Mender of What Remains",
+    name: "The Mender",
     utopia: "Your utopia decided that the most advanced act of engineering was making what already existed work again.",
     color: "#10b981"
   },
   cleareyed: {
-    name: "Clear-Eyed in the Storm",
+    name: "The Truth-Teller",
     utopia: "Your utopia has one person whose only job is to tell the truth.",
     color: "#64748b"
   },
   between: {
-    name: "In the Space Between",
+    name: "The Liminal",
     utopia: "Your utopia just started to exist. Nothing is built yet.",
     color: "#8b8b8b"
   }

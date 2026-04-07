@@ -153,6 +153,68 @@
   text-align: left;
 }
 
+/* One-sentence worldview - shareable */
+.oneSentence {
+  background: rgba(232, 23, 138, 0.04);
+  border: 1px solid rgba(232, 23, 138, 0.15);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.oneSentenceText {
+  font-family: 'Satoshi', system-ui, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.7;
+  color: #2d2a26;
+  margin: 0 0 16px;
+}
+
+.copyButton {
+  background: #e8178a;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 24px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.copyButton:hover {
+  background: #d01579;
+}
+
+.copyButton:active {
+  transform: scale(0.97);
+}
+
+/* Famous Figures */
+.famousFigures {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.famousFiguresLabel {
+  font-size: 0.85rem;
+  color: rgba(45, 42, 38, 0.5);
+  margin: 0 0 8px;
+}
+
+.famousFiguresList {
+  font-family: 'Satoshi', system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2d2a26;
+  margin: 0;
+  line-height: 1.6;
+}
+
 /* Sections */
 .section {
   margin-bottom: 2rem;

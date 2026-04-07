@@ -1,7 +1,7 @@
 "use client";
 
 import { RadarChart } from "@/components/RadarChart";
-import { archetypePositions } from "@/lib/radar-positions";
+import { archetypePositions, getCompatibilityPercentage } from "@/lib/radar-positions";
 import {
   archetypes,
   getAnalyticalPairDynamic,
@@ -65,6 +65,9 @@ export function RelationshipStep({
   // Get analytical dynamic content
   const dynamic = getAnalyticalPairDynamic(you.archetype, them.archetype);
 
+  // Calculate compatibility percentage
+  const compatibility = getCompatibilityPercentage(you.archetype, them.archetype);
+
   const userDots = [
     {
       id: you.id,
@@ -97,6 +100,10 @@ export function RelationshipStep({
         <p className={styles.subtitle}>
           {yourArchetype?.name} & {theirArchetype?.name}
         </p>
+        <div className={styles.compatibilityBadge}>
+          <span className={styles.compatibilityNumber}>{compatibility}%</span>
+          <span className={styles.compatibilityLabel}>aligned</span>
+        </div>
       </header>
 
       {/* Radar Card */}

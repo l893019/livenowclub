@@ -78,12 +78,67 @@
   color: #e8178a;
 }
 
-.giveText,
-.needText {
-  font-size: 0.95rem;
+.thesisSection {
+  text-align: center;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(45, 42, 38, 0.1);
+}
+
+.thesis {
+  font-size: 1.1rem;
   font-style: italic;
-  color: rgba(45, 42, 38, 0.8);
+  color: rgba(45, 42, 38, 0.85);
   line-height: 1.7;
+  margin: 0;
+}
+
+.giveCards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.giveCard {
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.giveName {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.giveArrow {
+  margin-left: 8px;
+  color: rgba(45, 42, 38, 0.3);
+}
+
+.giveText {
+  font-size: 0.95rem;
+  color: rgba(45, 42, 38, 0.8);
+  line-height: 1.6;
+  margin: 8px 0 0 0;
+}
+
+.questionText {
+  font-size: 1rem;
+  font-style: italic;
+  color: rgba(45, 42, 38, 0.85);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.warningText {
+  font-size: 0.95rem;
+  color: rgba(45, 42, 38, 0.7);
+  line-height: 1.6;
+  margin: 0;
+  padding: 12px 16px;
+  background: rgba(214, 69, 69, 0.06);
+  border-radius: 8px;
+  border-left: 3px solid rgba(214, 69, 69, 0.4);
 }
 
 .bookCard {

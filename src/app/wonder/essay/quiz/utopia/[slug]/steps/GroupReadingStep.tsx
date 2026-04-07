@@ -83,9 +83,9 @@ export function GroupReadingStep({
     const myArchetype = me ? archetypes[me.archetype] : null;
     const myArchetypeName = myArchetype?.name || "a unique worldview";
 
-    // Share text includes archetype: "I'm a Swimmer in Deep Water. What are you?"
+    // Share text includes archetype: "I'm The Questioner. What are you?"
     const shareText = me
-      ? `I'm a ${myArchetypeName}. What are you? Take the quiz and join my group.`
+      ? `I'm ${myArchetypeName}. What are you? Take the quiz and join my group.`
       : `Take the quiz and join our utopia`;
 
     if (navigator.share) {
@@ -99,9 +99,8 @@ export function GroupReadingStep({
         // User cancelled
       }
     } else {
-      const fullText = `${shareText}\n\n${inviteUrl}`;
-      await navigator.clipboard.writeText(fullText);
-      alert("Invite link copied to clipboard!");
+      await navigator.clipboard.writeText(inviteUrl);
+      alert("Invite link copied!");
     }
   };
 

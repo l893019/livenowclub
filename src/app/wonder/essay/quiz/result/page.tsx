@@ -13,10 +13,10 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const userName = typeof params.n === 'string' ? params.n : null;
   const data = archetypes[archetypeKey] || archetypes.citizen;
 
-  // Personalized title for shared results: "[Name] is a Swimmer in Deep Water. What are you?"
+  // Personalized title for shared results: "[Name] is The Questioner. What are you?"
   // Falls back to generic title if no name provided
   const ogTitle = userName
-    ? `${userName} is a ${data.name}. What are you?`
+    ? `${userName} is ${data.name}. What are you?`
     : "What's your post-scarcity worldview?";
 
   // Use OG API for dynamic image generation with name if provided
@@ -56,18 +56,10 @@ export default async function QuizResultPage({ searchParams }: Props) {
   const compareUserId = typeof params.compare === 'string' ? params.compare : undefined;
   const data = archetypes[archetypeKey] || archetypes.citizen;
 
-  const imageUrl = `/wonder/essay/quiz/images/utopia-${archetypeKey}.png`;
-
   return (
     <ResultPageClient
-      archetypeName={data.name}
       archetypeKey={archetypeKey}
       archetypeColor={data.color}
-      utopiaText={data.utopia}
-      imageUrl={imageUrl}
-      blindSpot={data.blindSpot}
-      compatibility={data.compatibility}
-      books={data.books}
       compareUserId={compareUserId}
     />
   );

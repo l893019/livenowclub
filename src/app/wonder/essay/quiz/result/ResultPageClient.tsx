@@ -1,49 +1,20 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
-import { RevealAnimation } from "./RevealAnimation";
 import { ReadingPage } from "./ReadingPage";
 
 type ResultPageClientProps = {
-  archetypeName: string;
   archetypeKey: string;
   archetypeColor: string;
-  utopiaText: string;
-  imageUrl: string;
-  blindSpot: string;
-  compatibility: { ally: string; tension: string; need: string };
-  books: { title: string; author: string; reason: string }[];
   compareUserId?: string;
 };
 
 export function ResultPageClient({
-  archetypeName,
   archetypeKey,
   archetypeColor,
-  utopiaText,
-  imageUrl,
   compareUserId,
 }: ResultPageClientProps) {
-  const [showReveal, setShowReveal] = useState(true);
-
-  // Auto-advance reveal after 4 seconds, or tap to continue
-  useEffect(() => {
-    if (!showReveal) return;
-
-    const timer = setTimeout(() => {
-      setShowReveal(false);
-    }, 4000);
-
-    return () => clearTimeout(timer);
-  }, [showReveal]);
-
-  const handleRevealComplete = useCallback(() => {
-    setShowReveal(false);
-  }, []);
-
   return (
     <>
-      {/* Global styles for fonts and CSS variables */}
       <style>{`
         :root {
           --bg-deep: #faf6f1;
@@ -69,17 +40,7 @@ export function ResultPageClient({
       <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
       <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet" />
 
-      {showReveal && (
-        <RevealAnimation
-          archetypeName={archetypeName}
-          archetypeColor={archetypeColor}
-          utopiaText={utopiaText.replace(/^Their /i, "Your ")}
-          imageUrl={imageUrl}
-          onComplete={handleRevealComplete}
-        />
-      )}
-
-      {!showReveal && <ReadingPage archetypeKey={archetypeKey} compareUserId={compareUserId} />}
+      <ReadingPage archetypeKey={archetypeKey} compareUserId={compareUserId} />
     </>
   );
 }

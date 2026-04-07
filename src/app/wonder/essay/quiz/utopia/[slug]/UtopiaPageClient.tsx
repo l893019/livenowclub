@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import Header from "@/components/Header";
 import { JoinAnimation } from "./JoinAnimation";
 import { GroupRadarStep } from "./steps/GroupRadarStep";
 import { GroupReadingStep } from "./steps/GroupReadingStep";
@@ -165,9 +166,9 @@ export function UtopiaPageClient({
     const myArchetype = me ? archetypes[me.archetype] : null;
     const myArchetypeName = myArchetype?.name || "a unique worldview";
 
-    // Share text includes archetype: "I'm a Swimmer in Deep Water. What are you? Take the quiz and join my group."
+    // Share text includes archetype: "I'm The Questioner. What are you? Take the quiz and join my group."
     const shareText = me
-      ? `I'm a ${myArchetypeName}. What are you? Take the quiz and join my group.`
+      ? `I'm ${myArchetypeName}. What are you? Take the quiz and join my group.`
       : `Join ${utopiaName} — a utopia of ${members.length}.`;
 
     if (navigator.share) {
@@ -177,10 +178,9 @@ export function UtopiaPageClient({
         // User cancelled or error
       }
     } else {
-      // Copy both text and URL for better sharing
-      const fullText = `${shareText}\n\n${shareUrl}`;
-      await navigator.clipboard.writeText(fullText);
-      alert("Link copied to clipboard!");
+      // Copy just the URL - link preview will show the OG image and context
+      await navigator.clipboard.writeText(shareUrl);
+      alert("Link copied!");
     }
   };
 
@@ -329,7 +329,17 @@ export function UtopiaPageClient({
           (() => {
             const me = members.find((m) => m.id === currentUserId);
             if (!me) return <JoinUtopiaCard slug={slug} utopiaName={utopiaName} memberCount={members.length} />;
-            return <YourArchetypeCard member={me} onClick={() => setCurrentView("profile")} />;
+            return (
+              <>
+                <YourArchetypeCard member={me} onClick={() => setCurrentView("profile")} />
+                <button
+                  className={styles.viewProfileLink}
+                  onClick={() => setCurrentView("profile")}
+                >
+                  View Your Full Profile →
+                </button>
+              </>
+            );
           })()
         ) : (
           <JoinUtopiaCard slug={slug} utopiaName={utopiaName} memberCount={members.length} />
@@ -350,22 +360,6 @@ export function UtopiaPageClient({
       </main>
       <Footer />
     </div>
-  );
-}
-
-function Header() {
-  return (
-    <header className={styles.header}>
-      <Link href="/" className={styles.logo}>
-        <img src="/images/logo-handwritten.png" alt="The Live Now Club" className={styles.logoImg} />
-      </Link>
-      <nav className={styles.nav}>
-        <Link href="/read">Read</Link>
-        <Link href="/navigate">Navigate</Link>
-        <Link href="/wonder">Wonder</Link>
-        <Link href="/connect">Connect</Link>
-      </nav>
-    </header>
   );
 }
 

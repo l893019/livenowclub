@@ -9,20 +9,20 @@ type PlanetVisualizationProps = {
 
 // Archetype colors and names
 const archetypeInfo: Record<string, { color: string; name: string }> = {
-  citizen: { color: "#3db9a4", name: "Citizen of Abundance" },
-  shaper: { color: "#f4a03f", name: "Shaper of Change" },
-  architect: { color: "#9b8fef", name: "Architect of the Commons" },
-  presence: { color: "#e8178a", name: "Keeper of Presence" },
-  swimmer: { color: "#6b8fef", name: "Swimmer in Deep Water" },
-  rooted: { color: "#7ed6a4", name: "Rooted in Stillness" },
-  conscience: { color: "#d64545", name: "Conscience Before Comfort" },
-  embers: { color: "#c97d3a", name: "Keeper of Embers" },
-  friction: { color: "#ff6b35", name: "Alive in the Friction" },
-  unbound: { color: "#a855f7", name: "Unbound from Form" },
-  alive: { color: "#f472b6", name: "Alive to Everything" },
-  mender: { color: "#10b981", name: "Mender of What Remains" },
-  cleareyed: { color: "#64748b", name: "Clear-Eyed in the Storm" },
-  between: { color: "#8b8b8b", name: "In the Space Between" },
+  citizen: { color: "#3db9a4", name: "The Abundant" },
+  shaper: { color: "#f4a03f", name: "The Builder" },
+  architect: { color: "#9b8fef", name: "The Architect" },
+  presence: { color: "#e8178a", name: "The Present" },
+  swimmer: { color: "#6b8fef", name: "The Questioner" },
+  rooted: { color: "#7ed6a4", name: "The Rooted" },
+  conscience: { color: "#d64545", name: "The Witness" },
+  embers: { color: "#c97d3a", name: "The Keeper" },
+  friction: { color: "#ff6b35", name: "The Challenger" },
+  unbound: { color: "#a855f7", name: "The Transcendent" },
+  alive: { color: "#f472b6", name: "The Feeler" },
+  mender: { color: "#10b981", name: "The Mender" },
+  cleareyed: { color: "#64748b", name: "The Truth-Teller" },
+  between: { color: "#8b8b8b", name: "The Liminal" },
 };
 
 const allArchetypes = Object.keys(archetypeInfo);

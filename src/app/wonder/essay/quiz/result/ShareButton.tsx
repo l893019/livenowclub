@@ -18,8 +18,8 @@ export default function ShareButton({ shareText, shareUrl }: ShareButtonProps) {
         // User cancelled or error
       }
     } else {
-      await navigator.clipboard.writeText(shareText + '\n\n' + shareUrl);
-      alert('Copied to clipboard!');
+      await navigator.clipboard.writeText(shareUrl);
+      alert('Link copied!');
     }
   };
 

@@ -273,6 +273,23 @@
   width: 100%;
 }
 
+.viewProfileLink {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #e8178a;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.viewProfileLink:hover {
+  opacity: 0.8;
+}
+
 .myUtopias {
   margin-top: 16px;
   font-size: 0.85rem;

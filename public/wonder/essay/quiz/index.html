@@ -1274,8 +1274,8 @@
         </div>
       </div>
 
-      <!-- YOUR NAME -->
-      <div class="screen" id="screen-name">
+      <!-- PRE-QUIZ NAME (optional, before starting) -->
+      <div class="screen" id="screen-prequiz-name">
         <div class="name-content">
           <div class="name-label">Before we begin</div>
           <p class="name-subtitle">7 questions to discover your worldview.</p>
@@ -1597,7 +1597,7 @@
     // 14 ARCHETYPES
     const archetypes = {
       citizen: {
-        name: "Citizen of Abundance",
+        name: "The Abundant",
         description: "Let the machines handle the drudgery. You have better things to do with being alive. You know how power works and you know that utopia still needs someone watching the edges. You also trust that intelligence, properly distributed, tends toward good. Too much freedom will always be preferable to too little. Comfort doesn't frighten you. Boredom does.",
         utopia: "Your utopia has no word for \"job.\" They used to, but it fell out of the language three centuries ago.",
         blindSpot: "You sometimes mistake access for equity. Everyone having options is not the same as everyone being free.",
@@ -1614,7 +1614,7 @@
         }
       },
       shaper: {
-        name: "Shaper of Change",
+        name: "The Builder",
         description: "You don't trust stillness. The moment you stop adapting, you start calcifying, and you've seen it happen to every institution, every relationship, every version of yourself you've held onto too long. The transition ahead is raw material. The future is something you build with whatever is at hand, including the wreckage. You've probably already started.",
         utopia: "Your utopia is never finished. Everything is always changing.",
         blindSpot: "You sometimes mistake movement for progress. Tearing something down and building something new can be its own form of running away.",
@@ -1631,7 +1631,7 @@
         }
       },
       architect: {
-        name: "Architect of the Commons",
+        name: "The Architect",
         description: "You focus on the structures. Because the best people in the world will still reproduce the old hierarchies if the structures allow it. You'd rather build something imperfect and collectively owned than something elegant and controlled by a few. Mutual aid is a practice, and it requires showing up. You show up.",
         utopia: "Your utopia belongs to everyone and answers to no one. It doesn't work perfectly but it belongs to the people inside it.",
         blindSpot: "You sometimes love the system more than the people inside it. The meeting can become more important than what the meeting was for.",
@@ -1648,7 +1648,7 @@
         }
       },
       presence: {
-        name: "Keeper of Presence",
+        name: "The Present",
         description: "You keep coming back to the same realization: that the thing that actually changes a life is a person choosing to be present for another person. You appreciate what machines can do. You also know the difference between capability and care, and you've never confused the two. Someone's life is different because you showed up. You may not even know whose.",
         utopia: "Your utopia decided that the most valuable thing in the universe was undivided attention, and built its entire economy around it.",
         blindSpot: "You sometimes use care as a way to avoid confrontation. Staying in the room is not always the brave choice. Sometimes the brave choice is leaving it.",
@@ -1665,7 +1665,7 @@
         }
       },
       swimmer: {
-        name: "Swimmer in Deep Water",
+        name: "The Questioner",
         description: "You resist the urge to resolve. Most people see a problem and want to solve it. You see a question and want to live inside it. The edges of understanding are where the interesting things happen, and you've always been drawn there. You are comfortable with ambiguity in a world that punishes it, and you suspect that this comfort is its own form of wisdom.",
         utopia: "Your utopia is a civilization of philosophers. Their single ambition is to reach the deepest level of questioning ever achieved. Everything else is automated so they can focus.",
         blindSpot: "You can sit with a question so long that it becomes an excuse to never act. At some point, not-knowing becomes its own form of cowardice.",
@@ -1682,7 +1682,7 @@
         }
       },
       rooted: {
-        name: "Rooted in Stillness",
+        name: "The Rooted",
         description: "You've arrived at something most people spend their lives running from: the possibility that you don't need a reason to be here. Purpose is a construct. Productivity is a habit. The most radical thing you can do in a world optimized for output is to stop, and mean it. You pour the tea. You notice what's in front of you. You find that it's enough.",
         utopia: "Your utopia returned to a simpler way of life, on purpose, with full knowledge of what it was giving up. It gave up automation to do things by hand.",
         blindSpot: "Your stillness can look a lot like withdrawal to the people who need you. Choosing to stop is a luxury not everyone can afford.",
@@ -1699,7 +1699,7 @@
         }
       },
       conscience: {
-        name: "Conscience Before Comfort",
+        name: "The Witness",
         description: "You see what others prefer to ignore. The comfortable prison. The soft erosion. The hierarchy that rebrands itself as community. You believe in what humans can be. You also refuse to look away from what they become when no one is paying attention. Someone has to watch the watchers. You've always known it would be you.",
         utopia: "Your utopia built accountability into the architecture. Every leader's decisions are projected onto the sky the day they leave office.",
         blindSpot: "You can become so focused on what's wrong that you forget to notice what's working. Permanent suspicion is its own kind of prison.",
@@ -1716,7 +1716,7 @@
         }
       },
       embers: {
-        name: "Keeper of Embers",
+        name: "The Keeper",
         description: "Everyone else is racing forward. You keep looking back, because you have this stubborn conviction that we've already figured most of this out and keep forgetting. Oral traditions, old religions, indigenous knowledge, the grandmother's hand on the child's head. The most dangerous thing about acceleration is amnesia. The answers aren't in the next technology. They're in the last ten thousand years.",
         utopia: "Your utopia's most protected resource is not water or energy. It's memory. The central archive is guarded more heavily than weapons or the bank.",
         blindSpot: "You can love what was so deeply that you become hostile to what could be. The archive becomes a fortress. The past becomes an identity.",
@@ -1733,7 +1733,7 @@
         }
       },
       friction: {
-        name: "Alive in the Friction",
+        name: "The Challenger",
         description: "Ease is more dangerous than difficulty. Something in us requires resistance. The act of pushing against something is how we know we're alive, and you've always known this in your bones. Take away every problem and you don't get paradise. You get a species that has forgotten how to want. You'd rather build the boat in a storm than float in still water.",
         utopia: "Your utopia kept one part of the world deliberately dangerous, because the people who built it believed that too much safety would kill something essential in the species.",
         blindSpot: "You can mistake difficulty for meaning. Not everything that's hard is worth doing. Sometimes the easy path is the right one and you can't accept that.",
@@ -1750,7 +1750,7 @@
         }
       },
       unbound: {
-        name: "Unbound from Form",
+        name: "The Transcendent",
         description: "You look at the species and see a draft. A first attempt. You're curious about what comes next. Uploading, merging, subliming, evolving. The vocabulary doesn't matter. The boundary of the self is simply not where you stop. Most people find this frightening. You find it the most interesting question there is.",
         utopia: "Your utopia transcended the physical. You exist as pure consciousness now, moving through dimensions that don't have names.",
         blindSpot: "You left so much behind that you may not recognize what was worth keeping until it's too late. Evolution without memory is just forgetting with better marketing.",
@@ -1767,7 +1767,7 @@
         }
       },
       alive: {
-        name: "Alive to Everything",
+        name: "The Feeler",
         description: "You don't need a reason. You need a body, a world, and enough time. Change your form, change your perspective, taste every experience, climb every mountain, love every person who'll have you, and when you've done all of it, start again. The universe gave you everything. The least you can do is feel it. You suspect that most philosophies of meaning are elaborate ways of avoiding pleasure.",
         utopia: "Your utopia engineered twelve new senses and a sunset that lasts all day.",
         blindSpot: "Sensation can become consumption. Feeling everything is not the same as understanding anything. The twelfth sense doesn't help if the first five are numb from overuse.",
@@ -1784,7 +1784,7 @@
         }
       },
       mender: {
-        name: "Mender of What Remains",
+        name: "The Mender",
         description: "You look at the stars and feel nothing pulling you toward them. The work is here. The soil, the water, the damaged systems, the fraying relationships. While everyone else is building arks and uploading their consciousness, you're fixing the thing in front of you. The most radical act in an age of acceleration is to stay, to repair, to solve the specific problem that no one else cares about. The future is the next thing that needs doing.",
         utopia: "Your utopia decided that the most advanced act of engineering was making what already existed work again instead of building something new.",
         blindSpot: "You can become so focused on repair that you miss when something needs to die. Not everything should be saved. Some things are broken because they should be.",
@@ -1801,7 +1801,7 @@
         }
       },
       cleareyed: {
-        name: "Clear-Eyed in the Storm",
+        name: "The Truth-Teller",
         description: "You have one job: to see what is actually happening and say it out loud. The version that's true. The one that makes people uncomfortable. Most people don't want this from you. Civilizations survive by the quality of their honest observers, though, and collapse when the honest observers go quiet. You won't be the one who goes quiet.",
         utopia: "Your utopia has one person whose only job is to tell the truth. They answer to no one. They are the most feared and most respected person in the civilization.",
         blindSpot: "Honesty without tenderness is cruelty. You can see everything clearly and still miss the most important thing in the room, which is how your truth lands on the person hearing it.",
@@ -1818,7 +1818,7 @@
         }
       },
       between: {
-        name: "In the Space Between",
+        name: "The Liminal",
         description: "This isn't a philosophy you chose. It's a condition you're living in. The old world shifted and left you standing in a place you don't recognize. You're figuring out how to breathe in a room with no familiar walls. Everyone else on this list has a position. You have a question. And you're still here, which might be the bravest thing on this list.",
         utopia: "Your utopia just started to exist. Nothing is built yet. It's the beginning of an idea.",
         blindSpot: "The space between can become a permanent address. At some point, not knowing what you are becomes a way of avoiding the risk of choosing.",
@@ -1984,7 +1984,7 @@
       if (nameInput && !nameInput.value) {
         nameInput.value = getRandomSuggestedName();
       }
-      showScreen('screen-name');
+      showScreen('screen-prequiz-name');
     }
 
     function startQuiz() {
@@ -2096,7 +2096,7 @@
       showResult();
     }
 
-    function submitName(event) {
+    async function submitName(event) {
       event.preventDefault();
 
       const name = document.getElementById('userName').value.trim();
@@ -2106,6 +2106,7 @@
 
       // Disable button while saving
       const btn = document.querySelector('.name-submit-btn');
+      const originalText = btn.textContent;
       btn.disabled = true;
       btn.textContent = 'Saving...';
 
@@ -2132,20 +2133,84 @@
       // Save to localStorage
       localStorage.setItem('quiz-user-result', JSON.stringify(userResult));
 
-      // Save to API
-      fetch('/api/utopia/save-result', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ result: userResult })
-      })
-        .then(() => {
-          showResult();
-        })
-        .catch((error) => {
-          console.error('Failed to save to API:', error);
-          // Still show result even if API fails
-          showResult();
+      try {
+        // Save to API
+        await fetch('/api/utopia/save-result', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ result: userResult })
         });
+
+        // Check if this is a join flow
+        const inviteData = sessionStorage.getItem('utopia-invite');
+        if (inviteData) {
+          btn.textContent = 'Joining...';
+          await completeJoinFlow();
+        } else {
+          showResult();
+        }
+      } catch (error) {
+        console.error('Failed to save:', error);
+        btn.disabled = false;
+        btn.textContent = originalText;
+        alert('Something went wrong. Please try again.');
+      }
+    }
+
+    async function completeJoinFlow() {
+      const inviteData = sessionStorage.getItem('utopia-invite');
+      if (!inviteData || !userId || !userResult) {
+        // Fallback to regular result
+        const { primary, shadow } = getPrimaryAndShadow();
+        window.location.href = `/wonder/essay/quiz/result?a=${primary}&s=${shadow}`;
+        return;
+      }
+
+      try {
+        const invite = JSON.parse(inviteData);
+
+        // Join the utopia
+        const response = await fetch('/api/utopia/join', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            slug: invite.slug,
+            userId: userId
+          })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          // Only clear invite after successful join
+          sessionStorage.removeItem('utopia-invite');
+
+          // Store join info for animation on group page
+          sessionStorage.setItem('just-joined-utopia', JSON.stringify({
+            slug: invite.slug,
+            userId: userId,
+            archetype: userResult.archetype,
+            name: userResult.name || 'Anonymous',
+            inviterId: invite.inviterId || null
+          }));
+
+          // Redirect to utopia page
+          window.location.href = `/wonder/essay/quiz/utopia/${invite.slug}`;
+        } else {
+          // Join failed - show error and go to result
+          console.error('Join failed:', data.error);
+          sessionStorage.removeItem('utopia-invite');
+          alert(data.error || 'Failed to join the group. You can try again from your result page.');
+          const { primary, shadow } = getPrimaryAndShadow();
+          window.location.href = `/wonder/essay/quiz/result?a=${primary}&s=${shadow}`;
+        }
+      } catch (error) {
+        console.error('Failed to join utopia:', error);
+        sessionStorage.removeItem('utopia-invite');
+        alert('Failed to join the group. Please try again.');
+        const { primary, shadow } = getPrimaryAndShadow();
+        window.location.href = `/wonder/essay/quiz/result?a=${primary}&s=${shadow}`;
+      }
     }
 
     function getPrimaryAndShadow() {
@@ -2175,61 +2240,31 @@
       const inviteData = sessionStorage.getItem('utopia-invite');
 
       if (inviteData && userId) {
-        // Joining a utopia - save result and join directly
-        try {
-          const invite = JSON.parse(inviteData);
-          sessionStorage.removeItem('utopia-invite');
-
-          // Need a name to join - prompt if missing
-          if (!userResult || !userResult.name) {
-            const name = prompt('What should we call you?\\n(So others can see who joined the utopia)');
-            if (!name || !name.trim()) {
-              // User cancelled - go to regular result page
-              window.location.href = `/wonder/essay/quiz/result?a=${primary}&s=${shadow}`;
-              return;
-            }
-            if (userResult) {
-              userResult.name = name.trim();
-              localStorage.setItem('quiz-user-result', JSON.stringify(userResult));
-            }
+        // Joining a utopia - need name first if missing
+        if (!userResult || !userResult.name) {
+          // Show the name screen instead of using prompt()
+          // Update subtitle to be join-specific
+          const subtitle = document.querySelector('.name-prompt-subtitle');
+          if (subtitle) {
+            subtitle.textContent = 'So others can see who joined the group.';
           }
-
-          // Save user result to API
-          if (userResult) {
-            await fetch('/api/utopia/save-result', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ result: userResult })
-            });
+          // Hide email field for join flow (simpler)
+          const emailField = document.querySelector('.name-form .form-field:nth-child(2)');
+          if (emailField) {
+            emailField.style.display = 'none';
           }
-
-          // Join the utopia
-          const response = await fetch('/api/utopia/join', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              slug: invite.slug,
-              userId: userId
-            })
-          });
-
-          const data = await response.json();
-          if (data.success) {
-            // Store join info for animation on group page
-            sessionStorage.setItem('just-joined-utopia', JSON.stringify({
-              slug: invite.slug,
-              userId: userId,
-              archetype: userResult.archetype,
-              name: userResult.name || 'Anonymous',
-              inviterId: invite.inviterId || null // Store who invited them for auto-relationship
-            }));
-            // Redirect directly to utopia page
-            window.location.href = `/wonder/essay/quiz/utopia/${invite.slug}`;
-            return;
+          // Update button text
+          const submitBtn = document.querySelector('.name-submit-btn');
+          if (submitBtn) {
+            submitBtn.textContent = 'Join the group';
           }
-        } catch (error) {
-          console.error('Failed to join utopia:', error);
+          showScreen('screen-name');
+          return;
         }
+
+        // Has name - proceed with join
+        await completeJoinFlow();
+        return;
       }
 
       // Update user name if provided

@@ -66,7 +66,7 @@ export function ShareCard({ archetypeKey, userName, position }: ShareCardProps) 
 
   const handleShare = async () => {
     const shareUrl = `${window.location.origin}/wonder/essay/quiz`;
-    const shareText = `I'm a ${archetype.name}. What are you?`;
+    const shareText = `I'm ${archetype.name}. What are you?`;
 
     if (navigator.share) {
       try {

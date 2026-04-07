@@ -148,3 +148,38 @@ export function getAxisPercentages(pos: RadarPosition): AxisPercentages {
     reachPercent,
   };
 }
+
+// Calculate worldview alignment percentage between two archetypes
+// Based on radar distance and axis alignment
+export function getCompatibilityPercentage(
+  archetype1: string,
+  archetype2: string
+): number {
+  const pos1 = archetypePositions[archetype1];
+  const pos2 = archetypePositions[archetype2];
+
+  if (!pos1 || !pos2) {
+    return 50; // Default to neutral
+  }
+
+  // Calculate Euclidean distance (0 to ~2.83 on a -1 to 1 grid)
+  const distance = Math.sqrt(
+    Math.pow(pos1.x - pos2.x, 2) + Math.pow(pos1.y - pos2.y, 2)
+  );
+
+  // Max possible distance is ~2.83 (corner to corner)
+  const maxDistance = Math.sqrt(8);
+
+  // Convert distance to alignment (closer = higher alignment)
+  // 0 distance = 100%, max distance = 20% (never 0 - even opposites have some common ground)
+  const distanceAlignment = 100 - (distance / maxDistance) * 80;
+
+  // Axis alignment bonus: same quadrant gives a boost
+  const sameXSign = (pos1.x >= 0) === (pos2.x >= 0);
+  const sameYSign = (pos1.y >= 0) === (pos2.y >= 0);
+  const axisBonus = (sameXSign ? 5 : 0) + (sameYSign ? 5 : 0);
+
+  // Combine and clamp to 20-100 range
+  const raw = distanceAlignment + axisBonus;
+  return Math.round(Math.min(100, Math.max(20, raw)));
+}

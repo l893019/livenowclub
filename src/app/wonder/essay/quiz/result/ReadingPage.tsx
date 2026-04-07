@@ -135,6 +135,36 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
       {/* Core Description */}
       <p className={styles.description}>{archetype.description}</p>
 
+      {/* One-sentence worldview - shareable */}
+      {!isViewingOther && archetype.oneSentence && (
+        <div className={styles.oneSentence}>
+          <p className={styles.oneSentenceText}>"{archetype.oneSentence}"</p>
+          <button
+            className={styles.copyButton}
+            onClick={() => {
+              navigator.clipboard.writeText(archetype.oneSentence);
+              const btn = document.querySelector(`.${styles.copyButton}`) as HTMLButtonElement;
+              if (btn) {
+                btn.textContent = "Copied!";
+                setTimeout(() => { btn.textContent = "Copy"; }, 2000);
+              }
+            }}
+          >
+            Copy
+          </button>
+        </div>
+      )}
+
+      {/* Famous Figures */}
+      {archetype.famousFigures && (
+        <div className={styles.famousFigures}>
+          <p className={styles.famousFiguresLabel}>You share a worldview with</p>
+          <p className={styles.famousFiguresList}>
+            {[...archetype.famousFigures.real, ...archetype.famousFigures.fictional.map(f => f.split(" (")[0])].join(", ")}
+          </p>
+        </div>
+      )}
+
       {/* Relationship comparison for viral loop (when ?compare= is present) */}
       {compareUserId && hasQuizUserId && (
         <RelationshipComparison

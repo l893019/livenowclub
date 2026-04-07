@@ -6,8 +6,8 @@ import {
   archetypeKeys,
   Archetype,
   getPairDistance,
-  getAnalyticalPairDynamic,
-  AnalyticalPairDynamic,
+  getPairDynamicExpanded,
+  PairDynamic,
 } from "@/lib/archetypes";
 import {
   archetypePositions,
@@ -278,29 +278,79 @@ function generateSuperpowerTitle(powers: string[]): string {
   // Create synthesized names based on power combinations
   const powerSet = new Set(powers.map((p) => p.toLowerCase()));
 
-  if (powerSet.has("trusting abundance") && powerSet.has("feeling everything")) {
-    return "Generous Aliveness";
-  }
-  if (powerSet.has("building from scratch") && powerSet.has("thinking in systems")) {
-    return "Architectural Vision";
-  }
-  if (powerSet.has("spotting what's hidden") && powerSet.has("telling hard truths")) {
-    return "Unflinching Clarity";
-  }
-  if (powerSet.has("showing up fully") && powerSet.has("sitting with hard questions")) {
-    return "Present Inquiry";
-  }
-  if (powerSet.has("remembering what matters") && powerSet.has("fixing what's broken")) {
-    return "Restorative Memory";
-  }
-  if (powerSet.has("embracing difficulty") && powerSet.has("imagining beyond limits")) {
-    return "Transcendent Struggle";
-  }
-  if (powerSet.has("knowing when to stop") && powerSet.has("holding uncertainty")) {
-    return "Grounded Openness";
-  }
+  // Abundant + others
+  if (powerSet.has("trusting abundance") && powerSet.has("feeling everything")) return "Generous Aliveness";
+  if (powerSet.has("trusting abundance") && powerSet.has("building from scratch")) return "Abundant Creation";
+  if (powerSet.has("trusting abundance") && powerSet.has("thinking in systems")) return "Systems of Plenty";
+  if (powerSet.has("trusting abundance") && powerSet.has("showing up fully")) return "Present Generosity";
+  if (powerSet.has("trusting abundance") && powerSet.has("fixing what's broken")) return "Restorative Abundance";
+  if (powerSet.has("trusting abundance") && powerSet.has("spotting what's hidden")) return "Vigilant Optimism";
 
-  // Default: combine the first two powers
+  // Builder + others
+  if (powerSet.has("building from scratch") && powerSet.has("thinking in systems")) return "Architectural Vision";
+  if (powerSet.has("building from scratch") && powerSet.has("embracing difficulty")) return "Constructive Friction";
+  if (powerSet.has("building from scratch") && powerSet.has("imagining beyond limits")) return "Transcendent Construction";
+  if (powerSet.has("building from scratch") && powerSet.has("fixing what's broken")) return "Build and Mend";
+  if (powerSet.has("building from scratch") && powerSet.has("remembering what matters")) return "Building from Memory";
+  if (powerSet.has("building from scratch") && powerSet.has("spotting what's hidden")) return "Watchful Building";
+
+  // Architect + others
+  if (powerSet.has("thinking in systems") && powerSet.has("fixing what's broken")) return "Systemic Repair";
+  if (powerSet.has("thinking in systems") && powerSet.has("showing up fully")) return "Present Architecture";
+  if (powerSet.has("thinking in systems") && powerSet.has("remembering what matters")) return "Enduring Systems";
+  if (powerSet.has("thinking in systems") && powerSet.has("spotting what's hidden")) return "Structural Vigilance";
+
+  // Present + others
+  if (powerSet.has("showing up fully") && powerSet.has("sitting with hard questions")) return "Present Inquiry";
+  if (powerSet.has("showing up fully") && powerSet.has("knowing when to stop")) return "Rooted Presence";
+  if (powerSet.has("showing up fully") && powerSet.has("feeling everything")) return "Embodied Attention";
+  if (powerSet.has("showing up fully") && powerSet.has("telling hard truths")) return "Truth in Presence";
+
+  // Questioner + others
+  if (powerSet.has("sitting with hard questions") && powerSet.has("holding uncertainty")) return "Comfortable Mystery";
+  if (powerSet.has("sitting with hard questions") && powerSet.has("imagining beyond limits")) return "Questioning Beyond";
+  if (powerSet.has("sitting with hard questions") && powerSet.has("spotting what's hidden")) return "Investigative Depth";
+  if (powerSet.has("sitting with hard questions") && powerSet.has("feeling everything")) return "Felt Inquiry";
+
+  // Rooted + others
+  if (powerSet.has("knowing when to stop") && powerSet.has("holding uncertainty")) return "Grounded Openness";
+  if (powerSet.has("knowing when to stop") && powerSet.has("remembering what matters")) return "Rooted Memory";
+  if (powerSet.has("knowing when to stop") && powerSet.has("fixing what's broken")) return "Patient Repair";
+
+  // Witness + others
+  if (powerSet.has("spotting what's hidden") && powerSet.has("telling hard truths")) return "Unflinching Clarity";
+  if (powerSet.has("spotting what's hidden") && powerSet.has("fixing what's broken")) return "Seeing to Mend";
+  if (powerSet.has("spotting what's hidden") && powerSet.has("remembering what matters")) return "Vigilant Memory";
+
+  // Keeper + others
+  if (powerSet.has("remembering what matters") && powerSet.has("fixing what's broken")) return "Restorative Memory";
+  if (powerSet.has("remembering what matters") && powerSet.has("holding uncertainty")) return "Memory in Motion";
+  if (powerSet.has("remembering what matters") && powerSet.has("feeling everything")) return "Felt History";
+
+  // Challenger + others
+  if (powerSet.has("embracing difficulty") && powerSet.has("imagining beyond limits")) return "Transcendent Struggle";
+  if (powerSet.has("embracing difficulty") && powerSet.has("feeling everything")) return "Difficult Joy";
+  if (powerSet.has("embracing difficulty") && powerSet.has("telling hard truths")) return "Unflinching Challenge";
+  if (powerSet.has("embracing difficulty") && powerSet.has("fixing what's broken")) return "Hard Repair";
+
+  // Transcendent + others
+  if (powerSet.has("imagining beyond limits") && powerSet.has("feeling everything")) return "Boundless Sensation";
+  if (powerSet.has("imagining beyond limits") && powerSet.has("holding uncertainty")) return "Open Transcendence";
+  if (powerSet.has("imagining beyond limits") && powerSet.has("telling hard truths")) return "Truth Beyond";
+
+  // Feeler + others
+  if (powerSet.has("feeling everything") && powerSet.has("fixing what's broken")) return "Healing Touch";
+  if (powerSet.has("feeling everything") && powerSet.has("telling hard truths")) return "Felt Truth";
+  if (powerSet.has("feeling everything") && powerSet.has("holding uncertainty")) return "Feeling Through";
+
+  // Mender + others
+  if (powerSet.has("fixing what's broken") && powerSet.has("telling hard truths")) return "Honest Repair";
+  if (powerSet.has("fixing what's broken") && powerSet.has("holding uncertainty")) return "Uncertain Mending";
+
+  // Truth-Teller + others
+  if (powerSet.has("telling hard truths") && powerSet.has("holding uncertainty")) return "Honest Uncertainty";
+
+  // Default: combine the first two powers meaningfully
   const first = powers[0].split(" ").pop() || powers[0];
   const second = powers[1]?.split(" ").pop() || "";
   return `${capitalize(first)}${second ? ` and ${capitalize(second)}` : ""}`;
@@ -453,20 +503,20 @@ function generateBlindSpotDescription(
 
 // What each archetype would add to a group
 const missingVoiceAdditions: Record<string, string> = {
-  citizen: `A Citizen of Abundance would bring trust in possibility to this group. They would remind you that scarcity is often manufactured, that systems can work for everyone, and that optimism is not naivety but a position argued and defended. In discussions that drift toward zero-sum thinking, they would ask: why are we assuming there isn't enough?`,
-  shaper: `A Shaper of Change would bring momentum to this group. They would push when others settle, question when others accept, and remind you that everything is raw material for what comes next. In moments of stagnation, they would ask: what are we waiting for?`,
-  architect: `An Architect of the Commons would bring systems thinking to this group. They would see the invisible structures that shape your interactions, question who the current arrangement serves, and propose designs that distribute power rather than concentrate it. In discussions that get stuck on individuals, they would ask: what structure is creating this pattern?`,
-  presence: `A Keeper of Presence would bring attention to this group. They would slow the conversation when it races past what matters, hold space when others fill silence with noise, and remind you that the quality of your attention shapes the quality of your outcomes. In moments of distraction, they would ask: are we actually here?`,
-  swimmer: `A Swimmer in Deep Water would bring philosophical depth to this group. They would sit with questions others rush past, notice the assumptions beneath your certainties, and remind you that not-knowing can be its own form of wisdom. In moments of premature closure, they would ask: what are we still not seeing?`,
-  rooted: `Rooted in Stillness would bring groundedness to this group. They would question the assumption that more and faster are always better, hold space for doing nothing when others reach for action, and remind you that stopping can be the most radical choice. In moments of acceleration, they would ask: do we actually need to do this?`,
-  conscience: `Conscience Before Comfort would bring vigilance to this group. They would see the costs others prefer to ignore, question systems that seem too convenient, and remind you that dystopia always arrives disguised as efficiency. In moments of comfortable agreement, they would ask: what are we not seeing?`,
-  embers: `A Keeper of Embers would bring memory to this group. They would recall what worked before, what was lost and shouldn't have been, and what wisdom already exists in human history. In moments of reinvention, they would ask: have we already solved this?`,
-  friction: `Alive in the Friction would bring challenge to this group. They would question whether ease is always good, seek difficulty when others seek comfort, and remind you that growth requires resistance. In moments of consensus, they would ask: is this too easy?`,
-  unbound: `Unbound from Form would bring expansiveness to this group. They would question the boundaries you take for granted, imagine possibilities beyond current constraints, and remind you that what seems fixed can be transcended. In moments of limitation, they would ask: what if we're thinking too small?`,
-  alive: `Alive to Everything would bring sensation to this group. They would notice what others think past, feel what others analyze, and remind you that experience is the point. In moments of abstraction, they would ask: what does this actually feel like?`,
-  mender: `A Mender of What Remains would bring repair to this group. They would focus on fixing what exists rather than building new, value maintenance over innovation, and remind you that the most advanced engineering is making what exists work again. In moments of abandonment, they would ask: can this be saved?`,
-  cleareyed: `Clear-Eyed in the Storm would bring honesty to this group. They would say what others soften, see what others prefer to ignore, and remind you that truth matters more than comfort. In moments of pleasant fiction, they would ask: what's actually true here?`,
-  between: `In the Space Between would bring uncertainty to this group. They would question fixed positions, hold space for not-knowing, and remind you that the threshold is a valid place to stand. In moments of forced choice, they would ask: what if neither option is right?`,
+  citizen: `The Abundant would bring trust in possibility to this group. They would remind you that scarcity is often manufactured, that systems can work for everyone, and that optimism is not naivety but a position argued and defended. In discussions that drift toward zero-sum thinking, they would ask: why are we assuming there isn't enough?`,
+  shaper: `The Builder would bring momentum to this group. They would push when others settle, question when others accept, and remind you that everything is raw material for what comes next. In moments of stagnation, they would ask: what are we waiting for?`,
+  architect: `The Architect would bring systems thinking to this group. They would see the invisible structures that shape your interactions, question who the current arrangement serves, and propose designs that distribute power rather than concentrate it. In discussions that get stuck on individuals, they would ask: what structure is creating this pattern?`,
+  presence: `The Present would bring attention to this group. They would slow the conversation when it races past what matters, hold space when others fill silence with noise, and remind you that the quality of your attention shapes the quality of your outcomes. In moments of distraction, they would ask: are we actually here?`,
+  swimmer: `The Questioner would bring philosophical depth to this group. They would sit with questions others rush past, notice the assumptions beneath your certainties, and remind you that not-knowing can be its own form of wisdom. In moments of premature closure, they would ask: what are we still not seeing?`,
+  rooted: `The Rooted would bring groundedness to this group. They would question the assumption that more and faster are always better, hold space for doing nothing when others reach for action, and remind you that stopping can be the most radical choice. In moments of acceleration, they would ask: do we actually need to do this?`,
+  conscience: `The Witness would bring vigilance to this group. They would see the costs others prefer to ignore, question systems that seem too convenient, and remind you that dystopia always arrives disguised as efficiency. In moments of comfortable agreement, they would ask: what are we not seeing?`,
+  embers: `The Keeper would bring memory to this group. They would recall what worked before, what was lost and shouldn't have been, and what wisdom already exists in human history. In moments of reinvention, they would ask: have we already solved this?`,
+  friction: `The Challenger would bring challenge to this group. They would question whether ease is always good, seek difficulty when others seek comfort, and remind you that growth requires resistance. In moments of consensus, they would ask: is this too easy?`,
+  unbound: `The Transcendent would bring expansiveness to this group. They would question the boundaries you take for granted, imagine possibilities beyond current constraints, and remind you that what seems fixed can be transcended. In moments of limitation, they would ask: what if we're thinking too small?`,
+  alive: `The Feeler would bring sensation to this group. They would notice what others think past, feel what others analyze, and remind you that experience is the point. In moments of abstraction, they would ask: what does this actually feel like?`,
+  mender: `The Mender would bring repair to this group. They would focus on fixing what exists rather than building new, value maintenance over innovation, and remind you that the most advanced engineering is making what exists work again. In moments of abandonment, they would ask: can this be saved?`,
+  cleareyed: `The Truth-Teller would bring honesty to this group. They would say what others soften, see what others prefer to ignore, and remind you that truth matters more than comfort. In moments of pleasant fiction, they would ask: what's actually true here?`,
+  between: `The Liminal would bring uncertainty to this group. They would question fixed positions, hold space for not-knowing, and remind you that the threshold is a valid place to stand. In moments of forced choice, they would ask: what if neither option is right?`,
 };
 
 // Questions each archetype would ask
@@ -611,19 +661,19 @@ export function generateInternalTensions(
     for (let j = i + 1; j < presentArchetypes.length; j++) {
       const a = presentArchetypes[i];
       const b = presentArchetypes[j];
-      const { category, value } = getPairDistance(a, b);
+      const { value } = getPairDistance(a, b);
 
       // Only surface tensions for pairs with distance > 0.8
       if (value > 0.8) {
         const tensionLevel: "high" | "medium" = value > 1.2 ? "high" : "medium";
-        const analytical = getAnalyticalPairDynamic(a, b);
+        const pairDynamic = getPairDynamicExpanded(a, b);
 
         tensions.push({
           archetypeA: a,
           archetypeB: b,
           tensionLevel,
-          thesis: analytical.thesis,
-          howToNavigate: generateNavigationAdvice(a, b, analytical, tensionLevel),
+          thesis: pairDynamic.thesis,
+          howToNavigate: generateNavigationAdvice(a, b, pairDynamic, tensionLevel),
         });
       }
     }
@@ -642,17 +692,29 @@ export function generateInternalTensions(
 function generateNavigationAdvice(
   a: string,
   b: string,
-  analytical: AnalyticalPairDynamic,
+  pairDynamic: PairDynamic,
   tensionLevel: "high" | "medium"
 ): string {
   const archA = archetypes[a];
   const archB = archetypes[b];
 
-  if (tensionLevel === "high") {
-    return `This is a significant tension in your group. ${archA?.name || a} and ${archB?.name || b} see the world differently enough that misunderstanding is likely. The key is treating your differences as data rather than defects. What ${archA?.name || a} sees that ${archB?.name || b} misses, and vice versa, creates a more complete picture than either holds alone. When disagreements arise, try naming the underlying values at stake rather than arguing about the specific decision.`;
+  // Use the specific clash points from pair dynamics
+  const clashDescription = pairDynamic.clash.join(" ");
+
+  // Build navigation advice from specific content
+  let advice = `${clashDescription} `;
+
+  if (pairDynamic.warning) {
+    advice += `${pairDynamic.warning} `;
   }
 
-  return `This tension is productive rather than destructive, but it requires attention. ${archA?.name || a} and ${archB?.name || b} will regularly see things differently. Use this as an asset: before making decisions, deliberately seek both perspectives. The friction between you generates insight that comfort would miss.`;
+  // Add what they give each other as resolution path
+  advice += `The key to navigating this: ${archA?.name || a} offers ${pairDynamic.give.youToThem.toLowerCase()}. ${archB?.name || b} offers ${pairDynamic.give.themToYou.toLowerCase()}. `;
+
+  // Add the reflection question
+  advice += `When you disagree, ask yourselves: ${pairDynamic.question}`;
+
+  return advice;
 }
 
 // =============================================================================

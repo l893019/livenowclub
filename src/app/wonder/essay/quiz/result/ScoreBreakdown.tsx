@@ -5,20 +5,20 @@ import { useEffect, useState } from 'react';
 type Scores = Record<string, number>;
 
 const archetypeNames: Record<string, string> = {
-  citizen: "Citizen of Abundance",
-  shaper: "Shaper of Change",
-  architect: "Architect of the Commons",
-  presence: "Keeper of Presence",
-  swimmer: "Swimmer in Deep Water",
-  rooted: "Rooted in Stillness",
-  conscience: "Conscience Before Comfort",
-  embers: "Keeper of Embers",
-  friction: "Alive in the Friction",
-  unbound: "Unbound from Form",
-  alive: "Alive to Everything",
-  mender: "Mender of What Remains",
-  cleareyed: "Clear-Eyed in the Storm",
-  between: "In the Space Between",
+  citizen: "The Abundant",
+  shaper: "The Builder",
+  architect: "The Architect",
+  presence: "The Present",
+  swimmer: "The Questioner",
+  rooted: "The Rooted",
+  conscience: "The Witness",
+  embers: "The Keeper",
+  friction: "The Challenger",
+  unbound: "The Transcendent",
+  alive: "The Feeler",
+  mender: "The Mender",
+  cleareyed: "The Truth-Teller",
+  between: "The Liminal",
 };
 
 const archetypeColors: Record<string, string> = {
