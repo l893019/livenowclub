@@ -76,9 +76,9 @@ export function GoDeepStep({
 
   return (
     <div className={styles.container}>
-      {/* Blind Spot Section */}
+      {/* Something to Consider Section */}
       <section className={styles.section}>
-        <h2 className={styles.sectionLabel}>Your Blind Spot</h2>
+        <h2 className={styles.sectionLabel}>Something to Consider</h2>
         <div className={styles.blindSpotCard}>
           <p className={styles.blindSpotText}>{blindSpot}</p>
         </div>

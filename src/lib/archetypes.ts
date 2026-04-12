@@ -814,28 +814,28 @@ export const archetypeKeys = Object.keys(archetypes);
 export const pairDynamics: Record<string, string> = {
   // Shaper tensions
   "embers+shaper": "One races toward tomorrow. The other holds yesterday close. Between them, the present gets attention.",
-  "rooted+shaper": "The Shapers want to tear it down and rebuild. The Rooted ask: what was wrong with it?",
+  "rooted+shaper": "The Builders want to tear it down and rebuild. The Rooted ask: what was wrong with it?",
 
   // Conscience tensions
-  "citizen+conscience": "The Citizen trusts the architecture. The Conscience tests the walls for cracks.",
+  "citizen+conscience": "The Abundant trusts the architecture. The Witness tests the walls for cracks.",
   "alive+conscience": "One wants to feel everything. The other keeps asking: but should we?",
 
   // Presence tensions
   "presence+unbound": "The Keeper stays embodied. The Unbound wants to transcend. They're arguing about what it means to be here.",
 
   // Swimmer tensions
-  "mender+swimmer": "The Swimmer lives in questions. The Mender needs to fix things. One pauses, the other acts.",
+  "mender+swimmer": "The Questioner lives in questions. The Mender needs to fix things. One pauses, the other acts.",
 
   // Friction tensions
   "friction+rooted": "One craves difficulty. One chose stillness. They don't understand each other at all.",
 
   // Architect dynamics
-  "architect+shaper": "Both builders, different blueprints. The Architect wants consensus. The Shaper wants to start over.",
+  "architect+shaper": "Both builders, different blueprints. The Architect wants consensus. The Builder wants to start over.",
   "architect+mender": "Systems thinkers both. One designs new ones, one fixes old ones. They probably need each other.",
 
   // Citizen dynamics
   "alive+citizen": "Both believe in abundance. One wants access, the other wants experience. A generous worldview.",
-  "citizen+swimmer": "The Citizen builds. The Swimmer questions. Both necessary, both frustrated with each other.",
+  "citizen+swimmer": "The Abundant builds. The Questioner questions. Both necessary, both frustrated with each other.",
 
   // Embers dynamics
   "between+embers": "The archive and the threshold. One knows where we came from. The other isn't sure where we're going.",
@@ -846,7 +846,7 @@ export const pairDynamics: Record<string, string> = {
   "alive+unbound": "Sensation-seekers, different methods. One through the body, one past it.",
 
   // Cleareyed dynamics
-  "cleareyed+conscience": "Truth-tellers both. The Conscience watches systems. Clear-Eyed watches everything.",
+  "cleareyed+conscience": "Truth-tellers both. The Witness watches systems. Clear-Eyed watches everything.",
   "cleareyed+swimmer": "Both live in clarity, different kinds. Facts vs. questions. They respect each other.",
 
   // Rooted dynamics
@@ -857,7 +857,7 @@ export const pairDynamics: Record<string, string> = {
   "between+swimmer": "Uncertainty specialists. Neither one is sure, and they're fine with that.",
 
   // Shaper + Swimmer
-  "shaper+swimmer": "The Shaper builds. The Swimmer questions why. Between them, nothing goes unexamined.",
+  "shaper+swimmer": "The Builder builds. The Questioner questions why. Between them, nothing goes unexamined.",
 
   // Same-archetype dynamics
   "shaper+shaper": "Two builders. You'll create something—if you stop redesigning it.",
@@ -1046,7 +1046,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
       themToYou: "They keep you grounded in what matters",
     },
     question: "When does watching become a way of avoiding feeling?",
-    warning: "The Conscience may judge what the Alive one needs to experience",
+    warning: "The Witness may judge what the Alive one needs to experience",
   },
   "alive+friction": {
     thesis: "Both seek intensity. One through sensation, one through challenge. Adjacent energies, different fuel.",
@@ -1099,7 +1099,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
     question: "What would it mean to see clearly AND stay open?",
   },
   "citizen+conscience": {
-    thesis: "The Citizen trusts the architecture. The Conscience tests the walls for cracks.",
+    thesis: "The Abundant trusts the architecture. The Witness tests the walls for cracks.",
     align: ["You both believe in good systems", "You both want things to work well"],
     clash: ["One trusts the architecture. One tests it for cracks.", "Optimism vs. vigilance"],
     give: {
@@ -1107,7 +1107,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
       themToYou: "They keep you honest about what's actually happening",
     },
     question: "What would a system look like that earned both your trust?",
-    warning: "The Conscience may exhaust the Citizen with constant critique",
+    warning: "The Witness may exhaust the Citizen with constant critique",
   },
   "citizen+friction": {
     thesis: "Both embrace challenge, but from different places. One trusts abundance, one craves difficulty.",
@@ -1168,7 +1168,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
       themToYou: "They ensure your difficulty-seeking doesn't miss what matters",
     },
     question: "When does watching become avoidance, and when does action become blindness?",
-    warning: "The Conscience may see the Friction-seeker's challenges as reckless",
+    warning: "The Witness may see the Friction-seeker's challenges as reckless",
   },
   "embers+presence": {
     thesis: "One looks back. One stays present. Together, they hold the thread of time.",
@@ -1210,7 +1210,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
       themToYou: "They remind you what you're building toward",
     },
     question: "What from the past is worth carrying into the future you're building?",
-    warning: "The Shaper may dismiss what the Embers-keeper treasures",
+    warning: "The Builder may dismiss what the Embers-keeper treasures",
   },
   "friction+unbound": {
     thesis: "One craves resistance. One transcends it. Together, they explore what difficulty is for.",
@@ -1233,7 +1233,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
     question: "When does fixing become a way of avoiding being present?",
   },
   "mender+swimmer": {
-    thesis: "The Swimmer lives in questions. The Mender needs to fix things. One pauses, the other acts.",
+    thesis: "The Questioner lives in questions. The Mender needs to fix things. One pauses, the other acts.",
     align: ["You both see what needs attention", "Care drives both of you"],
     clash: ["One acts. One questions.", "Fixing vs. understanding"],
     give: {
@@ -1254,7 +1254,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
     warning: "You may talk past each other about what presence means",
   },
   "rooted+shaper": {
-    thesis: "The Shapers want to tear it down and rebuild. The Rooted ask: what was wrong with it?",
+    thesis: "The Builders want to tear it down and rebuild. The Rooted ask: what was wrong with it?",
     align: ["You both have strong convictions", "Neither of you compromises easily"],
     clash: ["One wants to tear it down. One wants to sit with it.", "Action vs. stillness"],
     give: {
@@ -1276,7 +1276,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
     warning: "You may be arguing about different definitions of freedom",
   },
   "shaper+swimmer": {
-    thesis: "The Shaper builds. The Swimmer questions why. Between them, nothing goes unexamined.",
+    thesis: "The Builder builds. The Questioner questions why. Between them, nothing goes unexamined.",
     align: ["You both reject easy answers", "Depth matters more than speed"],
     clash: ["One builds. One questions.", "Creating vs. inquiring"],
     give: {
@@ -2976,24 +2976,24 @@ The deeper risk is that transcendence becomes a substitute for intimacy. Two Unb
   "embers+shaper": {
     thesis: "One builds to change the world; the other guards to preserve it. The future and the past, locked in permanent negotiation.",
 
-    distanceAnalysis: `The Keeper and The Builder occupy opposite ends of a fundamental axis: time orientation. The Shaper lives in the future tense, already imagining what comes next, treating the present as raw material for transformation. The Keeper lives in the past tense, already remembering what came before, treating the present as a thread in an unbroken line of inheritance. This isn't merely a difference in preference—it's a difference in what each believes matters most about being human.
+    distanceAnalysis: `The Keeper and The Builder occupy opposite ends of a fundamental axis: time orientation. The Builder lives in the future tense, already imagining what comes next, treating the present as raw material for transformation. The Keeper lives in the past tense, already remembering what came before, treating the present as a thread in an unbroken line of inheritance. This isn't merely a difference in preference—it's a difference in what each believes matters most about being human.
 
-The distance between you maps onto one of philosophy's oldest tensions: preservation versus transformation. The Shaper asks "what can we build?" while the Keeper asks "what must we not lose?" These questions sound compatible until resources are scarce—until the Shaper needs to demolish the old building to make room for the new one, until the Keeper realizes the only way to preserve something is to prevent its replacement. Then the fundamental incompatibility reveals itself: you're not just prioritizing differently. You're operating from different definitions of progress.`,
+The distance between you maps onto one of philosophy's oldest tensions: preservation versus transformation. The Builder asks "what can we build?" while the Keeper asks "what must we not lose?" These questions sound compatible until resources are scarce—until the Shaper needs to demolish the old building to make room for the new one, until the Keeper realizes the only way to preserve something is to prevent its replacement. Then the fundamental incompatibility reveals itself: you're not just prioritizing differently. You're operating from different definitions of progress.`,
 
-    dynamic: `At its core, this pairing creates a permanent argument about what deserves to survive. The Shaper sees change as life itself—"adapt or calcify" is their motto. Stagnation is death. The moment you stop building, you start dying. The Keeper sees memory as life itself—without continuity, there is no identity, no wisdom, no foundation. The moment you stop remembering, you've already lost.
+    dynamic: `At its core, this pairing creates a permanent argument about what deserves to survive. The Builder sees change as life itself—"adapt or calcify" is their motto. Stagnation is death. The moment you stop building, you start dying. The Keeper sees memory as life itself—without continuity, there is no identity, no wisdom, no foundation. The moment you stop remembering, you've already lost.
 
-This makes every shared decision a negotiation across this gap. When the Shaper proposes tearing something down to build anew, the Keeper experiences it as violence against meaning. When the Keeper proposes preserving what exists, the Shaper experiences it as surrender to entropy. Neither is wrong. Both are seeing something real. The Shaper is right that clinging to the past can become its own death—the archive as mausoleum. The Keeper is right that endless revolution can become its own amnesia—the construction site that builds the same mistakes with different names.
+This makes every shared decision a negotiation across this gap. When the Shaper proposes tearing something down to build anew, the Keeper experiences it as violence against meaning. When the Keeper proposes preserving what exists, the Shaper experiences it as surrender to entropy. Neither is wrong. Both are seeing something real. The Builder is right that clinging to the past can become its own death—the archive as mausoleum. The Keeper is right that endless revolution can become its own amnesia—the construction site that builds the same mistakes with different names.
 
-The gift of this pairing is that it forces both of you to defend your instincts, to articulate what you're actually protecting or pursuing. The Shaper, challenged by the Keeper, must answer: "What wisdom am I discarding in my rush to build? What has been tried before? What failed, and why?" The Keeper, challenged by the Shaper, must answer: "What am I preserving out of genuine value versus mere familiarity? When did this tradition serve people, and does it still?" These are questions neither would ask alone.`,
+The gift of this pairing is that it forces both of you to defend your instincts, to articulate what you're actually protecting or pursuing. The Builder, challenged by the Keeper, must answer: "What wisdom am I discarding in my rush to build? What has been tried before? What failed, and why?" The Keeper, challenged by the Shaper, must answer: "What am I preserving out of genuine value versus mere familiarity? When did this tradition serve people, and does it still?" These are questions neither would ask alone.`,
 
     align: [
       {
         point: "Both believe something matters beyond the immediate moment",
-        explanation: `Despite your opposing time orientations, you share a conviction that the present moment is not self-justifying. The Shaper builds for a future they may never see; the Keeper preserves for descendants who will never thank them. Both of you are working for something larger than yourselves, something that extends beyond your individual lifespans. This shared sense of being part of a larger story—even if you disagree about which direction the story goes—creates unexpected common ground.`
+        explanation: `Despite your opposing time orientations, you share a conviction that the present moment is not self-justifying. The Builder builds for a future they may never see; the Keeper preserves for descendants who will never thank them. Both of you are working for something larger than yourselves, something that extends beyond your individual lifespans. This shared sense of being part of a larger story—even if you disagree about which direction the story goes—creates unexpected common ground.`
       },
       {
         point: "Both take stewardship seriously",
-        explanation: `Whether you're building or preserving, you both understand yourselves as stewards rather than owners. The Shaper isn't building for ego gratification but because they believe the built thing will serve something larger. The Keeper isn't preserving for nostalgia but because they believe the preserved thing carries wisdom that must survive them. This shared sense of responsibility—the understanding that what you do matters for people you'll never meet—connects you across your differences.`
+        explanation: `Whether you're building or preserving, you both understand yourselves as stewards rather than owners. The Builder isn't building for ego gratification but because they believe the built thing will serve something larger. The Keeper isn't preserving for nostalgia but because they believe the preserved thing carries wisdom that must survive them. This shared sense of responsibility—the understanding that what you do matters for people you'll never meet—connects you across your differences.`
       }
     ],
 
@@ -3004,22 +3004,22 @@ The gift of this pairing is that it forces both of you to defend your instincts,
       },
       {
         point: "The value of disruption",
-        explanation: `The Shaper believes disruption can be generative—that breaking the old system is sometimes the necessary first step toward building a better one. The Keeper believes disruption destroys faster than it creates—that the Shaper's confidence in building from rubble ignores how much was lost in the demolition. This clash often plays out in specific decisions: whether to reform an institution or replace it, whether to adapt a tradition or preserve it unchanged, whether change should be incremental or revolutionary.`
+        explanation: `The Builder believes disruption can be generative—that breaking the old system is sometimes the necessary first step toward building a better one. The Keeper believes disruption destroys faster than it creates—that the Shaper's confidence in building from rubble ignores how much was lost in the demolition. This clash often plays out in specific decisions: whether to reform an institution or replace it, whether to adapt a tradition or preserve it unchanged, whether change should be incremental or revolutionary.`
       },
       {
         point: "What gets sacrificed",
-        explanation: `The Shaper is willing to sacrifice continuity for transformation. The Keeper is willing to sacrifice innovation for preservation. Each believes the other's sacrifice is too costly. The Shaper watches the Keeper defend traditions that seem to have outlived their usefulness and sees resources wasted on the already-dead. The Keeper watches the Shaper discard practices that carry accumulated wisdom and sees irreplaceable knowledge being thrown away. Both sacrifices are real. Both losses are real.`
+        explanation: `The Builder is willing to sacrifice continuity for transformation. The Keeper is willing to sacrifice innovation for preservation. Each believes the other's sacrifice is too costly. The Builder watches the Keeper defend traditions that seem to have outlived their usefulness and sees resources wasted on the already-dead. The Keeper watches the Shaper discard practices that carry accumulated wisdom and sees irreplaceable knowledge being thrown away. Both sacrifices are real. Both losses are real.`
       }
     ],
 
     give: {
       youToThem: `You offer the Shaper roots. Their instinct is to build from scratch, but scratch doesn't exist—everything is built on something. You remind them what that something is. You carry the memory of what was tried before, what worked and what failed, what patterns repeat across generations. Without you, the Shaper risks building beautiful structures on foundations that have already proven unstable. You're not trying to stop them from building; you're trying to ensure they don't build the same collapses again.`,
-      themToYou: `They offer you liberation from the weight of the past. Your instinct is to preserve, but not everything old is worth keeping—some traditions were always unjust, some practices have been superseded by better ones, some memories are chains. The Shaper challenges you to distinguish between genuine wisdom and mere familiarity, between traditions that serve and traditions that suffocate. They remind you that the embers you tend are supposed to light new fires, not just glow in the dark.`
+      themToYou: `They offer you liberation from the weight of the past. Your instinct is to preserve, but not everything old is worth keeping—some traditions were always unjust, some practices have been superseded by better ones, some memories are chains. The Builder challenges you to distinguish between genuine wisdom and mere familiarity, between traditions that serve and traditions that suffocate. They remind you that the embers you tend are supposed to light new fires, not just glow in the dark.`
     },
 
-    risk: `The failure mode of this pairing is mutual contempt disguised as principle. The Shaper starts seeing the Keeper as a reactionary obstacle, someone too attached to what was to imagine what could be. The Keeper starts seeing the Shaper as a reckless destroyer, someone too intoxicated by change to appreciate what's being lost. The argument shifts from productive tension to positional warfare, where each is defending their identity rather than engaging with the other's actual concerns.
+    risk: `The failure mode of this pairing is mutual contempt disguised as principle. The Builder starts seeing the Keeper as a reactionary obstacle, someone too attached to what was to imagine what could be. The Keeper starts seeing the Shaper as a reckless destroyer, someone too intoxicated by change to appreciate what's being lost. The argument shifts from productive tension to positional warfare, where each is defending their identity rather than engaging with the other's actual concerns.
 
-The deeper risk is that you stop listening to what's valid in the other's perspective. The Shaper stops asking "what should be preserved?" The Keeper stops asking "what needs to change?" At that point, you're no longer complementing each other—you're just two people locked in opposition, each becoming a more extreme version of themselves because the other represents everything they reject.`,
+The deeper risk is that you stop listening to what's valid in the other's perspective. The Builder stops asking "what should be preserved?" The Keeper stops asking "what needs to change?" At that point, you're no longer complementing each other—you're just two people locked in opposition, each becoming a more extreme version of themselves because the other represents everything they reject.`,
 
     question: {
       text: "What would it look like to build something new that carries forward what matters most from what came before—and how would you decide together what 'matters most' means?",
@@ -3030,35 +3030,35 @@ The deeper risk is that you stop listening to what's valid in the other's perspe
   "rooted+shaper": {
     thesis: "Stillness meets perpetual motion. One asks 'why are we running?' while the other asks 'why are we standing still?'",
 
-    distanceAnalysis: `The Rooted and The Builder sit at maximum philosophical distance because they embody opposite answers to a fundamental question: what is the relationship between action and meaning? The Shaper believes meaning emerges from creation—you matter because you build, transform, leave marks on the world. The Rooted believes meaning exists independent of action—you matter simply by being present, by refusing the cultural imperative to always produce more.
+    distanceAnalysis: `The Rooted and The Builder sit at maximum philosophical distance because they embody opposite answers to a fundamental question: what is the relationship between action and meaning? The Builder believes meaning emerges from creation—you matter because you build, transform, leave marks on the world. The Rooted believes meaning exists independent of action—you matter simply by being present, by refusing the cultural imperative to always produce more.
 
-This isn't a difference that can be resolved by finding the right balance. The Shaper genuinely believes that stopping is a form of dying—that the person who stops building is calcifying, surrendering to entropy. The Rooted genuinely believes that constant building is a form of fleeing—that the person who can't stop is running from something they refuse to face. Each experiences the other's way of being as not just different but fundamentally mistaken about what life is for.`,
+This isn't a difference that can be resolved by finding the right balance. The Builder genuinely believes that stopping is a form of dying—that the person who stops building is calcifying, surrendering to entropy. The Rooted genuinely believes that constant building is a form of fleeing—that the person who can't stop is running from something they refuse to face. Each experiences the other's way of being as not just different but fundamentally mistaken about what life is for.`,
 
-    dynamic: `At its core, this pairing forces a confrontation with one of modernity's deepest assumptions: that productivity equals worth. The Shaper has internalized this equation, not thoughtlessly but philosophically—they believe that humans are creative beings who flourish through making, that our unique gift is the ability to reshape the world. The Rooted has rejected this equation, also not thoughtlessly but philosophically—they believe the equation is a trap, that the compulsion to always produce more is a cultural sickness disguised as virtue.
+    dynamic: `At its core, this pairing forces a confrontation with one of modernity's deepest assumptions: that productivity equals worth. The Builder has internalized this equation, not thoughtlessly but philosophically—they believe that humans are creative beings who flourish through making, that our unique gift is the ability to reshape the world. The Rooted has rejected this equation, also not thoughtlessly but philosophically—they believe the equation is a trap, that the compulsion to always produce more is a cultural sickness disguised as virtue.
 
-When these two meet, the Shaper sees the Rooted as someone who has given up—not peaceful but defeated, not wise but retreated. The Rooted sees the Shaper as someone who can't face stillness—not creative but compulsive, not building toward something but running from themselves. Both are seeing something real. The Shaper is right that the Rooted's stillness can become withdrawal, a way of avoiding engagement with a world that needs changing. The Rooted is right that the Shaper's motion can become flight, a way of avoiding presence with a life that needs living.
+When these two meet, the Shaper sees the Rooted as someone who has given up—not peaceful but defeated, not wise but retreated. The Rooted sees the Shaper as someone who can't face stillness—not creative but compulsive, not building toward something but running from themselves. Both are seeing something real. The Builder is right that the Rooted's stillness can become withdrawal, a way of avoiding engagement with a world that needs changing. The Rooted is right that the Shaper's motion can become flight, a way of avoiding presence with a life that needs living.
 
-The gift of this tension is that it forces each of you to examine your own relationship with action. The Shaper must ask: "Am I building because it serves something, or because I can't bear to stop?" The Rooted must ask: "Am I still because it's the wise choice, or because I'm afraid to move?" These questions only arise when you're in genuine dialogue with someone who embodies the opposite answer.`,
+The gift of this tension is that it forces each of you to examine your own relationship with action. The Builder must ask: "Am I building because it serves something, or because I can't bear to stop?" The Rooted must ask: "Am I still because it's the wise choice, or because I'm afraid to move?" These questions only arise when you're in genuine dialogue with someone who embodies the opposite answer.`,
 
     align: [
       {
         point: "Both have chosen deliberately",
-        explanation: `Neither of you arrived at your position by accident or passivity. The Shaper didn't become a builder because they couldn't imagine anything else—they chose building after considering alternatives. The Rooted didn't become still because they failed at motion—they chose stillness after experiencing its opposite. This shared sense of deliberate choice, of having arrived at your position through thought rather than drift, creates an unexpected respect across your differences. You may disagree about conclusions, but you recognize someone who has actually thought about it.`
+        explanation: `Neither of you arrived at your position by accident or passivity. The Builder didn't become a builder because they couldn't imagine anything else—they chose building after considering alternatives. The Rooted didn't become still because they failed at motion—they chose stillness after experiencing its opposite. This shared sense of deliberate choice, of having arrived at your position through thought rather than drift, creates an unexpected respect across your differences. You may disagree about conclusions, but you recognize someone who has actually thought about it.`
       },
       {
         point: "Both reject the default",
-        explanation: `The default in modern culture is neither pure motion nor pure stillness—it's anxious oscillation, busy without purpose, resting without presence. The Shaper rejects this by committing fully to creation. The Rooted rejects this by committing fully to presence. In your different ways, you've both said "no" to the hollow productivity that passes for meaning in most lives. This shared rejection of the cultural default connects you, even as you've chosen opposite alternatives to it.`
+        explanation: `The default in modern culture is neither pure motion nor pure stillness—it's anxious oscillation, busy without purpose, resting without presence. The Builder rejects this by committing fully to creation. The Rooted rejects this by committing fully to presence. In your different ways, you've both said "no" to the hollow productivity that passes for meaning in most lives. This shared rejection of the cultural default connects you, even as you've chosen opposite alternatives to it.`
       }
     ],
 
     clash: [
       {
         point: "What constitutes a life well-lived",
-        explanation: `The Shaper measures a life by what it creates, transforms, leaves behind. When they imagine their final days, they want to look back on a world they've changed. The Rooted measures a life by its quality of presence, its depth of being. When they imagine their final days, they want to have actually lived the days they were given. These are genuinely different visions of flourishing, and they create friction whenever you must make shared decisions about how to spend limited time and energy.`
+        explanation: `The Builder measures a life by what it creates, transforms, leaves behind. When they imagine their final days, they want to look back on a world they've changed. The Rooted measures a life by its quality of presence, its depth of being. When they imagine their final days, they want to have actually lived the days they were given. These are genuinely different visions of flourishing, and they create friction whenever you must make shared decisions about how to spend limited time and energy.`
       },
       {
         point: "The meaning of rest",
-        explanation: `For the Shaper, rest is instrumental—you rest to build better tomorrow. Stillness without purpose is wasted time, life unlived. For the Rooted, rest is meaningful in itself—you don't rest for something, you rest as a way of being fully present. The Shaper's instrumental view of rest feels hollow to the Rooted; the Rooted's end-in-itself view of rest feels lazy to the Shaper. Neither can understand why the other can't see something so obvious.`
+        explanation: `For the Shaper, rest is instrumental—you rest to build better tomorrow. Stillness without purpose is wasted time, life unlived. For the Rooted, rest is meaningful in itself—you don't rest for something, you rest as a way of being fully present. The Builder's instrumental view of rest feels hollow to the Rooted; the Rooted's end-in-itself view of rest feels lazy to the Shaper. Neither can understand why the other can't see something so obvious.`
       },
       {
         point: "Response to problems",
@@ -3068,12 +3068,12 @@ The gift of this tension is that it forces each of you to examine your own relat
 
     give: {
       youToThem: `You offer the Shaper permission to stop. Their culture has told them that worth comes from production, that rest is for the depleted, that stillness is stagnation. You model a different possibility: that a human being is not a productivity machine, that stopping can be a choice rather than a failure, that there is something valuable in simply being present that cannot be achieved through constant doing. You don't invalidate their building—you remind them there's something worth building for, and it requires presence to appreciate.`,
-      themToYou: `They offer you the challenge of engagement. Your stillness is real and valuable, but it exists in a world where things are broken, where people are suffering, where some problems require action to address. The Shaper reminds you that presence without engagement can become withdrawal, that the monk on the mountain didn't solve the suffering in the valley. They challenge you to distinguish between stillness as wisdom and stillness as hiding from the difficult work of changing what needs changing.`
+      themToYou: `They offer you the challenge of engagement. Your stillness is real and valuable, but it exists in a world where things are broken, where people are suffering, where some problems require action to address. The Builder reminds you that presence without engagement can become withdrawal, that the monk on the mountain didn't solve the suffering in the valley. They challenge you to distinguish between stillness as wisdom and stillness as hiding from the difficult work of changing what needs changing.`
     },
 
-    risk: `The failure mode of this pairing is mutual dismissal. The Shaper stops taking the Rooted seriously—sees them as someone who has retreated from real life, whose "wisdom" is actually just dressed-up surrender. The Rooted stops taking the Shaper seriously—sees them as someone trapped in compulsion, whose "creativity" is actually just anxious flight from themselves. At this point, you're no longer learning from each other—you're just confirming your existing worldviews by having someone to reject.
+    risk: `The failure mode of this pairing is mutual dismissal. The Builder stops taking the Rooted seriously—sees them as someone who has retreated from real life, whose "wisdom" is actually just dressed-up surrender. The Rooted stops taking the Shaper seriously—sees them as someone trapped in compulsion, whose "creativity" is actually just anxious flight from themselves. At this point, you're no longer learning from each other—you're just confirming your existing worldviews by having someone to reject.
 
-The deeper risk is that you each become more extreme in reaction to the other. The Shaper, confronted with someone who questions productivity itself, doubles down on building to prove their life has meaning. The Rooted, confronted with someone who won't stop moving, retreats further into stillness to prove they don't need to. Instead of the productive tension that could help both of you grow, you end up reinforcing each other's blind spots.`,
+The deeper risk is that you each become more extreme in reaction to the other. The Builder, confronted with someone who questions productivity itself, doubles down on building to prove their life has meaning. The Rooted, confronted with someone who won't stop moving, retreats further into stillness to prove they don't need to. Instead of the productive tension that could help both of you grow, you end up reinforcing each other's blind spots.`,
 
     question: {
       text: "What would it look like to act from stillness rather than despite it—to build something worth building precisely because you've stopped long enough to know what matters?",
@@ -3192,39 +3192,39 @@ The deeper risk is that you stop asking the questions that only arise in this te
   "citizen+conscience": {
     thesis: "One trusts the architecture. The other tests the walls for cracks. Both are watching—for completely different things.",
 
-    distanceAnalysis: `The Abundant and The Witness represent opposite default stances toward systems: trust versus suspicion. The Citizen has concluded, after genuine thought, that systems designed for abundance tend toward good—that trusting the architecture usually serves you better than constantly testing it. The Conscience has concluded, after genuine thought, that dystopia arrives disguised as convenience—that trusting the architecture is exactly how you get captured by it.
+    distanceAnalysis: `The Abundant and The Witness represent opposite default stances toward systems: trust versus suspicion. The Abundant has concluded, after genuine thought, that systems designed for abundance tend toward good—that trusting the architecture usually serves you better than constantly testing it. The Witness has concluded, after genuine thought, that dystopia arrives disguised as convenience—that trusting the architecture is exactly how you get captured by it.
 
-This distance is particularly charged because each believes the other is making a dangerous mistake. The Citizen thinks the Conscience's permanent suspicion is not just exhausting but self-defeating—that it creates the very atmosphere of distrust that makes good systems impossible. The Conscience thinks the Citizen's trust is not just naive but complicit—that it provides cover for the systems that should be questioned. Neither position is thoughtless. Both are responses to genuine patterns they've observed in the world.`,
+This distance is particularly charged because each believes the other is making a dangerous mistake. The Abundant thinks the Conscience's permanent suspicion is not just exhausting but self-defeating—that it creates the very atmosphere of distrust that makes good systems impossible. The Witness thinks the Citizen's trust is not just naive but complicit—that it provides cover for the systems that should be questioned. Neither position is thoughtless. Both are responses to genuine patterns they've observed in the world.`,
 
-    dynamic: `At its core, this pairing creates a permanent debate about the appropriate relationship to power. The Citizen looks at a well-designed system and sees evidence that humans can build things that work for everyone. The Conscience looks at the same system and sees a question: who benefits from you thinking this works? Both are asking legitimate questions. Both are seeing something real.
+    dynamic: `At its core, this pairing creates a permanent debate about the appropriate relationship to power. The Abundant looks at a well-designed system and sees evidence that humans can build things that work for everyone. The Witness looks at the same system and sees a question: who benefits from you thinking this works? Both are asking legitimate questions. Both are seeing something real.
 
-The dynamic between you is one of mutual frustration that can calcify into mutual dismissal. The Citizen experiences the Conscience as someone who can never enjoy anything, never trust anything, never let their guard down long enough to appreciate when something is actually working. The Conscience experiences the Citizen as someone who can't see what's obvious—the cracks in the architecture, the hidden costs, the people being surveilled or excluded.
+The dynamic between you is one of mutual frustration that can calcify into mutual dismissal. The Abundant experiences the Conscience as someone who can never enjoy anything, never trust anything, never let their guard down long enough to appreciate when something is actually working. The Witness experiences the Citizen as someone who can't see what's obvious—the cracks in the architecture, the hidden costs, the people being surveilled or excluded.
 
-But this tension is genuinely productive when both parties stay engaged. The Citizen, challenged by the Conscience, must ask: what am I not seeing because I trust too easily? What costs am I ignoring because I'm focused on benefits? The Conscience, challenged by the Citizen, must ask: what am I not seeing because I suspect too readily? What's working that I'm dismissing as suspicious?`,
+But this tension is genuinely productive when both parties stay engaged. The Abundant, challenged by the Conscience, must ask: what am I not seeing because I trust too easily? What costs am I ignoring because I'm focused on benefits? The Witness, challenged by the Citizen, must ask: what am I not seeing because I suspect too readily? What's working that I'm dismissing as suspicious?`,
 
     align: [
       {
         point: "Both believe systems matter",
-        explanation: `The Citizen pays attention to systems because they believe good design makes good lives possible. The Conscience pays attention to systems because they believe design is never neutral—it always serves someone. Neither of you treats institutional architecture as irrelevant background. You're both system-watchers; you just have opposite expectations about what you'll find.`
+        explanation: `The Abundant pays attention to systems because they believe good design makes good lives possible. The Witness pays attention to systems because they believe design is never neutral—it always serves someone. Neither of you treats institutional architecture as irrelevant background. You're both system-watchers; you just have opposite expectations about what you'll find.`
       },
       {
         point: "Both want systems that serve everyone",
-        explanation: `The Citizen's trust comes from hoping for systems of genuine abundance—not abundance for some at the cost of others. The Conscience's suspicion comes from wanting systems that actually serve everyone rather than claiming to while they don't. Your endpoints are the same; your assessments of the current situation differ. This shared goal creates the possibility of productive dialogue rather than pure opposition.`
+        explanation: `The Abundant's trust comes from hoping for systems of genuine abundance—not abundance for some at the cost of others. The Witness's suspicion comes from wanting systems that actually serve everyone rather than claiming to while they don't. Your endpoints are the same; your assessments of the current situation differ. This shared goal creates the possibility of productive dialogue rather than pure opposition.`
       }
     ],
 
     clash: [
       {
         point: "Default orientation",
-        explanation: `The Citizen's default is trust with verification; the Conscience's default is suspicion with persuasion. When encountering a new system, the Citizen asks "how does this work?" while the Conscience asks "who does this serve?" These questions aren't incompatible, but they lead to very different initial responses. The Citizen experiences the Conscience's immediate suspicion as corrosive. The Conscience experiences the Citizen's immediate trust as dangerous.`
+        explanation: `The Abundant's default is trust with verification; the Conscience's default is suspicion with persuasion. When encountering a new system, the Citizen asks "how does this work?" while the Conscience asks "who does this serve?" These questions aren't incompatible, but they lead to very different initial responses. The Abundant experiences the Conscience's immediate suspicion as corrosive. The Witness experiences the Citizen's immediate trust as dangerous.`
       },
       {
         point: "What counts as evidence",
-        explanation: `The Citizen takes functionality as evidence that a system is working. The Conscience takes functionality as insufficient—they want to know who's watching, who's excluded, what's being hidden. When the Citizen points to benefits, the Conscience says "yes, but what about the costs?" When the Conscience points to risks, the Citizen says "yes, but look at what's working." You're weighting evidence differently because you're asking different questions.`
+        explanation: `The Abundant takes functionality as evidence that a system is working. The Witness takes functionality as insufficient—they want to know who's watching, who's excluded, what's being hidden. When the Citizen points to benefits, the Conscience says "yes, but what about the costs?" When the Conscience points to risks, the Citizen says "yes, but look at what's working." You're weighting evidence differently because you're asking different questions.`
       },
       {
         point: "The cost of the stance itself",
-        explanation: `The Citizen believes permanent suspicion is exhausting and self-defeating—that if you can never trust anything, you can never build anything worth having. The Conscience believes naive trust is dangerous and complicit—that if you trust systems designed to exploit you, you become part of the problem. Each sees the other's stance as carrying costs that make it unsustainable.`
+        explanation: `The Abundant believes permanent suspicion is exhausting and self-defeating—that if you can never trust anything, you can never build anything worth having. The Witness believes naive trust is dangerous and complicit—that if you trust systems designed to exploit you, you become part of the problem. Each sees the other's stance as carrying costs that make it unsustainable.`
       }
     ],
 
@@ -3233,9 +3233,9 @@ But this tension is genuinely productive when both parties stay engaged. The Cit
       themToYou: `If you're the Conscience, you offer the Citizen the questions they're not asking. Your suspicion isn't paranoia—it's pattern recognition. You've read the history; you know how dystopia arrives. You offer the Citizen the uncomfortable possibility that the architecture they trust might have cracks they can't see, costs they're not counting, beneficiaries they haven't questioned. The gift is the question, even when it's unwelcome.`
     },
 
-    risk: `The failure mode of this pairing is caricature. The Citizen starts treating the Conscience as paranoid—someone who can't function in normal society, whose suspicion has become pathological. The Conscience starts treating the Citizen as a dupe—someone too comfortable to see what's obvious, whose trust makes them complicit in whatever's being hidden. Once you've reduced each other to caricatures, genuine dialogue ends.
+    risk: `The failure mode of this pairing is caricature. The Abundant starts treating the Conscience as paranoid—someone who can't function in normal society, whose suspicion has become pathological. The Witness starts treating the Citizen as a dupe—someone too comfortable to see what's obvious, whose trust makes them complicit in whatever's being hidden. Once you've reduced each other to caricatures, genuine dialogue ends.
 
-The deeper risk is that you stop informing each other's perspective. The Citizen needs the Conscience's questions to avoid being naive. The Conscience needs the Citizen's trust to avoid being paralyzed. If you polarize completely, you each lose access to what the other sees—and your individual perspectives become more dangerous without the corrective.`,
+The deeper risk is that you stop informing each other's perspective. The Abundant needs the Conscience's questions to avoid being naive. The Witness needs the Citizen's trust to avoid being paralyzed. If you polarize completely, you each lose access to what the other sees—and your individual perspectives become more dangerous without the corrective.`,
 
     question: {
       text: "What would it take to build a system you could both trust—the Citizen because it works, the Conscience because its workings are transparent?",
@@ -3246,35 +3246,35 @@ The deeper risk is that you stop informing each other's perspective. The Citizen
   "alive+conscience": {
     thesis: "One wants to feel everything. The other keeps asking: but should we? Experience meets vigilance in a permanent negotiation.",
 
-    distanceAnalysis: `The Feeler and The Witness represent opposite primary orientations: toward experience versus toward evaluation. The Alive person's first instinct is to feel—to open themselves to what's available, to taste the universe's offerings. The Conscience's first instinct is to evaluate—to question whether this experience is safe, ethical, who it serves, what it hides. Neither instinct is wrong, but they create fundamentally different relationships with the world.
+    distanceAnalysis: `The Feeler and The Witness represent opposite primary orientations: toward experience versus toward evaluation. The Alive person's first instinct is to feel—to open themselves to what's available, to taste the universe's offerings. The Witness's first instinct is to evaluate—to question whether this experience is safe, ethical, who it serves, what it hides. Neither instinct is wrong, but they create fundamentally different relationships with the world.
 
-This distance is particularly interesting because both positions claim authenticity. The Alive person believes authenticity means experiencing fully—that filtering, questioning, and evaluating create a barrier between you and what's real. The Conscience believes authenticity means seeing clearly—that experiencing without evaluating is surrender to whatever's presented to you, which might be manufactured or manipulated. Each sees the other's version of authenticity as a kind of inauthenticity.`,
+This distance is particularly interesting because both positions claim authenticity. The Alive person believes authenticity means experiencing fully—that filtering, questioning, and evaluating create a barrier between you and what's real. The Witness believes authenticity means seeing clearly—that experiencing without evaluating is surrender to whatever's presented to you, which might be manufactured or manipulated. Each sees the other's version of authenticity as a kind of inauthenticity.`,
 
-    dynamic: `At its core, this pairing creates a tension between immersion and analysis that shows up in almost every shared experience. The Alive person wants to feel the thing—the sunset, the meal, the music, the moment. The Conscience wants to understand the thing—who made it, why, what's hidden in it, what it's doing to them. Neither is wrong. Both are missing something the other sees.
+    dynamic: `At its core, this pairing creates a tension between immersion and analysis that shows up in almost every shared experience. The Alive person wants to feel the thing—the sunset, the meal, the music, the moment. The Witness wants to understand the thing—who made it, why, what's hidden in it, what it's doing to them. Neither is wrong. Both are missing something the other sees.
 
-The dynamic often becomes frustrating for both parties. The Alive person feels like the Conscience ruins experiences by analyzing them—like someone who can't enjoy a meal without researching the restaurant's labor practices. The Conscience feels like the Alive person is vulnerable to manipulation—like someone so hungry for sensation that they'll consume whatever's offered without asking who's serving and why.
+The dynamic often becomes frustrating for both parties. The Alive person feels like the Conscience ruins experiences by analyzing them—like someone who can't enjoy a meal without researching the restaurant's labor practices. The Witness feels like the Alive person is vulnerable to manipulation—like someone so hungry for sensation that they'll consume whatever's offered without asking who's serving and why.
 
-But this frustration can become productive if both parties stay engaged. The Alive person, challenged by the Conscience, may discover that some experiences they've been consuming aren't serving them—that their openness has made them vulnerable to exploitation. The Conscience, challenged by the Alive person, may discover that some experiences don't need evaluation—that their vigilance has prevented them from actually living.`,
+But this frustration can become productive if both parties stay engaged. The Alive person, challenged by the Conscience, may discover that some experiences they've been consuming aren't serving them—that their openness has made them vulnerable to exploitation. The Witness, challenged by the Alive person, may discover that some experiences don't need evaluation—that their vigilance has prevented them from actually living.`,
 
     align: [
       {
         point: "Both believe life should be lived fully",
-        explanation: `The Alive person believes full living means experiencing fully—opening to what's available rather than filtering it. The Conscience believes full living means seeing clearly—understanding what's real rather than accepting appearances. These are different emphases, but they share a commitment to not sleepwalking through life. Neither of you is advocating for dullness or numbness.`
+        explanation: `The Alive person believes full living means experiencing fully—opening to what's available rather than filtering it. The Witness believes full living means seeing clearly—understanding what's real rather than accepting appearances. These are different emphases, but they share a commitment to not sleepwalking through life. Neither of you is advocating for dullness or numbness.`
       },
       {
         point: "Both distrust certain kinds of comfort",
-        explanation: `The Alive person distrusts the comfort of not feeling—the numbness that passes for safety. The Conscience distrusts the comfort of not questioning—the trust that passes for peace. You've both rejected types of ease that most people accept. This shared rejection of common comforts creates unexpected common ground.`
+        explanation: `The Alive person distrusts the comfort of not feeling—the numbness that passes for safety. The Witness distrusts the comfort of not questioning—the trust that passes for peace. You've both rejected types of ease that most people accept. This shared rejection of common comforts creates unexpected common ground.`
       }
     ],
 
     clash: [
       {
         point: "The relationship between experience and evaluation",
-        explanation: `The Alive person believes evaluation interferes with experience—that you can't fully feel something while you're analyzing it. The Conscience believes experience without evaluation is dangerous—that feeling something fully doesn't tell you whether you should. This isn't a minor disagreement; it affects how you approach nearly everything. The Alive person sees the Conscience as unable to be present; the Conscience sees the Alive person as unable to be careful.`
+        explanation: `The Alive person believes evaluation interferes with experience—that you can't fully feel something while you're analyzing it. The Witness believes experience without evaluation is dangerous—that feeling something fully doesn't tell you whether you should. This isn't a minor disagreement; it affects how you approach nearly everything. The Alive person sees the Conscience as unable to be present; the Conscience sees the Alive person as unable to be careful.`
       },
       {
         point: "Vulnerability",
-        explanation: `The Alive person treats vulnerability as necessary for full experience—you have to be open to be touched by things. The Conscience treats vulnerability as requiring justification—you should know what you're opening to before you open. This creates constant friction: the Alive person feels like the Conscience is closed off; the Conscience feels like the Alive person is reckless.`
+        explanation: `The Alive person treats vulnerability as necessary for full experience—you have to be open to be touched by things. The Witness treats vulnerability as requiring justification—you should know what you're opening to before you open. This creates constant friction: the Alive person feels like the Conscience is closed off; the Conscience feels like the Alive person is reckless.`
       },
       {
         point: "What ruins an experience",
@@ -3287,9 +3287,9 @@ But this frustration can become productive if both parties stay engaged. The Ali
       themToYou: `If you're the Conscience, you offer the Alive person the questions that protect their openness. Not all experiences are what they seem. Some sensations are manufactured to exploit exactly the kind of openness you embody. Your vigilance isn't meant to close them down but to help them open wisely—to feel what's real rather than what's been designed to manipulate their feeling.`
     },
 
-    risk: `The failure mode of this pairing is mutual dismissal that prevents growth. The Alive person writes off the Conscience as someone who can't live—a permanent analyst trapped in their own suspicion. The Conscience writes off the Alive person as someone who can't see—a permanent consumer vulnerable to whatever's offered. Once you've dismissed each other, you stop having the conversations that could help both of you.
+    risk: `The failure mode of this pairing is mutual dismissal that prevents growth. The Alive person writes off the Conscience as someone who can't live—a permanent analyst trapped in their own suspicion. The Witness writes off the Alive person as someone who can't see—a permanent consumer vulnerable to whatever's offered. Once you've dismissed each other, you stop having the conversations that could help both of you.
 
-The deeper risk is that you each become more extreme without the other's corrective. The Alive person, unchallenged by vigilance, becomes increasingly uncritical in their experience-seeking. The Conscience, unchallenged by presence, becomes increasingly incapable of actually living. Your opposite orientations could balance each other; instead, they push you further apart.`,
+The deeper risk is that you each become more extreme without the other's corrective. The Alive person, unchallenged by vigilance, becomes increasingly uncritical in their experience-seeking. The Witness, unchallenged by presence, becomes increasingly incapable of actually living. Your opposite orientations could balance each other; instead, they push you further apart.`,
 
     question: {
       text: "What would it mean to feel something fully while seeing it clearly—to be both completely present and completely aware of what you're present to?",
@@ -3300,39 +3300,39 @@ The deeper risk is that you each become more extreme without the other's correct
   "conscience+friction": {
     thesis: "The one who watches for what's hidden meets the one who seeks difficulty for its own sake. Vigilance confronts vitality in a clash of purpose.",
 
-    distanceAnalysis: `The Witness and The Challenger represent opposite relationships with struggle. The Conscience watches for struggle imposed by others—the hidden costs, the manufactured difficulties, the systems designed to exploit. The Friction-seeker seeks struggle as a chosen practice—the deliberate difficulty that builds strength, the resistance that creates growth. To the Conscience, seeking difficulty looks naive; why would you choose struggle when so much struggle is unchosen and unjust? To the Friction-seeker, watching for hidden costs looks paralyzed; why would you spend your energy on vigilance when you could spend it on growth?
+    distanceAnalysis: `The Witness and The Challenger represent opposite relationships with struggle. The Witness watches for struggle imposed by others—the hidden costs, the manufactured difficulties, the systems designed to exploit. The Friction-seeker seeks struggle as a chosen practice—the deliberate difficulty that builds strength, the resistance that creates growth. To the Conscience, seeking difficulty looks naive; why would you choose struggle when so much struggle is unchosen and unjust? To the Friction-seeker, watching for hidden costs looks paralyzed; why would you spend your energy on vigilance when you could spend it on growth?
 
-This distance reflects different theories of what makes life meaningful. The Conscience believes meaning comes from justice—from seeing clearly, exposing what's hidden, protecting the vulnerable from exploitation. The Friction-seeker believes meaning comes from vitality—from meeting challenges, growing through difficulty, becoming stronger through resistance. Both are coherent philosophies. Both see the other's priority as potentially missing the point.`,
+This distance reflects different theories of what makes life meaningful. The Witness believes meaning comes from justice—from seeing clearly, exposing what's hidden, protecting the vulnerable from exploitation. The Friction-seeker believes meaning comes from vitality—from meeting challenges, growing through difficulty, becoming stronger through resistance. Both are coherent philosophies. Both see the other's priority as potentially missing the point.`,
 
-    dynamic: `At its core, this pairing creates an argument about where to direct one's energy. The Conscience directs energy toward watching—toward vigilance, exposure, accountability. The Friction-seeker directs energy toward striving—toward challenge, growth, becoming. When they look at the same situation, they ask different questions. The Conscience asks "what's being hidden here?" The Friction-seeker asks "what's worth struggling for here?"
+    dynamic: `At its core, this pairing creates an argument about where to direct one's energy. The Witness directs energy toward watching—toward vigilance, exposure, accountability. The Friction-seeker directs energy toward striving—toward challenge, growth, becoming. When they look at the same situation, they ask different questions. The Witness asks "what's being hidden here?" The Friction-seeker asks "what's worth struggling for here?"
 
-The dynamic often becomes one of mutual bafflement. The Conscience watches the Friction-seeker throw themselves against difficulties and wonders why they don't question who created those difficulties and why. The Friction-seeker watches the Conscience analyze power structures and wonders why they don't just push against something instead of constantly exposing what's wrong with pushing.
+The dynamic often becomes one of mutual bafflement. The Witness watches the Friction-seeker throw themselves against difficulties and wonders why they don't question who created those difficulties and why. The Friction-seeker watches the Conscience analyze power structures and wonders why they don't just push against something instead of constantly exposing what's wrong with pushing.
 
-But this bafflement can become productive when both stay engaged. The Conscience, challenged by the Friction-seeker, may discover that their vigilance has become a substitute for actually engaging with life—that watching is easier than doing. The Friction-seeker, challenged by the Conscience, may discover that their struggle-seeking has become uncritical—that they've been striving without asking who benefits from their striving.`,
+But this bafflement can become productive when both stay engaged. The Witness, challenged by the Friction-seeker, may discover that their vigilance has become a substitute for actually engaging with life—that watching is easier than doing. The Friction-seeker, challenged by the Conscience, may discover that their struggle-seeking has become uncritical—that they've been striving without asking who benefits from their striving.`,
 
     align: [
       {
         point: "Both reject passive comfort",
-        explanation: `The Conscience rejects the comfort of not seeing—the ease that comes from not asking hard questions. The Friction-seeker rejects the comfort of not striving—the ease that comes from not challenging themselves. Both of you have decided that some forms of comfort are traps. This shared suspicion of certain kinds of ease creates unexpected common ground.`
+        explanation: `The Witness rejects the comfort of not seeing—the ease that comes from not asking hard questions. The Friction-seeker rejects the comfort of not striving—the ease that comes from not challenging themselves. Both of you have decided that some forms of comfort are traps. This shared suspicion of certain kinds of ease creates unexpected common ground.`
       },
       {
         point: "Both believe in engagement over withdrawal",
-        explanation: `The Conscience engages by watching, questioning, exposing. The Friction-seeker engages by striving, struggling, pushing. Neither of you has chosen withdrawal as a life strategy. You're both in the arena, just playing different games within it.`
+        explanation: `The Witness engages by watching, questioning, exposing. The Friction-seeker engages by striving, struggling, pushing. Neither of you has chosen withdrawal as a life strategy. You're both in the arena, just playing different games within it.`
       }
     ],
 
     clash: [
       {
         point: "The value of difficulty",
-        explanation: `The Friction-seeker values difficulty as inherently growthful—struggle builds character, resistance creates strength. The Conscience questions this framing: not all difficulty is growthful. Some difficulty is manufactured to exploit you. Some struggle just wears you down. The Friction-seeker's faith in difficulty looks naive to the Conscience; the Conscience's questioning of difficulty looks enervating to the Friction-seeker.`
+        explanation: `The Friction-seeker values difficulty as inherently growthful—struggle builds character, resistance creates strength. The Witness questions this framing: not all difficulty is growthful. Some difficulty is manufactured to exploit you. Some struggle just wears you down. The Friction-seeker's faith in difficulty looks naive to the Conscience; the Conscience's questioning of difficulty looks enervating to the Friction-seeker.`
       },
       {
         point: "Where to focus attention",
-        explanation: `The Conscience focuses attention on systems—who designed this challenge? Who benefits from your struggling with it? What's hidden in the difficulty you're embracing? The Friction-seeker focuses attention on the experience of struggle itself—does it make you stronger? Does it feel alive? Is there growth? These different focuses create constant friction about what matters.`
+        explanation: `The Witness focuses attention on systems—who designed this challenge? Who benefits from your struggling with it? What's hidden in the difficulty you're embracing? The Friction-seeker focuses attention on the experience of struggle itself—does it make you stronger? Does it feel alive? Is there growth? These different focuses create constant friction about what matters.`
       },
       {
         point: "What constitutes action",
-        explanation: `The Friction-seeker sees physical or mental striving as real action. The Conscience's watching and questioning can look like mere analysis—not actually doing anything. The Conscience sees vigilance and exposure as real action. The Friction-seeker's struggling can look like running on a treadmill—lots of effort, going nowhere. Each devalues the other's primary mode of engagement.`
+        explanation: `The Friction-seeker sees physical or mental striving as real action. The Witness's watching and questioning can look like mere analysis—not actually doing anything. The Witness sees vigilance and exposure as real action. The Friction-seeker's struggling can look like running on a treadmill—lots of effort, going nowhere. Each devalues the other's primary mode of engagement.`
       }
     ],
 
@@ -3341,9 +3341,9 @@ But this bafflement can become productive when both stay engaged. The Conscience
       themToYou: `If you're the Friction-seeker, you offer the Conscience the reminder that life requires action, not just watching. At some point, you have to stop exposing what's wrong and start pushing against something. Your vitality models the possibility that engagement isn't just analysis—that sometimes you have to struggle with the systems the Conscience only critiques. You're not dismissing their vigilance; you're showing what comes after seeing clearly.`
     },
 
-    risk: `The failure mode of this pairing is mutual contempt. The Friction-seeker decides the Conscience is all talk—someone who analyzes endlessly but never actually does anything, whose vigilance is a substitute for vitality. The Conscience decides the Friction-seeker is a useful idiot—someone who strives energetically in whatever direction they're pointed, too busy struggling to ask who benefits from their struggles. Once contempt sets in, learning stops.
+    risk: `The failure mode of this pairing is mutual contempt. The Friction-seeker decides the Conscience is all talk—someone who analyzes endlessly but never actually does anything, whose vigilance is a substitute for vitality. The Witness decides the Friction-seeker is a useful idiot—someone who strives energetically in whatever direction they're pointed, too busy struggling to ask who benefits from their struggles. Once contempt sets in, learning stops.
 
-The deeper risk is that you reinforce each other's weaknesses by rejecting each other's strengths. The Friction-seeker, dismissing vigilance as paralysis, becomes increasingly uncritical about what they struggle for. The Conscience, dismissing striving as naive, becomes increasingly passive in their own engagement with life. Your opposition makes both of you more one-dimensional.`,
+The deeper risk is that you reinforce each other's weaknesses by rejecting each other's strengths. The Friction-seeker, dismissing vigilance as paralysis, becomes increasingly uncritical about what they struggle for. The Witness, dismissing striving as naive, becomes increasingly passive in their own engagement with life. Your opposition makes both of you more one-dimensional.`,
 
     question: {
       text: "What difficulty would be worth choosing if you knew exactly who benefits and why—and what vigilance would be complete if it led you to embrace struggle rather than just expose it?",
@@ -3413,11 +3413,11 @@ The deeper risk is that you stop learning from each other's perspective. The Roo
 
     distanceAnalysis: `When The Abundant meets Shaper of What's Next, the philosophical distance between you is minimal. You both believe in possibility. You both see constraint as something to be overcome rather than accepted. You both orient toward futures that don't exist yet with confidence that they could. This is easy recognition—the relief of meeting someone whose basic assumption is that things can get better.
 
-But close proximity creates its own challenges. When two people share the same optimistic baseline, certain questions never get asked. The Citizen trusts systems designed for abundance; the Shaper builds systems designed for transformation. Neither is positioned to ask whether the system should exist at all. Your shared confidence in positive futures might be wisdom—or might be a blind spot you're both standing in together.`,
+But close proximity creates its own challenges. When two people share the same optimistic baseline, certain questions never get asked. The Abundant trusts systems designed for abundance; the Shaper builds systems designed for transformation. Neither is positioned to ask whether the system should exist at all. Your shared confidence in positive futures might be wisdom—or might be a blind spot you're both standing in together.`,
 
-    dynamic: `At its core, this pairing brings together two people who believe in building. The Citizen brings trust in existing abundance—the conviction that we already have what we need if we can just distribute it properly. The Shaper brings confidence in future abundance—the conviction that we can create what doesn't exist yet. Together, you cover the full spectrum of constructive optimism.
+    dynamic: `At its core, this pairing brings together two people who believe in building. The Abundant brings trust in existing abundance—the conviction that we already have what we need if we can just distribute it properly. The Builder brings confidence in future abundance—the conviction that we can create what doesn't exist yet. Together, you cover the full spectrum of constructive optimism.
 
-The dynamic between you is one of mutual amplification. The Citizen's trust gives the Shaper a foundation to build on; the Shaper's vision gives the Citizen something to believe in. This creates productive energy: together, you can imagine and execute in ways that neither could alone.
+The dynamic between you is one of mutual amplification. The Abundant's trust gives the Shaper a foundation to build on; the Shaper's vision gives the Citizen something to believe in. This creates productive energy: together, you can imagine and execute in ways that neither could alone.
 
 But this same amplification can become an echo chamber. Without someone asking harder questions—about unintended consequences, about who gets left behind, about whether building is always the right response—you can reinforce each other's blind spots. Your shared language of possibility might be exactly what's needed, or might be a comfortable dialect that keeps you from hearing dissent.`,
 
@@ -3428,7 +3428,7 @@ But this same amplification can become an echo chamber. Without someone asking h
       },
       {
         point: "Systems thinking",
-        explanation: `The Citizen trusts good systems; the Shaper builds them. You both understand that individual action matters less than structural design. This shared systems orientation means your conversations naturally move to leverage points, feedback loops, and scalable solutions.`
+        explanation: `The Abundant trusts good systems; the Shaper builds them. You both understand that individual action matters less than structural design. This shared systems orientation means your conversations naturally move to leverage points, feedback loops, and scalable solutions.`
       },
       {
         point: "Constructive rather than critical",
@@ -3439,11 +3439,11 @@ But this same amplification can become an echo chamber. Without someone asking h
     clash: [
       {
         point: "Trust vs. transformation",
-        explanation: `The Citizen tends to trust existing systems and work within them; the Shaper tends to see existing systems as raw material for transformation. This difference is subtle but real. When a system isn't working, the Citizen asks how to fix it; the Shaper asks whether to replace it entirely. Your solutions to the same problem might diverge significantly.`
+        explanation: `The Abundant tends to trust existing systems and work within them; the Shaper tends to see existing systems as raw material for transformation. This difference is subtle but real. When a system isn't working, the Citizen asks how to fix it; the Shaper asks whether to replace it entirely. Your solutions to the same problem might diverge significantly.`
       },
       {
         point: "Whose vision prevails?",
-        explanation: `Both of you have visions of better futures, but those visions might not align in detail. The Citizen's abundance might look different from the Shaper's transformation. When your optimisms conflict, who adjusts? This tension is usually manageable, but it exists beneath the surface of your easy agreement.`
+        explanation: `Both of you have visions of better futures, but those visions might not align in detail. The Abundant's abundance might look different from the Shaper's transformation. When your optimisms conflict, who adjusts? This tension is usually manageable, but it exists beneath the surface of your easy agreement.`
       }
     ],
 
@@ -3452,7 +3452,7 @@ But this same amplification can become an echo chamber. Without someone asking h
       themToYou: `If you're the Shaper, you offer the Citizen direction. Their trust in abundance is generous, but trust without vision can become complacency. You show them what abundance could become, what's possible beyond what already exists. You give their trust somewhere to go.`
     },
 
-    risk: `The failure mode for this pairing is mutual reinforcement of uncritical optimism. Without someone to ask harder questions, you can amplify each other's confidence into blind spots. The Citizen's trust combines with the Shaper's vision to create beautiful plans that no one has stress-tested. Who asks about unintended consequences? Who speaks for those who might be harmed by your abundance?
+    risk: `The failure mode for this pairing is mutual reinforcement of uncritical optimism. Without someone to ask harder questions, you can amplify each other's confidence into blind spots. The Abundant's trust combines with the Shaper's vision to create beautiful plans that no one has stress-tested. Who asks about unintended consequences? Who speaks for those who might be harmed by your abundance?
 
 The deeper risk is that your shared language of possibility becomes a filter that screens out dissent. Critics start to seem negative, cautious voices seem fearful, and you both dismiss perspectives that don't share your optimistic baseline. The echo chamber becomes comfortable precisely because it never challenges you.`,
 
@@ -3465,35 +3465,35 @@ The deeper risk is that your shared language of possibility becomes a filter tha
   "citizen+friction": {
     thesis: "Easy resonance, instant understanding—the Citizen's trust meets the Friction-seeker's challenge. The question is whether comfort becomes complacency or whether productive tension emerges.",
 
-    distanceAnalysis: `When The Abundant meets The Challenger, the distance between you is smaller than it might appear. You both believe in engagement with the world as it is. The Citizen engages through trust; the Friction-seeker engages through challenge. But both of you are fundamentally engaged—neither retreats into cynicism or paralysis.
+    distanceAnalysis: `When The Abundant meets The Challenger, the distance between you is smaller than it might appear. You both believe in engagement with the world as it is. The Abundant engages through trust; the Friction-seeker engages through challenge. But both of you are fundamentally engaged—neither retreats into cynicism or paralysis.
 
-This shared engagement creates easy initial connection. You both want to be in the arena, just in different ways. The Citizen assumes the arena is basically good; the Friction-seeker assumes the arena requires struggle. But you're both in it, which matters more than you might think.`,
+This shared engagement creates easy initial connection. You both want to be in the arena, just in different ways. The Abundant assumes the arena is basically good; the Friction-seeker assumes the arena requires struggle. But you're both in it, which matters more than you might think.`,
 
-    dynamic: `At its core, this pairing brings together two forms of active engagement. The Citizen brings trust that systems can be good, that abundance is possible, that positive outcomes are achievable. The Friction-seeker brings the conviction that ease is suspicious, that struggle is necessary, that challenge is how we grow.
+    dynamic: `At its core, this pairing brings together two forms of active engagement. The Abundant brings trust that systems can be good, that abundance is possible, that positive outcomes are achievable. The Friction-seeker brings the conviction that ease is suspicious, that struggle is necessary, that challenge is how we grow.
 
-The dynamic between you is one of productive tension. The Citizen's trust can soften the Friction-seeker's relentless challenge; the Friction-seeker's resistance can sharpen the Citizen's comfortable assumptions. Together, you might find a middle ground that neither would discover alone—engaged optimism that doesn't become complacent.
+The dynamic between you is one of productive tension. The Abundant's trust can soften the Friction-seeker's relentless challenge; the Friction-seeker's resistance can sharpen the Citizen's comfortable assumptions. Together, you might find a middle ground that neither would discover alone—engaged optimism that doesn't become complacent.
 
 But this productive tension requires conscious attention. Without it, you might simply talk past each other—the Citizen wondering why everything has to be so hard, the Friction-seeker wondering why the Citizen won't fight for anything. Your shared engagement can become parallel play rather than genuine partnership.`,
 
     align: [
       {
         point: "Engagement with reality",
-        explanation: `Neither of you retreats from the world. The Citizen engages through building and trusting; the Friction-seeker engages through challenging and testing. But both of you are fundamentally in the game, not on the sidelines. This shared engagement creates a foundation for mutual respect.`
+        explanation: `Neither of you retreats from the world. The Abundant engages through building and trusting; the Friction-seeker engages through challenging and testing. But both of you are fundamentally in the game, not on the sidelines. This shared engagement creates a foundation for mutual respect.`
       },
       {
         point: "Belief in improvement",
-        explanation: `The Citizen believes things can be better through good systems; the Friction-seeker believes things can be better through productive struggle. Both of you reject fatalism. This shared belief in improvement—even if you disagree about how improvement happens—connects you.`
+        explanation: `The Abundant believes things can be better through good systems; the Friction-seeker believes things can be better through productive struggle. Both of you reject fatalism. This shared belief in improvement—even if you disagree about how improvement happens—connects you.`
       },
       {
         point: "Action orientation",
-        explanation: `Neither of you is satisfied with analysis alone. The Citizen wants to build abundance; the Friction-seeker wants to test limits. Both of you prefer doing to merely thinking. This shared bias toward action means your collaborations tend to produce movement.`
+        explanation: `Neither of you is satisfied with analysis alone. The Abundant wants to build abundance; the Friction-seeker wants to test limits. Both of you prefer doing to merely thinking. This shared bias toward action means your collaborations tend to produce movement.`
       }
     ],
 
     clash: [
       {
         point: "Trust vs. testing",
-        explanation: `The Citizen's default is to trust systems and assume good intent; the Friction-seeker's default is to test systems and assume they need challenge. When facing a new institution, technology, or relationship, you'll instinctively approach it differently. The Citizen says "let's see what this can do." The Friction-seeker says "let's see if this can withstand pressure."`
+        explanation: `The Abundant's default is to trust systems and assume good intent; the Friction-seeker's default is to test systems and assume they need challenge. When facing a new institution, technology, or relationship, you'll instinctively approach it differently. The Abundant says "let's see what this can do." The Friction-seeker says "let's see if this can withstand pressure."`
       }
     ],
 
@@ -3502,9 +3502,9 @@ But this productive tension requires conscious attention. Without it, you might 
       themToYou: `If you're the Friction-seeker, you offer the Citizen necessary challenge. Their trust is generous, but it can become naive. You test their assumptions, push back on their optimism, and help them distinguish between systems that deserve trust and systems that are exploiting it. Your friction keeps their trust honest.`
     },
 
-    risk: `The failure mode for this pairing is mutual frustration. The Citizen starts to see the Friction-seeker as exhaustingly negative—why does everything have to be a battle? The Friction-seeker starts to see the Citizen as dangerously naive—why won't they fight for anything? Without conscious bridge-building, your different approaches can become sources of contempt rather than complementary strengths.
+    risk: `The failure mode for this pairing is mutual frustration. The Abundant starts to see the Friction-seeker as exhaustingly negative—why does everything have to be a battle? The Friction-seeker starts to see the Citizen as dangerously naive—why won't they fight for anything? Without conscious bridge-building, your different approaches can become sources of contempt rather than complementary strengths.
 
-The deeper risk is that you reinforce each other's comfortable positions rather than learning from each other. The Citizen stays trusting without developing discernment; the Friction-seeker stays challenging without developing ease. You like each other despite your differences rather than growing through them.`,
+The deeper risk is that you reinforce each other's comfortable positions rather than learning from each other. The Abundant stays trusting without developing discernment; the Friction-seeker stays challenging without developing ease. You like each other despite your differences rather than growing through them.`,
 
     question: {
       text: "When is trust the right response, and when is challenge? How do you decide together?",
@@ -3769,7 +3769,7 @@ The deeper risk is that you create a beautiful monument and forget to live in it
   "cleareyed+swimmer": {
     thesis: "Two truth-seekers with different methods—one sees directly, one questions endlessly. Easy resonance in shared commitment to reality, but who decides when truth has been found?",
 
-    distanceAnalysis: `When The Truth-Teller meets The Questioner, you're both oriented toward truth. The Clear-Eyed type pursues truth through direct seeing—they look at what's there and name it. The Swimmer pursues truth through questions—they explore beneath surfaces, holding uncertainty while insight develops. You're both committed to reality over comfortable illusion.
+    distanceAnalysis: `When The Truth-Teller meets The Questioner, you're both oriented toward truth. The Clear-Eyed type pursues truth through direct seeing—they look at what's there and name it. The Questioner pursues truth through questions—they explore beneath surfaces, holding uncertainty while insight develops. You're both committed to reality over comfortable illusion.
 
 This shared commitment to truth creates immediate recognition. Neither of you accepts easy answers. Neither of you chooses comfort over accuracy. You both understand that knowing requires courage—whether that's the courage to see clearly or the courage to keep asking. In each other, you find a fellow traveler toward what's real.`,
 
@@ -3777,7 +3777,7 @@ This shared commitment to truth creates immediate recognition. Neither of you ac
 
 The dynamic between you is one of complementary investigation. The Clear-Eyed says what they see; the Swimmer asks what hasn't been seen yet. Neither dismisses the other's method. This creates productive inquiry where direct vision and persistent questioning work together.
 
-But this same complementarity can create tension around closure. The Clear-Eyed type tends toward conclusion—they see, they speak, they move on. The Swimmer tends toward continuation—there's always another question, another depth to explore. Who decides when truth has been found? Your shared commitment to reality might not translate to shared timing about when investigation ends.`,
+But this same complementarity can create tension around closure. The Clear-Eyed type tends toward conclusion—they see, they speak, they move on. The Questioner tends toward continuation—there's always another question, another depth to explore. Who decides when truth has been found? Your shared commitment to reality might not translate to shared timing about when investigation ends.`,
 
     align: [
       {
@@ -3797,7 +3797,7 @@ But this same complementarity can create tension around closure. The Clear-Eyed 
     clash: [
       {
         point: "Certainty vs. inquiry",
-        explanation: `The Clear-Eyed type tends toward conclusions—they see clearly and speak definitively. The Swimmer tends toward questions—clarity is always provisional, there's always more to explore. This can create friction: the Clear-Eyed may feel the Swimmer is avoiding conclusions; the Swimmer may feel the Clear-Eyed is closing too quickly. How do you know when investigation should end?`
+        explanation: `The Clear-Eyed type tends toward conclusions—they see clearly and speak definitively. The Questioner tends toward questions—clarity is always provisional, there's always more to explore. This can create friction: the Clear-Eyed may feel the Swimmer is avoiding conclusions; the Swimmer may feel the Clear-Eyed is closing too quickly. How do you know when investigation should end?`
       }
     ],
 
@@ -3806,7 +3806,7 @@ But this same complementarity can create tension around closure. The Clear-Eyed 
       themToYou: `If you're the Swimmer, you offer the Clear-Eyed humility about certainty. Their direct vision is powerful, but what if they're missing something? You model the possibility that truth is deeper than any single seeing, that patient questioning reveals what quick clarity misses. You give their seeing depth.`
     },
 
-    risk: `The failure mode for this pairing is mutual frustration about closure. The Clear-Eyed type becomes impatient with the Swimmer's endless inquiry—at some point, you have to decide what you see and act on it. The Swimmer becomes frustrated with the Clear-Eyed's premature certainty—how can they be so sure when there's always more to question? Without explicit negotiation about when investigation ends, you can talk past each other indefinitely.
+    risk: `The failure mode for this pairing is mutual frustration about closure. The Clear-Eyed type becomes impatient with the Swimmer's endless inquiry—at some point, you have to decide what you see and act on it. The Questioner becomes frustrated with the Clear-Eyed's premature certainty—how can they be so sure when there's always more to question? Without explicit negotiation about when investigation ends, you can talk past each other indefinitely.
 
 The deeper risk is that you fail to integrate your methods. The Clear-Eyed keeps seeing without deepening; the Swimmer keeps questioning without concluding. You coexist rather than learn from each other. The real gift of this pairing—vision informed by depth, inquiry that eventually lands—goes unrealized.`,
 
@@ -3819,35 +3819,35 @@ The deeper risk is that you fail to integrate your methods. The Clear-Eyed keeps
   "swimmer+unbound": {
     thesis: "Two navigators of unmapped territory—the questioner of depths and the transcender of limits. Beautiful explorations together, but who anchors the expedition when both prefer the journey to arrival?",
 
-    distanceAnalysis: `When The Questioner meets The Transcendent, you're both comfortable beyond conventional boundaries. The Swimmer is comfortable in intellectual depths—holding questions that others would resolve too quickly, exploring territory that has no map. The Unbound is comfortable in existential expansion—imagining forms of consciousness and being that transcend current limits. You're both explorers of the unknown.
+    distanceAnalysis: `When The Questioner meets The Transcendent, you're both comfortable beyond conventional boundaries. The Questioner is comfortable in intellectual depths—holding questions that others would resolve too quickly, exploring territory that has no map. The Unbound is comfortable in existential expansion—imagining forms of consciousness and being that transcend current limits. You're both explorers of the unknown.
 
 This shared comfort with the unmapped creates immediate recognition. Neither of you needs solid ground to feel safe. Neither of you insists on conclusions before the inquiry is complete. You both understand that some truths can only be found by venturing beyond where others stop. In each other, you find a fellow traveler who doesn't need a destination.`,
 
-    dynamic: `At its core, this pairing brings together two forms of venturing beyond. The Swimmer ventures into intellectual depths; the Unbound ventures into existential possibilities. Together, you can explore territories that would terrify more grounded souls—questions without answers, possibilities without precedent.
+    dynamic: `At its core, this pairing brings together two forms of venturing beyond. The Questioner ventures into intellectual depths; the Unbound ventures into existential possibilities. Together, you can explore territories that would terrify more grounded souls—questions without answers, possibilities without precedent.
 
-The dynamic between you is one of mutual permission to keep going. The Swimmer doesn't ask the Unbound to come back to earth; the Unbound doesn't ask the Swimmer to surface with conclusions. You validate each other's appetite for the beyond, whatever form that takes.
+The dynamic between you is one of mutual permission to keep going. The Questioner doesn't ask the Unbound to come back to earth; the Unbound doesn't ask the Swimmer to surface with conclusions. You validate each other's appetite for the beyond, whatever form that takes.
 
 But this same mutual permission can become mutual abandonment of ground. If neither of you anchors the expedition, if both of you only value the journey, you can drift together into territories so abstract they lose contact with lived reality. The depths and the heights can both become escapes from the middle—from the actual life you're living while you explore.`,
 
     align: [
       {
         point: "Comfort with the unknown",
-        explanation: `Neither of you requires certainty to feel secure. The Swimmer can hold questions indefinitely; the Unbound can imagine possibilities without knowing if they're achievable. This shared tolerance for uncertainty means your explorations aren't cut short by anxiety about not-knowing.`
+        explanation: `Neither of you requires certainty to feel secure. The Questioner can hold questions indefinitely; the Unbound can imagine possibilities without knowing if they're achievable. This shared tolerance for uncertainty means your explorations aren't cut short by anxiety about not-knowing.`
       },
       {
         point: "Imagination as tool",
-        explanation: `Both of you use imagination seriously—not as escape but as exploration. The Swimmer imagines possibilities beneath the surface of things; the Unbound imagines possibilities beyond the limits of things. This shared use of imagination as a serious tool connects you.`
+        explanation: `Both of you use imagination seriously—not as escape but as exploration. The Questioner imagines possibilities beneath the surface of things; the Unbound imagines possibilities beyond the limits of things. This shared use of imagination as a serious tool connects you.`
       },
       {
         point: "Beyond the conventional",
-        explanation: `Neither of you is satisfied with ordinary answers to extraordinary questions. The Swimmer keeps questioning when others would stop; the Unbound keeps reaching when others would settle. You both understand that the most important truths might lie outside conventional territory.`
+        explanation: `Neither of you is satisfied with ordinary answers to extraordinary questions. The Questioner keeps questioning when others would stop; the Unbound keeps reaching when others would settle. You both understand that the most important truths might lie outside conventional territory.`
       }
     ],
 
     clash: [
       {
         point: "Depth vs. transcendence",
-        explanation: `The Swimmer goes down—into complexity, nuance, the depths of a question. The Unbound goes out—past limits, toward possibilities that don't exist yet. These movements aren't opposed, but they're different. When your explorations diverge, which direction do you follow? Whose unmapped territory gets explored?`
+        explanation: `The Questioner goes down—into complexity, nuance, the depths of a question. The Unbound goes out—past limits, toward possibilities that don't exist yet. These movements aren't opposed, but they're different. When your explorations diverge, which direction do you follow? Whose unmapped territory gets explored?`
       }
     ],
 
@@ -3858,7 +3858,7 @@ But this same mutual permission can become mutual abandonment of ground. If neit
 
     risk: `The failure mode for this pairing is beautiful disconnection from reality. If both of you only value exploration—the Swimmer's endless questions, the Unbound's limitless reaching—you can drift together into abstraction so pure it loses contact with lived life. The questions never land; the transcendence never touches ground. You might be brilliant together and also irrelevant.
 
-The deeper risk is that you enable each other's avoidance of commitment. The Swimmer avoids conclusions; the Unbound avoids limits. Together, you can create a relationship that's always expanding and never settling, always exploring and never arriving. At some point, life requires choosing. If neither of you can anchor the expedition, you might explore forever without finding home.`,
+The deeper risk is that you enable each other's avoidance of commitment. The Questioner avoids conclusions; the Unbound avoids limits. Together, you can create a relationship that's always expanding and never settling, always exploring and never arriving. At some point, life requires choosing. If neither of you can anchor the expedition, you might explore forever without finding home.`,
 
     question: {
       text: "What have your explorations been avoiding—and what would it mean to bring your discoveries back to the ordinary life you share?",

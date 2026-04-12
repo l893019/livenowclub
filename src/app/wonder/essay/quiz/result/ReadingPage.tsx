@@ -135,23 +135,10 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
       {/* Core Description */}
       <p className={styles.description}>{archetype.description}</p>
 
-      {/* One-sentence worldview - shareable */}
+      {/* One-sentence worldview */}
       {!isViewingOther && archetype.oneSentence && (
         <div className={styles.oneSentence}>
           <p className={styles.oneSentenceText}>"{archetype.oneSentence}"</p>
-          <button
-            className={styles.copyButton}
-            onClick={() => {
-              navigator.clipboard.writeText(archetype.oneSentence);
-              const btn = document.querySelector(`.${styles.copyButton}`) as HTMLButtonElement;
-              if (btn) {
-                btn.textContent = "Copied!";
-                setTimeout(() => { btn.textContent = "Copy"; }, 2000);
-              }
-            }}
-          >
-            Copy
-          </button>
         </div>
       )}
 
@@ -178,7 +165,7 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
         <section className={styles.ctaSection}>
           <h2 className={styles.sectionTitle}>Compare Worldviews</h2>
           <p className={styles.ctaDescription}>
-            See how your worldview fits with friends, family, and coworkers. Create a group and invite others to take the quiz.
+            See what happens when different worldviews try to build something together.
           </p>
           <div className={styles.ctaButtons}>
             {hasQuizUserId === false ? (
@@ -263,7 +250,7 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
 
       {/* Your Blind Spot - coral accent */}
       <div className={styles.blindSpot}>
-        <div className={styles.blindSpotLabel}>Your Blind Spot</div>
+        <div className={styles.blindSpotLabel}>Something to Consider</div>
         <p className={styles.blindSpotText}>{archetype.blindSpot}</p>
       </div>
 

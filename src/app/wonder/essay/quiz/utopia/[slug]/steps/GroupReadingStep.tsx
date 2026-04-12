@@ -183,9 +183,9 @@ export function GroupReadingStep({
 
       <div className={styles.divider} />
 
-      {/* YOUR COLLECTIVE BLIND SPOT */}
+      {/* SOMETHING TO CONSIDER TOGETHER */}
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Your Collective Blind Spot</h2>
+        <h2 className={styles.sectionTitle}>Something to Consider Together</h2>
         <div className={styles.bodyText}>
           {analysis.collectiveBlindSpot.description.split("\n\n").map((para, i) => (
             <p key={i}>{para}</p>

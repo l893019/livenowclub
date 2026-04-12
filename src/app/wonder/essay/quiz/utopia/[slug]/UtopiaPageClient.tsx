@@ -199,52 +199,6 @@ export function UtopiaPageClient({
     }
   }
 
-  // Two-person utopia: special enhanced view
-  if (members.length === 2) {
-    const [personA, personB] = members;
-    const archA = archetypes[personA.archetype];
-    const archB = archetypes[personB.archetype];
-
-    return (
-      <div className={styles.container}>
-        <Header />
-        <main className={styles.main}>
-          <TwoPersonView members={members} utopiaName={utopiaName} />
-
-          {/* Profile links for each person */}
-          <div className={styles.profileLinks}>
-            <button
-              className={styles.profileLinkBtn}
-              onClick={() => {
-                setSelectedMemberId(personA.id);
-                setCurrentView("their-reading");
-              }}
-            >
-              <span className={styles.profileDot} style={{ backgroundColor: archA?.color }} />
-              <span>See {personA.name || "their"}'s full profile →</span>
-            </button>
-            <button
-              className={styles.profileLinkBtn}
-              onClick={() => {
-                setSelectedMemberId(personB.id);
-                setCurrentView("their-reading");
-              }}
-            >
-              <span className={styles.profileDot} style={{ backgroundColor: archB?.color }} />
-              <span>See {personB.name || "their"}'s full profile →</span>
-            </button>
-          </div>
-
-          <ShareSection
-            shareUrl={shareUrl}
-            onShare={handleShare}
-          />
-        </main>
-        <Footer />
-      </div>
-    );
-  }
-
   // Relationship view
   // Use viewAsUserId for deep links, otherwise currentUserId
   const relationshipYouId = viewAsUserId || currentUserId;
@@ -313,6 +267,59 @@ export function UtopiaPageClient({
     }
   }
 
+  // Two-person utopia: special enhanced view (when not viewing individual profile/reading)
+  if (members.length === 2 && currentView === "radar") {
+    const [personA, personB] = members;
+    const archA = archetypes[personA.archetype];
+    const archB = archetypes[personB.archetype];
+
+    return (
+      <div className={styles.container}>
+        <Header />
+        <main className={styles.main}>
+          <TwoPersonView members={members} utopiaName={utopiaName} />
+
+          {/* Profile links for each person */}
+          <div className={styles.profileLinks}>
+            <button
+              className={styles.profileLinkBtn}
+              onClick={() => {
+                setSelectedMemberId(personA.id);
+                setCurrentView("their-reading");
+              }}
+            >
+              <span className={styles.profileDot} style={{ backgroundColor: archA?.color }} />
+              <span>See {personA.name || "their"}'s full profile →</span>
+            </button>
+            <button
+              className={styles.profileLinkBtn}
+              onClick={() => {
+                setSelectedMemberId(personB.id);
+                setCurrentView("their-reading");
+              }}
+            >
+              <span className={styles.profileDot} style={{ backgroundColor: archB?.color }} />
+              <span>See {personB.name || "their"}'s full profile →</span>
+            </button>
+          </div>
+
+          <ShareSection
+            shareUrl={shareUrl}
+            onShare={handleShare}
+            showMyUtopias={!!currentUserId}
+          />
+
+          <div className={styles.essayLink}>
+            <Link href="/wonder/essay" className={styles.essayLinkText}>
+              Read <em>When Purpose Is All We Have Left</em> &rarr;
+            </Link>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
   // Group reading view
   if (currentView === "reading") {
     return (
@@ -324,7 +331,12 @@ export function UtopiaPageClient({
         <main className={styles.readingMain}>
           <GroupReadingStep members={members} utopiaName={utopiaName} utopiaSlug={slug} />
           <div className={styles.shareWrapper}>
-            <ShareSection shareUrl={shareUrl} onShare={handleShare} />
+            <ShareSection shareUrl={shareUrl} onShare={handleShare} showMyUtopias={!!currentUserId} />
+          </div>
+          <div className={styles.essayLink}>
+            <Link href="/wonder/essay" className={styles.essayLinkText}>
+              Read <em>When Purpose Is All We Have Left</em> &rarr;
+            </Link>
           </div>
         </main>
         <Footer />
@@ -383,9 +395,17 @@ export function UtopiaPageClient({
           </button>
         </div>
 
-        <Link href="/wonder/essay/quiz/my-utopias" className={styles.myUtopias}>
-          My Utopias →
-        </Link>
+        {currentUserId && (
+          <Link href="/wonder/essay/quiz/my-utopias" className={styles.myUtopias}>
+            My Utopias →
+          </Link>
+        )}
+
+        <div className={styles.essayLink}>
+          <Link href="/wonder/essay" className={styles.essayLinkText}>
+            Read <em>When Purpose Is All We Have Left</em> &rarr;
+          </Link>
+        </div>
       </main>
       <Footer />
     </div>
@@ -406,7 +426,7 @@ function Footer() {
   );
 }
 
-function ShareSection({ shareUrl, onShare }: { shareUrl: string; onShare: () => void }) {
+function ShareSection({ shareUrl, onShare, showMyUtopias }: { shareUrl: string; onShare: () => void; showMyUtopias?: boolean }) {
   return (
     <div className={styles.shareSection}>
       <h2 className={styles.shareTitle}>Invite someone</h2>
@@ -420,9 +440,11 @@ function ShareSection({ shareUrl, onShare }: { shareUrl: string; onShare: () => 
         <button className={styles.btnPrimary} onClick={onShare}>
           Share Link
         </button>
-        <Link href="/wonder/essay/quiz/my-utopias" className={styles.btnSecondary}>
-          My Utopias
-        </Link>
+        {showMyUtopias && (
+          <Link href="/wonder/essay/quiz/my-utopias" className={styles.btnSecondary}>
+            My Utopias
+          </Link>
+        )}
       </div>
     </div>
   );

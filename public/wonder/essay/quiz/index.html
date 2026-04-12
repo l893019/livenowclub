@@ -298,7 +298,7 @@
       font-size: clamp(1.1rem, 2.5vw, 1.3rem);
       font-weight: 300;
       color: var(--text-dim);
-      margin-bottom: 50px;
+      margin-bottom: 20px;
       max-width: 520px;
       margin-left: auto;
       margin-right: auto;
@@ -306,6 +306,21 @@
       letter-spacing: 0.02em;
       opacity: 0;
       animation: fadeUp 1s ease forwards 0.5s;
+    }
+
+    .intro-validation {
+      font-family: var(--sans);
+      font-size: clamp(0.9rem, 2vw, 1rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--text-muted);
+      margin-bottom: 50px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards 0.7s;
     }
 
     .start-btn {
@@ -1270,7 +1285,8 @@
           <div class="intro-label">Interactive</div>
           <h1 class="intro-title">Discover Your Sci-Fi Worldview & Build Your Own Utopia</h1>
           <p class="intro-subtitle">Fourteen worldviews drawn from 200+ science fiction books. Which one is yours?</p>
-          <button class="start-btn" onclick="showNamingScreen()">Begin</button>
+          <p class="intro-validation">Every worldview here emerged from a serious tradition of thought about what humanity could become. None is more correct than another.</p>
+          <button class="start-btn" onclick="startQuiz()">Begin</button>
         </div>
       </div>
 
@@ -1341,7 +1357,7 @@
         <div class="answers">
           <button class="answer-btn" onclick="answer(3, 'A')">Useful, but it's not the same thing</button>
           <button class="answer-btn" onclick="answer(3, 'B')">This is the most dangerous invention in history</button>
-          <button class="answer-btn" onclick="answer(3, 'C')">I'd try it</button>
+          <button class="answer-btn" onclick="answer(3, 'C')">Care is care. I don't need it to come from a human.</button>
           <button class="answer-btn" onclick="answer(3, 'D')">I'd want to know what it does to children who grow up with it</button>
           <button class="answer-btn" onclick="answer(3, 'E')">It depends entirely on what the person needs</button>
         </div>
@@ -1366,8 +1382,7 @@
           <button class="answer-btn" onclick="answer(4, 'C')">Stay, and secretly look for anyone else who realizes there's something wrong</button>
           <button class="answer-btn" onclick="answer(4, 'D')">Stay. Most people are happier here than they were before.</button>
           <button class="answer-btn" onclick="answer(4, 'E')">Stay. I miss the chaos and beauty of the old world, but the new world is better in the ways that matter.</button>
-          <button class="answer-btn" onclick="answer(4, 'F')">How do we know we won't lose more? I want to understand how we got here.</button>
-          <button class="answer-btn" onclick="answer(4, 'G')">Leave.</button>
+          <button class="answer-btn" onclick="answer(4, 'F')">Leave.</button>
         </div>
         <div class="question-nav">
           <button class="back-btn" onclick="goBack()">
@@ -1437,11 +1452,8 @@
           <button class="answer-btn" onclick="answer(7, 'C')">I'm more interested in what we've already been than what we'll become</button>
           <button class="answer-btn" onclick="answer(7, 'D')">I want to be alive for as much of it as possible</button>
           <button class="answer-btn" onclick="answer(7, 'E')">I think we're on the verge of becoming something we can't currently imagine</button>
-          <button class="answer-btn" onclick="answer(7, 'F')">The future of humanity is probably just whether your neighbor is ok</button>
-          <button class="answer-btn" onclick="answer(7, 'G')">I think about my mom. My friends. Not humanity.</button>
-          <button class="answer-btn" onclick="answer(7, 'H')">I honestly go back and forth between hope and terror</button>
-          <button class="answer-btn" onclick="answer(7, 'I')">I think we'll be ok. We always have been.</button>
-          <button class="answer-btn" onclick="answer(7, 'J')">I'm not sure we deserve what's coming, but I want us to try.</button>
+          <button class="answer-btn" onclick="answer(7, 'F')">The future of humanity is just the people in front of me. My mom. My neighbor. My friends.</button>
+          <button class="answer-btn" onclick="answer(7, 'G')">I honestly go back and forth between hope and terror</button>
         </div>
         <div class="question-nav">
           <button class="back-btn" onclick="goBack()">
@@ -1870,8 +1882,7 @@
         C: { conscience: 2, embers: 1 },
         D: { citizen: 2, alive: 1 },
         E: { between: 2, presence: 1 },
-        F: { embers: 2, architect: 1 },
-        G: { friction: 2, conscience: 1 }
+        F: { friction: 2, conscience: 1 }
       },
       5: {
         A: { alive: 2, citizen: 1 },
@@ -1896,11 +1907,8 @@
         C: { embers: 2 },
         D: { alive: 2, citizen: 1 },
         E: { unbound: 2, swimmer: 1 },
-        F: { presence: 2, rooted: 1 },
-        G: { mender: 2, presence: 1 },
-        H: { between: 2 },
-        I: { citizen: 2, rooted: 1 },
-        J: { friction: 2, shaper: 1 }
+        F: { presence: 2, rooted: 1, mender: 1 },
+        G: { between: 2 }
       }
     };
 

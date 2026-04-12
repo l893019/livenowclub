@@ -21,20 +21,20 @@ const archetypeColors: Record<string, string> = {
 };
 
 const archetypeNames: Record<string, string> = {
-  citizen: "Citizen",
-  shaper: "Shaper",
-  architect: "Architect",
-  presence: "Presence",
-  swimmer: "Swimmer",
-  rooted: "Rooted",
-  conscience: "Conscience",
-  embers: "Embers",
-  friction: "Friction",
-  unbound: "Unbound",
-  alive: "Alive",
-  mender: "Mender",
-  cleareyed: "Clear-Eyed",
-  between: "Between",
+  citizen: "The Abundant",
+  shaper: "The Builder",
+  architect: "The Architect",
+  presence: "The Present",
+  swimmer: "The Questioner",
+  rooted: "The Rooted",
+  conscience: "The Witness",
+  embers: "The Keeper",
+  friction: "The Challenger",
+  unbound: "The Transcendent",
+  alive: "The Feeler",
+  mender: "The Mender",
+  cleareyed: "The Truth-Teller",
+  between: "The Liminal",
 };
 
 // Simplified pair dynamics for OG cards
@@ -49,7 +49,7 @@ const pairGive: Record<string, string> = {
   "architect+shaper": "Both builders, different blueprints.",
   "architect+mender": "One designs new systems, one fixes old ones.",
   "alive+citizen": "Both believe in abundance. A generous worldview.",
-  "citizen+swimmer": "The Citizen builds. The Swimmer questions.",
+  "citizen+swimmer": "The Abundant builds. The Questioner questions.",
   "between+embers": "One knows where we came from. The other isn't sure where we're going.",
   "embers+mender": "One preserves memory, one preserves function.",
   "swimmer+unbound": "Both comfortable with ambiguity.",
