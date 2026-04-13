@@ -44,6 +44,12 @@
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
+/* Clickable dot wrapper */
+.clickableDot {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
 /* Center of gravity marker */
 .centerOfGravity {
   animation: pulse 2s ease-in-out infinite;

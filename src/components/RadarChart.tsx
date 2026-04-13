@@ -115,7 +115,7 @@ export function RadarChart({
             <g
               key={dot.id}
               onClick={isClickable ? () => onDotClick(dot.id) : undefined}
-              style={isClickable ? { cursor: "pointer" } : undefined}
+              className={isClickable ? styles.clickableDot : undefined}
             >
               <circle
                 cx={cx}
