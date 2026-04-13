@@ -4119,16 +4119,11 @@ function generateQuestionFraming(
   }
 }
 
-// Get analytical pair dynamic - checks handcrafted first, then generates
+// Get analytical pair dynamic - always generates rich content with full explanations
 export function getAnalyticalPairDynamic(a: string, b: string): AnalyticalPairDynamic {
-  const key = [a, b].sort().join("+");
-
-  // First check for handcrafted content
-  if (analyticalPairDynamics[key]) {
-    return analyticalPairDynamics[key];
-  }
-
-  // Fall back to generating from existing data
+  // Always generate the rich analytical content with full explanations
+  // The handcrafted content in analyticalPairDynamics uses an older simplified format
+  // without the detailed explanation paragraphs that the component needs
   return generateAnalyticalPairDynamic(a, b);
 }
 
