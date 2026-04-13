@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import { RadarChart } from "@/components/RadarChart";
 import { archetypePositions } from "@/lib/radar-positions";
-import { archetypes, getAnalyticalPairDynamic } from "@/lib/archetypes";
+import { archetypes } from "@/lib/archetypes";
+import { getSharedUtopia } from "@/lib/shared-utopia";
 import styles from "./RelationshipComparison.module.css";
 
 type CompareUser = {
@@ -69,8 +70,8 @@ export function RelationshipComparison({
     return null;
   }
 
-  // Get the relationship analysis
-  const dynamic = getAnalyticalPairDynamic(yourArchetypeKey, compareUser.archetype);
+  // Get the shared utopia content
+  const sharedUtopia = getSharedUtopia(yourArchetypeKey, compareUser.archetype);
 
   // Get current user info from localStorage
   const currentUserId = typeof window !== "undefined" ? localStorage.getItem("quiz-user-id") : null;
@@ -118,75 +119,51 @@ export function RelationshipComparison({
         <RadarChart size={280} userDots={userDots} showAllArchetypes={false} />
       </div>
 
-      <p className={styles.thesis}>&ldquo;{dynamic.thesis}&rdquo;</p>
-
-      <div className={styles.divider} />
-
-      {/* THE DYNAMIC */}
-      <div className={styles.section}>
-        <h3 className={styles.sectionTitle}>The Dynamic</h3>
-        <div className={styles.bodyText}>
-          {dynamic.dynamic.split("\n\n").map((para, i) => (
-            <p key={i}>{para}</p>
-          ))}
-        </div>
-      </div>
-
-      <div className={styles.divider} />
-
-      {/* WHERE YOU ALIGN */}
-      <div className={styles.section}>
-        <h3 className={styles.sectionTitle}>Where You Align</h3>
-        {dynamic.align.map((item, i) => (
-          <div key={i} className={styles.point}>
-            <h4 className={styles.pointHeading}>{item.point}</h4>
-            <p className={styles.pointText}>{item.explanation}</p>
+      {sharedUtopia ? (
+        <>
+          <div className={styles.section}>
+            <h3 className={styles.sectionTitle}>What You'd Build Together</h3>
+            <div className={styles.bodyText}>
+              {sharedUtopia.whatYoudBuild.split("\n\n").map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
 
-      <div className={styles.divider} />
+          <div className={styles.divider} />
 
-      {/* WHERE YOU'LL CLASH */}
-      <div className={styles.section}>
-        <h3 className={styles.sectionTitle}>Where You&apos;ll Clash</h3>
-        {dynamic.clash.map((item, i) => (
-          <div key={i} className={styles.point}>
-            <h4 className={styles.pointHeading}>{item.point}</h4>
-            <p className={styles.pointText}>{item.explanation}</p>
+          <div className={styles.section}>
+            <h3 className={styles.sectionTitle}>What Would Be Strong</h3>
+            <div className={styles.bodyText}>
+              {sharedUtopia.whatWouldBeStrong.split("\n\n").map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
 
-      <div className={styles.divider} />
+          <div className={styles.divider} />
 
-      {/* WHAT YOU EXCHANGE */}
-      <div className={styles.section}>
-        <h3 className={styles.sectionTitle}>What You Exchange</h3>
+          <div className={styles.section}>
+            <h3 className={styles.sectionTitle}>What Would Be Missing</h3>
+            <div className={styles.bodyText}>
+              {sharedUtopia.whatWouldBeMissing.split("\n\n").map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
+          </div>
 
-        <div className={styles.exchangeBlock}>
-          <h4 className={styles.exchangeName} style={{ color: yourArchetype.color }}>
-            What you give {compareUser.name}
-          </h4>
-          <p className={styles.exchangeText}>{dynamic.give.youToThem}</p>
+          <div className={styles.divider} />
+
+          <div className={styles.questionSection}>
+            <h3 className={styles.sectionTitle}>The Question You're Answering</h3>
+            <p className={styles.questionText}>{sharedUtopia.questionYoureAnswering}</p>
+          </div>
+        </>
+      ) : (
+        <div className={styles.section}>
+          <p className={styles.bodyText}>Content for this pairing is coming soon.</p>
         </div>
-
-        <div className={styles.exchangeBlock}>
-          <h4 className={styles.exchangeName} style={{ color: theirArchetype.color }}>
-            What {compareUser.name} gives you
-          </h4>
-          <p className={styles.exchangeText}>{dynamic.give.themToYou}</p>
-        </div>
-      </div>
-
-      <div className={styles.divider} />
-
-      {/* A QUESTION */}
-      <div className={styles.questionSection}>
-        <h3 className={styles.sectionTitle}>A Question for You Both</h3>
-        <p className={styles.questionText}>&ldquo;{dynamic.question.text}&rdquo;</p>
-        <p className={styles.questionFraming}>{dynamic.question.framing}</p>
-      </div>
+      )}
 
       {/* Share Button */}
       <div className={styles.shareSection}>
@@ -194,11 +171,11 @@ export function RelationshipComparison({
           className={styles.shareButton}
           onClick={() => {
             const shareUrl = window.location.href;
-            const shareText = `${yourArchetype.name.split(" ")[0]} x ${theirArchetype.name.split(" ")[0]} — See our relationship`;
+            const shareText = `${yourArchetype.name.split(" ")[0]} × ${theirArchetype.name.split(" ")[0]} — What we'd build together`;
 
             if (navigator.share) {
               navigator.share({
-                title: `${yourName} x ${compareUser.name}`,
+                title: `${yourName} × ${compareUser.name}`,
                 text: shareText,
                 url: shareUrl,
               });
