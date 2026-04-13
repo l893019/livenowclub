@@ -4,6 +4,7 @@ import { RadarChart } from "@/components/RadarChart";
 import { archetypePositions } from "@/lib/radar-positions";
 import { archetypes } from "@/lib/archetypes";
 import { getSharedUtopia } from "@/lib/shared-utopia";
+import { useSwipe } from "@/hooks/useSwipe";
 import type { UtopiaMember } from "@/lib/utopia";
 import { QuizCTA } from "@/app/wonder/essay/quiz/result/QuizCTA";
 import styles from "./RelationshipStep.module.css";
@@ -79,8 +80,18 @@ export function RelationshipStep({
     },
   ];
 
+  // Swipe gestures for navigating between members
+  const { onTouchStart, onTouchEnd } = useSwipe(
+    hasNext ? onNext : undefined,
+    hasPrev ? onPrev : undefined
+  );
+
   return (
-    <div className={styles.reading}>
+    <div
+      className={styles.reading}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+    >
       <button className={styles.backButton} onClick={onBack}>
         ← Back to group
       </button>

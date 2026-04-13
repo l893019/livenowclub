@@ -8,6 +8,24 @@
   max-width: 640px;
   margin: 0 auto;
   position: relative;
+  animation: fadeSlideIn 0.3s ease-out;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reading {
+    animation: none;
+  }
 }
 
 /* Back Button */
@@ -37,6 +55,9 @@
 .header {
   text-align: center;
   margin-bottom: 2rem;
+  opacity: 0;
+  animation: staggerIn 0.4s ease-out forwards;
+  animation-delay: 0.05s;
 }
 
 .title {
@@ -101,6 +122,9 @@
   box-shadow:
     0 4px 24px rgba(0, 0, 0, 0.06),
     0 1px 4px rgba(0, 0, 0, 0.04);
+  opacity: 0;
+  animation: staggerIn 0.4s ease-out forwards;
+  animation-delay: 0.12s;
 }
 
 /* Opening Thesis */
@@ -118,6 +142,34 @@
 /* Sections */
 .section {
   margin-bottom: 0;
+  scroll-margin-top: 80px;
+  opacity: 0;
+  animation: staggerIn 0.4s ease-out forwards;
+}
+
+.section:nth-of-type(1) { animation-delay: 0.2s; }
+.section:nth-of-type(2) { animation-delay: 0.28s; }
+.section:nth-of-type(3) { animation-delay: 0.36s; }
+.section:nth-of-type(4) { animation-delay: 0.44s; }
+.section:nth-of-type(5) { animation-delay: 0.52s; }
+
+@keyframes staggerIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
 }
 
 .sectionTitle {
@@ -243,6 +295,11 @@
   box-shadow: 0 6px 24px rgba(232, 23, 138, 0.35);
 }
 
+.shareButton:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 12px rgba(232, 23, 138, 0.25);
+}
+
 /* Their Reading Section */
 .theirReadingSection {
   text-align: center;
@@ -313,6 +370,11 @@
   border-color: #e8178a;
   color: #e8178a;
   background: rgba(232, 23, 138, 0.05);
+}
+
+.swipeButton:active:not(:disabled) {
+  transform: scale(0.92);
+  background: rgba(232, 23, 138, 0.1);
 }
 
 .swipeButton:disabled {

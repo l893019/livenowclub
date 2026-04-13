@@ -42,12 +42,30 @@
 /* User position dots */
 .userDot {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  transition: filter 0.2s ease, r 0.2s ease;
 }
 
 /* Clickable dot wrapper */
 .clickableDot {
   pointer-events: auto;
   cursor: pointer;
+}
+
+.clickableDot:hover .userDot,
+.clickableDot:active .userDot {
+  filter: drop-shadow(0 0 8px currentColor) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.clickableDot:hover,
+.clickableDot:active {
+  transform-origin: center;
+  animation: dotPulse 0.3s ease-out;
+}
+
+@keyframes dotPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
 }
 
 /* Center of gravity marker */

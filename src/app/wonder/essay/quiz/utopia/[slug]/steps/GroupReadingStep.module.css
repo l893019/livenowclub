@@ -8,6 +8,24 @@
   max-width: 640px;
   margin: 0 auto;
   position: relative;
+  animation: fadeSlideIn 0.3s ease-out;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reading {
+    animation: none;
+  }
 }
 
 /* Header */

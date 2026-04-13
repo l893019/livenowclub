@@ -4,6 +4,29 @@
   font-family: 'Satoshi', system-ui, sans-serif;
 }
 
+/* View transition animation */
+.viewEnter {
+  animation: fadeSlideIn 0.3s ease-out;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .viewEnter {
+    animation: none;
+  }
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -52,6 +75,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: fadeSlideIn 0.3s ease-out;
 }
 
 .readingMain {
@@ -373,6 +397,11 @@
   box-shadow: 0 8px 24px rgba(232, 23, 138, 0.3);
 }
 
+.btnPrimary:active {
+  transform: scale(0.97);
+  box-shadow: 0 4px 16px rgba(232, 23, 138, 0.25);
+}
+
 .btnSecondary {
   background: transparent;
   color: #2d2a26;
@@ -382,6 +411,10 @@
 .btnSecondary:hover {
   border-color: #e8178a;
   color: #e8178a;
+}
+
+.btnSecondary:active {
+  transform: scale(0.97);
 }
 
 .backButton {

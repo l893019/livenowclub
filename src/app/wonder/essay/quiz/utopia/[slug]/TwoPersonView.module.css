@@ -3,6 +3,24 @@
   border-radius: 16px;
   padding: 32px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  animation: fadeSlideIn 0.3s ease-out;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .container {
+    animation: none;
+  }
 }
 
 .header {
@@ -36,6 +54,9 @@
   display: flex;
   justify-content: center;
   margin-bottom: 32px;
+  opacity: 0;
+  animation: staggerIn 0.4s ease-out forwards;
+  animation-delay: 0.1s;
 }
 
 .reading {
@@ -45,6 +66,35 @@
 
 .section {
   margin-bottom: 24px;
+  opacity: 0;
+  animation: staggerIn 0.4s ease-out forwards;
+}
+
+.section:nth-child(1) { animation-delay: 0.15s; }
+.section:nth-child(2) { animation-delay: 0.23s; }
+.section:nth-child(3) { animation-delay: 0.31s; }
+.section:nth-child(4) { animation-delay: 0.39s; }
+.section:nth-child(5) { animation-delay: 0.47s; }
+.section:nth-child(6) { animation-delay: 0.55s; }
+.section:nth-child(7) { animation-delay: 0.63s; }
+
+@keyframes staggerIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
 }
 
 .sectionLabel {
@@ -123,6 +173,9 @@
   margin-bottom: 32px;
   padding-bottom: 24px;
   border-bottom: 1px solid rgba(45, 42, 38, 0.1);
+  opacity: 0;
+  animation: staggerIn 0.4s ease-out forwards;
+  animation-delay: 0.05s;
 }
 
 .thesis {
