@@ -13,9 +13,10 @@ import styles from "./TwoPersonView.module.css";
 type TwoPersonViewProps = {
   members: UtopiaMember[];
   utopiaName: string;
+  onMemberClick?: (memberId: string) => void;
 };
 
-export function TwoPersonView({ members, utopiaName }: TwoPersonViewProps) {
+export function TwoPersonView({ members, utopiaName, onMemberClick }: TwoPersonViewProps) {
   if (members.length !== 2) return null;
 
   const [personA, personB] = members;
@@ -59,6 +60,7 @@ export function TwoPersonView({ members, utopiaName }: TwoPersonViewProps) {
             userDots.map((d) => d.position)
           )}
           showAllArchetypes={false}
+          onDotClick={onMemberClick}
         />
       </div>
 

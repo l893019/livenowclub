@@ -23,6 +23,7 @@ type RadarChartProps = {
   centerOfGravity?: RadarPosition;
   highlightArchetype?: string;
   showAllArchetypes?: boolean;
+  onDotClick?: (dotId: string) => void;
 };
 
 export function RadarChart({
@@ -31,6 +32,7 @@ export function RadarChart({
   centerOfGravity,
   highlightArchetype,
   showAllArchetypes = true,
+  onDotClick,
 }: RadarChartProps) {
   const padding = 40;
   const center = size / 2;
@@ -108,8 +110,13 @@ export function RadarChart({
         {/* User dots */}
         {userDots.map((dot) => {
           const { cx, cy } = toSvgCoords(dot.position, size, padding);
+          const isClickable = !!onDotClick;
           return (
-            <g key={dot.id}>
+            <g
+              key={dot.id}
+              onClick={isClickable ? () => onDotClick(dot.id) : undefined}
+              style={isClickable ? { cursor: "pointer" } : undefined}
+            >
               <circle
                 cx={cx}
                 cy={cy}

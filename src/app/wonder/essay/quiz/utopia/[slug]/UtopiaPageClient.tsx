@@ -274,7 +274,14 @@ export function UtopiaPageClient({
       <div className={styles.container}>
         <Header />
         <main className={styles.main}>
-          <TwoPersonView members={members} utopiaName={utopiaName} />
+          <TwoPersonView
+            members={members}
+            utopiaName={utopiaName}
+            onMemberClick={(memberId) => {
+              setSelectedMemberId(memberId);
+              setCurrentView("their-reading");
+            }}
+          />
 
           {/* Profile links for each person */}
           <div className={styles.profileLinks}>
