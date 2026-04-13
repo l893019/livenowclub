@@ -93,9 +93,11 @@ export function UtopiaPageClient({
 
   const handleAnimationComplete = () => {
     setShowJoinAnimation(false);
-    // Show user their own profile first after joining
-    // They can then explore the group and relationships from the radar view
-    setCurrentView("profile");
+    // Stay on radar view after joining - shows:
+    // 1. Group radar with all dots (including yours, clickable)
+    // 2. YourArchetypeCard summarizing your result
+    // 3. "View Your Full Profile" link to see full reading
+    setCurrentView("radar");
   };
 
   const handleMemberClick = useCallback(
