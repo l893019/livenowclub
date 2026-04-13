@@ -4,7 +4,7 @@ import { RadarChart } from "@/components/RadarChart";
 import { archetypePositions, getGroupCenterOfGravity } from "@/lib/radar-positions";
 import {
   archetypes,
-  getPairDynamicExpanded,
+  getAnalyticalPairDynamic,
   getGroupBook,
 } from "@/lib/archetypes";
 import type { UtopiaMember } from "@/lib/utopia";
@@ -26,7 +26,7 @@ export function TwoPersonView({ members, utopiaName }: TwoPersonViewProps) {
   const shortNameA = archA?.name?.replace(/^The /, "") || personA.archetype;
   const shortNameB = archB?.name?.replace(/^The /, "") || personB.archetype;
 
-  const dynamic = getPairDynamicExpanded(personA.archetype, personB.archetype);
+  const dynamic = getAnalyticalPairDynamic(personA.archetype, personB.archetype);
 
   const book = getGroupBook([personA.archetype, personB.archetype]);
 
@@ -67,22 +67,35 @@ export function TwoPersonView({ members, utopiaName }: TwoPersonViewProps) {
           <p className={styles.thesis}>{dynamic.thesis}</p>
         </section>
 
+        {dynamic.dynamic && (
+          <section className={styles.section}>
+            <h3 className={styles.sectionLabel}>The Dynamic</h3>
+            <p className={styles.bodyText}>{dynamic.dynamic}</p>
+          </section>
+        )}
+
         <section className={styles.section}>
           <h3 className={styles.sectionLabel}>Where you align</h3>
-          <ul className={styles.list}>
-            {dynamic.align.map((point, i) => (
-              <li key={i}>{point}</li>
+          <div className={styles.expandedList}>
+            {dynamic.align.map((item, i) => (
+              <div key={i} className={styles.expandedItem}>
+                <h4 className={styles.expandedPoint}>{item.point}</h4>
+                <p className={styles.expandedExplanation}>{item.explanation}</p>
+              </div>
             ))}
-          </ul>
+          </div>
         </section>
 
         <section className={styles.section}>
           <h3 className={styles.sectionLabel}>Where you'll clash</h3>
-          <ul className={styles.list}>
-            {dynamic.clash.map((point, i) => (
-              <li key={i}>{point}</li>
+          <div className={styles.expandedList}>
+            {dynamic.clash.map((item, i) => (
+              <div key={i} className={styles.expandedItem}>
+                <h4 className={styles.expandedPoint}>{item.point}</h4>
+                <p className={styles.expandedExplanation}>{item.explanation}</p>
+              </div>
             ))}
-          </ul>
+          </div>
         </section>
 
         <section className={styles.section}>
@@ -107,13 +120,16 @@ export function TwoPersonView({ members, utopiaName }: TwoPersonViewProps) {
 
         <section className={styles.section}>
           <h3 className={styles.sectionLabel}>A question for you both</h3>
-          <p className={styles.questionText}>{dynamic.question}</p>
+          <p className={styles.questionText}>{dynamic.question.text}</p>
+          {dynamic.question.framing && (
+            <p className={styles.questionFraming}>{dynamic.question.framing}</p>
+          )}
         </section>
 
-        {dynamic.warning && (
+        {dynamic.risk && (
           <section className={styles.section}>
             <h3 className={styles.sectionLabel}>Watch out for</h3>
-            <p className={styles.warningText}>{dynamic.warning}</p>
+            <p className={styles.warningText}>{dynamic.risk}</p>
           </section>
         )}
 

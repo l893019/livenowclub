@@ -78,6 +78,46 @@
   color: #e8178a;
 }
 
+.expandedList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.expandedItem {
+  padding-left: 16px;
+  border-left: 2px solid rgba(232, 23, 138, 0.3);
+}
+
+.expandedPoint {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(45, 42, 38, 0.9);
+  margin: 0 0 8px 0;
+}
+
+.expandedExplanation {
+  font-size: 0.9rem;
+  color: rgba(45, 42, 38, 0.7);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.bodyText {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(45, 42, 38, 0.8);
+  margin: 0;
+}
+
+.questionFraming {
+  font-size: 0.85rem;
+  color: rgba(45, 42, 38, 0.6);
+  line-height: 1.6;
+  margin-top: 12px;
+  font-style: italic;
+}
+
 .thesisSection {
   text-align: center;
   margin-bottom: 32px;
