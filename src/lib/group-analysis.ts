@@ -974,7 +974,91 @@ export function generateGroupUtopia(
 }
 
 // =============================================================================
-// 9. RECOMMENDED INVITE
+// 9. JOIN SHIFT NARRATIVE
+// =============================================================================
+
+// Short descriptions of what each quadrant builds
+const quadrantShortBuild: Record<Quadrant, string> = {
+  "build-transcend": "things that reach beyond current limits",
+  "build-root": "things grounded in what's proven",
+  "witness-transcend": "insight into what others can't see",
+  "witness-root": "presence with what's actually here"
+};
+
+/**
+ * Generate a narrative about how the group shifts when someone joins
+ */
+export function generateJoinShiftNarrative(
+  existingMembers: GroupMember[],
+  newMember: GroupMember
+): { before: string; after: string; shift: string } {
+  // Handle edge cases
+  if (existingMembers.length === 0) {
+    const newArch = archetypes[newMember.archetype];
+    return {
+      before: "nothing yet",
+      after: `a ${newArch?.name || "new"} worldview`,
+      shift: "You're the first. What comes next is up to you."
+    };
+  }
+
+  if (existingMembers.length === 1) {
+    const existingArch = archetypes[existingMembers[0].archetype];
+    const newArch = archetypes[newMember.archetype];
+    const existingName = existingMembers[0].name || "them";
+
+    // For pairs, reference the shared utopia concept
+    return {
+      before: `${existingName}'s ${existingArch?.name || "worldview"} alone`,
+      after: `${existingArch?.name || "one worldview"} meeting ${newArch?.name || "another"}`,
+      shift: `Now you can see what you'd build together.`
+    };
+  }
+
+  // For groups: calculate quadrant shift
+  const existingPositions = existingMembers
+    .map(m => archetypePositions[m.archetype])
+    .filter((p): p is RadarPosition => p !== undefined);
+
+  const newPosition = archetypePositions[newMember.archetype];
+
+  if (existingPositions.length === 0 || !newPosition) {
+    return {
+      before: "a group",
+      after: "a group with a new perspective",
+      shift: "Every worldview changes what you'd build together."
+    };
+  }
+
+  const oldCenter = getGroupCenterOfGravity(existingPositions);
+  const allPositions = [...existingPositions, newPosition];
+  const newCenter = getGroupCenterOfGravity(allPositions);
+
+  const oldQuadrant = getQuadrant(oldCenter);
+  const newQuadrant = getQuadrant(newCenter);
+
+  const newArch = archetypes[newMember.archetype];
+  const newArchName = newArch?.name || "this worldview";
+
+  if (oldQuadrant === newQuadrant) {
+    // Same quadrant — reinforce or nuance
+    return {
+      before: quadrantShortBuild[oldQuadrant],
+      after: `${quadrantShortBuild[oldQuadrant]}, now with ${newArchName}'s perspective`,
+      shift: `${newArchName} deepens what you were already building toward.`
+    };
+  }
+
+  // Different quadrant — genuine shift
+  return {
+    before: quadrantShortBuild[oldQuadrant],
+    after: quadrantShortBuild[newQuadrant],
+    shift: `${newArchName} pulls your group toward ${quadrantShortBuild[newQuadrant]}.`
+  };
+}
+
+// =============================================================================
+// 10. RECOMMENDED INVITE
 // =============================================================================
 
 /**

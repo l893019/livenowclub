@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { archetypes } from "@/lib/archetypes";
 import {
   archetypePositions,
   getGroupCenterOfGravity,
   toSvgCoords,
-  type RadarPosition,
 } from "@/lib/radar-positions";
+import { generateJoinShiftNarrative, type GroupMember } from "@/lib/group-analysis";
 import styles from "./JoinAnimation.module.css";
 
 type Member = {
@@ -46,6 +46,21 @@ export function JoinAnimation({
 
   const newColor = archetypes[newMember.archetype]?.color || "#888";
   const newArchetypeName = archetypes[newMember.archetype]?.name || newMember.archetype;
+
+  // Generate shift narrative
+  const shiftNarrative = useMemo(() => {
+    const existingGroupMembers: GroupMember[] = existingMembers.map(m => ({
+      id: m.id,
+      name: m.name,
+      archetype: m.archetype
+    }));
+    const newGroupMember: GroupMember = {
+      id: newMember.id,
+      name: newMember.name,
+      archetype: newMember.archetype
+    };
+    return generateJoinShiftNarrative(existingGroupMembers, newGroupMember);
+  }, [existingMembers, newMember]);
 
   // Animation timing
   useEffect(() => {
@@ -177,14 +192,19 @@ export function JoinAnimation({
           )}
         </svg>
 
-        {/* Welcome text */}
+        {/* Shift narrative */}
         {phase === "welcome" && (
           <div className={styles.welcome}>
-            <div className={styles.yourName} style={{ color: newColor }}>
-              {newMember.name || "You"}
-            </div>
-            <div className={styles.yourArchetype}>
-              joined as <span style={{ color: newColor }}>{newArchetypeName}</span>
+            <div className={styles.shiftNarrative}>
+              <div className={styles.yourName} style={{ color: newColor }}>
+                {newMember.name || "You"}
+              </div>
+              <div className={styles.yourArchetype}>
+                joined as <span style={{ color: newColor }}>{newArchetypeName}</span>
+              </div>
+              <div className={styles.shiftText}>
+                {shiftNarrative.shift}
+              </div>
             </div>
           </div>
         )}
