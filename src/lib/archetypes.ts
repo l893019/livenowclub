@@ -4004,22 +4004,8 @@ function generateDynamicAnalysis(
   archB: Archetype | undefined,
   pairDynamic: PairDynamic
 ): string {
-  const superpowerA = archA?.superpower || "their perspective";
-  const superpowerB = archB?.superpower || "their perspective";
-  const blindSpotA = archA?.blindSpot || "";
-  const blindSpotB = archB?.blindSpot || "";
-  const nameA = archA?.name || a;
-  const nameB = archB?.name || b;
-
-  const para1 = `At its core, this relationship brings together two different ways of engaging with the world. ${nameA}'s gift is ${superpowerA}—a capacity that shapes how they approach problems, relationships, and the future. ${nameB}'s gift is ${superpowerB}—an equally valid but distinctly different orientation toward what matters.`;
-
-  const para2 = `These two approaches can complement each other beautifully or collide painfully, depending on how they're held. When both people are secure in their own perspective while remaining curious about the other's, this pairing generates insight neither could reach alone. When either person becomes defensive or dismissive, the same dynamic becomes a source of frustration.`;
-
-  const para3 = blindSpotA && blindSpotB
-    ? `The interplay between these worldviews is complicated by what each tends to miss. ${nameA} ${blindSpotA.charAt(0).toLowerCase() + blindSpotA.slice(1)} Meanwhile, ${nameB} ${blindSpotB.charAt(0).toLowerCase() + blindSpotB.slice(1)} In the best version of this relationship, each helps the other see around their blind spots.`
-    : `Understanding these different orientations isn't about determining which is right—it's about recognizing that both perspectives are partial, and together they reveal more than either alone.`;
-
-  return `${para1}\n\n${para2}\n\n${para3}`;
+  // No generic dynamic - use the thesis and specific points instead
+  return "";
 }
 
 // Helper: Generate alignment explanation
@@ -4029,17 +4015,9 @@ function generateAlignExplanation(
   archB: Archetype | undefined,
   index: number
 ): string {
-  const nameA = archA?.name || "One";
-  const nameB = archB?.name || "the other";
-
-  // Generate contextual explanation based on the alignment point
-  const explanations = [
-    `This shared ground matters because it means you're not starting from scratch. When ${nameA} and ${nameB} recognize this common value, they've found a foundation for deeper understanding. Even when you disagree about methods or priorities, this alignment reminds you that you're working toward something similar.`,
-    `This overlap isn't superficial—it reflects something fundamental about how you both orient toward the world. When conflicts arise, returning to this shared ground can help you remember that your differences exist within a larger agreement about what matters.`,
-    `Finding this alignment point is significant because it reveals compatible values beneath surface-level differences. This is the bedrock you can build on when other aspects of your perspectives diverge.`,
-  ];
-
-  return explanations[index % explanations.length];
+  // Return empty - the point itself is sufficient
+  // Generic explanations sound like AI filler
+  return "";
 }
 
 // Helper: Generate clash explanation
@@ -4050,16 +4028,9 @@ function generateClashExplanation(
   index: number,
   warning?: string
 ): string {
-  const nameA = archA?.name || "One";
-  const nameB = archB?.name || "the other";
-
-  const base = `This tension point often shows up in unexpected moments—not in explicit arguments, but in subtle misunderstandings. ${nameA} may interpret situations one way while ${nameB} reads them completely differently. Neither is wrong; you're working from different premises about what matters and how things work.`;
-
-  const additional = warning
-    ? ` ${warning} This is worth naming explicitly so it doesn't fester into resentment.`
-    : ` The key isn't eliminating this friction but learning to navigate it consciously rather than reactively.`;
-
-  return base + additional;
+  // Return empty - the point itself is sufficient
+  // Generic explanations sound like AI filler
+  return "";
 }
 
 // Helper: Generate give/exchange explanation
@@ -4069,11 +4040,8 @@ function generateGiveExplanation(
   receiver: Archetype | undefined,
   direction: "you" | "them"
 ): string {
-  const giverName = giver?.name || "This person";
-  const receiverName = receiver?.name || "the other";
-  const superpower = giver?.superpower || "their perspective";
-
-  return `${giftSummary}. This gift emerges naturally from ${direction === "you" ? "your" : "their"} orientation—the capacity for ${superpower} means ${direction === "you" ? "you" : "they"} can offer something ${receiverName} might struggle to access on their own. The exchange isn't transactional; it's what happens when two different perspectives genuinely engage. ${direction === "you" ? "Your" : "Their"} presence in this relationship expands what's possible for ${direction === "you" ? "them" : "you"}.`;
+  // Just return the gift summary - no generic filler
+  return giftSummary;
 }
 
 // Helper: Generate risk analysis
@@ -4085,22 +4053,8 @@ function generateRiskAnalysis(
   pairDynamic: PairDynamic,
   category: DistanceCategory
 ): string {
-  const nameA = archA?.name || a;
-  const nameB = archB?.name || b;
-  const blindSpotA = archA?.blindSpot || "";
-  const blindSpotB = archB?.blindSpot || "";
-
-  if (pairDynamic.warning) {
-    return `${pairDynamic.warning}\n\nThe failure mode for this pairing often involves each person retreating to their default position and interpreting the other through their blind spot. ${nameA} may ${blindSpotA.charAt(0).toLowerCase() + blindSpotA.slice(1)} ${nameB} may ${blindSpotB.charAt(0).toLowerCase() + blindSpotB.slice(1)} When both happen simultaneously, the relationship can spiral into mutual incomprehension.`;
-  }
-
-  if (category === "close") {
-    return `The risk with close pairs isn't conflict—it's stagnation. When you understand each other too easily, you may stop challenging each other. The comfort of agreement can become a cocoon that prevents growth. Watch for the moment when your similarity stops being a foundation and starts being a limitation.`;
-  } else if (category === "far") {
-    return `The risk with distant pairs is mutual dismissal. When perspectives differ this much, it's tempting to conclude the other person is simply wrong—or worse, to stop trying to understand altogether. The friction that makes this pairing valuable can also wear both people down if it's not managed consciously.`;
-  } else {
-    return `The risk at middle distance is assuming you understand each other better than you do. Your moderate overlap can mask deeper differences that only emerge under pressure. Stay curious about where your assumptions diverge, even when things seem to be going smoothly.`;
-  }
+  // Just use the handcrafted warning if it exists
+  return pairDynamic.warning || "";
 }
 
 // Helper: Generate question framing
@@ -4110,13 +4064,8 @@ function generateQuestionFraming(
   archB: Archetype | undefined,
   category: DistanceCategory
 ): string {
-  if (category === "close") {
-    return "This question matters because it asks you to look beyond your comfortable agreement toward something neither of you might naturally examine.";
-  } else if (category === "far") {
-    return "This question matters because it invites you to find common ground without erasing the differences that make this relationship generative.";
-  } else {
-    return "This question matters because it asks you to deepen a relationship that might otherwise remain at a comfortable but superficial level.";
-  }
+  // No generic framing - the question speaks for itself
+  return "";
 }
 
 // Get analytical pair dynamic - always generates rich content with full explanations
