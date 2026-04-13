@@ -1,20 +1,21 @@
 "use client";
 
 import { RadarChart } from "@/components/RadarChart";
-import { archetypePositions, getGroupCenterOfGravity, toSvgCoords } from "@/lib/radar-positions";
-import { archetypes, getGroupBook } from "@/lib/archetypes";
-import { getSharedUtopia } from "@/lib/shared-utopia";
+import { archetypePositions, getGroupCenterOfGravity } from "@/lib/radar-positions";
+import {
+  archetypes,
+  getPairDynamicExpanded,
+  getGroupBook,
+} from "@/lib/archetypes";
 import type { UtopiaMember } from "@/lib/utopia";
 import styles from "./TwoPersonView.module.css";
 
 type TwoPersonViewProps = {
   members: UtopiaMember[];
   utopiaName: string;
-  currentUserId?: string | null;
-  onMemberClick?: (memberId: string) => void;
 };
 
-export function TwoPersonView({ members, utopiaName, currentUserId, onMemberClick }: TwoPersonViewProps) {
+export function TwoPersonView({ members, utopiaName }: TwoPersonViewProps) {
   if (members.length !== 2) return null;
 
   const [personA, personB] = members;
@@ -25,8 +26,7 @@ export function TwoPersonView({ members, utopiaName, currentUserId, onMemberClic
   const shortNameA = archA?.name?.replace(/^The /, "") || personA.archetype;
   const shortNameB = archB?.name?.replace(/^The /, "") || personB.archetype;
 
-  // Get the shared utopia content
-  const sharedUtopia = getSharedUtopia(personA.archetype, personB.archetype);
+  const dynamic = getPairDynamicExpanded(personA.archetype, personB.archetype);
 
   const book = getGroupBook([personA.archetype, personB.archetype]);
 
@@ -52,105 +52,89 @@ export function TwoPersonView({ members, utopiaName, currentUserId, onMemberClic
       </div>
 
       <div className={styles.radar}>
-        <div className={styles.radarWrapper}>
-          <RadarChart
-            size={280}
-            userDots={userDots}
-            centerOfGravity={getGroupCenterOfGravity(
-              userDots.map((d) => d.position)
-            )}
-            showAllArchetypes={false}
-          />
-
-          {/* Clickable dot overlays */}
-          {onMemberClick && members.map((member) => {
-            const pos = archetypePositions[member.archetype] || { x: 0, y: 0 };
-            const svgCoords = toSvgCoords(pos, 280, 40);
-            const arch = archetypes[member.archetype];
-            const isCurrentUser = member.id === currentUserId;
-            const labelOnLeft = svgCoords.cx > 140;
-            const displayName = isCurrentUser ? "You" : (member.name || "Anonymous");
-
-            return (
-              <button
-                key={member.id}
-                className={styles.dotButton}
-                style={{
-                  left: svgCoords.cx - 22,
-                  top: svgCoords.cy - 22,
-                }}
-                onClick={() => onMemberClick(member.id)}
-                aria-label={`View ${displayName}'s profile`}
-              >
-                <span
-                  className={`${styles.dotLabel} ${labelOnLeft ? styles.labelLeft : styles.labelRight}`}
-                  style={{ color: arch?.color || "#888" }}
-                >
-                  {displayName}
-                </span>
-              </button>
-            );
-          })}
-        </div>
+        <RadarChart
+          size={280}
+          userDots={userDots}
+          centerOfGravity={getGroupCenterOfGravity(
+            userDots.map((d) => d.position)
+          )}
+          showAllArchetypes={false}
+        />
       </div>
 
-      {sharedUtopia ? (
-        <div className={styles.reading}>
+      <div className={styles.reading}>
+        <section className={styles.thesisSection}>
+          <p className={styles.thesis}>{dynamic.thesis}</p>
+        </section>
+
+        <section className={styles.section}>
+          <h3 className={styles.sectionLabel}>Where you align</h3>
+          <ul className={styles.list}>
+            {dynamic.align.map((point, i) => (
+              <li key={i}>{point}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section className={styles.section}>
+          <h3 className={styles.sectionLabel}>Where you'll clash</h3>
+          <ul className={styles.list}>
+            {dynamic.clash.map((point, i) => (
+              <li key={i}>{point}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section className={styles.section}>
+          <h3 className={styles.sectionLabel}>What you give each other</h3>
+          <div className={styles.giveCards}>
+            <div className={styles.giveCard}>
+              <span className={styles.giveName} style={{ color: archA?.color }}>
+                {personA.name || shortNameA}
+              </span>
+              <span className={styles.giveArrow}>→</span>
+              <p className={styles.giveText}>{dynamic.give.youToThem}</p>
+            </div>
+            <div className={styles.giveCard}>
+              <span className={styles.giveName} style={{ color: archB?.color }}>
+                {personB.name || shortNameB}
+              </span>
+              <span className={styles.giveArrow}>→</span>
+              <p className={styles.giveText}>{dynamic.give.themToYou}</p>
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.section}>
+          <h3 className={styles.sectionLabel}>A question for you both</h3>
+          <p className={styles.questionText}>{dynamic.question}</p>
+        </section>
+
+        {dynamic.warning && (
           <section className={styles.section}>
-            <h3 className={styles.sectionLabel}>What You'd Build Together</h3>
-            <div className={styles.bodyText}>
-              {sharedUtopia.whatYoudBuild.split("\n\n").map((para, i) => (
-                <p key={i}>{para}</p>
-              ))}
+            <h3 className={styles.sectionLabel}>Watch out for</h3>
+            <p className={styles.warningText}>{dynamic.warning}</p>
+          </section>
+        )}
+
+        {book && (
+          <section className={styles.section}>
+            <h3 className={styles.sectionLabel}>A book for both of you</h3>
+            <div className={styles.bookCard}>
+              <span className={styles.bookTitle}>{book.title}</span>
+              <span className={styles.bookAuthor}> ({book.author})</span>
+              <a
+                href={`https://bookshop.org/search?keywords=${encodeURIComponent(book.title + ' ' + book.author)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.bookLink}
+              >
+                Find on Bookshop.org →
+              </a>
             </div>
           </section>
-
-          <section className={styles.section}>
-            <h3 className={styles.sectionLabel}>What Would Be Strong</h3>
-            <div className={styles.bodyText}>
-              {sharedUtopia.whatWouldBeStrong.split("\n\n").map((para, i) => (
-                <p key={i}>{para}</p>
-              ))}
-            </div>
-          </section>
-
-          <section className={styles.section}>
-            <h3 className={styles.sectionLabel}>What Would Be Missing</h3>
-            <div className={styles.bodyText}>
-              {sharedUtopia.whatWouldBeMissing.split("\n\n").map((para, i) => (
-                <p key={i}>{para}</p>
-              ))}
-            </div>
-          </section>
-
-          <section className={styles.questionSection}>
-            <h3 className={styles.sectionLabel}>The Question You're Answering</h3>
-            <p className={styles.questionText}>{sharedUtopia.questionYoureAnswering}</p>
-          </section>
-
-          {book && (
-            <section className={styles.section}>
-              <h3 className={styles.sectionLabel}>A Book for Both of You</h3>
-              <div className={styles.bookCard}>
-                <span className={styles.bookTitle}>{book.title}</span>
-                <span className={styles.bookAuthor}> by {book.author}</span>
-                <a
-                  href={`https://bookshop.org/search?keywords=${encodeURIComponent(book.title + ' ' + book.author)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.bookLink}
-                >
-                  Find on Bookshop.org →
-                </a>
-              </div>
-            </section>
-          )}
-        </div>
-      ) : (
-        <div className={styles.reading}>
-          <p className={styles.bodyText}>Content for this pairing is coming soon.</p>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }
