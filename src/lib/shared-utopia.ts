@@ -275,15 +275,15 @@ One of you might feel constantly rushed or constantly held back.`,
 
   // Builder × Rooted
   "rooted_shaper": {
-    whatYoudBuild: `This is a challenging pairing. The Builder wants to create new things; the Rooted wants to stay with what is. You'll need to find a version of building that doesn't require constant novelty.
+    whatYoudBuild: `Things that last. The Builder brings momentum; the Rooted brings staying power. You'd find a version of building that doesn't require constant novelty.
 
-Renovation. Improvement of existing things. Building depth in one place rather than breadth across many.`,
-    whatWouldBeStrong: `The Rooted could give the Builder stability. The Builder could give the Rooted aliveness. If you can find the overlap, you'd create things with both momentum and roots.
+Renovation. Improvement of existing things. Building depth in one place rather than breadth across many. The rare combination of energy and patience.`,
+    whatWouldBeStrong: `The Rooted gives the Builder stability. The Builder gives the Rooted aliveness. Together: things with both momentum and roots.
 
 You might build something that actually lasts because someone stayed with it.`,
-    whatWouldBeMissing: `Easy agreement. Your instincts pull opposite directions. The Builder sees stagnation; the Rooted sees destruction. You'll argue about pace a lot.
+    whatWouldBeMissing: `Easy agreement. Your instincts pull different directions. The Builder sees stagnation; the Rooted sees unnecessary disruption. You'll negotiate about pace.
 
-One of you might feel permanently restless or permanently dragged forward.`,
+You're learning what it means to move together when your natural speeds differ.`,
     questionYoureAnswering: `Can we build without leaving?`
   },
 

@@ -93,14 +93,9 @@ export function UtopiaPageClient({
 
   const handleAnimationComplete = () => {
     setShowJoinAnimation(false);
-    // Auto-show relationship with inviter after animation (immediate payoff)
-    if (joinInfo?.inviterId) {
-      const inviter = members.find((m) => m.id === joinInfo.inviterId);
-      if (inviter) {
-        setSelectedMemberId(joinInfo.inviterId);
-        setCurrentView("relationship");
-      }
-    }
+    // Show user their own profile first after joining
+    // They can then explore the group and relationships from the radar view
+    setCurrentView("profile");
   };
 
   const handleMemberClick = useCallback(
