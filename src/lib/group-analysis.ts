@@ -856,25 +856,26 @@ You'd also be good at maintenance—valuing what exists rather than always chasi
 
 // What different composition distributions create
 function getCompositionNarrative(composition: CompositionAnalysis): string {
-  const { buildVsWitness, rootVsTranscend, dominantArchetypes } = composition;
+  const { buildVsWitness, rootVsTranscend } = composition;
 
   let narrative = "";
 
-  // Axis balance narrative
+  // Build vs Witness axis
   if (Math.abs(buildVsWitness.build - buildVsWitness.witness) < 20) {
-    narrative += "Your group balances action and observation—you make things happen AND you watch carefully to see what's actually happening. ";
+    narrative += "Doers and watchers in equal measure. You'll make things AND notice what's actually happening. ";
   } else if (buildVsWitness.build > 60) {
-    narrative += "Your group leans toward action—you're more likely to build, create, and intervene than to step back and observe. ";
+    narrative += "A room full of doers. You'll ship things, start things, intervene. Pausing to observe? Less natural. ";
   } else {
-    narrative += "Your group leans toward observation—you're more likely to watch, question, and understand than to jump into action. ";
+    narrative += "A room full of watchers. You'll see clearly, question deeply. But who's going to actually build the thing? ";
   }
 
+  // Root vs Transcend axis
   if (Math.abs(rootVsTranscend.root - rootVsTranscend.transcend) < 20) {
-    narrative += "You also balance between grounding and reaching—staying present to what is while remaining open to what could be.";
+    narrative += "Grounded and reaching—present to what is, open to what could be.";
   } else if (rootVsTranscend.transcend > 60) {
-    narrative += "You also lean toward transcendence—more interested in what lies beyond than in what's established.";
+    narrative += "Eyes on the horizon. What exists now matters less than what's possible.";
   } else {
-    narrative += "You also lean toward grounding—more interested in what's proven than in what's possible.";
+    narrative += "Feet on the ground. Proven over possible, every time.";
   }
 
   return narrative;
@@ -886,31 +887,20 @@ function getExpandingPerspectives(
   presentArchetypes: string[]
 ): string {
   if (missingArchetypes.length === 0) {
-    return "Your group includes every worldview. The question isn't what's missing—it's how to give space to each perspective when decisions need to be made.";
+    return "Every worldview is represented. The work now is making sure each one gets airtime.";
   }
 
-  // Get the names of missing archetypes (max 3)
-  const missingNames = missingArchetypes
-    .slice(0, 3)
-    .map(k => archetypes[k]?.name || k);
+  // Get first two missing archetypes for specific mention
+  const first = missingArchetypes[0] ? archetypes[missingArchetypes[0]] : null;
+  const second = missingArchetypes[1] ? archetypes[missingArchetypes[1]] : null;
 
-  let text = `Perspectives that would expand what you build: ${missingNames.join(", ")}. `;
-
-  // Add what those perspectives would contribute
-  const contributions: string[] = [];
-  for (const key of missingArchetypes.slice(0, 2)) {
-    const arch = archetypes[key];
-    if (arch) {
-      const superpower = arch.superpower;
-      contributions.push(`${arch.name}'s gift of ${superpower.toLowerCase()}`);
-    }
+  if (first && second) {
+    return `No one here brings ${first.superpower.toLowerCase()} or ${second.superpower.toLowerCase()}. ${first.name} and ${second.name} would ask questions this group won't think to ask.`;
+  } else if (first) {
+    return `No one here brings ${first.superpower.toLowerCase()}. ${first.name} would see what you're all missing.`;
   }
 
-  if (contributions.length > 0) {
-    text += `These worldviews would bring ${contributions.join(" and ")}—questions and instincts your current mix doesn't naturally generate.`;
-  }
-
-  return text;
+  return "";
 }
 
 /**

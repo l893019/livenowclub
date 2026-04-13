@@ -76,20 +76,30 @@ export function TwoPersonView({ members, utopiaName }: TwoPersonViewProps) {
 
         <section className={styles.section}>
           <h3 className={styles.sectionLabel}>Where you align</h3>
-          <ul className={styles.list}>
+          <div className={styles.expandedList}>
             {dynamic.align.map((item, i) => (
-              <li key={i}>{item.point}</li>
+              <div key={i} className={styles.expandedItem}>
+                <h4 className={styles.expandedPoint}>{item.point}</h4>
+                {item.explanation && (
+                  <p className={styles.expandedExplanation}>{item.explanation}</p>
+                )}
+              </div>
             ))}
-          </ul>
+          </div>
         </section>
 
         <section className={styles.section}>
           <h3 className={styles.sectionLabel}>Where you'll clash</h3>
-          <ul className={styles.list}>
+          <div className={styles.expandedList}>
             {dynamic.clash.map((item, i) => (
-              <li key={i}>{item.point}</li>
+              <div key={i} className={styles.expandedItem}>
+                <h4 className={styles.expandedPoint}>{item.point}</h4>
+                {item.explanation && (
+                  <p className={styles.expandedExplanation}>{item.explanation}</p>
+                )}
+              </div>
             ))}
-          </ul>
+          </div>
         </section>
 
         <section className={styles.section}>

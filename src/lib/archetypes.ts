@@ -4004,8 +4004,33 @@ function generateDynamicAnalysis(
   archB: Archetype | undefined,
   pairDynamic: PairDynamic
 ): string {
-  // No generic dynamic - use the thesis and specific points instead
-  return "";
+  if (!archA || !archB) return "";
+
+  const nameA = archA.name.replace(/^The /, "");
+  const nameB = archB.name.replace(/^The /, "");
+  const powerA = archA.superpower;
+  const powerB = archB.superpower;
+  const blindA = archA.blindSpot;
+  const blindB = archB.blindSpot;
+
+  // Get distance for context
+  const { category } = getPairDistance(a, b);
+
+  // Build dynamic based on how their superpowers interact
+  let dynamic = `The ${nameA} sees through the lens of ${powerA.toLowerCase()}. The ${nameB} sees through ${powerB.toLowerCase()}. `;
+
+  if (category === "close") {
+    dynamic += `These orientations rhyme—you're tuned to similar frequencies, which makes understanding easy but growth harder. `;
+    dynamic += `The risk: you reinforce each other's assumptions instead of challenging them.`;
+  } else if (category === "far") {
+    dynamic += `These are genuinely different ways of being in the world. What looks obvious to one can be invisible to the other. `;
+    dynamic += `The gift: you see around each other's blind spots. The work: staying curious when confusion feels like conflict.`;
+  } else {
+    dynamic += `Different enough to surprise each other, similar enough to stay in conversation. `;
+    dynamic += `You'll misread each other sometimes—the ${nameA} ${blindA.toLowerCase()} The ${nameB} ${blindB.toLowerCase()} Naming this helps.`;
+  }
+
+  return dynamic;
 }
 
 // Helper: Generate alignment explanation
@@ -4015,9 +4040,19 @@ function generateAlignExplanation(
   archB: Archetype | undefined,
   index: number
 ): string {
-  // Return empty - the point itself is sufficient
-  // Generic explanations sound like AI filler
-  return "";
+  if (!archA || !archB) return "";
+
+  const nameA = archA.name.replace(/^The /, "");
+  const nameB = archB.name.replace(/^The /, "");
+  const powerA = archA.superpower.toLowerCase();
+  const powerB = archB.superpower.toLowerCase();
+
+  // Connect the alignment to HOW each archetype expresses it
+  if (index === 0) {
+    return `The ${nameA} gets here through ${powerA}. The ${nameB} through ${powerB}. Different routes, same territory.`;
+  } else {
+    return `Both worldviews, for different reasons, treat this as ground to stand on.`;
+  }
 }
 
 // Helper: Generate clash explanation
@@ -4028,9 +4063,17 @@ function generateClashExplanation(
   index: number,
   warning?: string
 ): string {
-  // Return empty - the point itself is sufficient
-  // Generic explanations sound like AI filler
-  return "";
+  if (!archA || !archB) return "";
+
+  const nameA = archA.name.replace(/^The /, "");
+  const nameB = archB.name.replace(/^The /, "");
+
+  // Short, specific explanation of the friction
+  if (index === 0) {
+    return `The ${nameA} reads this one way; the ${nameB} reads it another. Neither is wrong—but the translations don't match.`;
+  } else {
+    return `This is where your defaults diverge. Not a dealbreaker, but worth knowing.`;
+  }
 }
 
 // Helper: Generate give/exchange explanation
@@ -4040,8 +4083,13 @@ function generateGiveExplanation(
   receiver: Archetype | undefined,
   direction: "you" | "them"
 ): string {
-  // Just return the gift summary - no generic filler
-  return giftSummary;
+  if (!giver || !receiver) return giftSummary;
+
+  const receiverName = receiver.name.replace(/^The /, "");
+  const blindSpot = receiver.blindSpot.toLowerCase();
+
+  // Explain how the gift addresses what the receiver tends to miss
+  return `${giftSummary}. The ${receiverName} ${blindSpot}—this gift works against that tendency.`;
 }
 
 // Helper: Generate risk analysis
@@ -4064,8 +4112,13 @@ function generateQuestionFraming(
   archB: Archetype | undefined,
   category: DistanceCategory
 ): string {
-  // No generic framing - the question speaks for itself
-  return "";
+  if (!archA || !archB) return "";
+
+  const nameA = archA.name.replace(/^The /, "");
+  const nameB = archB.name.replace(/^The /, "");
+
+  // Explain what the question asks each person to confront
+  return `For the ${nameA}, this question pokes at assumptions. For the ${nameB}, it asks for a leap. That's the point.`;
 }
 
 // Get analytical pair dynamic - always generates rich content with full explanations
