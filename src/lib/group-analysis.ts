@@ -82,9 +82,17 @@ export type GroupMember = {
   archetype: string;
 };
 
+export type GroupUtopia = {
+  whatYoudBuild: string;
+  whatWouldBeStrong: string;
+  whatWouldBeMissing: string;
+  questionYoureAnswering: string;
+};
+
 export type GroupAnalysis = {
   centerOfGravity: GroupCenterOfGravity;
   composition: CompositionAnalysis;
+  groupUtopia: GroupUtopia;
   collectiveSuperpower: CollectiveSuperpower;
   collectiveBlindSpot: CollectiveBlindSpot;
   missingVoices: MissingVoice[];
@@ -807,7 +815,166 @@ export function generateGroupQuestion(
 }
 
 // =============================================================================
-// 8. RECOMMENDED INVITE
+// 8. GROUP UTOPIA (What You'd Build Together)
+// =============================================================================
+
+// Quadrant descriptions for what groups build
+const quadrantBuilds: Record<Quadrant, { build: string; strong: string }> = {
+  "build-transcend": {
+    build: `This group reaches upward while making things happen. You're not content with what exists—you build toward what could be. Together, you'd create ventures, projects, or practices that push past current limits while actually shipping.
+
+Your shared orientation: make something that matters AND make it real. Neither pure vision nor pure execution satisfies you. You want both.`,
+    strong: `Momentum toward the new. This group doesn't get stuck in either endless planning or mindless action. You'd move quickly toward things worth moving toward.
+
+You'd be good at starting things that seem impossible, at convincing others something unprecedented is worth attempting, at maintaining energy when the work is hard.`
+  },
+  "build-root": {
+    build: `This group builds from what's proven. You're makers who respect foundations—creating from stability rather than disruption. Together, you'd create things that last because they're built on solid ground.
+
+Your shared orientation: make something real AND make it endure. You're not interested in novelty for its own sake. You want to build what will still be standing.`,
+    strong: `Durability. This group creates things that survive because you take foundations seriously. You'd be good at building institutions, practices, or relationships that improve over time rather than flash and fade.
+
+You'd also be good at saying no to things that seem exciting but aren't worth the instability they'd introduce.`
+  },
+  "witness-transcend": {
+    build: `This group sees further than most. You're oriented toward understanding what others miss, toward perceiving beyond the obvious. Together, you'd create insight—frameworks, teachings, or art that reveals what's hidden.
+
+Your shared orientation: see clearly AND see beyond. You're not satisfied with surface truth or with staying within known limits. You want to understand the edges.`,
+    strong: `Vision. This group perceives what others don't. You'd be good at asking questions no one else thinks to ask, at noticing patterns others miss, at articulating truths that haven't been spoken yet.
+
+You'd also be good at holding complexity—seeing multiple layers at once without needing to resolve them prematurely.`
+  },
+  "witness-root": {
+    build: `This group stays present to what's actually here. You're not reaching for the transcendent or rushing to build—you're seeing clearly what exists right now. Together, you'd create presence, attention, and honest observation.
+
+Your shared orientation: see clearly AND stay grounded. You're the ones who notice when the emperor has no clothes, who ask whether the obvious solution actually addresses the real problem.`,
+    strong: `Groundedness. This group doesn't get swept up in enthusiasm or urgency. You'd be good at slowing things down when speed serves no one, at asking whether action is actually needed, at being honest about what's working and what isn't.
+
+You'd also be good at maintenance—valuing what exists rather than always chasing what's next.`
+  }
+};
+
+// What different composition distributions create
+function getCompositionNarrative(composition: CompositionAnalysis): string {
+  const { buildVsWitness, rootVsTranscend, dominantArchetypes } = composition;
+
+  let narrative = "";
+
+  // Axis balance narrative
+  if (Math.abs(buildVsWitness.build - buildVsWitness.witness) < 20) {
+    narrative += "Your group balances action and observation—you make things happen AND you watch carefully to see what's actually happening. ";
+  } else if (buildVsWitness.build > 60) {
+    narrative += "Your group leans toward action—you're more likely to build, create, and intervene than to step back and observe. ";
+  } else {
+    narrative += "Your group leans toward observation—you're more likely to watch, question, and understand than to jump into action. ";
+  }
+
+  if (Math.abs(rootVsTranscend.root - rootVsTranscend.transcend) < 20) {
+    narrative += "You also balance between grounding and reaching—staying present to what is while remaining open to what could be.";
+  } else if (rootVsTranscend.transcend > 60) {
+    narrative += "You also lean toward transcendence—more interested in what lies beyond than in what's established.";
+  } else {
+    narrative += "You also lean toward grounding—more interested in what's proven than in what's possible.";
+  }
+
+  return narrative;
+}
+
+// Generate what perspectives would expand the group (reframed from "missing")
+function getExpandingPerspectives(
+  missingArchetypes: string[],
+  presentArchetypes: string[]
+): string {
+  if (missingArchetypes.length === 0) {
+    return "Your group includes every worldview. The question isn't what's missing—it's how to give space to each perspective when decisions need to be made.";
+  }
+
+  // Get the names of missing archetypes (max 3)
+  const missingNames = missingArchetypes
+    .slice(0, 3)
+    .map(k => archetypes[k]?.name || k);
+
+  let text = `Perspectives that would expand what you build: ${missingNames.join(", ")}. `;
+
+  // Add what those perspectives would contribute
+  const contributions: string[] = [];
+  for (const key of missingArchetypes.slice(0, 2)) {
+    const arch = archetypes[key];
+    if (arch) {
+      const superpower = arch.superpower;
+      contributions.push(`${arch.name}'s gift of ${superpower.toLowerCase()}`);
+    }
+  }
+
+  if (contributions.length > 0) {
+    text += `These worldviews would bring ${contributions.join(" and ")}—questions and instincts your current mix doesn't naturally generate.`;
+  }
+
+  return text;
+}
+
+/**
+ * Generate the complete group utopia content
+ */
+export function generateGroupUtopia(
+  members: GroupMember[],
+  centerOfGravity: GroupCenterOfGravity,
+  composition: CompositionAnalysis,
+  groupQuestion: GroupQuestion
+): GroupUtopia {
+  const presentArchetypes = getPresentArchetypes(members);
+  const missingArchetypes = archetypeKeys.filter(k => !presentArchetypes.includes(k));
+
+  // Get quadrant-based content
+  const quadrantContent = quadrantBuilds[centerOfGravity.dominantQuadrant];
+
+  // Build "What You'd Build Together"
+  const compositionNarrative = getCompositionNarrative(composition);
+  const whatYoudBuild = `${quadrantContent.build}\n\n${compositionNarrative}`;
+
+  // "What Would Be Strong" - from quadrant + collective superpower elements
+  const whatWouldBeStrong = quadrantContent.strong;
+
+  // "What Would Be Missing" - reframed as invitation to expand
+  const expandingPerspectives = getExpandingPerspectives(missingArchetypes, presentArchetypes);
+
+  // Get shared blind spots (present archetypes' common blindspots)
+  const blindSpotCounts: Record<string, number> = {};
+  for (const arch of presentArchetypes) {
+    const blindSpot = archetypes[arch]?.blindSpot;
+    if (blindSpot) {
+      blindSpotCounts[blindSpot] = (blindSpotCounts[blindSpot] || 0) + 1;
+    }
+  }
+
+  // Find most shared blind spot
+  let sharedBlindSpot = "";
+  let maxCount = 0;
+  for (const [spot, count] of Object.entries(blindSpotCounts)) {
+    if (count > maxCount) {
+      maxCount = count;
+      sharedBlindSpot = spot;
+    }
+  }
+
+  let whatWouldBeMissing = expandingPerspectives;
+  if (sharedBlindSpot && maxCount >= 2) {
+    whatWouldBeMissing += `\n\nA pattern to watch: ${sharedBlindSpot.charAt(0).toLowerCase()}${sharedBlindSpot.slice(1)} This shows up in multiple members—which means it's easy for the whole group to miss.`;
+  }
+
+  // "The Question You're Answering"
+  const questionYoureAnswering = groupQuestion.question;
+
+  return {
+    whatYoudBuild,
+    whatWouldBeStrong,
+    whatWouldBeMissing,
+    questionYoureAnswering
+  };
+}
+
+// =============================================================================
+// 9. RECOMMENDED INVITE
 // =============================================================================
 
 /**
@@ -896,9 +1063,18 @@ export function analyzeGroup(members: GroupMember[]): GroupAnalysis {
     centerOfGravity.position
   );
 
+  // 9. Generate group utopia (what you'd build together)
+  const groupUtopia = generateGroupUtopia(
+    members,
+    centerOfGravity,
+    composition,
+    groupQuestion
+  );
+
   return {
     centerOfGravity,
     composition,
+    groupUtopia,
     collectiveSuperpower,
     collectiveBlindSpot,
     missingVoices,

@@ -83,7 +83,6 @@ export function GroupReadingStep({
     const myArchetype = me ? archetypes[me.archetype] : null;
     const myArchetypeName = myArchetype?.name || "a unique worldview";
 
-    // Share text includes archetype: "I'm The Questioner. What are you?"
     const shareText = me
       ? `I'm ${myArchetypeName}. What are you? Take the quiz and join my group.`
       : `Take the quiz and join our utopia`;
@@ -117,65 +116,47 @@ export function GroupReadingStep({
         </p>
       </header>
 
-      {/* YOUR COMPOSITION */}
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Your Composition</h2>
-
-        {/* Radar Card */}
-        <div className={styles.radarContainer}>
-          <div className={styles.radarCard}>
-            <RadarChart
-              size={280}
-              userDots={userDots}
-              centerOfGravity={analysis.centerOfGravity.position}
-              showAllArchetypes={false}
-            />
-          </div>
+      {/* Radar Card */}
+      <div className={styles.radarContainer}>
+        <div className={styles.radarCard}>
+          <RadarChart
+            size={280}
+            userDots={userDots}
+            centerOfGravity={analysis.centerOfGravity.position}
+            showAllArchetypes={false}
+          />
         </div>
+      </div>
 
-        {/* Member List */}
-        <div className={styles.memberList}>
-          {members.map((member) => {
-            const arch = archetypes[member.archetype];
-            return (
-              <div key={member.id} className={styles.memberItem}>
-                <span className={styles.memberName}>{member.name || "Anonymous"}</span>
-                <span
-                  className={styles.memberArchetype}
-                  style={{ color: arch?.color || "#888" }}
-                >
-                  {arch?.name || member.archetype}
-                </span>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Composition narrative */}
-        <div className={styles.bodyText}>
-          <p>
-            Your group leans {analysis.composition.buildVsWitness.build > 55 ? "toward building" : analysis.composition.buildVsWitness.witness > 55 ? "toward witnessing" : "between building and witnessing"}, and {analysis.composition.rootVsTranscend.transcend > 55 ? "reaches toward transcendence" : analysis.composition.rootVsTranscend.root > 55 ? "stays grounded in what's real" : "balances between reaching and grounding"}.
-          </p>
-          {analysis.composition.dominantArchetypes.length === 1 ? (
-            <p>
-              The {archetypes[analysis.composition.dominantArchetypes[0]]?.name || "dominant archetype"} orientation shapes your collective center of gravity.
-            </p>
-          ) : (
-            <p>
-              Multiple worldviews share equal weight, creating a more distributed center of gravity.
-            </p>
-          )}
-        </div>
-      </section>
+      {/* Member List */}
+      <div className={styles.memberList}>
+        {members.map((member) => {
+          const arch = archetypes[member.archetype];
+          return (
+            <div key={member.id} className={styles.memberItem}>
+              <span
+                className={styles.memberDot}
+                style={{ backgroundColor: arch?.color || "#888" }}
+              />
+              <span className={styles.memberName}>{member.name || "Anonymous"}</span>
+              <span
+                className={styles.memberArchetype}
+                style={{ color: arch?.color || "#888" }}
+              >
+                {arch?.name || member.archetype}
+              </span>
+            </div>
+          );
+        })}
+      </div>
 
       <div className={styles.divider} />
 
-      {/* YOUR COLLECTIVE SUPERPOWER */}
+      {/* WHAT YOU'D BUILD TOGETHER */}
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Your Collective Superpower</h2>
-        <p className={styles.superpowerTitle}>{analysis.collectiveSuperpower.title}</p>
+        <h2 className={styles.sectionTitle}>What You'd Build Together</h2>
         <div className={styles.bodyText}>
-          {analysis.collectiveSuperpower.description.split("\n\n").map((para, i) => (
+          {analysis.groupUtopia.whatYoudBuild.split("\n\n").map((para, i) => (
             <p key={i}>{para}</p>
           ))}
         </div>
@@ -183,11 +164,11 @@ export function GroupReadingStep({
 
       <div className={styles.divider} />
 
-      {/* SOMETHING TO CONSIDER TOGETHER */}
+      {/* WHAT WOULD BE STRONG */}
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Something to Consider Together</h2>
+        <h2 className={styles.sectionTitle}>What Would Be Strong</h2>
         <div className={styles.bodyText}>
-          {analysis.collectiveBlindSpot.description.split("\n\n").map((para, i) => (
+          {analysis.groupUtopia.whatWouldBeStrong.split("\n\n").map((para, i) => (
             <p key={i}>{para}</p>
           ))}
         </div>
@@ -195,82 +176,30 @@ export function GroupReadingStep({
 
       <div className={styles.divider} />
 
-      {/* MISSING VOICES */}
-      {analysis.missingVoices.length > 0 && (
-        <>
-          <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>Missing Voices</h2>
-            {analysis.missingVoices.map((voice) => {
-              const arch = archetypes[voice.archetype];
-              return (
-                <div key={voice.archetype} className={styles.missingVoice}>
-                  <h3
-                    className={styles.missingVoiceName}
-                    style={{ color: arch?.color || "#888" }}
-                  >
-                    {arch?.name || voice.archetype}
-                  </h3>
-                  <p className={styles.missingVoiceTagline}>"{arch?.utopia || ""}"</p>
-                  <div className={styles.bodyText}>
-                    <p>{voice.whatTheyWouldAdd}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </section>
+      {/* WHAT WOULD BE MISSING */}
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>What Would Be Missing</h2>
+        <div className={styles.bodyText}>
+          {analysis.groupUtopia.whatWouldBeMissing.split("\n\n").map((para, i) => (
+            <p key={i}>{para}</p>
+          ))}
+        </div>
+      </section>
 
-          <div className={styles.divider} />
-        </>
-      )}
+      <div className={styles.divider} />
 
-      {/* INTERNAL TENSIONS */}
-      {analysis.internalTensions.length > 0 && (
-        <>
-          <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>Internal Tensions</h2>
-            {analysis.internalTensions.map((tension, i) => {
-              const archA = archetypes[tension.archetypeA];
-              const archB = archetypes[tension.archetypeB];
-              return (
-                <div key={i} className={styles.tension}>
-                  <div className={styles.tensionHeader}>
-                    <span style={{ color: archA?.color || "#888" }}>
-                      {archA?.name || tension.archetypeA}
-                    </span>
-                    <span className={styles.tensionX}>×</span>
-                    <span style={{ color: archB?.color || "#888" }}>
-                      {archB?.name || tension.archetypeB}
-                    </span>
-                    <span className={styles.tensionLevel}>
-                      — {tension.tensionLevel} tension
-                    </span>
-                  </div>
-                  <p className={styles.tensionThesis}>"{tension.thesis}"</p>
-                  <div className={styles.bodyText}>
-                    <p>{tension.howToNavigate}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </section>
-
-          <div className={styles.divider} />
-        </>
-      )}
-
-      {/* THE QUESTION YOUR UTOPIA IS ASKING */}
+      {/* THE QUESTION YOU'RE ANSWERING */}
       <section className={styles.questionSection}>
-        <h2 className={styles.sectionTitle}>The Question Your Utopia Is Asking</h2>
-        <p className={styles.questionContext}>{analysis.groupQuestion.context}</p>
-        <p className={styles.questionText}>"{analysis.groupQuestion.question}"</p>
+        <h2 className={styles.sectionTitle}>The Question You're Answering</h2>
+        <p className={styles.questionText}>{analysis.groupUtopia.questionYoureAnswering}</p>
       </section>
 
       <div className={styles.divider} />
 
       {/* INVITE SOMEONE */}
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Invite Someone</h2>
-        <p className={styles.inviteIntro}>Your utopia would shift most with:</p>
+        <h2 className={styles.sectionTitle}>Expand Your Group</h2>
+        <p className={styles.inviteIntro}>A perspective that would stretch what you build:</p>
         <div className={styles.recommendedArchetype}>
           <h3
             className={styles.recommendedName}
@@ -282,10 +211,7 @@ export function GroupReadingStep({
         </div>
         <div className={styles.bodyText}>
           <p>
-            Adding this worldview would pull your center of gravity toward balance, introducing perspectives your current composition lacks. They would ask questions no one in your group currently thinks to ask, and see what your shared orientation makes invisible.
-          </p>
-          <p>
-            Of course, the right person to invite is anyone who matters to you. The quiz will reveal where they stand, and your utopia will shift to include them.
+            Adding this worldview would introduce questions and instincts your current mix doesn't naturally generate. Of course, the right person to invite is anyone who matters to you—the quiz will reveal where they stand.
           </p>
         </div>
       </section>
