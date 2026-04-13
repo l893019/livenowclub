@@ -38,6 +38,48 @@
   margin-bottom: 32px;
 }
 
+.radarWrapper {
+  position: relative;
+  width: 280px;
+  height: 280px;
+}
+
+.dotButton {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.dotButton:hover {
+  transform: scale(1.1);
+}
+
+.dotLabel {
+  position: absolute;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.labelLeft {
+  right: 100%;
+  margin-right: 8px;
+}
+
+.labelRight {
+  left: 100%;
+  margin-left: 8px;
+}
+
 .reading {
   max-width: 400px;
   margin: 0 auto;

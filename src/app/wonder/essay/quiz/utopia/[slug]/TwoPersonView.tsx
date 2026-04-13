@@ -1,7 +1,7 @@
 "use client";
 
 import { RadarChart } from "@/components/RadarChart";
-import { archetypePositions, getGroupCenterOfGravity } from "@/lib/radar-positions";
+import { archetypePositions, getGroupCenterOfGravity, toSvgCoords } from "@/lib/radar-positions";
 import { archetypes, getGroupBook } from "@/lib/archetypes";
 import { getSharedUtopia } from "@/lib/shared-utopia";
 import type { UtopiaMember } from "@/lib/utopia";
@@ -10,9 +10,11 @@ import styles from "./TwoPersonView.module.css";
 type TwoPersonViewProps = {
   members: UtopiaMember[];
   utopiaName: string;
+  currentUserId?: string | null;
+  onMemberClick?: (memberId: string) => void;
 };
 
-export function TwoPersonView({ members, utopiaName }: TwoPersonViewProps) {
+export function TwoPersonView({ members, utopiaName, currentUserId, onMemberClick }: TwoPersonViewProps) {
   if (members.length !== 2) return null;
 
   const [personA, personB] = members;
@@ -50,14 +52,46 @@ export function TwoPersonView({ members, utopiaName }: TwoPersonViewProps) {
       </div>
 
       <div className={styles.radar}>
-        <RadarChart
-          size={280}
-          userDots={userDots}
-          centerOfGravity={getGroupCenterOfGravity(
-            userDots.map((d) => d.position)
-          )}
-          showAllArchetypes={false}
-        />
+        <div className={styles.radarWrapper}>
+          <RadarChart
+            size={280}
+            userDots={userDots}
+            centerOfGravity={getGroupCenterOfGravity(
+              userDots.map((d) => d.position)
+            )}
+            showAllArchetypes={false}
+          />
+
+          {/* Clickable dot overlays */}
+          {onMemberClick && members.map((member) => {
+            const pos = archetypePositions[member.archetype] || { x: 0, y: 0 };
+            const svgCoords = toSvgCoords(pos, 280, 40);
+            const arch = archetypes[member.archetype];
+            const isCurrentUser = member.id === currentUserId;
+            const labelOnLeft = svgCoords.cx > 140;
+            const displayName = isCurrentUser ? "You" : (member.name || "Anonymous");
+
+            return (
+              <button
+                key={member.id}
+                className={styles.dotButton}
+                style={{
+                  left: svgCoords.cx - 22,
+                  top: svgCoords.cy - 22,
+                }}
+                onClick={() => onMemberClick(member.id)}
+                aria-label={`View ${displayName}'s profile`}
+              >
+                <span
+                  className={`${styles.dotLabel} ${labelOnLeft ? styles.labelLeft : styles.labelRight}`}
+                  style={{ color: arch?.color || "#888" }}
+                >
+                  {displayName}
+                </span>
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       {sharedUtopia ? (
