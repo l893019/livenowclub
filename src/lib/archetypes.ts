@@ -4027,7 +4027,7 @@ function generateDynamicAnalysis(
     dynamic += `The gift: you see around each other's blind spots. The work: staying curious when confusion feels like conflict.`;
   } else {
     dynamic += `Different enough to surprise each other, similar enough to stay in conversation. `;
-    dynamic += `You'll misread each other sometimes—the ${nameA} ${blindA.toLowerCase()} The ${nameB} ${blindB.toLowerCase()} Naming this helps.`;
+    dynamic += `You'll misread each other sometimes. Naming it helps.`;
   }
 
   return dynamic;
@@ -4085,11 +4085,12 @@ function generateGiveExplanation(
 ): string {
   if (!giver || !receiver) return giftSummary;
 
+  const giverName = giver.name.replace(/^The /, "");
   const receiverName = receiver.name.replace(/^The /, "");
-  const blindSpot = receiver.blindSpot.toLowerCase();
+  const power = giver.superpower.toLowerCase();
 
-  // Explain how the gift addresses what the receiver tends to miss
-  return `${giftSummary}. The ${receiverName} ${blindSpot}—this gift works against that tendency.`;
+  // Explain what the gift offers
+  return `${giftSummary}—the ${giverName}'s ${power} at work.`;
 }
 
 // Helper: Generate risk analysis
