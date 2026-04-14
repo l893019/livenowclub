@@ -4086,11 +4086,28 @@ function generateGiveExplanation(
   if (!giver || !receiver) return giftSummary;
 
   const giverName = giver.name.replace(/^The /, "");
-  const receiverName = receiver.name.replace(/^The /, "");
   const power = giver.superpower.toLowerCase();
 
-  // Explain what the gift offers
-  return `${giftSummary}—the ${giverName}'s ${power} at work.`;
+  let cleaned = giftSummary;
+
+  // Handle "You [verb]" or "They [verb]" patterns - convert to third person
+  if (/^You\s+/i.test(giftSummary)) {
+    cleaned = giftSummary.replace(/^You\s+/i, "");
+    // Add 's' for third person verb (show → shows, keep → keeps)
+    const firstWord = cleaned.split(" ")[0];
+    const rest = cleaned.slice(firstWord.length);
+    cleaned = firstWord.charAt(0).toUpperCase() + firstWord.slice(1) + "s" + rest;
+  } else if (/^They\s+/i.test(giftSummary)) {
+    cleaned = giftSummary.replace(/^They\s+/i, "");
+    const firstWord = cleaned.split(" ")[0];
+    const rest = cleaned.slice(firstWord.length);
+    cleaned = firstWord.charAt(0).toUpperCase() + firstWord.slice(1) + "s" + rest;
+  } else {
+    // Noun phrase like "A reminder that..." - prefix with "Offers"
+    cleaned = "Offers " + giftSummary.charAt(0).toLowerCase() + giftSummary.slice(1);
+  }
+
+  return `${cleaned}—the ${giverName}'s ${power} at work.`;
 }
 
 // Helper: Generate risk analysis
