@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createUtopia, getUserResult } from '@/lib/utopia';
+import { createUtopia, getUserResult, updateUserEmail } from '@/lib/utopia';
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { userId, customName } = body;
+    const { userId, customName, email } = body;
 
     if (!userId) {
       return NextResponse.json(
@@ -20,6 +20,11 @@ export async function POST(request: NextRequest) {
         { error: 'User not found. Please complete the quiz first.' },
         { status: 404 }
       );
+    }
+
+    // Update user's email if provided
+    if (email) {
+      await updateUserEmail(userId, email);
     }
 
     const room = await createUtopia(

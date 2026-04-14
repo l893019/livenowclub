@@ -28,6 +28,7 @@ export default function CreateUtopiaSection({ archetypeKey }: CreateUtopiaSectio
   const router = useRouter();
   const suggestedName = SUGGESTED_NAMES[archetypeKey] || "My Utopia";
   const [name, setName] = useState(suggestedName);
+  const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -55,6 +56,7 @@ export default function CreateUtopiaSection({ archetypeKey }: CreateUtopiaSectio
         body: JSON.stringify({
           userId,
           customName: name.trim(),
+          email: email.trim() || undefined,
         }),
       });
 
@@ -89,6 +91,21 @@ export default function CreateUtopiaSection({ archetypeKey }: CreateUtopiaSectio
           onChange={(e) => setName(e.target.value)}
           className="utopia-name-input"
           placeholder="Enter a name..."
+          disabled={isLoading}
+        />
+      </div>
+
+      <div className="utopia-email-input-wrapper">
+        <label htmlFor="utopia-email" className="utopia-email-label">
+          Get notified when friends join (optional):
+        </label>
+        <input
+          id="utopia-email"
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="utopia-email-input"
+          placeholder="your@email.com"
           disabled={isLoading}
         />
       </div>
@@ -151,6 +168,34 @@ export default function CreateUtopiaSection({ archetypeKey }: CreateUtopiaSectio
           border-color: var(--accent-pink, #e8178a);
         }
         .utopia-name-input:disabled {
+          opacity: 0.6;
+        }
+        .utopia-email-input-wrapper {
+          margin-bottom: 20px;
+        }
+        .utopia-email-label {
+          display: block;
+          font-size: 0.85rem;
+          color: var(--text-muted);
+          margin-bottom: 8px;
+          text-align: left;
+        }
+        .utopia-email-input {
+          width: 100%;
+          padding: 14px 16px;
+          font-size: 1rem;
+          font-family: inherit;
+          border: 1px solid rgba(0,0,0,0.1);
+          border-radius: 8px;
+          background: var(--bg-deep, #faf6f1);
+          color: var(--text);
+          transition: border-color 0.2s;
+        }
+        .utopia-email-input:focus {
+          outline: none;
+          border-color: var(--accent-pink, #e8178a);
+        }
+        .utopia-email-input:disabled {
           opacity: 0.6;
         }
         .create-utopia-error {

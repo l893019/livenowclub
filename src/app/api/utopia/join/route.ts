@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { joinUtopia, getUserResult } from '@/lib/utopia';
+import { joinUtopia, getUserResult, getUtopia } from '@/lib/utopia';
+import { sendJoinNotification } from '@/lib/email';
 
 export async function POST(request: NextRequest) {
   try {
@@ -52,6 +53,24 @@ export async function POST(request: NextRequest) {
       memberCount: room.members.length,
       members: room.members.map(m => ({ id: m.id, name: m.name }))
     });
+
+    // Send notification email to founder (async, don't block response)
+    const founderResult = await getUserResult(room.createdBy);
+    if (founderResult?.email && room.createdBy !== userId) {
+      console.log('[Join Utopia] Sending notification to founder:', founderResult.email);
+      sendJoinNotification({
+        toEmail: founderResult.email,
+        toName: founderResult.name,
+        joinerName: userResult.name,
+        joinerArchetype: userResult.archetype,
+        utopiaName: room.name,
+        utopiaSlug: room.slug,
+        joinerId: userId,
+        founderId: room.createdBy,
+      }).catch(err => {
+        console.error('[Join Utopia] Email notification failed:', err);
+      });
+    }
 
     return NextResponse.json({
       success: true,

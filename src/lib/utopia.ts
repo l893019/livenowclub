@@ -117,6 +117,18 @@ export async function getUserResult(userId: string): Promise<UserResult | null> 
   return JSON.parse(data);
 }
 
+export async function updateUserEmail(userId: string, email: string): Promise<void> {
+  const existing = await getUserResult(userId);
+  if (!existing) return;
+
+  const updated: UserResult = {
+    ...existing,
+    email,
+  };
+
+  await saveUserResult(updated);
+}
+
 export async function updateUserArchetype(
   userId: string,
   archetype: string,
