@@ -1,0 +1,155 @@
+/* JoinUtopia.module.css */
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 24px 80px;
+  text-align: center;
+  animation: fadeSlideIn 0.4s ease-out;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.inviterSection {
+  margin-bottom: 24px;
+  animation: fadeSlideIn 0.5s ease-out;
+  animation-delay: 0.1s;
+  animation-fill-mode: both;
+}
+
+.inviterName {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.inviterArchetype {
+  font-size: 1.2rem;
+  color: var(--founder-color);
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+.inviterPrompt {
+  font-size: 1rem;
+  color: var(--text-dim);
+  max-width: 320px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.radarPreview {
+  margin: 32px 0;
+  animation: fadeSlideIn 0.5s ease-out;
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+
+.groupName {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+  animation: fadeSlideIn 0.5s ease-out;
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+}
+
+.groupNameHighlight {
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--text-muted);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: var(--accent-pink);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 18px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(232, 23, 138, 0.25);
+  animation: fadeSlideIn 0.5s ease-out;
+  animation-delay: 0.4s;
+  animation-fill-mode: both;
+}
+
+.ctaButton:hover {
+  background: #d01579;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(232, 23, 138, 0.35);
+}
+
+.ctaButton:active {
+  transform: scale(0.97);
+}
+
+.secondaryLink {
+  display: block;
+  margin-top: 24px;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  text-decoration: none;
+  animation: fadeSlideIn 0.5s ease-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: both;
+}
+
+.secondaryLink:hover {
+  color: var(--accent-pink);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 24px;
+  text-align: center;
+}
+
+.footerCopy {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .container,
+  .inviterSection,
+  .radarPreview,
+  .groupName,
+  .ctaButton,
+  .secondaryLink {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .inviterName {
+    font-size: 1.5rem;
+  }
+
+  .ctaButton {
+    padding: 16px 32px;
+    font-size: 1rem;
+  }
+}
