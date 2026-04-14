@@ -73,7 +73,7 @@ export async function sendJoinNotification({
 
   try {
     const { error } = await getResend().emails.send({
-      from: 'The Live Now Club <hello@livenowclub.com>',
+      from: 'The Live Now Club <onboarding@resend.dev>',
       to: toEmail,
       subject: `${joinerName} joined ${utopiaName}`,
       html,
