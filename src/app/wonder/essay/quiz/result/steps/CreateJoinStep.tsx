@@ -32,6 +32,7 @@ export function CreateJoinStep({ archetypeKey }: CreateJoinStepProps) {
   const [groupName, setGroupName] = useState(
     suggestedNames[archetypeKey] || "My Group"
   );
+  const [email, setEmail] = useState("");
   const [status, setStatus] = useState<CreateStatus>("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
@@ -55,6 +56,7 @@ export function CreateJoinStep({ archetypeKey }: CreateJoinStepProps) {
         body: JSON.stringify({
           userId,
           customName: groupName,
+          email: email.trim() || undefined,
         }),
       });
 
@@ -100,6 +102,19 @@ export function CreateJoinStep({ archetypeKey }: CreateJoinStepProps) {
             placeholder="Enter a name for your group"
             disabled={status === "loading"}
             maxLength={50}
+          />
+
+          <label htmlFor="email" className={styles.inputLabel}>
+            Get notified when friends join (optional)
+          </label>
+          <input
+            id="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className={styles.textInput}
+            placeholder="your@email.com"
+            disabled={status === "loading"}
           />
 
           {errorMessage && (

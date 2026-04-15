@@ -2149,6 +2149,15 @@
           body: JSON.stringify({ result: userResult })
         });
 
+        // Check if this is a create utopia flow
+        const pendingAction = sessionStorage.getItem('pending-action');
+        if (pendingAction === 'create-utopia') {
+          sessionStorage.removeItem('pending-action');
+          btn.textContent = 'Creating...';
+          await doCreateUtopia();
+          return;
+        }
+
         // Check if this is a join flow
         const inviteData = sessionStorage.getItem('utopia-invite');
         if (inviteData) {
@@ -2339,16 +2348,47 @@
         return;
       }
 
+      // If user doesn't have a name yet, show the name/email prompt first
+      if (!userResult.name) {
+        // Store that we want to create a utopia after name submission
+        sessionStorage.setItem('pending-action', 'create-utopia');
+
+        // Show email field (it's hidden for join flow)
+        const emailField = document.querySelector('.name-form .form-field:nth-child(2)');
+        if (emailField) {
+          emailField.style.display = 'block';
+        }
+
+        // Update subtitle and button text for create flow
+        const subtitle = document.querySelector('.name-prompt-subtitle');
+        if (subtitle) {
+          subtitle.textContent = 'Enter your name and email to get notified when friends join.';
+        }
+        const submitBtn = document.querySelector('.name-submit-btn');
+        if (submitBtn) {
+          submitBtn.textContent = 'Create Utopia';
+        }
+
+        showScreen('screen-name');
+        return;
+      }
+
+      await doCreateUtopia();
+    }
+
+    async function doCreateUtopia() {
       const btn = document.querySelector('.build-utopia-btn');
-      const originalText = btn.innerHTML;
-      btn.disabled = true;
-      btn.innerHTML = 'Creating...';
+      const originalText = btn?.innerHTML || 'Build a Shared Utopia';
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = 'Creating...';
+      }
 
       try {
         const response = await fetch('/api/utopia/create', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ userId })
+          body: JSON.stringify({ userId, email: userResult?.email })
         });
 
         const data = await response.json();
@@ -2358,14 +2398,18 @@
           window.location.href = `/wonder/essay/quiz/utopia/${data.room.slug}`;
         } else {
           alert(data.error || 'Failed to create utopia');
-          btn.disabled = false;
-          btn.innerHTML = originalText;
+          if (btn) {
+            btn.disabled = false;
+            btn.innerHTML = originalText;
+          }
         }
       } catch (error) {
         console.error('Error creating utopia:', error);
         alert('Failed to create utopia. Please try again.');
-        btn.disabled = false;
-        btn.innerHTML = originalText;
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = originalText;
+        }
       }
     }
 
