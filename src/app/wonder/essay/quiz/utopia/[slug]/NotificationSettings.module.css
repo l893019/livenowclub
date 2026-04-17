@@ -1,0 +1,119 @@
+.container {
+  margin: 24px 0;
+  padding: 16px 20px;
+  background: rgba(232, 23, 138, 0.04);
+  border-radius: 12px;
+  border: 1px solid rgba(232, 23, 138, 0.1);
+}
+
+.subscribed {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.bellIcon {
+  font-size: 16px;
+}
+
+.subscribedText {
+  font-size: 14px;
+  color: var(--text-dim, rgba(45, 42, 38, 0.7));
+}
+
+.changeBtn {
+  background: none;
+  border: none;
+  color: var(--accent-pink, #e8178a);
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.changeBtn:hover {
+  opacity: 0.8;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text, #2d2a26);
+}
+
+.inputRow {
+  display: flex;
+  gap: 8px;
+}
+
+.input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid rgba(45, 42, 38, 0.15);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  background: #fff;
+  color: var(--text, #2d2a26);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent-pink, #e8178a);
+}
+
+.input::placeholder {
+  color: var(--text-muted, rgba(45, 42, 38, 0.45));
+}
+
+.saveBtn {
+  padding: 10px 20px;
+  background: var(--accent-pink, #e8178a);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.saveBtn:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.saveBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.removeBtn {
+  background: none;
+  border: none;
+  color: var(--text-muted, rgba(45, 42, 38, 0.45));
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  align-self: flex-start;
+}
+
+.removeBtn:hover {
+  color: var(--text-dim, rgba(45, 42, 38, 0.7));
+}
+
+.message {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--accent-pink, #e8178a);
+}

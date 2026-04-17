@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { joinUtopia, getUserResult, getUtopia } from '@/lib/utopia';
+import { joinUtopia, getUserResult } from '@/lib/utopia';
 import { sendJoinNotification } from '@/lib/email';
 
 export async function POST(request: NextRequest) {
@@ -54,22 +54,25 @@ export async function POST(request: NextRequest) {
       members: room.members.map(m => ({ id: m.id, name: m.name }))
     });
 
-    // Send notification email to founder (async, don't block response)
-    const founderResult = await getUserResult(room.createdBy);
-    if (founderResult?.email && room.createdBy !== userId) {
-      console.log('[Join Utopia] Sending notification to founder:', founderResult.email);
-      sendJoinNotification({
-        toEmail: founderResult.email,
-        toName: founderResult.name,
-        joinerName: userResult.name,
-        joinerArchetype: userResult.archetype,
-        utopiaName: room.name,
-        utopiaSlug: room.slug,
-        joinerId: userId,
-        founderId: room.createdBy,
-      }).catch(err => {
-        console.error('[Join Utopia] Email notification failed:', err);
-      });
+    // Send notification email to ALL existing members with emails (not the joiner)
+    const existingMembers = room.members.filter(m => m.id !== userId);
+    for (const member of existingMembers) {
+      const memberResult = await getUserResult(member.id);
+      if (memberResult?.email) {
+        console.log('[Join Utopia] Sending notification to:', memberResult.email);
+        sendJoinNotification({
+          toEmail: memberResult.email,
+          toName: memberResult.name,
+          joinerName: userResult.name,
+          joinerArchetype: userResult.archetype,
+          utopiaName: room.name,
+          utopiaSlug: room.slug,
+          joinerId: userId,
+          founderId: member.id,
+        }).catch(err => {
+          console.error('[Join Utopia] Email notification failed for', member.id, ':', err);
+        });
+      }
     }
 
     return NextResponse.json({

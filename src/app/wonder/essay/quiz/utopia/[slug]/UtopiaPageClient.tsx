@@ -9,6 +9,7 @@ import { GroupReadingStep } from "./steps/GroupReadingStep";
 import { RelationshipStep } from "./steps/RelationshipStep";
 import { TwoPersonView } from "./TwoPersonView";
 import { YourArchetypeCard, JoinUtopiaCard } from "./YourArchetypeCard";
+import { NotificationSettings } from "./NotificationSettings";
 import { ReadingPage } from "@/app/wonder/essay/quiz/result/ReadingPage";
 import { archetypes } from "@/lib/archetypes";
 import type { UtopiaMember } from "@/lib/utopia";
@@ -307,6 +308,10 @@ export function UtopiaPageClient({
             </button>
           </div>
 
+          {currentUserId && (
+            <NotificationSettings userId={currentUserId} utopiaSlug={slug} />
+          )}
+
           <ShareSection
             shareUrl={shareUrl}
             onShare={handleShare}
@@ -383,6 +388,7 @@ export function UtopiaPageClient({
                 >
                   View Your Full Profile →
                 </button>
+                <NotificationSettings userId={currentUserId} utopiaSlug={slug} />
               </>
             );
           })()
