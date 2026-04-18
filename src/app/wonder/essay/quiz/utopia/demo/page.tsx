@@ -1,8 +1,12 @@
 "use client";
 
+import { useState, useCallback } from "react";
+import Link from "next/link";
 import Header from "@/components/Header";
 import { GroupRadarStep } from "../[slug]/steps/GroupRadarStep";
-import { NotificationSettings } from "../[slug]/NotificationSettings";
+import { GroupReadingStep } from "../[slug]/steps/GroupReadingStep";
+import { RelationshipStep } from "../[slug]/steps/RelationshipStep";
+import { ReadingPage } from "@/app/wonder/essay/quiz/result/ReadingPage";
 import type { UtopiaMember } from "@/lib/utopia";
 import styles from "../[slug]/UtopiaPageClient.module.css";
 
@@ -15,7 +19,140 @@ const demoMembers: UtopiaMember[] = [
   { id: "demo-5", name: "Tom", archetype: "swimmer", joinedAt: "2026-04-14" },
 ];
 
+const CURRENT_USER_ID = "demo-1";
+
+type View = "radar" | "reading" | "relationship" | "profile" | "their-reading";
+
 export default function DemoUtopiaPage() {
+  const [currentView, setCurrentView] = useState<View>("radar");
+  const [selectedMemberId, setSelectedMemberId] = useState<string | null>(null);
+
+  const handleMemberClick = useCallback((memberId: string) => {
+    if (memberId === CURRENT_USER_ID) {
+      setCurrentView("profile");
+    } else {
+      setSelectedMemberId(memberId);
+      setCurrentView("relationship");
+    }
+  }, []);
+
+  const handleBackToRadar = () => {
+    setSelectedMemberId(null);
+    setCurrentView("radar");
+  };
+
+  const handleShowReading = () => {
+    setCurrentView("reading");
+  };
+
+  const handleViewTheirReading = () => {
+    setCurrentView("their-reading");
+  };
+
+  // Navigation for relationship step
+  const otherMembers = demoMembers.filter((m) => m.id !== CURRENT_USER_ID);
+  const selectedIndex = selectedMemberId
+    ? otherMembers.findIndex((m) => m.id === selectedMemberId)
+    : -1;
+
+  const handleNextMember = () => {
+    if (selectedIndex < otherMembers.length - 1) {
+      setSelectedMemberId(otherMembers[selectedIndex + 1].id);
+    }
+  };
+
+  const handlePrevMember = () => {
+    if (selectedIndex > 0) {
+      setSelectedMemberId(otherMembers[selectedIndex - 1].id);
+    }
+  };
+
+  // Profile view (current user's full reading)
+  if (currentView === "profile") {
+    const me = demoMembers.find((m) => m.id === CURRENT_USER_ID);
+    if (me) {
+      return (
+        <ReadingPage
+          archetypeKey={me.archetype}
+          onBack={handleBackToRadar}
+          groupContext={{
+            utopiaSlug: "demo",
+            utopiaName: "The Explorers",
+          }}
+        />
+      );
+    }
+  }
+
+  // Relationship view
+  if (currentView === "relationship" && selectedMemberId) {
+    const you = demoMembers.find((m) => m.id === CURRENT_USER_ID);
+    const them = demoMembers.find((m) => m.id === selectedMemberId);
+
+    if (you && them) {
+      return (
+        <RelationshipStep
+          you={you}
+          them={them}
+          utopiaSlug="demo"
+          utopiaName="The Explorers"
+          onBack={handleBackToRadar}
+          onNext={selectedIndex < otherMembers.length - 1 ? handleNextMember : undefined}
+          onPrev={selectedIndex > 0 ? handlePrevMember : undefined}
+          hasNext={selectedIndex < otherMembers.length - 1}
+          hasPrev={selectedIndex > 0}
+          onViewTheirReading={handleViewTheirReading}
+        />
+      );
+    }
+  }
+
+  // Their reading view
+  if (currentView === "their-reading" && selectedMemberId) {
+    const them = demoMembers.find((m) => m.id === selectedMemberId);
+    if (them) {
+      return (
+        <ReadingPage
+          archetypeKey={them.archetype}
+          onBack={() => setCurrentView("relationship")}
+          groupContext={{
+            utopiaSlug: "demo",
+            utopiaName: "The Explorers",
+          }}
+          personName={them.name || "Anonymous"}
+        />
+      );
+    }
+  }
+
+  // Group reading view
+  if (currentView === "reading") {
+    return (
+      <div className={styles.container}>
+        <Header />
+        <button className={styles.backButton} onClick={handleBackToRadar}>
+          ← Back to radar
+        </button>
+        <main className={styles.readingMain}>
+          <GroupReadingStep
+            members={demoMembers}
+            utopiaName="The Explorers"
+            utopiaSlug="demo"
+          />
+          <p style={{
+            textAlign: "center",
+            fontSize: "12px",
+            color: "rgba(45,42,38,0.45)",
+            marginTop: "24px"
+          }}>
+            (This is a demo with fake data)
+          </p>
+        </main>
+      </div>
+    );
+  }
+
+  // Main radar view (default)
   return (
     <div className={styles.container}>
       <Header />
@@ -29,8 +166,8 @@ export default function DemoUtopiaPage() {
         <GroupRadarStep
           members={demoMembers}
           utopiaName="The Explorers"
-          onMemberClick={() => {}}
-          currentUserId="demo-1"
+          onMemberClick={handleMemberClick}
+          currentUserId={CURRENT_USER_ID}
         />
 
         <div style={{
@@ -59,7 +196,7 @@ export default function DemoUtopiaPage() {
         </div>
 
         <div className={styles.actions}>
-          <button className={styles.btnSecondary}>
+          <button className={styles.btnSecondary} onClick={handleShowReading}>
             Group Reading
           </button>
           <button className={styles.btnPrimary}>
