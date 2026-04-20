@@ -176,6 +176,166 @@
   margin-bottom: 0;
 }
 
+/* Section 1: At a Glance */
+.poeticOpening {
+  font-size: 1.125rem;
+  font-style: italic;
+  color: #2d2a26;
+  line-height: 1.6;
+}
+
+.whatsMissing {
+  font-style: italic;
+  color: rgba(45, 42, 38, 0.7);
+  margin-top: 0.5rem;
+}
+
+/* Section 2: Who Plays What Role */
+.rolesList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.roleCard {
+  background: white;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.04),
+    0 1px 4px rgba(0, 0, 0, 0.02);
+}
+
+.roleHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.roleNameBadge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(45, 42, 38, 0.5);
+  background: rgba(45, 42, 38, 0.06);
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-left: auto;
+}
+
+.roleDescription {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: rgba(45, 42, 38, 0.8);
+}
+
+.roleDescription p {
+  margin: 0 0 0.75rem;
+}
+
+.roleDescription p:last-child {
+  margin-bottom: 0;
+}
+
+/* Section 3: Where You'll Click / Push */
+.dynamicsGroup {
+  margin-bottom: 24px;
+}
+
+.dynamicsGroup:last-child {
+  margin-bottom: 0;
+}
+
+.dynamicsSubtitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: rgba(45, 42, 38, 0.5);
+  margin: 0 0 12px;
+}
+
+.pairCard {
+  background: white;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pairCard:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.pairCard:last-child {
+  margin-bottom: 0;
+}
+
+.pairNames {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2d2a26;
+  margin-bottom: 8px;
+}
+
+.pairPlus {
+  color: rgba(45, 42, 38, 0.3);
+  font-weight: 300;
+}
+
+.pairDescription {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(45, 42, 38, 0.7);
+  margin: 0;
+  font-style: italic;
+}
+
+/* Section 4: Tendencies */
+.tendenciesBox {
+  background: #fff8f0;
+  border-radius: 12px;
+  padding: 20px 24px;
+}
+
+.tendencyRow {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.tendencyRow:last-of-type {
+  margin-bottom: 16px;
+}
+
+.tendencyLabel {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #2d2a26;
+  flex-shrink: 0;
+}
+
+.tendencyList {
+  font-size: 0.95rem;
+  color: rgba(45, 42, 38, 0.75);
+}
+
+.tendencyWarning {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: rgba(45, 42, 38, 0.7);
+  margin: 0;
+  padding-top: 8px;
+  border-top: 1px solid rgba(45, 42, 38, 0.1);
+}
+
 /* Superpower Title */
 .superpowerTitle {
   font-size: 1.25rem;

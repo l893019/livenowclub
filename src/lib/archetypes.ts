@@ -268,7 +268,7 @@ Your instinct is to be with people in their difficulty. That's valuable. But pre
   },
   swimmer: {
     key: "swimmer",
-    name: "The Questioner",
+    name: "The Deep",
     color: "#6b8fef",
     utopia: "Their utopia is a civilization of philosophers whose single ambition is the deepest level of questioning.",
     description: "Most people see a problem and want to solve it. They see a question and want to live inside it.",
@@ -376,7 +376,7 @@ Watch for the moments when "choosing simplicity" becomes "choosing comfort." Wat
   },
   conscience: {
     key: "conscience",
-    name: "The Witness",
+    name: "The Guardian",
     color: "#d64545",
     utopia: "Their utopia built accountability into the architecture. Every leader's decisions are projected onto the sky.",
     description: "They see what others prefer to ignore. Someone has to watch the watchers.",
@@ -592,7 +592,7 @@ Watch for the moments when "imagining beyond limits" becomes "dismissing what's 
   },
   alive: {
     key: "alive",
-    name: "The Feeler",
+    name: "The Alive",
     color: "#f472b6",
     utopia: "Their utopia engineered twelve new senses and a sunset that lasts all day.",
     description: "Change your form, change your perspective, taste every experience. The universe gave you everything. The least you can do is feel it.",

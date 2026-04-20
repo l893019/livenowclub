@@ -3,7 +3,7 @@
 import { RadarChart } from "@/components/RadarChart";
 import { archetypePositions } from "@/lib/radar-positions";
 import { archetypes } from "@/lib/archetypes";
-import { getSharedUtopia } from "@/lib/shared-utopia";
+import { getPairReading } from "@/lib/pair-dynamics";
 import { useSwipe } from "@/hooks/useSwipe";
 import type { UtopiaMember } from "@/lib/utopia";
 import { QuizCTA } from "@/app/wonder/essay/quiz/result/QuizCTA";
@@ -23,6 +23,8 @@ type RelationshipStepProps = {
   onViewTheirReading?: () => void;
   /** If true, the current viewer hasn't taken the quiz - show CTA */
   viewerHasNotTakenQuiz?: boolean;
+  /** Array of all group members - for contextual "what's missing" section */
+  groupMembers?: UtopiaMember[];
 };
 
 export function RelationshipStep({
@@ -37,12 +39,16 @@ export function RelationshipStep({
   hasPrev,
   onViewTheirReading,
   viewerHasNotTakenQuiz,
+  groupMembers,
 }: RelationshipStepProps) {
   const yourArchetype = archetypes[you.archetype];
   const theirArchetype = archetypes[them.archetype];
 
-  // Get shared utopia content for this pairing
-  const sharedUtopia = getSharedUtopia(you.archetype, them.archetype);
+  // Get pair reading content for this pairing
+  const pairReading = getPairReading(you.archetype, them.archetype);
+
+  // Determine if this is a standalone 2-person view or within a group
+  const isStandalone = !groupMembers || groupMembers.length <= 2;
 
   const handleShare = async () => {
     const shareUrl = `${window.location.origin}/wonder/essay/quiz/utopia/${utopiaSlug}?view=relationship&you=${you.id}&them=${them.id}`;
@@ -128,13 +134,13 @@ export function RelationshipStep({
         />
       )}
 
-      {sharedUtopia ? (
+      {pairReading ? (
         <>
-          {/* WHAT YOU'D BUILD TOGETHER */}
+          {/* SECTION 1: WHAT YOU SHARE */}
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>What You'd Build Together</h2>
+            <h2 className={styles.sectionTitle}>What You Share</h2>
             <div className={styles.bodyText}>
-              {sharedUtopia.whatYoudBuild.split("\n\n").map((para, i) => (
+              {pairReading.whatYouShare.split("\n\n").map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
             </div>
@@ -142,11 +148,11 @@ export function RelationshipStep({
 
           <div className={styles.divider} />
 
-          {/* WHAT WOULD BE STRONG */}
+          {/* SECTION 2: WHERE YOU'LL PUSH EACH OTHER */}
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>What Would Be Strong</h2>
+            <h2 className={styles.sectionTitle}>Where You'll Push Each Other</h2>
             <div className={styles.bodyText}>
-              {sharedUtopia.whatWouldBeStrong.split("\n\n").map((para, i) => (
+              {pairReading.whereYouPush.split("\n\n").map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
             </div>
@@ -154,11 +160,11 @@ export function RelationshipStep({
 
           <div className={styles.divider} />
 
-          {/* WHAT WOULD BE MISSING */}
+          {/* SECTION 3: WHAT YOU CREATE TOGETHER */}
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>What Would Be Missing</h2>
+            <h2 className={styles.sectionTitle}>What You Create Together</h2>
             <div className={styles.bodyText}>
-              {sharedUtopia.whatWouldBeMissing.split("\n\n").map((para, i) => (
+              {pairReading.whatYouCreate.split("\n\n").map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
             </div>
@@ -166,10 +172,15 @@ export function RelationshipStep({
 
           <div className={styles.divider} />
 
-          {/* THE QUESTION YOU'RE ANSWERING */}
-          <section className={styles.questionSection}>
-            <h2 className={styles.sectionTitle}>The Question You're Answering</h2>
-            <p className={styles.questionText}>{sharedUtopia.questionYoureAnswering}</p>
+          {/* SECTION 4: WHAT'S MISSING BETWEEN YOU */}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>What's Missing Between You</h2>
+            <div className={styles.bodyText}>
+              <p>{pairReading.whatsMissing}</p>
+              <p className={styles.missingAdvice}>
+                {isStandalone ? pairReading.missingStandalone : pairReading.missingInGroup}
+              </p>
+            </div>
           </section>
         </>
       ) : (

@@ -102,6 +102,7 @@ export default function DemoUtopiaPage() {
           hasNext={selectedIndex < otherMembers.length - 1}
           hasPrev={selectedIndex > 0}
           onViewTheirReading={handleViewTheirReading}
+          groupMembers={demoMembers}
         />
       );
     }
@@ -138,6 +139,7 @@ export default function DemoUtopiaPage() {
             members={demoMembers}
             utopiaName="The Explorers"
             utopiaSlug="demo"
+            currentUserId={CURRENT_USER_ID}
           />
           <p style={{
             textAlign: "center",
