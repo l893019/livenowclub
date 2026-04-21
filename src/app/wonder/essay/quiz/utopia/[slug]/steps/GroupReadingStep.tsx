@@ -1,7 +1,5 @@
 "use client";
 
-import { RadarChart } from "@/components/RadarChart";
-import { archetypePositions } from "@/lib/radar-positions";
 import { archetypes } from "@/lib/archetypes";
 import { generateGroupReading, type GroupMember } from "@/lib/group-dynamics";
 import type { UtopiaMember } from "@/lib/utopia";
@@ -49,14 +47,6 @@ export function GroupReadingStep({
 
   // Generate the rich group reading
   const groupReading = generateGroupReading(groupMembers, currentUserId);
-
-  // Build user dots for radar
-  const userDots = members.map((m) => ({
-    id: m.id,
-    name: m.name || "Member",
-    position: archetypePositions[m.archetype] || { x: 0, y: 0 },
-    color: archetypes[m.archetype]?.color || "#888",
-  }));
 
   const handleShare = async () => {
     const shareUrl = `${window.location.origin}/wonder/essay/quiz/utopia/${utopiaSlug}`;
@@ -108,25 +98,6 @@ export function GroupReadingStep({
 
   return (
     <div className={styles.reading}>
-      {/* Header */}
-      <header className={styles.header}>
-        <h1 className={styles.title}>{utopiaName}</h1>
-        <p className={styles.subtitle}>
-          A utopia of {members.length} worldviews
-        </p>
-      </header>
-
-      {/* Radar Card */}
-      <div className={styles.radarContainer}>
-        <div className={styles.radarCard}>
-          <RadarChart
-            size={280}
-            userDots={userDots}
-            showAllArchetypes={false}
-          />
-        </div>
-      </div>
-
       {/* SECTION 1: YOUR GROUP AT A GLANCE */}
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>Your Group at a Glance</h2>
