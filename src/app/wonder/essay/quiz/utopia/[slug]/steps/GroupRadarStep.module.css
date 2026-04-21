@@ -274,3 +274,43 @@
   text-align: center;
   font-style: italic;
 }
+
+/* Compact mode */
+.compact {
+  margin-bottom: 0;
+}
+
+.compact .radarContainer {
+  width: 240px;
+  height: 240px;
+}
+
+.compact .legend {
+  margin-top: 16px;
+  gap: 6px;
+}
+
+.compact .legendItem {
+  padding: 6px 10px;
+}
+
+.compact .legendName {
+  font-size: 12px;
+}
+
+.compact .legendArchetype {
+  font-size: 10px;
+}
+
+.compact .dotLabel {
+  font-size: 11px;
+  padding: 2px 4px;
+}
+
+.compact .labelRight {
+  left: 36px;
+}
+
+.compact .labelLeft {
+  right: 36px;
+}

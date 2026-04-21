@@ -30,7 +30,7 @@ type UtopiaPageClientProps = {
   shareUrl: string;
 };
 
-type View = "radar" | "reading" | "relationship" | "profile" | "their-reading";
+type View = "radar" | "relationship" | "profile" | "their-reading";
 
 export function UtopiaPageClient({
   slug,
@@ -120,10 +120,6 @@ export function UtopiaPageClient({
     setSelectedMemberId(null);
     setViewAsUserId(null); // Clear deep link perspective
     setCurrentView("radar");
-  };
-
-  const handleShowReading = () => {
-    setCurrentView("reading");
   };
 
   const handleBackToRadar = () => {
@@ -329,36 +325,12 @@ export function UtopiaPageClient({
     );
   }
 
-  // Group reading view
-  if (currentView === "reading") {
-    return (
-      <div className={styles.container}>
-        <Header />
-        <button className={styles.backButton} onClick={handleBackToRadar}>
-          ← Back to radar
-        </button>
-        <main className={styles.readingMain}>
-          <GroupReadingStep members={members} utopiaName={utopiaName} utopiaSlug={slug} />
-          <div className={styles.shareWrapper}>
-            <ShareSection shareUrl={shareUrl} onShare={handleShare} showMyUtopias={!!currentUserId} />
-          </div>
-          <div className={styles.essayLink}>
-            <Link href="/wonder/essay" className={styles.essayLinkText}>
-              Read <em>When Purpose Is All We Have Left</em> &rarr;
-            </Link>
-          </div>
-        </main>
-        <Footer />
-      </div>
-    );
-  }
-
-  // Main radar view (default)
+  // Main view for 3+ members (reading-first with compact radar)
   return (
     <div className={styles.container}>
       <Header />
-      <main className={styles.main}>
-        <div className={styles.hero}>
+      <main className={styles.readingMain}>
+        <div className={styles.heroCompact}>
           <span className={styles.label}>Your Utopia</span>
           <h1 className={styles.title}>{utopiaName}</h1>
           <p className={styles.count}>
@@ -366,50 +338,48 @@ export function UtopiaPageClient({
           </p>
         </div>
 
-        <GroupRadarStep
-          members={members}
-          utopiaName={utopiaName}
-          onMemberClick={handleMemberClick}
-          highlightMemberId={selectedMemberId || undefined}
-          currentUserId={currentUserId}
-        />
-
-        {/* Your archetype card or Join CTA */}
-        {currentUserId ? (
-          (() => {
-            const me = members.find((m) => m.id === currentUserId);
-            if (!me) return <JoinUtopiaCard slug={slug} utopiaName={utopiaName} memberCount={members.length} />;
-            return (
-              <>
-                <YourArchetypeCard member={me} onClick={() => setCurrentView("profile")} />
-                <button
-                  className={styles.viewProfileLink}
-                  onClick={() => setCurrentView("profile")}
-                >
-                  View Your Full Profile →
-                </button>
-                <NotificationSettings userId={currentUserId} utopiaSlug={slug} />
-              </>
-            );
-          })()
-        ) : (
-          <JoinUtopiaCard slug={slug} utopiaName={utopiaName} memberCount={members.length} />
-        )}
-
-        <div className={styles.actions}>
-          <button className={styles.btnSecondary} onClick={handleShowReading}>
-            Group Reading
-          </button>
-          <button className={styles.btnPrimary} onClick={handleShare}>
-            Invite Someone
-          </button>
+        {/* Compact radar as visual context */}
+        <div className={styles.compactRadar}>
+          <GroupRadarStep
+            members={members}
+            utopiaName={utopiaName}
+            onMemberClick={handleMemberClick}
+            highlightMemberId={selectedMemberId || undefined}
+            currentUserId={currentUserId}
+            compact
+          />
         </div>
 
-        {currentUserId && (
-          <Link href="/wonder/essay/quiz/my-utopias" className={styles.myUtopias}>
-            My Utopias →
-          </Link>
-        )}
+        {/* Group Reading - the main content */}
+        <GroupReadingStep members={members} utopiaName={utopiaName} utopiaSlug={slug} />
+
+        {/* Your archetype card or Join CTA */}
+        <div className={styles.userSection}>
+          {currentUserId ? (
+            (() => {
+              const me = members.find((m) => m.id === currentUserId);
+              if (!me) return <JoinUtopiaCard slug={slug} utopiaName={utopiaName} memberCount={members.length} />;
+              return (
+                <>
+                  <YourArchetypeCard member={me} onClick={() => setCurrentView("profile")} />
+                  <button
+                    className={styles.viewProfileLink}
+                    onClick={() => setCurrentView("profile")}
+                  >
+                    View Your Full Profile →
+                  </button>
+                  <NotificationSettings userId={currentUserId} utopiaSlug={slug} />
+                </>
+              );
+            })()
+          ) : (
+            <JoinUtopiaCard slug={slug} utopiaName={utopiaName} memberCount={members.length} />
+          )}
+        </div>
+
+        <div className={styles.shareWrapper}>
+          <ShareSection shareUrl={shareUrl} onShare={handleShare} showMyUtopias={!!currentUserId} />
+        </div>
 
         <div className={styles.essayLink}>
           <Link href="/wonder/essay" className={styles.essayLinkText}>

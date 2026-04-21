@@ -175,6 +175,46 @@
   margin-bottom: 16px;
 }
 
+.heroCompact {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.heroCompact .label {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #e8178a;
+}
+
+.heroCompact .title {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  margin: 6px 0;
+  color: #2d2a26;
+}
+
+.heroCompact .count {
+  font-size: 0.9rem;
+  color: rgba(45, 42, 38, 0.45);
+}
+
+.compactRadar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.userSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 32px;
+  padding: 0 24px;
+}
+
 .label {
   font-size: 11px;
   font-weight: 500;

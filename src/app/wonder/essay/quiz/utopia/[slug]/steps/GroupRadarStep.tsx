@@ -18,6 +18,7 @@ type GroupRadarStepProps = {
   onMemberClick: (memberId: string) => void;
   highlightMemberId?: string;
   currentUserId?: string | null;
+  compact?: boolean;
 };
 
 // Quadrant definitions based on radar-positions.ts axes
@@ -79,6 +80,7 @@ export function GroupRadarStep({
   onMemberClick,
   highlightMemberId,
   currentUserId,
+  compact = false,
 }: GroupRadarStepProps) {
   // Skip animation on revisit - show all dots immediately
   const [visibleCount, setVisibleCount] = useState(members.length);
@@ -121,8 +123,8 @@ export function GroupRadarStep({
   // Summary text
   const summary = generateGroupSummary(members);
 
-  const radarSize = 320;
-  const padding = 40;
+  const radarSize = compact ? 240 : 320;
+  const padding = compact ? 30 : 40;
 
   // Calculate label positions with collision detection
   const labelData = useMemo(() => {
@@ -167,7 +169,7 @@ export function GroupRadarStep({
   }, [visibleMembers, currentUserId]);
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${compact ? styles.compact : ""}`}>
       {/* Radar with clickable overlays */}
       <div className={styles.radarSection}>
         <div className={styles.radarContainer}>
@@ -268,13 +270,15 @@ export function GroupRadarStep({
         })}
       </div>
 
-      {/* Summary text */}
-      <div className={`${styles.summary} ${showSummary ? styles.visible : ""}`}>
-        <p className={styles.summaryText}>{summary}</p>
-      </div>
+      {/* Summary text - hidden in compact mode */}
+      {!compact && (
+        <div className={`${styles.summary} ${showSummary ? styles.visible : ""}`}>
+          <p className={styles.summaryText}>{summary}</p>
+        </div>
+      )}
 
-      {/* Tap hint */}
-      <p className={styles.tapHint}>Tap anyone to compare worldviews</p>
+      {/* Tap hint - hidden in compact mode */}
+      {!compact && <p className={styles.tapHint}>Tap anyone to compare worldviews</p>}
     </div>
   );
 }
