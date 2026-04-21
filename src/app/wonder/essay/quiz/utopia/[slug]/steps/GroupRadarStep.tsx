@@ -21,9 +21,9 @@ type GroupRadarStepProps = {
 };
 
 // Quadrant definitions based on radar-positions.ts axes
-// X: -1 (Witness) to +1 (Build)
+// X: -1 (Perceive) to +1 (Build)
 // Y: -1 (Root) to +1 (Transcend)
-type Quadrant = "Transcend" | "Root" | "Build" | "Witness";
+type Quadrant = "Transcend" | "Root" | "Build" | "Perceive";
 
 function getQuadrant(pos: RadarPosition): Quadrant {
   // Determine dominant axis
@@ -33,7 +33,7 @@ function getQuadrant(pos: RadarPosition): Quadrant {
   if (absY >= absX) {
     return pos.y >= 0 ? "Transcend" : "Root";
   } else {
-    return pos.x >= 0 ? "Build" : "Witness";
+    return pos.x >= 0 ? "Build" : "Perceive";
   }
 }
 
@@ -53,7 +53,7 @@ function generateGroupSummary(members: UtopiaMember[]): string {
     }
   });
 
-  const allQuadrants: Quadrant[] = ["Transcend", "Root", "Build", "Witness"];
+  const allQuadrants: Quadrant[] = ["Transcend", "Root", "Build", "Perceive"];
   const missingQuadrants = allQuadrants.filter((q) => !quadrantsPresent.has(q));
 
   // Build summary

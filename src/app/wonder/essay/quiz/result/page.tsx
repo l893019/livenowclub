@@ -13,7 +13,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const userName = typeof params.n === 'string' ? params.n : null;
   const data = archetypes[archetypeKey] || archetypes.citizen;
 
-  // Personalized title for shared results: "[Name] is The Questioner. What are you?"
+  // Personalized title for shared results: "[Name] is The Deep. What are you?"
   // Falls back to generic title if no name provided
   const ogTitle = userName
     ? `${userName} is ${data.name}. What are you?`

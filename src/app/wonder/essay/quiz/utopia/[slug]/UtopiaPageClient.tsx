@@ -164,7 +164,7 @@ export function UtopiaPageClient({
     const myArchetype = me ? archetypes[me.archetype] : null;
     const myArchetypeName = myArchetype?.name || "a unique worldview";
 
-    // Share text includes archetype: "I'm The Questioner. What are you? Take the quiz and join my group."
+    // Share text includes archetype: "I'm The Deep. What are you? Take the quiz and join my group."
     const shareText = me
       ? `I'm ${myArchetypeName}. What are you? Take the quiz and join my group.`
       : `Join ${utopiaName} — a utopia of ${members.length}.`;

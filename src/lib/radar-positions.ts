@@ -1,5 +1,5 @@
 // Radar/Compass chart positions for utopia archetypes
-// X axis: -1 (Witness) to +1 (Build)
+// X axis: -1 (Perceive) to +1 (Build)
 // Y axis: -1 (Root) to +1 (Transcend)
 // Center (0, 0) = uncertain/between
 

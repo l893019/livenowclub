@@ -25,7 +25,7 @@ const archetypes: Record<string, { name: string; utopia: string; color: string }
     color: "#e8178a"
   },
   swimmer: {
-    name: "The Questioner",
+    name: "The Deep",
     utopia: "Your utopia is a civilization of philosophers.",
     color: "#6b8fef"
   },
@@ -35,7 +35,7 @@ const archetypes: Record<string, { name: string; utopia: string; color: string }
     color: "#7ed6a4"
   },
   conscience: {
-    name: "The Witness",
+    name: "The Guardian",
     utopia: "Your utopia built accountability into the architecture.",
     color: "#d64545"
   },
@@ -55,7 +55,7 @@ const archetypes: Record<string, { name: string; utopia: string; color: string }
     color: "#a855f7"
   },
   alive: {
-    name: "The Feeler",
+    name: "The Alive",
     utopia: "Your utopia engineered twelve new senses and a sunset that lasts all day.",
     color: "#f472b6"
   },

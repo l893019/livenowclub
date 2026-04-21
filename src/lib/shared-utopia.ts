@@ -16,54 +16,54 @@ export const sharedUtopiaContent: Record<string, SharedUtopiaContent> = {
   // QUESTIONER (swimmer) PAIRINGS
   // ============================================
 
-  // Questioner × Questioner
+  // Deep × Deep
   "swimmer_swimmer": {
     whatYoudBuild: `A life spent in the depths. Nothing would be resolved quickly. Everything would be examined, questioned, turned over, held up to light from angles no one else would think to try.
 
 You'd build understanding. Not products, not institutions—understanding. Whether that becomes a research practice, a philosophical framework, or just very long conversations over dinner, the core is the same: you'd go deeper than almost anyone.`,
     whatWouldBeStrong: `Depth. Patience. Genuine intellectual partnership. You'd never have to apologize for taking something too seriously.
 
-The other Questioner actually wants to keep going. That's rare.`,
+The other Deep actually wants to keep going. That's rare.`,
     whatWouldBeMissing: `Action. Momentum. Someone needs to eventually say "we understand enough—now we do something." Neither of you is wired for that moment. You could understand a problem beautifully and completely and never lift a finger to solve it.
 
 You might also miss joy. The unexamined moment might be worth having.`,
     questionYoureAnswering: `How deep can understanding go?`
   },
 
-  // Questioner × Builder (shaper)
+  // Deep × Builder (shaper)
   "shaper_swimmer": {
     whatYoudBuild: `The thing that actually matters AND actually exists. This is one of the best pairings for making something real.
 
-The Builder makes sure it ships. The Questioner makes sure it's worth shipping. Together: things that are both real and right.`,
+The Builder makes sure it ships. The Deep makes sure it's worth shipping. Together: things that are both real and right.`,
     whatWouldBeStrong: `You'd avoid the two most common failures: endless deliberation that never becomes anything, and rushed action that misses the point.
 
-The Builder will get impatient. The Questioner will slow things down at inconvenient moments. You'll have the same argument repeatedly: "We need to ship this" versus "We need to understand this first." That argument is the point. Neither of you wins—you both sharpen.`,
+The Builder will get impatient. The Deep will slow things down at inconvenient moments. You'll have the same argument repeatedly: "We need to ship this" versus "We need to understand this first." That argument is the point. Neither of you wins—you both sharpen.`,
     whatWouldBeMissing: `Patience for maintenance. Neither of you is naturally oriented toward just keeping things running. You might build something good, move on, and let it decay.
 
 You might also dismiss anyone who isn't building or questioning. The maintainers, the administrators, the people who just want to enjoy what exists—they could feel invisible to you.`,
     questionYoureAnswering: `Can something be both urgent and considered?`
   },
 
-  // Questioner × Abundant (citizen)
+  // Deep × Abundant (citizen)
   "citizen_swimmer": {
-    whatYoudBuild: `Optimism that can defend itself. The Abundant genuinely believes good things are possible. The Questioner tests whether that belief holds up.
+    whatYoudBuild: `Optimism that can defend itself. The Abundant genuinely believes good things are possible. The Deep tests whether that belief holds up.
 
 Together: hope that's been through the fire. Vision that survives examination.`,
-    whatWouldBeStrong: `The Abundant brings energy and possibility. The Questioner brings rigor. This combination makes things that last because they're built on genuine insight, not wishful thinking.
+    whatWouldBeStrong: `The Abundant brings energy and possibility. The Deep brings rigor. This combination makes things that last because they're built on genuine insight, not wishful thinking.
 
-The Questioner will ask hard questions. The Abundant won't take it as attack—they'll see it as care. That's a good dynamic.`,
+The Deep will ask hard questions. The Abundant won't take it as attack—they'll see it as care. That's a good dynamic.`,
     whatWouldBeMissing: `Urgency about specific injustices. You're both somewhat abstract—one thinks about big possibilities, the other thinks about deep questions. When something is wrong right now and someone needs to do something about it right now, neither of you naturally moves.
 
 You might also miss the small and local. Both of you default to broad scope.`,
     questionYoureAnswering: `Can optimism survive examination?`
   },
 
-  // Questioner × Architect
+  // Deep × Architect
   "architect_swimmer": {
-    whatYoudBuild: `Systems that actually serve what they claim to serve. The Architect thinks in structures. The Questioner asks whether those structures are built on truth.
+    whatYoudBuild: `Systems that actually serve what they claim to serve. The Architect thinks in structures. The Deep asks whether those structures are built on truth.
 
 This is a good pairing for building institutions, organizations, or frameworks that work because they understand people, not just efficiency.`,
-    whatWouldBeStrong: `The Architect brings structural thinking. The Questioner brings depth. Together: systems that last because they're based on genuine understanding of how things actually work—not models, not assumptions, actual understanding.
+    whatWouldBeStrong: `The Architect brings structural thinking. The Deep brings depth. Together: systems that last because they're based on genuine understanding of how things actually work—not models, not assumptions, actual understanding.
 
 You'd catch the places where elegant design hides shallow thinking.`,
     whatWouldBeMissing: `Speed. You'll keep refining and questioning when you should ship. You'll design the perfect system and delay implementing it because one more question arose.
@@ -72,12 +72,12 @@ You might also miss that people have bodies and feelings. Both of you live in ab
     questionYoureAnswering: `Can a system emerge from actual understanding?`
   },
 
-  // Questioner × Present (presence)
+  // Deep × Present (presence)
   "presence_swimmer": {
-    whatYoudBuild: `Depth and warmth in the same room. The Questioner goes deep. The Present stays close. Together: spaces where people can think hard AND feel held.
+    whatYoudBuild: `Depth and warmth in the same room. The Deep goes deep. The Present stays close. Together: spaces where people can think hard AND feel held.
 
 Therapeutic practices, certain kinds of teaching, the best kind of friendship.`,
-    whatWouldBeStrong: `The Questioner brings substance. The Present brings attention. Together, you avoid both cold intellectualism and comfortable avoidance.
+    whatWouldBeStrong: `The Deep brings substance. The Present brings attention. Together, you avoid both cold intellectualism and comfortable avoidance.
 
 You'd create rare spaces: places where people can ask the hardest questions while still feeling connected.`,
     whatWouldBeMissing: `Drive. Neither of you is oriented toward building or achieving. You might go deep together and make nothing anyone else can see or use.
@@ -86,26 +86,26 @@ You might also enable each other's avoidance. Presence can be an escape from dec
     questionYoureAnswering: `Can understanding and connection happen together?`
   },
 
-  // Questioner × Rooted
+  // Deep × Rooted
   "rooted_swimmer": {
-    whatYoudBuild: `Inquiry that knows when to stop. The Questioner digs. The Rooted says "enough."
+    whatYoudBuild: `Inquiry that knows when to stop. The Deep digs. The Rooted says "enough."
 
-This is a good pairing. The Questioner can spiral into endless examination; the Rooted provides a floor. The Rooted can become static; the Questioner keeps them alive.`,
-    whatWouldBeStrong: `You'd both resist the culture's demand for shallow answers and constant motion. The Rooted's stillness gives the Questioner's depth a container. The Questioner's aliveness keeps the Rooted from calcifying.
+This is a good pairing. The Deep can spiral into endless examination; the Rooted provides a floor. The Rooted can become static; the Deep keeps them alive.`,
+    whatWouldBeStrong: `You'd both resist the culture's demand for shallow answers and constant motion. The Rooted's stillness gives the Deep's depth a container. The Deep's aliveness keeps the Rooted from calcifying.
 
 Together: thoughtful without being frantic, serious without being anxious.`,
-    whatWouldBeMissing: `Urgency. When the world is burning, neither of you naturally runs toward the fire. The Questioner wants to understand the fire. The Rooted stays where they are.
+    whatWouldBeMissing: `Urgency. When the world is burning, neither of you naturally runs toward the fire. The Deep wants to understand the fire. The Rooted stays where they are.
 
 You might build a beautiful, deep life together and completely miss something that needed you.`,
     questionYoureAnswering: `Can you stay still and still seek?`
   },
 
-  // Questioner × Witness (conscience)
+  // Deep × Guardian (conscience)
   "conscience_swimmer": {
-    whatYoudBuild: `Truth all the way down. The Witness spots what's hidden. The Questioner asks why it's hidden.
+    whatYoudBuild: `Truth all the way down. The Guardian spots what's hidden. The Deep asks why it's hidden.
 
 Together: you'd see more than almost anyone. Investigative practices, accountability systems, the kind of friendship where nothing stays buried.`,
-    whatWouldBeStrong: `You're nearly impossible to fool. The Witness catches what's being concealed; the Questioner won't accept the first explanation. Together, you'd actually understand what's happening, not just the story being told.
+    whatWouldBeStrong: `You're nearly impossible to fool. The Guardian catches what's being concealed; the Deep won't accept the first explanation. Together, you'd actually understand what's happening, not just the story being told.
 
 Your combination has rare integrity. You don't look away AND you don't stop asking.`,
     whatWouldBeMissing: `Trust. Joy. The willingness to appreciate without examining. You're both oriented toward finding what's wrong. The thing that's simply good might not survive your gaze.
@@ -114,12 +114,12 @@ You could exhaust each other and everyone around you. Sometimes people just want
     questionYoureAnswering: `What's hidden underneath what's hidden?`
   },
 
-  // Questioner × Keeper (embers)
+  // Deep × Keeper (embers)
   "embers_swimmer": {
-    whatYoudBuild: `Understanding of where we came from and whether it was right. The Keeper holds what mattered. The Questioner asks whether it should still matter.
+    whatYoudBuild: `Understanding of where we came from and whether it was right. The Keeper holds what mattered. The Deep asks whether it should still matter.
 
 Archives, educational practices, thoughtful tradition-keeping—anything that honors the past while subjecting it to real examination.`,
-    whatWouldBeStrong: `You'd avoid both blind reverence and careless destruction. The Questioner prevents the Keeper from worshipping what shouldn't be worshipped. The Keeper prevents the Questioner from reinventing every wheel.
+    whatWouldBeStrong: `You'd avoid both blind reverence and careless destruction. The Deep prevents the Keeper from worshipping what shouldn't be worshipped. The Keeper prevents the Deep from reinventing every wheel.
 
 Together, you'd know which wisdom to carry forward and which to leave behind.`,
     whatWouldBeMissing: `The genuinely new. Both of you are oriented backward—one to preserve, one to examine. Novel possibilities that don't fit existing frames might pass you by.
@@ -128,12 +128,12 @@ You might become conservative in the deep sense: so focused on understanding wha
     questionYoureAnswering: `What from the past deserves to survive?`
   },
 
-  // Questioner × Challenger (friction)
+  // Deep × Challenger (friction)
   "friction_swimmer": {
-    whatYoudBuild: `Understanding forged under pressure. The Challenger craves difficulty. The Questioner craves depth. Together: you'd go places most people avoid because they're hard AND confusing.
+    whatYoudBuild: `Understanding forged under pressure. The Challenger craves difficulty. The Deep craves depth. Together: you'd go places most people avoid because they're hard AND confusing.
 
 Training, certain kinds of research, relationships that grow through hard conversations.`,
-    whatWouldBeStrong: `Neither of you flinches. The Challenger seeks resistance; the Questioner seeks truth. You'd question everything AND test everything. Nothing would be accepted that hasn't been examined and stress-tested.
+    whatWouldBeStrong: `Neither of you flinches. The Challenger seeks resistance; the Deep seeks truth. You'd question everything AND test everything. Nothing would be accepted that hasn't been examined and stress-tested.
 
 This pairing has unusual rigor. You'd actually know what you know.`,
     whatWouldBeMissing: `Rest. Acceptance. The willingness to let things be good enough. You're both oriented toward pushing—one toward difficulty, one toward depth. The simple appreciation of what's working might elude you.
@@ -142,12 +142,12 @@ You might exhaust each other. Always another question, always another challenge.
     questionYoureAnswering: `What truths only emerge under pressure?`
   },
 
-  // Questioner × Transcendent (unbound)
+  // Deep × Transcendent (unbound)
   "swimmer_unbound": {
-    whatYoudBuild: `Questions that reach beyond the edges of what we know. The Questioner goes deep. The Transcendent goes beyond. Together: inquiry into the biggest possible things—consciousness, existence, what minds like ours could become.
+    whatYoudBuild: `Questions that reach beyond the edges of what we know. The Deep goes deep. The Transcendent goes beyond. Together: inquiry into the biggest possible things—consciousness, existence, what minds like ours could become.
 
 This pairing is visionary in the real sense. Not just imagining—understanding why the imagination matters.`,
-    whatWouldBeStrong: `Neither of you is limited by common sense. The Questioner asks what others don't think to ask; the Transcendent imagines what others can't conceive. Together, you'd see further than almost anyone.
+    whatWouldBeStrong: `Neither of you is limited by common sense. The Deep asks what others don't think to ask; the Transcendent imagines what others can't conceive. Together, you'd see further than almost anyone.
 
 You'd build frameworks or practices that expand what it's possible to think.`,
     whatWouldBeMissing: `The ground. Both of you are reaching upward and outward—one into questions, one into transcendence. Ordinary life, embodied concerns, the people who aren't on this journey—they might feel far away.
@@ -156,26 +156,26 @@ You might build cathedrals of thought no one else can enter.`,
     questionYoureAnswering: `What lies beyond what we can currently think?`
   },
 
-  // Questioner × Feeler (alive)
+  // Deep × Alive (alive)
   "alive_swimmer": {
-    whatYoudBuild: `Experience that's both felt and understood. The Feeler opens to everything. The Questioner examines what's opened.
+    whatYoudBuild: `Experience that's both felt and understood. The Alive opens to everything. The Deep examines what's opened.
 
 Lives, practices, art where sensation and meaning interweave—where feeling deeply and understanding deeply aren't in tension.`,
-    whatWouldBeStrong: `You'd avoid both intellectualism divorced from life and experience divorced from meaning. The Feeler keeps the Questioner embodied. The Questioner gives the Feeler's experiences integration.
+    whatWouldBeStrong: `You'd avoid both intellectualism divorced from life and experience divorced from meaning. The Alive keeps the Deep embodied. The Deep gives the Alive's experiences integration.
 
 Together, you'd actually digest what life offers rather than consuming or analyzing without absorbing.`,
-    whatWouldBeMissing: `Closure. Decision. Both of you receive rather than act. The Feeler receives sensation; the Questioner receives complexity. Neither naturally moves toward resolution or building.
+    whatWouldBeMissing: `Closure. Decision. Both of you receive rather than act. The Alive receives sensation; the Deep receives complexity. Neither naturally moves toward resolution or building.
 
 You might become very rich internally while creating nothing others can see.`,
     questionYoureAnswering: `Can you feel everything and understand it too?`
   },
 
-  // Questioner × Mender
+  // Deep × Mender
   "mender_swimmer": {
-    whatYoudBuild: `Repair that understands what actually broke. The Mender fixes. The Questioner asks why it broke.
+    whatYoudBuild: `Repair that understands what actually broke. The Mender fixes. The Deep asks why it broke.
 
 Therapeutic practices, restorative systems, approaches to healing that don't just patch but address roots.`,
-    whatWouldBeStrong: `You'd avoid both mindless fixing and endless analyzing. The Mender acts; the Questioner understands first. Things get fixed AND they get fixed right.
+    whatWouldBeStrong: `You'd avoid both mindless fixing and endless analyzing. The Mender acts; the Deep understands first. Things get fixed AND they get fixed right.
 
 Your combination is effective and thoughtful. Repairs that stick.`,
     whatWouldBeMissing: `The courage to let things die. Sometimes things should end, not be repaired. Both of you are oriented toward continuation—fixing and understanding what is—rather than accepting necessary endings.
@@ -184,12 +184,12 @@ You might prolong what should be released.`,
     questionYoureAnswering: `What actually broke, and what does it need?`
   },
 
-  // Questioner × Truth-Teller (cleareyed)
+  // Deep × Truth-Teller (cleareyed)
   "cleareyed_swimmer": {
-    whatYoudBuild: `Clarity that goes to the roots. The Truth-Teller says what's real. The Questioner asks what's really real.
+    whatYoudBuild: `Clarity that goes to the roots. The Truth-Teller says what's real. The Deep asks what's really real.
 
 Journalism, philosophy, therapy—anything that requires both honesty and depth. You'd cut through comfortable lies AND shallow truths.`,
-    whatWouldBeStrong: `You'd actually get to the bottom of things. The Truth-Teller says the hard thing; the Questioner asks the hard question. Neither accepts convenience over truth.
+    whatWouldBeStrong: `You'd actually get to the bottom of things. The Truth-Teller says the hard thing; the Deep asks the hard question. Neither accepts convenience over truth.
 
 Your combination has rare integrity: unflinching AND thorough.`,
     whatWouldBeMissing: `Mercy. Tenderness. The willingness to hold space for things that don't make sense. You're both oriented toward truth at all costs. Feelings that aren't rational, needs that aren't logical—you might steamroll them.
@@ -198,15 +198,15 @@ Your honesty could become unkind.`,
     questionYoureAnswering: `What's true underneath the obvious truth?`
   },
 
-  // Questioner × Liminal (between)
+  // Deep × Liminal (between)
   "between_swimmer": {
-    whatYoudBuild: `Inquiry that doesn't rush to resolve. The Questioner explores. The Liminal waits in uncertainty. Together: understanding that can sit with not-knowing for as long as it takes.
+    whatYoudBuild: `Inquiry that doesn't rush to resolve. The Deep explores. The Liminal waits in uncertainty. Together: understanding that can sit with not-knowing for as long as it takes.
 
 Research, contemplative practices, the kind of friendship that can hold confusion for years.`,
-    whatWouldBeStrong: `Neither of you needs quick answers. The Questioner's exploration finds a companion who won't demand conclusions. The Liminal's uncertainty finds someone who sees it as interesting, not wrong.
+    whatWouldBeStrong: `Neither of you needs quick answers. The Deep's exploration finds a companion who won't demand conclusions. The Liminal's uncertainty finds someone who sees it as interesting, not wrong.
 
 You'd build patience for complexity that most people can't tolerate.`,
-    whatWouldBeMissing: `Arrival. Ever. Both of you are comfortable staying in process. The Questioner always has another question; the Liminal hasn't yet resolved. You might never actually land anywhere.
+    whatWouldBeMissing: `Arrival. Ever. Both of you are comfortable staying in process. The Deep always has another question; the Liminal hasn't yet resolved. You might never actually land anywhere.
 
 Beautiful inquiry that produces nothing.`,
     questionYoureAnswering: `How long can we not-know together?`
@@ -214,7 +214,7 @@ Beautiful inquiry that produces nothing.`,
 
   // ============================================
   // BUILDER (shaper) PAIRINGS
-  // (already done: Questioner)
+  // (already done: Deep)
   // ============================================
 
   // Builder × Builder
@@ -287,15 +287,15 @@ You're learning what it means to move together when your natural speeds differ.`
     questionYoureAnswering: `Can we build without leaving?`
   },
 
-  // Builder × Witness
+  // Builder × Guardian
   "conscience_shaper": {
-    whatYoudBuild: `Things that hold up to scrutiny. The Builder makes; the Witness watches for what's hidden. Together: products or systems that don't have dirty secrets.
+    whatYoudBuild: `Things that hold up to scrutiny. The Builder makes; the Guardian watches for what's hidden. Together: products or systems that don't have dirty secrets.
 
 Accountability technology. Transparent organizations. Ethical business.`,
-    whatWouldBeStrong: `The Builder brings momentum; the Witness brings vigilance. You'd build things faster than most AND catch problems earlier than most. The Witness spots what the Builder might miss in the rush.
+    whatWouldBeStrong: `The Builder brings momentum; the Guardian brings vigilance. You'd build things faster than most AND catch problems earlier than most. The Guardian spots what the Builder might miss in the rush.
 
 You'd create things you don't have to apologize for later.`,
-    whatWouldBeMissing: `Easy trust. The Witness's vigilance might feel like suspicion to the Builder. The Builder's speed might feel like carelessness to the Witness. You'll need to work on assuming good faith.
+    whatWouldBeMissing: `Easy trust. The Guardian's vigilance might feel like suspicion to the Builder. The Builder's speed might feel like carelessness to the Guardian. You'll need to work on assuming good faith.
 
 You might also miss joy. Neither of you is oriented toward celebration.`,
     questionYoureAnswering: `Can we build something we don't have to hide?`
@@ -343,15 +343,15 @@ You might create marvels no one uses.`,
     questionYoureAnswering: `What can we build that doesn't exist yet?`
   },
 
-  // Builder × Feeler
+  // Builder × Alive
   "alive_shaper": {
-    whatYoudBuild: `Things with texture and sensation. The Builder makes; the Feeler experiences fully. Together: products, spaces, or art where the sensory matters as much as the functional.
+    whatYoudBuild: `Things with texture and sensation. The Builder makes; the Alive experiences fully. Together: products, spaces, or art where the sensory matters as much as the functional.
 
 Design that feels good. Technology with soul. Spaces that come alive.`,
-    whatWouldBeStrong: `The Builder brings structure; the Feeler brings sensitivity. You'd make things that work AND that feel right. The Feeler catches when something is technically correct but lifeless.
+    whatWouldBeStrong: `The Builder brings structure; the Alive brings sensitivity. You'd make things that work AND that feel right. The Alive catches when something is technically correct but lifeless.
 
 Your work would have unusual aliveness—built things that pulse.`,
-    whatWouldBeMissing: `Efficiency. The Feeler will slow things down to feel them. The Builder will want to move. You'll negotiate constantly between pace and sensitivity.
+    whatWouldBeMissing: `Efficiency. The Alive will slow things down to feel them. The Builder will want to move. You'll negotiate constantly between pace and sensitivity.
 
 You might also miss the abstract and structural. Both of you live in the tangible.`,
     questionYoureAnswering: `Can built things feel alive?`
@@ -401,7 +401,7 @@ You'll spend energy just on the negotiation.`,
 
   // ============================================
   // ABUNDANT (citizen) PAIRINGS
-  // (already done: Questioner, Builder)
+  // (already done: Deep, Builder)
   // ============================================
 
   // Abundant × Abundant
@@ -460,15 +460,15 @@ You might perfect your corner and ignore everything else.`,
     questionYoureAnswering: `Can abundance come from staying still?`
   },
 
-  // Abundant × Witness
+  // Abundant × Guardian
   "citizen_conscience": {
-    whatYoudBuild: `This is a productive tension. The Abundant sees possibility; the Witness sees what's hidden. Together: hope that's been tested against reality.
+    whatYoudBuild: `This is a productive tension. The Abundant sees possibility; the Guardian sees what's hidden. Together: hope that's been tested against reality.
 
 Movements, organizations, or approaches that are both optimistic and accountable.`,
-    whatWouldBeStrong: `The Witness prevents the Abundant from naive optimism. The Abundant prevents the Witness from pure cynicism. Together, you'd see both what's possible and what's wrong—and work with both.
+    whatWouldBeStrong: `The Guardian prevents the Abundant from naive optimism. The Abundant prevents the Guardian from pure cynicism. Together, you'd see both what's possible and what's wrong—and work with both.
 
 Your combination creates grounded hope.`,
-    whatWouldBeMissing: `Easy agreement. You see the world differently. The Abundant sees abundance; the Witness sees hidden costs. You'll spend energy reconciling these views.
+    whatWouldBeMissing: `Easy agreement. You see the world differently. The Abundant sees abundance; the Guardian sees hidden costs. You'll spend energy reconciling these views.
 
 One of you might feel naively positive; one might feel needlessly negative.`,
     questionYoureAnswering: `Can hope survive examination?`
@@ -516,12 +516,12 @@ You might also miss the people who just want ordinary life.`,
     questionYoureAnswering: `What abundance haven't we imagined yet?`
   },
 
-  // Abundant × Feeler
+  // Abundant × Alive
   "alive_citizen": {
-    whatYoudBuild: `Abundance felt. The Abundant sees plenty; the Feeler experiences fully. Together: lives rich in both possibility and sensation.
+    whatYoudBuild: `Abundance felt. The Abundant sees plenty; the Alive experiences fully. Together: lives rich in both possibility and sensation.
 
 Practices, relationships, or communities where generosity and aliveness interweave.`,
-    whatWouldBeStrong: `You'd both receive life fully—the Abundant receives possibility, the Feeler receives experience. Together, you'd create spaces of unusual richness and openness.
+    whatWouldBeStrong: `You'd both receive life fully—the Abundant receives possibility, the Alive receives experience. Together, you'd create spaces of unusual richness and openness.
 
 Your combination is deeply celebratory.`,
     whatWouldBeMissing: `Discernment. Both of you say yes easily. The no that's actually needed—the boundary, the rejection, the discrimination between good and less good—might elude you.
@@ -574,7 +574,7 @@ You might have abundant uncertainty.`,
 
   // ============================================
   // ARCHITECT PAIRINGS
-  // (already done: Questioner, Builder, Abundant)
+  // (already done: Deep, Builder, Abundant)
   // ============================================
 
   // Architect × Architect
@@ -619,12 +619,12 @@ You might build something perfect for here and useless everywhere else.`,
     questionYoureAnswering: `What structure fits this specific place?`
   },
 
-  // Architect × Witness
+  // Architect × Guardian
   "architect_conscience": {
-    whatYoudBuild: `Accountable systems. The Architect designs for the collective; the Witness watches for what's hidden. Together: institutions that police themselves.
+    whatYoudBuild: `Accountable systems. The Architect designs for the collective; the Guardian watches for what's hidden. Together: institutions that police themselves.
 
 Oversight built into structure. Self-correcting organizations. Transparent systems.`,
-    whatWouldBeStrong: `The Witness catches what systems hide; the Architect can build the watching into the structure itself. Together, you'd create systems that are accountable by design.
+    whatWouldBeStrong: `The Guardian catches what systems hide; the Architect can build the watching into the structure itself. Together, you'd create systems that are accountable by design.
 
 Your combination builds institutional integrity.`,
     whatWouldBeMissing: `Trust. Warmth. Both of you are vigilant—one about structure, one about shadows. The system might be so well-watched that no one wants to be in it.
@@ -675,17 +675,17 @@ You might build institutions that judge the satisfied.`,
     questionYoureAnswering: `Can we build structures for transcendence?`
   },
 
-  // Architect × Feeler
+  // Architect × Alive
   "alive_architect": {
-    whatYoudBuild: `Systems with sensation. The Architect thinks in structures; the Feeler experiences fully. Together: designs that feel good, institutions that have life.
+    whatYoudBuild: `Systems with sensation. The Architect thinks in structures; the Alive experiences fully. Together: designs that feel good, institutions that have life.
 
 Experience design. Human-centered systems. Structures that pulse.`,
-    whatWouldBeStrong: `The Feeler catches where systems lose their life; the Architect can redesign accordingly. Together, you'd create structures that work AND that feel right.
+    whatWouldBeStrong: `The Alive catches where systems lose their life; the Architect can redesign accordingly. Together, you'd create structures that work AND that feel right.
 
 Your combination creates systems people want to be in.`,
-    whatWouldBeMissing: `Easy compatibility. The Architect abstracts; the Feeler embodies. You'll work to understand each other's language.
+    whatWouldBeMissing: `Easy compatibility. The Architect abstracts; the Alive embodies. You'll work to understand each other's language.
 
-You might also move slowly—the Architect structuring, the Feeler feeling.`,
+You might also move slowly—the Architect structuring, the Alive feeling.`,
     questionYoureAnswering: `Can systems feel alive?`
   },
 
@@ -733,7 +733,7 @@ You'll spend energy negotiating form itself.`,
 
   // ============================================
   // PRESENT (presence) PAIRINGS
-  // (already done: Questioner, Builder, Abundant, Architect)
+  // (already done: Deep, Builder, Abundant, Architect)
   // ============================================
 
   // Present × Present
@@ -764,12 +764,12 @@ You might perfect presence in one place and miss everything else.`,
     questionYoureAnswering: `What happens when we fully stay and fully attend?`
   },
 
-  // Present × Witness
+  // Present × Guardian
   "conscience_presence": {
-    whatYoudBuild: `Presence to what's hidden. The Present offers full attention; the Witness spots what's concealed. Together: seeing what others miss, fully.
+    whatYoudBuild: `Presence to what's hidden. The Present offers full attention; the Guardian spots what's concealed. Together: seeing what others miss, fully.
 
 Therapeutic practices. Investigative attention. Holding space for hard truths.`,
-    whatWouldBeStrong: `The Present brings attention; the Witness brings sight. Together, you'd see more and see it more fully. Nothing would be hidden from your combined gaze.
+    whatWouldBeStrong: `The Present brings attention; the Guardian brings sight. Together, you'd see more and see it more fully. Nothing would be hidden from your combined gaze.
 
 Your combination creates thorough, compassionate seeing.`,
     whatWouldBeMissing: `Action. Both of you are oriented toward perceiving rather than doing. When something needs to change, neither of you naturally moves.
@@ -820,9 +820,9 @@ One of you will likely accommodate the other.`,
     questionYoureAnswering: `Can we transcend while staying here?`
   },
 
-  // Present × Feeler
+  // Present × Alive
   "alive_presence": {
-    whatYoudBuild: `Full experience. The Present is fully here; the Feeler opens to everything. Together: lives rich with fully-felt sensation—nothing buffered, nothing half-experienced.
+    whatYoudBuild: `Full experience. The Present is fully here; the Alive opens to everything. Together: lives rich with fully-felt sensation—nothing buffered, nothing half-experienced.
 
 This pairing is pure reception.`,
     whatWouldBeStrong: `You'd both receive life fully. Neither avoids through distraction or numbs through busyness. Together, you'd experience more in a day than most people do in a year.
@@ -878,7 +878,7 @@ You might perfect waiting and never arrive.`,
 
   // ============================================
   // ROOTED PAIRINGS
-  // (already done: Questioner, Builder, Abundant, Architect, Present)
+  // (already done: Deep, Builder, Abundant, Architect, Present)
   // ============================================
 
   // Rooted × Rooted
@@ -895,12 +895,12 @@ You might calcify together, beautifully.`,
     questionYoureAnswering: `How deep can roots go?`
   },
 
-  // Rooted × Witness
+  // Rooted × Guardian
   "conscience_rooted": {
-    whatYoudBuild: `Vigilance in place. The Rooted stays; the Witness watches for what's hidden. Together: seeing clearly what's here, nowhere else.
+    whatYoudBuild: `Vigilance in place. The Rooted stays; the Guardian watches for what's hidden. Together: seeing clearly what's here, nowhere else.
 
 Local accountability. Community watching. Staying and seeing.`,
-    whatWouldBeStrong: `The Rooted provides stability; the Witness provides sight. Together, you'd know your place completely—including what it hides.
+    whatWouldBeStrong: `The Rooted provides stability; the Guardian provides sight. Together, you'd know your place completely—including what it hides.
 
 Your combination creates thorough local knowledge.`,
     whatWouldBeMissing: `Scope. Both of you focus on what's immediate—one by staying, one by watching. Problems beyond your vicinity might not receive your attention.
@@ -951,12 +951,12 @@ You might admire each other from distance without finding much to do together.`,
     questionYoureAnswering: `Can we transcend while staying put?`
   },
 
-  // Rooted × Feeler
+  // Rooted × Alive
   "alive_rooted": {
-    whatYoudBuild: `Feeling without seeking. The Rooted stays; the Feeler opens. Together: receiving what comes while staying still—sensation without grasping.
+    whatYoudBuild: `Feeling without seeking. The Rooted stays; the Alive opens. Together: receiving what comes while staying still—sensation without grasping.
 
 A life of passive intensity: deeply felt, never chasing.`,
-    whatWouldBeStrong: `The Rooted prevents the Feeler from chasing sensation endlessly. The Feeler prevents the Rooted from becoming numb. Together, you'd experience deeply without the anxiety of pursuit.
+    whatWouldBeStrong: `The Rooted prevents the Alive from chasing sensation endlessly. The Alive prevents the Rooted from becoming numb. Together, you'd experience deeply without the anxiety of pursuit.
 
 Your combination creates rich stillness.`,
     whatWouldBeMissing: `Adventure. Expansion. Both of you receive rather than seek. Experiences that require going somewhere might never come.
@@ -1009,12 +1009,12 @@ You might perfect waiting without ever arriving.`,
 
   // ============================================
   // WITNESS (conscience) PAIRINGS
-  // (already done: Questioner, Builder, Abundant, Architect, Present, Rooted)
+  // (already done: Deep, Builder, Abundant, Architect, Present, Rooted)
   // ============================================
 
-  // Witness × Witness
+  // Guardian × Guardian
   "conscience_conscience": {
-    whatYoudBuild: `Eyes everywhere. Two Witnesses would miss nothing—every shadow examined, every hidden thing surfaced. Together: complete vigilance.
+    whatYoudBuild: `Eyes everywhere. Two Guardianes would miss nothing—every shadow examined, every hidden thing surfaced. Together: complete vigilance.
 
 Accountability systems. Investigative practices. Nothing concealed.`,
     whatWouldBeStrong: `Nothing would be hidden from your combined gaze. You'd catch what single watchers miss. Deception would be impossible in your presence.
@@ -1026,12 +1026,12 @@ You might see every problem and appreciate nothing.`,
     questionYoureAnswering: `What happens when nothing can hide?`
   },
 
-  // Witness × Keeper
+  // Guardian × Keeper
   "conscience_embers": {
-    whatYoudBuild: `Memory of what was hidden. The Witness sees what's concealed; the Keeper preserves what matters. Together: records of truth others want forgotten.
+    whatYoudBuild: `Memory of what was hidden. The Guardian sees what's concealed; the Keeper preserves what matters. Together: records of truth others want forgotten.
 
 Archives of accountability. Memory against amnesia.`,
-    whatWouldBeStrong: `The Witness catches what's hidden; the Keeper ensures it's not forgotten. Together, you'd prevent historical erasure of wrongs.
+    whatWouldBeStrong: `The Guardian catches what's hidden; the Keeper ensures it's not forgotten. Together, you'd prevent historical erasure of wrongs.
 
 Your combination creates durable truth.`,
     whatWouldBeMissing: `The future. Both of you are oriented toward what happened or what's being hidden. Building toward what could be might feel foreign.
@@ -1040,12 +1040,12 @@ You might become curators of wrongs rather than builders of right.`,
     questionYoureAnswering: `What must we remember that others want forgotten?`
   },
 
-  // Witness × Challenger
+  // Guardian × Challenger
   "conscience_friction": {
-    whatYoudBuild: `Confrontation with what's hidden. The Witness sees; the Challenger engages difficulty. Together: not just exposing truth but wrestling with it.
+    whatYoudBuild: `Confrontation with what's hidden. The Guardian sees; the Challenger engages difficulty. Together: not just exposing truth but wrestling with it.
 
 Investigative practices that go all the way. Accountability with teeth.`,
-    whatWouldBeStrong: `The Witness finds what's wrong; the Challenger doesn't flinch from engaging it. Together, you'd go places others avoid—seeing hard truths and struggling with them.
+    whatWouldBeStrong: `The Guardian finds what's wrong; the Challenger doesn't flinch from engaging it. Together, you'd go places others avoid—seeing hard truths and struggling with them.
 
 Your combination creates courageous accountability.`,
     whatWouldBeMissing: `Ease. Mercy. Both of you are oriented toward difficulty—one seeing it, one seeking it. Rest, appreciation, letting things be—these might elude you.
@@ -1054,12 +1054,12 @@ You might exhaust each other and everyone around you.`,
     questionYoureAnswering: `Can we face what's hidden without flinching?`
   },
 
-  // Witness × Transcendent
+  // Guardian × Transcendent
   "conscience_unbound": {
-    whatYoudBuild: `Watching from beyond. The Witness spots what's concealed; the Transcendent reaches past limits. Together: seeing what's hidden about things no one else is even looking at.
+    whatYoudBuild: `Watching from beyond. The Guardian spots what's concealed; the Transcendent reaches past limits. Together: seeing what's hidden about things no one else is even looking at.
 
 Vision that transcends AND sees clearly.`,
-    whatWouldBeStrong: `The Witness grounds the Transcendent's reaching in honest seeing. The Transcendent expands what the Witness thinks to look at. Together, you'd see further and more honestly than most.
+    whatWouldBeStrong: `The Guardian grounds the Transcendent's reaching in honest seeing. The Transcendent expands what the Guardian thinks to look at. Together, you'd see further and more honestly than most.
 
 Your combination creates transcendent clarity.`,
     whatWouldBeMissing: `The ordinary. Both of you reach toward the hidden or the beyond. Ordinary, unhidden, ground-level life might bore you.
@@ -1068,12 +1068,12 @@ You might miss the people who just want to live without being watched or transce
     questionYoureAnswering: `What's hidden in the beyond?`
   },
 
-  // Witness × Feeler
+  // Guardian × Alive
   "alive_conscience": {
-    whatYoudBuild: `Feeling what's hidden. The Witness sees what's concealed; the Feeler experiences fully. Together: experiencing the shadows, not just seeing them.
+    whatYoudBuild: `Feeling what's hidden. The Guardian sees what's concealed; the Alive experiences fully. Together: experiencing the shadows, not just seeing them.
 
 Practices that go into dark places with open hearts.`,
-    whatWouldBeStrong: `The Witness finds what's hidden; the Feeler experiences it fully. Together, you wouldn't just know what's wrong—you'd feel it. This creates unusual moral depth.
+    whatWouldBeStrong: `The Guardian finds what's hidden; the Alive experiences it fully. Together, you wouldn't just know what's wrong—you'd feel it. This creates unusual moral depth.
 
 Your combination creates embodied conscience.`,
     whatWouldBeMissing: `Lightness. Joy. Both of you are oriented toward intensity—one watching shadows, one feeling everything. The simple pleasure might not survive your gaze.
@@ -1082,12 +1082,12 @@ You might feel all the world's pain together.`,
     questionYoureAnswering: `What does the hidden feel like?`
   },
 
-  // Witness × Mender
+  // Guardian × Mender
   "conscience_mender": {
-    whatYoudBuild: `Repair of what was hidden. The Witness sees what's wrong; the Mender fixes it. Together: healing that starts with honest diagnosis.
+    whatYoudBuild: `Repair of what was hidden. The Guardian sees what's wrong; the Mender fixes it. Together: healing that starts with honest diagnosis.
 
 Restorative practices that begin with truth.`,
-    whatWouldBeStrong: `The Witness identifies what's actually broken; the Mender addresses it. Together, you'd fix the real problem, not the presenting symptom.
+    whatWouldBeStrong: `The Guardian identifies what's actually broken; the Mender addresses it. Together, you'd fix the real problem, not the presenting symptom.
 
 Your combination creates accurate repair.`,
     whatWouldBeMissing: `Acceptance. Both of you are oriented toward what's wrong. The thing that's simply okay might not receive your attention.
@@ -1096,12 +1096,12 @@ You might fix everything that's broken and never appreciate what's whole.`,
     questionYoureAnswering: `Can we mend what was hidden?`
   },
 
-  // Witness × Truth-Teller
+  // Guardian × Truth-Teller
   "cleareyed_conscience": {
-    whatYoudBuild: `Relentless truth. The Witness sees what's hidden; the Truth-Teller says what's real. Together: nothing concealed, nothing euphemized.
+    whatYoudBuild: `Relentless truth. The Guardian sees what's hidden; the Truth-Teller says what's real. Together: nothing concealed, nothing euphemized.
 
 Complete honesty. Nothing survives that can't withstand light.`,
-    whatWouldBeStrong: `The Witness finds; the Truth-Teller speaks. Together, you'd be unstoppable truth-generators. Comfortable lies have no chance.
+    whatWouldBeStrong: `The Guardian finds; the Truth-Teller speaks. Together, you'd be unstoppable truth-generators. Comfortable lies have no chance.
 
 Your combination creates thorough exposure.`,
     whatWouldBeMissing: `Mercy. Patience. Space for growth. You're both relentless about truth. Sometimes people need room to be wrong without being called out.
@@ -1110,12 +1110,12 @@ Your honesty might become a weapon.`,
     questionYoureAnswering: `What happens when nothing is hidden and nothing is softened?`
   },
 
-  // Witness × Liminal
+  // Guardian × Liminal
   "between_conscience": {
-    whatYoudBuild: `Watching in uncertainty. The Witness sees what's hidden; the Liminal waits in the between. Together: seeing clearly without rushing to judgment.
+    whatYoudBuild: `Watching in uncertainty. The Guardian sees what's hidden; the Liminal waits in the between. Together: seeing clearly without rushing to judgment.
 
 Patient vigilance. Watching without premature conclusion.`,
-    whatWouldBeStrong: `The Liminal prevents the Witness from rushing to judgment. The Witness gives the Liminal's waiting something concrete to observe. Together, you'd see clearly and conclude slowly.
+    whatWouldBeStrong: `The Liminal prevents the Guardian from rushing to judgment. The Guardian gives the Liminal's waiting something concrete to observe. Together, you'd see clearly and conclude slowly.
 
 Your combination creates careful seeing.`,
     whatWouldBeMissing: `Action. Both of you are oriented toward perceiving without acting. When what you see requires response, neither moves naturally.
@@ -1126,7 +1126,7 @@ You might watch forever and do nothing.`,
 
   // ============================================
   // KEEPER (embers) PAIRINGS
-  // (already done: Questioner, Builder, Abundant, Architect, Present, Rooted, Witness)
+  // (already done: Deep, Builder, Abundant, Architect, Present, Rooted, Guardian)
   // ============================================
 
   // Keeper × Keeper
@@ -1171,12 +1171,12 @@ You might miss ordinary life in favor of history and transcendence.`,
     questionYoureAnswering: `What wisdom should be carried as we go beyond?`
   },
 
-  // Keeper × Feeler
+  // Keeper × Alive
   "alive_embers": {
-    whatYoudBuild: `Feeling the past. The Keeper holds what mattered; the Feeler experiences fully. Together: not just remembering but reliving—the past felt, not just known.
+    whatYoudBuild: `Feeling the past. The Keeper holds what mattered; the Alive experiences fully. Together: not just remembering but reliving—the past felt, not just known.
 
 Memorial practices with heart. Living connection to what was.`,
-    whatWouldBeStrong: `The Keeper provides content; the Feeler provides experience. Together, you'd create genuine connection to the past—not academic, but felt.
+    whatWouldBeStrong: `The Keeper provides content; the Alive provides experience. Together, you'd create genuine connection to the past—not academic, but felt.
 
 Your combination creates embodied memory.`,
     whatWouldBeMissing: `Forward motion. Both of you receive rather than create. The past might hold you so completely that the future never comes.
@@ -1229,7 +1229,7 @@ You might preserve for no one.`,
 
   // ============================================
   // CHALLENGER (friction) PAIRINGS
-  // (already done: Questioner, Builder, Abundant, Architect, Present, Rooted, Witness, Keeper)
+  // (already done: Deep, Builder, Abundant, Architect, Present, Rooted, Guardian, Keeper)
   // ============================================
 
   // Challenger × Challenger
@@ -1260,12 +1260,12 @@ You might miss the life that's already here.`,
     questionYoureAnswering: `Can we transcend through struggle?`
   },
 
-  // Challenger × Feeler
+  // Challenger × Alive
   "alive_friction": {
-    whatYoudBuild: `Intense experience. The Challenger craves difficulty; the Feeler experiences fully. Together: feeling the hard things completely—intensity that doesn't flinch.
+    whatYoudBuild: `Intense experience. The Challenger craves difficulty; the Alive experiences fully. Together: feeling the hard things completely—intensity that doesn't flinch.
 
 Extreme experiences. Embodied challenge.`,
-    whatWouldBeStrong: `The Challenger provides intensity; the Feeler receives it fully. Together, you'd go into experiences others avoid and actually feel them.
+    whatWouldBeStrong: `The Challenger provides intensity; the Alive receives it fully. Together, you'd go into experiences others avoid and actually feel them.
 
 Your combination creates full-contact living.`,
     whatWouldBeMissing: `Gentleness. Both of you are oriented toward intensity. The soft, the easy, the pleasant—you might dismiss them as weak.
@@ -1318,7 +1318,7 @@ One might feel impatient; one might feel pushed.`,
 
   // ============================================
   // TRANSCENDENT (unbound) PAIRINGS
-  // (already done: Questioner, Builder, Abundant, Architect, Present, Rooted, Witness, Keeper, Challenger)
+  // (already done: Deep, Builder, Abundant, Architect, Present, Rooted, Guardian, Keeper, Challenger)
   // ============================================
 
   // Transcendent × Transcendent
@@ -1335,12 +1335,12 @@ You might transcend together and leave everyone behind.`,
     questionYoureAnswering: `How far can two minds reach?`
   },
 
-  // Transcendent × Feeler
+  // Transcendent × Alive
   "alive_unbound": {
-    whatYoudBuild: `Felt transcendence. The Transcendent reaches beyond; the Feeler experiences fully. Together: going beyond AND actually experiencing it—transcendence that's embodied, not just imagined.
+    whatYoudBuild: `Felt transcendence. The Transcendent reaches beyond; the Alive experiences fully. Together: going beyond AND actually experiencing it—transcendence that's embodied, not just imagined.
 
 Spiritual experiences. Ecstatic practices.`,
-    whatWouldBeStrong: `The Transcendent provides direction; the Feeler provides experience. Together, you'd actually feel what you reach toward, not just think it.
+    whatWouldBeStrong: `The Transcendent provides direction; the Alive provides experience. Together, you'd actually feel what you reach toward, not just think it.
 
 Your combination creates embodied transcendence.`,
     whatWouldBeMissing: `Ordinary life. Both of you are oriented toward intensity—one reaching, one feeling. The mundane might bore you both.
@@ -1393,12 +1393,12 @@ Beautiful aspiration that produces nothing.`,
 
   // ============================================
   // FEELER (alive) PAIRINGS
-  // (already done: Questioner, Builder, Abundant, Architect, Present, Rooted, Witness, Keeper, Challenger, Transcendent)
+  // (already done: Deep, Builder, Abundant, Architect, Present, Rooted, Guardian, Keeper, Challenger, Transcendent)
   // ============================================
 
-  // Feeler × Feeler
+  // Alive × Alive
   "alive_alive": {
-    whatYoudBuild: `A life drenched in sensation. Two Feelers would create something extraordinarily rich—every moment experienced, nothing buffered, full intensity always.
+    whatYoudBuild: `A life drenched in sensation. Two Alives would create something extraordinarily rich—every moment experienced, nothing buffered, full intensity always.
 
 Pure experience. Life at maximum volume.`,
     whatWouldBeStrong: `Neither of you turns down the volume. Together, you'd experience more than almost anyone. Nothing would be wasted—every moment would be fully felt.
@@ -1410,12 +1410,12 @@ You might drown in sensation without making anything of it.`,
     questionYoureAnswering: `How much can we feel?`
   },
 
-  // Feeler × Mender
+  // Alive × Mender
   "alive_mender": {
-    whatYoudBuild: `Healing through feeling. The Feeler experiences fully; the Mender repairs what's broken. Together: repair that includes feeling—healing that isn't just fixed but felt.
+    whatYoudBuild: `Healing through feeling. The Alive experiences fully; the Mender repairs what's broken. Together: repair that includes feeling—healing that isn't just fixed but felt.
 
 Embodied healing. Repair with heart.`,
-    whatWouldBeStrong: `The Mender provides care; the Feeler provides feeling. Together, you'd heal things in ways that include the whole experience—not just fixing but feeling fixed.
+    whatWouldBeStrong: `The Mender provides care; the Alive provides feeling. Together, you'd heal things in ways that include the whole experience—not just fixing but feeling fixed.
 
 Your combination creates embodied repair.`,
     whatWouldBeMissing: `Efficiency. Neither of you values speed over depth. When quick fixes would serve, you might not offer them.
@@ -1424,12 +1424,12 @@ You might heal slowly when fast was fine.`,
     questionYoureAnswering: `What does healing feel like?`
   },
 
-  // Feeler × Truth-Teller
+  // Alive × Truth-Teller
   "alive_cleareyed": {
-    whatYoudBuild: `Truth felt. The Feeler experiences fully; the Truth-Teller sees clearly. Together: feeling what's real—experiencing truth, not just knowing it.
+    whatYoudBuild: `Truth felt. The Alive experiences fully; the Truth-Teller sees clearly. Together: feeling what's real—experiencing truth, not just knowing it.
 
 Embodied honesty. Truth you can feel.`,
-    whatWouldBeStrong: `The Truth-Teller provides clarity; the Feeler provides experience. Together, you'd actually feel truth, not just think it—which makes it real in a different way.
+    whatWouldBeStrong: `The Truth-Teller provides clarity; the Alive provides experience. Together, you'd actually feel truth, not just think it—which makes it real in a different way.
 
 Your combination creates experienced truth.`,
     whatWouldBeMissing: `Comfort. Both of you are unfiltered—one feels everything, one speaks everything. Together you might have no cushioning at all.
@@ -1438,12 +1438,12 @@ Your honesty might overwhelm.`,
     questionYoureAnswering: `What does truth feel like?`
   },
 
-  // Feeler × Liminal
+  // Alive × Liminal
   "alive_between": {
-    whatYoudBuild: `Feeling uncertainty. The Feeler experiences fully; the Liminal waits in the between. Together: actually experiencing the in-between—feeling what waiting feels like.
+    whatYoudBuild: `Feeling uncertainty. The Alive experiences fully; the Liminal waits in the between. Together: actually experiencing the in-between—feeling what waiting feels like.
 
 Transitions fully inhabited. Uncertainty as experience.`,
-    whatWouldBeStrong: `The Liminal provides the space; the Feeler fills it with experience. Together, you'd actually feel the in-between rather than just enduring it.
+    whatWouldBeStrong: `The Liminal provides the space; the Alive fills it with experience. Together, you'd actually feel the in-between rather than just enduring it.
 
 Your combination creates experienced uncertainty.`,
     whatWouldBeMissing: `Resolution. Neither of you is oriented toward conclusion. You might feel uncertainty forever without resolving it.
@@ -1454,7 +1454,7 @@ Beautiful waiting that never ends.`,
 
   // ============================================
   // MENDER PAIRINGS
-  // (already done: Questioner, Builder, Abundant, Architect, Present, Rooted, Witness, Keeper, Challenger, Transcendent, Feeler)
+  // (already done: Deep, Builder, Abundant, Architect, Present, Rooted, Guardian, Keeper, Challenger, Transcendent, Alive)
   // ============================================
 
   // Mender × Mender
@@ -1501,7 +1501,7 @@ You might heal so slowly that new breaks happen while you're still fixing old on
 
   // ============================================
   // TRUTH-TELLER (cleareyed) PAIRINGS
-  // (already done: Questioner, Builder, Abundant, Architect, Present, Rooted, Witness, Keeper, Challenger, Transcendent, Feeler, Mender)
+  // (already done: Deep, Builder, Abundant, Architect, Present, Rooted, Guardian, Keeper, Challenger, Transcendent, Alive, Mender)
   // ============================================
 
   // Truth-Teller × Truth-Teller
@@ -1534,7 +1534,7 @@ You might tell the truth about uncertainty forever.`,
 
   // ============================================
   // LIMINAL (between) PAIRINGS
-  // (already done: Questioner, Builder, Abundant, Architect, Present, Rooted, Witness, Keeper, Challenger, Transcendent, Feeler, Mender, Truth-Teller)
+  // (already done: Deep, Builder, Abundant, Architect, Present, Rooted, Guardian, Keeper, Challenger, Transcendent, Alive, Mender, Truth-Teller)
   // ============================================
 
   // Liminal × Liminal

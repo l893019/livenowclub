@@ -90,9 +90,9 @@ Watch for the moments when your trust in systems becomes trust that systems will
 
     howYouGotHere: `Your answers revealed a consistent orientation toward trust and possibility. When asked about AI and automation, you focused on potential benefits rather than risks. When asked about human nature, you leaned toward believing people do well when given resources and freedom. When asked about the future, you imagined expansion rather than constraint. This pattern of trusting abundance over scarcity, freedom over control, maps to what we call The Abundant.`,
 
-    allyDescription: "The Feeler shares your belief that life can be good. They want to feel everything the universe offers; you want everyone to have access to it. You're both optimists, but they ground your systems-thinking in embodied experience. They remind you what abundance is for.",
+    allyDescription: "The Alive shares your belief that life can be good. They want to feel everything the universe offers; you want everyone to have access to it. You're both optimists, but they ground your systems-thinking in embodied experience. They remind you what abundance is for.",
 
-    tensionDescription: "The Witness doesn't trust what you trust. While you see systems that could work beautifully, they see cracks, hidden costs, who's being surveilled. They'll exhaust you with suspicion, and occasionally save you from your own blind spots.",
+    tensionDescription: "The Guardian doesn't trust what you trust. While you see systems that could work beautifully, they see cracks, hidden costs, who's being surveilled. They'll exhaust you with suspicion, and occasionally save you from your own blind spots.",
 
     needDescription: "The Challenger will challenge your comfort. You believe abundance should make life easier; they believe ease can make life hollow. They'll push you to examine whether your utopia has room for struggle, growth, and the meaning that comes from difficulty.",
 
@@ -202,7 +202,7 @@ Watch for the moments when your commitment to collective ownership becomes colle
 
     tensionDescription: "The Transcendent challenges your attachment to structure itself. They want to transcend form; you want to perfect it. They'll ask why you're building walls at all. It's a fundamental disagreement about whether liberation requires architecture or escape from it.",
 
-    needDescription: "The Questioner will slow you down with questions you can't answer quickly. When you're ready to implement, they're still asking why. Frustrating, and necessary. They ensure your systems are built on real understanding, not efficient assumptions.",
+    needDescription: "The Deep will slow you down with questions you can't answer quickly. When you're ready to implement, they're still asking why. Frustrating, and necessary. They ensure your systems are built on real understanding, not efficient assumptions.",
 
     pull: "toward collective ownership",
     edge: "you see the invisible architecture",
@@ -304,7 +304,7 @@ Watch for the moments when "I'm still thinking about it" is actually "I'm afraid
       "The deepest truths reveal themselves slowly, if at all"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward depth over resolution. When asked about consciousness, you leaned into mystery rather than explanation. When asked about the future, you focused on what we don't understand rather than what we might build. When given choices between action and reflection, you chose reflection. This pattern of valuing questions over answers, depth over speed, maps to what we call The Questioner.`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward depth over resolution. When asked about consciousness, you leaned into mystery rather than explanation. When asked about the future, you focused on what we don't understand rather than what we might build. When given choices between action and reflection, you chose reflection. This pattern of valuing questions over answers, depth over speed, maps to what we call The Deep.`,
 
     allyDescription: "The Transcendent shares your comfort with uncertainty. They're reaching past the edges of what's known; you're diving into the depths. You both understand that the most important things resist easy comprehension. They'll never rush you toward answers.",
 
@@ -364,7 +364,7 @@ Watch for the moments when "choosing simplicity" becomes "choosing comfort." Wat
 
     tensionDescription: "The Builder can't stop building. Your stillness looks like stagnation to them; their restlessness looks like flight to you. They'll push you to move when you've chosen to stay. You're arguing about fundamental questions of what growth means.",
 
-    needDescription: "The Feeler will pull you out of stillness when you need it. Not to invalidate your peace, but to remind you that life includes sensation, experience, movement. They ensure your rootedness doesn't become a way of hiding from the full range of being alive.",
+    needDescription: "The Alive will pull you out of stillness when you need it. Not to invalidate your peace, but to remind you that life includes sensation, experience, movement. They ensure your rootedness doesn't become a way of hiding from the full range of being alive.",
 
     pull: "toward stillness",
     edge: "you know when to stop",
@@ -412,7 +412,7 @@ Watch for the moments when "watching the watchers" becomes "watching everyone." 
       "What you ignore today becomes what controls you tomorrow"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward vigilance and accountability. When asked about technology, you focused on surveillance and control rather than capability. When asked about utopia, you described built-in accountability rather than built-in trust. When others saw convenience, you saw potential costs. This pattern of conscience before comfort, watching what others prefer to ignore, maps to what we call The Witness.`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward vigilance and accountability. When asked about technology, you focused on surveillance and control rather than capability. When asked about utopia, you described built-in accountability rather than built-in trust. When others saw convenience, you saw potential costs. This pattern of conscience before comfort, watching what others prefer to ignore, maps to what we call The Guardian.`,
 
     allyDescription: "The Truth-Teller shares your commitment to truth. They speak it; you guard it. Together, you form a bulwark against comfortable lies. They'll validate your vigilance without calling it paranoia.",
 
@@ -576,7 +576,7 @@ Watch for the moments when "imagining beyond limits" becomes "dismissing what's 
 
     howYouGotHere: `Your answers revealed a consistent orientation toward transcendence and expansion. When asked about identity, you questioned its boundaries. When asked about the body, you treated it as optional rather than essential. When asked about the future, you imagined something beyond human. This pattern—reaching past the edges of self and form—maps to what we call "The Transcendent."`,
 
-    allyDescription: "The Questioner shares your comfort with uncertainty. They live in questions; you reach past them. You both understand that the most important things resist easy comprehension. They'll never ground you prematurely.",
+    allyDescription: "The Deep shares your comfort with uncertainty. They live in questions; you reach past them. You both understand that the most important things resist easy comprehension. They'll never ground you prematurely.",
 
     tensionDescription: "The Present is committed to being here. Your transcendence looks like escape to them; their groundedness looks like limitation to you. You're arguing about whether liberation means leaving or arriving.",
 
@@ -628,11 +628,11 @@ Watch for the moments when "alive to everything" becomes "unable to be still wit
       "New senses, new perspectives, new forms of experience are worth pursuing"
     ],
 
-    howYouGotHere: `Your answers revealed a consistent orientation toward experience and sensation. When asked about the future, you imagined expanded ways of feeling rather than expanded ways of controlling. When asked about the body, you treated it as an instrument for experience rather than a problem to solve. When offered choices, you chose intensity over safety. This pattern of openness to experience, hunger for sensation, maps to what we call The Feeler.`,
+    howYouGotHere: `Your answers revealed a consistent orientation toward experience and sensation. When asked about the future, you imagined expanded ways of feeling rather than expanded ways of controlling. When asked about the body, you treated it as an instrument for experience rather than a problem to solve. When offered choices, you chose intensity over safety. This pattern of openness to experience, hunger for sensation, maps to what we call The Alive.`,
 
     allyDescription: "The Abundant shares your optimism. They trust that good things are possible; you want to feel all of them. Together, you're a celebration of what life can be when it's not constrained by fear.",
 
-    tensionDescription: "The Witness keeps asking whether you should feel what you want to feel. Your openness looks like recklessness to them; their vigilance looks like refusal to live. You're arguing about whether experience needs justification.",
+    tensionDescription: "The Guardian keeps asking whether you should feel what you want to feel. Your openness looks like recklessness to them; their vigilance looks like refusal to live. You're arguing about whether experience needs justification.",
 
     needDescription: "The Truth-Teller will tell you truths you'd rather not hear. You can use sensation as a way of avoiding difficult realities. They'll cut through the pleasant haze and show you what you're not wanting to see.",
 
@@ -686,7 +686,7 @@ Watch for the moments when you're repairing something that needs to be replaced.
 
     allyDescription: "The Architect shares your commitment to what works. They design structures; you maintain them. Together, you build things that last, not just impressive at the start, but functional for the long haul.",
 
-    tensionDescription: "The Questioner wants to understand before acting. While you're already fixing, they're still questioning. Their reflection looks like paralysis to you; your action looks like avoidance to them. You're arguing about when understanding is enough.",
+    tensionDescription: "The Deep wants to understand before acting. While you're already fixing, they're still questioning. Their reflection looks like paralysis to you; your action looks like avoidance to them. You're arguing about when understanding is enough.",
 
     needDescription: "The Challenger will challenge your comfort with repair. Sometimes what's broken needs to stay broken long enough to feel the friction. They'll push you to consider when mending is actually avoiding the difficulty that growth requires.",
 
@@ -738,9 +738,9 @@ Watch for the moments when truth-telling becomes a weapon. When "just being hone
 
     howYouGotHere: `Your answers revealed a consistent orientation toward clarity and honesty. When asked about difficult truths, you chose telling over softening. When asked about comfort, you valued truth above it. When others might look away, you kept looking. This pattern of clear sight, honest speech, even when it costs, maps to what we call The Truth-Teller.`,
 
-    allyDescription: "The Witness shares your commitment to seeing what's real. They watch; you speak. Together, you ensure that nothing stays hidden that shouldn't, that uncomfortable truths get said out loud.",
+    allyDescription: "The Guardian shares your commitment to seeing what's real. They watch; you speak. Together, you ensure that nothing stays hidden that shouldn't, that uncomfortable truths get said out loud.",
 
-    tensionDescription: "The Feeler wants to feel rather than analyze. Your clarity can feel cold to them; their openness can feel ungrounded to you. You're arguing about whether truth requires distance or immersion.",
+    tensionDescription: "The Alive wants to feel rather than analyze. Your clarity can feel cold to them; their openness can feel ungrounded to you. You're arguing about whether truth requires distance or immersion.",
 
     needDescription: "The Rooted will teach you when to stop speaking. Not every truth needs to be said. Not every moment needs your clarity. They'll help you learn that sometimes the bravest thing is silence, being with someone in their difficulty rather than diagnosing it.",
 
@@ -817,14 +817,14 @@ export const pairDynamics: Record<string, string> = {
   "rooted+shaper": "The Builders want to tear it down and rebuild. The Rooted ask: what was wrong with it?",
 
   // Conscience tensions
-  "citizen+conscience": "The Abundant trusts the architecture. The Witness tests the walls for cracks.",
+  "citizen+conscience": "The Abundant trusts the architecture. The Guardian tests the walls for cracks.",
   "alive+conscience": "One wants to feel everything. The other keeps asking: but should we?",
 
   // Presence tensions
   "presence+unbound": "The Keeper stays embodied. The Unbound wants to transcend. They're arguing about what it means to be here.",
 
   // Swimmer tensions
-  "mender+swimmer": "The Questioner lives in questions. The Mender needs to fix things. One pauses, the other acts.",
+  "mender+swimmer": "The Deep lives in questions. The Mender needs to fix things. One pauses, the other acts.",
 
   // Friction tensions
   "friction+rooted": "One craves difficulty. One chose stillness. They don't understand each other at all.",
@@ -835,7 +835,7 @@ export const pairDynamics: Record<string, string> = {
 
   // Citizen dynamics
   "alive+citizen": "Both believe in abundance. One wants access, the other wants experience. A generous worldview.",
-  "citizen+swimmer": "The Abundant builds. The Questioner questions. Both necessary, both frustrated with each other.",
+  "citizen+swimmer": "The Abundant builds. The Deep questions. Both necessary, both frustrated with each other.",
 
   // Embers dynamics
   "between+embers": "The archive and the threshold. One knows where we came from. The other isn't sure where we're going.",
@@ -846,7 +846,7 @@ export const pairDynamics: Record<string, string> = {
   "alive+unbound": "Sensation-seekers, different methods. One through the body, one past it.",
 
   // Cleareyed dynamics
-  "cleareyed+conscience": "Truth-tellers both. The Witness watches systems. Clear-Eyed watches everything.",
+  "cleareyed+conscience": "Truth-tellers both. The Guardian watches systems. Clear-Eyed watches everything.",
   "cleareyed+swimmer": "Both live in clarity, different kinds. Facts vs. questions. They respect each other.",
 
   // Rooted dynamics
@@ -857,7 +857,7 @@ export const pairDynamics: Record<string, string> = {
   "between+swimmer": "Uncertainty specialists. Neither one is sure, and they're fine with that.",
 
   // Shaper + Swimmer
-  "shaper+swimmer": "The Builder builds. The Questioner questions why. Between them, nothing goes unexamined.",
+  "shaper+swimmer": "The Builder builds. The Deep questions why. Between them, nothing goes unexamined.",
 
   // Same-archetype dynamics
   "shaper+shaper": "Two builders. You'll create something—if you stop redesigning it.",
@@ -1046,7 +1046,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
       themToYou: "They keep you grounded in what matters",
     },
     question: "When does watching become a way of avoiding feeling?",
-    warning: "The Witness may judge what the Alive one needs to experience",
+    warning: "The Guardian may judge what the Alive one needs to experience",
   },
   "alive+friction": {
     thesis: "Both seek intensity. One through sensation, one through challenge. Adjacent energies, different fuel.",
@@ -1099,7 +1099,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
     question: "What would it mean to see clearly AND stay open?",
   },
   "citizen+conscience": {
-    thesis: "The Abundant trusts the architecture. The Witness tests the walls for cracks.",
+    thesis: "The Abundant trusts the architecture. The Guardian tests the walls for cracks.",
     align: ["You both believe in good systems", "You both want things to work well"],
     clash: ["One trusts the architecture. One tests it for cracks.", "Optimism vs. vigilance"],
     give: {
@@ -1107,7 +1107,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
       themToYou: "They keep you honest about what's actually happening",
     },
     question: "What would a system look like that earned both your trust?",
-    warning: "The Witness may exhaust the Citizen with constant critique",
+    warning: "The Guardian may exhaust the Citizen with constant critique",
   },
   "citizen+friction": {
     thesis: "Both embrace challenge, but from different places. One trusts abundance, one craves difficulty.",
@@ -1168,7 +1168,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
       themToYou: "They ensure your difficulty-seeking doesn't miss what matters",
     },
     question: "When does watching become avoidance, and when does action become blindness?",
-    warning: "The Witness may see the Friction-seeker's challenges as reckless",
+    warning: "The Guardian may see the Friction-seeker's challenges as reckless",
   },
   "embers+presence": {
     thesis: "One looks back. One stays present. Together, they hold the thread of time.",
@@ -1233,7 +1233,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
     question: "When does fixing become a way of avoiding being present?",
   },
   "mender+swimmer": {
-    thesis: "The Questioner lives in questions. The Mender needs to fix things. One pauses, the other acts.",
+    thesis: "The Deep lives in questions. The Mender needs to fix things. One pauses, the other acts.",
     align: ["You both see what needs attention", "Care drives both of you"],
     clash: ["One acts. One questions.", "Fixing vs. understanding"],
     give: {
@@ -1276,7 +1276,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
     warning: "You may be arguing about different definitions of freedom",
   },
   "shaper+swimmer": {
-    thesis: "The Builder builds. The Questioner questions why. Between them, nothing goes unexamined.",
+    thesis: "The Builder builds. The Deep questions why. Between them, nothing goes unexamined.",
     align: ["You both reject easy answers", "Depth matters more than speed"],
     clash: ["One builds. One questions.", "Creating vs. inquiring"],
     give: {
@@ -1452,13 +1452,13 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
   "conscience+shaper": {
     thesis: "One builds the future. The other makes sure it doesn't become what we escaped.",
     align: ["You both refuse to accept things as they are", "Change is necessary—you disagree on what to watch while changing"],
-    clash: ["Builder wants to move fast; Witness wants to look closer", "What feels like progress to one feels like recklessness to the other"],
+    clash: ["Builder wants to move fast; Guardian wants to look closer", "What feels like progress to one feels like recklessness to the other"],
     give: {
       youToThem: "The reminder that you can build something better, not just critique what exists",
       themToYou: "Accountability—making sure what you build doesn't become what you feared",
     },
     question: "What would it look like to build something neither of you would need to watch?",
-    warning: "Builder can dismiss Witness as paranoid. Witness can dismiss Builder as naive. Both lose.",
+    warning: "Builder can dismiss Guardian as paranoid. Guardian can dismiss Builder as naive. Both lose.",
   },
   "architect+citizen": {
     thesis: "One trusts abundance. The other builds structures to share it. Together, utopia gets architecture.",
@@ -1483,7 +1483,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
   "citizen+swimmer": {
     thesis: "One trusts the answer will be good. The other isn't sure there is an answer.",
     align: ["You both reject easy cynicism", "Curiosity over certainty"],
-    clash: ["Abundant wants to build; Questioner wants to understand first", "Optimism vs. depth"],
+    clash: ["Abundant wants to build; Deep wants to understand first", "Optimism vs. depth"],
     give: {
       youToThem: "Trust that the questions lead somewhere good",
       themToYou: "Questions that make abundance more honest",
@@ -1595,7 +1595,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
   "alive+shaper": {
     thesis: "One builds from rubble. The other feels everything, including the rubble.",
     align: ["Neither is numb to what's happening", "You both engage intensely"],
-    clash: ["Builder uses experience as material; Feeler receives it as sensation", "Making vs. feeling"],
+    clash: ["Builder uses experience as material; Alive receives it as sensation", "Making vs. feeling"],
     give: {
       youToThem: "A reminder that what you build will be felt",
       themToYou: "The impulse to do something with what you feel",
@@ -1656,7 +1656,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
   "architect+conscience": {
     thesis: "One builds the commons. The other watches it. Both know structures can fail.",
     align: ["You both distrust concentrated power", "Accountability matters to both"],
-    clash: ["Architect trusts good design; Witness trusts vigilance", "Structure vs. surveillance"],
+    clash: ["Architect trusts good design; Guardian trusts vigilance", "Structure vs. surveillance"],
     give: {
       youToThem: "Structures that make watching unnecessary",
       themToYou: "The vigilance that keeps structures honest",
@@ -1697,7 +1697,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
   "alive+architect": {
     thesis: "One builds systems. The other feels what it's like to live in them.",
     align: ["Both care about experience", "Neither is purely abstract"],
-    clash: ["Architect thinks in structure; Feeler thinks in sensation", "Design vs. experience"],
+    clash: ["Architect thinks in structure; Alive thinks in sensation", "Design vs. experience"],
     give: {
       youToThem: "Data on what your structures actually feel like",
       themToYou: "Structures that create space for feeling",
@@ -1727,7 +1727,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
   "presence+swimmer": {
     thesis: "One is fully here. The other lives in questions. Both are paying attention.",
     align: ["Neither rushes to conclusions", "You both value depth over speed"],
-    clash: ["Present stays; Questioner swims deeper", "Being vs. seeking"],
+    clash: ["Present stays; Deep swims deeper", "Being vs. seeking"],
     give: {
       youToThem: "Presence that grounds your questions in the moment",
       themToYou: "Questions that deepen what presence means",
@@ -1747,7 +1747,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
   "conscience+presence": {
     thesis: "One watches for danger. The other shows up fully. Both are paying attention.",
     align: ["Neither is checked out", "You both see what's in front of you"],
-    clash: ["Witness looks for threats; Present looks for connection", "Vigilance vs. warmth"],
+    clash: ["Guardian looks for threats; Present looks for connection", "Vigilance vs. warmth"],
     give: {
       youToThem: "The reminder that presence makes vigilance worth it",
       themToYou: "Watchfulness that protects what you're present to",
@@ -1767,7 +1767,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
   "alive+presence": {
     thesis: "One feels everything. The other gives everything attention. Both are fully here.",
     align: ["Neither is numb", "You both engage completely with what is"],
-    clash: ["Feeler wants more sensation; Present wants deeper attention", "Quantity vs. quality of experience"],
+    clash: ["Alive wants more sensation; Present wants deeper attention", "Quantity vs. quality of experience"],
     give: {
       youToThem: "Presence that receives what you feel",
       themToYou: "Feelings that give presence something to hold",
@@ -1787,7 +1787,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
   "rooted+swimmer": {
     thesis: "One stopped moving. The other keeps diving deeper. Both chose depth over motion.",
     align: ["Neither values speed for its own sake", "You've both rejected the race"],
-    clash: ["Rooted has arrived; Questioner keeps questioning", "Stillness vs. seeking"],
+    clash: ["Rooted has arrived; Deep keeps questioning", "Stillness vs. seeking"],
     give: {
       youToThem: "A shore to return to after swimming",
       themToYou: "Questions that keep your rootedness alive",
@@ -1797,7 +1797,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
   "conscience+swimmer": {
     thesis: "One watches for danger. The other sits with hard questions. Both take truth seriously.",
     align: ["Neither accepts easy answers", "You both stay with discomfort"],
-    clash: ["Witness looks for threats; Questioner looks for depth", "Danger vs. mystery"],
+    clash: ["Guardian looks for threats; Deep looks for depth", "Danger vs. mystery"],
     give: {
       youToThem: "Vigilance about what your questions might uncover",
       themToYou: "Questions that make your watching more honest",
@@ -1807,7 +1807,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
   "embers+swimmer": {
     thesis: "One guards memory. The other swims in uncertainty. Past meets unresolved present.",
     align: ["Neither dismisses what came before", "You both take history seriously"],
-    clash: ["Keeper has answers from the past; Questioner is still asking", "Certainty vs. uncertainty"],
+    clash: ["Keeper has answers from the past; Deep is still asking", "Certainty vs. uncertainty"],
     give: {
       youToThem: "Memory that grounds your questions",
       themToYou: "Questions that keep your memory alive, not static",
@@ -1817,7 +1817,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
   "friction+swimmer": {
     thesis: "One seeks difficulty. The other seeks depth. Different kinds of intensity.",
     align: ["Neither flees discomfort", "You both stay with what's hard"],
-    clash: ["Challenger acts; Questioner reflects", "Friction vs. contemplation"],
+    clash: ["Challenger acts; Deep reflects", "Friction vs. contemplation"],
     give: {
       youToThem: "The challenge of questions without answers",
       themToYou: "Questions about why difficulty matters",
@@ -1827,7 +1827,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
   "alive+swimmer": {
     thesis: "One feels everything. The other questions everything. Sensation meets inquiry.",
     align: ["Neither is defended", "You're both open to what comes"],
-    clash: ["Feeler immerses; Questioner examines", "Feeling vs. understanding"],
+    clash: ["Alive immerses; Deep examines", "Feeling vs. understanding"],
     give: {
       youToThem: "Feelings that ground your questions",
       themToYou: "Questions about what your feelings mean",
@@ -1837,7 +1837,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
   "between+swimmer": {
     thesis: "Two in uncertainty. One is swimming deeper, one is on the threshold. Neither has arrived.",
     align: ["Neither claims false certainty", "You're both honestly lost"],
-    clash: ["Questioner seeks answers; Liminal isn't sure what the questions are", "Deep vs. undefined"],
+    clash: ["Deep seeks answers; Liminal isn't sure what the questions are", "Deep vs. undefined"],
     give: {
       youToThem: "Questions that give shape to your uncertainty",
       themToYou: "The freedom to not know what you're questioning",
@@ -1847,7 +1847,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
   "conscience+rooted": {
     thesis: "One watches. One stays still. Both have committed to something.",
     align: ["Neither is swept along", "You've both made deliberate choices"],
-    clash: ["Witness is vigilant; Rooted is at peace", "Alertness vs. stillness"],
+    clash: ["Guardian is vigilant; Rooted is at peace", "Alertness vs. stillness"],
     give: {
       youToThem: "Peace that doesn't require watching",
       themToYou: "Watching that protects what's worth staying still for",
@@ -1887,18 +1887,18 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
   "conscience+unbound": {
     thesis: "One watches for danger. The other transcends danger entirely. Tension between earth and sky.",
     align: ["Neither accepts comfortable illusions", "You both see clearly"],
-    clash: ["Witness stays to watch; Transcendent leaves", "Vigilance vs. escape"],
+    clash: ["Guardian stays to watch; Transcendent leaves", "Vigilance vs. escape"],
     give: {
       youToThem: "Vigilance about what transcendence might leave behind",
       themToYou: "A vision of what's beyond what you're watching",
     },
     question: "What would you have to trust to stop watching and transcend?",
-    warning: "Witness can trap Transcendent in fear. Transcendent can abandon what Witness protects.",
+    warning: "Guardian can trap Transcendent in fear. Transcendent can abandon what Guardian protects.",
   },
   "conscience+mender": {
     thesis: "One spots what's wrong. The other fixes it. Natural partners if trust holds.",
     align: ["Neither ignores problems", "You both engage with what's broken"],
-    clash: ["Witness stays suspicious; Mender trusts repair", "Watching vs. acting"],
+    clash: ["Guardian stays suspicious; Mender trusts repair", "Watching vs. acting"],
     give: {
       youToThem: "The targets worth fixing",
       themToYou: "Evidence that watching leads somewhere",
@@ -1908,7 +1908,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
   "cleareyed+conscience": {
     thesis: "Two truth-tellers. One speaks, one watches. Together, nothing escapes.",
     align: ["Neither tolerates lies", "You both value honesty above comfort"],
-    clash: ["Truth-Teller says it; Witness suspects it", "Speaking vs. surveilling"],
+    clash: ["Truth-Teller says it; Guardian suspects it", "Speaking vs. surveilling"],
     give: {
       youToThem: "Truths to support what you're watching",
       themToYou: "Evidence for the truths you're speaking",
@@ -1918,7 +1918,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
   "between+conscience": {
     thesis: "One watches. One wonders. Both are paying attention to something.",
     align: ["Neither is asleep", "You're both engaged with uncertainty"],
-    clash: ["Witness has suspicions; Liminal has questions", "Vigilance vs. openness"],
+    clash: ["Guardian has suspicions; Liminal has questions", "Vigilance vs. openness"],
     give: {
       youToThem: "Openness that doesn't require suspicion",
       themToYou: "The reminder that some uncertainties are dangers",
@@ -1938,7 +1938,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
   "alive+embers": {
     thesis: "One feels everything now. The other remembers everything before. Sensation meets memory.",
     align: ["Neither is detached", "You both hold onto what matters"],
-    clash: ["Feeler lives in the present; Keeper lives in the past", "Now vs. then"],
+    clash: ["Alive lives in the present; Keeper lives in the past", "Now vs. then"],
     give: {
       youToThem: "Memory that gives your feelings context",
       themToYou: "Feelings that make memory alive, not dead",
@@ -2008,13 +2008,13 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
   "alive+unbound": {
     thesis: "One wants to feel everything here. The other wants to transcend here entirely.",
     align: ["Neither accepts limits", "You both want more than this"],
-    clash: ["Feeler stays embodied; Transcendent leaves the body", "Sensation vs. escape"],
+    clash: ["Alive stays embodied; Transcendent leaves the body", "Sensation vs. escape"],
     give: {
       youToThem: "What embodiment feels like, so you know what you're transcending",
       themToYou: "A vision of feeling beyond current limits",
     },
     question: "What would transcendence feel like?",
-    warning: "Transcendent can dismiss Feeler as attached. Feeler can dismiss Transcendent as avoidant.",
+    warning: "Transcendent can dismiss Alive as attached. Alive can dismiss Transcendent as avoidant.",
   },
   "mender+unbound": {
     thesis: "One fixes what's here. The other leaves what's here behind. Different exits from brokenness.",
@@ -2049,7 +2049,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
   "alive+mender": {
     thesis: "One feels everything. The other fixes everything. Both respond to what's in front of them.",
     align: ["Neither is detached", "You both engage with reality"],
-    clash: ["Feeler receives; Mender acts", "Feeling vs. fixing"],
+    clash: ["Alive receives; Mender acts", "Feeling vs. fixing"],
     give: {
       youToThem: "The feeling of what you've repaired",
       themToYou: "Action that gives your feelings somewhere to go",
@@ -2059,7 +2059,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
   "alive+cleareyed": {
     thesis: "One feels everything. The other sees everything. Both are fully engaged.",
     align: ["Neither is defended", "You both take in what's here"],
-    clash: ["Feeler absorbs; Truth-Teller analyzes", "Sensation vs. clarity"],
+    clash: ["Alive absorbs; Truth-Teller analyzes", "Sensation vs. clarity"],
     give: {
       youToThem: "Truth about what you're feeling",
       themToYou: "Feeling that makes truth matter",
@@ -2069,7 +2069,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
   "alive+between": {
     thesis: "One feels everything. The other isn't sure what to feel. Intensity meets uncertainty.",
     align: ["Neither is performing", "You're both honestly where you are"],
-    clash: ["Feeler is certain of sensation; Liminal is certain of nothing", "Feeling vs. questioning"],
+    clash: ["Alive is certain of sensation; Liminal is certain of nothing", "Feeling vs. questioning"],
     give: {
       youToThem: "Feelings that give shape to your uncertainty",
       themToYou: "Questions about what your feelings mean",
@@ -2217,13 +2217,13 @@ export const analyticalPairDynamics: Record<string, AnalyticalPairDynamic> = {
   "alive+alive": {
     thesis: "Two mirrors reflecting infinite sensation—profound recognition, but who pauses long enough to feel what's actually there?",
 
-    distanceAnalysis: `When The Feeler meets The Feeler, the distance between you is zero. You share the same philosophical coordinates, the same hunger for experience, the same conviction that the universe gave you everything and the least you can do is feel it. This is immediate recognition—the relief of meeting someone who doesn't need you to justify your intensity, your appetite, your refusal to moderate.
+    distanceAnalysis: `When The Alive meets The Alive, the distance between you is zero. You share the same philosophical coordinates, the same hunger for experience, the same conviction that the universe gave you everything and the least you can do is feel it. This is immediate recognition—the relief of meeting someone who doesn't need you to justify your intensity, your appetite, your refusal to moderate.
 
 But distance zero carries its own weight. When two people occupy the same position, they see the same things—and miss the same things. Your shared orientation toward sensation can become an echo chamber of experience-seeking, each validating the other's hunger without questioning whether that hunger is serving you. The blind spots you share become invisible, confirmed by mutual agreement.`,
 
     dynamic: `At its core, this pairing brings together two people who believe experience is the point. Both of you have unusual capacity for feeling—not just seeking sensation, but receiving it fully. Where others filter, protect, moderate, you both open. This creates a kind of amplification: together, you can access intensities that might overwhelm or frighten others.
 
-The dynamic between two The Feeler types is one of mutual permission. You don't have to explain why you need more, why you're not satisfied with the safe middle, why something in you requires the full range. The other person gets it. They're built the same way.
+The dynamic between two The Alive types is one of mutual permission. You don't have to explain why you need more, why you're not satisfied with the safe middle, why something in you requires the full range. The other person gets it. They're built the same way.
 
 But this same mutual permission can enable the shadow side of your shared orientation. You both know that sensation can become consumption—that feeling everything is not the same as understanding anything. When two people share this blind spot, neither may be positioned to call attention to it. The endless pursuit of experience can become its own kind of numbness: if you're always chasing the next sensation, you're never actually present to what's here.`,
 
@@ -2258,7 +2258,7 @@ But this same mutual permission can enable the shadow side of your shared orient
       themToYou: `They offer the same amplification back. They don't judge your hunger for experience because they share it. They'll follow you into intensities that others might find excessive, match your openness, celebrate your capacity to feel. In their company, you're not "too much." You're exactly as much as you are, and that's met with recognition rather than resistance.`
     },
 
-    risk: `The failure mode for two The Feeler types is mutual enabling toward consumption. Without someone to ask "why do you need this particular experience?" or "what are you avoiding by always seeking the next sensation?", you can reinforce each other's tendency to use intensity as escape. The relationship becomes a spinning wheel of experiences—vivid, memorable, but ultimately unintegrated.
+    risk: `The failure mode for two The Alive types is mutual enabling toward consumption. Without someone to ask "why do you need this particular experience?" or "what are you avoiding by always seeking the next sensation?", you can reinforce each other's tendency to use intensity as escape. The relationship becomes a spinning wheel of experiences—vivid, memorable, but ultimately unintegrated.
 
 The deeper risk is that sensation becomes a substitute for presence. If you're both always reaching for the next experience, neither of you may learn to stay with what's actually here—including the difficult, unglamorous experiences that don't offer obvious intensity but might offer depth. Two people who are alive to everything can end up alive to nothing in particular.`,
 
@@ -2487,7 +2487,7 @@ The deeper risk is that you create an environment where vulnerability becomes im
   "conscience+conscience": {
     thesis: "Two watchmen watching each other—profound vigilance together, but who watches the watchers?",
 
-    distanceAnalysis: `When The Witness meets The Witness, the distance between you is zero. You share the same philosophical coordinates: the conviction that someone has to watch the watchers, that dystopia arrives disguised as convenience, that comfort should never override conscience. This is immediate recognition—the relief of meeting someone who also sees the cracks, the hidden costs, the surveillance beneath the service.
+    distanceAnalysis: `When The Guardian meets The Guardian, the distance between you is zero. You share the same philosophical coordinates: the conviction that someone has to watch the watchers, that dystopia arrives disguised as convenience, that comfort should never override conscience. This is immediate recognition—the relief of meeting someone who also sees the cracks, the hidden costs, the surveillance beneath the service.
 
 But occupying the same position means sharing the same relationship to suspicion—and potentially sharing the same blindness to what's working. Your mutual vigilance can become an echo chamber of critique, each validating the other's distrust without questioning whether permanent suspicion is its own kind of prison. The blind spots you share become invisible, confirmed by mutual agreement.`,
 
@@ -2865,7 +2865,7 @@ The deeper risk is that you tear down each other's work. Two Shapers may find th
   "swimmer+swimmer": {
     thesis: "Two in deep water together—profound shared capacity for questions, but can you surface long enough to act?",
 
-    distanceAnalysis: `When The Questioner meets The Questioner, the distance between you is zero. You share the same philosophical coordinates: the conviction that the best questions are the ones that can't be fully answered, that certainty is usually a sign something is being ignored, that understanding matters more than solving. This is immediate recognition—the relief of meeting someone who also sits with uncertainty, who won't rush you toward answers, who knows that not-knowing can be a form of rigor.
+    distanceAnalysis: `When The Deep meets The Deep, the distance between you is zero. You share the same philosophical coordinates: the conviction that the best questions are the ones that can't be fully answered, that certainty is usually a sign something is being ignored, that understanding matters more than solving. This is immediate recognition—the relief of meeting someone who also sits with uncertainty, who won't rush you toward answers, who knows that not-knowing can be a form of rigor.
 
 But occupying the same position means sharing the same relationship to questions—and potentially sharing the same avoidance of answers. Your mutual depth can become an echo chamber of inquiry, each validating the other's uncertainty without questioning whether sitting with questions has become a way of avoiding the commitment of choice. The blind spots you share become invisible, confirmed by mutual agreement.`,
 
@@ -3192,39 +3192,39 @@ The deeper risk is that you stop asking the questions that only arise in this te
   "citizen+conscience": {
     thesis: "One trusts the architecture. The other tests the walls for cracks. Both are watching—for completely different things.",
 
-    distanceAnalysis: `The Abundant and The Witness represent opposite default stances toward systems: trust versus suspicion. The Abundant has concluded, after genuine thought, that systems designed for abundance tend toward good—that trusting the architecture usually serves you better than constantly testing it. The Witness has concluded, after genuine thought, that dystopia arrives disguised as convenience—that trusting the architecture is exactly how you get captured by it.
+    distanceAnalysis: `The Abundant and The Guardian represent opposite default stances toward systems: trust versus suspicion. The Abundant has concluded, after genuine thought, that systems designed for abundance tend toward good—that trusting the architecture usually serves you better than constantly testing it. The Guardian has concluded, after genuine thought, that dystopia arrives disguised as convenience—that trusting the architecture is exactly how you get captured by it.
 
-This distance is particularly charged because each believes the other is making a dangerous mistake. The Abundant thinks the Conscience's permanent suspicion is not just exhausting but self-defeating—that it creates the very atmosphere of distrust that makes good systems impossible. The Witness thinks the Citizen's trust is not just naive but complicit—that it provides cover for the systems that should be questioned. Neither position is thoughtless. Both are responses to genuine patterns they've observed in the world.`,
+This distance is particularly charged because each believes the other is making a dangerous mistake. The Abundant thinks the Conscience's permanent suspicion is not just exhausting but self-defeating—that it creates the very atmosphere of distrust that makes good systems impossible. The Guardian thinks the Citizen's trust is not just naive but complicit—that it provides cover for the systems that should be questioned. Neither position is thoughtless. Both are responses to genuine patterns they've observed in the world.`,
 
-    dynamic: `At its core, this pairing creates a permanent debate about the appropriate relationship to power. The Abundant looks at a well-designed system and sees evidence that humans can build things that work for everyone. The Witness looks at the same system and sees a question: who benefits from you thinking this works? Both are asking legitimate questions. Both are seeing something real.
+    dynamic: `At its core, this pairing creates a permanent debate about the appropriate relationship to power. The Abundant looks at a well-designed system and sees evidence that humans can build things that work for everyone. The Guardian looks at the same system and sees a question: who benefits from you thinking this works? Both are asking legitimate questions. Both are seeing something real.
 
-The dynamic between you is one of mutual frustration that can calcify into mutual dismissal. The Abundant experiences the Conscience as someone who can never enjoy anything, never trust anything, never let their guard down long enough to appreciate when something is actually working. The Witness experiences the Citizen as someone who can't see what's obvious—the cracks in the architecture, the hidden costs, the people being surveilled or excluded.
+The dynamic between you is one of mutual frustration that can calcify into mutual dismissal. The Abundant experiences the Conscience as someone who can never enjoy anything, never trust anything, never let their guard down long enough to appreciate when something is actually working. The Guardian experiences the Citizen as someone who can't see what's obvious—the cracks in the architecture, the hidden costs, the people being surveilled or excluded.
 
-But this tension is genuinely productive when both parties stay engaged. The Abundant, challenged by the Conscience, must ask: what am I not seeing because I trust too easily? What costs am I ignoring because I'm focused on benefits? The Witness, challenged by the Citizen, must ask: what am I not seeing because I suspect too readily? What's working that I'm dismissing as suspicious?`,
+But this tension is genuinely productive when both parties stay engaged. The Abundant, challenged by the Conscience, must ask: what am I not seeing because I trust too easily? What costs am I ignoring because I'm focused on benefits? The Guardian, challenged by the Citizen, must ask: what am I not seeing because I suspect too readily? What's working that I'm dismissing as suspicious?`,
 
     align: [
       {
         point: "Both believe systems matter",
-        explanation: `The Abundant pays attention to systems because they believe good design makes good lives possible. The Witness pays attention to systems because they believe design is never neutral—it always serves someone. Neither of you treats institutional architecture as irrelevant background. You're both system-watchers; you just have opposite expectations about what you'll find.`
+        explanation: `The Abundant pays attention to systems because they believe good design makes good lives possible. The Guardian pays attention to systems because they believe design is never neutral—it always serves someone. Neither of you treats institutional architecture as irrelevant background. You're both system-watchers; you just have opposite expectations about what you'll find.`
       },
       {
         point: "Both want systems that serve everyone",
-        explanation: `The Abundant's trust comes from hoping for systems of genuine abundance—not abundance for some at the cost of others. The Witness's suspicion comes from wanting systems that actually serve everyone rather than claiming to while they don't. Your endpoints are the same; your assessments of the current situation differ. This shared goal creates the possibility of productive dialogue rather than pure opposition.`
+        explanation: `The Abundant's trust comes from hoping for systems of genuine abundance—not abundance for some at the cost of others. The Guardian's suspicion comes from wanting systems that actually serve everyone rather than claiming to while they don't. Your endpoints are the same; your assessments of the current situation differ. This shared goal creates the possibility of productive dialogue rather than pure opposition.`
       }
     ],
 
     clash: [
       {
         point: "Default orientation",
-        explanation: `The Abundant's default is trust with verification; the Conscience's default is suspicion with persuasion. When encountering a new system, the Citizen asks "how does this work?" while the Conscience asks "who does this serve?" These questions aren't incompatible, but they lead to very different initial responses. The Abundant experiences the Conscience's immediate suspicion as corrosive. The Witness experiences the Citizen's immediate trust as dangerous.`
+        explanation: `The Abundant's default is trust with verification; the Conscience's default is suspicion with persuasion. When encountering a new system, the Citizen asks "how does this work?" while the Conscience asks "who does this serve?" These questions aren't incompatible, but they lead to very different initial responses. The Abundant experiences the Conscience's immediate suspicion as corrosive. The Guardian experiences the Citizen's immediate trust as dangerous.`
       },
       {
         point: "What counts as evidence",
-        explanation: `The Abundant takes functionality as evidence that a system is working. The Witness takes functionality as insufficient—they want to know who's watching, who's excluded, what's being hidden. When the Citizen points to benefits, the Conscience says "yes, but what about the costs?" When the Conscience points to risks, the Citizen says "yes, but look at what's working." You're weighting evidence differently because you're asking different questions.`
+        explanation: `The Abundant takes functionality as evidence that a system is working. The Guardian takes functionality as insufficient—they want to know who's watching, who's excluded, what's being hidden. When the Citizen points to benefits, the Conscience says "yes, but what about the costs?" When the Conscience points to risks, the Citizen says "yes, but look at what's working." You're weighting evidence differently because you're asking different questions.`
       },
       {
         point: "The cost of the stance itself",
-        explanation: `The Abundant believes permanent suspicion is exhausting and self-defeating—that if you can never trust anything, you can never build anything worth having. The Witness believes naive trust is dangerous and complicit—that if you trust systems designed to exploit you, you become part of the problem. Each sees the other's stance as carrying costs that make it unsustainable.`
+        explanation: `The Abundant believes permanent suspicion is exhausting and self-defeating—that if you can never trust anything, you can never build anything worth having. The Guardian believes naive trust is dangerous and complicit—that if you trust systems designed to exploit you, you become part of the problem. Each sees the other's stance as carrying costs that make it unsustainable.`
       }
     ],
 
@@ -3233,9 +3233,9 @@ But this tension is genuinely productive when both parties stay engaged. The Abu
       themToYou: `If you're the Conscience, you offer the Citizen the questions they're not asking. Your suspicion isn't paranoia—it's pattern recognition. You've read the history; you know how dystopia arrives. You offer the Citizen the uncomfortable possibility that the architecture they trust might have cracks they can't see, costs they're not counting, beneficiaries they haven't questioned. The gift is the question, even when it's unwelcome.`
     },
 
-    risk: `The failure mode of this pairing is caricature. The Abundant starts treating the Conscience as paranoid—someone who can't function in normal society, whose suspicion has become pathological. The Witness starts treating the Citizen as a dupe—someone too comfortable to see what's obvious, whose trust makes them complicit in whatever's being hidden. Once you've reduced each other to caricatures, genuine dialogue ends.
+    risk: `The failure mode of this pairing is caricature. The Abundant starts treating the Conscience as paranoid—someone who can't function in normal society, whose suspicion has become pathological. The Guardian starts treating the Citizen as a dupe—someone too comfortable to see what's obvious, whose trust makes them complicit in whatever's being hidden. Once you've reduced each other to caricatures, genuine dialogue ends.
 
-The deeper risk is that you stop informing each other's perspective. The Abundant needs the Conscience's questions to avoid being naive. The Witness needs the Citizen's trust to avoid being paralyzed. If you polarize completely, you each lose access to what the other sees—and your individual perspectives become more dangerous without the corrective.`,
+The deeper risk is that you stop informing each other's perspective. The Abundant needs the Conscience's questions to avoid being naive. The Guardian needs the Citizen's trust to avoid being paralyzed. If you polarize completely, you each lose access to what the other sees—and your individual perspectives become more dangerous without the corrective.`,
 
     question: {
       text: "What would it take to build a system you could both trust—the Citizen because it works, the Conscience because its workings are transparent?",
@@ -3246,35 +3246,35 @@ The deeper risk is that you stop informing each other's perspective. The Abundan
   "alive+conscience": {
     thesis: "One wants to feel everything. The other keeps asking: but should we? Experience meets vigilance in a permanent negotiation.",
 
-    distanceAnalysis: `The Feeler and The Witness represent opposite primary orientations: toward experience versus toward evaluation. The Alive person's first instinct is to feel—to open themselves to what's available, to taste the universe's offerings. The Witness's first instinct is to evaluate—to question whether this experience is safe, ethical, who it serves, what it hides. Neither instinct is wrong, but they create fundamentally different relationships with the world.
+    distanceAnalysis: `The Alive and The Guardian represent opposite primary orientations: toward experience versus toward evaluation. The Alive person's first instinct is to feel—to open themselves to what's available, to taste the universe's offerings. The Guardian's first instinct is to evaluate—to question whether this experience is safe, ethical, who it serves, what it hides. Neither instinct is wrong, but they create fundamentally different relationships with the world.
 
-This distance is particularly interesting because both positions claim authenticity. The Alive person believes authenticity means experiencing fully—that filtering, questioning, and evaluating create a barrier between you and what's real. The Witness believes authenticity means seeing clearly—that experiencing without evaluating is surrender to whatever's presented to you, which might be manufactured or manipulated. Each sees the other's version of authenticity as a kind of inauthenticity.`,
+This distance is particularly interesting because both positions claim authenticity. The Alive person believes authenticity means experiencing fully—that filtering, questioning, and evaluating create a barrier between you and what's real. The Guardian believes authenticity means seeing clearly—that experiencing without evaluating is surrender to whatever's presented to you, which might be manufactured or manipulated. Each sees the other's version of authenticity as a kind of inauthenticity.`,
 
-    dynamic: `At its core, this pairing creates a tension between immersion and analysis that shows up in almost every shared experience. The Alive person wants to feel the thing—the sunset, the meal, the music, the moment. The Witness wants to understand the thing—who made it, why, what's hidden in it, what it's doing to them. Neither is wrong. Both are missing something the other sees.
+    dynamic: `At its core, this pairing creates a tension between immersion and analysis that shows up in almost every shared experience. The Alive person wants to feel the thing—the sunset, the meal, the music, the moment. The Guardian wants to understand the thing—who made it, why, what's hidden in it, what it's doing to them. Neither is wrong. Both are missing something the other sees.
 
-The dynamic often becomes frustrating for both parties. The Alive person feels like the Conscience ruins experiences by analyzing them—like someone who can't enjoy a meal without researching the restaurant's labor practices. The Witness feels like the Alive person is vulnerable to manipulation—like someone so hungry for sensation that they'll consume whatever's offered without asking who's serving and why.
+The dynamic often becomes frustrating for both parties. The Alive person feels like the Conscience ruins experiences by analyzing them—like someone who can't enjoy a meal without researching the restaurant's labor practices. The Guardian feels like the Alive person is vulnerable to manipulation—like someone so hungry for sensation that they'll consume whatever's offered without asking who's serving and why.
 
-But this frustration can become productive if both parties stay engaged. The Alive person, challenged by the Conscience, may discover that some experiences they've been consuming aren't serving them—that their openness has made them vulnerable to exploitation. The Witness, challenged by the Alive person, may discover that some experiences don't need evaluation—that their vigilance has prevented them from actually living.`,
+But this frustration can become productive if both parties stay engaged. The Alive person, challenged by the Conscience, may discover that some experiences they've been consuming aren't serving them—that their openness has made them vulnerable to exploitation. The Guardian, challenged by the Alive person, may discover that some experiences don't need evaluation—that their vigilance has prevented them from actually living.`,
 
     align: [
       {
         point: "Both believe life should be lived fully",
-        explanation: `The Alive person believes full living means experiencing fully—opening to what's available rather than filtering it. The Witness believes full living means seeing clearly—understanding what's real rather than accepting appearances. These are different emphases, but they share a commitment to not sleepwalking through life. Neither of you is advocating for dullness or numbness.`
+        explanation: `The Alive person believes full living means experiencing fully—opening to what's available rather than filtering it. The Guardian believes full living means seeing clearly—understanding what's real rather than accepting appearances. These are different emphases, but they share a commitment to not sleepwalking through life. Neither of you is advocating for dullness or numbness.`
       },
       {
         point: "Both distrust certain kinds of comfort",
-        explanation: `The Alive person distrusts the comfort of not feeling—the numbness that passes for safety. The Witness distrusts the comfort of not questioning—the trust that passes for peace. You've both rejected types of ease that most people accept. This shared rejection of common comforts creates unexpected common ground.`
+        explanation: `The Alive person distrusts the comfort of not feeling—the numbness that passes for safety. The Guardian distrusts the comfort of not questioning—the trust that passes for peace. You've both rejected types of ease that most people accept. This shared rejection of common comforts creates unexpected common ground.`
       }
     ],
 
     clash: [
       {
         point: "The relationship between experience and evaluation",
-        explanation: `The Alive person believes evaluation interferes with experience—that you can't fully feel something while you're analyzing it. The Witness believes experience without evaluation is dangerous—that feeling something fully doesn't tell you whether you should. This isn't a minor disagreement; it affects how you approach nearly everything. The Alive person sees the Conscience as unable to be present; the Conscience sees the Alive person as unable to be careful.`
+        explanation: `The Alive person believes evaluation interferes with experience—that you can't fully feel something while you're analyzing it. The Guardian believes experience without evaluation is dangerous—that feeling something fully doesn't tell you whether you should. This isn't a minor disagreement; it affects how you approach nearly everything. The Alive person sees the Conscience as unable to be present; the Conscience sees the Alive person as unable to be careful.`
       },
       {
         point: "Vulnerability",
-        explanation: `The Alive person treats vulnerability as necessary for full experience—you have to be open to be touched by things. The Witness treats vulnerability as requiring justification—you should know what you're opening to before you open. This creates constant friction: the Alive person feels like the Conscience is closed off; the Conscience feels like the Alive person is reckless.`
+        explanation: `The Alive person treats vulnerability as necessary for full experience—you have to be open to be touched by things. The Guardian treats vulnerability as requiring justification—you should know what you're opening to before you open. This creates constant friction: the Alive person feels like the Conscience is closed off; the Conscience feels like the Alive person is reckless.`
       },
       {
         point: "What ruins an experience",
@@ -3283,13 +3283,13 @@ But this frustration can become productive if both parties stay engaged. The Ali
     ],
 
     give: {
-      youToThem: `If you're The Feeler, you offer the Conscience the reminder that life is for living. Their vigilance serves something—but what? At some point, the watching must give way to the living. You model the possibility that some experiences don't require analysis, that presence without suspicion is possible and valuable. You offer them permission to feel without first understanding everything about what they're feeling.`,
+      youToThem: `If you're The Alive, you offer the Conscience the reminder that life is for living. Their vigilance serves something—but what? At some point, the watching must give way to the living. You model the possibility that some experiences don't require analysis, that presence without suspicion is possible and valuable. You offer them permission to feel without first understanding everything about what they're feeling.`,
       themToYou: `If you're the Conscience, you offer the Alive person the questions that protect their openness. Not all experiences are what they seem. Some sensations are manufactured to exploit exactly the kind of openness you embody. Your vigilance isn't meant to close them down but to help them open wisely—to feel what's real rather than what's been designed to manipulate their feeling.`
     },
 
-    risk: `The failure mode of this pairing is mutual dismissal that prevents growth. The Alive person writes off the Conscience as someone who can't live—a permanent analyst trapped in their own suspicion. The Witness writes off the Alive person as someone who can't see—a permanent consumer vulnerable to whatever's offered. Once you've dismissed each other, you stop having the conversations that could help both of you.
+    risk: `The failure mode of this pairing is mutual dismissal that prevents growth. The Alive person writes off the Conscience as someone who can't live—a permanent analyst trapped in their own suspicion. The Guardian writes off the Alive person as someone who can't see—a permanent consumer vulnerable to whatever's offered. Once you've dismissed each other, you stop having the conversations that could help both of you.
 
-The deeper risk is that you each become more extreme without the other's corrective. The Alive person, unchallenged by vigilance, becomes increasingly uncritical in their experience-seeking. The Witness, unchallenged by presence, becomes increasingly incapable of actually living. Your opposite orientations could balance each other; instead, they push you further apart.`,
+The deeper risk is that you each become more extreme without the other's corrective. The Alive person, unchallenged by vigilance, becomes increasingly uncritical in their experience-seeking. The Guardian, unchallenged by presence, becomes increasingly incapable of actually living. Your opposite orientations could balance each other; instead, they push you further apart.`,
 
     question: {
       text: "What would it mean to feel something fully while seeing it clearly—to be both completely present and completely aware of what you're present to?",
@@ -3300,39 +3300,39 @@ The deeper risk is that you each become more extreme without the other's correct
   "conscience+friction": {
     thesis: "The one who watches for what's hidden meets the one who seeks difficulty for its own sake. Vigilance confronts vitality in a clash of purpose.",
 
-    distanceAnalysis: `The Witness and The Challenger represent opposite relationships with struggle. The Witness watches for struggle imposed by others—the hidden costs, the manufactured difficulties, the systems designed to exploit. The Friction-seeker seeks struggle as a chosen practice—the deliberate difficulty that builds strength, the resistance that creates growth. To the Conscience, seeking difficulty looks naive; why would you choose struggle when so much struggle is unchosen and unjust? To the Friction-seeker, watching for hidden costs looks paralyzed; why would you spend your energy on vigilance when you could spend it on growth?
+    distanceAnalysis: `The Guardian and The Challenger represent opposite relationships with struggle. The Guardian watches for struggle imposed by others—the hidden costs, the manufactured difficulties, the systems designed to exploit. The Friction-seeker seeks struggle as a chosen practice—the deliberate difficulty that builds strength, the resistance that creates growth. To the Conscience, seeking difficulty looks naive; why would you choose struggle when so much struggle is unchosen and unjust? To the Friction-seeker, watching for hidden costs looks paralyzed; why would you spend your energy on vigilance when you could spend it on growth?
 
-This distance reflects different theories of what makes life meaningful. The Witness believes meaning comes from justice—from seeing clearly, exposing what's hidden, protecting the vulnerable from exploitation. The Friction-seeker believes meaning comes from vitality—from meeting challenges, growing through difficulty, becoming stronger through resistance. Both are coherent philosophies. Both see the other's priority as potentially missing the point.`,
+This distance reflects different theories of what makes life meaningful. The Guardian believes meaning comes from justice—from seeing clearly, exposing what's hidden, protecting the vulnerable from exploitation. The Friction-seeker believes meaning comes from vitality—from meeting challenges, growing through difficulty, becoming stronger through resistance. Both are coherent philosophies. Both see the other's priority as potentially missing the point.`,
 
-    dynamic: `At its core, this pairing creates an argument about where to direct one's energy. The Witness directs energy toward watching—toward vigilance, exposure, accountability. The Friction-seeker directs energy toward striving—toward challenge, growth, becoming. When they look at the same situation, they ask different questions. The Witness asks "what's being hidden here?" The Friction-seeker asks "what's worth struggling for here?"
+    dynamic: `At its core, this pairing creates an argument about where to direct one's energy. The Guardian directs energy toward watching—toward vigilance, exposure, accountability. The Friction-seeker directs energy toward striving—toward challenge, growth, becoming. When they look at the same situation, they ask different questions. The Guardian asks "what's being hidden here?" The Friction-seeker asks "what's worth struggling for here?"
 
-The dynamic often becomes one of mutual bafflement. The Witness watches the Friction-seeker throw themselves against difficulties and wonders why they don't question who created those difficulties and why. The Friction-seeker watches the Conscience analyze power structures and wonders why they don't just push against something instead of constantly exposing what's wrong with pushing.
+The dynamic often becomes one of mutual bafflement. The Guardian watches the Friction-seeker throw themselves against difficulties and wonders why they don't question who created those difficulties and why. The Friction-seeker watches the Conscience analyze power structures and wonders why they don't just push against something instead of constantly exposing what's wrong with pushing.
 
-But this bafflement can become productive when both stay engaged. The Witness, challenged by the Friction-seeker, may discover that their vigilance has become a substitute for actually engaging with life—that watching is easier than doing. The Friction-seeker, challenged by the Conscience, may discover that their struggle-seeking has become uncritical—that they've been striving without asking who benefits from their striving.`,
+But this bafflement can become productive when both stay engaged. The Guardian, challenged by the Friction-seeker, may discover that their vigilance has become a substitute for actually engaging with life—that watching is easier than doing. The Friction-seeker, challenged by the Conscience, may discover that their struggle-seeking has become uncritical—that they've been striving without asking who benefits from their striving.`,
 
     align: [
       {
         point: "Both reject passive comfort",
-        explanation: `The Witness rejects the comfort of not seeing—the ease that comes from not asking hard questions. The Friction-seeker rejects the comfort of not striving—the ease that comes from not challenging themselves. Both of you have decided that some forms of comfort are traps. This shared suspicion of certain kinds of ease creates unexpected common ground.`
+        explanation: `The Guardian rejects the comfort of not seeing—the ease that comes from not asking hard questions. The Friction-seeker rejects the comfort of not striving—the ease that comes from not challenging themselves. Both of you have decided that some forms of comfort are traps. This shared suspicion of certain kinds of ease creates unexpected common ground.`
       },
       {
         point: "Both believe in engagement over withdrawal",
-        explanation: `The Witness engages by watching, questioning, exposing. The Friction-seeker engages by striving, struggling, pushing. Neither of you has chosen withdrawal as a life strategy. You're both in the arena, just playing different games within it.`
+        explanation: `The Guardian engages by watching, questioning, exposing. The Friction-seeker engages by striving, struggling, pushing. Neither of you has chosen withdrawal as a life strategy. You're both in the arena, just playing different games within it.`
       }
     ],
 
     clash: [
       {
         point: "The value of difficulty",
-        explanation: `The Friction-seeker values difficulty as inherently growthful—struggle builds character, resistance creates strength. The Witness questions this framing: not all difficulty is growthful. Some difficulty is manufactured to exploit you. Some struggle just wears you down. The Friction-seeker's faith in difficulty looks naive to the Conscience; the Conscience's questioning of difficulty looks enervating to the Friction-seeker.`
+        explanation: `The Friction-seeker values difficulty as inherently growthful—struggle builds character, resistance creates strength. The Guardian questions this framing: not all difficulty is growthful. Some difficulty is manufactured to exploit you. Some struggle just wears you down. The Friction-seeker's faith in difficulty looks naive to the Conscience; the Conscience's questioning of difficulty looks enervating to the Friction-seeker.`
       },
       {
         point: "Where to focus attention",
-        explanation: `The Witness focuses attention on systems—who designed this challenge? Who benefits from your struggling with it? What's hidden in the difficulty you're embracing? The Friction-seeker focuses attention on the experience of struggle itself—does it make you stronger? Does it feel alive? Is there growth? These different focuses create constant friction about what matters.`
+        explanation: `The Guardian focuses attention on systems—who designed this challenge? Who benefits from your struggling with it? What's hidden in the difficulty you're embracing? The Friction-seeker focuses attention on the experience of struggle itself—does it make you stronger? Does it feel alive? Is there growth? These different focuses create constant friction about what matters.`
       },
       {
         point: "What constitutes action",
-        explanation: `The Friction-seeker sees physical or mental striving as real action. The Witness's watching and questioning can look like mere analysis—not actually doing anything. The Witness sees vigilance and exposure as real action. The Friction-seeker's struggling can look like running on a treadmill—lots of effort, going nowhere. Each devalues the other's primary mode of engagement.`
+        explanation: `The Friction-seeker sees physical or mental striving as real action. The Guardian's watching and questioning can look like mere analysis—not actually doing anything. The Guardian sees vigilance and exposure as real action. The Friction-seeker's struggling can look like running on a treadmill—lots of effort, going nowhere. Each devalues the other's primary mode of engagement.`
       }
     ],
 
@@ -3341,9 +3341,9 @@ But this bafflement can become productive when both stay engaged. The Witness, c
       themToYou: `If you're the Friction-seeker, you offer the Conscience the reminder that life requires action, not just watching. At some point, you have to stop exposing what's wrong and start pushing against something. Your vitality models the possibility that engagement isn't just analysis—that sometimes you have to struggle with the systems the Conscience only critiques. You're not dismissing their vigilance; you're showing what comes after seeing clearly.`
     },
 
-    risk: `The failure mode of this pairing is mutual contempt. The Friction-seeker decides the Conscience is all talk—someone who analyzes endlessly but never actually does anything, whose vigilance is a substitute for vitality. The Witness decides the Friction-seeker is a useful idiot—someone who strives energetically in whatever direction they're pointed, too busy struggling to ask who benefits from their struggles. Once contempt sets in, learning stops.
+    risk: `The failure mode of this pairing is mutual contempt. The Friction-seeker decides the Conscience is all talk—someone who analyzes endlessly but never actually does anything, whose vigilance is a substitute for vitality. The Guardian decides the Friction-seeker is a useful idiot—someone who strives energetically in whatever direction they're pointed, too busy struggling to ask who benefits from their struggles. Once contempt sets in, learning stops.
 
-The deeper risk is that you reinforce each other's weaknesses by rejecting each other's strengths. The Friction-seeker, dismissing vigilance as paralysis, becomes increasingly uncritical about what they struggle for. The Witness, dismissing striving as naive, becomes increasingly passive in their own engagement with life. Your opposition makes both of you more one-dimensional.`,
+The deeper risk is that you reinforce each other's weaknesses by rejecting each other's strengths. The Friction-seeker, dismissing vigilance as paralysis, becomes increasingly uncritical about what they struggle for. The Guardian, dismissing striving as naive, becomes increasingly passive in their own engagement with life. Your opposition makes both of you more one-dimensional.`,
 
     question: {
       text: "What difficulty would be worth choosing if you knew exactly who benefits and why—and what vigilance would be complete if it led you to embrace struggle rather than just expose it?",
@@ -3515,7 +3515,7 @@ The deeper risk is that you reinforce each other's comfortable positions rather 
   "alive+unbound": {
     thesis: "Sensory intensity meets transcendent vision—two ways of reaching beyond ordinary experience. Beautiful shared adventures, but who tends the ordinary life you're both escaping?",
 
-    distanceAnalysis: `When The Feeler meets The Transcendent, the philosophical distance between you is small. You're both reaching beyond the ordinary, beyond the moderate, beyond the safe middle. The Alive type reaches through sensation—more experience, deeper feeling, fuller presence to what's here. The Unbound type reaches through transcendence—beyond current limits, past the boundaries of self and body. You're both expansive.
+    distanceAnalysis: `When The Alive meets The Transcendent, the philosophical distance between you is small. You're both reaching beyond the ordinary, beyond the moderate, beyond the safe middle. The Alive type reaches through sensation—more experience, deeper feeling, fuller presence to what's here. The Unbound type reaches through transcendence—beyond current limits, past the boundaries of self and body. You're both expansive.
 
 This shared expansiveness creates immediate recognition. Neither of you is satisfied with the normal operating parameters of human experience. But your expansions point in different directions—one deeper into embodiment, one past it. This difference matters less than you might think, because you both understand the hunger for more.`,
 
@@ -3552,7 +3552,7 @@ But this mutual permission can enable escape. If both of you are always reaching
     ],
 
     give: {
-      youToThem: `If you're The Feeler, you offer the Unbound grounding in embodiment. Their vision of transcendence is beautiful, but what are they transcending from? You model the richness available in the body, the consciousness that's possible right here. You help them feel what they might be too eager to leave behind.`,
+      youToThem: `If you're The Alive, you offer the Unbound grounding in embodiment. Their vision of transcendence is beautiful, but what are they transcending from? You model the richness available in the body, the consciousness that's possible right here. You help them feel what they might be too eager to leave behind.`,
       themToYou: `If you're The Transcendent, you offer the Alive type vision beyond sensation. Their hunger for experience is powerful, but is experience all there is? You model the possibility that consciousness itself might expand, that there might be ways of being that don't depend on a body experiencing sensations. You expand their horizon.`
     },
 
@@ -3569,7 +3569,7 @@ The deeper risk is that you mistake intensity for intimacy. Both of you are good
   "alive+friction": {
     thesis: "Two intensity-seekers who understand that life should burn. Profound mutual recognition—but can the fire sustain without consuming what it was meant to forge?",
 
-    distanceAnalysis: `When The Feeler meets The Challenger, you're meeting on familiar ground. You both believe that intensity is the point. The Alive type seeks intensity through sensation—more experience, deeper feeling, fuller presence to what's available. The Friction-seeker seeks intensity through challenge—more resistance, harder problems, greater obstacles to overcome. You're both allergic to the tepid middle.
+    distanceAnalysis: `When The Alive meets The Challenger, you're meeting on familiar ground. You both believe that intensity is the point. The Alive type seeks intensity through sensation—more experience, deeper feeling, fuller presence to what's available. The Friction-seeker seeks intensity through challenge—more resistance, harder problems, greater obstacles to overcome. You're both allergic to the tepid middle.
 
 This shared orientation toward intensity creates immediate recognition. Neither of you has to explain why you can't be satisfied with comfort, why moderate experiences feel like half-measures, why something in you requires the full range. You both know. The only difference is the flavor of intensity you seek.`,
 
@@ -3602,7 +3602,7 @@ But this same amplification can become acceleration toward burnout. If neither o
     ],
 
     give: {
-      youToThem: `If you're The Feeler, you offer the Friction-seeker a different relationship to intensity. Their challenge-seeking is powerful, but not everything is a battle. You model the possibility of receiving intensity rather than fighting for it—of being filled by experience rather than struggling against it.`,
+      youToThem: `If you're The Alive, you offer the Friction-seeker a different relationship to intensity. Their challenge-seeking is powerful, but not everything is a battle. You model the possibility of receiving intensity rather than fighting for it—of being filled by experience rather than struggling against it.`,
       themToYou: `If you're The Challenger, you offer the Alive type edge and direction. Their openness to sensation is generous, but openness alone can become passive consumption. You model the possibility of engaging with intensity rather than just receiving it—of being shaped by difficulty rather than just experiencing sensation.`
     },
 
@@ -3769,7 +3769,7 @@ The deeper risk is that you create a beautiful monument and forget to live in it
   "cleareyed+swimmer": {
     thesis: "Two truth-seekers with different methods—one sees directly, one questions endlessly. Easy resonance in shared commitment to reality, but who decides when truth has been found?",
 
-    distanceAnalysis: `When The Truth-Teller meets The Questioner, you're both oriented toward truth. The Clear-Eyed type pursues truth through direct seeing—they look at what's there and name it. The Questioner pursues truth through questions—they explore beneath surfaces, holding uncertainty while insight develops. You're both committed to reality over comfortable illusion.
+    distanceAnalysis: `When The Truth-Teller meets The Deep, you're both oriented toward truth. The Clear-Eyed type pursues truth through direct seeing—they look at what's there and name it. The Deep pursues truth through questions—they explore beneath surfaces, holding uncertainty while insight develops. You're both committed to reality over comfortable illusion.
 
 This shared commitment to truth creates immediate recognition. Neither of you accepts easy answers. Neither of you chooses comfort over accuracy. You both understand that knowing requires courage—whether that's the courage to see clearly or the courage to keep asking. In each other, you find a fellow traveler toward what's real.`,
 
@@ -3777,7 +3777,7 @@ This shared commitment to truth creates immediate recognition. Neither of you ac
 
 The dynamic between you is one of complementary investigation. The Clear-Eyed says what they see; the Swimmer asks what hasn't been seen yet. Neither dismisses the other's method. This creates productive inquiry where direct vision and persistent questioning work together.
 
-But this same complementarity can create tension around closure. The Clear-Eyed type tends toward conclusion—they see, they speak, they move on. The Questioner tends toward continuation—there's always another question, another depth to explore. Who decides when truth has been found? Your shared commitment to reality might not translate to shared timing about when investigation ends.`,
+But this same complementarity can create tension around closure. The Clear-Eyed type tends toward conclusion—they see, they speak, they move on. The Deep tends toward continuation—there's always another question, another depth to explore. Who decides when truth has been found? Your shared commitment to reality might not translate to shared timing about when investigation ends.`,
 
     align: [
       {
@@ -3797,7 +3797,7 @@ But this same complementarity can create tension around closure. The Clear-Eyed 
     clash: [
       {
         point: "Certainty vs. inquiry",
-        explanation: `The Clear-Eyed type tends toward conclusions—they see clearly and speak definitively. The Questioner tends toward questions—clarity is always provisional, there's always more to explore. This can create friction: the Clear-Eyed may feel the Swimmer is avoiding conclusions; the Swimmer may feel the Clear-Eyed is closing too quickly. How do you know when investigation should end?`
+        explanation: `The Clear-Eyed type tends toward conclusions—they see clearly and speak definitively. The Deep tends toward questions—clarity is always provisional, there's always more to explore. This can create friction: the Clear-Eyed may feel the Swimmer is avoiding conclusions; the Swimmer may feel the Clear-Eyed is closing too quickly. How do you know when investigation should end?`
       }
     ],
 
@@ -3806,7 +3806,7 @@ But this same complementarity can create tension around closure. The Clear-Eyed 
       themToYou: `If you're the Swimmer, you offer the Clear-Eyed humility about certainty. Their direct vision is powerful, but what if they're missing something? You model the possibility that truth is deeper than any single seeing, that patient questioning reveals what quick clarity misses. You give their seeing depth.`
     },
 
-    risk: `The failure mode for this pairing is mutual frustration about closure. The Clear-Eyed type becomes impatient with the Swimmer's endless inquiry—at some point, you have to decide what you see and act on it. The Questioner becomes frustrated with the Clear-Eyed's premature certainty—how can they be so sure when there's always more to question? Without explicit negotiation about when investigation ends, you can talk past each other indefinitely.
+    risk: `The failure mode for this pairing is mutual frustration about closure. The Clear-Eyed type becomes impatient with the Swimmer's endless inquiry—at some point, you have to decide what you see and act on it. The Deep becomes frustrated with the Clear-Eyed's premature certainty—how can they be so sure when there's always more to question? Without explicit negotiation about when investigation ends, you can talk past each other indefinitely.
 
 The deeper risk is that you fail to integrate your methods. The Clear-Eyed keeps seeing without deepening; the Swimmer keeps questioning without concluding. You coexist rather than learn from each other. The real gift of this pairing—vision informed by depth, inquiry that eventually lands—goes unrealized.`,
 
@@ -3819,35 +3819,35 @@ The deeper risk is that you fail to integrate your methods. The Clear-Eyed keeps
   "swimmer+unbound": {
     thesis: "Two navigators of unmapped territory—the questioner of depths and the transcender of limits. Beautiful explorations together, but who anchors the expedition when both prefer the journey to arrival?",
 
-    distanceAnalysis: `When The Questioner meets The Transcendent, you're both comfortable beyond conventional boundaries. The Questioner is comfortable in intellectual depths—holding questions that others would resolve too quickly, exploring territory that has no map. The Unbound is comfortable in existential expansion—imagining forms of consciousness and being that transcend current limits. You're both explorers of the unknown.
+    distanceAnalysis: `When The Deep meets The Transcendent, you're both comfortable beyond conventional boundaries. The Deep is comfortable in intellectual depths—holding questions that others would resolve too quickly, exploring territory that has no map. The Unbound is comfortable in existential expansion—imagining forms of consciousness and being that transcend current limits. You're both explorers of the unknown.
 
 This shared comfort with the unmapped creates immediate recognition. Neither of you needs solid ground to feel safe. Neither of you insists on conclusions before the inquiry is complete. You both understand that some truths can only be found by venturing beyond where others stop. In each other, you find a fellow traveler who doesn't need a destination.`,
 
-    dynamic: `At its core, this pairing brings together two forms of venturing beyond. The Questioner ventures into intellectual depths; the Unbound ventures into existential possibilities. Together, you can explore territories that would terrify more grounded souls—questions without answers, possibilities without precedent.
+    dynamic: `At its core, this pairing brings together two forms of venturing beyond. The Deep ventures into intellectual depths; the Unbound ventures into existential possibilities. Together, you can explore territories that would terrify more grounded souls—questions without answers, possibilities without precedent.
 
-The dynamic between you is one of mutual permission to keep going. The Questioner doesn't ask the Unbound to come back to earth; the Unbound doesn't ask the Swimmer to surface with conclusions. You validate each other's appetite for the beyond, whatever form that takes.
+The dynamic between you is one of mutual permission to keep going. The Deep doesn't ask the Unbound to come back to earth; the Unbound doesn't ask the Swimmer to surface with conclusions. You validate each other's appetite for the beyond, whatever form that takes.
 
 But this same mutual permission can become mutual abandonment of ground. If neither of you anchors the expedition, if both of you only value the journey, you can drift together into territories so abstract they lose contact with lived reality. The depths and the heights can both become escapes from the middle—from the actual life you're living while you explore.`,
 
     align: [
       {
         point: "Comfort with the unknown",
-        explanation: `Neither of you requires certainty to feel secure. The Questioner can hold questions indefinitely; the Unbound can imagine possibilities without knowing if they're achievable. This shared tolerance for uncertainty means your explorations aren't cut short by anxiety about not-knowing.`
+        explanation: `Neither of you requires certainty to feel secure. The Deep can hold questions indefinitely; the Unbound can imagine possibilities without knowing if they're achievable. This shared tolerance for uncertainty means your explorations aren't cut short by anxiety about not-knowing.`
       },
       {
         point: "Imagination as tool",
-        explanation: `Both of you use imagination seriously—not as escape but as exploration. The Questioner imagines possibilities beneath the surface of things; the Unbound imagines possibilities beyond the limits of things. This shared use of imagination as a serious tool connects you.`
+        explanation: `Both of you use imagination seriously—not as escape but as exploration. The Deep imagines possibilities beneath the surface of things; the Unbound imagines possibilities beyond the limits of things. This shared use of imagination as a serious tool connects you.`
       },
       {
         point: "Beyond the conventional",
-        explanation: `Neither of you is satisfied with ordinary answers to extraordinary questions. The Questioner keeps questioning when others would stop; the Unbound keeps reaching when others would settle. You both understand that the most important truths might lie outside conventional territory.`
+        explanation: `Neither of you is satisfied with ordinary answers to extraordinary questions. The Deep keeps questioning when others would stop; the Unbound keeps reaching when others would settle. You both understand that the most important truths might lie outside conventional territory.`
       }
     ],
 
     clash: [
       {
         point: "Depth vs. transcendence",
-        explanation: `The Questioner goes down—into complexity, nuance, the depths of a question. The Unbound goes out—past limits, toward possibilities that don't exist yet. These movements aren't opposed, but they're different. When your explorations diverge, which direction do you follow? Whose unmapped territory gets explored?`
+        explanation: `The Deep goes down—into complexity, nuance, the depths of a question. The Unbound goes out—past limits, toward possibilities that don't exist yet. These movements aren't opposed, but they're different. When your explorations diverge, which direction do you follow? Whose unmapped territory gets explored?`
       }
     ],
 
@@ -3858,7 +3858,7 @@ But this same mutual permission can become mutual abandonment of ground. If neit
 
     risk: `The failure mode for this pairing is beautiful disconnection from reality. If both of you only value exploration—the Swimmer's endless questions, the Unbound's limitless reaching—you can drift together into abstraction so pure it loses contact with lived life. The questions never land; the transcendence never touches ground. You might be brilliant together and also irrelevant.
 
-The deeper risk is that you enable each other's avoidance of commitment. The Questioner avoids conclusions; the Unbound avoids limits. Together, you can create a relationship that's always expanding and never settling, always exploring and never arriving. At some point, life requires choosing. If neither of you can anchor the expedition, you might explore forever without finding home.`,
+The deeper risk is that you enable each other's avoidance of commitment. The Deep avoids conclusions; the Unbound avoids limits. Together, you can create a relationship that's always expanding and never settling, always exploring and never arriving. At some point, life requires choosing. If neither of you can anchor the expedition, you might explore forever without finding home.`,
 
     question: {
       text: "What have your explorations been avoiding—and what would it mean to bring your discoveries back to the ordinary life you share?",
