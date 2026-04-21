@@ -821,9 +821,9 @@ export const pairDynamics: Record<string, string> = {
   "alive+conscience": "One wants to feel everything. The other keeps asking: but should we?",
 
   // Presence tensions
-  "presence+unbound": "The Keeper stays embodied. The Unbound wants to transcend. They're arguing about what it means to be here.",
+  "presence+unbound": "The Keeper stays embodied. The Transcendent wants to transcend. They're arguing about what it means to be here.",
 
-  // Swimmer tensions
+  // Deep tensions
   "mender+swimmer": "The Deep lives in questions. The Mender needs to fix things. One pauses, the other acts.",
 
   // Friction tensions
@@ -846,7 +846,7 @@ export const pairDynamics: Record<string, string> = {
   "alive+unbound": "Sensation-seekers, different methods. One through the body, one past it.",
 
   // Cleareyed dynamics
-  "cleareyed+conscience": "Truth-tellers both. The Guardian watches systems. Clear-Eyed watches everything.",
+  "cleareyed+conscience": "Truth-tellers both. The Guardian watches systems. Truth-Teller watches everything.",
   "cleareyed+swimmer": "Both live in clarity, different kinds. Facts vs. questions. They respect each other.",
 
   // Rooted dynamics
@@ -856,7 +856,7 @@ export const pairDynamics: Record<string, string> = {
   // Between dynamics
   "between+swimmer": "Uncertainty specialists. Neither one is sure, and they're fine with that.",
 
-  // Shaper + Swimmer
+  // Shaper + Deep
   "shaper+swimmer": "The Builder builds. The Deep questions why. Between them, nothing goes unexamined.",
 
   // Same-archetype dynamics
@@ -1199,7 +1199,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
       themToYou: "They show you that memory can travel into the unimaginable",
     },
     question: "What from the past deserves to transcend? What should stay earthbound?",
-    warning: "The Unbound may dismiss the Keeper's treasures as weights to shed",
+    warning: "The Transcendent may dismiss the Keeper's treasures as weights to shed",
   },
   "embers+shaper": {
     thesis: "One races toward tomorrow. The other holds yesterday close. Between them, the present gets attention.",
@@ -1243,7 +1243,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
     question: "When does understanding become procrastination?",
   },
   "presence+unbound": {
-    thesis: "The Keeper stays embodied. The Unbound wants to transcend. They're arguing about what it means to be here.",
+    thesis: "The Keeper stays embodied. The Transcendent wants to transcend. They're arguing about what it means to be here.",
     align: ["You both seek truth beyond the surface", "Depth matters to both of you"],
     clash: ["One stays embodied. One wants to transcend.", "Here vs. beyond"],
     give: {
@@ -2439,7 +2439,7 @@ But occupying the same position means sharing the same relationship to honesty�
 
     dynamic: `At its core, this pairing brings together two people who see what is actually happening and say it out loud. Both of you have the rare capacity to not look away. Where others smooth edges, soften blows, and protect feelings at the cost of accuracy, you both tell the truth.
 
-The dynamic between two Clear-Eyed types is one of mutual respect for honesty. You can handle each other's truth. There's no need for diplomatic wrappers, gentle introductions, or careful timing. The other person can take it, and so can you. This creates a uniquely direct relationship: nothing gets hidden, nothing gets sugar-coated.
+The dynamic between two Truth-Teller types is one of mutual respect for honesty. You can handle each other's truth. There's no need for diplomatic wrappers, gentle introductions, or careful timing. The other person can take it, and so can you. This creates a uniquely direct relationship: nothing gets hidden, nothing gets sugar-coated.
 
 But this same directness can become its own kind of violence. You both know that honesty without tenderness is cruelty—that the way you say a thing matters as much as the thing itself. When two people share this blind spot, neither may notice when their truth-telling becomes a weapon. Your mutual clarity can create a relationship where no one's getting away with anything, including the vulnerable, uncertain parts of being human that need gentleness to emerge.`,
 
@@ -2465,7 +2465,7 @@ But this same directness can become its own kind of violence. You both know that
       },
       {
         point: "Honesty as weapon",
-        explanation: `You both know your shadow: the version of your clarity that becomes cruelty. "Just being honest" can be another way of being right. When two Clear-Eyed types pair up, you can validate each other's bluntness without checking whether it's serving truth or serving your need to be the one who sees. Your mutual directness can create a relationship where nothing tender survives.`
+        explanation: `You both know your shadow: the version of your clarity that becomes cruelty. "Just being honest" can be another way of being right. When two Truth-Teller types pair up, you can validate each other's bluntness without checking whether it's serving truth or serving your need to be the one who sees. Your mutual directness can create a relationship where nothing tender survives.`
       }
     ],
 
@@ -2474,7 +2474,7 @@ But this same directness can become its own kind of violence. You both know that
       themToYou: `They offer the same capacity back. They can handle your truth, match your directness, meet your clarity with their own. In their company, you don't have to perform gentleness you don't feel or pretend to uncertainty you've resolved. They respect your sight because they share it. That mutual respect is its own kind of intimacy.`
     },
 
-    risk: `The failure mode for two Clear-Eyed types is mutual brutality disguised as honesty. Without someone to model tenderness, you can reinforce each other's tendency to prioritize truth over care. Your relationship becomes a place where nothing is hidden—including the fact that sometimes what people need isn't clarity but kindness.
+    risk: `The failure mode for two Truth-Teller types is mutual brutality disguised as honesty. Without someone to model tenderness, you can reinforce each other's tendency to prioritize truth over care. Your relationship becomes a place where nothing is hidden—including the fact that sometimes what people need isn't clarity but kindness.
 
 The deeper risk is that you create an environment where vulnerability becomes impossible. Two truth-tellers can become so committed to seeing clearly that they leave no room for the blurry, uncertain, still-forming parts of being human. Some truths need gentleness to emerge. If your relationship is all storm and no shelter, certain things will never be said.`,
 
@@ -2871,7 +2871,7 @@ But occupying the same position means sharing the same relationship to questions
 
     dynamic: `At its core, this pairing brings together two people who can hold questions without grasping for answers. Both of you have the rare capacity to stay in uncertainty, to resist the cultural pressure toward confident resolution.
 
-The dynamic between two Swimmers is one of shared inquiry. You can question together indefinitely—diving into depths that others would find frightening, holding ambiguity that others would need to resolve. Neither of you rushes the other toward conclusions.
+The dynamic between two Deeps is one of shared inquiry. You can question together indefinitely—diving into depths that others would find frightening, holding ambiguity that others would need to resolve. Neither of you rushes the other toward conclusions.
 
 But this same shared inquiry can become mutual paralysis. You both know that not-knowing can become its own cowardice—that waiting for certainty can be a way of avoiding the risk of being wrong. When two people share this blind spot, neither may push toward decision. Your mutual depth might be genuine inquiry—or might be two people using philosophical rigor as an excuse to never commit to anything.`,
 
@@ -2897,7 +2897,7 @@ But this same shared inquiry can become mutual paralysis. You both know that not
       },
       {
         point: "Questions as avoidance",
-        explanation: `You both know your shadow: the version of your inquiry that becomes paralysis. When two Swimmers pair up, you can validate each other's not-knowing without checking whether it's genuine uncertainty or fear of commitment. Your mutual depth might be wisdom—or might be two people hiding from decision in an ocean of questions.`
+        explanation: `You both know your shadow: the version of your inquiry that becomes paralysis. When two Deeps pair up, you can validate each other's not-knowing without checking whether it's genuine uncertainty or fear of commitment. Your mutual depth might be wisdom—or might be two people hiding from decision in an ocean of questions.`
       }
     ],
 
@@ -2906,9 +2906,9 @@ But this same shared inquiry can become mutual paralysis. You both know that not
       themToYou: `They offer the same companionship back. They don't rush you toward conclusions, don't judge your uncertainty, don't ask why you can't just decide. In their company, you can swim in questions without the pressure to surface. That shared depth creates a rare space for genuine inquiry.`
     },
 
-    risk: `The failure mode for two Swimmers is mutual drowning in questions. Without someone to push toward decision, you can reinforce each other's tendency to stay in uncertainty indefinitely. Your relationship becomes very thoughtful and very passive—endless inquiry that never becomes action.
+    risk: `The failure mode for two Deeps is mutual drowning in questions. Without someone to push toward decision, you can reinforce each other's tendency to stay in uncertainty indefinitely. Your relationship becomes very thoughtful and very passive—endless inquiry that never becomes action.
 
-The deeper risk is that questions become a substitute for living. Two Swimmers can become so comfortable in uncertainty that they never commit to anything—careers, relationships, positions, choices. At some point, life requires bets. If neither of you can make them, you may find yourselves still questioning while life passes you by.`,
+The deeper risk is that questions become a substitute for living. Two Deeps can become so comfortable in uncertainty that they never commit to anything—careers, relationships, positions, choices. At some point, life requires bets. If neither of you can make them, you may find yourselves still questioning while life passes you by.`,
 
     question: {
       text: "What question have you been circling together—and what would it mean to decide something, even knowing you might be wrong?",
@@ -2925,7 +2925,7 @@ But occupying the same position means sharing the same relationship to transcend
 
     dynamic: `At its core, this pairing brings together two people who imagine beyond current limits. Both of you take seriously possibilities that others find frightening or irrelevant—the uploading of consciousness, the transcendence of species, the expansion of mind past body.
 
-The dynamic between two Unbounds is one of shared vision. You can discuss posthuman futures, question the boundaries of self, explore what might lie beyond form—without having to justify why these questions matter. The other person already knows.
+The dynamic between two Transcendents is one of shared vision. You can discuss posthuman futures, question the boundaries of self, explore what might lie beyond form—without having to justify why these questions matter. The other person already knows.
 
 But this same shared vision can become mutual flight. You both know that transcendence can be another word for escape—that the desire to leave the body can mask a desire to flee human vulnerability, connection, limitation. When two people share this blind spot, neither may notice when reaching for beyond has become running from here. Your mutual vision might be genuine exploration—or might be two people who can't be present to the particular, limited, embodied life they're actually living.`,
 
@@ -2951,7 +2951,7 @@ But this same shared vision can become mutual flight. You both know that transce
       },
       {
         point: "Transcendence as flight",
-        explanation: `You both know your shadow: the version of your reaching that's actually running. When two Unbounds pair up, you can validate each other's yearning for beyond without checking whether it's genuine exploration or escape from intimacy, vulnerability, the difficult particulars of embodied life. Your mutual vision might be expansion—or might be two people who can't stay present to what's here.`
+        explanation: `You both know your shadow: the version of your reaching that's actually running. When two Transcendents pair up, you can validate each other's yearning for beyond without checking whether it's genuine exploration or escape from intimacy, vulnerability, the difficult particulars of embodied life. Your mutual vision might be expansion—or might be two people who can't stay present to what's here.`
       }
     ],
 
@@ -2960,9 +2960,9 @@ But this same shared vision can become mutual flight. You both know that transce
       themToYou: `They offer the same understanding back. They don't judge your yearning, don't ask why you can't just be present, don't treat your interest in transcendence as avoidance. In their company, you can reach past edges together. That shared reaching creates a particular kind of companionship—two people exploring the same beyond.`
     },
 
-    risk: `The failure mode for two Unbounds is mutual flight from the embodied life you're actually living. Without someone grounded enough to call you back, you can reinforce each other's tendency to dream of beyond while neglecting here. Your relationship becomes a shared escape pod that never lands anywhere.
+    risk: `The failure mode for two Transcendents is mutual flight from the embodied life you're actually living. Without someone grounded enough to call you back, you can reinforce each other's tendency to dream of beyond while neglecting here. Your relationship becomes a shared escape pod that never lands anywhere.
 
-The deeper risk is that transcendence becomes a substitute for intimacy. Two Unbounds can become so focused on what's beyond that they never actually meet in the present—two people reaching past each other toward something that doesn't require the vulnerability of actually being here together. The body you're both eager to transcend is also the body that feels connection. Some things may not translate to the beyond you're reaching for.`,
+The deeper risk is that transcendence becomes a substitute for intimacy. Two Transcendents can become so focused on what's beyond that they never actually meet in the present—two people reaching past each other toward something that doesn't require the vulnerability of actually being here together. The body you're both eager to transcend is also the body that feels connection. Some things may not translate to the beyond you're reaching for.`,
 
     question: {
       text: "What would ground you both without limiting you—and what intimacy might you be avoiding by always reaching for beyond?",
@@ -3138,54 +3138,54 @@ The deeper risk is that you stop being curious about each other's perspective. T
   "embers+unbound": {
     thesis: "The guardian of memory meets the dreamer of transcendence. One looks back to preserve; the other looks forward to leave everything behind.",
 
-    distanceAnalysis: `The Keeper and The Transcendent represent opposite orientations toward human inheritance. The Keeper believes that the accumulated wisdom of generations—the traditions, practices, memories, and meanings that have been passed down—is precious and must be tended. The Unbound believes that the boundaries of what we are, including the boundaries of inherited identity, are limitations to be transcended rather than treasures to be preserved.
+    distanceAnalysis: `The Keeper and The Transcendent represent opposite orientations toward human inheritance. The Keeper believes that the accumulated wisdom of generations—the traditions, practices, memories, and meanings that have been passed down—is precious and must be tended. The Transcendent believes that the boundaries of what we are, including the boundaries of inherited identity, are limitations to be transcended rather than treasures to be preserved.
 
-This distance runs deeper than preference. The Keeper's entire project depends on valuing continuity—the thread that connects ancestor to descendant, past to future, what was to what is. The Unbound's entire project depends on valuing transcendence—the possibility of becoming something so different that the categories of the past no longer apply. Each finds the other's deepest commitment fundamentally misguided: the Keeper sees the Unbound as recklessly discarding what cannot be recovered; the Unbound sees the Keeper as lovingly preserving what ought to be outgrown.`,
+This distance runs deeper than preference. The Keeper's entire project depends on valuing continuity—the thread that connects ancestor to descendant, past to future, what was to what is. The Transcendent's entire project depends on valuing transcendence—the possibility of becoming something so different that the categories of the past no longer apply. Each finds the other's deepest commitment fundamentally misguided: the Keeper sees the Transcendent as recklessly discarding what cannot be recovered; the Transcendent sees the Keeper as lovingly preserving what ought to be outgrown.`,
 
-    dynamic: `At its core, this pairing creates a fundamental argument about what deserves to survive as humans change. The Keeper tends embers—keeps alive the wisdom, practices, and meanings that might otherwise be lost. The Unbound imagines futures where the very concept of "embers" might not translate—where consciousness runs on different substrates, identity works differently, and the human form is optional.
+    dynamic: `At its core, this pairing creates a fundamental argument about what deserves to survive as humans change. The Keeper tends embers—keeps alive the wisdom, practices, and meanings that might otherwise be lost. The Transcendent imagines futures where the very concept of "embers" might not translate—where consciousness runs on different substrates, identity works differently, and the human form is optional.
 
-The dynamic between you is one of deep mutual incomprehension that can become either contempt or fascination. The Keeper looks at the Unbound and sees someone so eager to escape that they'll throw away everything that makes us human. What good is transcendence if it means forgetting who we were? The Unbound looks at the Keeper and sees someone so attached to what was that they can't imagine what could be. What good is memory if it chains us to limitations we could surpass?
+The dynamic between you is one of deep mutual incomprehension that can become either contempt or fascination. The Keeper looks at the Transcendent and sees someone so eager to escape that they'll throw away everything that makes us human. What good is transcendence if it means forgetting who we were? The Transcendent looks at the Keeper and sees someone so attached to what was that they can't imagine what could be. What good is memory if it chains us to limitations we could surpass?
 
-But genuine dialogue between these positions is rare and valuable precisely because it's difficult. The Keeper, challenged by the Unbound, must ask: what in my treasured inheritance is genuinely wise, and what is merely familiar? What would I want to survive into any future worth having? The Unbound, challenged by the Keeper, must ask: what might I be losing in my rush toward transcendence? What wisdom have I dismissed as limitation that might actually be worth carrying forward?`,
+But genuine dialogue between these positions is rare and valuable precisely because it's difficult. The Keeper, challenged by the Transcendent, must ask: what in my treasured inheritance is genuinely wise, and what is merely familiar? What would I want to survive into any future worth having? The Transcendent, challenged by the Keeper, must ask: what might I be losing in my rush toward transcendence? What wisdom have I dismissed as limitation that might actually be worth carrying forward?`,
 
     align: [
       {
         point: "Both take the long view",
-        explanation: `The Keeper thinks in generations—they're tending embers so fires can be relit long after they're gone. The Unbound thinks in evolutionary timescales—they're imagining what we might become across thousands or millions of years. Both of you are oriented toward something larger than the individual lifespan, something that extends beyond your personal experience. This shared temporal scope creates unexpected common ground: you're both thinking about what endures, even if you disagree about what should.`
+        explanation: `The Keeper thinks in generations—they're tending embers so fires can be relit long after they're gone. The Transcendent thinks in evolutionary timescales—they're imagining what we might become across thousands or millions of years. Both of you are oriented toward something larger than the individual lifespan, something that extends beyond your personal experience. This shared temporal scope creates unexpected common ground: you're both thinking about what endures, even if you disagree about what should.`
       },
       {
         point: "Both take inheritance seriously",
-        explanation: `The Keeper values inheritance enough to preserve it. The Unbound values it enough to carefully consider what to transcend. Neither of you treats the human past as irrelevant—you just have opposite responses to it. This shared seriousness about what we've received means that your arguments, when you have them, are substantive rather than dismissive. You're both engaging with the question of what our inheritance means.`
+        explanation: `The Keeper values inheritance enough to preserve it. The Transcendent values it enough to carefully consider what to transcend. Neither of you treats the human past as irrelevant—you just have opposite responses to it. This shared seriousness about what we've received means that your arguments, when you have them, are substantive rather than dismissive. You're both engaging with the question of what our inheritance means.`
       }
     ],
 
     clash: [
       {
         point: "What 'human' means",
-        explanation: `The Keeper believes being human means being connected to what came before—that identity is woven from inherited meanings, practices, and memories. The Unbound believes being human might be a starting point rather than a destination—that our identity can expand beyond its current form. When the Keeper says "this is what makes us human," the Unbound says "why should we be limited to that?" This is a fundamental disagreement about the nature of identity itself.`
+        explanation: `The Keeper believes being human means being connected to what came before—that identity is woven from inherited meanings, practices, and memories. The Transcendent believes being human might be a starting point rather than a destination—that our identity can expand beyond its current form. When the Keeper says "this is what makes us human," the Transcendent says "why should we be limited to that?" This is a fundamental disagreement about the nature of identity itself.`
       },
       {
         point: "The weight of the past",
-        explanation: `The Keeper experiences the past as treasure—accumulated wisdom that must be carefully preserved and transmitted. The Unbound experiences the past as weight—accumulated limitations that must be carefully examined and potentially transcended. When the Keeper celebrates preservation, the Unbound sees attachment. When the Unbound celebrates transcendence, the Keeper sees abandonment.`
+        explanation: `The Keeper experiences the past as treasure—accumulated wisdom that must be carefully preserved and transmitted. The Transcendent experiences the past as weight—accumulated limitations that must be carefully examined and potentially transcended. When the Keeper celebrates preservation, the Transcendent sees attachment. When the Transcendent celebrates transcendence, the Keeper sees abandonment.`
       },
       {
         point: "What gets lost",
-        explanation: `The Keeper fears that the Unbound will discard things that can never be recovered—that in the rush toward transcendence, irreplaceable wisdom will be thrown away. The Unbound fears that the Keeper will preserve things that prevent becoming—that in the devotion to what was, the possibility of what could be gets suffocated. Both fears are legitimate. Both losses are real possibilities.`
+        explanation: `The Keeper fears that the Transcendent will discard things that can never be recovered—that in the rush toward transcendence, irreplaceable wisdom will be thrown away. The Transcendent fears that the Keeper will preserve things that prevent becoming—that in the devotion to what was, the possibility of what could be gets suffocated. Both fears are legitimate. Both losses are real possibilities.`
       }
     ],
 
     give: {
-      youToThem: `If you're the Keeper, you offer the Unbound something to remember when they transcend. Your archive isn't a chain—it's a record of what consciousness has already discovered, already felt, already tried. You offer the possibility that transcendence doesn't have to mean forgetting, that whatever we become might be richer for carrying forward what we've learned. You're not trying to prevent their reaching; you're trying to ensure they bring something worth carrying.`,
-      themToYou: `If you're the Unbound, you offer the Keeper liberation from the weight of preservation. Not everything old deserves to survive—some traditions were always unjust, some memories are chains, some inherited wisdom is actually inherited limitation. You offer the possibility that letting go can be faithful rather than faithless, that the best way to honor the fire might sometimes be to let it transform into something new rather than tending the same embers forever.`
+      youToThem: `If you're the Keeper, you offer the Transcendent something to remember when they transcend. Your archive isn't a chain—it's a record of what consciousness has already discovered, already felt, already tried. You offer the possibility that transcendence doesn't have to mean forgetting, that whatever we become might be richer for carrying forward what we've learned. You're not trying to prevent their reaching; you're trying to ensure they bring something worth carrying.`,
+      themToYou: `If you're the Transcendent, you offer the Keeper liberation from the weight of preservation. Not everything old deserves to survive—some traditions were always unjust, some memories are chains, some inherited wisdom is actually inherited limitation. You offer the possibility that letting go can be faithful rather than faithless, that the best way to honor the fire might sometimes be to let it transform into something new rather than tending the same embers forever.`
     },
 
-    risk: `The failure mode of this pairing is dismissal masquerading as philosophy. The Keeper decides the Unbound is simply running from real life—their transcendence is just escape dressed up as evolution. The Unbound decides the Keeper is simply afraid of change—their preservation is just fear dressed up as wisdom. Once you've dismissed each other this way, genuine dialogue becomes impossible.
+    risk: `The failure mode of this pairing is dismissal masquerading as philosophy. The Keeper decides the Transcendent is simply running from real life—their transcendence is just escape dressed up as evolution. The Transcendent decides the Keeper is simply afraid of change—their preservation is just fear dressed up as wisdom. Once you've dismissed each other this way, genuine dialogue becomes impossible.
 
-The deeper risk is that you stop asking the questions that only arise in this tension. The Keeper stops asking "what should be allowed to change?" The Unbound stops asking "what should be preserved across any change?" These are crucial questions that neither of you can answer alone, and they only emerge when you're genuinely engaged with someone who embodies the opposite orientation.`,
+The deeper risk is that you stop asking the questions that only arise in this tension. The Keeper stops asking "what should be allowed to change?" The Transcendent stops asking "what should be preserved across any change?" These are crucial questions that neither of you can answer alone, and they only emerge when you're genuinely engaged with someone who embodies the opposite orientation.`,
 
     question: {
       text: "If you could preserve exactly one thing through any transformation—one insight, one practice, one piece of wisdom—what would it be, and how would you know it was worth carrying?",
-      framing: `This question matters because it forces both perspectives into genuine dialogue. The Keeper must select what's most essential rather than preserving everything. The Unbound must admit that something is worth preserving rather than transcending everything. The answer requires both of you to think carefully about value.`
+      framing: `This question matters because it forces both perspectives into genuine dialogue. The Keeper must select what's most essential rather than preserving everything. The Transcendent must admit that something is worth preserving rather than transcending everything. The answer requires both of you to think carefully about value.`
     }
   },
 
@@ -3354,54 +3354,54 @@ The deeper risk is that you reinforce each other's weaknesses by rejecting each 
   "rooted+unbound": {
     thesis: "Earthbound stillness meets the dreamer who would leave the body behind. One chose to stay; the other yearns to go.",
 
-    distanceAnalysis: `The Rooted and The Transcendent occupy perhaps the most extreme philosophical distance in this system: the fully embodied versus the aspiring transcendent. The Rooted has made peace with limits—with the body, the earth, the constraints of physical existence. They've concluded that the deepest wisdom isn't found by reaching beyond but by settling in. The Unbound experiences those same limits as starting points—boundaries to be explored, questioned, eventually transcended. They've concluded that the deepest possibilities lie beyond the forms we currently inhabit.
+    distanceAnalysis: `The Rooted and The Transcendent occupy perhaps the most extreme philosophical distance in this system: the fully embodied versus the aspiring transcendent. The Rooted has made peace with limits—with the body, the earth, the constraints of physical existence. They've concluded that the deepest wisdom isn't found by reaching beyond but by settling in. The Transcendent experiences those same limits as starting points—boundaries to be explored, questioned, eventually transcended. They've concluded that the deepest possibilities lie beyond the forms we currently inhabit.
 
-This distance reflects fundamentally different answers to the question of what human existence is for. The Rooted believes existence is for presence—for being fully here, now, in this body, on this earth. The Unbound believes existence is for becoming—for evolving toward forms we can barely imagine, for transcending the categories that currently define us. Each finds the other's answer not just different but fundamentally confused about what matters.`,
+This distance reflects fundamentally different answers to the question of what human existence is for. The Rooted believes existence is for presence—for being fully here, now, in this body, on this earth. The Transcendent believes existence is for becoming—for evolving toward forms we can barely imagine, for transcending the categories that currently define us. Each finds the other's answer not just different but fundamentally confused about what matters.`,
 
-    dynamic: `At its core, this pairing creates an argument about the nature and value of limits. The Rooted has found peace within limits; the Unbound seeks peace beyond them. The Rooted sees the body as home; the Unbound sees it as starting point. The Rooted values presence in this world; the Unbound imagines worlds beyond this one.
+    dynamic: `At its core, this pairing creates an argument about the nature and value of limits. The Rooted has found peace within limits; the Transcendent seeks peace beyond them. The Rooted sees the body as home; the Transcendent sees it as starting point. The Rooted values presence in this world; the Transcendent imagines worlds beyond this one.
 
-The dynamic between you is one of fundamental mutual incomprehension that can become either deep frustration or unexpected fascination. The Rooted looks at the Unbound and sees someone fleeing—someone so uncomfortable with the actual conditions of human life that they've constructed elaborate fantasies of escape. The Unbound looks at the Rooted and sees someone stuck—someone so attached to their current form that they can't imagine becoming anything more.
+The dynamic between you is one of fundamental mutual incomprehension that can become either deep frustration or unexpected fascination. The Rooted looks at the Transcendent and sees someone fleeing—someone so uncomfortable with the actual conditions of human life that they've constructed elaborate fantasies of escape. The Transcendent looks at the Rooted and sees someone stuck—someone so attached to their current form that they can't imagine becoming anything more.
 
-But this incomprehension can also become illumination. The Rooted, in dialogue with the Unbound, confronts the question: is my stillness genuine wisdom, or am I afraid of what I might become? The Unbound, in dialogue with the Rooted, confronts the question: is my reaching genuine vision, or am I running from what I already am? These questions only arise when you're genuinely engaged with someone who has chosen the opposite path.`,
+But this incomprehension can also become illumination. The Rooted, in dialogue with the Transcendent, confronts the question: is my stillness genuine wisdom, or am I afraid of what I might become? The Transcendent, in dialogue with the Rooted, confronts the question: is my reaching genuine vision, or am I running from what I already am? These questions only arise when you're genuinely engaged with someone who has chosen the opposite path.`,
 
     align: [
       {
         point: "Both have thought carefully about what they want",
-        explanation: `The Rooted didn't fall into stillness accidentally; they chose it after encountering alternatives. The Unbound didn't dream of transcendence naively; they've grappled with what staying would mean. Both of you have examined your position rather than simply accepting it. This shared philosophical seriousness creates respect across disagreement.`
+        explanation: `The Rooted didn't fall into stillness accidentally; they chose it after encountering alternatives. The Transcendent didn't dream of transcendence naively; they've grappled with what staying would mean. Both of you have examined your position rather than simply accepting it. This shared philosophical seriousness creates respect across disagreement.`
       },
       {
         point: "Both are responding to the same question",
-        explanation: `At the deepest level, you're both responding to the fundamental question of human existence: given that we're embodied beings with limits, how should we relate to those limits? The Rooted says "embrace them." The Unbound says "transcend them." These are opposite answers, but they're answers to the same question—which means you're engaged in the same conversation, even if you've reached different conclusions.`
+        explanation: `At the deepest level, you're both responding to the fundamental question of human existence: given that we're embodied beings with limits, how should we relate to those limits? The Rooted says "embrace them." The Transcendent says "transcend them." These are opposite answers, but they're answers to the same question—which means you're engaged in the same conversation, even if you've reached different conclusions.`
       }
     ],
 
     clash: [
       {
         point: "The value of embodiment",
-        explanation: `The Rooted sees embodiment as the ground of meaning—the body isn't a prison but a home, and the deepest experiences are the ones available to embodied beings. The Unbound sees embodiment as a constraint—valuable for now, but not the final word on what we can be or experience. This isn't a difference that can be split down the middle. Either the body is the site of meaning or it's a waystation.`
+        explanation: `The Rooted sees embodiment as the ground of meaning—the body isn't a prison but a home, and the deepest experiences are the ones available to embodied beings. The Transcendent sees embodiment as a constraint—valuable for now, but not the final word on what we can be or experience. This isn't a difference that can be split down the middle. Either the body is the site of meaning or it's a waystation.`
       },
       {
         point: "The meaning of 'beyond'",
-        explanation: `When the Unbound talks about going beyond current limits, the Rooted hears escape—fleeing from the difficult work of being present here. When the Rooted talks about staying with what is, the Unbound hears stagnation—refusing the call to become more than we currently are. Neither experiences the other's "beyond" or "here" the way it's intended.`
+        explanation: `When the Transcendent talks about going beyond current limits, the Rooted hears escape—fleeing from the difficult work of being present here. When the Rooted talks about staying with what is, the Transcendent hears stagnation—refusing the call to become more than we currently are. Neither experiences the other's "beyond" or "here" the way it's intended.`
       },
       {
         point: "What we're for",
-        explanation: `The Rooted believes human existence is for presence—for being here fully, which requires accepting limits rather than transcending them. The Unbound believes human existence is for becoming—for evolving toward possibilities we can barely imagine, which requires transcending limits rather than accepting them. This is a fundamental disagreement about the purpose of being alive.`
+        explanation: `The Rooted believes human existence is for presence—for being here fully, which requires accepting limits rather than transcending them. The Transcendent believes human existence is for becoming—for evolving toward possibilities we can barely imagine, which requires transcending limits rather than accepting them. This is a fundamental disagreement about the purpose of being alive.`
       }
     ],
 
     give: {
-      youToThem: `If you're The Rooted, you offer the Unbound an anchor. Their reaching toward transcendence is real, but what grounds it? What gives their aspiration meaning? You model the possibility that there's something worth staying for—that the body they want to transcend is also capable of experiences that might not translate to whatever comes next. You're not trying to stop their reaching; you're asking what they're reaching from.`,
+      youToThem: `If you're The Rooted, you offer the Transcendent an anchor. Their reaching toward transcendence is real, but what grounds it? What gives their aspiration meaning? You model the possibility that there's something worth staying for—that the body they want to transcend is also capable of experiences that might not translate to whatever comes next. You're not trying to stop their reaching; you're asking what they're reaching from.`,
       themToYou: `If you're The Transcendent, you offer the Rooted a challenge: is your stillness peace or limitation? You model the possibility that human existence isn't the final word—that the contentment they've found might be one station on a longer journey rather than the destination itself. You're not dismissing what they've achieved; you're asking whether it's everything they could become.`
     },
 
-    risk: `The failure mode of this pairing is contempt on both sides. The Rooted decides the Unbound is fundamentally unwell—someone so uncomfortable in their own skin that they've invented philosophical justifications for escape. The Unbound decides the Rooted is fundamentally limited—someone so afraid of growth that they've invented philosophical justifications for staying small. Once contempt sets in, the productive tension becomes destructive rejection.
+    risk: `The failure mode of this pairing is contempt on both sides. The Rooted decides the Transcendent is fundamentally unwell—someone so uncomfortable in their own skin that they've invented philosophical justifications for escape. The Transcendent decides the Rooted is fundamentally limited—someone so afraid of growth that they've invented philosophical justifications for staying small. Once contempt sets in, the productive tension becomes destructive rejection.
 
-The deeper risk is that you stop learning from each other's perspective. The Rooted needs the Unbound's challenge to ensure their stillness is genuine peace rather than comfortable stagnation. The Unbound needs the Rooted's challenge to ensure their transcendence is genuine vision rather than disguised flight. Without this mutual challenge, you each become more extreme and less examined.`,
+The deeper risk is that you stop learning from each other's perspective. The Rooted needs the Transcendent's challenge to ensure their stillness is genuine peace rather than comfortable stagnation. The Transcendent needs the Rooted's challenge to ensure their transcendence is genuine vision rather than disguised flight. Without this mutual challenge, you each become more extreme and less examined.`,
 
     question: {
       text: "What experience is only possible in a body—and what experience might be possible beyond one? How would you know the difference matters?",
-      framing: `This question matters because it asks both of you to take the other's perspective seriously. The Rooted must consider what might be lost by never reaching; the Unbound must consider what might be lost by always leaving. Neither can answer alone.`
+      framing: `This question matters because it asks both of you to take the other's perspective seriously. The Rooted must consider what might be lost by never reaching; the Transcendent must consider what might be lost by always leaving. Neither can answer alone.`
     }
   },
 
@@ -3515,24 +3515,24 @@ The deeper risk is that you reinforce each other's comfortable positions rather 
   "alive+unbound": {
     thesis: "Sensory intensity meets transcendent vision—two ways of reaching beyond ordinary experience. Beautiful shared adventures, but who tends the ordinary life you're both escaping?",
 
-    distanceAnalysis: `When The Alive meets The Transcendent, the philosophical distance between you is small. You're both reaching beyond the ordinary, beyond the moderate, beyond the safe middle. The Alive type reaches through sensation—more experience, deeper feeling, fuller presence to what's here. The Unbound type reaches through transcendence—beyond current limits, past the boundaries of self and body. You're both expansive.
+    distanceAnalysis: `When The Alive meets The Transcendent, the philosophical distance between you is small. You're both reaching beyond the ordinary, beyond the moderate, beyond the safe middle. The Alive type reaches through sensation—more experience, deeper feeling, fuller presence to what's here. The Transcendent type reaches through transcendence—beyond current limits, past the boundaries of self and body. You're both expansive.
 
 This shared expansiveness creates immediate recognition. Neither of you is satisfied with the normal operating parameters of human experience. But your expansions point in different directions—one deeper into embodiment, one past it. This difference matters less than you might think, because you both understand the hunger for more.`,
 
-    dynamic: `At its core, this pairing brings together two forms of reaching past limits. The Alive type wants to feel everything the body can feel; the Unbound type wants to become everything the self can become. Both of you are oriented toward intensity, expansion, the edges of human experience.
+    dynamic: `At its core, this pairing brings together two forms of reaching past limits. The Alive type wants to feel everything the body can feel; the Transcendent type wants to become everything the self can become. Both of you are oriented toward intensity, expansion, the edges of human experience.
 
-The dynamic between you is one of mutual permission. The Alive type doesn't judge the Unbound's desire to transcend; the Unbound doesn't judge the Alive's hunger for sensation. You both understand wanting more than ordinary life offers. This creates a generous space where neither has to defend their appetite.
+The dynamic between you is one of mutual permission. The Alive type doesn't judge the Transcendent's desire to transcend; the Transcendent doesn't judge the Alive's hunger for sensation. You both understand wanting more than ordinary life offers. This creates a generous space where neither has to defend their appetite.
 
 But this mutual permission can enable escape. If both of you are always reaching for more—whether through sensation or transcendence—who tends the ordinary life that supports your adventures? Who does the dishes, pays the bills, shows up for the unglamorous moments? Your shared expansiveness might be wisdom or might be coordinated flight from what's difficult about being human.`,
 
     align: [
       {
         point: "Hunger for more",
-        explanation: `Neither of you is satisfied with moderate experience. The Alive type wants more sensation; the Unbound wants more consciousness. Both of you look at ordinary human life and ask "is this all there is?" This shared hunger creates immediate understanding—you both know what it's like to want what others seem content without.`
+        explanation: `Neither of you is satisfied with moderate experience. The Alive type wants more sensation; the Transcendent wants more consciousness. Both of you look at ordinary human life and ask "is this all there is?" This shared hunger creates immediate understanding—you both know what it's like to want what others seem content without.`
       },
       {
         point: "Comfort with intensity",
-        explanation: `Both of you can handle experiences that would overwhelm others. The Alive type can hold overwhelming sensation; the Unbound can hold overwhelming expansion. This shared capacity for intensity means you can accompany each other into territories that would leave more moderate people behind.`
+        explanation: `Both of you can handle experiences that would overwhelm others. The Alive type can hold overwhelming sensation; the Transcendent can hold overwhelming expansion. This shared capacity for intensity means you can accompany each other into territories that would leave more moderate people behind.`
       },
       {
         point: "Rejection of the ordinary",
@@ -3543,16 +3543,16 @@ But this mutual permission can enable escape. If both of you are always reaching
     clash: [
       {
         point: "Body as destination vs. waystation",
-        explanation: `The Alive type sees the body as the primary instrument for experiencing reality—more senses, more feeling, more embodiment is the path to fulfillment. The Unbound sees the body as a starting point to be transcended—the upload, the expansion of consciousness past physical limits. When push comes to shove, you're heading in opposite directions even though you're both heading somewhere.`
+        explanation: `The Alive type sees the body as the primary instrument for experiencing reality—more senses, more feeling, more embodiment is the path to fulfillment. The Transcendent sees the body as a starting point to be transcended—the upload, the expansion of consciousness past physical limits. When push comes to shove, you're heading in opposite directions even though you're both heading somewhere.`
       },
       {
         point: "Present vs. future",
-        explanation: `The Alive type is fundamentally present-oriented—this sensation, this moment, this experience. The Unbound is fundamentally future-oriented—what we might become, what consciousness might grow into. Your adventures together might pull in different directions: deeper into now vs. further into possibility.`
+        explanation: `The Alive type is fundamentally present-oriented—this sensation, this moment, this experience. The Transcendent is fundamentally future-oriented—what we might become, what consciousness might grow into. Your adventures together might pull in different directions: deeper into now vs. further into possibility.`
       }
     ],
 
     give: {
-      youToThem: `If you're The Alive, you offer the Unbound grounding in embodiment. Their vision of transcendence is beautiful, but what are they transcending from? You model the richness available in the body, the consciousness that's possible right here. You help them feel what they might be too eager to leave behind.`,
+      youToThem: `If you're The Alive, you offer the Transcendent grounding in embodiment. Their vision of transcendence is beautiful, but what are they transcending from? You model the richness available in the body, the consciousness that's possible right here. You help them feel what they might be too eager to leave behind.`,
       themToYou: `If you're The Transcendent, you offer the Alive type vision beyond sensation. Their hunger for experience is powerful, but is experience all there is? You model the possibility that consciousness itself might expand, that there might be ways of being that don't depend on a body experiencing sensations. You expand their horizon.`
     },
 
@@ -3769,96 +3769,96 @@ The deeper risk is that you create a beautiful monument and forget to live in it
   "cleareyed+swimmer": {
     thesis: "Two truth-seekers with different methods—one sees directly, one questions endlessly. Easy resonance in shared commitment to reality, but who decides when truth has been found?",
 
-    distanceAnalysis: `When The Truth-Teller meets The Deep, you're both oriented toward truth. The Clear-Eyed type pursues truth through direct seeing—they look at what's there and name it. The Deep pursues truth through questions—they explore beneath surfaces, holding uncertainty while insight develops. You're both committed to reality over comfortable illusion.
+    distanceAnalysis: `When The Truth-Teller meets The Deep, you're both oriented toward truth. The Truth-Teller type pursues truth through direct seeing—they look at what's there and name it. The Deep pursues truth through questions—they explore beneath surfaces, holding uncertainty while insight develops. You're both committed to reality over comfortable illusion.
 
 This shared commitment to truth creates immediate recognition. Neither of you accepts easy answers. Neither of you chooses comfort over accuracy. You both understand that knowing requires courage—whether that's the courage to see clearly or the courage to keep asking. In each other, you find a fellow traveler toward what's real.`,
 
-    dynamic: `At its core, this pairing brings together two forms of truth-seeking. The Clear-Eyed type cuts through confusion with direct vision; the Swimmer moves through confusion with patient inquiry. Together, you might find a fuller picture than either could alone—the Clear-Eyed's sight informed by the Swimmer's depth, the Swimmer's questions sharpened by the Clear-Eyed's clarity.
+    dynamic: `At its core, this pairing brings together two forms of truth-seeking. The Truth-Teller type cuts through confusion with direct vision; the Deep moves through confusion with patient inquiry. Together, you might find a fuller picture than either could alone—the Truth-Teller's sight informed by the Deep's depth, the Deep's questions sharpened by the Truth-Teller's clarity.
 
-The dynamic between you is one of complementary investigation. The Clear-Eyed says what they see; the Swimmer asks what hasn't been seen yet. Neither dismisses the other's method. This creates productive inquiry where direct vision and persistent questioning work together.
+The dynamic between you is one of complementary investigation. The Truth-Teller says what they see; the Deep asks what hasn't been seen yet. Neither dismisses the other's method. This creates productive inquiry where direct vision and persistent questioning work together.
 
-But this same complementarity can create tension around closure. The Clear-Eyed type tends toward conclusion—they see, they speak, they move on. The Deep tends toward continuation—there's always another question, another depth to explore. Who decides when truth has been found? Your shared commitment to reality might not translate to shared timing about when investigation ends.`,
+But this same complementarity can create tension around closure. The Truth-Teller type tends toward conclusion—they see, they speak, they move on. The Deep tends toward continuation—there's always another question, another depth to explore. Who decides when truth has been found? Your shared commitment to reality might not translate to shared timing about when investigation ends.`,
 
     align: [
       {
         point: "Truth over comfort",
-        explanation: `Both of you have chosen to face what's real rather than what's pleasant. The Clear-Eyed won't look away from uncomfortable truths; the Swimmer won't stop questioning when questions become difficult. This shared prioritization of truth creates a foundation of mutual respect.`
+        explanation: `Both of you have chosen to face what's real rather than what's pleasant. The Truth-Teller won't look away from uncomfortable truths; the Deep won't stop questioning when questions become difficult. This shared prioritization of truth creates a foundation of mutual respect.`
       },
       {
         point: "Depth matters",
-        explanation: `Neither of you is satisfied with surface appearances. The Clear-Eyed sees through illusions to what's actually there; the Swimmer dives beneath surfaces to what lies hidden. This shared commitment to depth means your conversations can go places that more superficial pairs wouldn't reach.`
+        explanation: `Neither of you is satisfied with surface appearances. The Truth-Teller sees through illusions to what's actually there; the Deep dives beneath surfaces to what lies hidden. This shared commitment to depth means your conversations can go places that more superficial pairs wouldn't reach.`
       },
       {
         point: "Courage in inquiry",
-        explanation: `Both of you understand that truth-seeking requires bravery. The Clear-Eyed must have courage to say what they see; the Swimmer must have courage to stay in uncertainty. You recognize each other's bravery because you share it, even in different forms.`
+        explanation: `Both of you understand that truth-seeking requires bravery. The Truth-Teller must have courage to say what they see; the Deep must have courage to stay in uncertainty. You recognize each other's bravery because you share it, even in different forms.`
       }
     ],
 
     clash: [
       {
         point: "Certainty vs. inquiry",
-        explanation: `The Clear-Eyed type tends toward conclusions—they see clearly and speak definitively. The Deep tends toward questions—clarity is always provisional, there's always more to explore. This can create friction: the Clear-Eyed may feel the Swimmer is avoiding conclusions; the Swimmer may feel the Clear-Eyed is closing too quickly. How do you know when investigation should end?`
+        explanation: `The Truth-Teller type tends toward conclusions—they see clearly and speak definitively. The Deep tends toward questions—clarity is always provisional, there's always more to explore. This can create friction: the Truth-Teller may feel the Deep is avoiding conclusions; the Deep may feel the Truth-Teller is closing too quickly. How do you know when investigation should end?`
       }
     ],
 
     give: {
-      youToThem: `If you're Clear-Eyed, you offer the Swimmer grounding in decision. Their inquiry is valuable, but inquiry without conclusion can become paralysis. You model the possibility of seeing clearly enough to act, of truth definite enough to stand on. You give their swimming a shore to reach.`,
-      themToYou: `If you're the Swimmer, you offer the Clear-Eyed humility about certainty. Their direct vision is powerful, but what if they're missing something? You model the possibility that truth is deeper than any single seeing, that patient questioning reveals what quick clarity misses. You give their seeing depth.`
+      youToThem: `If you're Truth-Teller, you offer the Deep grounding in decision. Their inquiry is valuable, but inquiry without conclusion can become paralysis. You model the possibility of seeing clearly enough to act, of truth definite enough to stand on. You give their swimming a shore to reach.`,
+      themToYou: `If you're the Deep, you offer the Truth-Teller humility about certainty. Their direct vision is powerful, but what if they're missing something? You model the possibility that truth is deeper than any single seeing, that patient questioning reveals what quick clarity misses. You give their seeing depth.`
     },
 
-    risk: `The failure mode for this pairing is mutual frustration about closure. The Clear-Eyed type becomes impatient with the Swimmer's endless inquiry—at some point, you have to decide what you see and act on it. The Deep becomes frustrated with the Clear-Eyed's premature certainty—how can they be so sure when there's always more to question? Without explicit negotiation about when investigation ends, you can talk past each other indefinitely.
+    risk: `The failure mode for this pairing is mutual frustration about closure. The Truth-Teller type becomes impatient with the Deep's endless inquiry—at some point, you have to decide what you see and act on it. The Deep becomes frustrated with the Truth-Teller's premature certainty—how can they be so sure when there's always more to question? Without explicit negotiation about when investigation ends, you can talk past each other indefinitely.
 
-The deeper risk is that you fail to integrate your methods. The Clear-Eyed keeps seeing without deepening; the Swimmer keeps questioning without concluding. You coexist rather than learn from each other. The real gift of this pairing—vision informed by depth, inquiry that eventually lands—goes unrealized.`,
+The deeper risk is that you fail to integrate your methods. The Truth-Teller keeps seeing without deepening; the Deep keeps questioning without concluding. You coexist rather than learn from each other. The real gift of this pairing—vision informed by depth, inquiry that eventually lands—goes unrealized.`,
 
     question: {
       text: "What truth have you both been circling—and what would it mean to name it together, even if naming feels premature?",
-      framing: `This question matters because it asks you to find shared ground between seeing and questioning. Your different methods both serve truth. What happens when you combine them—when the Clear-Eyed's sight meets the Swimmer's depth and together you speak what you've found?`
+      framing: `This question matters because it asks you to find shared ground between seeing and questioning. Your different methods both serve truth. What happens when you combine them—when the Truth-Teller's sight meets the Deep's depth and together you speak what you've found?`
     }
   },
 
   "swimmer+unbound": {
     thesis: "Two navigators of unmapped territory—the questioner of depths and the transcender of limits. Beautiful explorations together, but who anchors the expedition when both prefer the journey to arrival?",
 
-    distanceAnalysis: `When The Deep meets The Transcendent, you're both comfortable beyond conventional boundaries. The Deep is comfortable in intellectual depths—holding questions that others would resolve too quickly, exploring territory that has no map. The Unbound is comfortable in existential expansion—imagining forms of consciousness and being that transcend current limits. You're both explorers of the unknown.
+    distanceAnalysis: `When The Deep meets The Transcendent, you're both comfortable beyond conventional boundaries. The Deep is comfortable in intellectual depths—holding questions that others would resolve too quickly, exploring territory that has no map. The Transcendent is comfortable in existential expansion—imagining forms of consciousness and being that transcend current limits. You're both explorers of the unknown.
 
 This shared comfort with the unmapped creates immediate recognition. Neither of you needs solid ground to feel safe. Neither of you insists on conclusions before the inquiry is complete. You both understand that some truths can only be found by venturing beyond where others stop. In each other, you find a fellow traveler who doesn't need a destination.`,
 
-    dynamic: `At its core, this pairing brings together two forms of venturing beyond. The Deep ventures into intellectual depths; the Unbound ventures into existential possibilities. Together, you can explore territories that would terrify more grounded souls—questions without answers, possibilities without precedent.
+    dynamic: `At its core, this pairing brings together two forms of venturing beyond. The Deep ventures into intellectual depths; the Transcendent ventures into existential possibilities. Together, you can explore territories that would terrify more grounded souls—questions without answers, possibilities without precedent.
 
-The dynamic between you is one of mutual permission to keep going. The Deep doesn't ask the Unbound to come back to earth; the Unbound doesn't ask the Swimmer to surface with conclusions. You validate each other's appetite for the beyond, whatever form that takes.
+The dynamic between you is one of mutual permission to keep going. The Deep doesn't ask the Transcendent to come back to earth; the Transcendent doesn't ask the Deep to surface with conclusions. You validate each other's appetite for the beyond, whatever form that takes.
 
 But this same mutual permission can become mutual abandonment of ground. If neither of you anchors the expedition, if both of you only value the journey, you can drift together into territories so abstract they lose contact with lived reality. The depths and the heights can both become escapes from the middle—from the actual life you're living while you explore.`,
 
     align: [
       {
         point: "Comfort with the unknown",
-        explanation: `Neither of you requires certainty to feel secure. The Deep can hold questions indefinitely; the Unbound can imagine possibilities without knowing if they're achievable. This shared tolerance for uncertainty means your explorations aren't cut short by anxiety about not-knowing.`
+        explanation: `Neither of you requires certainty to feel secure. The Deep can hold questions indefinitely; the Transcendent can imagine possibilities without knowing if they're achievable. This shared tolerance for uncertainty means your explorations aren't cut short by anxiety about not-knowing.`
       },
       {
         point: "Imagination as tool",
-        explanation: `Both of you use imagination seriously—not as escape but as exploration. The Deep imagines possibilities beneath the surface of things; the Unbound imagines possibilities beyond the limits of things. This shared use of imagination as a serious tool connects you.`
+        explanation: `Both of you use imagination seriously—not as escape but as exploration. The Deep imagines possibilities beneath the surface of things; the Transcendent imagines possibilities beyond the limits of things. This shared use of imagination as a serious tool connects you.`
       },
       {
         point: "Beyond the conventional",
-        explanation: `Neither of you is satisfied with ordinary answers to extraordinary questions. The Deep keeps questioning when others would stop; the Unbound keeps reaching when others would settle. You both understand that the most important truths might lie outside conventional territory.`
+        explanation: `Neither of you is satisfied with ordinary answers to extraordinary questions. The Deep keeps questioning when others would stop; the Transcendent keeps reaching when others would settle. You both understand that the most important truths might lie outside conventional territory.`
       }
     ],
 
     clash: [
       {
         point: "Depth vs. transcendence",
-        explanation: `The Deep goes down—into complexity, nuance, the depths of a question. The Unbound goes out—past limits, toward possibilities that don't exist yet. These movements aren't opposed, but they're different. When your explorations diverge, which direction do you follow? Whose unmapped territory gets explored?`
+        explanation: `The Deep goes down—into complexity, nuance, the depths of a question. The Transcendent goes out—past limits, toward possibilities that don't exist yet. These movements aren't opposed, but they're different. When your explorations diverge, which direction do you follow? Whose unmapped territory gets explored?`
       }
     ],
 
     give: {
-      youToThem: `If you're the Swimmer, you offer the Unbound intellectual rigor. Their transcendent vision is beautiful, but is it grounded in anything? You model the possibility of exploring beyond limits while still asking hard questions, of imagination disciplined by inquiry. You give their reaching depth.`,
-      themToYou: `If you're The Transcendent, you offer the Swimmer horizon expansion. Their questioning is powerful, but questions asked within too narrow a frame miss larger possibilities. You model the possibility of questioning that includes transcendence, of depth that reaches toward the stars. You give their swimming scope.`
+      youToThem: `If you're the Deep, you offer the Transcendent intellectual rigor. Their transcendent vision is beautiful, but is it grounded in anything? You model the possibility of exploring beyond limits while still asking hard questions, of imagination disciplined by inquiry. You give their reaching depth.`,
+      themToYou: `If you're The Transcendent, you offer the Deep horizon expansion. Their questioning is powerful, but questions asked within too narrow a frame miss larger possibilities. You model the possibility of questioning that includes transcendence, of depth that reaches toward the stars. You give their swimming scope.`
     },
 
-    risk: `The failure mode for this pairing is beautiful disconnection from reality. If both of you only value exploration—the Swimmer's endless questions, the Unbound's limitless reaching—you can drift together into abstraction so pure it loses contact with lived life. The questions never land; the transcendence never touches ground. You might be brilliant together and also irrelevant.
+    risk: `The failure mode for this pairing is beautiful disconnection from reality. If both of you only value exploration—the Deep's endless questions, the Transcendent's limitless reaching—you can drift together into abstraction so pure it loses contact with lived life. The questions never land; the transcendence never touches ground. You might be brilliant together and also irrelevant.
 
-The deeper risk is that you enable each other's avoidance of commitment. The Deep avoids conclusions; the Unbound avoids limits. Together, you can create a relationship that's always expanding and never settling, always exploring and never arriving. At some point, life requires choosing. If neither of you can anchor the expedition, you might explore forever without finding home.`,
+The deeper risk is that you enable each other's avoidance of commitment. The Deep avoids conclusions; the Transcendent avoids limits. Together, you can create a relationship that's always expanding and never settling, always exploring and never arriving. At some point, life requires choosing. If neither of you can anchor the expedition, you might explore forever without finding home.`,
 
     question: {
       text: "What have your explorations been avoiding—and what would it mean to bring your discoveries back to the ordinary life you share?",
