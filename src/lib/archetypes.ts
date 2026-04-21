@@ -1199,7 +1199,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
       themToYou: "They show you that memory can travel into the unimaginable",
     },
     question: "What from the past deserves to transcend? What should stay earthbound?",
-    warning: "The Unbound may dismiss the Embers-keeper's treasures as weights to shed",
+    warning: "The Unbound may dismiss the Keeper's treasures as weights to shed",
   },
   "embers+shaper": {
     thesis: "One races toward tomorrow. The other holds yesterday close. Between them, the present gets attention.",
@@ -1210,7 +1210,7 @@ export const expandedPairDynamics: Record<string, PairDynamic> = {
       themToYou: "They remind you what you're building toward",
     },
     question: "What from the past is worth carrying into the future you're building?",
-    warning: "The Builder may dismiss what the Embers-keeper treasures",
+    warning: "The Builder may dismiss what the Keeper treasures",
   },
   "friction+unbound": {
     thesis: "One craves resistance. One transcends it. Together, they explore what difficulty is for.",
@@ -2547,7 +2547,7 @@ But occupying the same position means sharing the same relationship to the past�
 
     dynamic: `At its core, this pairing brings together two people who understand that the most dangerous thing about acceleration is amnesia. Both of you carry the conviction that memory is not nostalgia but survival. Both of you know that every generation thinks it invented its problems, and wisdom knows better.
 
-The dynamic between two Embers-keepers is one of shared preservation. You can discuss what deserves to be remembered, what was lost that shouldn't have been, what from history speaks to the present moment. The other person values the same things you've been carrying.
+The dynamic between two Keepers is one of shared preservation. You can discuss what deserves to be remembered, what was lost that shouldn't have been, what from history speaks to the present moment. The other person values the same things you've been carrying.
 
 But this same shared reverence can become mutual fortress-building. You both know that you can love what was so deeply that you become hostile to what could be. When two people share this blind spot, the archive becomes a wall against the future rather than a foundation for it. Your mutual treasuring might preserve what's worth keeping—or might preserve what's ready to be released.`,
 
@@ -2573,7 +2573,7 @@ But this same shared reverence can become mutual fortress-building. You both kno
       },
       {
         point: "The archive as fortress",
-        explanation: `You both know your shadow: the version of your preservation that becomes hostility to the new. When two Embers-keepers pair up, you can validate each other's reverence without checking whether it's become rigidity. Your shared archive might be a foundation for building—or might be a fortress that keeps the future out. Some memories become chains.`
+        explanation: `You both know your shadow: the version of your preservation that becomes hostility to the new. When two Keepers pair up, you can validate each other's reverence without checking whether it's become rigidity. Your shared archive might be a foundation for building—or might be a fortress that keeps the future out. Some memories become chains.`
       }
     ],
 
@@ -2582,7 +2582,7 @@ But this same shared reverence can become mutual fortress-building. You both kno
       themToYou: `They offer the same honoring back. They recognize your treasures, respect your preservation, understand why you've been carrying what you've been carrying. In their company, you're not stuck in the past; you're keeping it alive. That mutual recognition creates a shared archive richer than either could build alone.`
     },
 
-    risk: `The failure mode for two Embers-keepers is mutual fortress-building against change. Without someone to challenge your reverence for the past, you can reinforce each other's tendency to treat all innovation as threat, all change as loss. Your relationship becomes a museum that's very good at preserving and very bad at growing.
+    risk: `The failure mode for two Keepers is mutual fortress-building against change. Without someone to challenge your reverence for the past, you can reinforce each other's tendency to treat all innovation as threat, all change as loss. Your relationship becomes a museum that's very good at preserving and very bad at growing.
 
 The deeper risk is that your shared archive becomes a substitute for living. Two keepers of the past can become so focused on what was that they miss what is and what could be. The embers you tend are supposed to light new fires—not just glow in the dark while life moves on without you.`,
 
@@ -3719,46 +3719,46 @@ The deeper risk is that you create a cocoon that protects you from life's demand
   "embers+rooted": {
     thesis: "Two grounded keepers meeting on stable ground—the archivist of memory and the guardian of place. Easy resonance in shared solidity, but who makes sure the foundation isn't becoming a prison?",
 
-    distanceAnalysis: `When The Keeper meets The Rooted, you're both oriented toward preservation. The Embers-keeper preserves what came before—memory, tradition, the wisdom of the past. The Rooted preserves where they stand—place, position, the commitments they've made. You're both guardians against loss in a world that forgets too easily.
+    distanceAnalysis: `When The Keeper meets The Rooted, you're both oriented toward preservation. The Keeper preserves what came before—memory, tradition, the wisdom of the past. The Rooted preserves where they stand—place, position, the commitments they've made. You're both guardians against loss in a world that forgets too easily.
 
 This shared orientation toward preservation creates immediate recognition. Neither of you chases novelty. Neither of you assumes that new is better. You both understand that something valuable is lost when we're always rushing forward. In each other, you find someone who also holds on.`,
 
-    dynamic: `At its core, this pairing brings together two forms of keeping. The Embers-keeper guards the fire of memory; the Rooted guards the ground of place. Together, you create a zone of stability that most people would find constraining but you both find essential.
+    dynamic: `At its core, this pairing brings together two forms of keeping. The Keeper guards the fire of memory; the Rooted guards the ground of place. Together, you create a zone of stability that most people would find constraining but you both find essential.
 
-The dynamic between you is one of mutual valuation. The Embers-keeper values the Rooted's commitment to staying; the Rooted values the Embers-keeper's commitment to remembering. Neither dismisses the other's preservation as hoarding or stubbornness. You understand each other's holding as care.
+The dynamic between you is one of mutual valuation. The Keeper values the Rooted's commitment to staying; the Rooted values the Keeper's commitment to remembering. Neither dismisses the other's preservation as hoarding or stubbornness. You understand each other's holding as care.
 
 But this same mutual valuation can become mutual reinforcement of rigidity. If neither of you ever lets go—of memories, of positions, of the way things have been—your shared holding can become a weight. The archive and the foundation are supposed to serve life, but they can become substitutes for it.`,
 
     align: [
       {
         point: "Preservation as value",
-        explanation: `Both of you believe that holding on is sometimes the most important thing you can do. The Embers-keeper holds memory; the Rooted holds ground. In a culture that values disruption and novelty, this shared commitment to preservation connects you deeply.`
+        explanation: `Both of you believe that holding on is sometimes the most important thing you can do. The Keeper holds memory; the Rooted holds ground. In a culture that values disruption and novelty, this shared commitment to preservation connects you deeply.`
       },
       {
         point: "Skepticism of change for its own sake",
-        explanation: `Neither of you is impressed by novelty alone. The Embers-keeper knows that wisdom lives in what's been tested; the Rooted knows that stability requires staying put. You both see through the cult of the new that others worship.`
+        explanation: `Neither of you is impressed by novelty alone. The Keeper knows that wisdom lives in what's been tested; the Rooted knows that stability requires staying put. You both see through the cult of the new that others worship.`
       },
       {
         point: "Depth over breadth",
-        explanation: `Both of you prefer going deeper into what you have rather than spreading wider into what you don't. The Embers-keeper deepens into the past; the Rooted deepens into place. This shared orientation toward depth means your relationship can develop richness that more restless pairs miss.`
+        explanation: `Both of you prefer going deeper into what you have rather than spreading wider into what you don't. The Keeper deepens into the past; the Rooted deepens into place. This shared orientation toward depth means your relationship can develop richness that more restless pairs miss.`
       }
     ],
 
     clash: [
       {
         point: "Past vs. present anchoring",
-        explanation: `The Embers-keeper is anchored in time—what came before, what must be remembered. The Rooted is anchored in space—where they are, what commitments they've made. These anchors usually align, but they can diverge. When the past requires leaving the present place, or when staying put requires releasing old memories, whose anchor holds?`
+        explanation: `The Keeper is anchored in time—what came before, what must be remembered. The Rooted is anchored in space—where they are, what commitments they've made. These anchors usually align, but they can diverge. When the past requires leaving the present place, or when staying put requires releasing old memories, whose anchor holds?`
       }
     ],
 
     give: {
       youToThem: `If you're the The Keeper, you offer the Rooted historical depth. Their commitment to place is solid, but place exists in time. You connect their ground to all the ground that came before, all the people who stood where they stand. You give their rootedness roots.`,
-      themToYou: `If you're The Rooted, you offer the Embers-keeper a home for memory. Their archive is precious, but archives need places to live. You provide the stable ground where memory can be tended, the consistency that lets preservation happen. You ground their keeping.`
+      themToYou: `If you're The Rooted, you offer the Keeper a home for memory. Their archive is precious, but archives need places to live. You provide the stable ground where memory can be tended, the consistency that lets preservation happen. You ground their keeping.`
     },
 
     risk: `The failure mode for this pairing is fossilization. If both of you are committed to holding on—to memory, to place, to the way things have been—you can become so stable that nothing can grow. The past and the present merge into a single unchanging block. Who notices when your shared solidity has become rigidity? Who makes space for what wants to emerge?
 
-The deeper risk is that you create a beautiful monument and forget to live in it. Two keepers keeping together can produce impressive preservation while the actual life being preserved grows stale. The fire the Embers-keeper tends is supposed to warm people, not just glow in a museum. The ground the Rooted stands on is supposed to support growth, not just resist change.`,
+The deeper risk is that you create a beautiful monument and forget to live in it. Two keepers keeping together can produce impressive preservation while the actual life being preserved grows stale. The fire the Keeper tends is supposed to warm people, not just glow in a museum. The ground the Rooted stands on is supposed to support growth, not just resist change.`,
 
     question: {
       text: "What new thing wants to grow from your shared ground—and what old thing might need to be composted to feed it?",
