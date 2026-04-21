@@ -150,7 +150,7 @@ function generateEmailHtml({
                     </h1>
 
                     <p style="margin: 0 0 8px; font-size: 18px; color: #e8178a; font-style: italic;">
-                      They're a ${archetypeName}.
+                      They're ${archetypeName}.
                     </p>
 
                     ${archetypeTagline ? `
