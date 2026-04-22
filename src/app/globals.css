@@ -370,6 +370,16 @@ p {
   background: var(--pink);
 }
 
+/* My Utopias link - personal, so highlighted */
+.nav a.my-utopias {
+  color: var(--pink);
+  font-weight: 500;
+}
+
+.nav a.my-utopias:hover {
+  opacity: 0.8;
+}
+
 /* Nav Dropdown */
 .nav-dropdown {
   position: relative;

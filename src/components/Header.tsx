@@ -1,11 +1,20 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import MobileMenu from "./MobileMenu";
 
 export default function Header() {
   const pathname = usePathname();
+  const [hasQuizId, setHasQuizId] = useState(false);
+
+  useEffect(() => {
+    const userId = localStorage.getItem("quiz-user-id");
+    setHasQuizId(!!userId);
+  }, []);
+
+  const isMyUtopias = pathname === "/wonder/essay/quiz/my-utopias";
 
   return (
     <header className="header">
@@ -25,6 +34,14 @@ export default function Header() {
         <Link href="/connect" className={pathname === "/connect" ? "active" : ""}>
           Connect
         </Link>
+        {hasQuizId && (
+          <Link
+            href="/wonder/essay/quiz/my-utopias"
+            className={isMyUtopias ? "active my-utopias" : "my-utopias"}
+          >
+            My Utopias
+          </Link>
+        )}
       </nav>
       <MobileMenu />
     </header>
