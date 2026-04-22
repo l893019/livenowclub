@@ -137,14 +137,14 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   white-space: nowrap;
   pointer-events: none;
-  background: rgba(250, 246, 241, 0.9);
-  padding: 2px 6px;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background: rgba(250, 246, 241, 0.95);
+  padding: 4px 8px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
 }
 
 .labelRight {
@@ -158,8 +158,8 @@
 
 .youLabel {
   font-weight: 700;
-  font-size: 13px;
-  background: rgba(232, 23, 138, 0.1);
+  font-size: 15px;
+  background: rgba(232, 23, 138, 0.12);
 }
 
 .labelHovered {
@@ -255,13 +255,13 @@
 }
 
 .legendName {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--text, #2d2a26);
 }
 
 .legendArchetype {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 400;
   opacity: 0.8;
 }
