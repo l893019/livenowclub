@@ -25,6 +25,16 @@ async function isUnsubscribed(email: string): Promise<boolean> {
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://livenowclub.com';
 
+// Convert second person ("You believe...") to third person ("They believe...")
+function toThirdPerson(text: string): string {
+  return text
+    .replace(/\bYou\b/g, 'They')
+    .replace(/\byou\b/g, 'they')
+    .replace(/\byou're\b/gi, "they're")
+    .replace(/\byou'd\b/gi, "they'd")
+    .replace(/\byour\b/gi, 'their');
+}
+
 type JoinNotificationParams = {
   toEmail: string;
   toName: string;
@@ -54,7 +64,7 @@ export async function sendJoinNotification({
 
   const archetype = archetypes[joinerArchetype];
   const archetypeName = archetype?.name || joinerArchetype;
-  const archetypeTagline = archetype?.oneSentence || '';
+  const archetypeTagline = toThirdPerson(archetype?.oneSentence || '');
 
   const relationshipUrl = `${BASE_URL}/wonder/essay/quiz/utopia/${utopiaSlug}?view=relationship&you=${founderId}&them=${joinerId}`;
   const essayUrl = `${BASE_URL}/wonder/essay`;
