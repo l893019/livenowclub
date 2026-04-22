@@ -261,6 +261,76 @@ export function UtopiaPageClient({
     }
   }
 
+  // Solo utopia: invite-first view
+  if (members.length === 1 && currentView === "radar") {
+    const me = members[0];
+    const myArchetype = archetypes[me.archetype];
+
+    return (
+      <div className={styles.container}>
+        <Header />
+        <main className={styles.soloMain}>
+          <div className={styles.soloHero}>
+            <span className={styles.label}>You created</span>
+            <h1 className={styles.soloTitle}>{utopiaName}</h1>
+            <p className={styles.soloSubtitle}>
+              A utopia of one — for now.
+            </p>
+          </div>
+
+          {/* Prominent invite section */}
+          <div className={styles.soloInvite}>
+            <h2 className={styles.soloInviteTitle}>Invite someone to join</h2>
+            <p className={styles.soloInviteText}>
+              See how your worldviews combine. What would you build together?
+            </p>
+            <div className={styles.soloInviteLink}>
+              <code>{shareUrl}</code>
+            </div>
+            <button className={styles.btnPrimary} onClick={handleShare}>
+              Share Invite Link
+            </button>
+          </div>
+
+          {/* What unlocks with more people */}
+          <div className={styles.soloUnlocks}>
+            <p className={styles.soloUnlocksTitle}>What happens next</p>
+            <div className={styles.soloUnlockItem}>
+              <span className={styles.soloUnlockNumber}>2</span>
+              <span className={styles.soloUnlockText}>See your relationship dynamic</span>
+            </div>
+            <div className={styles.soloUnlockItem}>
+              <span className={styles.soloUnlockNumber}>3+</span>
+              <span className={styles.soloUnlockText}>Unlock your group reading</span>
+            </div>
+          </div>
+
+          {/* Your archetype card */}
+          <div className={styles.soloYourCard}>
+            <YourArchetypeCard member={me} onClick={() => setCurrentView("profile")} />
+            <button
+              className={styles.viewProfileLink}
+              onClick={() => setCurrentView("profile")}
+            >
+              View Your Full Profile →
+            </button>
+          </div>
+
+          {currentUserId && (
+            <NotificationSettings userId={currentUserId} utopiaSlug={slug} />
+          )}
+
+          <div className={styles.essayLink}>
+            <Link href="/wonder/essay" className={styles.essayLinkText}>
+              Read <em>When Purpose Is All We Have Left</em> &rarr;
+            </Link>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
   // Two-person utopia: special enhanced view (when not viewing individual profile/reading)
   if (members.length === 2 && currentView === "radar") {
     const [personA, personB] = members;

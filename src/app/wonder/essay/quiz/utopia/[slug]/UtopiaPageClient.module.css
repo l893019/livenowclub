@@ -579,6 +579,127 @@
   font-style: italic;
 }
 
+/* Solo Utopia View - Invite First */
+.soloMain {
+  min-height: 100vh;
+  padding: 100px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.soloHero {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.soloTitle {
+  font-size: clamp(2rem, 8vw, 3rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  margin: 8px 0;
+  color: #2d2a26;
+}
+
+.soloSubtitle {
+  font-size: 1.1rem;
+  color: rgba(45, 42, 38, 0.6);
+  font-style: italic;
+}
+
+.soloInvite {
+  width: 100%;
+  padding: 32px 24px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.soloInviteTitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #2d2a26;
+  margin: 0 0 8px 0;
+}
+
+.soloInviteText {
+  font-size: 0.95rem;
+  color: rgba(45, 42, 38, 0.7);
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+}
+
+.soloInviteLink {
+  background: #faf6f1;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.soloInviteLink code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: rgba(45, 42, 38, 0.6);
+  word-break: break-all;
+}
+
+.soloUnlocks {
+  width: 100%;
+  padding: 24px;
+  background: rgba(232, 23, 138, 0.04);
+  border-radius: 12px;
+  margin-bottom: 32px;
+}
+
+.soloUnlocksTitle {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(45, 42, 38, 0.5);
+  margin: 0 0 16px 0;
+  text-align: center;
+}
+
+.soloUnlockItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.soloUnlockNumber {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 600;
+  color: #e8178a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.soloUnlockText {
+  font-size: 0.95rem;
+  color: rgba(45, 42, 38, 0.8);
+}
+
+.soloYourCard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
 @media (max-width: 640px) {
   .header {
     padding: 12px 16px;
