@@ -1,37 +1,21 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { useRouter } from "next/navigation";
+import { generateStarName } from "@/lib/star-names";
 import styles from "./CreateJoinStep.module.css";
 
 type CreateJoinStepProps = {
   archetypeKey: string;
 };
 
-const suggestedNames: Record<string, string> = {
-  citizen: "The Commons",
-  shaper: "The Workshop",
-  architect: "The Assembly",
-  presence: "The Clearing",
-  swimmer: "The Deep End",
-  rooted: "The Grove",
-  conscience: "The Watchtower",
-  embers: "The Archive",
-  friction: "The Proving Ground",
-  unbound: "The Threshold",
-  alive: "The Sensation",
-  mender: "The Repair Shop",
-  cleareyed: "The Mirror",
-  between: "The Liminal",
-};
-
 type CreateStatus = "idle" | "loading" | "error";
 
 export function CreateJoinStep({ archetypeKey }: CreateJoinStepProps) {
   const router = useRouter();
-  const [groupName, setGroupName] = useState(
-    suggestedNames[archetypeKey] || "My Group"
-  );
+  // Generate a random star name once on mount
+  const suggestedName = useMemo(() => generateStarName(), []);
+  const [groupName, setGroupName] = useState(suggestedName);
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<CreateStatus>("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);

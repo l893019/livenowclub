@@ -27,28 +27,19 @@ export type UtopiaMember = {
 };
 
 // =============================================================================
-// SUGGESTED UTOPIA NAMES BY ARCHETYPE
+// UTOPIA NAME GENERATION
 // =============================================================================
 
-export const SUGGESTED_UTOPIA_NAMES: Record<string, string> = {
-  citizen: "The Abundant Commons",
-  shaper: "The Unfinished City",
-  architect: "The People's House",
-  presence: "The Gathering Place",
-  swimmer: "The Deep End",
-  rooted: "The Still Garden",
-  conscience: "The Watchtower",
-  embers: "The Memory Palace",
-  friction: "The Proving Ground",
-  unbound: "The Infinite Edge",
-  alive: "The Feeling World",
-  mender: "The Repair Shop",
-  cleareyed: "The Clear View",
-  between: "The Threshold",
-};
+import { generateStarName } from "./star-names";
 
-export function getSuggestedUtopiaName(archetype: string): string {
-  return SUGGESTED_UTOPIA_NAMES[archetype] || "My Utopia";
+// Re-export for server-side use
+export { generateStarName };
+
+// Legacy export for backwards compatibility
+export const SUGGESTED_UTOPIA_NAMES: Record<string, string> = {};
+
+export function getSuggestedUtopiaName(_archetype: string): string {
+  return generateStarName();
 }
 
 export type UtopiaRoom = {

@@ -1,24 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
-
-const SUGGESTED_NAMES: Record<string, string> = {
-  citizen: "The Abundant Commons",
-  shaper: "The Unfinished City",
-  architect: "The People's House",
-  presence: "The Gathering Place",
-  swimmer: "The Deep End",
-  rooted: "The Still Garden",
-  conscience: "The Watchtower",
-  embers: "The Memory Palace",
-  friction: "The Proving Ground",
-  unbound: "The Infinite Edge",
-  alive: "The Feeling World",
-  mender: "The Repair Shop",
-  cleareyed: "The Clear View",
-  between: "The Threshold",
-};
+import { generateStarName } from "@/lib/star-names";
 
 type CreateUtopiaSectionProps = {
   archetypeKey: string;
@@ -26,7 +10,8 @@ type CreateUtopiaSectionProps = {
 
 export default function CreateUtopiaSection({ archetypeKey }: CreateUtopiaSectionProps) {
   const router = useRouter();
-  const suggestedName = SUGGESTED_NAMES[archetypeKey] || "My Utopia";
+  // Generate a random star name once on mount
+  const suggestedName = useMemo(() => generateStarName(), []);
   const [name, setName] = useState(suggestedName);
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
