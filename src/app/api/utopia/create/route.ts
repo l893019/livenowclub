@@ -31,7 +31,8 @@ export async function POST(request: NextRequest) {
       userId,
       userResult.name,
       userResult.archetype,
-      customName
+      customName,
+      userResult.answers
     );
 
     const shareUrl = `https://livenowclub.vercel.app/wonder/essay/quiz/utopia/${room.slug}`;

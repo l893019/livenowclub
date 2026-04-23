@@ -526,6 +526,27 @@
   margin-bottom: 0;
 }
 
+/* Loading State */
+.loading {
+  text-align: center;
+  padding: 40px 20px;
+  color: rgba(45, 42, 38, 0.6);
+}
+
+/* LLM Narrative */
+.narrative {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.narrative p {
+  margin-bottom: 1.25rem;
+}
+
+.narrative p:last-child {
+  margin-bottom: 0;
+}
+
 /* Responsive - Mobile */
 @media (max-width: 480px) {
   .reading {

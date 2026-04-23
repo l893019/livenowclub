@@ -37,7 +37,8 @@ export async function POST(request: NextRequest) {
       slug,
       userId,
       userResult.name,
-      userResult.archetype
+      userResult.archetype,
+      userResult.answers
     );
 
     if (!room) {

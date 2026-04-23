@@ -24,6 +24,7 @@ export type UtopiaMember = {
   archetype: string;
   joinedAt: string;
   isFounder?: boolean;
+  answers?: string[]; // Quiz answers for LLM-generated readings
 };
 
 // =============================================================================
@@ -159,7 +160,8 @@ export async function createUtopia(
   userId: string,
   userName: string,
   userArchetype: string,
-  customName?: string
+  customName?: string,
+  userAnswers?: string[]
 ): Promise<UtopiaRoom> {
   const utopiaName = customName || getSuggestedUtopiaName(userArchetype);
   const slug = generateSlug(utopiaName);
@@ -174,6 +176,7 @@ export async function createUtopia(
       archetype: userArchetype,
       joinedAt: new Date().toISOString(),
       isFounder: true,
+      answers: userAnswers,
     }],
     createdAt: new Date().toISOString(),
   };
@@ -197,7 +200,8 @@ export async function joinUtopia(
   slug: string,
   userId: string,
   userName: string,
-  userArchetype: string
+  userArchetype: string,
+  userAnswers?: string[]
 ): Promise<UtopiaRoom | null> {
   const utopia = await getUtopia(slug);
   if (!utopia) {
@@ -222,6 +226,7 @@ export async function joinUtopia(
     name: userName,
     archetype: userArchetype,
     joinedAt: new Date().toISOString(),
+    answers: userAnswers,
   });
 
   console.log('[joinUtopia] Added new member:', {
