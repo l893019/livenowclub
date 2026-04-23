@@ -197,10 +197,49 @@ type GroupReading = {
 
 ---
 
+## Generation Strategy
+
+**Decision: LLM generation with Claude Sonnet for all readings.**
+
+Why:
+- Combinatorial assembly feels templated — the opposite of what we want
+- Group readings require synthesis that can't be pre-written
+- Cost is trivial (~$1-2 per 100 people)
+- Caching eliminates redundant generation
+
+### How It Works
+
+1. User submits quiz → compute dimensions + identity
+2. Hash the 7 answers → check cache
+3. Cache miss → generate reading via Claude Sonnet API
+4. Store generated reading in cache (keyed by answer hash)
+5. Return cached or freshly generated reading
+
+### Cost Estimate
+
+| Reading Type | Cost per Generation |
+|--------------|---------------------|
+| Individual | ~$0.01 |
+| Pair | ~$0.02 |
+| Group | ~$0.01 |
+
+With caching, 100 people ≈ $1-2 total.
+
+### Prompt Structure
+
+Each reading type gets a system prompt with:
+- The writing guidelines (do/don't)
+- Example outputs from this design doc
+- The specific answer data
+
+The prompt instructs the model to generate the reading sections directly — no explanation, no preamble.
+
+---
+
 ## Open Questions
 
-1. **How much content is generated vs. assembled?** Could use LLM generation for readings, or build combinatorial content library.
+1. **Caching backend?** Redis, Vercel KV, or database column?
 
-2. **Caching strategy?** Same 7 answers should produce same reading. Cache by answer hash?
+2. **Enterprise customization?** Should teams be able to add their own questions or modify dimensions?
 
-3. **Enterprise customization?** Should teams be able to add their own questions or modify dimensions?
+3. **Fallback on API failure?** Show loading state and retry, or have minimal fallback content?
