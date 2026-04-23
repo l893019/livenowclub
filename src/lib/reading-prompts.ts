@@ -5,7 +5,7 @@
  * All readings are generated from specific answer patterns, not pre-written content.
  */
 
-import type { QuizAnswers, Dimensions, Identity } from './dimensions'
+import type { QuizAnswers, Dimensions, IdentityLabel } from './dimensions'
 
 // =============================================================================
 // TYPES
@@ -181,7 +181,7 @@ const WRITING_GUIDELINES = `
 export function getIndividualPrompt(
   answers: QuizAnswers,
   dimensions: Dimensions,
-  identity: Identity
+  identity: IdentityLabel
 ): string {
   const hasTradeoff = hasStrongPattern(dimensions)
 
@@ -254,7 +254,7 @@ type PersonData = {
   name: string
   answers: QuizAnswers
   dimensions: Dimensions
-  identity: Identity
+  identity: IdentityLabel
 }
 
 export function getPairPrompt(personA: PersonData, personB: PersonData): string {
@@ -352,7 +352,7 @@ type GroupMember = {
   name: string
   answers: QuizAnswers
   dimensions: Dimensions
-  identity: Identity
+  identity: IdentityLabel
 }
 
 export function getGroupPrompt(members: GroupMember[]): string {

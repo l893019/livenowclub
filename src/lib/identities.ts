@@ -334,6 +334,18 @@ export function getIdentityColor(key: string): string {
 }
 
 /**
+ * Calculate which adjective index to use based on dimension intensities.
+ * Higher combined intensity = more extreme adjective (index 0).
+ * Lower intensity = milder adjective (index 2).
+ */
+export function getAdjectiveIndex(certainty: number, posture: number): number {
+  const combinedIntensity = (Math.abs(certainty) + Math.abs(posture)) / 2
+  if (combinedIntensity > 0.7) return 0 // Most extreme adjective
+  if (combinedIntensity > 0.4) return 1 // Middle adjective
+  return 2 // Mildest adjective
+}
+
+/**
  * Generate all 84 identity keys.
  */
 export function getAllIdentityKeys(): string[] {
@@ -372,20 +384,68 @@ export function getIdentity(key: string): Identity | undefined {
 }
 
 /**
+ * Dimensions type for the overloaded function signature.
+ */
+type Dimensions = {
+  agency: number
+  certainty: number
+  posture: number
+}
+
+/**
  * Get an identity from dimension scores.
  * Calculates the noun, quadrant, and adjective from scores,
  * then returns the matching identity.
+ *
+ * When no explicit adjectiveIndex is provided, calculates it based on
+ * the combined intensity of certainty and posture dimensions.
+ *
+ * @overload Accepts individual dimension values
+ * @overload Accepts a Dimensions object
  */
 export function getIdentityFromDimensions(
   agency: number,
   certainty: number,
   posture: number,
-  adjectiveIndex: number = 0 // 0, 1, or 2 within the quadrant
+  adjectiveIndex?: number
+): Identity | undefined
+export function getIdentityFromDimensions(
+  dimensions: Dimensions,
+  adjectiveIndex?: number
+): Identity | undefined
+export function getIdentityFromDimensions(
+  agencyOrDimensions: number | Dimensions,
+  certaintyOrIndex?: number,
+  posture?: number,
+  adjectiveIndex?: number
 ): Identity | undefined {
+  let agency: number
+  let certainty: number
+  let postureVal: number
+  let adjIdx: number | undefined
+
+  // Determine which overload was called
+  if (typeof agencyOrDimensions === 'object') {
+    // Called with Dimensions object
+    agency = agencyOrDimensions.agency
+    certainty = agencyOrDimensions.certainty
+    postureVal = agencyOrDimensions.posture
+    adjIdx = certaintyOrIndex // second param is adjectiveIndex
+  } else {
+    // Called with individual values
+    agency = agencyOrDimensions
+    certainty = certaintyOrIndex!
+    postureVal = posture!
+    adjIdx = adjectiveIndex
+  }
+
   const noun = getNounFromAgency(agency)
-  const quadrant = getQuadrant(certainty, posture)
+  const quadrant = getQuadrant(certainty, postureVal)
   const adjectives = ADJECTIVES_BY_QUADRANT[quadrant]
-  const adjective = adjectives[Math.min(adjectiveIndex, adjectives.length - 1)]
+
+  // Use intensity-based calculation if no explicit index provided
+  const finalIndex = adjIdx ?? getAdjectiveIndex(certainty, postureVal)
+  const adjective = adjectives[Math.min(finalIndex, adjectives.length - 1)]
   const key = getIdentityKey(noun, adjective)
   return identities[key]
 }

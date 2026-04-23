@@ -148,8 +148,9 @@ export function getDimensionLabels(dimensions: Dimensions): {
   }
 }
 
-// Identity type for generated identity labels
-export type Identity = {
+// IdentityLabel type for generated identity labels (simple format)
+// Note: The full Identity type with all 22 fields lives in identities.ts
+export type IdentityLabel = {
   adjective: string
   noun: string
   full: string
@@ -219,7 +220,7 @@ export function arrayToQuizAnswers(answers: string[]): QuizAnswers | null {
   }
 }
 
-export function generateIdentity(dimensions: Dimensions): Identity {
+export function generateIdentity(dimensions: Dimensions): IdentityLabel {
   // Select noun based on agency
   const nounPool = NOUN_POOLS.find((p) => dimensions.agency >= p.threshold)?.nouns ?? ['Observer']
   const agencyIntensity = Math.abs(dimensions.agency)
