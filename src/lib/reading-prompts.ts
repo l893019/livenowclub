@@ -32,7 +32,11 @@ export type PairReading = {
 }
 
 export type GroupReading = {
-  narrative: string // Full synthesized narrative (not sections)
+  groupPattern: string       // What defines this group
+  sharedStrength: string     // What they're collectively good at
+  groupMovement: string      // How they make decisions together
+  watchFor: string           // Where they might struggle
+  whatYoudBuild: string      // What this group is suited to create
 }
 
 // =============================================================================
@@ -377,36 +381,49 @@ ${membersSections}
 
 ## Your Task
 
-Generate a synthesized narrative about this group. NOT sectioned — one flowing narrative.
+Generate a reading with these five sections:
 
-The narrative should cover:
-- What kind of group this is (finishers, starters, questioners, etc.)
-- How they move together
-- What's missing from the group (patterns no one chose)
-- Where the fault lines are
-- What they'd build together
+### 1. Your Group Pattern
+What kind of group this is. What shows up consistently across the members. Reference specific members by name.
 
-**Example narrative:**
+Example:
+"You're a group that trusts process over panic. When the world shifts, you don't scramble — you settle into your different ways of responding. Sarah starts building immediately, Marcus finds his center, Priya tends what needs protecting."
 
-"You're a group that finishes things. High commitment, low drift. You'd build the same thing three times before trying something different — not because you're afraid of new, but because you trust iteration over reinvention.
+### 2. Your Shared Strength
+What this combination of people is collectively good at. Where the group excels.
 
-You'll move slow until you're sure, then fast once you've decided. Outsiders will think you're stuck. You're not. You're loading.
+Example:
+"When something breaks, everyone reaches for tools. No one sits with it — you fix. That means things actually get done."
 
-When it breaks — and it will — everyone reaches for tools. No one sits. That's your strength and your blind spot. Sometimes the right move is to wait, and none of you will suggest it.
+### 3. How You'll Move Together
+How this group makes decisions, navigates disagreements, and moves as a unit.
 
-Taylor will get restless before anyone else notices the groove has become a rut.
+Example:
+"Sarah proposes, Marcus questions what gets lost, Priya asks if you're moving too fast. It looks like resistance, but it's how you make things stronger."
 
-The real tension: half of you protect, half of you expand. When money gets tight or stakes get high, that split will surface. Name it early or it becomes personal.
+### 4. Watch For
+The patterns that might become problematic. Where the group might fail.
 
-Your best work happens when someone drags the group somewhere uncomfortable and the rest of you make it solid."
+Example:
+"Half of you protect, half expand. When resources get tight, that split will surface. Name it early or it becomes personal."
+
+### 5. What You'd Build
+The natural output of this combination. What this group is suited to create together.
+
+Example:
+"A place that feels both steady and alive. Something people stay in longer than expected. You'd build a container, not a rocket ship."
 
 ## Output Format
 
 Respond with valid JSON only. No explanation, no preamble. Match this exact structure:
 
 {
-  "narrative": "Your full narrative text here. Can be multiple paragraphs separated by \\n\\n. Should be 4-6 paragraphs. Direct, specific, grounded in observable behavior. Reference specific members by name when relevant."
+  "groupPattern": "Your Group Pattern text here... 2-4 sentences. Reference members by name.",
+  "sharedStrength": "Your Shared Strength text here... 2-3 sentences.",
+  "groupMovement": "How You'll Move Together text here... 2-3 sentences. Reference members by name.",
+  "watchFor": "Watch For text here... 2-3 sentences.",
+  "whatYoudBuild": "What You'd Build text here... 2-3 sentences."
 }
 
-The narrative should feel like it was written for THIS specific combination of people, not a generic group description.`
+Each section should feel specific to THIS combination of people, not a generic group description.`
 }

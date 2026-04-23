@@ -8,6 +8,7 @@ import { GroupReadingStep } from "../[slug]/steps/GroupReadingStep";
 import { RelationshipStep } from "../[slug]/steps/RelationshipStep";
 import { ReadingPage } from "@/app/wonder/essay/quiz/result/ReadingPage";
 import type { UtopiaMember } from "@/lib/utopia";
+import { arrayToQuizAnswers } from "@/lib/dimensions";
 import styles from "../[slug]/UtopiaPageClient.module.css";
 
 // Demo page with fake members to show what a multi-person utopia looks like
@@ -72,9 +73,11 @@ export default function DemoUtopiaPage() {
   if (currentView === "profile") {
     const me = demoMembers.find((m) => m.id === CURRENT_USER_ID);
     if (me) {
+      const answers = me.answers ? arrayToQuizAnswers(me.answers) : undefined;
       return (
         <ReadingPage
           archetypeKey={me.archetype}
+          answers={answers ?? undefined}
           onBack={handleBackToRadar}
           groupContext={{
             utopiaSlug: "demo",
@@ -113,9 +116,11 @@ export default function DemoUtopiaPage() {
   if (currentView === "their-reading" && selectedMemberId) {
     const them = demoMembers.find((m) => m.id === selectedMemberId);
     if (them) {
+      const answers = them.answers ? arrayToQuizAnswers(them.answers) : undefined;
       return (
         <ReadingPage
           archetypeKey={them.archetype}
+          answers={answers ?? undefined}
           onBack={() => setCurrentView("relationship")}
           groupContext={{
             utopiaSlug: "demo",
