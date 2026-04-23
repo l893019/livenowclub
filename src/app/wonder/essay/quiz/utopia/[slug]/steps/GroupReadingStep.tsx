@@ -25,6 +25,7 @@ export function GroupReadingStep({
 }: GroupReadingStepProps) {
   const [llmReading, setLlmReading] = useState<GroupReading | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   // Fetch LLM-generated group reading when all members have answers
   useEffect(() => {
@@ -41,6 +42,7 @@ export function GroupReadingStep({
       });
 
       setIsLoading(true);
+      setError(null);
       fetch("/api/reading/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -51,10 +53,19 @@ export function GroupReadingStep({
       })
         .then((res) => res.json())
         .then((data) => {
-          if (data.reading) setLlmReading(data.reading);
+          console.log("Group reading API response:", data);
+          if (data.error) {
+            setError(data.error);
+          } else if (data.reading) {
+            setLlmReading(data.reading);
+          }
           setIsLoading(false);
         })
-        .catch(() => setIsLoading(false));
+        .catch((err) => {
+          console.error("Group reading fetch error:", err);
+          setError(err.message || "Failed to fetch reading");
+          setIsLoading(false);
+        });
     }
   }, [members]);
 
@@ -136,6 +147,11 @@ export function GroupReadingStep({
 
   return (
     <div className={styles.reading}>
+      {error && (
+        <div style={{ background: "#fee", padding: "12px", borderRadius: "8px", marginBottom: "16px", fontSize: "14px", color: "#c00" }}>
+          Error loading reading: {error}
+        </div>
+      )}
       {isLoading ? (
         <div className={styles.loading}>Generating your group reading...</div>
       ) : llmReading ? (
