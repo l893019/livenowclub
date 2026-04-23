@@ -2,10 +2,24 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { archetypes, type Archetype } from "@/lib/archetypes";
+import { archetypes } from "@/lib/archetypes";
 import { RadarChart } from "@/components/RadarChart";
 import { CreateJoinStep } from "./steps/CreateJoinStep";
 import { RelationshipComparison } from "./RelationshipComparison";
+import { WorldviewFingerprint } from "./WorldviewFingerprint";
+import {
+  getConvictionStrength,
+  getRevealingQuestion,
+  getOutlierAnswers,
+  getTertiaryType,
+  getRaritySignal,
+  getWorldviewFingerprint,
+  getAnswerJourney,
+  type QuizResult,
+} from "@/lib/personalization";
+import { getCombinationContentWithFallback } from "@/lib/combination-content";
+import { arrayToQuizAnswers, type QuizAnswers } from "@/lib/dimensions";
+import type { IndividualReading } from "@/lib/reading-prompts";
 import styles from "./ReadingPage.module.css";
 
 type CreatedUtopia = {
@@ -20,6 +34,8 @@ type GroupContext = {
 
 type ReadingPageProps = {
   archetypeKey: string;
+  /** The quiz answers - if provided, fetches LLM-generated reading */
+  answers?: QuizAnswers;
   /** If provided, renders a back button instead of navigating away */
   onBack?: () => void;
   /** If provided, changes CTAs to be group-aware */
@@ -48,17 +64,67 @@ const compatibilityMap: Record<string, string> = {
   "the one still figuring it out": "between",
 };
 
-export function ReadingPage({ archetypeKey, onBack, groupContext, personName, compareUserId }: ReadingPageProps) {
+export function ReadingPage({ archetypeKey, answers, onBack, groupContext, personName, compareUserId }: ReadingPageProps) {
   const [showCreateUtopia, setShowCreateUtopia] = useState(false);
   const [existingUtopia, setExistingUtopia] = useState<CreatedUtopia | null>(null);
   const [hasQuizUserId, setHasQuizUserId] = useState<boolean | null>(null);
+  const [quizResult, setQuizResult] = useState<QuizResult | null>(null);
+  const [reading, setReading] = useState<IndividualReading | null>(null);
+  const [isLoadingReading, setIsLoadingReading] = useState(false);
+  const [readingError, setReadingError] = useState<string | null>(null);
   const archetype = archetypes[archetypeKey];
 
-  // Check if user has taken the quiz
+  // Check if user has taken the quiz and load their result
   useEffect(() => {
     const userId = localStorage.getItem("quiz-user-id");
     setHasQuizUserId(!!userId);
-  }, []);
+
+    // Load quiz result for personalization
+    try {
+      const stored = localStorage.getItem("quiz-user-result");
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        setQuizResult({
+          archetype: parsed.archetype,
+          secondaryArchetype: parsed.secondaryArchetype,
+          scores: parsed.scores || {},
+          answers: parsed.answers || [],
+        });
+
+        // If no answers prop provided, convert localStorage answers and fetch LLM reading
+        if (!answers && parsed.answers && Array.isArray(parsed.answers)) {
+          const convertedAnswers = arrayToQuizAnswers(parsed.answers);
+          if (convertedAnswers) {
+            setIsLoadingReading(true);
+            setReadingError(null);
+
+            fetch('/api/reading/generate', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ type: 'individual', answers: convertedAnswers })
+            })
+              .then(res => {
+                if (!res.ok) {
+                  throw new Error('Failed to generate reading');
+                }
+                return res.json();
+              })
+              .then(data => {
+                setReading(data.reading);
+                setIsLoadingReading(false);
+              })
+              .catch(err => {
+                console.error('Failed to fetch reading:', err);
+                setReadingError(err.message);
+                setIsLoadingReading(false);
+              });
+          }
+        }
+      }
+    } catch (e) {
+      console.error("Failed to parse quiz result:", e);
+    }
+  }, [answers]);
 
   // Check if utopia was already created (user named it before quiz)
   useEffect(() => {
@@ -71,6 +137,46 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
       }
     }
   }, []);
+
+  // Fetch LLM-generated reading when answers are provided
+  useEffect(() => {
+    if (!answers) {
+      return;
+    }
+
+    // Check if we have all 7 answers
+    const answerKeys = Object.keys(answers);
+    const hasAllAnswers = answerKeys.length === 7 &&
+      answerKeys.every(key => answers[key as keyof QuizAnswers]);
+
+    if (!hasAllAnswers) {
+      return;
+    }
+
+    setIsLoadingReading(true);
+    setReadingError(null);
+
+    fetch('/api/reading/generate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ type: 'individual', answers })
+    })
+      .then(res => {
+        if (!res.ok) {
+          throw new Error('Failed to generate reading');
+        }
+        return res.json();
+      })
+      .then(data => {
+        setReading(data.reading);
+        setIsLoadingReading(false);
+      })
+      .catch(err => {
+        console.error('Failed to fetch reading:', err);
+        setReadingError(err.message);
+        setIsLoadingReading(false);
+      });
+  }, [answers]);
 
   if (!archetype) {
     return (
@@ -93,6 +199,50 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
   const allyArchetype = allyKey ? archetypes[allyKey] : undefined;
   const tensionArchetype = tensionKey ? archetypes[tensionKey] : undefined;
   const needArchetype = needKey ? archetypes[needKey] : undefined;
+
+  // Compute personalization data if we have quiz results
+  const shadowArchetype = quizResult?.secondaryArchetype
+    ? archetypes[quizResult.secondaryArchetype]
+    : null;
+
+  const combinationContent = quizResult?.secondaryArchetype
+    ? getCombinationContentWithFallback(
+        archetypeKey,
+        quizResult.secondaryArchetype,
+        archetype.name,
+        shadowArchetype?.name || ""
+      )
+    : null;
+
+  const conviction = quizResult?.scores
+    ? getConvictionStrength(quizResult.scores)
+    : null;
+
+  const revealingQuestion = quizResult?.answers
+    ? getRevealingQuestion(quizResult.answers, archetypeKey)
+    : null;
+
+  const outliers = quizResult?.answers && quizResult?.scores
+    ? getOutlierAnswers(quizResult.answers, archetypeKey, quizResult.scores)
+    : [];
+
+  const tertiaryType = quizResult?.scores
+    ? getTertiaryType(quizResult.scores)
+    : null;
+
+  const tertiaryArchetype = tertiaryType
+    ? archetypes[tertiaryType.key]
+    : null;
+
+  const rarity = getRaritySignal(archetypeKey);
+
+  const fingerprint = quizResult?.scores
+    ? getWorldviewFingerprint(quizResult.scores)
+    : [];
+
+  const answerJourney = quizResult?.answers
+    ? getAnswerJourney(quizResult.answers)
+    : [];
 
   // Determine if this is viewing someone else's reading
   const isViewingOther = !!personName;
@@ -119,45 +269,314 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
         </button>
       )}
 
-      {/* Header */}
-      <header className={styles.header}>
-        <p className={styles.label}>{labelText}</p>
-        <h1 className={styles.name}>{archetype.name}</h1>
-      </header>
+      {/* Loading state for LLM reading */}
+      {isLoadingReading && (
+        <div className={styles.loading}>
+          <p>Generating your personalized reading...</p>
+        </div>
+      )}
+
+      {/* LLM-generated reading content */}
+      {reading && !isLoadingReading && (
+        <>
+          <header className={styles.header}>
+            <p className={styles.label}>You are</p>
+            <h1 className={styles.name}>{reading.identity}</h1>
+          </header>
+
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Your Pattern</h2>
+            <p className={styles.bodyText}>{reading.pattern}</p>
+          </section>
+
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>What This Gives You</h2>
+            <p className={styles.bodyText}>{reading.gifts}</p>
+          </section>
+
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>How You&apos;ll Move</h2>
+            <p className={styles.bodyText}>{reading.movement}</p>
+          </section>
+
+          {reading.tradeoff && (
+            <div className={styles.blindSpot}>
+              <div className={styles.blindSpotLabel}>The Tradeoff</div>
+              <p className={styles.blindSpotText}>{reading.tradeoff}</p>
+            </div>
+          )}
+
+          <div className={styles.divider} />
+
+          {/* Worldview Fingerprint - also useful with LLM reading */}
+          {!isViewingOther && fingerprint.length > 0 && quizResult && (
+            <div className={styles.personalizedSection}>
+              <h3 className={styles.sectionTitle}>Your Worldview Fingerprint</h3>
+              <div className={styles.fingerprintSection}>
+                <WorldviewFingerprint
+                  data={fingerprint}
+                  primaryKey={archetypeKey}
+                  shadowKey={quizResult.secondaryArchetype}
+                />
+              </div>
+            </div>
+          )}
+        </>
+      )}
+
+      {/* Archetype-based content (fallback when no LLM reading) */}
+      {!reading && !isLoadingReading && (
+        <>
+          {/* Header */}
+          <header className={styles.header}>
+            <p className={styles.label}>{labelText}</p>
+            <h1 className={styles.name}>{archetype.name}</h1>
+
+            {/* Shadow type and combination tagline */}
+            {!isViewingOther && shadowArchetype && (
+              <div className={styles.shadowType}>
+                <span className={styles.shadowLabel}>with undertones of</span>
+                <span className={styles.shadowName} style={{ color: shadowArchetype.color }}>
+                  {shadowArchetype.name}
+                </span>
+              </div>
+            )}
+
+            {!isViewingOther && combinationContent && (
+              <p className={styles.tagline}>{combinationContent.tagline}</p>
+            )}
+          </header>
 
       {/* Utopia Card */}
-      <div className={styles.utopiaCard}>
-        <img src={imageUrl} alt={archetype.name} className={styles.utopiaImage} />
-        <div className={styles.utopiaLabel}>{isViewingOther ? "Their Utopia" : "Your Utopia"}</div>
-        <p className={styles.utopiaText}>{utopiaText}</p>
-      </div>
+          <div className={styles.utopiaCard}>
+            <img src={imageUrl} alt={archetype.name} className={styles.utopiaImage} />
+            <div className={styles.utopiaLabel}>{isViewingOther ? "Their Utopia" : "Your Utopia"}</div>
+            <p className={styles.utopiaText}>{utopiaText}</p>
+          </div>
 
-      {/* Core Description */}
-      <p className={styles.description}>{archetype.description}</p>
+          {/* Core Description */}
+          <p className={styles.description}>{archetype.description}</p>
 
-      {/* One-sentence worldview */}
-      {!isViewingOther && archetype.oneSentence && (
-        <div className={styles.oneSentence}>
-          <p className={styles.oneSentenceText}>"{archetype.oneSentence}"</p>
-        </div>
-      )}
+          {/* One-sentence worldview */}
+          {!isViewingOther && archetype.oneSentence && (
+            <div className={styles.oneSentence}>
+              <p className={styles.oneSentenceText}>"{archetype.oneSentence}"</p>
+            </div>
+          )}
 
-      {/* Famous Figures */}
-      {archetype.famousFigures && (
-        <div className={styles.famousFigures}>
-          <p className={styles.famousFiguresLabel}>You share a worldview with</p>
-          <p className={styles.famousFiguresList}>
-            {[...archetype.famousFigures.real, ...archetype.famousFigures.fictional.map(f => f.split(" (")[0])].join(", ")}
-          </p>
-        </div>
-      )}
+          {/* Famous Figures */}
+          {archetype.famousFigures && (
+            <div className={styles.famousFigures}>
+              <p className={styles.famousFiguresLabel}>You share a worldview with</p>
+              <p className={styles.famousFiguresList}>
+                {[...archetype.famousFigures.real, ...archetype.famousFigures.fictional.map(f => f.split(" (")[0])].join(", ")}
+              </p>
+            </div>
+          )}
 
-      {/* Relationship comparison for viral loop (when ?compare= is present) */}
-      {compareUserId && hasQuizUserId && (
-        <RelationshipComparison
-          yourArchetypeKey={archetypeKey}
-          compareUserId={compareUserId}
-        />
+          {/* Rarity Signal */}
+          {!isViewingOther && (
+            <div className={styles.raritySignal}>
+              <div className={styles.rarityNumber}>{rarity.percentage}%</div>
+              <p className={styles.rarityText}>{rarity.description}</p>
+            </div>
+          )}
+
+          {/* Conviction Strength */}
+          {!isViewingOther && conviction && (
+            <div className={styles.personalizedSection}>
+              <h3 className={styles.sectionTitle}>Your Conviction</h3>
+              <div className={styles.convictionMeter}>
+                <div className={styles.convictionLabel}>{conviction.label}</div>
+                <div className={styles.convictionBar}>
+                  <div
+                    className={styles.convictionFill}
+                    style={{
+                      width: `${conviction.strength}%`,
+                      backgroundColor: archetype.color,
+                    }}
+                  />
+                </div>
+                <p className={styles.convictionDescription}>{conviction.description}</p>
+              </div>
+            </div>
+          )}
+
+          {/* The Question That Revealed You */}
+          {!isViewingOther && revealingQuestion && (
+            <div className={styles.personalizedSection}>
+              <h3 className={styles.sectionTitle}>The Question That Revealed You</h3>
+              <p className={styles.revealingQuestion}>
+                Your answer to <strong>"{revealingQuestion.summary}"</strong> was the clearest signal of your worldview.
+              </p>
+            </div>
+          )}
+
+          {/* Outlier Answers */}
+          {!isViewingOther && outliers.length > 0 && (
+            <div className={styles.personalizedSection}>
+              <h3 className={styles.sectionTitle}>Where You Surprised Us</h3>
+              <div className={styles.outlierList}>
+                {outliers.map((outlier, i) => (
+                  <div key={i} className={styles.outlierItem}>
+                    On <strong>{outlier.summary}</strong>, you answered more like{" "}
+                    <strong>{outlier.contributedToName}</strong>.
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Tertiary Type */}
+          {!isViewingOther && tertiaryType && tertiaryArchetype && (
+            <div className={styles.personalizedSection}>
+              <h3 className={styles.sectionTitle}>Also Running Through You</h3>
+              <div className={styles.tertiaryType}>
+                <span
+                  className={styles.tertiaryDot}
+                  style={{ backgroundColor: tertiaryArchetype.color }}
+                />
+                <span className={styles.tertiaryName}>{tertiaryArchetype.name}</span>
+                <span className={styles.tertiaryLabel}>undertone</span>
+              </div>
+            </div>
+          )}
+
+          {/* Worldview Fingerprint */}
+          {!isViewingOther && fingerprint.length > 0 && quizResult && (
+            <div className={styles.personalizedSection}>
+              <h3 className={styles.sectionTitle}>Your Worldview Fingerprint</h3>
+              <div className={styles.fingerprintSection}>
+                <WorldviewFingerprint
+                  data={fingerprint}
+                  primaryKey={archetypeKey}
+                  shadowKey={quizResult.secondaryArchetype}
+                />
+              </div>
+            </div>
+          )}
+
+          {/* Relationship comparison for viral loop (when ?compare= is present) */}
+          {compareUserId && hasQuizUserId && (
+            <RelationshipComparison
+              yourArchetypeKey={archetypeKey}
+              compareUserId={compareUserId}
+            />
+          )}
+
+          <div className={styles.divider} />
+
+          {/* How You Got Here */}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>How You Got Here</h2>
+            <p className={styles.bodyText}>{archetype.howYouGotHere}</p>
+          </section>
+
+          <div className={styles.divider} />
+
+          {/* The Worldview */}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>The Worldview</h2>
+            <p className={styles.bodyText}>You likely believe:</p>
+            <ul className={styles.beliefs}>
+              {archetype.coreBeliefs.map((belief, i) => (
+                <li key={i}>{belief}</li>
+              ))}
+            </ul>
+          </section>
+
+          <div className={styles.divider} />
+
+          {/* Your Superpower */}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Your Superpower</h2>
+            <h3 className={styles.highlight} style={{ color: archetype.color }}>
+              {archetype.superpower}
+            </h3>
+            <div className={styles.expandedContent}>
+              {archetype.superpowerExpanded.split("\n\n").map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
+          </section>
+
+          <div className={styles.divider} />
+
+          {/* Your Blind Spot - coral accent */}
+          {/* Use personalized blind spot if available, otherwise fall back to archetype default */}
+          <div className={styles.blindSpot}>
+            <div className={styles.blindSpotLabel}>Something to Consider</div>
+            <p className={styles.blindSpotText}>
+              {!isViewingOther && combinationContent
+                ? combinationContent.blindSpot
+                : archetype.blindSpot}
+            </p>
+          </div>
+
+          <div className={styles.divider} />
+
+          {/* Position on Map */}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Your Position on the Map</h2>
+            <div className={styles.radarContainer}>
+              <RadarChart size={280} highlightArchetype={archetypeKey} />
+            </div>
+          </section>
+
+          {/* Your People - compatibility section */}
+          <div className={styles.compatibility}>
+            <div className={styles.compatibilityLabel}>Your People</div>
+            <div className={styles.relationships}>
+              {allyArchetype && (
+                <div className={styles.relationshipCard}>
+                  <h4 className={styles.relationshipLabel}>Your Natural Ally</h4>
+                  <Link
+                    href={`/wonder/essay/quiz/result?a=${allyKey}`}
+                    className={styles.archName}
+                    style={{ color: allyArchetype.color }}
+                  >
+                    {allyArchetype.name}
+                  </Link>
+                  <p className={styles.relationshipDesc}>
+                    {archetype.allyDescription}
+                  </p>
+                </div>
+              )}
+
+              {tensionArchetype && (
+                <div className={styles.relationshipCard}>
+                  <h4 className={styles.relationshipLabel}>Your Tension</h4>
+                  <Link
+                    href={`/wonder/essay/quiz/result?a=${tensionKey}`}
+                    className={styles.archName}
+                    style={{ color: tensionArchetype.color }}
+                  >
+                    {tensionArchetype.name}
+                  </Link>
+                  <p className={styles.relationshipDesc}>
+                    {archetype.tensionDescription}
+                  </p>
+                </div>
+              )}
+
+              {needArchetype && (
+                <div className={styles.relationshipCard}>
+                  <h4 className={styles.relationshipLabel}>Your Counterweight</h4>
+                  <Link
+                    href={`/wonder/essay/quiz/result?a=${needKey}`}
+                    className={styles.archName}
+                    style={{ color: needArchetype.color }}
+                  >
+                    {needArchetype.name}
+                  </Link>
+                  <p className={styles.relationshipDesc}>
+                    {archetype.needDescription}
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </>
       )}
 
       {/* Compare Worldviews CTA - smart button based on quiz status */}
@@ -209,114 +628,6 @@ export function ReadingPage({ archetypeKey, onBack, groupContext, personName, co
           </div>
         </section>
       )}
-
-      <div className={styles.divider} />
-
-      {/* How You Got Here */}
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>How You Got Here</h2>
-        <p className={styles.bodyText}>{archetype.howYouGotHere}</p>
-      </section>
-
-      <div className={styles.divider} />
-
-      {/* The Worldview */}
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>The Worldview</h2>
-        <p className={styles.bodyText}>You likely believe:</p>
-        <ul className={styles.beliefs}>
-          {archetype.coreBeliefs.map((belief, i) => (
-            <li key={i}>{belief}</li>
-          ))}
-        </ul>
-      </section>
-
-      <div className={styles.divider} />
-
-      {/* Your Superpower */}
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Your Superpower</h2>
-        <h3 className={styles.highlight} style={{ color: archetype.color }}>
-          {archetype.superpower}
-        </h3>
-        <div className={styles.expandedContent}>
-          {archetype.superpowerExpanded.split("\n\n").map((para, i) => (
-            <p key={i}>{para}</p>
-          ))}
-        </div>
-      </section>
-
-      <div className={styles.divider} />
-
-      {/* Your Blind Spot - coral accent */}
-      <div className={styles.blindSpot}>
-        <div className={styles.blindSpotLabel}>Something to Consider</div>
-        <p className={styles.blindSpotText}>{archetype.blindSpot}</p>
-      </div>
-
-      <div className={styles.divider} />
-
-      {/* Position on Map */}
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Your Position on the Map</h2>
-        <div className={styles.radarContainer}>
-          <RadarChart size={280} highlightArchetype={archetypeKey} />
-        </div>
-      </section>
-
-      {/* Your People - compatibility section */}
-      <div className={styles.compatibility}>
-        <div className={styles.compatibilityLabel}>Your People</div>
-        <div className={styles.relationships}>
-          {allyArchetype && (
-            <div className={styles.relationshipCard}>
-              <h4 className={styles.relationshipLabel}>Your Natural Ally</h4>
-              <Link
-                href={`/wonder/essay/quiz/result?a=${allyKey}`}
-                className={styles.archName}
-                style={{ color: allyArchetype.color }}
-              >
-                {allyArchetype.name}
-              </Link>
-              <p className={styles.relationshipDesc}>
-                {archetype.allyDescription}
-              </p>
-            </div>
-          )}
-
-          {tensionArchetype && (
-            <div className={styles.relationshipCard}>
-              <h4 className={styles.relationshipLabel}>Your Tension</h4>
-              <Link
-                href={`/wonder/essay/quiz/result?a=${tensionKey}`}
-                className={styles.archName}
-                style={{ color: tensionArchetype.color }}
-              >
-                {tensionArchetype.name}
-              </Link>
-              <p className={styles.relationshipDesc}>
-                {archetype.tensionDescription}
-              </p>
-            </div>
-          )}
-
-          {needArchetype && (
-            <div className={styles.relationshipCard}>
-              <h4 className={styles.relationshipLabel}>Your Counterweight</h4>
-              <Link
-                href={`/wonder/essay/quiz/result?a=${needKey}`}
-                className={styles.archName}
-                style={{ color: needArchetype.color }}
-              >
-                {needArchetype.name}
-              </Link>
-              <p className={styles.relationshipDesc}>
-                {archetype.needDescription}
-              </p>
-            </div>
-          )}
-        </div>
-      </div>
 
       <div className={styles.divider} />
 
