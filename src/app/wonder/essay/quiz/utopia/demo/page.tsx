@@ -11,12 +11,13 @@ import type { UtopiaMember } from "@/lib/utopia";
 import styles from "../[slug]/UtopiaPageClient.module.css";
 
 // Demo page with fake members to show what a multi-person utopia looks like
+// Each member has answers for LLM-generated readings
 const demoMembers: UtopiaMember[] = [
-  { id: "demo-1", name: "Louise", archetype: "presence", joinedAt: "2026-04-18" },
-  { id: "demo-2", name: "Sarah", archetype: "shaper", joinedAt: "2026-04-17" },
-  { id: "demo-3", name: "Marcus", archetype: "rooted", joinedAt: "2026-04-16" },
-  { id: "demo-4", name: "Priya", archetype: "conscience", joinedAt: "2026-04-15" },
-  { id: "demo-5", name: "Tom", archetype: "swimmer", joinedAt: "2026-04-14" },
+  { id: "demo-1", name: "Louise", archetype: "presence", joinedAt: "2026-04-18", answers: ["E", "B", "A", "D", "C", "B", "C"] },
+  { id: "demo-2", name: "Sarah", archetype: "shaper", joinedAt: "2026-04-17", answers: ["A", "A", "C", "B", "B", "A", "A"] },
+  { id: "demo-3", name: "Marcus", archetype: "rooted", joinedAt: "2026-04-16", answers: ["C", "B", "B", "C", "F", "D", "B"] },
+  { id: "demo-4", name: "Priya", archetype: "conscience", joinedAt: "2026-04-15", answers: ["B", "F", "B", "B", "F", "F", "B"] },
+  { id: "demo-5", name: "Tom", archetype: "swimmer", joinedAt: "2026-04-14", answers: ["D", "C", "D", "A", "D", "C", "D"] },
 ];
 
 const CURRENT_USER_ID = "demo-1";
