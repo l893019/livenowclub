@@ -243,3 +243,48 @@ export function generateIdentity(dimensions: Dimensions): Identity {
     full: `${adjective} ${noun}`,
   }
 }
+
+/**
+ * Map dimensions to one of 8 landscape images.
+ * Each combination of Agency (Builder/Witness), Certainty (Settled/Seeking),
+ * and Posture (Expansive/Protective) maps to a unique image.
+ */
+export type LandscapeKey =
+  | 'builder-settled-expansive'    // City being built, dawn
+  | 'builder-settled-protective'   // Fortified workshop
+  | 'builder-seeking-expansive'    // Frontier, uncharted
+  | 'builder-seeking-protective'   // Laboratory, careful experimentation
+  | 'witness-settled-expansive'    // Observatory, vast view
+  | 'witness-settled-protective'   // Library, preserved knowledge
+  | 'witness-seeking-expansive'    // Ocean, horizon
+  | 'witness-seeking-protective'   // Garden, quiet tending
+
+export function getLandscapeKey(dimensions: Dimensions): LandscapeKey {
+  const agency = dimensions.agency >= 0 ? 'builder' : 'witness'
+  const certainty = dimensions.certainty >= 0 ? 'settled' : 'seeking'
+  const posture = dimensions.posture >= 0 ? 'expansive' : 'protective'
+
+  return `${agency}-${certainty}-${posture}` as LandscapeKey
+}
+
+/**
+ * Get the path to the landscape image for given dimensions.
+ */
+export function getLandscapeImagePath(dimensions: Dimensions): string {
+  const key = getLandscapeKey(dimensions)
+  return `/wonder/essay/quiz/images/landscape-${key}.jpg`
+}
+
+/**
+ * Human-readable description of each landscape for alt text and prompts.
+ */
+export const LANDSCAPE_DESCRIPTIONS: Record<LandscapeKey, string> = {
+  'builder-settled-expansive': 'A city being built at dawn, cranes and scaffolding against a bright horizon',
+  'builder-settled-protective': 'A fortified workshop, tools organized, warm light through small windows',
+  'builder-seeking-expansive': 'An uncharted frontier, paths diverging into wild terrain',
+  'builder-seeking-protective': 'A careful laboratory, experiments in progress, measured precision',
+  'witness-settled-expansive': 'An observatory on a mountain, vast starfield above',
+  'witness-settled-protective': 'An ancient library, preserved knowledge in towering shelves',
+  'witness-seeking-expansive': 'An endless ocean, the horizon line between sky and water',
+  'witness-seeking-protective': 'A quiet garden at dusk, careful tending, soft growth',
+}

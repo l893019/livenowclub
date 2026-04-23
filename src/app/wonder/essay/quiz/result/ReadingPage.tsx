@@ -7,6 +7,7 @@ import { RadarChart } from "@/components/RadarChart";
 import { CreateJoinStep } from "./steps/CreateJoinStep";
 import { RelationshipComparison } from "./RelationshipComparison";
 import { WorldviewFingerprint } from "./WorldviewFingerprint";
+import { DimensionSpectrum } from "./DimensionSpectrum";
 import {
   getConvictionStrength,
   getRevealingQuestion,
@@ -18,7 +19,7 @@ import {
   type QuizResult,
 } from "@/lib/personalization";
 import { getCombinationContentWithFallback } from "@/lib/combination-content";
-import { arrayToQuizAnswers, type QuizAnswers } from "@/lib/dimensions";
+import { arrayToQuizAnswers, calculateDimensions, getLandscapeImagePath, type QuizAnswers, type Dimensions } from "@/lib/dimensions";
 import type { IndividualReading } from "@/lib/reading-prompts";
 import styles from "./ReadingPage.module.css";
 
@@ -72,6 +73,7 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
   const [reading, setReading] = useState<IndividualReading | null>(null);
   const [isLoadingReading, setIsLoadingReading] = useState(false);
   const [readingError, setReadingError] = useState<string | null>(null);
+  const [dimensions, setDimensions] = useState<Dimensions | null>(null);
   const archetype = archetypes[archetypeKey];
 
   // Check if user has taken the quiz and load their result
@@ -95,6 +97,10 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
         if (!answers && parsed.answers && Array.isArray(parsed.answers)) {
           const convertedAnswers = arrayToQuizAnswers(parsed.answers);
           if (convertedAnswers) {
+            // Calculate dimensions from answers
+            const dims = calculateDimensions(convertedAnswers);
+            setDimensions(dims);
+
             setIsLoadingReading(true);
             setReadingError(null);
 
@@ -152,6 +158,10 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
     if (!hasAllAnswers) {
       return;
     }
+
+    // Calculate dimensions from answers prop
+    const dims = calculateDimensions(answers);
+    setDimensions(dims);
 
     setIsLoadingReading(true);
     setReadingError(null);
@@ -250,6 +260,9 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
 
   const imageUrl = `/wonder/essay/quiz/images/utopia-${archetypeKey}.png`;
 
+  // Dimension-based image for LLM reading view
+  const dimensionImageUrl = dimensions ? getLandscapeImagePath(dimensions) : null;
+
   // Replace "Their" with "Your" when viewing your own result
   const utopiaText = isViewingOther
     ? archetype.utopia
@@ -257,9 +270,9 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
 
   return (
     <div className={styles.reading}>
-      {/* Background landscape */}
+      {/* Background landscape - use dimension-based image for LLM reading, archetype image otherwise */}
       <div className={styles.bgLandscape}>
-        <img src={imageUrl} alt="" />
+        <img src={reading && dimensionImageUrl ? dimensionImageUrl : imageUrl} alt="" />
       </div>
 
       {/* Back button when in inline context */}
@@ -308,18 +321,12 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
 
           <div className={styles.divider} />
 
-          {/* Worldview Fingerprint - also useful with LLM reading */}
-          {!isViewingOther && fingerprint.length > 0 && quizResult && (
-            <div className={styles.personalizedSection}>
-              <h3 className={styles.sectionTitle}>Your Worldview Fingerprint</h3>
-              <div className={styles.fingerprintSection}>
-                <WorldviewFingerprint
-                  data={fingerprint}
-                  primaryKey={archetypeKey}
-                  shadowKey={quizResult.secondaryArchetype}
-                />
-              </div>
-            </div>
+          {/* Dimension Spectrum - shows where you fall on each dimension */}
+          {dimensions && (
+            <section className={styles.section}>
+              <h3 className={styles.sectionTitle}>Where You Fall</h3>
+              <DimensionSpectrum dimensions={dimensions} />
+            </section>
           )}
         </>
       )}

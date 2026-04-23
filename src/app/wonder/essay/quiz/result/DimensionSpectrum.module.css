@@ -1,0 +1,76 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.spectrum {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lowLabel,
+.highLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(45, 42, 38, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dimensionName {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(45, 42, 38, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.track {
+  position: relative;
+  height: 8px;
+  background: linear-gradient(
+    to right,
+    rgba(45, 42, 38, 0.1) 0%,
+    rgba(45, 42, 38, 0.2) 50%,
+    rgba(45, 42, 38, 0.1) 100%
+  );
+  border-radius: 4px;
+}
+
+.marker {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background: var(--accent-pink, #e8178a);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(232, 23, 138, 0.4);
+  transition: left 0.6s ease-out;
+}
+
+/* Add subtle gradient to show the spectrum direction */
+.track::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(232, 23, 138, 0.05) 0%,
+    transparent 20%,
+    transparent 80%,
+    rgba(232, 23, 138, 0.05) 100%
+  );
+  border-radius: 4px;
+}
