@@ -359,20 +359,26 @@ export function getAllIdentityKeys(): string[] {
 }
 
 // =============================================================================
-// Identity Data (Placeholder)
+// Identity Data
 // =============================================================================
+
+import { settledExpansiveIdentities } from './identities-settled-expansive'
+import { settledProtectiveIdentities } from './identities-settled-protective'
+import { seekingExpansiveIdentities } from './identities-seeking-expansive'
+import { seekingProtectiveIdentities } from './identities-seeking-protective'
 
 /**
  * All 84 identities, keyed by their identity key.
- * This will be populated in subsequent tasks.
  *
  * Usage:
  *   const identity = identities['curious-architect']
  *   console.log(identity.superpower)
  */
 export const identities: Record<string, Identity> = {
-  // Placeholder - will be populated with all 84 identities
-  // Each identity follows the Identity type structure above
+  ...settledExpansiveIdentities,
+  ...settledProtectiveIdentities,
+  ...seekingExpansiveIdentities,
+  ...seekingProtectiveIdentities,
 }
 
 /**
@@ -381,6 +387,23 @@ export const identities: Record<string, Identity> = {
  */
 export function getIdentity(key: string): Identity | undefined {
   return identities[key]
+}
+
+/**
+ * Get the path to the landscape image for an identity.
+ * Images are based on noun + quadrant (28 combinations: 7 nouns × 4 quadrants)
+ */
+export function getIdentityImage(identity: Identity): string {
+  return `/wonder/essay/quiz/images/landscape-${identity.noun}-${identity.quadrant}.jpg`
+}
+
+/**
+ * Get the image path from an identity key.
+ */
+export function getIdentityImageFromKey(key: string): string | undefined {
+  const identity = identities[key]
+  if (!identity) return undefined
+  return getIdentityImage(identity)
 }
 
 /**
