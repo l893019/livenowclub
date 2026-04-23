@@ -1,15 +1,16 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { RadarChart } from "@/components/RadarChart";
-import { archetypePositions } from "@/lib/radar-positions";
+import { useState, useEffect, useMemo } from "react";
 import { archetypes, getAnalyticalPairDynamic } from "@/lib/archetypes";
+import { arrayToQuizAnswers, calculateDimensions } from "@/lib/dimensions";
+import { DimensionSpectrum } from "./DimensionSpectrum";
 import styles from "./RelationshipComparison.module.css";
 
 type CompareUser = {
   id: string;
   name: string;
   archetype: string;
+  answers?: string[];
 };
 
 type RelationshipComparisonProps = {
@@ -36,6 +37,7 @@ export function RelationshipComparison({
             id: data.user.id,
             name: data.user.name || "Anonymous",
             archetype: data.user.archetype,
+            answers: data.user.answers,
           });
         } else {
           setError(true);
@@ -73,33 +75,35 @@ export function RelationshipComparison({
   const dynamic = getAnalyticalPairDynamic(yourArchetypeKey, compareUser.archetype);
 
   // Get current user info from localStorage
-  const currentUserId = typeof window !== "undefined" ? localStorage.getItem("quiz-user-id") : null;
   const storedResult = typeof window !== "undefined" ? localStorage.getItem("quiz-user-result") : null;
   let yourName = "You";
+  let yourAnswers: string[] | null = null;
   if (storedResult) {
     try {
       const parsed = JSON.parse(storedResult);
       yourName = parsed.name || "You";
+      yourAnswers = parsed.answers || null;
     } catch {
       // Use default
     }
   }
 
-  const userDots = [
-    {
-      id: currentUserId || "you",
-      name: yourName,
-      position: archetypePositions[yourArchetypeKey] || { x: 0, y: 0 },
-      color: yourArchetype.color,
-      isYou: true,
-    },
-    {
-      id: compareUser.id,
-      name: compareUser.name,
-      position: archetypePositions[compareUser.archetype] || { x: 0, y: 0 },
-      color: theirArchetype.color,
-    },
-  ];
+  // Calculate dimensions for both people
+  const yourDimensions = useMemo(() => {
+    if (yourAnswers?.length === 7) {
+      const quizAnswers = arrayToQuizAnswers(yourAnswers);
+      return quizAnswers ? calculateDimensions(quizAnswers) : null;
+    }
+    return null;
+  }, [yourAnswers]);
+
+  const theirDimensions = useMemo(() => {
+    if (compareUser.answers?.length === 7) {
+      const quizAnswers = arrayToQuizAnswers(compareUser.answers);
+      return quizAnswers ? calculateDimensions(quizAnswers) : null;
+    }
+    return null;
+  }, [compareUser.answers]);
 
   return (
     <section className={styles.container}>
@@ -114,8 +118,29 @@ export function RelationshipComparison({
         </p>
       </div>
 
-      <div className={styles.radarContainer}>
-        <RadarChart size={280} userDots={userDots} showAllArchetypes={false} />
+      {/* Dimension Spectrums */}
+      <div className={styles.spectrums}>
+        {yourDimensions && (
+          <div className={styles.spectrumCard}>
+            <h4 className={styles.spectrumLabel} style={{ color: yourArchetype.color }}>
+              {yourName}
+            </h4>
+            <DimensionSpectrum dimensions={yourDimensions} />
+          </div>
+        )}
+        {theirDimensions && (
+          <div className={styles.spectrumCard}>
+            <h4 className={styles.spectrumLabel} style={{ color: theirArchetype.color }}>
+              {compareUser.name}
+            </h4>
+            <DimensionSpectrum dimensions={theirDimensions} />
+          </div>
+        )}
+        {!yourDimensions && !theirDimensions && (
+          <p className={styles.spectrumEmpty}>
+            Both people need to complete the quiz to see dimension comparison.
+          </p>
+        )}
       </div>
 
       <p className={styles.thesis}>&ldquo;{dynamic.thesis}&rdquo;</p>

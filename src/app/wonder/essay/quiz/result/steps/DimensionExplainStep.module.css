@@ -1,0 +1,185 @@
+/* DimensionExplainStep.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  background-color: #0a0a0a;
+  color: #fff;
+}
+
+/* Mini island image at top */
+.miniIsland {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeInScale 0.6s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Title */
+.title {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dimension spectrums container */
+.spectrums {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 2rem;
+}
+
+/* Individual dimension row */
+.dimensionRow {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.dimensionRow.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.dimensionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.dimensionName {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.dimensionRange {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+}
+
+/* Override DimensionSpectrum styles for dark mode */
+.spectrumWrapper {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.spectrumWrapper :global(.spectrum) {
+  margin-bottom: 0;
+}
+
+.spectrumWrapper :global(.track) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.spectrumWrapper :global(.marker) {
+  background: #e8178a;
+  box-shadow: 0 0 12px rgba(232, 23, 138, 0.6);
+}
+
+/* Description */
+.description {
+  max-width: 320px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  margin-bottom: 2rem;
+}
+
+.description.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hint at bottom */
+.hint {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.4);
+  opacity: 0;
+  transition: opacity 0.6s ease-out;
+}
+
+.hint.visible {
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (min-width: 640px) {
+  .miniIsland {
+    width: 100px;
+    height: 100px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .spectrums {
+    max-width: 400px;
+  }
+
+  .description {
+    font-size: 18px;
+    max-width: 400px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .miniIsland {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .title,
+  .dimensionRow,
+  .description {
+    transition: none;
+  }
+
+  .title.visible,
+  .dimensionRow.visible,
+  .description.visible {
+    opacity: 1;
+    transform: none;
+  }
+}

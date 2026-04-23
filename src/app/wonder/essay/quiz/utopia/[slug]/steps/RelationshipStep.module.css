@@ -108,23 +108,52 @@
   font-weight: 400;
 }
 
-/* Radar */
-.radarContainer {
+/* Dimension Spectrums */
+.spectrums {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 24px;
   margin: 1.5rem 0 2rem;
-}
-
-.radarCard {
-  background: white;
-  border-radius: 20px;
-  padding: 24px;
-  box-shadow:
-    0 4px 24px rgba(0, 0, 0, 0.06),
-    0 1px 4px rgba(0, 0, 0, 0.04);
+  padding: 0;
   opacity: 0;
   animation: staggerIn 0.4s ease-out forwards;
   animation-delay: 0.12s;
+}
+
+@media (min-width: 600px) {
+  .spectrums {
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .spectrumCard {
+    flex: 1;
+  }
+}
+
+.spectrumCard {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.06),
+    0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.spectrumLabel {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  text-align: center;
+}
+
+.spectrumEmpty {
+  text-align: center;
+  color: rgba(45, 42, 38, 0.5);
+  font-size: 14px;
+  padding: 24px;
+  background: white;
+  border-radius: 16px;
 }
 
 /* Opening Thesis */

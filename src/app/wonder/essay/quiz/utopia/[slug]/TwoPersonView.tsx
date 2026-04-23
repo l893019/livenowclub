@@ -1,14 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { RadarChart } from "@/components/RadarChart";
-import { archetypePositions, getGroupCenterOfGravity } from "@/lib/radar-positions";
+import { useState, useEffect, useMemo } from "react";
 import {
   archetypes,
   getAnalyticalPairDynamic,
   getGroupBook,
 } from "@/lib/archetypes";
-import { arrayToQuizAnswers } from "@/lib/dimensions";
+import { arrayToQuizAnswers, calculateDimensions, type Dimensions } from "@/lib/dimensions";
+import { DimensionSpectrum } from "@/app/wonder/essay/quiz/result/DimensionSpectrum";
 import type { UtopiaMember } from "@/lib/utopia";
 import type { PairReading } from "@/lib/reading-prompts";
 import styles from "./TwoPersonView.module.css";
@@ -66,12 +65,22 @@ export function TwoPersonView({ members, utopiaName, onMemberClick }: TwoPersonV
 
   const book = getGroupBook([personA.archetype, personB.archetype]);
 
-  const userDots = members.map((m) => ({
-    id: m.id,
-    name: m.name || "Anonymous",
-    position: archetypePositions[m.archetype] || { x: 0, y: 0 },
-    color: archetypes[m.archetype]?.color || "#888",
-  }));
+  // Calculate dimensions for both people
+  const dimensionsA = useMemo<Dimensions | null>(() => {
+    if (personA?.answers?.length === 7) {
+      const answers = arrayToQuizAnswers(personA.answers);
+      return answers ? calculateDimensions(answers) : null;
+    }
+    return null;
+  }, [personA?.answers]);
+
+  const dimensionsB = useMemo<Dimensions | null>(() => {
+    if (personB?.answers?.length === 7) {
+      const answers = arrayToQuizAnswers(personB.answers);
+      return answers ? calculateDimensions(answers) : null;
+    }
+    return null;
+  }, [personB?.answers]);
 
   return (
     <div className={styles.container}>
@@ -87,16 +96,27 @@ export function TwoPersonView({ members, utopiaName, onMemberClick }: TwoPersonV
         </p>
       </div>
 
-      <div className={styles.radar}>
-        <RadarChart
-          size={280}
-          userDots={userDots}
-          centerOfGravity={getGroupCenterOfGravity(
-            userDots.map((d) => d.position)
-          )}
-          showAllArchetypes={false}
-          onDotClick={onMemberClick}
-        />
+      {/* Dimension Spectrums for both people */}
+      <div className={styles.spectrums}>
+        {dimensionsA && (
+          <div className={styles.spectrumCard}>
+            <h4 className={styles.spectrumLabel} style={{ color: archA?.color }}>
+              {personA.name || shortNameA}
+            </h4>
+            <DimensionSpectrum dimensions={dimensionsA} />
+          </div>
+        )}
+        {dimensionsB && (
+          <div className={styles.spectrumCard}>
+            <h4 className={styles.spectrumLabel} style={{ color: archB?.color }}>
+              {personB.name || shortNameB}
+            </h4>
+            <DimensionSpectrum dimensions={dimensionsB} />
+          </div>
+        )}
+        {!dimensionsA && !dimensionsB && (
+          <p className={styles.spectrumEmpty}>Both members need to complete the quiz to see dimensions.</p>
+        )}
       </div>
 
       <div className={styles.reading}>

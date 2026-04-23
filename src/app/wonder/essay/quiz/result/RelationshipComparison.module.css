@@ -41,11 +41,45 @@
   margin: 0;
 }
 
-/* Radar */
-.radarContainer {
+/* Dimension Spectrums */
+.spectrums {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
   margin: 1.25rem 0 1.5rem;
+}
+
+@media (min-width: 600px) {
+  .spectrums {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .spectrumCard {
+    flex: 1;
+  }
+}
+
+.spectrumCard {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.spectrumLabel {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  text-align: center;
+}
+
+.spectrumEmpty {
+  text-align: center;
+  color: rgba(45, 42, 38, 0.5);
+  font-size: 14px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
 }
 
 /* Opening Thesis */

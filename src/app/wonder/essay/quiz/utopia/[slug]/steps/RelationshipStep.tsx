@@ -1,12 +1,13 @@
 "use client";
 
-import { RadarChart } from "@/components/RadarChart";
-import { archetypePositions } from "@/lib/radar-positions";
+import { useMemo } from "react";
 import { archetypes } from "@/lib/archetypes";
+import { arrayToQuizAnswers, calculateDimensions } from "@/lib/dimensions";
 import { getPairReading } from "@/lib/pair-dynamics";
 import { useSwipe } from "@/hooks/useSwipe";
 import type { UtopiaMember } from "@/lib/utopia";
 import { QuizCTA } from "@/app/wonder/essay/quiz/result/QuizCTA";
+import { DimensionSpectrum } from "@/app/wonder/essay/quiz/result/DimensionSpectrum";
 import styles from "./RelationshipStep.module.css";
 
 type RelationshipStepProps = {
@@ -50,6 +51,23 @@ export function RelationshipStep({
   // Determine if this is a standalone 2-person view or within a group
   const isStandalone = !groupMembers || groupMembers.length <= 2;
 
+  // Calculate dimensions for both people
+  const dimensionsYou = useMemo(() => {
+    if (you.answers?.length === 7) {
+      const answers = arrayToQuizAnswers(you.answers);
+      return answers ? calculateDimensions(answers) : null;
+    }
+    return null;
+  }, [you.answers]);
+
+  const dimensionsThem = useMemo(() => {
+    if (them.answers?.length === 7) {
+      const answers = arrayToQuizAnswers(them.answers);
+      return answers ? calculateDimensions(answers) : null;
+    }
+    return null;
+  }, [them.answers]);
+
   const handleShare = async () => {
     const shareUrl = `${window.location.origin}/wonder/essay/quiz/utopia/${utopiaSlug}?view=relationship&you=${you.id}&them=${them.id}`;
     const shareText = `${yourArchetype?.name} × ${theirArchetype?.name} — What we'd build together`;
@@ -69,22 +87,6 @@ export function RelationshipStep({
       alert("Link copied to clipboard!");
     }
   };
-
-  const userDots = [
-    {
-      id: you.id,
-      name: you.name || "You",
-      position: archetypePositions[you.archetype] || { x: 0, y: 0 },
-      color: yourArchetype?.color || "#888",
-      isYou: true,
-    },
-    {
-      id: them.id,
-      name: them.name || "Them",
-      position: archetypePositions[them.archetype] || { x: 0, y: 0 },
-      color: theirArchetype?.color || "#888",
-    },
-  ];
 
   // Swipe gestures for navigating between members
   const { onTouchStart, onTouchEnd } = useSwipe(
@@ -114,15 +116,27 @@ export function RelationshipStep({
         </p>
       </header>
 
-      {/* Radar Card */}
-      <div className={styles.radarContainer}>
-        <div className={styles.radarCard}>
-          <RadarChart
-            size={280}
-            userDots={userDots}
-            showAllArchetypes={false}
-          />
-        </div>
+      {/* Dimension Spectrums */}
+      <div className={styles.spectrums}>
+        {dimensionsYou && (
+          <div className={styles.spectrumCard}>
+            <h4 className={styles.spectrumLabel} style={{ color: yourArchetype?.color }}>
+              {you.name || "You"}
+            </h4>
+            <DimensionSpectrum dimensions={dimensionsYou} />
+          </div>
+        )}
+        {dimensionsThem && (
+          <div className={styles.spectrumCard}>
+            <h4 className={styles.spectrumLabel} style={{ color: theirArchetype?.color }}>
+              {them.name || "Them"}
+            </h4>
+            <DimensionSpectrum dimensions={dimensionsThem} />
+          </div>
+        )}
+        {!dimensionsYou && !dimensionsThem && (
+          <p className={styles.spectrumEmpty}>Both people need to complete the quiz to see dimensions.</p>
+        )}
       </div>
 
       {/* CTA for viewers who haven't taken the quiz */}

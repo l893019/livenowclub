@@ -5,14 +5,21 @@ import type { Dimensions } from "@/lib/dimensions";
 
 type DimensionSpectrumProps = {
   dimensions: Dimensions;
+  showLabels?: boolean;
+  singleDimension?: "agency" | "certainty" | "posture";
 };
 
-export function DimensionSpectrum({ dimensions }: DimensionSpectrumProps) {
+export function DimensionSpectrum({
+  dimensions,
+  showLabels = true,
+  singleDimension,
+}: DimensionSpectrumProps) {
   // Convert -1 to 1 range to 0 to 100 percentage
   const toPercent = (value: number) => ((value + 1) / 2) * 100;
 
-  const spectrums = [
+  const allSpectrums = [
     {
+      key: "agency",
       name: "Agency",
       lowLabel: "Witness",
       highLabel: "Builder",
@@ -20,6 +27,7 @@ export function DimensionSpectrum({ dimensions }: DimensionSpectrumProps) {
       percent: toPercent(dimensions.agency),
     },
     {
+      key: "certainty",
       name: "Certainty",
       lowLabel: "Seeking",
       highLabel: "Settled",
@@ -27,6 +35,7 @@ export function DimensionSpectrum({ dimensions }: DimensionSpectrumProps) {
       percent: toPercent(dimensions.certainty),
     },
     {
+      key: "posture",
       name: "Posture",
       lowLabel: "Protective",
       highLabel: "Expansive",
@@ -35,15 +44,21 @@ export function DimensionSpectrum({ dimensions }: DimensionSpectrumProps) {
     },
   ];
 
+  const spectrums = singleDimension
+    ? allSpectrums.filter((s) => s.key === singleDimension)
+    : allSpectrums;
+
   return (
     <div className={styles.container}>
       {spectrums.map((spectrum) => (
         <div key={spectrum.name} className={styles.spectrum}>
-          <div className={styles.labels}>
-            <span className={styles.lowLabel}>{spectrum.lowLabel}</span>
-            <span className={styles.dimensionName}>{spectrum.name}</span>
-            <span className={styles.highLabel}>{spectrum.highLabel}</span>
-          </div>
+          {showLabels && (
+            <div className={styles.labels}>
+              <span className={styles.lowLabel}>{spectrum.lowLabel}</span>
+              <span className={styles.dimensionName}>{spectrum.name}</span>
+              <span className={styles.highLabel}>{spectrum.highLabel}</span>
+            </div>
+          )}
           <div className={styles.track}>
             <div
               className={styles.marker}

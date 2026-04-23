@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { archetypes } from "@/lib/archetypes";
-import { RadarChart } from "@/components/RadarChart";
 import { CreateJoinStep } from "./steps/CreateJoinStep";
 import { RelationshipComparison } from "./RelationshipComparison";
 import { WorldviewFingerprint } from "./WorldviewFingerprint";
@@ -522,12 +521,14 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
 
           <div className={styles.divider} />
 
-          {/* Position on Map */}
+          {/* Where You Fall */}
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>Your Position on the Map</h2>
-            <div className={styles.radarContainer}>
-              <RadarChart size={280} highlightArchetype={archetypeKey} />
-            </div>
+            <h2 className={styles.sectionTitle}>Where You Fall</h2>
+            {dimensions ? (
+              <DimensionSpectrum dimensions={dimensions} />
+            ) : (
+              <p className={styles.bodyText}>Take the quiz to see your position on the three dimensions.</p>
+            )}
           </section>
 
           {/* Your People - compatibility section */}

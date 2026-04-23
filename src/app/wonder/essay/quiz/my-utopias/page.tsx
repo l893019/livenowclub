@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Header from "@/components/Header";
-import { MiniRadarChart } from "@/components/MiniRadarChart";
+import { archetypes } from "@/lib/archetypes";
 import styles from "./MyUtopias.module.css";
 
 type UtopiaMember = {
@@ -112,8 +112,24 @@ export default function MyUtopiasPage() {
                 href={`/wonder/essay/quiz/utopia/${utopia.slug}`}
                 className={styles.utopiaCard}
               >
-                <div className={styles.utopiaCardChart}>
-                  <MiniRadarChart members={utopia.members} size={80} />
+                <div className={styles.memberDots}>
+                  {utopia.members.slice(0, 5).map((member, idx) => {
+                    const arch = archetypes[member.archetype];
+                    return (
+                      <div
+                        key={member.id}
+                        className={styles.memberDot}
+                        style={{
+                          backgroundColor: arch?.color || "#888",
+                          zIndex: 5 - idx,
+                        }}
+                        title={member.name || "Anonymous"}
+                      />
+                    );
+                  })}
+                  {utopia.members.length > 5 && (
+                    <div className={styles.memberDotMore}>+{utopia.members.length - 5}</div>
+                  )}
                 </div>
                 <div className={styles.utopiaCardName}>{utopia.name}</div>
                 <div className={styles.utopiaCardCount}>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { MiniRadarChart } from "@/components/MiniRadarChart";
 import { archetypes } from "@/lib/archetypes";
 import styles from "./CardStep.module.css";
 
@@ -81,14 +80,6 @@ export function CardStep({ archetypeKey, imageUrl, onContinue, onBuildUtopia }: 
         <p className={styles.utopiaQuote}>
           {archetype.utopia}
         </p>
-
-        {/* Mini radar */}
-        <div className={styles.radarContainer}>
-          <MiniRadarChart
-            members={[{ archetype: archetypeKey }]}
-            size={60}
-          />
-        </div>
 
         {/* Branding */}
         <span className={styles.branding}>livenowclub.com/quiz</span>

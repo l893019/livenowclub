@@ -267,3 +267,44 @@
   padding: 40px 20px;
   color: rgba(45, 42, 38, 0.6);
 }
+
+/* Dimension Spectrums */
+.spectrums {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(45, 42, 38, 0.1);
+}
+
+@media (min-width: 600px) {
+  .spectrums {
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .spectrumCard {
+    flex: 1;
+  }
+}
+
+.spectrumCard {
+  background: rgba(45, 42, 38, 0.02);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.spectrumLabel {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  text-align: center;
+}
+
+.spectrumEmpty {
+  text-align: center;
+  color: rgba(45, 42, 38, 0.5);
+  font-size: 14px;
+  padding: 24px;
+}
