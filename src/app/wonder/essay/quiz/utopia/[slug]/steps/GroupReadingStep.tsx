@@ -147,11 +147,6 @@ export function GroupReadingStep({
 
   return (
     <div className={styles.reading}>
-      {error && (
-        <div style={{ background: "#fee", padding: "12px", borderRadius: "8px", marginBottom: "16px", fontSize: "14px", color: "#c00" }}>
-          Error loading reading: {error}
-        </div>
-      )}
       {isLoading ? (
         <div className={styles.loading}>Generating your group reading...</div>
       ) : llmReading ? (
