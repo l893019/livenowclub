@@ -1,4 +1,13 @@
 // src/lib/archetypes.ts
+//
+// LEGACY: This file contains the old 14-archetype system.
+// New quiz results use the 84-identity dimension system in identities.ts.
+// This file is kept for backward compatibility with:
+// - Old result URLs (?a=citizen, etc.)
+// - Pair dynamics and group analysis (pending migration)
+// - Existing saved user data referencing archetype keys
+//
+// For new development, prefer importing from @/lib/identities
 
 import { archetypePositions } from "@/lib/radar-positions";
 
