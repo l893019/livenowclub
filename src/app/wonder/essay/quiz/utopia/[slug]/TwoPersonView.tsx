@@ -7,6 +7,11 @@ import {
   getGroupBook,
 } from "@/lib/archetypes";
 import { arrayToQuizAnswers, calculateDimensions, type Dimensions } from "@/lib/dimensions";
+import {
+  getIdentityFromDimensions,
+  getAdjectiveIndex,
+  type Identity,
+} from "@/lib/identities";
 import { DimensionSpectrum } from "@/app/wonder/essay/quiz/result/DimensionSpectrum";
 import type { UtopiaMember } from "@/lib/utopia";
 import type { PairReading } from "@/lib/reading-prompts";
@@ -53,43 +58,63 @@ export function TwoPersonView({ members, utopiaName, onMemberClick }: TwoPersonV
     }
   }, [personA, personB]);
 
+  // Calculate dimensions and identities for both people
+  const { dimensions: dimensionsA, identity: identityA } = useMemo<{
+    dimensions: Dimensions | null;
+    identity: Identity | null;
+  }>(() => {
+    if (personA?.answers?.length === 7) {
+      const answers = arrayToQuizAnswers(personA.answers);
+      if (answers) {
+        const dims = calculateDimensions(answers);
+        const adjIdx = getAdjectiveIndex(dims.certainty, dims.posture);
+        const id = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIdx);
+        return { dimensions: dims, identity: id ?? null };
+      }
+    }
+    return { dimensions: null, identity: null };
+  }, [personA?.answers]);
+
+  const { dimensions: dimensionsB, identity: identityB } = useMemo<{
+    dimensions: Dimensions | null;
+    identity: Identity | null;
+  }>(() => {
+    if (personB?.answers?.length === 7) {
+      const answers = arrayToQuizAnswers(personB.answers);
+      if (answers) {
+        const dims = calculateDimensions(answers);
+        const adjIdx = getAdjectiveIndex(dims.certainty, dims.posture);
+        const id = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIdx);
+        return { dimensions: dims, identity: id ?? null };
+      }
+    }
+    return { dimensions: null, identity: null };
+  }, [personB?.answers]);
+
   if (members.length !== 2 || !personA || !personB) return null;
   const archA = archetypes[personA.archetype];
   const archB = archetypes[personB.archetype];
 
-  // Extract short names (e.g., "Abundant" from "The Abundant")
-  const shortNameA = archA?.name?.replace(/^The /, "") || personA.archetype;
-  const shortNameB = archB?.name?.replace(/^The /, "") || personB.archetype;
+  // Extract short names - prefer identity names when available
+  const shortNameA = identityA?.name || archA?.name?.replace(/^The /, "") || personA.archetype;
+  const shortNameB = identityB?.name || archB?.name?.replace(/^The /, "") || personB.archetype;
+
+  // Determine colors - prefer identity colors when available
+  const colorA = identityA?.color || archA?.color;
+  const colorB = identityB?.color || archB?.color;
 
   const dynamic = getAnalyticalPairDynamic(personA.archetype, personB.archetype);
 
   const book = getGroupBook([personA.archetype, personB.archetype]);
-
-  // Calculate dimensions for both people
-  const dimensionsA = useMemo<Dimensions | null>(() => {
-    if (personA?.answers?.length === 7) {
-      const answers = arrayToQuizAnswers(personA.answers);
-      return answers ? calculateDimensions(answers) : null;
-    }
-    return null;
-  }, [personA?.answers]);
-
-  const dimensionsB = useMemo<Dimensions | null>(() => {
-    if (personB?.answers?.length === 7) {
-      const answers = arrayToQuizAnswers(personB.answers);
-      return answers ? calculateDimensions(answers) : null;
-    }
-    return null;
-  }, [personB?.answers]);
 
   return (
     <div className={styles.container}>
       <div className={styles.header}>
         <span className={styles.label}>A Utopia of Two</span>
         <h2 className={styles.names}>
-          <span style={{ color: archA?.color }}>{shortNameA}</span>
+          <span style={{ color: colorA }}>{shortNameA}</span>
           {" × "}
-          <span style={{ color: archB?.color }}>{shortNameB}</span>
+          <span style={{ color: colorB }}>{shortNameB}</span>
         </h2>
         <p className={styles.people}>
           {personA.name || "Anonymous"} & {personB.name || "Anonymous"}
@@ -100,7 +125,7 @@ export function TwoPersonView({ members, utopiaName, onMemberClick }: TwoPersonV
       <div className={styles.spectrums}>
         {dimensionsA && (
           <div className={styles.spectrumCard}>
-            <h4 className={styles.spectrumLabel} style={{ color: archA?.color }}>
+            <h4 className={styles.spectrumLabel} style={{ color: colorA }}>
               {personA.name || shortNameA}
             </h4>
             <DimensionSpectrum dimensions={dimensionsA} />
@@ -108,7 +133,7 @@ export function TwoPersonView({ members, utopiaName, onMemberClick }: TwoPersonV
         )}
         {dimensionsB && (
           <div className={styles.spectrumCard}>
-            <h4 className={styles.spectrumLabel} style={{ color: archB?.color }}>
+            <h4 className={styles.spectrumLabel} style={{ color: colorB }}>
               {personB.name || shortNameB}
             </h4>
             <DimensionSpectrum dimensions={dimensionsB} />
@@ -135,14 +160,14 @@ export function TwoPersonView({ members, utopiaName, onMemberClick }: TwoPersonV
               <h3 className={styles.sectionLabel}>What You Give Each Other</h3>
               <div className={styles.giveCards}>
                 <div className={styles.giveCard}>
-                  <span className={styles.giveName} style={{ color: archA?.color }}>
+                  <span className={styles.giveName} style={{ color: colorA }}>
                     {personA.name || shortNameA}
                   </span>
                   <span className={styles.giveArrow}>→</span>
                   <p className={styles.giveText}>{llmReading.whatAGivesB}</p>
                 </div>
                 <div className={styles.giveCard}>
-                  <span className={styles.giveName} style={{ color: archB?.color }}>
+                  <span className={styles.giveName} style={{ color: colorB }}>
                     {personB.name || shortNameB}
                   </span>
                   <span className={styles.giveArrow}>→</span>
@@ -226,14 +251,14 @@ export function TwoPersonView({ members, utopiaName, onMemberClick }: TwoPersonV
               <h3 className={styles.sectionLabel}>What you give each other</h3>
               <div className={styles.giveCards}>
                 <div className={styles.giveCard}>
-                  <span className={styles.giveName} style={{ color: archA?.color }}>
+                  <span className={styles.giveName} style={{ color: colorA }}>
                     {personA.name || shortNameA}
                   </span>
                   <span className={styles.giveArrow}>→</span>
                   <p className={styles.giveText}>{dynamic.give.youToThem}</p>
                 </div>
                 <div className={styles.giveCard}>
-                  <span className={styles.giveName} style={{ color: archB?.color }}>
+                  <span className={styles.giveName} style={{ color: colorB }}>
                     {personB.name || shortNameB}
                   </span>
                   <span className={styles.giveArrow}>→</span>
