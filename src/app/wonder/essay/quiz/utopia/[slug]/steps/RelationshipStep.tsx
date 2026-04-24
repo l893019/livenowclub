@@ -3,6 +3,10 @@
 import { useMemo } from "react";
 import { archetypes } from "@/lib/archetypes";
 import { arrayToQuizAnswers, calculateDimensions } from "@/lib/dimensions";
+import {
+  getIdentityFromDimensions,
+  getAdjectiveIndex,
+} from "@/lib/identities";
 import { getPairReading } from "@/lib/pair-dynamics";
 import { useSwipe } from "@/hooks/useSwipe";
 import type { UtopiaMember } from "@/lib/utopia";
@@ -51,26 +55,38 @@ export function RelationshipStep({
   // Determine if this is a standalone 2-person view or within a group
   const isStandalone = !groupMembers || groupMembers.length <= 2;
 
-  // Calculate dimensions for both people
-  const dimensionsYou = useMemo(() => {
+  // Calculate dimensions and identities for both people
+  const { dimensions: dimensionsYou, identity: identityYou } = useMemo(() => {
     if (you.answers?.length === 7) {
       const answers = arrayToQuizAnswers(you.answers);
-      return answers ? calculateDimensions(answers) : null;
+      if (answers) {
+        const dims = calculateDimensions(answers);
+        const adjIdx = getAdjectiveIndex(dims.certainty, dims.posture);
+        const id = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIdx);
+        return { dimensions: dims, identity: id };
+      }
     }
-    return null;
+    return { dimensions: null, identity: null };
   }, [you.answers]);
 
-  const dimensionsThem = useMemo(() => {
+  const { dimensions: dimensionsThem, identity: identityThem } = useMemo(() => {
     if (them.answers?.length === 7) {
       const answers = arrayToQuizAnswers(them.answers);
-      return answers ? calculateDimensions(answers) : null;
+      if (answers) {
+        const dims = calculateDimensions(answers);
+        const adjIdx = getAdjectiveIndex(dims.certainty, dims.posture);
+        const id = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIdx);
+        return { dimensions: dims, identity: id };
+      }
     }
-    return null;
+    return { dimensions: null, identity: null };
   }, [them.answers]);
 
   const handleShare = async () => {
     const shareUrl = `${window.location.origin}/wonder/essay/quiz/utopia/${utopiaSlug}?view=relationship&you=${you.id}&them=${them.id}`;
-    const shareText = `${yourArchetype?.name} × ${theirArchetype?.name} — What we'd build together`;
+    const yourName = identityYou?.name || yourArchetype?.name;
+    const theirName = identityThem?.name || theirArchetype?.name;
+    const shareText = `${yourName} × ${theirName} — What we'd build together`;
 
     if (navigator.share) {
       try {
@@ -107,12 +123,12 @@ export function RelationshipStep({
       {/* Header */}
       <header className={styles.header}>
         <h1 className={styles.title}>
-          <span style={{ color: yourArchetype?.color }}>{you.name || "You"}</span>
+          <span style={{ color: identityYou?.color || yourArchetype?.color }}>{you.name || "You"}</span>
           <span className={styles.times}>×</span>
-          <span style={{ color: theirArchetype?.color }}>{them.name || "Anonymous"}</span>
+          <span style={{ color: identityThem?.color || theirArchetype?.color }}>{them.name || "Anonymous"}</span>
         </h1>
         <p className={styles.subtitle}>
-          {yourArchetype?.name} & {theirArchetype?.name}
+          {identityYou?.name || yourArchetype?.name} & {identityThem?.name || theirArchetype?.name}
         </p>
       </header>
 
@@ -120,7 +136,7 @@ export function RelationshipStep({
       <div className={styles.spectrums}>
         {dimensionsYou && (
           <div className={styles.spectrumCard}>
-            <h4 className={styles.spectrumLabel} style={{ color: yourArchetype?.color }}>
+            <h4 className={styles.spectrumLabel} style={{ color: identityYou?.color || yourArchetype?.color }}>
               {you.name || "You"}
             </h4>
             <DimensionSpectrum dimensions={dimensionsYou} />
@@ -128,7 +144,7 @@ export function RelationshipStep({
         )}
         {dimensionsThem && (
           <div className={styles.spectrumCard}>
-            <h4 className={styles.spectrumLabel} style={{ color: theirArchetype?.color }}>
+            <h4 className={styles.spectrumLabel} style={{ color: identityThem?.color || theirArchetype?.color }}>
               {them.name || "Them"}
             </h4>
             <DimensionSpectrum dimensions={dimensionsThem} />
