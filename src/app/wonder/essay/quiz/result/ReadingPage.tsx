@@ -19,6 +19,13 @@ import {
 } from "@/lib/personalization";
 import { getCombinationContentWithFallback } from "@/lib/combination-content";
 import { arrayToQuizAnswers, calculateDimensions, getLandscapeImagePath, type QuizAnswers, type Dimensions } from "@/lib/dimensions";
+import {
+  identities,
+  getIdentityFromDimensions,
+  getIdentityImage,
+  getAdjectiveIndex,
+  type Identity,
+} from "@/lib/identities";
 import type { IndividualReading } from "@/lib/reading-prompts";
 import styles from "./ReadingPage.module.css";
 
@@ -73,6 +80,7 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
   const [isLoadingReading, setIsLoadingReading] = useState(false);
   const [readingError, setReadingError] = useState<string | null>(null);
   const [dimensions, setDimensions] = useState<Dimensions | null>(null);
+  const [identity, setIdentity] = useState<Identity | null>(null);
   const archetype = archetypes[archetypeKey];
 
   // Check if user has taken the quiz and load their result
@@ -99,6 +107,13 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
             // Calculate dimensions from answers
             const dims = calculateDimensions(convertedAnswers);
             setDimensions(dims);
+
+            // Look up identity instantly from dimensions
+            const adjIndex = getAdjectiveIndex(dims.certainty, dims.posture);
+            const foundIdentity = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIndex);
+            if (foundIdentity) {
+              setIdentity(foundIdentity);
+            }
 
             setIsLoadingReading(true);
             setReadingError(null);
@@ -161,6 +176,13 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
     // Calculate dimensions from answers prop
     const dims = calculateDimensions(answers);
     setDimensions(dims);
+
+    // Look up identity instantly from dimensions
+    const adjIndex = getAdjectiveIndex(dims.certainty, dims.posture);
+    const foundIdentity = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIndex);
+    if (foundIdentity) {
+      setIdentity(foundIdentity);
+    }
 
     setIsLoadingReading(true);
     setReadingError(null);
@@ -259,19 +281,22 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
 
   const imageUrl = `/wonder/essay/quiz/images/utopia-${archetypeKey}.png`;
 
-  // Dimension-based image for LLM reading view
+  // Identity-based image when identity is available
+  const identityImageUrl = identity ? getIdentityImage(identity) : null;
+
+  // Dimension-based image for LLM reading view (legacy fallback)
   const dimensionImageUrl = dimensions ? getLandscapeImagePath(dimensions) : null;
 
   // Replace "Their" with "Your" when viewing your own result
   const utopiaText = isViewingOther
-    ? archetype.utopia
-    : archetype.utopia.replace(/^Their /i, "Your ");
+    ? (identity?.utopia || archetype.utopia)
+    : (identity?.utopia || archetype.utopia).replace(/^Their /i, "Your ");
 
   return (
     <div className={styles.reading}>
-      {/* Background landscape - use dimension-based image for LLM reading, archetype image otherwise */}
+      {/* Background landscape - priority: identity image > dimension image > archetype image */}
       <div className={styles.bgLandscape}>
-        <img src={reading && dimensionImageUrl ? dimensionImageUrl : imageUrl} alt="" />
+        <img src={identityImageUrl || dimensionImageUrl || imageUrl} alt="" />
       </div>
 
       {/* Back button when in inline context */}
@@ -288,50 +313,232 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
         </div>
       )}
 
-      {/* LLM-generated reading content */}
-      {reading && !isLoadingReading && (
+      {/* Identity-based content (instant display from dimensions) */}
+      {identity && !isLoadingReading && (
         <>
           <header className={styles.header}>
-            <p className={styles.label}>You are</p>
-            <h1 className={styles.name}>{reading.identity}</h1>
+            <p className={styles.label}>{labelText}</p>
+            <h1 className={styles.name}>{identity.name}</h1>
           </header>
 
-          <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>Your Pattern</h2>
-            <p className={styles.bodyText}>{reading.pattern}</p>
-          </section>
+          {/* Utopia Card */}
+          <div className={styles.utopiaCard}>
+            <img src={identityImageUrl || imageUrl} alt={identity.name} className={styles.utopiaImage} />
+            <div className={styles.utopiaLabel}>{isViewingOther ? "Their Utopia" : "Your Utopia"}</div>
+            <p className={styles.utopiaText}>{utopiaText}</p>
+          </div>
 
-          <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>What This Gives You</h2>
-            <p className={styles.bodyText}>{reading.gifts}</p>
-          </section>
+          {/* Core Description */}
+          <p className={styles.description}>{identity.description}</p>
 
-          <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>How You&apos;ll Move</h2>
-            <p className={styles.bodyText}>{reading.movement}</p>
-          </section>
+          {/* One-sentence worldview */}
+          {!isViewingOther && identity.oneSentence && (
+            <div className={styles.oneSentence}>
+              <p className={styles.oneSentenceText}>"{identity.oneSentence}"</p>
+            </div>
+          )}
 
-          {reading.tradeoff && (
-            <div className={styles.blindSpot}>
-              <div className={styles.blindSpotLabel}>The Tradeoff</div>
-              <p className={styles.blindSpotText}>{reading.tradeoff}</p>
+          {/* LLM-enhanced personalized sections (when available) */}
+          {reading && (
+            <>
+              <div className={styles.divider} />
+
+              <section className={styles.section}>
+                <h2 className={styles.sectionTitle}>Your Pattern</h2>
+                <p className={styles.bodyText}>{reading.pattern}</p>
+              </section>
+
+              <section className={styles.section}>
+                <h2 className={styles.sectionTitle}>What This Gives You</h2>
+                <p className={styles.bodyText}>{reading.gifts}</p>
+              </section>
+
+              <section className={styles.section}>
+                <h2 className={styles.sectionTitle}>How You&apos;ll Move</h2>
+                <p className={styles.bodyText}>{reading.movement}</p>
+              </section>
+
+              {reading.tradeoff && (
+                <div className={styles.blindSpot}>
+                  <div className={styles.blindSpotLabel}>The Tradeoff</div>
+                  <p className={styles.blindSpotText}>{reading.tradeoff}</p>
+                </div>
+              )}
+            </>
+          )}
+
+          {/* Famous Figures */}
+          {identity.famousFigures && (
+            <div className={styles.famousFigures}>
+              <p className={styles.famousFiguresLabel}>You share a worldview with</p>
+              <p className={styles.famousFiguresList}>
+                {[...identity.famousFigures.real, ...identity.famousFigures.fictional.map(f => f.split(" (")[0])].join(", ")}
+              </p>
             </div>
           )}
 
           <div className={styles.divider} />
 
-          {/* Dimension Spectrum - shows where you fall on each dimension */}
-          {dimensions && (
-            <section className={styles.section}>
-              <h3 className={styles.sectionTitle}>Where You Fall</h3>
+          {/* How You Got Here */}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>How You Got Here</h2>
+            <p className={styles.bodyText}>{identity.howYouGotHere}</p>
+          </section>
+
+          <div className={styles.divider} />
+
+          {/* The Worldview */}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>The Worldview</h2>
+            <p className={styles.bodyText}>You likely believe:</p>
+            <ul className={styles.beliefs}>
+              {identity.coreBeliefs.map((belief, i) => (
+                <li key={i}>{belief}</li>
+              ))}
+            </ul>
+          </section>
+
+          <div className={styles.divider} />
+
+          {/* Your Superpower */}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Your Superpower</h2>
+            <h3 className={styles.highlight} style={{ color: identity.color }}>
+              {identity.superpower}
+            </h3>
+            <div className={styles.expandedContent}>
+              {identity.superpowerExpanded.split("\n\n").map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
+          </section>
+
+          <div className={styles.divider} />
+
+          {/* Your Blind Spot */}
+          <div className={styles.blindSpot}>
+            <div className={styles.blindSpotLabel}>Something to Consider</div>
+            <p className={styles.blindSpotText}>{identity.blindSpot}</p>
+          </div>
+
+          <div className={styles.divider} />
+
+          {/* Where You Fall */}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Where You Fall</h2>
+            {dimensions ? (
               <DimensionSpectrum dimensions={dimensions} />
+            ) : (
+              <p className={styles.bodyText}>Take the quiz to see your position on the three dimensions.</p>
+            )}
+          </section>
+
+          {/* Your People - dimension-based compatibility */}
+          <div className={styles.compatibility}>
+            <div className={styles.compatibilityLabel}>Your People</div>
+            <div className={styles.relationships}>
+              <div className={styles.relationshipCard}>
+                <h4 className={styles.relationshipLabel}>You Align With</h4>
+                <p className={styles.relationshipDesc}>{identity.alignsWith}</p>
+              </div>
+              <div className={styles.relationshipCard}>
+                <h4 className={styles.relationshipLabel}>Your Tension</h4>
+                <p className={styles.relationshipDesc}>{identity.tensionWith}</p>
+              </div>
+              <div className={styles.relationshipCard}>
+                <h4 className={styles.relationshipLabel}>You Grow With</h4>
+                <p className={styles.relationshipDesc}>{identity.growsWith}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Compare Worldviews CTA - smart button based on quiz status */}
+          {hasQuizUserId !== null && (
+            <section className={styles.ctaSection}>
+              <h2 className={styles.sectionTitle}>Compare Worldviews</h2>
+              <p className={styles.ctaDescription}>
+                See what happens when different worldviews try to build something together.
+              </p>
+              <div className={styles.ctaButtons}>
+                {hasQuizUserId === false ? (
+                  <Link href="/wonder/essay/quiz" className={styles.primaryBtn}>
+                    Take the Quiz
+                  </Link>
+                ) : groupContext ? (
+                  <button
+                    className={styles.primaryBtn}
+                    onClick={() => {
+                      const shareUrl = `${window.location.origin}/wonder/essay/quiz/utopia/${groupContext.utopiaSlug}/join`;
+                      if (navigator.share) {
+                        navigator.share({
+                          title: `Join ${groupContext.utopiaName}`,
+                          text: `I'm ${identity.name}. What are you? Join my group and find out.`,
+                          url: shareUrl,
+                        });
+                      } else {
+                        navigator.clipboard.writeText(shareUrl);
+                        alert("Invite link copied to clipboard!");
+                      }
+                    }}
+                  >
+                    Invite to {groupContext.utopiaName}
+                  </button>
+                ) : existingUtopia ? (
+                  <Link
+                    href={`/wonder/essay/quiz/utopia/${existingUtopia.slug}`}
+                    className={styles.primaryBtn}
+                  >
+                    Go to Your Group
+                  </Link>
+                ) : (
+                  <button
+                    className={styles.primaryBtn}
+                    onClick={() => setShowCreateUtopia(true)}
+                  >
+                    Create a Group
+                  </button>
+                )}
+              </div>
             </section>
           )}
+
+          <div className={styles.divider} />
+
+          {/* Books */}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Books for Your Worldview</h2>
+            <div className={styles.books}>
+              {identity.books.map((book, i) => (
+                <div key={i} className={styles.bookCard}>
+                  <h4 className={styles.bookTitle}>{book.title}</h4>
+                  <p className={styles.bookAuthor}>by {book.author}</p>
+                  <p className={styles.bookReason}>{book.reason}</p>
+                  <a
+                    href={`https://bookshop.org/search?keywords=${encodeURIComponent(
+                      book.title + " " + book.author
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.bookLink}
+                  >
+                    Find on Bookshop.org
+                  </a>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Essay Link */}
+          <div className={styles.essayLink}>
+            <Link href="/wonder/essay" className={styles.essayLinkText}>
+              Read <em>When Purpose Is All We Have Left</em> &rarr;
+            </Link>
+          </div>
         </>
       )}
 
-      {/* Archetype-based content (fallback when no LLM reading) */}
-      {!reading && !isLoadingReading && (
+      {/* Archetype-based content (fallback for backward compatibility when no identity) */}
+      {!identity && !isLoadingReading && (
         <>
           {/* Header */}
           <header className={styles.header}>
@@ -584,91 +791,91 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
               )}
             </div>
           </div>
+
+          {/* Compare Worldviews CTA - smart button based on quiz status */}
+          {hasQuizUserId !== null && (
+            <section className={styles.ctaSection}>
+              <h2 className={styles.sectionTitle}>Compare Worldviews</h2>
+              <p className={styles.ctaDescription}>
+                See what happens when different worldviews try to build something together.
+              </p>
+              <div className={styles.ctaButtons}>
+                {hasQuizUserId === false ? (
+                  <Link href="/wonder/essay/quiz" className={styles.primaryBtn}>
+                    Take the Quiz
+                  </Link>
+                ) : groupContext ? (
+                  <button
+                    className={styles.primaryBtn}
+                    onClick={() => {
+                      const shareUrl = `${window.location.origin}/wonder/essay/quiz/utopia/${groupContext.utopiaSlug}/join`;
+                      if (navigator.share) {
+                        navigator.share({
+                          title: `Join ${groupContext.utopiaName}`,
+                          text: `I'm ${archetype.name}. What are you? Join my group and find out.`,
+                          url: shareUrl,
+                        });
+                      } else {
+                        navigator.clipboard.writeText(shareUrl);
+                        alert("Invite link copied to clipboard!");
+                      }
+                    }}
+                  >
+                    Invite to {groupContext.utopiaName}
+                  </button>
+                ) : existingUtopia ? (
+                  <Link
+                    href={`/wonder/essay/quiz/utopia/${existingUtopia.slug}`}
+                    className={styles.primaryBtn}
+                  >
+                    Go to Your Group
+                  </Link>
+                ) : (
+                  <button
+                    className={styles.primaryBtn}
+                    onClick={() => setShowCreateUtopia(true)}
+                  >
+                    Create a Group
+                  </button>
+                )}
+              </div>
+            </section>
+          )}
+
+          <div className={styles.divider} />
+
+          {/* Books */}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Books for Your Worldview</h2>
+            <div className={styles.books}>
+              {archetype.books.map((book, i) => (
+                <div key={i} className={styles.bookCard}>
+                  <h4 className={styles.bookTitle}>{book.title}</h4>
+                  <p className={styles.bookAuthor}>by {book.author}</p>
+                  <p className={styles.bookReason}>{book.reason}</p>
+                  <a
+                    href={`https://bookshop.org/search?keywords=${encodeURIComponent(
+                      book.title + " " + book.author
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.bookLink}
+                  >
+                    Find on Bookshop.org
+                  </a>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Essay Link */}
+          <div className={styles.essayLink}>
+            <Link href="/wonder/essay" className={styles.essayLinkText}>
+              Read <em>When Purpose Is All We Have Left</em> &rarr;
+            </Link>
+          </div>
         </>
       )}
-
-      {/* Compare Worldviews CTA - smart button based on quiz status */}
-      {hasQuizUserId !== null && (
-        <section className={styles.ctaSection}>
-          <h2 className={styles.sectionTitle}>Compare Worldviews</h2>
-          <p className={styles.ctaDescription}>
-            See what happens when different worldviews try to build something together.
-          </p>
-          <div className={styles.ctaButtons}>
-            {hasQuizUserId === false ? (
-              <Link href="/wonder/essay/quiz" className={styles.primaryBtn}>
-                Take the Quiz
-              </Link>
-            ) : groupContext ? (
-              <button
-                className={styles.primaryBtn}
-                onClick={() => {
-                  const shareUrl = `${window.location.origin}/wonder/essay/quiz/utopia/${groupContext.utopiaSlug}/join`;
-                  if (navigator.share) {
-                    navigator.share({
-                      title: `Join ${groupContext.utopiaName}`,
-                      text: `I'm ${archetype.name}. What are you? Join my group and find out.`,
-                      url: shareUrl,
-                    });
-                  } else {
-                    navigator.clipboard.writeText(shareUrl);
-                    alert("Invite link copied to clipboard!");
-                  }
-                }}
-              >
-                Invite to {groupContext.utopiaName}
-              </button>
-            ) : existingUtopia ? (
-              <Link
-                href={`/wonder/essay/quiz/utopia/${existingUtopia.slug}`}
-                className={styles.primaryBtn}
-              >
-                Go to Your Group
-              </Link>
-            ) : (
-              <button
-                className={styles.primaryBtn}
-                onClick={() => setShowCreateUtopia(true)}
-              >
-                Create a Group
-              </button>
-            )}
-          </div>
-        </section>
-      )}
-
-      <div className={styles.divider} />
-
-      {/* Books */}
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Books for Your Worldview</h2>
-        <div className={styles.books}>
-          {archetype.books.map((book, i) => (
-            <div key={i} className={styles.bookCard}>
-              <h4 className={styles.bookTitle}>{book.title}</h4>
-              <p className={styles.bookAuthor}>by {book.author}</p>
-              <p className={styles.bookReason}>{book.reason}</p>
-              <a
-                href={`https://bookshop.org/search?keywords=${encodeURIComponent(
-                  book.title + " " + book.author
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.bookLink}
-              >
-                Find on Bookshop.org
-              </a>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Essay Link */}
-      <div className={styles.essayLink}>
-        <Link href="/wonder/essay" className={styles.essayLinkText}>
-          Read <em>When Purpose Is All We Have Left</em> &rarr;
-        </Link>
-      </div>
     </div>
   );
 }
