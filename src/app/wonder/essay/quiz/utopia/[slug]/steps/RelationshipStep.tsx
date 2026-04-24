@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { archetypes } from "@/lib/archetypes";
 import { arrayToQuizAnswers, calculateDimensions } from "@/lib/dimensions";
 import {
@@ -10,6 +10,7 @@ import {
 import { getPairReading } from "@/lib/pair-dynamics";
 import { useSwipe } from "@/hooks/useSwipe";
 import type { UtopiaMember } from "@/lib/utopia";
+import type { PairReading as LLMPairReading } from "@/lib/reading-prompts";
 import { QuizCTA } from "@/app/wonder/essay/quiz/result/QuizCTA";
 import { DimensionSpectrum } from "@/app/wonder/essay/quiz/result/DimensionSpectrum";
 import styles from "./RelationshipStep.module.css";
@@ -46,14 +47,46 @@ export function RelationshipStep({
   viewerHasNotTakenQuiz,
   groupMembers,
 }: RelationshipStepProps) {
+  const [llmReading, setLlmReading] = useState<LLMPairReading | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+
   const yourArchetype = archetypes[you.archetype];
   const theirArchetype = archetypes[them.archetype];
 
-  // Get pair reading content for this pairing
-  const pairReading = getPairReading(you.archetype, them.archetype);
+  // Get archetype-based pair reading as fallback
+  const archetypePairReading = getPairReading(you.archetype, them.archetype);
 
   // Determine if this is a standalone 2-person view or within a group
   const isStandalone = !groupMembers || groupMembers.length <= 2;
+
+  // Fetch LLM pair reading when both have answers
+  useEffect(() => {
+    if (you.answers?.length === 7 && them.answers?.length === 7) {
+      const answersYou = arrayToQuizAnswers(you.answers);
+      const answersThem = arrayToQuizAnswers(them.answers);
+
+      if (answersYou && answersThem) {
+        setIsLoading(true);
+        fetch('/api/reading/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            type: 'pair',
+            members: [
+              { name: you.name || 'You', answers: answersYou },
+              { name: them.name || 'Them', answers: answersThem },
+            ]
+          })
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (data.reading) setLlmReading(data.reading);
+            setIsLoading(false);
+          })
+          .catch(() => setIsLoading(false));
+      }
+    }
+  }, [you.answers, them.answers, you.name, them.name]);
 
   // Calculate dimensions and identities for both people
   const { dimensions: dimensionsYou, identity: identityYou } = useMemo(() => {
@@ -164,13 +197,103 @@ export function RelationshipStep({
         />
       )}
 
-      {pairReading ? (
+      {isLoading ? (
+        <div className={styles.loading}>
+          Generating your relationship reading...
+        </div>
+      ) : llmReading ? (
         <>
-          {/* SECTION 1: WHAT YOU SHARE */}
+          {/* LLM-GENERATED PAIR READING */}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Your Combined Pattern</h2>
+            <div className={styles.bodyText}>
+              <p>{llmReading.combinedPattern}</p>
+            </div>
+          </section>
+
+          <div className={styles.divider} />
+
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>What You Give Each Other</h2>
+            <div className={styles.giveCards}>
+              <div className={styles.giveCard}>
+                <span className={styles.giveName} style={{ color: identityYou?.color || yourArchetype?.color }}>
+                  {you.name || "You"}
+                </span>
+                <span className={styles.giveArrow}>→</span>
+                <p className={styles.giveText}>{llmReading.whatAGivesB}</p>
+              </div>
+              <div className={styles.giveCard}>
+                <span className={styles.giveName} style={{ color: identityThem?.color || theirArchetype?.color }}>
+                  {them.name || "Them"}
+                </span>
+                <span className={styles.giveArrow}>→</span>
+                <p className={styles.giveText}>{llmReading.whatBGivesA}</p>
+              </div>
+            </div>
+          </section>
+
+          <div className={styles.divider} />
+
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>What Emerges Together</h2>
+            <div className={styles.bodyText}>
+              <p>{llmReading.whatEmerges}</p>
+            </div>
+          </section>
+
+          <div className={styles.divider} />
+
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Your Shared Strength</h2>
+            <div className={styles.bodyText}>
+              <p>{llmReading.sharedStrength}</p>
+            </div>
+          </section>
+
+          <div className={styles.divider} />
+
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>How You'll Make Decisions</h2>
+            <div className={styles.bodyText}>
+              <p>{llmReading.howDecisions}</p>
+            </div>
+          </section>
+
+          <div className={styles.divider} />
+
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Where You'll Create Friction</h2>
+            <div className={styles.bodyText}>
+              <p>{llmReading.friction}</p>
+            </div>
+          </section>
+
+          <div className={styles.divider} />
+
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>What to Watch For</h2>
+            <div className={styles.bodyText}>
+              <p>{llmReading.watchFor}</p>
+            </div>
+          </section>
+
+          <div className={styles.divider} />
+
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>What You'd Build Together</h2>
+            <div className={styles.bodyText}>
+              <p>{llmReading.whatYoudBuild}</p>
+            </div>
+          </section>
+        </>
+      ) : archetypePairReading ? (
+        <>
+          {/* ARCHETYPE-BASED FALLBACK */}
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>What You Share</h2>
             <div className={styles.bodyText}>
-              {pairReading.whatYouShare.split("\n\n").map((para, i) => (
+              {archetypePairReading.whatYouShare.split("\n\n").map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
             </div>
@@ -178,11 +301,10 @@ export function RelationshipStep({
 
           <div className={styles.divider} />
 
-          {/* SECTION 2: WHERE YOU'LL PUSH EACH OTHER */}
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>Where You'll Push Each Other</h2>
             <div className={styles.bodyText}>
-              {pairReading.whereYouPush.split("\n\n").map((para, i) => (
+              {archetypePairReading.whereYouPush.split("\n\n").map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
             </div>
@@ -190,11 +312,10 @@ export function RelationshipStep({
 
           <div className={styles.divider} />
 
-          {/* SECTION 3: WHAT YOU CREATE TOGETHER */}
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>What You Create Together</h2>
             <div className={styles.bodyText}>
-              {pairReading.whatYouCreate.split("\n\n").map((para, i) => (
+              {archetypePairReading.whatYouCreate.split("\n\n").map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
             </div>
@@ -202,13 +323,12 @@ export function RelationshipStep({
 
           <div className={styles.divider} />
 
-          {/* SECTION 4: WHAT'S MISSING BETWEEN YOU */}
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>What's Missing Between You</h2>
             <div className={styles.bodyText}>
-              <p>{pairReading.whatsMissing}</p>
+              <p>{archetypePairReading.whatsMissing}</p>
               <p className={styles.missingAdvice}>
-                {isStandalone ? pairReading.missingStandalone : pairReading.missingInGroup}
+                {isStandalone ? archetypePairReading.missingStandalone : archetypePairReading.missingInGroup}
               </p>
             </div>
           </section>
@@ -216,7 +336,7 @@ export function RelationshipStep({
       ) : (
         <section className={styles.section}>
           <p className={styles.bodyText}>
-            Content for this pairing is coming soon.
+            Both people need to complete the quiz to see the relationship reading.
           </p>
         </section>
       )}
