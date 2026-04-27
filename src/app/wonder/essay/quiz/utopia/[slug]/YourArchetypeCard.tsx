@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { archetypes } from "@/lib/archetypes";
+import { getMemberIdentity } from "@/lib/identities";
 import type { UtopiaMember } from "@/lib/utopia";
 import styles from "./UtopiaPageClient.module.css";
 
@@ -12,14 +13,18 @@ type YourArchetypeCardProps = {
 
 export function YourArchetypeCard({ member, onClick }: YourArchetypeCardProps) {
   const arch = archetypes[member.archetype];
-  if (!arch) return null;
+  const identity = getMemberIdentity(member.answers, member.archetype);
+
+  const displayName = identity?.name || arch?.name || member.archetype;
+  const displayColor = identity?.color || arch?.color || "#e8178a";
+  const utopiaText = identity?.utopia || arch?.utopia || "";
 
   return (
     <button className={styles.yourCard} onClick={onClick}>
-      <div className={styles.yourCardDot} style={{ backgroundColor: arch.color }} />
+      <div className={styles.yourCardDot} style={{ backgroundColor: displayColor }} />
       <div className={styles.yourCardContent}>
-        <span className={styles.yourCardLabel}>{arch.name}</span>
-        <p className={styles.yourCardQuote}>{arch.utopia.replace(/^Their/, "Your")}</p>
+        <span className={styles.yourCardLabel}>{displayName}</span>
+        <p className={styles.yourCardQuote}>{utopiaText.replace(/^Their/, "Your")}</p>
         <span className={styles.yourCardLink}>See your profile →</span>
       </div>
     </button>

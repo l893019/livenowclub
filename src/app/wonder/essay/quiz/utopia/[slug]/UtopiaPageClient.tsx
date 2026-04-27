@@ -12,6 +12,7 @@ import { YourArchetypeCard, JoinUtopiaCard } from "./YourArchetypeCard";
 import { NotificationSettings } from "./NotificationSettings";
 import { ReadingPage } from "@/app/wonder/essay/quiz/result/ReadingPage";
 import { archetypes } from "@/lib/archetypes";
+import { getMemberIdentity } from "@/lib/identities";
 import type { UtopiaMember } from "@/lib/utopia";
 import styles from "./UtopiaPageClient.module.css";
 
@@ -155,14 +156,14 @@ export function UtopiaPageClient({
   };
 
   const handleShare = async () => {
-    // Get current user's archetype for personalized share text
+    // Get current user's identity for personalized share text
     const me = members.find((m) => m.id === currentUserId);
-    const myArchetype = me ? archetypes[me.archetype] : null;
-    const myArchetypeName = myArchetype?.name || "a unique worldview";
+    const myIdentity = me ? getMemberIdentity(me.answers, me.archetype) : null;
+    const myIdentityName = myIdentity?.name || archetypes[me?.archetype || ""]?.name || "a unique worldview";
 
-    // Share text includes archetype: "I'm The Deep. What are you? Take the quiz and join my group."
+    // Share text includes identity: "I'm a Curious Architect. What are you? Take the quiz and join my group."
     const shareText = me
-      ? `I'm ${myArchetypeName}. What are you? Take the quiz and join my group.`
+      ? `I'm a ${myIdentityName}. What are you? Take the quiz and join my group.`
       : `Join ${utopiaName} — a utopia of ${members.length}.`;
 
     if (navigator.share) {
@@ -334,8 +335,10 @@ export function UtopiaPageClient({
   // Two-person utopia: special enhanced view (when not viewing individual profile/reading)
   if (members.length === 2 && currentView === "radar") {
     const [personA, personB] = members;
-    const archA = archetypes[personA.archetype];
-    const archB = archetypes[personB.archetype];
+    const identityA = getMemberIdentity(personA.answers, personA.archetype);
+    const identityB = getMemberIdentity(personB.answers, personB.archetype);
+    const colorA = identityA?.color || archetypes[personA.archetype]?.color;
+    const colorB = identityB?.color || archetypes[personB.archetype]?.color;
 
     return (
       <div className={styles.container}>
@@ -359,7 +362,7 @@ export function UtopiaPageClient({
                 setCurrentView("their-reading");
               }}
             >
-              <span className={styles.profileDot} style={{ backgroundColor: archA?.color }} />
+              <span className={styles.profileDot} style={{ backgroundColor: colorA }} />
               <span>See {personA.name || "their"}'s full profile →</span>
             </button>
             <button
@@ -369,7 +372,7 @@ export function UtopiaPageClient({
                 setCurrentView("their-reading");
               }}
             >
-              <span className={styles.profileDot} style={{ backgroundColor: archB?.color }} />
+              <span className={styles.profileDot} style={{ backgroundColor: colorB }} />
               <span>See {personB.name || "their"}'s full profile →</span>
             </button>
           </div>
