@@ -120,54 +120,45 @@ export function TwoPersonView({ members, utopiaName, onMemberClick }: TwoPersonV
         </p>
       </div>
 
-      {/* Combined Dimension Spectrums - both people on same bars */}
+      {/* Combined Dimension Spectrums - names on the bar */}
       {(dimensionsA || dimensionsB) ? (
         <div className={styles.combinedSpectrums}>
           {[
-            { key: "agency" as const, label: "Agency", low: "Witness", high: "Builder" },
-            { key: "certainty" as const, label: "Certainty", low: "Seeking", high: "Settled" },
-            { key: "posture" as const, label: "Posture", low: "Protective", high: "Expansive" },
+            { key: "agency" as const, low: "Witness", high: "Builder" },
+            { key: "certainty" as const, low: "Seeking", high: "Settled" },
+            { key: "posture" as const, low: "Protective", high: "Expansive" },
           ].map((dim) => (
             <div key={dim.key} className={styles.combinedSpectrum}>
-              <div className={styles.spectrumLabels}>
-                <span className={styles.spectrumLow}>{dim.low}</span>
-                <span className={styles.spectrumName}>{dim.label}</span>
-                <span className={styles.spectrumHigh}>{dim.high}</span>
-              </div>
               <div className={styles.spectrumTrack}>
-                {dimensionsA && (
-                  <div
-                    className={styles.spectrumDot}
-                    style={{
-                      left: `${((dimensionsA[dim.key] + 1) / 2) * 100}%`,
-                      backgroundColor: colorA,
-                    }}
-                    title={personA.name || shortNameA}
-                  />
-                )}
-                {dimensionsB && (
-                  <div
-                    className={styles.spectrumDot}
-                    style={{
-                      left: `${((dimensionsB[dim.key] + 1) / 2) * 100}%`,
-                      backgroundColor: colorB,
-                    }}
-                    title={personB.name || shortNameB}
-                  />
-                )}
+                <span className={styles.spectrumPole}>{dim.low}</span>
+                <div className={styles.spectrumNameArea}>
+                  {dimensionsA && (
+                    <span
+                      className={styles.spectrumName}
+                      style={{
+                        left: `${((dimensionsA[dim.key] + 1) / 2) * 100}%`,
+                        color: colorA,
+                      }}
+                    >
+                      {personA.name || "A"}
+                    </span>
+                  )}
+                  {dimensionsB && (
+                    <span
+                      className={styles.spectrumName}
+                      style={{
+                        left: `${((dimensionsB[dim.key] + 1) / 2) * 100}%`,
+                        color: colorB,
+                      }}
+                    >
+                      {personB.name || "B"}
+                    </span>
+                  )}
+                </div>
+                <span className={styles.spectrumPole}>{dim.high}</span>
               </div>
             </div>
           ))}
-          <div className={styles.spectrumLegend}>
-            <span className={styles.legendItem}>
-              <span className={styles.legendDot} style={{ backgroundColor: colorA }} />
-              {personA.name || shortNameA}
-            </span>
-            <span className={styles.legendItem}>
-              <span className={styles.legendDot} style={{ backgroundColor: colorB }} />
-              {personB.name || shortNameB}
-            </span>
-          </div>
         </div>
       ) : (
         <p className={styles.spectrumEmpty}>Both members need to complete the quiz to see dimensions.</p>
