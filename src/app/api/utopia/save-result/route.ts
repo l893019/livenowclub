@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { saveUserResult, type UserResult } from '@/lib/utopia';
+import { saveUserResult, generateUserSlug, type UserResult } from '@/lib/utopia';
 
 export async function POST(request: NextRequest) {
   try {
@@ -13,9 +13,17 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Generate slug if not present
+    if (!result.slug) {
+      result.slug = await generateUserSlug(result.id, result.name);
+    }
+
     await saveUserResult(result);
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({
+      success: true,
+      slug: result.slug,
+    });
   } catch (error) {
     console.error('Error saving result:', error);
     return NextResponse.json(
