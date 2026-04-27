@@ -166,12 +166,52 @@ magic_links:
 | `/` | Homepage, start quiz |
 | `/quiz` | Take the quiz |
 | `/result` | Your identity result (after quiz) |
-| `/c/[userId]` | Someone's compatibility link |
-| `/connections` | Your connections list |
-| `/groups` | Your groups list |
-| `/groups/[groupId]` | Group view with dynamics |
-| `/groups/new` | Create group (select connections) |
+| `/meet/[name]` | Someone's compatibility link (friendly URL) |
+| `/me` | **Your World** — home base for everything |
+| `/me/connections` | Full connections list |
+| `/me/groups` | Full groups list |
+| `/me/groups/[groupId]` | Group view with dynamics |
+| `/me/groups/new` | Create group (select connections) |
 | `/auth/magic` | Magic link landing |
+
+---
+
+## Your World (`/me`)
+
+Single page that's your home base:
+
+```
+┌─────────────────────────────────┐
+│  Your Identity                  │
+│  [Curious Architect]            │
+│  [Copy link]  [Share]           │
+├─────────────────────────────────┤
+│  Your Connections (5)           │
+│  Sarah • Tom • Alex • ...       │
+│  [See all →]                    │
+├─────────────────────────────────┤
+│  Your Groups (2)                │
+│  Book Club • Work Friends       │
+│  [Create group →]               │
+└─────────────────────────────────┘
+```
+
+**Empty state (new user):**
+```
+┌─────────────────────────────────┐
+│  You are a Curious Architect    │
+│                                 │
+│  [Copy your link]  [Share]      │
+│                                 │
+│  Share your link to start       │
+│  connecting with others.        │
+│                                 │
+│  Your Connections (0)           │
+│  Your Groups (0)                │
+└─────────────────────────────────┘
+```
+
+Share CTA is hero when empty.
 
 ---
 
@@ -352,6 +392,29 @@ When you create a group with Sarah and Tom:
 - **Share rate:** % who share their own link after getting result
 - **Return rate:** % who save email and return
 - **Group creation rate:** % who create at least one group
+
+---
+
+## UX Details
+
+### Friendly Link URLs
+- `/meet/lou` instead of `/c/abc123`
+- Use name slug, fallback to ID if name not set
+
+### After Taking Someone's Link
+Result page should immediately prompt:
+- "Now share YOUR link to see who's compatible with you"
+- Share buttons prominent
+- This is the viral loop
+
+### Shareable Identity Card
+- Designed for screenshots
+- Shows identity name, color, maybe one-liner
+- Works on Instagram Stories, Twitter, etc.
+
+### Default Group Names
+- Auto-generate from members: "Sarah, Tom & You"
+- Can rename anytime
 
 ---
 
