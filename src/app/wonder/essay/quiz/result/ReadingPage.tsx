@@ -277,14 +277,18 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
 
   // Determine if this is viewing someone else's reading
   const isViewingOther = !!personName;
-  // Determine article (a/an) based on first letter of identity name
+  // Determine article (a/an) based on first letter of name
+  // Archetype names start with "The " so don't need an article
   const getArticle = (name: string) => {
+    if (name.startsWith("The ")) return ""; // "The Abundant" needs no article
     const firstLetter = name.charAt(0).toLowerCase();
     return ['a', 'e', 'i', 'o', 'u'].includes(firstLetter) ? 'an' : 'a';
   };
   const displayName = identity?.name || archetype.name;
   const article = getArticle(displayName);
-  const labelText = isViewingOther ? `${personName} is ${article}` : `You are ${article}`;
+  const labelText = isViewingOther
+    ? `${personName} is${article ? ` ${article}` : ""}`
+    : `You are${article ? ` ${article}` : ""}`;
 
   const imageUrl = `/wonder/essay/quiz/images/utopia-${archetypeKey}.png`;
 
