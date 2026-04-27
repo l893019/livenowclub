@@ -2095,12 +2095,18 @@
 
       localStorage.setItem('quiz-user-result', JSON.stringify(userResult));
 
-      // Save to API (fire and forget)
+      // Save to API and capture slug
       fetch('/api/utopia/save-result', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ result: userResult })
-      }).catch(console.error);
+      }).then(res => res.json())
+        .then(data => {
+          if (data.slug) {
+            localStorage.setItem('userSlug', data.slug);
+          }
+        })
+        .catch(console.error);
 
       showResult();
     }
@@ -2143,12 +2149,16 @@
       localStorage.setItem('quiz-user-result', JSON.stringify(userResult));
 
       try {
-        // Save to API
-        await fetch('/api/utopia/save-result', {
+        // Save to API and capture slug
+        const saveResponse = await fetch('/api/utopia/save-result', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ result: userResult })
         });
+        const saveData = await saveResponse.json();
+        if (saveData.slug) {
+          localStorage.setItem('userSlug', saveData.slug);
+        }
 
         // Check if this is a create utopia flow
         const pendingAction = sessionStorage.getItem('pending-action');
