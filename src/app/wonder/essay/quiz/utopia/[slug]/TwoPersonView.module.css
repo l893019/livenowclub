@@ -308,3 +308,85 @@
   font-size: 14px;
   padding: 24px;
 }
+
+/* Combined Spectrums - both people on same bars */
+.combinedSpectrums {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(45, 42, 38, 0.1);
+}
+
+.combinedSpectrum {
+  margin-bottom: 20px;
+}
+
+.spectrumLabels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 11px;
+}
+
+.spectrumLow,
+.spectrumHigh {
+  color: rgba(45, 42, 38, 0.5);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.spectrumName {
+  color: rgba(45, 42, 38, 0.7);
+  font-weight: 600;
+}
+
+.spectrumTrack {
+  position: relative;
+  height: 8px;
+  background: linear-gradient(
+    to right,
+    rgba(45, 42, 38, 0.08),
+    rgba(45, 42, 38, 0.15),
+    rgba(45, 42, 38, 0.08)
+  );
+  border-radius: 4px;
+}
+
+.spectrumDot {
+  position: absolute;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  border: 2px solid white;
+  transition: transform 0.2s ease;
+}
+
+.spectrumDot:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+  z-index: 1;
+}
+
+.spectrumLegend {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: rgba(45, 42, 38, 0.7);
+}
+
+.legendDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
