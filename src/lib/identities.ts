@@ -472,3 +472,69 @@ export function getIdentityFromDimensions(
   const key = getIdentityKey(noun, adjective)
   return identities[key]
 }
+
+// =============================================================================
+// Archetype → Identity Mapping (for backward compatibility)
+// =============================================================================
+
+/**
+ * Map old archetype keys to approximate identities.
+ * Used when displaying members who don't have stored answers.
+ */
+const ARCHETYPE_TO_IDENTITY: Record<string, string> = {
+  // High agency, optimistic
+  citizen: 'confident-builder',      // The Abundant → expansive builder
+  shaper: 'bold-architect',          // The Builder → bold creator
+  architect: 'assured-architect',    // The Architect → structured vision
+  alive: 'bold-builder',             // The Alive → vital creator
+  friction: 'adaptive-builder',      // The Challenger → pushes boundaries
+
+  // Mid agency, balanced
+  mender: 'open-maker',              // The Mender → healing through making
+  between: 'curious-shaper',         // The Between → bridges understanding
+  rooted: 'anchored-maker',          // The Rooted → grounded creation
+
+  // Lower agency, receptive
+  presence: 'grounded-observer',     // The Present → embodied attention
+  swimmer: 'curious-observer',       // The Deep → questioning witness
+  conscience: 'careful-observer',    // The Guardian → watchful protector
+  cleareyed: 'measured-observer',    // The Clear-Eyed → honest seeing
+  embers: 'steady-noticer',          // The Keeper → preserving attention
+  unbound: 'open-witness',           // The Unbound → transcendent presence
+}
+
+/**
+ * Get an identity from an old archetype key.
+ * Returns undefined if archetype not recognized.
+ */
+export function getIdentityFromArchetype(archetypeKey: string): Identity | undefined {
+  const identityKey = ARCHETYPE_TO_IDENTITY[archetypeKey]
+  if (!identityKey) return undefined
+  return identities[identityKey]
+}
+
+/**
+ * Get identity for a member, preferring calculated from answers,
+ * falling back to archetype mapping.
+ */
+export function getMemberIdentity(
+  answers: (number | string)[] | null | undefined,
+  archetypeKey: string
+): Identity | undefined {
+  // If we have answers, calculate identity from dimensions
+  if (answers?.length === 7) {
+    // Convert string answers to numbers if needed
+    const numericAnswers = answers.map(a => typeof a === 'string' ? parseInt(a, 10) : a)
+    // Import dynamically to avoid circular deps
+    const { arrayToQuizAnswers, calculateDimensions } = require('./dimensions')
+    const quizAnswers = arrayToQuizAnswers(numericAnswers)
+    if (quizAnswers) {
+      const dims = calculateDimensions(quizAnswers)
+      const adjIdx = getAdjectiveIndex(dims.certainty, dims.posture)
+      return getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIdx)
+    }
+  }
+
+  // Fall back to archetype mapping
+  return getIdentityFromArchetype(archetypeKey)
+}

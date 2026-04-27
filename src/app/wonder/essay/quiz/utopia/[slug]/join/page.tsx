@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getUtopia } from "@/lib/utopia";
+import { getMemberIdentity } from "@/lib/identities";
 import { archetypes } from "@/lib/archetypes";
 import { InviterRadarPreview } from "./InviterRadarPreview";
 import Header from "@/components/Header";
@@ -21,16 +22,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const founder = room.members.find(m => m.id === room.createdBy);
   const founderName = founder?.name || "Someone";
-  const founderArchetype = founder?.archetype ? archetypes[founder.archetype]?.name : "";
+  const founderIdentity = founder ? getMemberIdentity(founder.answers, founder.archetype) : null;
+  const founderIdentityName = founderIdentity?.name || "a fellow explorer";
 
   const ogImage = `https://livenowclub.com/api/og/utopia/${slug}`;
 
   return {
     title: `${founderName} invited you | ${room.name}`,
-    description: `${founderName} is ${founderArchetype}. Take the quiz to see how your worldviews fit together.`,
+    description: `${founderName} is a ${founderIdentityName}. Take the quiz to see how your worldviews fit together.`,
     openGraph: {
       title: `${founderName} invited you to compare worldviews`,
-      description: `They're ${founderArchetype}. Take the quiz to see how your worldviews fit together.`,
+      description: `They're a ${founderIdentityName}. Take the quiz to see how your worldviews fit together.`,
       url: `https://livenowclub.com/wonder/essay/quiz/utopia/${slug}/join`,
       type: "website",
       images: [ogImage],
@@ -38,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title: `${founderName} invited you to compare worldviews`,
-      description: `They're ${founderArchetype}. Take the quiz to see how your worldviews fit together.`,
+      description: `They're a ${founderIdentityName}. Take the quiz to see how your worldviews fit together.`,
       images: [ogImage],
     },
   };
@@ -55,8 +57,9 @@ export default async function JoinUtopiaPage({ params }: Props) {
   const founder = room.members.find(m => m.id === room.createdBy);
   const founderName = founder?.name || "Someone";
   const founderArchetype = founder?.archetype || "citizen";
-  const founderArchetypeName = archetypes[founderArchetype]?.name || founderArchetype;
-  const founderColor = archetypes[founderArchetype]?.color || "#e8178a";
+  const founderIdentity = founder ? getMemberIdentity(founder.answers, founderArchetype) : null;
+  const founderIdentityName = founderIdentity?.name || "a fellow explorer";
+  const founderColor = founderIdentity?.color || archetypes[founderArchetype]?.color || "#e8178a";
   const founderId = founder?.id || room.createdBy;
 
   return (
@@ -78,7 +81,7 @@ export default async function JoinUtopiaPage({ params }: Props) {
       <main className={styles.container}>
         <div className={styles.inviterSection}>
           <h1 className={styles.inviterName}>{founderName} invited you</h1>
-          <p className={styles.inviterArchetype}>They&apos;re a {founderArchetypeName}.</p>
+          <p className={styles.inviterArchetype}>They&apos;re a {founderIdentityName}.</p>
           <p className={styles.inviterPrompt}>
             Take the quiz to see how your worldviews fit together.
           </p>
