@@ -1,4 +1,5 @@
 "use client";
+// DEPLOY-CHECK: 2026-04-27-v2 - DimensionSpectrum version
 
 import { useState, useEffect, useMemo } from "react";
 import {
