@@ -81,12 +81,31 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
   const [readingError, setReadingError] = useState<string | null>(null);
   const [dimensions, setDimensions] = useState<Dimensions | null>(null);
   const [identity, setIdentity] = useState<Identity | null>(null);
+  const [userSlug, setUserSlug] = useState<string | null>(null);
+  const [linkCopied, setLinkCopied] = useState(false);
   const archetype = archetypes[archetypeKey];
 
   // Check if user has taken the quiz and load their result
   useEffect(() => {
     const userId = localStorage.getItem("quiz-user-id");
     setHasQuizUserId(!!userId);
+
+    // Load user slug from localStorage or fetch from API
+    const storedSlug = localStorage.getItem("userSlug");
+    if (storedSlug) {
+      setUserSlug(storedSlug);
+    } else if (userId) {
+      // Fetch user data to get slug
+      fetch(`/api/utopia/user/${userId}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.user?.slug) {
+            setUserSlug(data.user.slug);
+            localStorage.setItem("userSlug", data.user.slug);
+          }
+        })
+        .catch(console.error);
+    }
 
     // Load quiz result for personalization
     try {
@@ -365,6 +384,31 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
           {!isViewingOther && identity.oneSentence && (
             <div className={styles.oneSentence}>
               <p className={styles.oneSentenceText}>"{identity.oneSentence}"</p>
+            </div>
+          )}
+
+          {/* Personal share link */}
+          {userSlug && !isViewingOther && (
+            <div className={styles.shareSection}>
+              <p className={styles.shareLabel}>Share your link</p>
+              <div className={styles.linkBox}>
+                <span className={styles.linkText}>
+                  livenowclub.vercel.app/meet/{userSlug}
+                </span>
+                <button
+                  className={styles.copyLinkButton}
+                  onClick={() => {
+                    navigator.clipboard.writeText(`https://livenowclub.vercel.app/meet/${userSlug}`);
+                    setLinkCopied(true);
+                    setTimeout(() => setLinkCopied(false), 2000);
+                  }}
+                >
+                  {linkCopied ? "Copied!" : "Copy"}
+                </button>
+              </div>
+              <p className={styles.shareHint}>
+                Send to friends to see your compatibility
+              </p>
             </div>
           )}
 
