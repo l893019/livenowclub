@@ -1,5 +1,4 @@
 "use client";
-// DEPLOY-CHECK: 2026-04-27-v2 - DimensionSpectrum version
 
 import { useState, useEffect, useMemo } from "react";
 import {
@@ -306,4 +305,3 @@ export function TwoPersonView({ members, utopiaName, onMemberClick }: TwoPersonV
     </div>
   );
 }
-// Force redeploy 1777310877
