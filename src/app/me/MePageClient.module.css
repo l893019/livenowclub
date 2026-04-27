@@ -1,0 +1,149 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fdf8f3 0%, #fff9f5 100%);
+  padding: 24px;
+}
+
+.content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.loading {
+  text-align: center;
+  padding: 48px;
+  color: rgba(45, 42, 38, 0.6);
+}
+
+/* Identity Section */
+.identitySection {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  text-align: center;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #e8178a;
+  margin-bottom: 8px;
+}
+
+.identityName {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.shareButtons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.copyButton,
+.shareButton {
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copyButton {
+  background: rgba(45, 42, 38, 0.06);
+  border: none;
+  color: #2d2a26;
+}
+
+.copyButton:hover {
+  background: rgba(45, 42, 38, 0.1);
+}
+
+.shareButton {
+  background: #e8178a;
+  border: none;
+  color: white;
+}
+
+.shareButton:hover {
+  background: #d01579;
+}
+
+/* Sections */
+.section {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2d2a26;
+}
+
+.seeAll {
+  font-size: 0.85rem;
+  color: #e8178a;
+  text-decoration: none;
+}
+
+.seeAll:hover {
+  text-decoration: underline;
+}
+
+.emptyState {
+  padding: 24px;
+  text-align: center;
+  color: rgba(45, 42, 38, 0.6);
+  font-size: 0.95rem;
+}
+
+/* Connections List */
+.connectionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.connectionCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: rgba(45, 42, 38, 0.03);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.connectionCard:hover {
+  background: rgba(45, 42, 38, 0.06);
+}
+
+.connectionName {
+  font-size: 0.95rem;
+  color: #2d2a26;
+  font-weight: 500;
+}
+
+.connectionIdentity {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
