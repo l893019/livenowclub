@@ -275,24 +275,44 @@ Not a gate — just an upgrade.
 
 ---
 
+## Group Visibility
+
+**Groups auto-appear for all members.**
+
+When you create a group with Sarah and Tom:
+- It immediately shows in Sarah's "Your Groups"
+- It immediately shows in Tom's "Your Groups"
+- No invitation or acceptance needed
+
+**Anyone can leave anytime.**
+- Leave button on group page
+- You disappear from the group
+- Group persists for others (unless empty)
+
+**Groups are private — no shareable links.**
+- Only members see the group
+- To add someone, they must be your connection first
+- Different from old utopia model (which had public invite links)
+
+---
+
 ## Open Questions
 
 1. **Can you remove a connection?**
-   - Probably yes. Unilateral (you remove them from YOUR list).
+   - Yes. Unilateral (you remove them from YOUR list).
+   - Doesn't affect their connections or groups.
 
-2. **Can you leave a group?**
-   - Yes. Group persists for others.
-
-3. **What if someone doesn't save email?**
+2. **What if someone doesn't save email?**
    - They can still share link (link is in URL, not account-dependent).
    - But if they clear browser, they lose their identity.
    - Could prompt again later.
 
-4. **Group naming — required or optional?**
-   - Lean: optional. Default to "Untitled Group" or member names.
+3. **Group naming — required or optional?**
+   - Lean: optional. Default to member names ("Sarah, Tom & You").
 
-5. **Notifications?**
+4. **Notifications?**
    - "Sarah checked compatibility with you"
+   - "You were added to a group: Book Club"
    - Requires email. Only for users who saved.
 
 ---
