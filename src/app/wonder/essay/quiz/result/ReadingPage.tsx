@@ -209,6 +209,25 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
       });
   }, [answers]);
 
+  // Create connection if came from someone's link
+  useEffect(() => {
+    const connectWith = localStorage.getItem("connectWith");
+    const userId = localStorage.getItem("quiz-user-id");
+
+    if (connectWith && userId && connectWith !== userId) {
+      fetch('/api/connections/create', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          userId,
+          connectWithUserId: connectWith,
+        }),
+      }).then(() => {
+        localStorage.removeItem("connectWith");
+      }).catch(console.error);
+    }
+  }, []);
+
   if (!archetype) {
     return (
       <div className={styles.reading}>
