@@ -277,7 +277,14 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
 
   // Determine if this is viewing someone else's reading
   const isViewingOther = !!personName;
-  const labelText = isViewingOther ? `${personName} is` : "You are";
+  // Determine article (a/an) based on first letter of identity name
+  const getArticle = (name: string) => {
+    const firstLetter = name.charAt(0).toLowerCase();
+    return ['a', 'e', 'i', 'o', 'u'].includes(firstLetter) ? 'an' : 'a';
+  };
+  const displayName = identity?.name || archetype.name;
+  const article = getArticle(displayName);
+  const labelText = isViewingOther ? `${personName} is ${article}` : `You are ${article}`;
 
   const imageUrl = `/wonder/essay/quiz/images/utopia-${archetypeKey}.png`;
 
@@ -365,16 +372,6 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
                 </div>
               )}
             </>
-          )}
-
-          {/* Famous Figures */}
-          {identity.famousFigures && (
-            <div className={styles.famousFigures}>
-              <p className={styles.famousFiguresLabel}>You share a worldview with</p>
-              <p className={styles.famousFiguresList}>
-                {[...identity.famousFigures.real, ...identity.famousFigures.fictional.map(f => f.split(" (")[0])].join(", ")}
-              </p>
-            </div>
           )}
 
           <div className={styles.divider} />
@@ -577,15 +574,6 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
             </div>
           )}
 
-          {/* Famous Figures */}
-          {archetype.famousFigures && (
-            <div className={styles.famousFigures}>
-              <p className={styles.famousFiguresLabel}>You share a worldview with</p>
-              <p className={styles.famousFiguresList}>
-                {[...archetype.famousFigures.real, ...archetype.famousFigures.fictional.map(f => f.split(" (")[0])].join(", ")}
-              </p>
-            </div>
-          )}
 
           {/* Rarity Signal */}
           {!isViewingOther && (
