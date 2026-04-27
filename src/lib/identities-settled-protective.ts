@@ -70,22 +70,22 @@ There's also opportunity cost. The energy you spend on protection might sometime
 
     books: [
       {
-        title: 'How Buildings Learn',
-        author: 'Brand',
+        title: 'Foundation',
+        author: 'Asimov',
         reason:
-          'Architecture that adapts while enduring. The layers of change over time.',
+          'Psychohistory as protective architecture. Building institutions meant to outlast collapse.',
       },
       {
-        title: 'The Death and Life of Great American Cities',
-        author: 'Jacobs',
+        title: 'Seveneves',
+        author: 'Stephenson',
         reason:
-          'Protecting what makes neighborhoods work. The architecture of thriving communities.',
+          'When the moon explodes, humanity must build structures to survive millennia. Architecture for the worst case.',
       },
       {
-        title: 'Antifragile',
-        author: 'Taleb',
+        title: 'A Canticle for Leibowitz',
+        author: 'Miller',
         reason:
-          'Systems that gain from disorder. Protective architecture that gets stronger under stress.',
+          'Monks preserving knowledge through dark ages. The architecture of cultural continuity.',
       },
     ],
 
@@ -153,22 +153,22 @@ There's also the question of whose stability you're protecting. Grounded archite
 
     books: [
       {
-        title: 'A Pattern Language',
-        author: 'Alexander',
+        title: 'Aurora',
+        author: 'Robinson',
         reason:
-          'Architecture grounded in accumulated wisdom. Patterns that work because they\'ve been tested.',
+          'A generation ship learns the limits of closed systems. Grounded understanding of what sustainability actually requires.',
       },
       {
-        title: 'Thinking in Systems',
-        author: 'Meadows',
+        title: 'The Ministry for the Future',
+        author: 'Robinson',
         reason:
-          'Understanding the leverage points that enable change without collapse.',
+          'Practical, rooted solutions to climate catastrophe. Architecture grounded in what actually works.',
       },
       {
-        title: 'The Old Way',
-        author: 'Thomas',
+        title: 'Ecotopia',
+        author: 'Callenbach',
         reason:
-          'Indigenous knowledge as grounded wisdom. Architecture that sustained for millennia.',
+          'A society rebuilt on ecological principles. Grounded architecture serving sustainable life.',
       },
     ],
 
@@ -236,22 +236,22 @@ There's also the danger of false anchors. The values you think are central might
 
     books: [
       {
-        title: 'Built to Last',
-        author: 'Collins & Porras',
+        title: 'Station Eleven',
+        author: 'Mandel',
         reason:
-          'What makes organizations endure. Core values vs. operational flexibility.',
+          'What survives collapse: art, memory, purpose. The essentials that anchor civilization.',
       },
       {
-        title: 'The Fifth Discipline',
-        author: 'Senge',
+        title: 'The Book of the New Sun',
+        author: 'Wolfe',
         reason:
-          'Systems thinking that identifies leverage points. Knowing where to anchor.',
+          'Layers of meaning around a central mystery. Architecture where the center holds despite everything.',
       },
       {
-        title: 'Zen Mind, Beginner\'s Mind',
-        author: 'Suzuki',
+        title: 'Dune',
+        author: 'Herbert',
         reason:
-          'Centeredness as practice. Architecture that emerges from stable presence.',
+          'Ecology, politics, and religion woven around the unchanging desert. Systems with clear centers.',
       },
     ],
 
@@ -323,22 +323,22 @@ There's also the question of perfectionism disguised as diligence. "Doing it pro
 
     books: [
       {
-        title: 'The Craftsman',
-        author: 'Sennett',
+        title: 'Red Mars',
+        author: 'Robinson',
         reason:
-          'Building as human practice. The dignity of patient, skilled work.',
+          'Terraforming requires centuries of patient work. Building that thinks in generations.',
       },
       {
-        title: 'Cathedral',
-        author: 'Macaulay',
+        title: 'The Long Earth',
+        author: 'Pratchett & Baxter',
         reason:
-          'How medieval builders created structures that outlasted generations.',
+          'Steady exploration of infinite worlds. Building at sustainable pace across unlimited frontier.',
       },
       {
-        title: 'Atomic Habits',
-        author: 'Clear',
+        title: 'Children of Time',
+        author: 'Tchaikovsky',
         reason:
-          'Small consistent effort compounds into remarkable results.',
+          'Civilizations built across millennia. The patient construction of societies that endure.',
       },
     ],
 
@@ -406,22 +406,22 @@ There's also a question of whose needs you're grounding yourself in. Practical b
 
     books: [
       {
-        title: 'Shop Class as Soulcraft',
-        author: 'Crawford',
+        title: 'The Martian',
+        author: 'Weir',
         reason:
-          'The dignity of practical work. Building things that matter.',
+          'Practical problem-solving with available materials. Grounded building that actually works.',
       },
       {
-        title: 'The Mom Test',
-        author: 'Fitzpatrick',
+        title: 'Farmer in the Sky',
+        author: 'Heinlein',
         reason:
-          'Understanding real needs. Building for actual users.',
+          'Terraforming Ganymede through practical work. Building colonies from the ground up.',
       },
       {
-        title: 'Small Is Beautiful',
-        author: 'Schumacher',
+        title: 'A Psalm for the Wild-Built',
+        author: 'Chambers',
         reason:
-          'Economics and building at human scale. Grounded in real communities.',
+          'A tea monk and a robot discuss what humans actually need. Practical service to real people.',
       },
     ],
 
@@ -489,22 +489,22 @@ There's also the question of changing purpose. What if your anchor was set wrong
 
     books: [
       {
-        title: 'Start with Why',
-        author: 'Sinek',
+        title: 'The Left Hand of Darkness',
+        author: 'Le Guin',
         reason:
-          'Purpose as foundation. Building from clear intent.',
+          'An envoy with a clear mission navigates an alien world. Purpose that persists through confusion.',
       },
       {
-        title: 'The Design of Everyday Things',
-        author: 'Norman',
+        title: 'Speaker for the Dead',
+        author: 'Card',
         reason:
-          'Purpose-driven design. Every element serving user needs.',
+          'A speaker helps communities understand their dead. Building meaning through purposeful witness.',
       },
       {
-        title: 'Essentialism',
-        author: 'McKeown',
+        title: 'Contact',
+        author: 'Sagan',
         reason:
-          'Doing less but better. Building only what matters.',
+          'A scientist\'s lifelong purpose: finding extraterrestrial intelligence. Building toward a single clear goal.',
       },
     ],
 
@@ -576,22 +576,22 @@ There's also the question of whether reliability serves the work or just your co
 
     books: [
       {
-        title: 'The Practice',
-        author: 'Godin',
+        title: 'All Systems Red',
+        author: 'Wells',
         reason:
-          'Showing up every day. Making as a commitment.',
+          'A security bot doing its job reliably, day after day. Craft as consistent protection.',
       },
       {
-        title: 'Jiro Dreams of Sushi',
-        author: 'Documentary',
+        title: 'Anathem',
+        author: 'Stephenson',
         reason:
-          'A lifetime of steady craft. Reliability as mastery.',
+          'Monks maintaining knowledge through centuries of practice. Steady craft across generations.',
       },
       {
-        title: 'Zen and the Art of Motorcycle Maintenance',
-        author: 'Pirsig',
+        title: 'The Sparrow',
+        author: 'Russell',
         reason:
-          'Quality as a way of being. Steady attention to craft.',
+          'Years of preparation for a single mission. The reliability that earns trust.',
       },
     ],
 
@@ -659,22 +659,22 @@ There's also the risk of parochialism. Grounded making can become making only fo
 
     books: [
       {
-        title: 'The Art of Fermentation',
-        author: 'Katz',
+        title: 'Semiosis',
+        author: 'Burke',
         reason:
-          'Making that works with living materials. Grounded in tradition and practice.',
+          'Colonists learning to work with alien plants. Making that respects material reality.',
       },
       {
-        title: 'Making',
-        author: 'Ingold',
+        title: 'The Word for World Is Forest',
+        author: 'Le Guin',
         reason:
-          'The philosophy of working with materials. Grounded making as way of knowing.',
+          'A people whose craft is woven into their ecosystem. Grounded making in harmony with place.',
       },
       {
-        title: 'The Hand',
-        author: 'Wilson',
+        title: 'A Fire Upon the Deep',
+        author: 'Vinge',
         reason:
-          'How making shapes the mind. The neuroscience of craft.',
+          'Technologies that only work in certain zones. Understanding the material constraints of craft.',
       },
     ],
 
@@ -742,22 +742,22 @@ There's also the question of whose purposes your making serves. Anchored in your
 
     books: [
       {
-        title: 'A Handmade Life',
-        author: 'Coperthwaite',
+        title: 'The Dispossessed',
+        author: 'Le Guin',
         reason:
-          'Intentional making as a way of life. Purpose embodied in craft.',
+          'An anarchist society where making serves collective purpose. Craft anchored to values.',
       },
       {
-        title: 'Made by Hand',
-        author: 'Frauenfelder',
+        title: 'Stories of Your Life and Others',
+        author: 'Chiang',
         reason:
-          'Why making matters. Purpose in the age of mass production.',
+          'Each story explores purpose with crystalline clarity. Making that knows exactly what it\'s for.',
       },
       {
-        title: 'The Kinfolk Home',
-        author: 'Williams',
+        title: 'Never Let Me Go',
+        author: 'Ishiguro',
         reason:
-          'Intentional spaces and objects. Making with meaning.',
+          'Art-making as proof of humanity. Purpose revealed through what we choose to create.',
       },
     ],
 
@@ -829,22 +829,22 @@ There's also the question of what your steadiness enables. If the status quo is 
 
     books: [
       {
-        title: 'Switch',
-        author: 'Heath',
+        title: 'Parable of the Sower',
+        author: 'Butler',
         reason:
-          'How change actually works. Patient shaping based on understanding.',
+          'Building a new belief system through steady practice. Change that grows at sustainable pace.',
       },
       {
-        title: 'The Art of Gathering',
-        author: 'Parker',
+        title: 'The Fifth Season',
+        author: 'Jemisin',
         reason:
-          'Shaping experiences that transform people gradually.',
+          'Societies shaped by slow geological forces. Transformation measured in epochs.',
       },
       {
-        title: 'Immunity to Change',
-        author: 'Kegan & Lahey',
+        title: 'The Lathe of Heaven',
+        author: 'Le Guin',
         reason:
-          'Why change resists. Working with resistance instead of against it.',
+          'A man whose dreams reshape reality learns the danger of sudden change. Caution as wisdom.',
       },
     ],
 
@@ -912,22 +912,22 @@ There's also the trap of endless understanding. You can always understand more b
 
     books: [
       {
-        title: 'Good to Great',
-        author: 'Collins',
+        title: 'Dune',
+        author: 'Herbert',
         reason:
-          'Understanding what makes organizations work before trying to improve them.',
+          'Paul studies Arrakis deeply before acting. Understanding the system before shaping it.',
       },
       {
-        title: 'The Culture Code',
-        author: 'Coyle',
+        title: 'Kindred',
+        author: 'Butler',
         reason:
-          'How groups actually function. Understanding before reshaping.',
+          'Dana must understand the past to survive in it. Change requires knowing what you\'re working with.',
       },
       {
-        title: 'Range',
-        author: 'Epstein',
+        title: 'The Years of Rice and Salt',
+        author: 'Robinson',
         reason:
-          'Broad understanding enables better shaping. Generalists as transformers.',
+          'History reshaped across centuries. Understanding the long arc before intervening.',
       },
     ],
 
@@ -995,22 +995,22 @@ There's also the trap of values-as-excuse. "I'm not changing this because of my 
 
     books: [
       {
-        title: 'Let Your Life Speak',
-        author: 'Palmer',
+        title: 'A Memory Called Empire',
+        author: 'Martine',
         reason:
-          'Values as foundation for action. Principled living.',
+          'An ambassador anchored by her predecessor\'s values navigates empire. Principles that persist.',
       },
       {
-        title: 'Leadership and Self-Deception',
-        author: 'Arbinger Institute',
+        title: 'The Ones Who Walk Away from Omelas',
+        author: 'Le Guin',
         reason:
-          'How principles actually guide (or don\'t guide) behavior.',
+          'Some refuse a prosperity built on suffering. Values as non-negotiable constraints.',
       },
       {
-        title: 'The Righteous Mind',
-        author: 'Haidt',
+        title: 'Ursula K. Le Guin\'s Earthsea',
+        author: 'Le Guin',
         reason:
-          'Where values come from. Understanding moral anchors.',
+          'A mage who understands that true power requires knowing what not to change.',
       },
     ],
 
@@ -1082,22 +1082,22 @@ There's also the trap of neutrality. Steady observation positions you as outside
 
     books: [
       {
-        title: 'Braiding Sweetgrass',
-        author: 'Kimmerer',
+        title: 'Solaris',
+        author: 'Lem',
         reason:
-          'Observation over generations. What patient watching of nature reveals.',
+          'Scientists observe an alien ocean for decades. Understanding requires patience beyond human timescales.',
       },
       {
-        title: 'The Long View',
-        author: 'Jennings',
+        title: 'Rendezvous with Rama',
+        author: 'Clarke',
         reason:
-          'Historical perspective from steady attention to change over time.',
+          'Explorers study an alien ship that reveals itself slowly. Observation measured in months.',
       },
       {
-        title: 'H Is for Hawk',
-        author: 'Macdonald',
+        title: 'The Word for World Is Forest',
+        author: 'Le Guin',
         reason:
-          'Patient observation of a creature. Understanding through sustained watching.',
+          'The Athsheans observe for generations before acting. Patience as cultural wisdom.',
       },
     ],
 
@@ -1165,22 +1165,22 @@ There's also the question of what realism even is. Everyone's perception is part
 
     books: [
       {
-        title: 'Thinking, Fast and Slow',
-        author: 'Kahneman',
+        title: 'Blindsight',
+        author: 'Watts',
         reason:
-          'How perception actually works. The biases that distort grounded seeing.',
+          'Observers confront an alien intelligence that challenges every assumption. Perception stripped to essentials.',
       },
       {
-        title: 'Factfulness',
-        author: 'Rosling',
+        title: 'Arrival',
+        author: 'Chiang',
         reason:
-          'Seeing the world accurately. Data over instinct.',
+          'A linguist perceives alien time. Grounded observation that changes everything.',
       },
       {
-        title: 'The Scout Mindset',
-        author: 'Galef',
+        title: 'Contact',
+        author: 'Sagan',
         reason:
-          'Seeking truth over comfort. Grounded perception as practice.',
+          'Scientists verify an alien signal with rigorous observation. Truth requires grounded method.',
       },
     ],
 
@@ -1248,22 +1248,22 @@ There's also the question of who set your direction. Your sense of what matters 
 
     books: [
       {
-        title: 'Essentialism',
-        author: 'McKeown',
+        title: 'Speaker for the Dead',
+        author: 'Card',
         reason:
-          'Focusing on what matters. Directed attention as life strategy.',
+          'A speaker observes lives with clear purpose: understanding enough to tell the truth.',
       },
       {
-        title: 'Deep Work',
-        author: 'Newport',
+        title: 'The Left Hand of Darkness',
+        author: 'Le Guin',
         reason:
-          'The value of focused attention in an age of distraction.',
+          'An envoy observing alien culture for a specific diplomatic goal. Purposeful attention.',
       },
       {
-        title: 'Rapt',
-        author: 'Gallagher',
+        title: 'Embassytown',
+        author: 'Miéville',
         reason:
-          'Attention as life\'s fundamental resource. Directing it well.',
+          'Linguists observe alien communication patterns. Directed attention to solve a crisis.',
       },
     ],
 
@@ -1335,22 +1335,22 @@ There's also the question of action. Patient noticing can become permanent notic
 
     books: [
       {
-        title: 'Pilgrim at Tinker Creek',
-        author: 'Dillard',
+        title: 'Annihilation',
+        author: 'VanderMeer',
         reason:
-          'Patient noticing of nature over a year. Attention as devotion.',
+          'A biologist notices details in Area X over weeks. Small observations that accumulate into dread.',
       },
       {
-        title: 'The Art of Noticing',
-        author: 'Walker',
+        title: 'The Long Way to a Small, Angry Planet',
+        author: 'Chambers',
         reason:
-          'Exercises in sustained attention. Growing the capacity to notice.',
+          'A crew notices each other over months of travel. Small kindnesses that accumulate into family.',
       },
       {
-        title: 'The Hare with Amber Eyes',
-        author: 'de Waal',
+        title: 'Piranesi',
+        author: 'Clarke',
         reason:
-          'Noticing the small objects that accumulate into family history.',
+          'Meticulous noticing of tides and statues. Patient attention that eventually reveals the truth.',
       },
     ],
 
@@ -1418,22 +1418,22 @@ There's also the risk of ordinary as comfort zone. You notice what's familiar be
 
     books: [
       {
-        title: 'The Writing Life',
-        author: 'Dillard',
+        title: 'Borne',
+        author: 'VanderMeer',
         reason:
-          'Noticing the ordinary intensely. Daily attention as practice.',
+          'A scavenger notices strange life in ruins. Finding wonder in the ordinary wreckage.',
       },
       {
-        title: 'Wherever You Go, There You Are',
-        author: 'Kabat-Zinn',
+        title: 'A Psalm for the Wild-Built',
+        author: 'Chambers',
         reason:
-          'Present-moment awareness. Grounded attention as practice.',
+          'A tea monk notices what people actually need. Present attention to immediate reality.',
       },
       {
-        title: 'The Poetics of Space',
-        author: 'Bachelard',
+        title: 'The Book of the New Sun',
+        author: 'Wolfe',
         reason:
-          'Noticing the intimate spaces we inhabit. Philosophy of the everyday.',
+          'Severian notices everything but understands it slowly. Present details that accrue meaning.',
       },
     ],
 
@@ -1501,22 +1501,22 @@ There's also the question of whose values are doing the anchoring. You inherited
 
     books: [
       {
-        title: 'Let Your Life Speak',
-        author: 'Palmer',
+        title: 'All the Light We Cannot See',
+        author: 'Doerr',
         reason:
-          'Values as guides for attention. Noticing what matters.',
+          'A blind girl notices what matters through radio. Attention directed by what she values.',
       },
       {
-        title: 'What I Talk About When I Talk About Running',
-        author: 'Murakami',
+        title: 'The Giver',
+        author: 'Lowry',
         reason:
-          'Paying attention to what matters to you, specifically.',
+          'Jonas notices what his society has hidden. Values determine what becomes visible.',
       },
       {
-        title: 'Gift from the Sea',
-        author: 'Lindbergh',
+        title: 'Station Eleven',
+        author: 'Mandel',
         reason:
-          'Noticing what matters in a distracted world.',
+          'Survivors notice what\'s worth preserving. Values as compass for attention.',
       },
     ],
 
@@ -1588,22 +1588,22 @@ There's also the cost of stillness to yourself. Always holding space for others,
 
     books: [
       {
-        title: 'Gilead',
-        author: 'Robinson',
+        title: 'A Canticle for Leibowitz',
+        author: 'Miller',
         reason:
-          'Steady witness over a lifetime. Memory as gift.',
+          'Monks witnessing humanity across centuries of rise and fall. Steady presence through cycles.',
       },
       {
         title: 'The Road',
         author: 'McCarthy',
         reason:
-          'Witnessing through catastrophe. Presence as survival.',
+          'A father witnesses for his son through apocalypse. Presence as the last protection.',
       },
       {
-        title: 'When Breath Becomes Air',
-        author: 'Kalanithi',
+        title: 'Never Let Me Go',
+        author: 'Ishiguro',
         reason:
-          'Steady witness to one\'s own mortality.',
+          'Students witness each other\'s fates with quiet constancy. Steady presence unto the end.',
       },
     ],
 
@@ -1671,22 +1671,22 @@ There's also the danger of insider blindness. Being part of what you witness mea
 
     books: [
       {
-        title: 'Braiding Sweetgrass',
-        author: 'Kimmerer',
+        title: 'The Fifth Season',
+        author: 'Jemisin',
         reason:
-          'Rooted witnessing of land and community over generations.',
+          'Orogenes rooted in community despite persecution. Witnessing from belonging even when belonging hurts.',
       },
       {
-        title: 'All Over Creation',
-        author: 'Ozeki',
+        title: 'Parable of the Sower',
+        author: 'Butler',
         reason:
-          'Witnessing from connection to place. Roots and belonging.',
+          'Lauren witnesses her community\'s destruction, then builds a new one. Roots that can be replanted.',
       },
       {
-        title: 'This Is Where You Belong',
-        author: 'Warnick',
+        title: 'Always Coming Home',
+        author: 'Le Guin',
         reason:
-          'The practice of rooting. Belonging as choice.',
+          'The Kesh witness their valley across generations. Presence rooted in place.',
       },
     ],
 
@@ -1754,22 +1754,22 @@ There's also the danger of withholding witness. "That doesn't deserve my attenti
 
     books: [
       {
-        title: 'Witness',
-        author: 'Teju Cole',
+        title: 'The Sparrow',
+        author: 'Russell',
         reason:
-          'Photography as purposeful witnessing. What deserves the frame.',
+          'A priest witnesses alien culture to understand God\'s purpose. Presence directed by faith.',
       },
       {
-        title: 'A Witness Tree',
-        author: 'Frost',
+        title: 'Speaker for the Dead',
+        author: 'Card',
         reason:
-          'Poetry of purposeful presence. Witnessing what matters.',
+          'A speaker witnesses lives purposefully: to tell truth about the dead. Anchored presence.',
       },
       {
-        title: 'The Book of Joy',
-        author: 'Dalai Lama & Tutu',
+        title: 'The Left Hand of Darkness',
+        author: 'Le Guin',
         reason:
-          'Two witnesses discussing what deserves their attention.',
+          'Genly Ai witnesses Gethen for the Ekumen. Purposeful presence in service of understanding.',
       },
     ],
 

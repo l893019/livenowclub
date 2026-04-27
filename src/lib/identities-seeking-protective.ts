@@ -70,22 +70,22 @@ There's also the cost of excessive defensiveness. Systems optimized for failure 
 
     books: [
       {
-        title: 'The Design of Everyday Things',
-        author: 'Norman',
+        title: 'Seveneves',
+        author: 'Stephenson',
         reason:
-          "How design fails people. The careful architect's guide to protecting users.",
+          'Humanity faces extinction and must design redundant systems for survival. The careful architect\'s ultimate test.',
       },
       {
-        title: 'Normal Accidents',
-        author: 'Perrow',
+        title: 'A Fire Upon the Deep',
+        author: 'Vinge',
         reason:
-          'Why complex systems fail. Essential reading for defensive architecture.',
+          'A galaxy organized into zones with built-in failsafes. Architecture that accounts for its own failure.',
       },
       {
-        title: 'Thinking in Systems',
-        author: 'Meadows',
+        title: 'The Three-Body Problem',
+        author: 'Liu',
         reason:
-          'Understanding feedback loops and failure modes. Systems thinking for careful designers.',
+          'Civilizations that survive are those that anticipate threats. Defensive thinking at cosmic scale.',
       },
     ],
 
@@ -153,22 +153,22 @@ There's also the social cost. Being the person who always raises concerns can po
 
     books: [
       {
-        title: 'The Black Swan',
-        author: 'Taleb',
+        title: 'Foundation',
+        author: 'Asimov',
         reason:
-          'The risks we fail to see. Essential for risk-aware architecture.',
+          'Hari Seldon plans for civilizational collapse millennia in advance. Risk-aware design at its finest.',
       },
       {
-        title: 'Fooled by Randomness',
-        author: 'Taleb',
+        title: 'Dune',
+        author: 'Herbert',
         reason:
-          'Understanding uncertainty. Why caution about our certainties makes sense.',
+          'Plans within plans within plans. Every contingency considered, every risk anticipated.',
       },
       {
-        title: 'How Buildings Learn',
-        author: 'Brand',
+        title: 'The Left Hand of Darkness',
+        author: 'Le Guin',
         reason:
-          'Architecture that can adapt to unexpected futures. Designing for uncertainty.',
+          'Navigating alien systems with caution and awareness. Diplomatic architecture under uncertainty.',
       },
     ],
 
@@ -236,22 +236,22 @@ There's also the risk of measured becoming comfortable. If measured means "what 
 
     books: [
       {
-        title: 'Measure What Matters',
-        author: 'Doerr',
+        title: 'The Dispossessed',
+        author: 'Le Guin',
         reason:
-          'Calibrating effort to outcome. The measured approach to achievement.',
+          'Two worlds, two systems, balanced against each other. Measured architecture of society.',
       },
       {
-        title: 'The Checklist Manifesto',
-        author: 'Gawande',
+        title: 'Red Mars',
+        author: 'Robinson',
         reason:
-          'Systematic approaches to complex work. Measured execution.',
+          'Terraforming as measured transformation. Building a world at sustainable pace.',
       },
       {
-        title: 'Deep Work',
-        author: 'Newport',
+        title: 'A Memory Called Empire',
+        author: 'Martine',
         reason:
-          'Measured focus as a strategy for significant achievement.',
+          'Political systems designed with care. Measured navigation of complex power structures.',
       },
     ],
 
@@ -323,22 +323,22 @@ There's also the opportunity cost. Time spent perfecting one build is time not s
 
     books: [
       {
-        title: 'The Craftsman',
-        author: 'Sennett',
+        title: 'The Martian',
+        author: 'Weir',
         reason:
-          'The meaning of quality work. Why careful building matters.',
+          'Survival through meticulous problem-solving. Every repair must be perfect when your life depends on it.',
       },
       {
-        title: 'Code Complete',
-        author: 'McConnell',
+        title: 'Project Hail Mary',
+        author: 'Weir',
         reason:
-          'Software construction with care. The careful approach in code.',
+          'Careful engineering saves humanity. Building with care when failure means extinction.',
       },
       {
-        title: 'Zen and the Art of Motorcycle Maintenance',
-        author: 'Pirsig',
+        title: 'Rendezvous with Rama',
+        author: 'Clarke',
         reason:
-          'Quality as a way of being. The philosophy behind careful work.',
+          'Exploring technology built with incomprehensible precision. Quality that transcends understanding.',
       },
     ],
 
@@ -406,22 +406,22 @@ There's also the danger of caution creep. If one cautious step prevents one prob
 
     books: [
       {
-        title: 'Failure Is Not an Option',
-        author: 'Kranz',
+        title: 'Gateway',
+        author: 'Pohl',
         reason:
-          "NASA's approach to cautious building. How risk-awareness enabled Apollo.",
+          'Technology with unknown risks. Building with alien machines that might kill you.',
       },
       {
-        title: 'The Field Guide to Understanding Human Error',
-        author: 'Dekker',
+        title: 'Ringworld',
+        author: 'Niven',
         reason:
-          'Why things fail despite caution. Building systems for real humans.',
+          'Engineering at impossible scale. What happens when megastructures fail?',
       },
       {
-        title: 'Antifragile',
-        author: 'Taleb',
+        title: 'Tau Zero',
+        author: 'Anderson',
         reason:
-          'Building things that gain from disorder. Caution that enables, not prevents.',
+          'Building under pressure as the universe dies around you. Cautious action when there\'s no margin for error.',
       },
     ],
 
@@ -489,22 +489,22 @@ There's also the question of what "measured" is measured against. If your baseli
 
     books: [
       {
-        title: 'Atomic Habits',
-        author: 'Clear',
+        title: 'Aurora',
+        author: 'Robinson',
         reason:
-          'Small consistent effort compounds. The measured approach to building anything.',
+          'A generation ship\'s steady journey. Sustainable building across centuries.',
       },
       {
-        title: 'The Checklist Manifesto',
-        author: 'Gawande',
+        title: 'The Long Way to a Small, Angry Planet',
+        author: 'Chambers',
         reason:
-          'Systematic approaches to reliable work. Measured execution.',
+          'A crew that builds and maintains together. Measured work that sustains community.',
       },
       {
-        title: 'Range',
-        author: 'Epstein',
+        title: 'Becky Chambers\' Monk and Robot',
+        author: 'Chambers',
         reason:
-          'The value of measured exploration across domains.',
+          'Small, sustainable building. Finding peace in measured progress.',
       },
     ],
 
@@ -576,22 +576,22 @@ There's also the danger of care becoming control. Making with care is about serv
 
     books: [
       {
-        title: 'The Uncommon Life of Common Objects',
-        author: 'Akiko Busch',
+        title: 'The Diamond Age',
+        author: 'Stephenson',
         reason:
-          'The care embedded in everyday things. Why careful making matters.',
+          'Nanotechnology crafting with care. The Primer as devotional making.',
       },
       {
-        title: 'Wabi-Sabi for Artists, Designers, Poets & Philosophers',
-        author: 'Koren',
+        title: 'Piranesi',
+        author: 'Clarke',
         reason:
-          'Finding beauty in imperfection. Care without obsession.',
+          'Careful attention to a strange world. Making meaning through devoted observation.',
       },
       {
-        title: 'The Practice',
-        author: 'Godin',
+        title: 'A Wizard of Earthsea',
+        author: 'Le Guin',
         reason:
-          'Showing up consistently. Care as commitment to the work.',
+          'Magic requires care and naming. Power flows from attention to detail.',
       },
     ],
 
@@ -659,22 +659,22 @@ There's also aesthetic cost. Robustness can conflict with elegance. Your cautiou
 
     books: [
       {
-        title: 'Made to Last',
-        author: 'Eicher & Field',
+        title: 'Anathem',
+        author: 'Stephenson',
         reason:
-          'Objects that endure. The craft of durability.',
+          'Knowledge preserved across millennia. Making that endures through careful tradition.',
       },
       {
-        title: 'Cradle to Cradle',
-        author: 'McDonough & Braungart',
+        title: 'A Canticle for Leibowitz',
+        author: 'Miller',
         reason:
-          'Making that accounts for the full lifecycle.',
+          'Monks preserve technology through dark ages. Durable making as sacred duty.',
       },
       {
-        title: 'The Evolution of Useful Things',
-        author: 'Petroski',
+        title: 'Flowers for Algernon',
+        author: 'Keyes',
         reason:
-          'How objects fail and improve. Cautious making as response.',
+          'The consequences of making without full understanding. Caution in creation.',
       },
     ],
 
@@ -742,22 +742,22 @@ There's also the question of growth. Measured making can become comfortable maki
 
     books: [
       {
-        title: 'The War of Art',
-        author: 'Pressfield',
+        title: 'Stories of Your Life and Others',
+        author: 'Chiang',
         reason:
-          'Showing up to make. The measured commitment to craft.',
+          'Measured, precise stories about creation and consequence. Craft elevated to philosophy.',
       },
       {
-        title: 'Atomic Habits',
-        author: 'Clear',
+        title: 'Exhalation',
+        author: 'Chiang',
         reason:
-          'Small consistent efforts that compound. The measured path.',
+          'Thoughtful making in worlds with strange rules. Consistency across varied forms.',
       },
       {
-        title: 'Daily Rituals',
-        author: 'Currey',
+        title: 'The Paper Menagerie and Other Stories',
+        author: 'Liu',
         reason:
-          'How makers organize their work. Measured practice.',
+          'Making imbued with care and meaning. Small creations that carry weight.',
       },
     ],
 
@@ -829,22 +829,22 @@ There's also the pace problem. Careful transformation is slow transformation. Wh
 
     books: [
       {
-        title: 'Switch',
-        author: 'Heath',
+        title: 'Parable of the Sower',
+        author: 'Butler',
         reason:
-          'How change actually works. Careful shaping based on understanding.',
+          'Building community through collapse. Protective transformation amid chaos.',
       },
       {
-        title: 'Leading Change',
-        author: 'Kotter',
+        title: 'Station Eleven',
+        author: 'Mandel',
         reason:
-          'Transformation that accounts for resistance. Careful organizational shaping.',
+          'Preserving civilization while the world changes. What deserves to survive.',
       },
       {
-        title: 'Immunity to Change',
-        author: 'Kegan & Lahey',
+        title: 'The Fifth Season',
+        author: 'Jemisin',
         reason:
-          'Why change resists. Working with resistance carefully.',
+          'Power used for protection. Shaping forces that could destroy you.',
       },
     ],
 
@@ -912,22 +912,22 @@ There's also the cost of preparation. Building fallbacks takes resources. Your c
 
     books: [
       {
-        title: 'The Hard Thing About Hard Things',
-        author: 'Horowitz',
+        title: 'Kindred',
+        author: 'Butler',
         reason:
-          'Transformation with things going wrong. Cautious leadership in chaos.',
+          'Navigating dangerous transformation. Survival through cautious action.',
       },
       {
-        title: 'Thinking in Bets',
-        author: 'Duke',
+        title: 'An Unkindness of Ghosts',
+        author: 'Solomon',
         reason:
-          'Decision-making under uncertainty. Cautious shaping with incomplete information.',
+          'Resistance on a generation ship. Careful rebellion with fallback plans.',
       },
       {
-        title: 'The Art of the Long View',
-        author: 'Schwartz',
+        title: 'The Power',
+        author: 'Alderman',
         reason:
-          'Planning for multiple futures. Cautious transformation through scenario thinking.',
+          'Transformation with unintended consequences. Change that requires caution.',
       },
     ],
 
@@ -995,22 +995,22 @@ There's also the question of what "sustainable" really means. If your baseline i
 
     books: [
       {
-        title: 'The Art of Gathering',
-        author: 'Parker',
+        title: 'Ministry for the Future',
+        author: 'Robinson',
         reason:
-          'Shaping experiences with measured care. Transformation through gatherings.',
+          'Measured planetary transformation. Change at the pace civilization can absorb.',
       },
       {
-        title: 'Transitions',
-        author: 'Bridges',
+        title: 'New York 2140',
+        author: 'Robinson',
         reason:
-          'The human experience of change. Why pace matters in transformation.',
+          'Cities adapting to climate change. Gradual transformation that preserves community.',
       },
       {
-        title: 'Deep Change',
-        author: 'Quinn',
+        title: 'The Tombs of Atuan',
+        author: 'Le Guin',
         reason:
-          'Measured transformation at organizational and personal scales.',
+          'Personal transformation at sustainable pace. Finding freedom through measured change.',
       },
     ],
 
@@ -1082,22 +1082,22 @@ There's also the time cost. Careful observation is slow observation. In situatio
 
     books: [
       {
-        title: 'The Art of Looking Sideways',
-        author: 'Fletcher',
+        title: 'Solaris',
+        author: 'Lem',
         reason:
-          'Training careful perception. How to see what others miss.',
+          'Careful scientific observation of the unknowable. Verification pushed to its limits.',
       },
       {
-        title: 'Visual Thinking',
-        author: 'Arnheim',
+        title: 'Blindsight',
+        author: 'Watts',
         reason:
-          'How observation works. The careful observer\'s guide to perception.',
+          'Questioning the nature of observation itself. What does it mean to really see?',
       },
       {
-        title: 'Looking at Paintings',
-        author: 'Woodford',
+        title: 'Story of Your Life',
+        author: 'Chiang',
         reason:
-          'Deep observation of visual information. Careful seeing as practice.',
+          'Observation as understanding. Seeing patterns that change everything.',
       },
     ],
 
@@ -1165,22 +1165,22 @@ There's also the social cost. Constantly qualifying your observations with uncer
 
     books: [
       {
-        title: 'Thinking, Fast and Slow',
-        author: 'Kahneman',
+        title: 'Annihilation',
+        author: 'VanderMeer',
         reason:
-          'How perception deceives. The cautious observer\'s essential reading.',
+          'Observation of the unknowable. When what you see might not be real.',
       },
       {
-        title: 'The Invisible Gorilla',
-        author: 'Chabris & Simons',
+        title: 'The Book of the New Sun',
+        author: 'Wolfe',
         reason:
-          'What we miss in observation. Why caution about perception makes sense.',
+          'Unreliable observation elevated to art. Question everything you think you see.',
       },
       {
-        title: 'The Scout Mindset',
-        author: 'Galef',
+        title: 'Dark Intelligence',
+        author: 'Asher',
         reason:
-          'Seeking truth over comfort in observation. Calibrated seeing.',
+          'Watching AI with appropriate skepticism. Cautious observation of powerful forces.',
       },
     ],
 
@@ -1248,22 +1248,22 @@ There's also the question of what counts as "enough." If your baseline is conser
 
     books: [
       {
-        title: 'Blink',
-        author: 'Gladwell',
+        title: 'Contact',
+        author: 'Sagan',
         reason:
-          'Rapid observation that works. When measured observation is enough.',
+          'Measured scientific observation meets the unknown. Practical seeing of the impossible.',
       },
       {
-        title: 'Decisive',
-        author: 'Heath',
+        title: 'The Calculating Stars',
+        author: 'Kowal',
         reason:
-          'How observation serves decision. The measured path from seeing to choosing.',
+          'Observation for decision-making. Practical perception when stakes are high.',
       },
       {
-        title: 'Sources of Power',
-        author: 'Klein',
+        title: 'The Sparrow',
+        author: 'Russell',
         reason:
-          'How experts observe and decide. Practical perception under pressure.',
+          'First contact approached with measured care. Observation with appropriate humility.',
       },
     ],
 
@@ -1335,22 +1335,22 @@ There's also the selectivity question. Noticing everything carefully is impossib
 
     books: [
       {
-        title: 'The Art of Noticing',
-        author: 'Walker',
+        title: 'Dark Matter',
+        author: 'Crouch',
         reason:
-          'Exercises in careful attention. How to notice what others miss.',
+          'Noticing small differences across realities. The details that reveal truth.',
       },
       {
-        title: 'Looking Is Hard Work',
-        author: 'Berger',
+        title: 'Recursion',
+        author: 'Crouch',
         reason:
-          'The effort of careful noticing. Why it matters.',
+          'Attention to memory\'s details. Careful noticing when reality shifts.',
       },
       {
-        title: 'Field Notes on Science and Nature',
-        author: 'Canfield',
+        title: 'The Long Earth',
+        author: 'Pratchett & Baxter',
         reason:
-          'Scientists\' careful noticing. Verification in practice.',
+          'Noticing across infinite worlds. Small differences that matter.',
       },
     ],
 
@@ -1418,22 +1418,22 @@ There's also the cost of negativity. Noticing primarily through a warning-sign l
 
     books: [
       {
-        title: 'The Gift of Fear',
-        author: 'De Becker',
+        title: 'Alas, Babylon',
+        author: 'Frank',
         reason:
-          'Noticing warning signs that matter. Protective attention.',
+          'Noticing the warning signs before catastrophe. Early detection that saves lives.',
       },
       {
-        title: 'Superforecasting',
-        author: 'Tetlock',
+        title: 'On the Beach',
+        author: 'Shute',
         reason:
-          'Noticing signals in noise. How cautious attention predicts.',
+          'Noticing the inevitable approaching. Warning signs that cannot be ignored.',
       },
       {
-        title: 'The Signal and the Noise',
-        author: 'Silver',
+        title: 'The Stand',
+        author: 'King',
         reason:
-          'Finding warning signs amid irrelevance. Cautious noticing applied.',
+          'Watching plague spread. Those who notice early survive.',
       },
     ],
 
@@ -1501,22 +1501,22 @@ There's also the recalibration question. Your sense of what matters comes from s
 
     books: [
       {
-        title: 'Essentialism',
-        author: 'McKeown',
+        title: 'Arrival',
+        author: 'Chiang',
         reason:
-          'Focusing attention on what matters. The measured approach to noticing.',
+          'Noticing patterns in alien language. Calibrated attention that reveals meaning.',
       },
       {
-        title: 'The Attention Merchants',
-        author: 'Wu',
+        title: 'Never Let Me Go',
+        author: 'Ishiguro',
         reason:
-          'Understanding attention as resource. Why calibration matters.',
+          'Gradually noticing the truth of your situation. Measured recognition.',
       },
       {
-        title: 'Four Thousand Weeks',
-        author: 'Burkeman',
+        title: 'All Systems Red',
+        author: 'Wells',
         reason:
-          'Limited attention, unlimited demands. The case for measured noticing.',
+          'A security unit noticing what matters. Practical attention amid chaos.',
       },
     ],
 
@@ -1588,22 +1588,22 @@ There's also the question of warmth. Careful, verified presence can feel clinica
 
     books: [
       {
-        title: 'Witnessing',
-        author: 'Shoshana Felman & Dori Laub',
+        title: 'Slaughterhouse-Five',
+        author: 'Vonnegut',
         reason:
-          'The responsibility of bearing witness. Careful presence in difficult contexts.',
+          'Bearing witness to war across time. Careful presence to unspeakable things.',
       },
       {
-        title: 'The Body Keeps the Score',
-        author: 'van der Kolk',
+        title: 'The Handmaid\'s Tale',
+        author: 'Atwood',
         reason:
-          'Trauma and witnessing. Why careful presence matters.',
+          'Witnessing oppression with clarity. The responsibility of accurate testimony.',
       },
       {
-        title: 'A Year of Magical Thinking',
-        author: 'Didion',
+        title: '1984',
+        author: 'Orwell',
         reason:
-          'Careful witness to grief. Honest presence to loss.',
+          'Witnessing totalitarianism. The care required to remember truth.',
       },
     ],
 
@@ -1671,22 +1671,22 @@ There's also the question of whose protection matters most. Your cautiousness ab
 
     books: [
       {
-        title: 'Trauma Stewardship',
-        author: 'van Dernoot Lipsky',
+        title: 'The Ones Who Walk Away from Omelas',
+        author: 'Le Guin',
         reason:
-          'Sustainable witnessing of difficult things. Cautious presence that lasts.',
+          'Witnessing with boundaries. Knowing what you can bear to see.',
       },
       {
-        title: 'The Art of Power',
-        author: 'Thich Nhat Hanh',
+        title: 'Parable of the Talents',
+        author: 'Butler',
         reason:
-          'Presence with boundaries. Mindful witnessing.',
+          'Sustainable witnessing through collapse. Presence that protects itself.',
       },
       {
-        title: 'Compassion Fatigue',
-        author: 'Figley',
+        title: 'The Memory Police',
+        author: 'Ogawa',
         reason:
-          'Why cautious witnessing matters. The costs of unboundaried presence.',
+          'Witnessing disappearance with care. Preserving presence when things vanish.',
       },
     ],
 
@@ -1754,22 +1754,22 @@ There's also the question of authenticity. Calibrated presence can feel calculat
 
     books: [
       {
-        title: 'Being Mortal',
-        author: 'Gawande',
+        title: 'The Road',
+        author: 'McCarthy',
         reason:
-          'Measured presence at life\'s end. Appropriate witnessing of mortality.',
+          'Measured witnessing of aftermath. Presence calibrated to what can be borne.',
       },
       {
-        title: 'The Book of Joy',
-        author: 'Dalai Lama & Tutu',
+        title: 'Oryx and Crake',
+        author: 'Atwood',
         reason:
-          'Two measured witnesses discussing presence and meaning.',
+          'Witnessing the end with measured clarity. Appropriate presence to extinction.',
       },
       {
-        title: 'When Breath Becomes Air',
-        author: 'Kalanithi',
+        title: 'The Children of Men',
+        author: 'James',
         reason:
-          'Witnessing one\'s own mortality with measure and grace.',
+          'Witnessing decline with balance. Neither too much hope nor too much despair.',
       },
     ],
 

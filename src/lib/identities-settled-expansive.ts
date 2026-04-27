@@ -70,22 +70,22 @@ Watch for the moment when your architectural vision becomes doctrine. The junior
 
     books: [
       {
-        title: 'A Pattern Language',
-        author: 'Alexander',
-        reason:
-          'Architecture as accumulated wisdom. Patterns that work because generations tested them.',
-      },
-      {
         title: 'Foundation',
         author: 'Asimov',
         reason:
-          "Psychohistory as ultimate architecture—designing systems that shape civilizations across millennia.",
+          'Hari Seldon designs a civilization to survive collapse. Architecture at the scale of millennia.',
       },
       {
-        title: 'The Design of Everyday Things',
-        author: 'Norman',
+        title: 'Dune',
+        author: 'Herbert',
         reason:
-          'Why confident design requires understanding users. Architecture that serves rather than impresses.',
+          'Paul sees the future and shapes it anyway. The confidence to act on vision despite knowing the cost.',
+      },
+      {
+        title: 'A Fire Upon the Deep',
+        author: 'Vinge',
+        reason:
+          'Architects of a galaxy-spanning network. Systems thinking at cosmic scale.',
       },
     ],
 
@@ -153,22 +153,22 @@ And your clarity can intimidate. The junior developer who has a vague intuition 
 
     books: [
       {
-        title: 'Thinking in Systems',
-        author: 'Meadows',
+        title: 'Diaspora',
+        author: 'Egan',
         reason:
-          'Systems thinking as a discipline. Understanding leverage points and feedback loops.',
+          'Post-human minds design their own architectures of thought. Assured creation of new forms of existence.',
       },
       {
-        title: 'The Timeless Way of Building',
-        author: 'Alexander',
+        title: 'The Culture Series',
+        author: 'Banks',
         reason:
-          'Architecture that emerges from deep understanding rather than surface cleverness.',
+          'The Culture Minds design utopia with quiet assurance. Systems that serve without controlling.',
       },
       {
-        title: 'Dune',
-        author: 'Herbert',
+        title: 'Anathem',
+        author: 'Stephenson',
         reason:
-          'Nested systems—ecology, politics, religion, genetics—all designed, all interacting.',
+          'Scholar-monks design knowledge architectures across millennia. Assured building of intellectual cathedrals.',
       },
     ],
 
@@ -236,22 +236,22 @@ There's also the question of incrementalism. Sometimes the boring approach—sma
 
     books: [
       {
-        title: 'The Fountainhead',
-        author: 'Rand',
-        reason:
-          'Artistic vision vs. convention. The cost and necessity of architectural integrity.',
-      },
-      {
         title: 'Childhood\'s End',
         author: 'Clarke',
         reason:
-          'Civilizational architecture. What happens when you design not buildings but futures.',
+          'The Overlords architect humanity\'s transcendence. Bold design at species scale.',
       },
       {
-        title: 'The Power Broker',
-        author: 'Caro',
+        title: 'Ringworld',
+        author: 'Niven',
         reason:
-          'How vision becomes reality—and what it costs. The machinery behind bold architecture.',
+          'Someone built a ring around a star. The boldest architecture imaginable.',
+      },
+      {
+        title: 'The Three-Body Problem',
+        author: 'Liu',
+        reason:
+          'Civilizations design desperate survival strategies. Bold architecture against cosmic threats.',
       },
     ],
 
@@ -323,22 +323,22 @@ There's also a people dimension. Your confidence can feel like steamrolling to t
 
     books: [
       {
-        title: 'The Mom Test',
-        author: 'Fitzpatrick',
-        reason:
-          "Building things people actually want. Confidence grounded in evidence.",
-      },
-      {
-        title: 'Shoe Dog',
-        author: 'Knight',
-        reason:
-          "Building Nike one crisis at a time. The reality behind confident building.",
-      },
-      {
         title: 'The Martian',
         author: 'Weir',
         reason:
-          "Problem-solving as survival. Confidence under pressure, one build at a time.",
+          'Problem-solving as survival. Confidence under pressure, one build at a time.',
+      },
+      {
+        title: 'Project Hail Mary',
+        author: 'Weir',
+        reason:
+          'Building solutions to save humanity. Confident improvisation at galactic stakes.',
+      },
+      {
+        title: 'Seveneves',
+        author: 'Stephenson',
+        reason:
+          'Building survival infrastructure for the species. Shipping when it matters most.',
       },
     ],
 
@@ -406,22 +406,22 @@ There's also the question of ambition. Your sustainable approach builds reliably
 
     books: [
       {
-        title: 'Shop Class as Soulcraft',
-        author: 'Crawford',
+        title: 'Red Mars',
+        author: 'Robinson',
         reason:
-          'The dignity of building. Competence as a form of knowledge and self-respect.',
+          'Building a civilization from scratch. Sustainable engineering at planetary scale.',
       },
       {
-        title: 'Deep Work',
-        author: 'Newport',
+        title: 'A Deepness in the Sky',
+        author: 'Vinge',
         reason:
-          'Sustained, focused building. The practices that make quality possible.',
+          'Programmer-archaeologists maintaining systems across millennia. Craft sustained over ages.',
       },
       {
-        title: 'The Craftsman',
-        author: 'Sennett',
+        title: 'The Long Way to a Small, Angry Planet',
+        author: 'Chambers',
         reason:
-          'Building as a human activity across history. The ethics of making things well.',
+          'Building and maintaining a ship that is also a home. Craftwork as community.',
       },
     ],
 
@@ -489,22 +489,22 @@ There's also a cost to those around you. Bold building often requires others to 
 
     books: [
       {
-        title: 'The Hard Thing About Hard Things',
-        author: 'Horowitz',
+        title: 'Rendezvous with Rama',
+        author: 'Clarke',
         reason:
-          'Building under impossible circumstances. When boldness meets brutal reality.',
+          'Explorers encounter alien engineering beyond imagination. Bold building leaves bold artifacts.',
       },
       {
-        title: 'Endurance',
-        author: 'Lansing',
+        title: 'Gateway',
+        author: 'Pohl',
         reason:
-          "Shackleton's expedition as a case study in bold leadership when everything goes wrong.",
+          'Prospectors risking everything on alien ships. Bold action despite terrifying unknowns.',
       },
       {
-        title: 'Creativity, Inc.',
-        author: 'Catmull',
+        title: 'Becky Chambers\' Wayfarers series',
+        author: 'Chambers',
         reason:
-          'Building Pixar required boldness sustained over decades. The long game of creative ambition.',
+          'Building lives and communities in the margins of space. Boldness in choosing your own path.',
       },
     ],
 
@@ -576,22 +576,22 @@ There's also the question of whether your confidence serves the work or your ego
 
     books: [
       {
-        title: 'Zen and the Art of Motorcycle Maintenance',
-        author: 'Pirsig',
+        title: 'All Systems Red',
+        author: 'Wells',
         reason:
-          'Quality as a way of engaging with making. The philosophy behind craft confidence.',
+          'A self-aware robot crafting its own identity. Confident making of the self.',
       },
       {
-        title: 'The Craftsman',
-        author: 'Sennett',
+        title: 'The Left Hand of Darkness',
+        author: 'Le Guin',
         reason:
-          'Making as a human activity through history. What craft teaches us about living.',
+          'Crafting understanding across impossible difference. Making meaning with confidence.',
       },
       {
-        title: 'The Taste of Country Cooking',
-        author: 'Lewis',
+        title: 'Piranesi',
+        author: 'Clarke',
         reason:
-          'Edna Lewis making with absolute confidence in her tradition. Craft as heritage.',
+          'Making a life in an impossible architecture. Craft confidence in surreal circumstances.',
       },
     ],
 
@@ -659,22 +659,22 @@ There's also a communication challenge. When your assurance is quiet, others mig
 
     books: [
       {
-        title: 'Jiro Dreams of Sushi',
-        author: 'Documentary/Gelb',
+        title: 'The Dispossessed',
+        author: 'Le Guin',
         reason:
-          'A lifetime dedicated to making one thing perfectly. Quality as a form of devotion.',
+          'Making a new physics and a new society. Quality work in revolutionary conditions.',
       },
       {
-        title: 'Shaker Design',
-        author: 'Kirk',
+        title: 'Semiosis',
+        author: 'Burke',
         reason:
-          'Beauty emerging from practical care. Quality as a spiritual practice.',
+          'Generations cultivating alien symbiosis. Patient making across centuries.',
       },
       {
-        title: 'The Art of Fermentation',
-        author: 'Katz',
+        title: 'Station Eleven',
+        author: 'Mandel',
         reason:
-          'Making that requires patience and attention. Quality that cannot be rushed.',
+          'Art preserved through apocalypse. The assured work of keeping beauty alive.',
       },
     ],
 
@@ -742,22 +742,22 @@ There's also the question of audience. Your bold objects might delight you and c
 
     books: [
       {
-        title: 'The Invention of Nature',
-        author: 'Wulf',
+        title: 'Annihilation',
+        author: 'VanderMeer',
         reason:
-          'Alexander von Humboldt making new ways of understanding nature. Scientific creativity as bold making.',
+          'Area X makes impossible things. Bold creation beyond human categories.',
       },
       {
-        title: 'Working',
-        author: 'Terkel',
+        title: 'The Book of the New Sun',
+        author: 'Wolfe',
         reason:
-          'Every kind of making, from conventional to creative. The dignity in all of it.',
+          'A dying Earth shaped by strange technologies. Bold artifacts from forgotten makers.',
       },
       {
-        title: 'Ways of Seeing',
-        author: 'Berger',
+        title: 'Embassytown',
+        author: 'Miéville',
         reason:
-          'Seeing differently as a prelude to making differently. Bold perception enables bold creation.',
+          'Language as bold making. Creating new forms of meaning itself.',
       },
     ],
 
@@ -841,10 +841,10 @@ There's also the question of whether transformation is actually needed. Sometime
           'Reshaping planets, ecosystems, religions. Transformation that spans generations.',
       },
       {
-        title: 'The Lean Startup',
-        author: 'Ries',
+        title: 'Parable of the Sower',
+        author: 'Butler',
         reason:
-          'Systematic shaping of business models. Transformation through iteration.',
+          'Building a new religion from collapse. Confident shaping of belief itself.',
       },
     ],
 
@@ -912,22 +912,22 @@ There's also the question of urgency. Your assured pace feels right to you, but 
 
     books: [
       {
-        title: 'Switch',
-        author: 'Heath',
+        title: 'Aurora',
+        author: 'Robinson',
         reason:
-          'How change actually works. Patient shaping based on understanding human nature.',
+          'Generations patiently shaping a world that may never work. Sustainable transformation.',
       },
       {
-        title: 'The Toyota Way',
-        author: 'Liker',
+        title: 'The Word for World is Forest',
+        author: 'Le Guin',
         reason:
-          'Continuous improvement as an organizational practice. Patient shaping at scale.',
+          'Patient resistance reshaping colonial systems. Change through sustained pressure.',
       },
       {
-        title: 'Designing Your Life',
-        author: 'Burnett & Evans',
+        title: 'Binti',
+        author: 'Okofor',
         reason:
-          'Reshaping your own life through iterative prototyping. Patient self-transformation.',
+          'Transforming conflict through understanding. Patient shaping across species.',
       },
     ],
 
@@ -1082,22 +1082,22 @@ There's also the question of action. Confident observation without action is jus
 
     books: [
       {
-        title: 'Seeing Like a State',
-        author: 'Scott',
+        title: 'Blindsight',
+        author: 'Watts',
         reason:
-          'How different perspectives reveal and conceal. The politics of observation.',
+          'Observers encountering alien consciousness. Confident perception pushed to its limits.',
       },
       {
-        title: 'Ways of Seeing',
-        author: 'Berger',
+        title: 'Speaker for the Dead',
+        author: 'Card',
         reason:
-          'Observation as a learned skill. What confident seeing requires.',
+          'Understanding alien species through confident, careful observation. Seeing truly.',
       },
       {
-        title: 'The Information',
-        author: 'Gleick',
+        title: 'Solaris',
+        author: 'Lem',
         reason:
-          'What observation means in an age of overwhelming data. Signal and noise.',
+          'Scientists observing the unknowable. Perceptual certainty confronting mystery.',
       },
     ],
 
@@ -1165,22 +1165,22 @@ And your assurance can make you miss urgent signals. When something requires fas
 
     books: [
       {
-        title: 'The Pattern on the Stone',
-        author: 'Hillis',
+        title: 'Contact',
+        author: 'Sagan',
         reason:
-          'Patient observation of how computers actually work. Complexity revealed through sustained attention.',
+          'A scientist listening to the cosmos for decades. Patient observation rewarded.',
       },
       {
-        title: 'Thinking, Fast and Slow',
-        author: 'Kahneman',
+        title: 'Childhood\'s End',
+        author: 'Clarke',
         reason:
-          'When fast perception works and when it fails. The value of slow observation.',
+          'Humanity observed across generations by patient alien watchers.',
       },
       {
-        title: 'The Structure of Scientific Revolutions',
-        author: 'Kuhn',
+        title: 'The Sparrow',
+        author: 'Russell',
         reason:
-          'How paradigm shifts emerge from accumulated observations that no longer fit.',
+          'Observing an alien culture with sustained attention. What patience reveals.',
       },
     ],
 
@@ -1248,22 +1248,22 @@ There's also the question of complicity. Observing injustice without acting agai
 
     books: [
       {
-        title: 'The Body Keeps the Score',
-        author: 'van der Kolk',
+        title: 'The Road',
+        author: 'McCarthy',
         reason:
-          'Bold observation of trauma. Seeing what society would rather ignore.',
+          'Unflinching witness to apocalypse. Observing the worst and continuing anyway.',
       },
       {
-        title: 'Evicted',
-        author: 'Desmond',
+        title: 'Never Let Me Go',
+        author: 'Ishiguro',
         reason:
-          'Unflinching observation of poverty. Watching what comfortable people don\'t see.',
+          'Watching mortality with quiet horror. Bold observation of what cannot be changed.',
       },
       {
-        title: 'Man\'s Search for Meaning',
-        author: 'Frankl',
+        title: '1984',
+        author: 'Orwell',
         reason:
-          'Observing the worst of humanity and finding meaning anyway.',
+          'Observing the machinery of oppression. Seeing what power wants hidden.',
       },
     ],
 
@@ -1335,22 +1335,22 @@ There's also the question of communication. Your detailed noticing can be hard t
 
     books: [
       {
-        title: 'The Poetics of Space',
-        author: 'Bachelard',
+        title: 'Annihilation',
+        author: 'VanderMeer',
         reason:
-          'The intimate details of inhabited space. Noticing as a philosophical practice.',
+          'Biologist noticing what others miss in Area X. Detailed perception revealing horror.',
       },
       {
-        title: 'Pilgrim at Tinker Creek',
-        author: 'Dillard',
+        title: 'Stories of Your Life and Others',
+        author: 'Chiang',
         reason:
-          'Attention as devotion. The spiritual dimension of noticing.',
+          'Noticing the deep structure of reality. Confident perception across dimensions.',
       },
       {
-        title: 'The Art of Looking',
-        author: 'Horowitz',
+        title: 'Piranesi',
+        author: 'Clarke',
         reason:
-          'What trained attention can reveal. Perception as a skill.',
+          'Meticulous attention to an impossible world. Noticing as survival.',
       },
     ],
 
@@ -1418,22 +1418,22 @@ There's also the question of urgency. Patient noticing is a luxury that not all 
 
     books: [
       {
-        title: 'The Nature Fix',
-        author: 'Williams',
+        title: 'The Long Way to a Small, Angry Planet',
+        author: 'Chambers',
         reason:
-          'What patient attention to nature does for the human mind.',
+          'Patient attention to every crew member. Noticing the small dignities.',
       },
       {
-        title: 'On Looking',
-        author: 'Horowitz',
+        title: 'The Book of the New Sun',
+        author: 'Wolfe',
         reason:
-          'Walking the same block with different experts. What trained attention reveals.',
+          'Unreliable narrator noticing more than he understands. Patient rereading rewards.',
       },
       {
-        title: 'Bird by Bird',
-        author: 'Lamott',
+        title: 'Hyperion',
+        author: 'Simmons',
         reason:
-          'Writing as noticing. The patient attention that makes art possible.',
+          'Multiple perspectives noticing different truths. Patient accumulation of understanding.',
       },
     ],
 
@@ -1501,22 +1501,22 @@ There's also the question of reception. Bold noticing can come across as critici
 
     books: [
       {
-        title: 'Thinking, Fast and Slow',
-        author: 'Kahneman',
+        title: 'The Dispossessed',
+        author: 'Le Guin',
         reason:
-          'Noticing how thinking actually works vs. how we assume it works.',
+          'Physicist noticing what his society cannot see. Bold perception across ideologies.',
       },
       {
-        title: 'Seeing Like a State',
-        author: 'Scott',
+        title: 'Snow Crash',
+        author: 'Stephenson',
         reason:
-          'Noticing what systems hide. The obvious things that planning conceals.',
+          'Noticing the hidden structures of language and culture. Bold pattern recognition.',
       },
       {
-        title: 'The Structure of Scientific Revolutions',
-        author: 'Kuhn',
+        title: 'The City & The City',
+        author: 'Miéville',
         reason:
-          'Noticing the paradigms that shape what scientists can see.',
+          'Two cities occupying the same space, trained not to notice each other. Bold seeing.',
       },
     ],
 
@@ -1588,22 +1588,22 @@ There's also the question of what you do with what you witness. Pure witnessing 
 
     books: [
       {
-        title: 'When Breath Becomes Air',
-        author: 'Kalanithi',
+        title: 'The Left Hand of Darkness',
+        author: 'Le Guin',
         reason:
-          'Witnessing mortality. Presence at the edge of life.',
+          'Bearing witness to an alien culture. Confident presence across difference.',
       },
       {
-        title: 'The Year of Magical Thinking',
-        author: 'Didion',
+        title: 'Flowers for Algernon',
+        author: 'Keyes',
         reason:
-          'Witnessing grief. The work of being present to loss.',
+          'Witnessing one\'s own transformation and loss. Presence through change.',
       },
       {
-        title: 'A Grief Observed',
-        author: 'Lewis',
+        title: 'The Sparrow',
+        author: 'Russell',
         reason:
-          'Bearing witness to one\'s own suffering. Presence as spiritual practice.',
+          'A priest witnessing the cost of first contact. Presence through unbearable loss.',
       },
     ],
 
@@ -1671,22 +1671,22 @@ There's also the question of what your presence enables. If your steady witnessi
 
     books: [
       {
-        title: 'Gilead',
-        author: 'Robinson',
-        reason:
-          'A letter as legacy. The long work of witnessing a life.',
-      },
-      {
         title: 'The Road',
         author: 'McCarthy',
         reason:
           'Witness as survival. Being present through apocalypse.',
       },
       {
-        title: 'Being Mortal',
-        author: 'Gawande',
+        title: 'Station Eleven',
+        author: 'Mandel',
         reason:
-          'Witnessing death. The steady presence that dying requires.',
+          'Witnessing civilization\'s end and what endures. Steady presence through collapse.',
+      },
+      {
+        title: 'A Canticle for Leibowitz',
+        author: 'Miller',
+        reason:
+          'Monks witnessing across millennia. Reliable presence through dark ages.',
       },
     ],
 
@@ -1754,22 +1754,22 @@ There's also the question of consent. Does the person or situation being witness
 
     books: [
       {
-        title: 'Night',
-        author: 'Wiesel',
+        title: 'The Handmaid\'s Tale',
+        author: 'Atwood',
         reason:
-          'Bearing witness to the Holocaust. The necessity and cost of seeing.',
+          'Witnessing oppression from within. Documenting what must not be forgotten.',
       },
       {
-        title: 'The Diary of Anne Frank',
-        author: 'Frank',
+        title: 'Kindred',
+        author: 'Butler',
         reason:
-          'Witness from within. Documenting what must not be forgotten.',
+          'Forced to witness slavery firsthand. Bold presence in unbearable history.',
       },
       {
-        title: 'Regarding the Pain of Others',
-        author: 'Sontag',
+        title: 'The Fifth Season',
+        author: 'Jemisin',
         reason:
-          'The ethics of witnessing suffering. When does watching help?',
+          'Bearing witness to civilizational violence. Seeing what power wants hidden.',
       },
     ],
 

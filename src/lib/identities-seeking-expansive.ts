@@ -70,22 +70,22 @@ There's also the complexity cost. Systems designed for maximum adaptability are 
 
     books: [
       {
-        title: 'How Buildings Learn',
-        author: 'Brand',
+        title: 'Permutation City',
+        author: 'Egan',
         reason:
-          'Architecture that evolves. Buildings as processes rather than products.',
+          'Consciousness uploads into self-modifying virtual realities. Architecture that evolves its own substrate.',
       },
       {
-        title: 'Emergence',
-        author: 'Johnson',
+        title: 'A Fire Upon the Deep',
+        author: 'Vinge',
         reason:
-          'Systems that organize from the bottom up. Architecture without a fixed architect.',
+          'A galaxy organized into zones of thought, each with different rules. Adaptive architecture at cosmic scale.',
       },
       {
-        title: 'The Systems Bible',
-        author: 'Gall',
+        title: 'The Player of Games',
+        author: 'Banks',
         reason:
-          "Why complex systems fail and how to design ones that don't. Systems humor with real wisdom.",
+          'The Culture\'s post-scarcity society constantly reshapes itself. Systems that embrace their own evolution.',
       },
     ],
 
@@ -153,22 +153,22 @@ There's also the question of depth versus breadth. Your curiosity drives you to 
 
     books: [
       {
-        title: 'Gödel, Escher, Bach',
-        author: 'Hofstadter',
+        title: 'Schismatrix Plus',
+        author: 'Sterling',
         reason:
-          'Architectures of meaning across mathematics, art, and music. Curiosity as a form of design.',
+          'Humanity splinters into thousands of experimental forms. Architecture as inquiry into what we could become.',
       },
       {
-        title: 'A Pattern Language',
-        author: 'Alexander',
+        title: 'Diaspora',
+        author: 'Egan',
         reason:
-          'Architecture as accumulated questions and answers. Patterns as hypotheses about living.',
+          'Post-human intelligences explore the universe\'s deepest structures. Curiosity as civilization\'s driving force.',
       },
       {
-        title: 'The Timeless Way of Building',
-        author: 'Alexander',
+        title: 'House of Suns',
+        author: 'Reynolds',
         reason:
-          'What makes architecture alive? A deep inquiry into structure and humanity.',
+          'Immortal clones circumnavigate the galaxy, cataloging wonders. Exploration as a way of life.',
       },
     ],
 
@@ -236,22 +236,22 @@ There's also the question of vision. Open systems still need someone making deci
 
     books: [
       {
-        title: 'The Cathedral and the Bazaar',
-        author: 'Raymond',
+        title: 'The Dispossessed',
+        author: 'Le Guin',
         reason:
-          'Open source as architectural philosophy. How openness creates software.',
+          'An anarchist society built on open cooperation. Architecture as radical participation.',
       },
       {
-        title: 'Design Justice',
-        author: 'Costanza-Chock',
+        title: 'A Door Into Ocean',
+        author: 'Slonczewski',
         reason:
-          'Whose perspectives does design include? Architecture as a question of participation.',
+          'An ocean world governed by consensus and sharing. Open systems as the foundation of life.',
       },
       {
-        title: 'Platform Scale',
-        author: 'Choudary',
+        title: 'Walkaway',
+        author: 'Doctorow',
         reason:
-          'Building systems others can build on. Architecture for ecosystem.',
+          'Open-source everything: fabricators, buildings, communities. Architecture that anyone can fork.',
       },
     ],
 
@@ -323,22 +323,22 @@ There's also depth versus breadth. Your rapid iteration produces many versions b
 
     books: [
       {
-        title: 'The Lean Startup',
-        author: 'Ries',
+        title: 'The Martian',
+        author: 'Weir',
         reason:
-          'Building to learn. Iteration as a business strategy.',
+          'Survival through relentless iteration. Each problem solved reveals the next one to solve.',
       },
       {
-        title: 'Sprint',
-        author: 'Knapp',
+        title: 'Project Hail Mary',
+        author: 'Weir',
         reason:
-          'Structured rapid iteration. Building and testing in five days.',
+          'Improvisation saves humanity. Building solutions with whatever you have, adapting as you learn.',
       },
       {
-        title: 'Antifragile',
-        author: 'Taleb',
+        title: 'All Systems Red',
+        author: 'Wells',
         reason:
-          'Systems that gain from disorder. Why adaptation beats planning.',
+          'A security bot constantly adapts to chaos. Iteration as survival strategy.',
       },
     ],
 
@@ -406,22 +406,22 @@ There's also the question of utility. Building that answers interesting question
 
     books: [
       {
-        title: 'Make',
-        author: 'Pirsig',
+        title: 'The Diamond Age',
+        author: 'Stephenson',
         reason:
-          'Building as a way of understanding. The philosophy behind making.',
+          'Nanotechnology enables infinite tinkering. Building as exploration of possibility.',
       },
       {
-        title: 'Inventure',
-        author: 'Lemelson Center',
+        title: 'Anathem',
+        author: 'Stephenson',
         reason:
-          'The history of curious builders. What invention actually looks like.',
+          'Mathematician-monks who build theories and technologies. Curiosity as monastic practice.',
       },
       {
-        title: 'The Design of Everyday Things',
-        author: 'Norman',
+        title: 'Ready Player One',
+        author: 'Cline',
         reason:
-          'Why things work the way they do. The curious study of built objects.',
+          'A virtual world built from endless curiosity about what came before. Building as treasure hunt.',
       },
     ],
 
@@ -492,19 +492,19 @@ There's also the question of vision. Open building can become building by commit
         title: 'Makers',
         author: 'Doctorow',
         reason:
-          'Building community through building things. Open making as social practice.',
+          'Open-source fabrication creates new communities. Building together as revolution.',
       },
       {
-        title: 'The Wisdom of Crowds',
-        author: 'Surowiecki',
+        title: 'Rainbows End',
+        author: 'Vinge',
         reason:
-          'When collective building outperforms individual genius.',
+          'Collaborative augmented reality built by everyone. The world as shared construction project.',
       },
       {
-        title: 'Build',
-        author: 'Fadell',
+        title: 'The Long Way to a Small, Angry Planet',
+        author: 'Chambers',
         reason:
-          'Building products and teams. How openness serves the making.',
+          'A misfit crew that builds wormholes together. Construction as found family.',
       },
     ],
 
@@ -576,22 +576,22 @@ There's also the question of when to insist on better conditions rather than ada
 
     books: [
       {
-        title: 'Make Do and Mend',
-        author: 'Ministry of Information',
+        title: 'A Door Into Ocean',
+        author: 'Slonczewski',
         reason:
-          'Wartime making. Adaptation as necessity and craft.',
+          'Ocean-dwellers who craft everything from living organisms. Making with what the world provides.',
       },
       {
-        title: 'The Art of Repair',
-        author: 'Veys',
+        title: 'Semiosis',
+        author: 'Burke',
         reason:
-          'Working with what exists rather than starting new.',
+          'Colonists adapt to an alien planet by learning to work with its ecology, not against it.',
       },
       {
-        title: 'Cradle to Cradle',
-        author: 'McDonough & Braungart',
+        title: 'The Word for World Is Forest',
+        author: 'Le Guin',
         reason:
-          'Materials as cycles. Adaptive making at planetary scale.',
+          'Indigenous adaptation versus extractive making. Craft in harmony with environment.',
       },
     ],
 
@@ -659,22 +659,22 @@ There's also the question of finishing. Curious making often loses interest when
 
     books: [
       {
-        title: 'Shop Class as Soulcraft',
-        author: 'Crawford',
+        title: 'Piranesi',
+        author: 'Clarke',
         reason:
-          'The philosophy of making. Why working with your hands teaches things books cannot.',
+          'A man catalogs an infinite house, making sense of wonder through careful attention.',
       },
       {
-        title: 'Tinker Dabble Doodle Try',
-        author: 'Pillay',
+        title: 'Stories of Your Life and Others',
+        author: 'Chiang',
         reason:
-          'The science of curiosity. Why exploring widely serves making deeply.',
+          'Each story explores a different way of making sense of reality. Curiosity as craft.',
       },
       {
-        title: 'The Craftsman',
-        author: 'Sennett',
+        title: 'The Diamond Age',
+        author: 'Stephenson',
         reason:
-          'Making as a human activity through history. What craft teaches about living.',
+          'An interactive book teaches a girl to think, create, and question. Curiosity as education.',
       },
     ],
 
@@ -742,22 +742,22 @@ There's also the question of craft secrets. Some knowledge is protected for reas
 
     books: [
       {
-        title: 'Free Culture',
-        author: 'Lessig',
+        title: 'Walkaway',
+        author: 'Doctorow',
         reason:
-          'The ethics and politics of open sharing. Why openness serves creativity.',
+          'Post-scarcity makers who share everything. Craft without ownership.',
       },
       {
-        title: 'Steal Like an Artist',
-        author: 'Kleon',
+        title: 'Down and Out in the Magic Kingdom',
+        author: 'Doctorow',
         reason:
-          'Creative borrowing as craft. How makers learn from each other.',
+          'A reputation economy where creativity is shared freely. Making for love, not profit.',
       },
       {
-        title: 'Show Your Work',
-        author: 'Kleon',
+        title: 'A Psalm for the Wild-Built',
+        author: 'Chambers',
         reason:
-          'Sharing your process. How openness builds creative community.',
+          'A monk who makes tea and a robot who asks questions. Craft as service and connection.',
       },
     ],
 
@@ -829,22 +829,22 @@ There's also the question of direction. Adaptive shaping can become reactive—a
 
     books: [
       {
-        title: 'Switch',
-        author: 'Heath',
+        title: 'Parable of the Sower',
+        author: 'Butler',
         reason:
-          'How change actually works. Adaptive shaping based on understanding.',
+          'Survival requires adapting to each new threat. Shaping community through constant change.',
       },
       {
-        title: 'Thinking in Systems',
-        author: 'Meadows',
+        title: 'Dawn',
+        author: 'Butler',
         reason:
-          'Shaping systems by understanding their dynamics.',
+          'Humanity must adapt to alien rescuers or perish. Transformation that meets you where you are.',
       },
       {
-        title: 'Presence',
-        author: 'Senge et al.',
+        title: 'The Fifth Season',
+        author: 'Jemisin',
         reason:
-          'Change that emerges from deep sensing. Adaptive transformation.',
+          'People who shape the earth must constantly adapt to its responses. Power through responsiveness.',
       },
     ],
 
@@ -912,22 +912,22 @@ There's also the question of consent. Curious shaping often happens to people an
 
     books: [
       {
-        title: 'The Art of Possibility',
-        author: 'Zander',
+        title: 'Kindred',
+        author: 'Butler',
         reason:
-          'Transformation as reframing. How curiosity opens new shapes.',
+          'Time travel forces confrontation with history. Transformation through understanding the past.',
       },
       {
-        title: 'Transitions',
-        author: 'Bridges',
+        title: 'Wild Seed',
+        author: 'Butler',
         reason:
-          'The structure of change. What transformation actually involves.',
+          'Two immortals explore what power and change mean across centuries. Shaping as exploration.',
       },
       {
-        title: 'The Fifth Discipline',
-        author: 'Senge',
+        title: 'The Lathe of Heaven',
+        author: 'Le Guin',
         reason:
-          'Organizational transformation through systems thinking. Curious shaping at scale.',
+          'Dreams reshape reality, but curiosity about consequences matters. Transformation requires wisdom.',
       },
     ],
 
@@ -995,22 +995,22 @@ There's also the question of expertise. Openness to all input can mean giving eq
 
     books: [
       {
-        title: 'Theory U',
-        author: 'Scharmer',
+        title: 'The Dispossessed',
+        author: 'Le Guin',
         reason:
-          'Transforming by opening up. Participatory change at organizational scale.',
+          'Revolution built on consensus and participation. Transformation that includes everyone.',
       },
       {
-        title: 'Facilitator\'s Guide to Participatory Decision-Making',
-        author: 'Kaner',
+        title: 'Always Coming Home',
+        author: 'Le Guin',
         reason:
-          'The practice of open shaping. How to include voices well.',
+          'A future society told through many voices. Change as collective story.',
       },
       {
-        title: 'The Great Transformation',
-        author: 'Polanyi',
+        title: 'Woman on the Edge of Time',
+        author: 'Piercy',
         reason:
-          'Societal reshaping. What happens when transformation ignores voices.',
+          'A utopia built on participatory decision-making. Shaping tomorrow together.',
       },
     ],
 
@@ -1082,22 +1082,22 @@ There's also the question of commitment. Adaptive observation can become a way o
 
     books: [
       {
-        title: 'Metaphors We Live By',
-        author: 'Lakoff & Johnson',
+        title: 'Embassytown',
+        author: 'Miéville',
         reason:
-          'How framing shapes what we can see. Perspective as constitutive.',
+          'Language shapes perception so profoundly that translation requires two speakers. Perspective as prison and key.',
       },
       {
-        title: 'Seeing Like a State',
-        author: 'Scott',
+        title: 'Story of Your Life',
+        author: 'Chiang',
         reason:
-          'How different viewpoints reveal and conceal. The politics of perspective.',
+          'Learning an alien language restructures how you perceive time. Observation transforms the observer.',
       },
       {
-        title: 'Drawing on the Right Side of the Brain',
-        author: 'Edwards',
+        title: 'Solaris',
+        author: 'Lem',
         reason:
-          'Learning to see differently. How perspective can be trained.',
+          'An ocean planet that can\'t be understood from any single perspective. The limits of human observation.',
       },
     ],
 
@@ -1165,22 +1165,22 @@ There's also the question of relevance. Not every curious investigation is worth
 
     books: [
       {
-        title: 'A Short History of Nearly Everything',
-        author: 'Bryson',
+        title: 'Contact',
+        author: 'Sagan',
         reason:
-          'Curious observation of science itself. Wonder as a guide to knowledge.',
+          'A scientist\'s lifelong curiosity finally receives an answer from the stars. Wonder rewarded.',
       },
       {
-        title: 'The Hidden Life of Trees',
-        author: 'Wohlleben',
+        title: 'The Sparrow',
+        author: 'Russell',
         reason:
-          'Curiosity revealing invisible worlds. What sustained observation discovers.',
+          'A Jesuit mission to an alien world driven by pure wonder. Curiosity as sacred calling.',
       },
       {
-        title: 'Pilgrim at Tinker Creek',
-        author: 'Dillard',
+        title: 'Semiosis',
+        author: 'Burke',
         reason:
-          'Curious attention as spiritual practice. What happens when you really look.',
+          'Each generation discovers more about their alien world\'s intelligence. Curiosity across lifetimes.',
       },
     ],
 
@@ -1248,22 +1248,22 @@ There's also the question of integration. Open observation that never synthesize
 
     books: [
       {
-        title: 'The Art of Seeing',
-        author: 'Huxley',
+        title: 'Solaris',
+        author: 'Lem',
         reason:
-          'Removing obstacles to perception. What open seeing requires.',
+          'An alien ocean defies all attempts at categorization. The humility of open observation.',
       },
       {
-        title: 'Ways of Seeing',
-        author: 'Berger',
+        title: 'Annihilation',
+        author: 'VanderMeer',
         reason:
-          'How framing shapes vision. The politics of the open gaze.',
+          'A biologist enters a zone that defies understanding. Perception without filters.',
       },
       {
-        title: 'A Field Guide to Getting Lost',
-        author: 'Solnit',
+        title: 'Babel-17',
+        author: 'Delany',
         reason:
-          'Openness to not knowing. The wisdom of receptive attention.',
+          'A language that restructures consciousness. What you see depends on how you can see.',
       },
     ],
 
@@ -1335,22 +1335,22 @@ There's also the question of manipulation. Your attention follows what's calling
 
     books: [
       {
-        title: 'The Power of Noticing',
-        author: 'Bazerman',
+        title: 'Arrival',
+        author: 'Chiang',
         reason:
-          'What responsive attention enables. The skill of seeing what\'s there.',
+          'A linguist learns to perceive time differently. Attention that adapts to alien logic.',
       },
       {
-        title: 'Thinking, Fast and Slow',
-        author: 'Kahneman',
+        title: 'Blindsight',
+        author: 'Watts',
         reason:
-          'How attention works. When to follow it and when to direct it.',
+          'First contact challenges every assumption about consciousness. Noticing what we take for granted.',
       },
       {
-        title: 'Incognito',
-        author: 'Eagleman',
+        title: 'Dark Intelligence',
+        author: 'Asher',
         reason:
-          'The brain\'s hidden noticing. What attention catches without telling us.',
+          'An AI notices patterns across centuries. Responsive attention at inhuman scale.',
       },
     ],
 
@@ -1418,22 +1418,22 @@ There's also the question of action. Appreciating details isn't the same as doin
 
     books: [
       {
-        title: 'The Poetics of Space',
-        author: 'Bachelard',
+        title: 'The Long Way to a Small, Angry Planet',
+        author: 'Chambers',
         reason:
-          'Noticing the intimate spaces. Philosophy from close attention.',
+          'Every species has wonders to notice. Curiosity across difference.',
       },
       {
-        title: 'Lab Girl',
-        author: 'Jahren',
+        title: 'A Memory Called Empire',
+        author: 'Martine',
         reason:
-          'Curious noticing of plants. Science as appreciative attention.',
+          'An ambassador notices the poetry in imperial culture. Appreciative attention in dangerous places.',
       },
       {
-        title: 'The Spell of the Sensuous',
-        author: 'Abram',
+        title: 'Piranesi',
+        author: 'Clarke',
         reason:
-          'Curious noticing of the more-than-human world.',
+          'A man catalogs an infinite house with wonder. Small wonders in vast mysteries.',
       },
     ],
 
@@ -1501,22 +1501,22 @@ There's also the question of synthesis. Open noticing that never organizes produ
 
     books: [
       {
-        title: 'On Looking',
-        author: 'Horowitz',
+        title: 'Annihilation',
+        author: 'VanderMeer',
         reason:
-          'Different experts notice different things on the same walk.',
+          'A biologist records everything without judgment. Open noticing of the incomprehensible.',
       },
       {
-        title: 'How to Do Nothing',
-        author: 'Odell',
+        title: 'The Book of the New Sun',
+        author: 'Wolfe',
         reason:
-          'Attention without agenda. What open noticing enables.',
+          'A narrator notices everything but understands little. Unfiltered observation in a strange world.',
       },
       {
-        title: 'The Mushroom at the End of the World',
-        author: 'Tsing',
+        title: 'Borne',
+        author: 'VanderMeer',
         reason:
-          'Noticing in the margins. What opens up when you stop filtering.',
+          'A scavenger finds wonder in ruins. Noticing what others discard.',
       },
     ],
 
@@ -1588,22 +1588,22 @@ There's also the question of limits. Adaptive witnessing can mean never setting 
 
     books: [
       {
-        title: 'On Being a Therapist',
-        author: 'Kottler',
+        title: 'The Sparrow',
+        author: 'Russell',
         reason:
-          'Professional adaptive presence. What it means to witness skillfully.',
+          'A priest adapts his witness to alien culture. Presence that crosses impossible distances.',
       },
       {
-        title: 'Holding the Center',
-        author: 'Lesser',
+        title: 'Children of Time',
+        author: 'Tchaikovsky',
         reason:
-          'Adapting presence in facilitation. How witnesses serve groups.',
+          'Consciousness evolves in many forms, each requiring different ways of being present.',
       },
       {
-        title: 'A General Theory of Love',
-        author: 'Lewis et al.',
+        title: 'Never Let Me Go',
+        author: 'Ishiguro',
         reason:
-          'How adaptive attunement works. The neuroscience of responsive presence.',
+          'Witnessing lives shaped by terrible purpose. Adapting presence to unbearable truths.',
       },
     ],
 
@@ -1671,22 +1671,22 @@ There's also the question of limits. Not everything can or should be understood.
 
     books: [
       {
-        title: 'The Art of Asking',
-        author: 'Palmer',
+        title: 'The Sparrow',
+        author: 'Russell',
         reason:
-          'Curiosity as connection. How asking deepens witnessing.',
+          'Curiosity drives a mission to understand alien song. Witnessing that needs to comprehend.',
       },
       {
-        title: 'Becoming Wise',
-        author: 'Tippett',
+        title: 'Contact',
+        author: 'Sagan',
         reason:
-          'Curiosity across difference. Witnessing through questioning.',
+          'A scientist witnesses humanity\'s first message from the stars. Curiosity as reverence.',
       },
       {
-        title: 'Braiding Sweetgrass',
-        author: 'Kimmerer',
+        title: 'Lilith\'s Brood',
+        author: 'Butler',
         reason:
-          'Curious witnessing of the natural world. Understanding as reverence.',
+          'Witnessing alien ways of being with deep curiosity. Understanding across unbridgeable difference.',
       },
     ],
 
@@ -1754,22 +1754,22 @@ There's also the question of discernment. Open witnessing that never judges can 
 
     books: [
       {
-        title: 'When Things Fall Apart',
-        author: 'Chödrön',
+        title: 'The Left Hand of Darkness',
+        author: 'Le Guin',
         reason:
-          'Witnessing difficulty with openness. Buddhist wisdom for unconditional presence.',
+          'Witnessing an alien gender without judgment. Unconditional presence across difference.',
       },
       {
-        title: 'The Wild Edge of Sorrow',
-        author: 'Weller',
+        title: 'Never Let Me Go',
+        author: 'Ishiguro',
         reason:
-          'Witnessing grief openly. What it means to hold loss.',
+          'Witnessing lives that exist for others. Presence without needing to fix.',
       },
       {
-        title: 'A Year to Live',
-        author: 'Levine',
+        title: 'The Giver',
+        author: 'Lowry',
         reason:
-          'Open witnessing of mortality. Presence at life\'s edge.',
+          'One person holds all memory of joy and suffering. The weight of unconditional witness.',
       },
     ],
 
