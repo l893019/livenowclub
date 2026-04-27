@@ -16,6 +16,7 @@ export type UserResult = {
   scores: Record<string, number>;
   answers: string[];
   createdAt: string;
+  slug?: string; // friendly URL slug for /meet/[slug] links
 };
 
 export type UtopiaMember = {
@@ -107,6 +108,45 @@ export async function getUserResult(userId: string): Promise<UserResult | null> 
   const data = await redis.get(`user:${userId}`);
   if (!data) return null;
   return JSON.parse(data);
+}
+
+export async function getUserBySlug(slug: string): Promise<UserResult | null> {
+  const userId = await redis.get(`slug:${slug.toLowerCase()}`);
+  if (!userId) return null;
+  return getUserResult(userId);
+}
+
+export async function generateUserSlug(userId: string, name: string): Promise<string> {
+  // Create slug from name (lowercase, replace spaces with hyphens)
+  let baseSlug = name.toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '') // remove special chars
+    .replace(/\s+/g, '-') // spaces to hyphens
+    .replace(/-+/g, '-') // collapse multiple hyphens
+    .slice(0, 20); // limit length
+
+  if (!baseSlug) {
+    baseSlug = 'user';
+  }
+
+  // Check if slug exists, add suffix if needed
+  let slug = baseSlug;
+  let suffix = 1;
+  while (await redis.exists(`slug:${slug}`)) {
+    slug = `${baseSlug}-${suffix}`;
+    suffix++;
+  }
+
+  // Save slug -> userId mapping
+  await redis.set(`slug:${slug}`, userId);
+
+  // Update user with slug
+  const user = await getUserResult(userId);
+  if (user) {
+    user.slug = slug;
+    await saveUserResult(user);
+  }
+
+  return slug;
 }
 
 export async function updateUserEmail(userId: string, email: string): Promise<void> {
