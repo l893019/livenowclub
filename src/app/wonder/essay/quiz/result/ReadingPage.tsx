@@ -409,6 +409,9 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
               <p className={styles.shareHint}>
                 Send to friends to see your compatibility
               </p>
+              <Link href="/me" className={styles.yourWorldLink}>
+                Go to Your World →
+              </Link>
             </div>
           )}
 
