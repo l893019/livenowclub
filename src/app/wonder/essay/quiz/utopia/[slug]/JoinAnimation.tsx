@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { archetypes } from "@/lib/archetypes";
+import { getMemberIdentity } from "@/lib/identities";
 import {
   archetypePositions,
   getGroupCenterOfGravity,
@@ -14,6 +15,7 @@ type Member = {
   id: string;
   name: string;
   archetype: string;
+  answers?: string[];
 };
 
 type JoinAnimationProps = {
@@ -44,8 +46,9 @@ export function JoinAnimation({
   const allPositions = [...existingPositions, newPosition];
   const newCenter = getGroupCenterOfGravity(allPositions);
 
-  const newColor = archetypes[newMember.archetype]?.color || "#888";
-  const newArchetypeName = archetypes[newMember.archetype]?.name || newMember.archetype;
+  const newIdentity = getMemberIdentity(newMember.answers, newMember.archetype);
+  const newColor = newIdentity?.color || archetypes[newMember.archetype]?.color || "#888";
+  const newIdentityName = newIdentity?.name || archetypes[newMember.archetype]?.name || newMember.archetype;
 
   // Generate shift narrative
   const shiftNarrative = useMemo(() => {
@@ -200,7 +203,7 @@ export function JoinAnimation({
                 {newMember.name || "You"}
               </div>
               <div className={styles.yourArchetype}>
-                joined as <span style={{ color: newColor }}>{newArchetypeName}</span>
+                joined as <span style={{ color: newColor }}>{newIdentityName}</span>
               </div>
               <div className={styles.shiftText}>
                 {shiftNarrative.shift}
