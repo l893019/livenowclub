@@ -28,6 +28,7 @@ import {
   type Identity,
 } from "@/lib/identities";
 import type { IndividualReading } from "@/lib/reading-prompts";
+import { identityToReading } from "@/lib/identity-to-reading";
 import styles from "./ReadingPage.module.css";
 
 type CreatedUtopia = {
@@ -169,32 +170,16 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
               const foundIdentity = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIndex);
               if (foundIdentity) {
                 setIdentity(foundIdentity);
+                // Use pre-generated reading from identity content (instant, no API call)
+                setReading(identityToReading(foundIdentity));
+              }
+            } else {
+              // Identity from URL - use its pre-generated reading
+              const urlIdentity = identities[identityKey];
+              if (urlIdentity) {
+                setReading(identityToReading(urlIdentity));
               }
             }
-
-            setIsLoadingReading(true);
-            setReadingError(null);
-
-            fetch('/api/reading/generate', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ type: 'individual', answers: convertedAnswers })
-            })
-              .then(res => {
-                if (!res.ok) {
-                  throw new Error('Failed to generate reading');
-                }
-                return res.json();
-              })
-              .then(data => {
-                setReading(data.reading);
-                setIsLoadingReading(false);
-              })
-              .catch(err => {
-                console.error('Failed to fetch reading:', err);
-                setReadingError(err.message);
-                setIsLoadingReading(false);
-              });
           }
         }
       }
@@ -240,33 +225,17 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
       const foundIdentity = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIndex);
       if (foundIdentity) {
         setIdentity(foundIdentity);
+        // Use pre-generated reading from identity content (instant, no API call)
+        setReading(identityToReading(foundIdentity));
+      }
+    } else {
+      // Identity from URL - use its pre-generated reading
+      const urlIdentity = identities[identityKey];
+      if (urlIdentity) {
+        setReading(identityToReading(urlIdentity));
       }
     }
-
-    setIsLoadingReading(true);
-    setReadingError(null);
-
-    fetch('/api/reading/generate', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ type: 'individual', answers })
-    })
-      .then(res => {
-        if (!res.ok) {
-          throw new Error('Failed to generate reading');
-        }
-        return res.json();
-      })
-      .then(data => {
-        setReading(data.reading);
-        setIsLoadingReading(false);
-      })
-      .catch(err => {
-        console.error('Failed to fetch reading:', err);
-        setReadingError(err.message);
-        setIsLoadingReading(false);
-      });
-  }, [answers]);
+  }, [answers, identityKey]);
 
   // Create connection if came from someone's link
   useEffect(() => {
