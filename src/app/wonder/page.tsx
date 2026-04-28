@@ -11,8 +11,8 @@ export const metadata = {
 const FEATURED_ESSAY = {
   slug: "/wonder/essay",
   title: "When Purpose Is All We Have Left",
-  subtitle: "What 200+ sci-fi books reveal about meaning",
-  description: "An interactive exploration of human purpose through the lens of sci-fi.",
+  subtitle: "Discover your sci-fi worldview",
+  description: "An interactive exploration of how you orient toward a post-scarcity future.",
   image: "/wonder/assets/landscapes/optimized/1.jpg",
   type: "interactive essay",
 };

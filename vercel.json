@@ -1,15 +1,28 @@
 {
   "version": 2,
+  "rewrites": [
+    {
+      "source": "/wonder/essay/quiz",
+      "destination": "/wonder/essay/quiz/index.html"
+    },
+    {
+      "source": "/wonder/essay/quiz/explore",
+      "destination": "/wonder/essay/quiz/explore/index.html"
+    },
+    {
+      "source": "/wonder/essay",
+      "destination": "/wonder/essay/index.html"
+    }
+  ],
   "headers": [
     {
-      "source": "/wonder/essay/quiz/(.*)",
+      "source": "/wonder/essay/(.*).html",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate"
+          "value": "public, max-age=0, must-revalidate"
         }
       ]
     }
-  ],
-  "cleanUrls": true
+  ]
 }
