@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import Header from "@/components/Header";
 import { ReadingPage } from "./ReadingPage";
 
 type ResultPageClientProps = {
@@ -42,7 +44,20 @@ export function ResultPageClient({
       <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
       <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet" />
 
+      <Header />
+
       <ReadingPage archetypeKey={archetypeKey} compareUserId={compareUserId} identityKey={identityKey} />
+
+      <footer className="footer">
+        <p className="footer-quote">What if now is all we have?</p>
+        <nav className="footer-nav">
+          <Link href="/read">Read</Link>
+          <Link href="/navigate">Navigate</Link>
+          <Link href="/wonder">Wonder</Link>
+          <Link href="/connect">Connect</Link>
+        </nav>
+        <p className="footer-copy">&copy; 2026 Louise Ireland</p>
+      </footer>
     </>
   );
 }
