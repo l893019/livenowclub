@@ -5,7 +5,7 @@ const redis = new Redis(process.env.REDIS_URL || '');
 
 export async function POST(request: NextRequest) {
   try {
-    const { page, referrer } = await request.json();
+    const { page, referrer, event, identity, context, metadata } = await request.json();
 
     // Get visitor info
     const ip = request.headers.get('x-forwarded-for') ||
@@ -20,9 +20,27 @@ export async function POST(request: NextRequest) {
     const timestamp = new Date().toISOString();
     const date = timestamp.split('T')[0]; // YYYY-MM-DD
 
-    // Track pageview
-    await redis.incr(`stats:pageviews:${date}:${page}`);
-    await redis.incr(`stats:pageviews:${date}:total`);
+    // Track events (quiz started, email signup, etc.)
+    if (event) {
+      await redis.incr(`stats:events:${date}:${event}`);
+      await redis.incr(`stats:events:total:${event}`);
+
+      // Store event details
+      await redis.zadd(
+        `stats:events:${event}`,
+        Date.now(),
+        JSON.stringify({ timestamp, identity, context, metadata, page })
+      );
+
+      // Keep only last 1000 events per type
+      await redis.zremrangebyrank(`stats:events:${event}`, 0, -1001);
+    }
+
+    // Track pageview (only if no event, or if it's a pageview event)
+    if (!event || event === 'pageview') {
+      await redis.incr(`stats:pageviews:${date}:${page}`);
+      await redis.incr(`stats:pageviews:${date}:total`);
+    }
 
     // Track unique visitors (using set for deduplication)
     await redis.sadd(`stats:visitors:${date}`, visitorId);

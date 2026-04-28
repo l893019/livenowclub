@@ -15,6 +15,21 @@ export async function GET(request: NextRequest) {
       countries: {},
       recent: [],
       topPages: [],
+      emails: {
+        total: 0,
+        byDate: {},
+        byIdentity: {},
+        substackSuccess: 0,
+        substackFailed: 0,
+      },
+      events: {},
+      funnel: {
+        quizStarted: 0,
+        quizCompleted: 0,
+        emailSignup: 0,
+        completionRate: 0,
+        signupRate: 0,
+      },
     };
 
     // Get date range
@@ -81,6 +96,55 @@ export async function GET(request: NextRequest) {
     // Sort top pages
     stats.topPages.sort((a: any, b: any) => b.views - a.views);
     stats.topPages = stats.topPages.slice(0, 10);
+
+    // Get email metrics
+    stats.emails.total = parseInt(await redis.get('stats:emails:total') || '0');
+
+    // Get email signups by date
+    for (const date of dates) {
+      const count = await redis.get(`stats:emails:${date}`);
+      stats.emails.byDate[date] = parseInt(count || '0');
+
+      const substackSuccess = await redis.get(`stats:substack:success:${date}`);
+      stats.emails.substackSuccess += parseInt(substackSuccess || '0');
+
+      const substackFailed = await redis.get(`stats:substack:failed:${date}`);
+      stats.emails.substackFailed += parseInt(substackFailed || '0');
+    }
+
+    // Get email counts by identity
+    const identityKeys = await redis.keys('emails:identity:*');
+    for (const key of identityKeys) {
+      const identity = key.replace('emails:identity:', '');
+      const count = await redis.scard(key);
+      stats.emails.byIdentity[identity] = count;
+    }
+
+    // Get event metrics
+    for (const date of dates) {
+      const eventKeys = await redis.keys(`stats:events:${date}:*`);
+      for (const key of eventKeys) {
+        const event = key.replace(`stats:events:${date}:`, '');
+        const count = await redis.get(key);
+        if (stats.events[event]) {
+          stats.events[event] += parseInt(count || '0');
+        } else {
+          stats.events[event] = parseInt(count || '0');
+        }
+      }
+    }
+
+    // Calculate funnel metrics
+    stats.funnel.quizStarted = parseInt(await redis.get('stats:events:total:quiz_started') || '0');
+    stats.funnel.quizCompleted = parseInt(await redis.get('stats:events:total:quiz_completed') || '0');
+    stats.funnel.emailSignup = stats.emails.total;
+
+    if (stats.funnel.quizStarted > 0) {
+      stats.funnel.completionRate = Math.round((stats.funnel.quizCompleted / stats.funnel.quizStarted) * 100);
+    }
+    if (stats.funnel.quizCompleted > 0) {
+      stats.funnel.signupRate = Math.round((stats.funnel.emailSignup / stats.funnel.quizCompleted) * 100);
+    }
 
     return NextResponse.json(stats);
   } catch (error) {

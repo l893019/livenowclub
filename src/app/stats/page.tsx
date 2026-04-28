@@ -17,6 +17,21 @@ type Stats = {
     page: string;
     views: number;
   }>;
+  emails: {
+    total: number;
+    byDate: Record<string, number>;
+    byIdentity: Record<string, number>;
+    substackSuccess: number;
+    substackFailed: number;
+  };
+  events: Record<string, number>;
+  funnel: {
+    quizStarted: number;
+    quizCompleted: number;
+    emailSignup: number;
+    completionRate: number;
+    signupRate: number;
+  };
 };
 
 export default function StatsPage() {
@@ -121,7 +136,106 @@ export default function StatsPage() {
           <div style={{ fontSize: '14px', color: '#666', marginBottom: '8px' }}>Avg per Day</div>
           <div style={{ fontSize: '32px', fontWeight: 'bold' }}>{avgPageviews.toLocaleString()}</div>
         </div>
+        <div style={{ background: '#e8178a', color: '#fff', padding: '24px', borderRadius: '8px' }}>
+          <div style={{ fontSize: '14px', opacity: 0.9, marginBottom: '8px' }}>Email Signups</div>
+          <div style={{ fontSize: '32px', fontWeight: 'bold' }}>{stats.emails.total.toLocaleString()}</div>
+        </div>
       </div>
+
+      {/* Funnel Metrics */}
+      {stats.funnel && stats.funnel.quizStarted > 0 && (
+        <div style={{ marginBottom: '40px' }}>
+          <h2 style={{ fontSize: '20px', marginBottom: '16px' }}>Conversion Funnel</h2>
+          <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: '8px', padding: '24px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '20px' }}>
+              <div>
+                <div style={{ fontSize: '14px', color: '#666', marginBottom: '8px' }}>Quiz Started</div>
+                <div style={{ fontSize: '28px', fontWeight: 'bold' }}>{stats.funnel.quizStarted.toLocaleString()}</div>
+              </div>
+              <div>
+                <div style={{ fontSize: '14px', color: '#666', marginBottom: '8px' }}>Quiz Completed</div>
+                <div style={{ fontSize: '28px', fontWeight: 'bold' }}>{stats.funnel.quizCompleted.toLocaleString()}</div>
+                <div style={{ fontSize: '13px', color: '#e8178a', marginTop: '4px' }}>
+                  {stats.funnel.completionRate}% completion
+                </div>
+              </div>
+              <div>
+                <div style={{ fontSize: '14px', color: '#666', marginBottom: '8px' }}>Email Signups</div>
+                <div style={{ fontSize: '28px', fontWeight: 'bold' }}>{stats.funnel.emailSignup.toLocaleString()}</div>
+                <div style={{ fontSize: '13px', color: '#e8178a', marginTop: '4px' }}>
+                  {stats.funnel.signupRate}% signup rate
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Email Metrics */}
+      {stats.emails.total > 0 && (
+        <div style={{ marginBottom: '40px' }}>
+          <h2 style={{ fontSize: '20px', marginBottom: '16px' }}>Email Subscriptions</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
+            <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: '8px', padding: '20px' }}>
+              <div style={{ fontSize: '14px', color: '#666', marginBottom: '12px' }}>Substack Integration</div>
+              <div style={{ marginBottom: '8px' }}>
+                <span style={{ fontSize: '24px', fontWeight: 'bold', color: '#0a0' }}>
+                  {stats.emails.substackSuccess}
+                </span>
+                <span style={{ fontSize: '14px', color: '#666', marginLeft: '8px' }}>successful</span>
+              </div>
+              <div>
+                <span style={{ fontSize: '24px', fontWeight: 'bold', color: '#c00' }}>
+                  {stats.emails.substackFailed}
+                </span>
+                <span style={{ fontSize: '14px', color: '#666', marginLeft: '8px' }}>failed/retry</span>
+              </div>
+            </div>
+
+            {Object.keys(stats.emails.byIdentity).length > 0 && (
+              <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: '8px', padding: '20px' }}>
+                <div style={{ fontSize: '14px', color: '#666', marginBottom: '12px' }}>Top Identities</div>
+                {Object.entries(stats.emails.byIdentity)
+                  .sort(([, a], [, b]) => b - a)
+                  .slice(0, 5)
+                  .map(([identity, count]) => (
+                    <div key={identity} style={{ marginBottom: '8px' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <span style={{ fontSize: '13px', color: '#333' }}>{identity}</span>
+                        <span style={{ fontSize: '16px', fontWeight: 'bold', color: '#e8178a' }}>{count}</span>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Events */}
+      {stats.events && Object.keys(stats.events).length > 0 && (
+        <div style={{ marginBottom: '40px' }}>
+          <h2 style={{ fontSize: '20px', marginBottom: '16px' }}>Events</h2>
+          <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden' }}>
+            {Object.entries(stats.events)
+              .sort(([, a], [, b]) => b - a)
+              .map(([event, count], i) => (
+                <div
+                  key={i}
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    padding: '16px',
+                    borderBottom: i < Object.keys(stats.events).length - 1 ? '1px solid #eee' : 'none',
+                  }}
+                >
+                  <span style={{ fontFamily: 'monospace', fontSize: '14px' }}>{event}</span>
+                  <span style={{ fontWeight: 'bold' }}>{count.toLocaleString()}</span>
+                </div>
+              ))}
+          </div>
+        </div>
+      )}
 
       {/* Top Pages */}
       <div style={{ marginBottom: '40px' }}>

@@ -7,6 +7,7 @@ import { CreateJoinStep } from "./steps/CreateJoinStep";
 import { RelationshipComparison } from "./RelationshipComparison";
 import { WorldviewFingerprint } from "./WorldviewFingerprint";
 import { DimensionSpectrum } from "./DimensionSpectrum";
+import EmailCapture from "@/components/EmailCapture";
 import {
   getConvictionStrength,
   getRevealingQuestion,
@@ -1072,6 +1073,17 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
               </div>
             </div>
           </section>
+
+          {/* Email Capture */}
+          {!isViewingOther && identity && (
+            <EmailCapture
+              identity={identity.name}
+              quizAnswers={quizResult?.answers}
+              context="quiz-result"
+              title="Want deeper insights?"
+              description="Get essays and reflections on meaning, purpose, and what we might become delivered to your inbox."
+            />
+          )}
         </>
       )}
     </div>

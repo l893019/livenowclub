@@ -2010,6 +2010,16 @@
         }
       }
 
+      // Track quiz started event
+      fetch('/api/track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event: 'quiz_started',
+          page: window.location.pathname,
+        })
+      }).catch(() => {});
+
       currentQuestion = 1;
       updateProgress(1);
       showScreen('screen-1');
@@ -2267,6 +2277,17 @@
 
     async function showResult() {
       const { primary, shadow } = getPrimaryAndShadow();
+
+      // Track quiz completed event
+      fetch('/api/track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event: 'quiz_completed',
+          page: window.location.pathname,
+          metadata: { primary, shadow }
+        })
+      }).catch(() => {});
 
       // Check if there's a pending invite to join
       const inviteData = sessionStorage.getItem('utopia-invite');
