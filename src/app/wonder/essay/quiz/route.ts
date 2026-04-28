@@ -1,11 +1,16 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs/promises';
-import path from 'path';
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
-    const htmlPath = path.join(process.cwd(), 'public/wonder/essay/quiz/index.html');
-    const htmlContent = await fs.readFile(htmlPath, 'utf-8');
+    // Fetch the static HTML from the public CDN
+    const baseUrl = new URL(request.url).origin;
+    const response = await fetch(`${baseUrl}/wonder/essay/quiz/index.html`);
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch HTML: ${response.status}`);
+    }
+
+    const htmlContent = await response.text();
 
     return new NextResponse(htmlContent, {
       headers: {
