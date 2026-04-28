@@ -1957,17 +1957,13 @@
       let raw = { agency: 0, certainty: 0, posture: 0 };
       let max = { agency: 0, certainty: 0, posture: 0 };
 
-      console.log('[Quiz] calculateDimensions - userAnswers:', userAnswers, 'length:', userAnswers.length);
-
       // Convert sparse array to dense array to ensure iteration works
       const answers = Array.from({ length: 7 }, (_, i) => userAnswers[i]);
-      console.log('[Quiz] Dense answers array:', answers);
 
       answers.forEach((answer, i) => {
         if (answer === undefined) return; // Skip unanswered questions
         const q = i + 1;
         const scoring = DIMENSION_SCORING[q]?.[answer];
-        console.log('[Quiz] Q' + q + ':', answer, '→ scoring:', scoring);
         if (scoring) {
           raw.agency += scoring[0];
           raw.certainty += scoring[1];
@@ -1980,13 +1976,11 @@
         max.posture += Math.max(...qScores.map(s => Math.abs(s[2])));
       });
 
-      const result = {
+      return {
         agency: max.agency > 0 ? raw.agency / max.agency : 0,
         certainty: max.certainty > 0 ? raw.certainty / max.certainty : 0,
         posture: max.posture > 0 ? raw.posture / max.posture : 0
       };
-      console.log('[Quiz] Raw dimensions:', raw, 'Max:', max, 'Result:', result);
-      return result;
     }
 
     function getIdentityKey() {
@@ -1997,9 +1991,15 @@
       const postLabel = dims.posture >= 0 ? 'expansive' : 'protective';
       const quadrant = `${certLabel}-${postLabel}`;
 
-      // Get adjective based on position within quadrant (use middle one for now)
+      // Get adjective based on combined intensity (deterministic, matches dimensions.ts)
       const adjectives = ADJECTIVES[quadrant];
-      const adjective = adjectives[1]; // Use middle adjective
+      const combinedIntensity = (Math.abs(dims.certainty) + Math.abs(dims.posture)) / 2;
+      // Higher intensity → index 0 (stronger word), lower → index 2 (milder word)
+      let adjIndex;
+      if (combinedIntensity > 0.66) adjIndex = 0;
+      else if (combinedIntensity > 0.33) adjIndex = 1;
+      else adjIndex = 2;
+      const adjective = adjectives[adjIndex];
 
       // Get noun based on agency (map -1 to +1 range to 0-6 index)
       const nounIndex = Math.round((dims.agency + 1) / 2 * (NOUNS.length - 1));
@@ -2368,9 +2368,8 @@
       let identity = null;
       try {
         identity = getIdentityKey();
-        console.log('[Quiz] Dimension identity:', identity, 'from answers:', userAnswers);
       } catch (e) {
-        console.error('[Quiz] Error calculating identity:', e);
+        console.error('Error calculating identity:', e);
       }
 
       const params = new URLSearchParams();

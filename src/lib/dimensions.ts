@@ -182,20 +182,19 @@ const ADJECTIVE_POOLS: {
  */
 function pickByIntensity(items: string[], intensity: number): string {
   // intensity 0-1, higher = more extreme
-  // Use weighted random: extreme scores more likely to pick first item
+  // Deterministic: map intensity to index (no randomness)
   const normalized = Math.min(Math.max(intensity, 0), 1)
 
-  // Create weighted index: extreme (1) → 0, mild (0) → random across all
-  if (normalized > 0.7) {
-    // Very extreme: always pick first
-    return items[0]
-  } else if (normalized > 0.4) {
-    // Moderate: pick from first two
-    return items[Math.floor(Math.random() * Math.min(2, items.length))]
-  } else {
-    // Mild: pick any
-    return items[Math.floor(Math.random() * items.length)]
+  // Higher intensity → lower index (stronger word)
+  // Split into thirds: >0.66 → 0, >0.33 → 1, else → 2
+  if (items.length === 1) return items[0]
+  if (items.length === 2) {
+    return normalized > 0.5 ? items[0] : items[1]
   }
+  // 3+ items
+  if (normalized > 0.66) return items[0]
+  if (normalized > 0.33) return items[1]
+  return items[Math.min(2, items.length - 1)]
 }
 
 /**
