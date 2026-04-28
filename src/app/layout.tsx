@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import ExitIntentCard from "@/components/ExitIntentCard";
 
@@ -43,6 +44,12 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
         <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet" />
+        <Script
+          defer
+          data-domain="livenowclub.com"
+          src="https://plausible.io/js/script.js"
+          strategy="afterInteractive"
+        />
       </head>
       <body className={`${jetbrainsMono.variable} antialiased`}>
         {children}
