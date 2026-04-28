@@ -22,7 +22,16 @@ export async function POST(request: NextRequest) {
     const visitorId = Buffer.from(`${ip}-${userAgent}`).toString('base64').slice(0, 16);
 
     // Store email signup data
-    const signupData = {
+    const signupData: {
+      email: string;
+      identity: string | undefined;
+      quizAnswers: unknown;
+      referrer: string | undefined;
+      timestamp: string;
+      visitorId: string;
+      substackStatus: string;
+      substackError?: string;
+    } = {
       email,
       identity,
       quizAnswers,

@@ -672,6 +672,17 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
               </div>
             </div>
           </section>
+
+          {/* Email Capture for identity-based flow */}
+          {!isViewingOther && (
+            <EmailCapture
+              identity={identity.name}
+              quizAnswers={quizResult?.answers}
+              context="quiz-result"
+              title="Want deeper insights?"
+              description="Get essays and reflections on meaning, purpose, and what we might become delivered to your inbox."
+            />
+          )}
         </>
       )}
 
@@ -1074,10 +1085,10 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
             </div>
           </section>
 
-          {/* Email Capture */}
-          {!isViewingOther && identity && (
+          {/* Email Capture for archetype fallback flow */}
+          {!isViewingOther && (
             <EmailCapture
-              identity={identity.name}
+              identity={archetype.name}
               quizAnswers={quizResult?.answers}
               context="quiz-result"
               title="Want deeper insights?"
