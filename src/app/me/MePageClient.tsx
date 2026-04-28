@@ -83,9 +83,12 @@ export function MePageClient() {
 
   if (isLoading) {
     return (
-      <div className={styles.container}>
-        <div className={styles.loading}>Loading...</div>
-      </div>
+      <>
+        <Header />
+        <div className={styles.container}>
+          <div className={styles.loading}>Loading...</div>
+        </div>
+      </>
     );
   }
 
