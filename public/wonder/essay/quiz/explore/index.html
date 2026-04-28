@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What's Your Unique Worldview? | After Abundance</title>
-  <meta name="description" content="Discover the version of the future you're building. What is your unique worldview?">
+  <title>4 Worldviews | After Abundance</title>
+  <meta name="description" content="Discover your orientation toward a post-scarcity future across three dimensions.">
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
   <style>
@@ -74,9 +74,9 @@
 
     /* HERO */
     .hero {
-      padding: 120px 24px 60px;
+      padding: 120px 24px 40px;
       text-align: center;
-      max-width: 700px;
+      max-width: 800px;
       margin: 0 auto;
     }
 
@@ -119,271 +119,197 @@
       box-shadow: 0 8px 24px rgba(232,23,138,0.3);
     }
 
-    /* GRID */
-    .grid-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 24px 80px;
+    /* DIMENSIONS INTRO */
+    .dimensions-intro {
+      max-width: 900px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
     }
 
-    .archetype-grid {
+    .dimensions-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
-    /* CARDS */
-    .archetype-card {
+    .dimension-item {
+      text-align: center;
+      padding: 24px;
       background: white;
       border-radius: 12px;
       border: 1px solid var(--border);
+    }
+
+    .dimension-name {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-pink);
+      margin-bottom: 12px;
+    }
+
+    .dimension-poles {
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+    .dimension-question {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      font-style: italic;
+    }
+
+    /* QUADRANT GRID */
+    .grid-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 32px;
+      color: var(--text);
+    }
+
+    .quadrant-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    /* QUADRANT CARDS */
+    .quadrant-card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid var(--border);
       overflow: hidden;
-      cursor: pointer;
       transition: all 0.3s;
+    }
+
+    .quadrant-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
     }
 
     .card-image {
       width: 100%;
-      aspect-ratio: 1;
+      aspect-ratio: 16/10;
       object-fit: cover;
       display: block;
     }
 
-    .archetype-card:hover {
-      border-color: var(--accent-pink);
-      box-shadow: 0 8px 32px rgba(232,23,138,0.1);
-    }
-
-    .archetype-card.expanded {
-      grid-column: span 2;
-    }
-
-    .card-header {
-      padding: 24px;
-      border-bottom: 1px solid var(--border);
-      position: relative;
-    }
-
-    .card-color {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-    }
-
-    .card-name {
-      font-size: 1.1rem;
-      font-weight: 500;
-      margin-bottom: 12px;
-      padding-left: 12px;
-    }
-
-    .card-utopia {
-      font-size: 0.95rem;
-      font-style: italic;
-      color: var(--text-dim);
-      line-height: 1.6;
-      padding-left: 12px;
-    }
-
-    .card-expand-hint {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-      margin-top: 16px;
-      padding-left: 12px;
-      transition: color 0.2s;
-    }
-
-    .archetype-card:hover .card-expand-hint {
-      color: var(--accent-pink);
-    }
-
-    .archetype-card.expanded .card-expand-hint {
-      display: none;
-    }
-
-    /* EXPANDED CONTENT */
-    .card-details {
-      display: none;
+    .card-content {
       padding: 24px;
     }
 
-    .archetype-card.expanded .card-details {
-      display: block;
-    }
-
-    .detail-section {
-      margin-bottom: 24px;
-    }
-
-    .detail-section:last-child {
-      margin-bottom: 0;
-    }
-
-    .detail-label {
+    .card-label {
       font-size: 10px;
       font-weight: 500;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--text-muted);
+      color: var(--accent-pink);
       margin-bottom: 8px;
     }
 
-    .detail-text {
-      font-size: 0.95rem;
-      color: var(--text);
-      line-height: 1.7;
+    .card-name {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 12px;
     }
 
-    .detail-text.dim {
+    .card-tagline {
+      font-size: 1rem;
       color: var(--text-dim);
+      font-style: italic;
+      margin-bottom: 16px;
     }
 
-    /* COMPATIBILITY */
-    .compat-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+    .card-description {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 16px;
     }
 
-    .compat-item {
-      background: var(--bg);
-      padding: 16px;
-      border-radius: 8px;
+    .card-adjectives {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .card-adjectives strong {
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+
+    /* ORIENTATION NOTE */
+    .orientation-note {
+      max-width: 700px;
+      margin: 40px auto 60px;
+      padding: 24px 32px;
+      background: white;
+      border-radius: 12px;
+      border: 1px solid var(--border);
       text-align: center;
     }
 
-    .compat-type {
-      font-size: 9px;
+    .orientation-note h3 {
+      font-size: 1rem;
       font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
       margin-bottom: 8px;
     }
 
-    .compat-desc {
-      font-size: 0.85rem;
+    .orientation-note p {
+      font-size: 0.95rem;
       color: var(--text-dim);
-      margin-bottom: 8px;
-      line-height: 1.5;
-    }
-
-    .compat-link {
-      font-size: 0.85rem;
-      color: var(--accent-pink);
-      text-decoration: none;
-      font-weight: 500;
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
-
-    .compat-link:hover {
-      opacity: 0.7;
-    }
-
-    /* BOOKS */
-    .books-list {
-      list-style: none;
-    }
-
-    .books-list li {
-      padding: 8px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.9rem;
-    }
-
-    .books-list li:last-child {
-      border-bottom: none;
-    }
-
-    .book-title {
-      font-style: italic;
-      color: var(--text);
-    }
-
-    .book-author {
-      color: var(--text-muted);
-      margin-left: 4px;
-    }
-
-    /* HIGHLIGHT STATE */
-    .archetype-card.highlighted {
-      animation: pulse 1.5s ease-out;
-      border-color: var(--accent-pink);
-      box-shadow: 0 0 0 4px rgba(232,23,138,0.2);
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(232,23,138,0.4); }
-      100% { box-shadow: 0 0 0 20px rgba(232,23,138,0); }
+      line-height: 1.7;
     }
 
     /* FOOTER */
     .footer {
-      padding: 48px 24px;
-      background: #2d2a26;
+      padding: 40px 24px;
       text-align: center;
+      border-top: 1px solid var(--border);
     }
 
     .footer-nav {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 24px;
-      margin-bottom: 24px;
+      gap: 32px;
+      margin-bottom: 16px;
     }
 
     .footer-nav a {
-      font-family: var(--sans);
-      font-size: 12px;
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: rgba(255,255,255,0.6);
+      color: var(--text-dim);
       text-decoration: none;
+      font-size: 13px;
       transition: color 0.2s;
     }
-
-    .footer-nav a:hover {
-      color: var(--accent-pink);
-    }
+    .footer-nav a:hover { color: var(--accent-pink); }
 
     .footer-copy {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.4);
+      font-size: 12px;
+      color: var(--text-muted);
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .archetype-card.expanded {
-        grid-column: span 1;
-      }
-
-      .compat-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* Mobile menu */
+    /* MOBILE */
     .mobile-menu-toggle {
       display: none;
       background: none;
       border: none;
       padding: 8px;
       cursor: pointer;
-      z-index: 1001;
     }
 
     .hamburger {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      gap: 5px;
       width: 24px;
-      height: 18px;
     }
 
     .hamburger span {
@@ -391,17 +317,7 @@
       height: 2px;
       background: var(--text);
       border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-
-    .hamburger--open span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-    .hamburger--open span:nth-child(2) {
-      opacity: 0;
-    }
-    .hamburger--open span:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
+      transition: all 0.3s;
     }
 
     .mobile-menu-overlay {
@@ -430,7 +346,6 @@
     }
 
     .mobile-menu a {
-      font-family: var(--sans);
       font-size: 1.25rem;
       color: var(--text);
       text-decoration: none;
@@ -438,8 +353,14 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .mobile-menu a:hover {
-      color: var(--accent-pink);
+    @media (max-width: 900px) {
+      .dimensions-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .quadrant-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 768px) {
@@ -452,8 +373,7 @@
     @media (max-width: 640px) {
       .hero { padding: 100px 20px 40px; }
       .hero-title { font-size: 1.8rem; }
-      .grid-container { padding: 0 16px 60px; }
-      .archetype-grid { gap: 16px; }
+      .grid-container { padding: 0 16px 40px; }
     }
   </style>
 </head>
@@ -477,7 +397,6 @@
     </button>
   </header>
 
-  <!-- MOBILE MENU -->
   <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="toggleMobileMenu()">
     <nav class="mobile-menu" onclick="event.stopPropagation()">
       <a href="/read">Read</a>
@@ -489,15 +408,104 @@
 
   <section class="hero">
     <div class="hero-label">After Abundance</div>
-    <h1 class="hero-title">14 Ways to Imagine the Future</h1>
+    <h1 class="hero-title">Three Dimensions, Four Worldviews</h1>
     <p class="hero-subtitle">
-      Each archetype represents a different answer to the question: <em>Who are you, when you're finally free to just be?</em> Explore them all, find your people, and discover who you might clash with.
+      Your answers reveal where you land on three dimensions of how humans orient toward the future. Each combination creates a distinct worldview.
     </p>
     <a href="/wonder/essay/quiz" class="hero-cta">Take the Quiz</a>
   </section>
 
+  <!-- Three Dimensions -->
+  <section class="dimensions-intro">
+    <div class="dimensions-grid">
+      <div class="dimension-item">
+        <div class="dimension-name">Certainty</div>
+        <div class="dimension-poles">Settled &harr; Seeking</div>
+        <div class="dimension-question">Do you know what you believe, or are you still discovering?</div>
+      </div>
+      <div class="dimension-item">
+        <div class="dimension-name">Posture</div>
+        <div class="dimension-poles">Expansive &harr; Protective</div>
+        <div class="dimension-question">Do you reach outward or guard what matters?</div>
+      </div>
+      <div class="dimension-item">
+        <div class="dimension-name">Orientation</div>
+        <div class="dimension-poles">Builder &harr; Witness</div>
+        <div class="dimension-question">Do you shape the world or perceive it?</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Four Quadrants -->
   <div class="grid-container">
-    <div class="archetype-grid" id="grid"></div>
+    <h2 class="section-title">The Four Quadrants</h2>
+    <div class="quadrant-grid">
+
+      <!-- The Confident -->
+      <div class="quadrant-card">
+        <img src="/wonder/essay/quiz/images/citizen.jpg" alt="The Confident" class="card-image">
+        <div class="card-content">
+          <div class="card-label">Settled + Expansive</div>
+          <h3 class="card-name">The Confident</h3>
+          <p class="card-tagline">Builds boldly from certainty</p>
+          <p class="card-description">
+            You know what you believe and you're ready to act on it. The future is an opportunity, not a threat. You trust that abundance is possible and you're already building toward it. Your certainty gives others permission to move.
+          </p>
+          <p class="card-adjectives"><strong>You might be:</strong> Confident, Assured, or Bold</p>
+        </div>
+      </div>
+
+      <!-- The Grounded -->
+      <div class="quadrant-card">
+        <img src="/wonder/essay/quiz/images/rooted.jpg" alt="The Grounded" class="card-image">
+        <div class="card-content">
+          <div class="card-label">Settled + Protective</div>
+          <h3 class="card-name">The Grounded</h3>
+          <p class="card-tagline">Guards what matters from a place of knowing</p>
+          <p class="card-description">
+            You know what's worth protecting and you don't need to explain it. Not everything that's old is outdated. Not everything that's new is progress. You hold the line so others can find their footing.
+          </p>
+          <p class="card-adjectives"><strong>You might be:</strong> Steady, Grounded, or Anchored</p>
+        </div>
+      </div>
+
+      <!-- The Curious -->
+      <div class="quadrant-card">
+        <img src="/wonder/essay/quiz/images/swimmer.jpg" alt="The Curious" class="card-image">
+        <div class="card-content">
+          <div class="card-label">Seeking + Expansive</div>
+          <h3 class="card-name">The Curious</h3>
+          <p class="card-tagline">Explores without needing answers first</p>
+          <p class="card-description">
+            You don't need to know where you're going to start moving. The unknown is interesting, not frightening. You ask questions others haven't thought to ask and you're comfortable living in the space before answers arrive.
+          </p>
+          <p class="card-adjectives"><strong>You might be:</strong> Adaptive, Curious, or Open</p>
+        </div>
+      </div>
+
+      <!-- The Careful -->
+      <div class="quadrant-card">
+        <img src="/wonder/essay/quiz/images/conscience.jpg" alt="The Careful" class="card-image">
+        <div class="card-content">
+          <div class="card-label">Seeking + Protective</div>
+          <h3 class="card-name">The Careful</h3>
+          <p class="card-tagline">Protects while still discovering</p>
+          <p class="card-description">
+            You haven't figured it all out yet, and that's exactly why you're cautious. You've seen what happens when people move fast without understanding the stakes. You ask "what could go wrong?" because someone has to.
+          </p>
+          <p class="card-adjectives"><strong>You might be:</strong> Careful, Cautious, or Measured</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Orientation Note -->
+  <div class="orientation-note">
+    <h3>Builder or Witness?</h3>
+    <p>
+      Within each quadrant, some people shape the world (Builders) while others perceive it (Witnesses). Builders act, create, and make change. Witnesses notice, reflect, and hold space. Neither is better. Both are needed.
+    </p>
   </div>
 
   <footer class="footer">
@@ -506,372 +514,10 @@
       <a href="/about">About</a>
       <a href="https://livenowclub.substack.com" target="_blank" rel="noopener noreferrer">Substack</a>
     </nav>
-    <p class="footer-copy">&copy; 2025 Louise Ireland</p>
+    <p class="footer-copy">&copy; 2026 Louise Ireland</p>
   </footer>
 
   <script>
-    const archetypes = {
-      citizen: {
-        name: "The Abundant",
-        utopia: "Your utopia has no word for \"job.\" They used to, but it fell out of the language three centuries ago.",
-        description: "Let the machines handle the drudgery. You have better things to do with being alive. You know how power works and you know that utopia still needs someone watching the edges. You also trust that intelligence, properly distributed, tends toward good. Too much freedom will always be preferable to too little. Comfort doesn't frighten you. Boredom does.",
-        blindSpot: "You sometimes mistake access for equity. Everyone having options is not the same as everyone being free.",
-        color: "#3db9a4",
-        books: [
-          { title: "The Player of Games", author: "Banks" },
-          { title: "Accelerando", author: "Stross" },
-          { title: "Down and Out in the Magic Kingdom", author: "Doctorow" }
-        ],
-        compatibility: {
-          ally: { desc: "the one who wants to feel everything", key: "alive" },
-          tension: { desc: "the one who's watching for what's being hidden", key: "conscience" },
-          need: { desc: "the one who craves difficulty", key: "friction" }
-        }
-      },
-      shaper: {
-        name: "The Builder",
-        utopia: "Your utopia is never finished. Everything is always changing.",
-        description: "You don't trust stillness. The moment you stop adapting, you start calcifying, and you've seen it happen to every institution, every relationship, every version of yourself you've held onto too long. The transition ahead is raw material. The future is something you build with whatever is at hand, including the wreckage. You've probably already started.",
-        blindSpot: "You sometimes mistake movement for progress. Tearing something down and building something new can be its own form of running away.",
-        color: "#f4a03f",
-        books: [
-          { title: "Parable of the Sower", author: "Butler" },
-          { title: "Red Mars", author: "Robinson" },
-          { title: "The Diamond Age", author: "Stephenson" }
-        ],
-        compatibility: {
-          ally: { desc: "the one who craves difficulty", key: "friction" },
-          tension: { desc: "the one who chose stillness", key: "rooted" },
-          need: { desc: "the one who guards what came before", key: "embers" }
-        }
-      },
-      architect: {
-        name: "The Architect",
-        utopia: "Your utopia belongs to everyone and answers to no one. It doesn't work perfectly but it belongs to the people inside it.",
-        description: "You focus on the structures. Because the best people in the world will still reproduce the old hierarchies if the structures allow it. You'd rather build something imperfect and collectively owned than something elegant and controlled by a few. Mutual aid is a practice, and it requires showing up. You show up.",
-        blindSpot: "You sometimes love the system more than the people inside it. The meeting can become more important than what the meeting was for.",
-        color: "#9b8fef",
-        books: [
-          { title: "The Dispossessed", author: "Le Guin" },
-          { title: "Pacific Edge", author: "Robinson" },
-          { title: "Four Ways to Forgiveness", author: "Le Guin" }
-        ],
-        compatibility: {
-          ally: { desc: "the one who fixes what's broken", key: "mender" },
-          tension: { desc: "the one who left the body behind", key: "unbound" },
-          need: { desc: "the one who lives in questions", key: "swimmer" }
-        }
-      },
-      presence: {
-        name: "The Present",
-        utopia: "Your utopia decided that the most valuable thing in the universe was undivided attention, and built its entire economy around it.",
-        description: "You keep coming back to the same realization: that the thing that actually changes a life is a person choosing to be present for another person. You appreciate what machines can do. You also know the difference between capability and care, and you've never confused the two. Someone's life is different because you showed up. You may not even know whose.",
-        blindSpot: "You sometimes use care as a way to avoid confrontation. Staying in the room is not always the brave choice. Sometimes the brave choice is leaving it.",
-        color: "#e8178a",
-        books: [
-          { title: "The Diamond Age", author: "Stephenson" },
-          { title: "Klara and the Sun", author: "Ishiguro" },
-          { title: "The Lifecycle of Software Objects", author: "Chiang" }
-        ],
-        compatibility: {
-          ally: { desc: "the one who chose stillness", key: "rooted" },
-          tension: { desc: "the one who left the body behind", key: "unbound" },
-          need: { desc: "the one who tells the truth", key: "cleareyed" }
-        }
-      },
-      swimmer: {
-        name: "The Questioner",
-        utopia: "Your utopia is a civilization of philosophers. Their single ambition is to reach the deepest level of questioning ever achieved.",
-        description: "You resist the urge to resolve. Most people see a problem and want to solve it. You see a question and want to live inside it. The edges of understanding are where the interesting things happen, and you've always been drawn there. You are comfortable with ambiguity in a world that punishes it, and you suspect that this comfort is its own form of wisdom.",
-        blindSpot: "You can sit with a question so long that it becomes an excuse to never act. At some point, not-knowing becomes its own form of cowardice.",
-        color: "#6b8fef",
-        books: [
-          { title: "Solaris", author: "Lem" },
-          { title: "Blindsight", author: "Watts" },
-          { title: "Story of Your Life", author: "Chiang" }
-        ],
-        compatibility: {
-          ally: { desc: "the one who left the body behind", key: "unbound" },
-          tension: { desc: "the one who fixes what's broken", key: "mender" },
-          need: { desc: "the one who builds collective structures", key: "architect" }
-        }
-      },
-      rooted: {
-        name: "The Rooted",
-        utopia: "Your utopia returned to a simpler way of life, on purpose, with full knowledge of what it was giving up.",
-        description: "You've arrived at something most people spend their lives running from: the possibility that you don't need a reason to be here. Purpose is a construct. Productivity is a habit. The most radical thing you can do in a world optimized for output is to stop, and mean it. You pour the tea. You notice what's in front of you. You find that it's enough.",
-        blindSpot: "Your stillness can look a lot like withdrawal to the people who need you. Choosing to stop is a luxury not everyone can afford.",
-        color: "#7ed6a4",
-        books: [
-          { title: "A Psalm for the Wild-Built", author: "Chambers" },
-          { title: "Always Coming Home", author: "Le Guin" },
-          { title: "Piranesi", author: "Clarke" }
-        ],
-        compatibility: {
-          ally: { desc: "the one who values presence above all", key: "presence" },
-          tension: { desc: "the one who can't stop building", key: "shaper" },
-          need: { desc: "the one who wants to feel everything", key: "alive" }
-        }
-      },
-      conscience: {
-        name: "The Witness",
-        utopia: "Your utopia built accountability into the architecture. Every leader's decisions are projected onto the sky the day they leave office.",
-        description: "You see what others prefer to ignore. The comfortable prison. The soft erosion. The hierarchy that rebrands itself as community. You believe in what humans can be. You also refuse to look away from what they become when no one is paying attention. Someone has to watch the watchers. You've always known it would be you.",
-        blindSpot: "You can become so focused on what's wrong that you forget to notice what's working. Permanent suspicion is its own kind of prison.",
-        color: "#d64545",
-        books: [
-          { title: "1984", author: "Orwell" },
-          { title: "Brave New World", author: "Huxley" },
-          { title: "The Handmaid's Tale", author: "Atwood" }
-        ],
-        compatibility: {
-          ally: { desc: "the one who tells the truth", key: "cleareyed" },
-          tension: { desc: "the one who's made peace with abundance", key: "citizen" },
-          need: { desc: "the one who values presence above all", key: "presence" }
-        }
-      },
-      embers: {
-        name: "The Keeper",
-        utopia: "Your utopia's most protected resource is not water or energy. It's memory.",
-        description: "Everyone else is racing forward. You keep looking back, because you have this stubborn conviction that we've already figured most of this out and keep forgetting. Oral traditions, old religions, indigenous knowledge, the grandmother's hand on the child's head. The most dangerous thing about acceleration is amnesia. The answers aren't in the next technology. They're in the last ten thousand years.",
-        blindSpot: "You can love what was so deeply that you become hostile to what could be. The archive becomes a fortress. The past becomes an identity.",
-        color: "#c97d3a",
-        books: [
-          { title: "A Canticle for Leibowitz", author: "Miller" },
-          { title: "Always Coming Home", author: "Le Guin" },
-          { title: "Parable of the Talents", author: "Butler" }
-        ],
-        compatibility: {
-          ally: { desc: "the one who builds collective structures", key: "architect" },
-          tension: { desc: "the one who can't stop building", key: "shaper" },
-          need: { desc: "the one still figuring it out", key: "between" }
-        }
-      },
-      friction: {
-        name: "The Challenger",
-        utopia: "Your utopia kept one part of the world deliberately dangerous, because the people who built it believed that too much safety would kill something essential in the species.",
-        description: "Ease is more dangerous than difficulty. Something in us requires resistance. The act of pushing against something is how we know we're alive, and you've always known this in your bones. Take away every problem and you don't get paradise. You get a species that has forgotten how to want. You'd rather build the boat in a storm than float in still water.",
-        blindSpot: "You can mistake difficulty for meaning. Not everything that's hard is worth doing. Sometimes the easy path is the right one and you can't accept that.",
-        color: "#ff6b35",
-        books: [
-          { title: "The Stars My Destination", author: "Bester" },
-          { title: "The Moon Is a Harsh Mistress", author: "Heinlein" },
-          { title: "The Evolutionary Void", author: "Hamilton" }
-        ],
-        compatibility: {
-          ally: { desc: "the one who can't stop building", key: "shaper" },
-          tension: { desc: "the one who chose stillness", key: "rooted" },
-          need: { desc: "the one who values presence above all", key: "presence" }
-        }
-      },
-      unbound: {
-        name: "The Transcendent",
-        utopia: "Your utopia transcended the physical. You exist as pure consciousness now, moving through dimensions that don't have names.",
-        description: "You look at the species and see a draft. A first attempt. You're curious about what comes next. Uploading, merging, subliming, evolving. The vocabulary doesn't matter. The boundary of the self is simply not where you stop. Most people find this frightening. You find it the most interesting question there is.",
-        blindSpot: "You left so much behind that you may not recognize what was worth keeping until it's too late. Evolution without memory is just forgetting with better marketing.",
-        color: "#a855f7",
-        books: [
-          { title: "Childhood's End", author: "Clarke" },
-          { title: "Diaspora", author: "Egan" },
-          { title: "The Hydrogen Sonata", author: "Banks" }
-        ],
-        compatibility: {
-          ally: { desc: "the one who lives in questions", key: "swimmer" },
-          tension: { desc: "the one who values presence above all", key: "presence" },
-          need: { desc: "the one who guards what came before", key: "embers" }
-        }
-      },
-      alive: {
-        name: "The Feeler",
-        utopia: "Your utopia engineered twelve new senses and a sunset that lasts all day.",
-        description: "You don't need a reason. You need a body, a world, and enough time. Change your form, change your perspective, taste every experience, climb every mountain, love every person who'll have you, and when you've done all of it, start again. The universe gave you everything. The least you can do is feel it. You suspect that most philosophies of meaning are elaborate ways of avoiding pleasure.",
-        blindSpot: "Sensation can become consumption. Feeling everything is not the same as understanding anything. The twelfth sense doesn't help if the first five are numb from overuse.",
-        color: "#f472b6",
-        books: [
-          { title: "Surface Detail", author: "Banks" },
-          { title: "Trouble on Triton", author: "Delany" },
-          { title: "Schismatrix Plus", author: "Sterling" }
-        ],
-        compatibility: {
-          ally: { desc: "the one who's made peace with abundance", key: "citizen" },
-          tension: { desc: "the one who's watching for what's being hidden", key: "conscience" },
-          need: { desc: "the one who tells the truth", key: "cleareyed" }
-        }
-      },
-      mender: {
-        name: "The Mender",
-        utopia: "Your utopia decided that the most advanced act of engineering was making what already existed work again instead of building something new.",
-        description: "You look at the stars and feel nothing pulling you toward them. The work is here. The soil, the water, the damaged systems, the fraying relationships. While everyone else is building arks and uploading their consciousness, you're fixing the thing in front of you. The most radical act in an age of acceleration is to stay, to repair, to solve the specific problem that no one else cares about. The future is the next thing that needs doing.",
-        blindSpot: "You can become so focused on repair that you miss when something needs to die. Not everything should be saved. Some things are broken because they should be.",
-        color: "#10b981",
-        books: [
-          { title: "The Ministry for the Future", author: "Robinson" },
-          { title: "New York 2140", author: "Robinson" },
-          { title: "Station Eleven", author: "Mandel" }
-        ],
-        compatibility: {
-          ally: { desc: "the one who builds collective structures", key: "architect" },
-          tension: { desc: "the one who lives in questions", key: "swimmer" },
-          need: { desc: "the one who craves difficulty", key: "friction" }
-        }
-      },
-      cleareyed: {
-        name: "The Truth-Teller",
-        utopia: "Your utopia has one person whose only job is to tell the truth. They answer to no one. They are the most feared and most respected person in the civilization.",
-        description: "You have one job: to see what is actually happening and say it out loud. The version that's true. The one that makes people uncomfortable. Most people don't want this from you. Civilizations survive by the quality of their honest observers, though, and collapse when the honest observers go quiet. You won't be the one who goes quiet.",
-        blindSpot: "Honesty without tenderness is cruelty. You can see everything clearly and still miss the most important thing in the room, which is how your truth lands on the person hearing it.",
-        color: "#64748b",
-        books: [
-          { title: "Slaughterhouse-Five", author: "Vonnegut" },
-          { title: "His Master's Voice", author: "Lem" },
-          { title: "The Road", author: "McCarthy" }
-        ],
-        compatibility: {
-          ally: { desc: "the one who's watching for what's being hidden", key: "conscience" },
-          tension: { desc: "the one who wants to feel everything", key: "alive" },
-          need: { desc: "the one who chose stillness", key: "rooted" }
-        }
-      },
-      between: {
-        name: "The Liminal",
-        utopia: "Your utopia just started to exist. Nothing is built yet. It's the beginning of an idea.",
-        description: "This isn't a philosophy you chose. It's a condition you're living in. The old world shifted and left you standing in a place you don't recognize. You're figuring out how to breathe in a room with no familiar walls. Everyone else on this list has a position. You have a question. And you're still here, which might be the bravest thing on this list.",
-        blindSpot: "The space between can become a permanent address. At some point, not knowing what you are becomes a way of avoiding the risk of choosing.",
-        color: "#8b8b8b",
-        books: [
-          { title: "Never Let Me Go", author: "Ishiguro" },
-          { title: "Station Eleven", author: "Mandel" },
-          { title: "The Left Hand of Darkness", author: "Le Guin" }
-        ],
-        compatibility: {
-          ally: { desc: "the one who guards what came before", key: "embers" },
-          tension: { desc: "the one who craves difficulty", key: "friction" },
-          need: { desc: "the one who can't stop building", key: "shaper" }
-        }
-      }
-    };
-
-    const archetypeOrder = ['citizen', 'shaper', 'architect', 'presence', 'swimmer', 'rooted', 'conscience', 'embers', 'friction', 'unbound', 'alive', 'mender', 'cleareyed', 'between'];
-
-    function createCard(key, data) {
-      const card = document.createElement('div');
-      card.className = 'archetype-card';
-      card.id = `card-${key}`;
-      card.innerHTML = `
-        <img src="/wonder/essay/quiz/images/utopia-${key}.png" alt="${data.name}" class="card-image">
-        <div class="card-header">
-          <div class="card-color" style="background: ${data.color}"></div>
-          <h3 class="card-name">${data.name}</h3>
-          <p class="card-utopia">${data.utopia}</p>
-          <p class="card-expand-hint">Click to explore</p>
-        </div>
-        <div class="card-details">
-          <div class="detail-section">
-            <div class="detail-label">Who You Are</div>
-            <p class="detail-text">${data.description}</p>
-          </div>
-          <div class="detail-section">
-            <div class="detail-label">Your Blind Spot</div>
-            <p class="detail-text dim">${data.blindSpot}</p>
-          </div>
-          <div class="detail-section">
-            <div class="detail-label">Your People</div>
-            <div class="compat-grid">
-              <div class="compat-item">
-                <div class="compat-type">Natural Ally</div>
-                <p class="compat-desc">${data.compatibility.ally.desc}</p>
-                <span class="compat-link" data-target="${data.compatibility.ally.key}">${archetypes[data.compatibility.ally.key].name}</span>
-              </div>
-              <div class="compat-item">
-                <div class="compat-type">Your Tension</div>
-                <p class="compat-desc">${data.compatibility.tension.desc}</p>
-                <span class="compat-link" data-target="${data.compatibility.tension.key}">${archetypes[data.compatibility.tension.key].name}</span>
-              </div>
-              <div class="compat-item">
-                <div class="compat-type">Your Counterweight</div>
-                <p class="compat-desc">${data.compatibility.need.desc}</p>
-                <span class="compat-link" data-target="${data.compatibility.need.key}">${archetypes[data.compatibility.need.key].name}</span>
-              </div>
-            </div>
-          </div>
-          <div class="detail-section">
-            <div class="detail-label">Read Next</div>
-            <ul class="books-list">
-              ${data.books.map(b => `<li><span class="book-title">${b.title}</span><span class="book-author">(${b.author})</span></li>`).join('')}
-            </ul>
-          </div>
-        </div>
-      `;
-
-      card.addEventListener('click', (e) => {
-        if (e.target.classList.contains('compat-link')) {
-          e.stopPropagation();
-          const targetKey = e.target.dataset.target;
-          navigateToCard(targetKey);
-          return;
-        }
-        toggleCard(card);
-      });
-
-      return card;
-    }
-
-    function toggleCard(card) {
-      const wasExpanded = card.classList.contains('expanded');
-
-      // Close all cards
-      document.querySelectorAll('.archetype-card.expanded').forEach(c => {
-        c.classList.remove('expanded');
-      });
-
-      // Open this one if it wasn't already open
-      if (!wasExpanded) {
-        card.classList.add('expanded');
-        setTimeout(() => {
-          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 100);
-      }
-    }
-
-    function navigateToCard(key) {
-      const card = document.getElementById(`card-${key}`);
-      if (!card) return;
-
-      // Close all, open target
-      document.querySelectorAll('.archetype-card.expanded').forEach(c => {
-        c.classList.remove('expanded');
-      });
-      document.querySelectorAll('.archetype-card.highlighted').forEach(c => {
-        c.classList.remove('highlighted');
-      });
-
-      card.classList.add('expanded');
-      card.classList.add('highlighted');
-
-      setTimeout(() => {
-        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 100);
-
-      setTimeout(() => {
-        card.classList.remove('highlighted');
-      }, 1500);
-    }
-
-    // Build the grid
-    const grid = document.getElementById('grid');
-    archetypeOrder.forEach(key => {
-      grid.appendChild(createCard(key, archetypes[key]));
-    });
-
-    // Handle URL hash
-    if (window.location.hash) {
-      const key = window.location.hash.slice(1);
-      if (archetypes[key]) {
-        setTimeout(() => navigateToCard(key), 300);
-      }
-    }
-
-    // Mobile menu
     function toggleMobileMenu() {
       const overlay = document.getElementById('mobileMenuOverlay');
       const hamburger = document.getElementById('hamburger');

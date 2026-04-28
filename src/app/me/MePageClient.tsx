@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Header from "@/components/Header";
 import styles from "./MePageClient.module.css";
 import type { UserResult } from "@/lib/utopia";
 import type { Connection } from "@/lib/connections";
@@ -95,23 +96,28 @@ export function MePageClient() {
   const identity = user.answers ? getIdentity(user.answers) : null;
 
   return (
-    <div className={styles.container}>
-      <div className={styles.content}>
-        {/* Identity Section */}
-        <section className={styles.identitySection}>
-          <p className={styles.label}>Your World</p>
-          <h1 className={styles.identityName} style={{ color: identity?.color }}>
-            {identity?.name || "Unknown"}
-          </h1>
-          <div className={styles.shareButtons}>
-            <button className={styles.copyButton} onClick={handleCopyLink}>
-              {copied ? "Copied!" : "Copy Link"}
-            </button>
-            <button className={styles.shareButton} onClick={handleShare}>
-              Share
-            </button>
-          </div>
-        </section>
+    <>
+      <Header />
+      <div className={styles.container}>
+        <div className={styles.content}>
+          {/* Identity Section */}
+          <section className={styles.identitySection}>
+            <p className={styles.label}>Your World</p>
+            <h1 className={styles.identityName} style={{ color: identity?.color }}>
+              {identity?.name || "Unknown"}
+            </h1>
+            <Link href="/wonder/essay/quiz/result" className={styles.viewResultsLink}>
+              View your full results →
+            </Link>
+            <div className={styles.shareButtons}>
+              <button className={styles.copyButton} onClick={handleCopyLink}>
+                {copied ? "Copied!" : "Copy Link"}
+              </button>
+              <button className={styles.shareButton} onClick={handleShare}>
+                Share
+              </button>
+            </div>
+          </section>
 
         {/* Connections Section */}
         <section className={styles.section}>
@@ -168,6 +174,18 @@ export function MePageClient() {
           </div>
         </section>
       </div>
+
+      {/* Footer */}
+      <footer className={styles.footer}>
+        <nav className={styles.footerNav}>
+          <Link href="/read">Read</Link>
+          <Link href="/navigate">Navigate</Link>
+          <Link href="/wonder">Wonder</Link>
+          <Link href="/connect">Connect</Link>
+        </nav>
+        <p className={styles.footerCopy}>&copy; 2026 Louise Ireland</p>
+      </footer>
     </div>
+    </>
   );
 }

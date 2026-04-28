@@ -1,7 +1,7 @@
 .container {
   min-height: 100vh;
   background: linear-gradient(135deg, #fdf8f3 0%, #fff9f5 100%);
-  padding: 24px;
+  padding: 100px 24px 24px;
 }
 
 .content {
@@ -146,4 +146,52 @@
 .connectionIdentity {
   font-size: 0.85rem;
   font-weight: 500;
+}
+
+/* View Results Link */
+.viewResultsLink {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #e8178a;
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.viewResultsLink:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  padding: 40px 24px;
+  text-align: center;
+  border-top: 1px solid rgba(45, 42, 38, 0.1);
+  margin-top: 40px;
+}
+
+.footerNav {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 16px;
+}
+
+.footerNav a {
+  color: rgba(45, 42, 38, 0.6);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footerNav a:hover {
+  color: #e8178a;
+}
+
+.footerCopy {
+  font-size: 0.8rem;
+  color: rgba(45, 42, 38, 0.4);
+  margin: 0;
 }

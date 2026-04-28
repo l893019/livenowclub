@@ -395,28 +395,6 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
           <header className={styles.header}>
             <p className={styles.label}>{labelText}</p>
             <h1 className={styles.name}>{identity.name}</h1>
-
-            {/* Personal share link - in header for visibility */}
-            {userSlug && !isViewingOther && (
-              <div className={styles.headerShare}>
-                <div className={styles.headerShareRow}>
-                  <span className={styles.headerShareLink}>
-                    livenowclub.vercel.app/meet/{userSlug}
-                  </span>
-                  <button
-                    className={styles.headerCopyButton}
-                    onClick={() => {
-                      navigator.clipboard.writeText(`https://livenowclub.vercel.app/meet/${userSlug}`);
-                      setLinkCopied(true);
-                      setTimeout(() => setLinkCopied(false), 2000);
-                    }}
-                  >
-                    {linkCopied ? "Copied!" : "Copy Link"}
-                  </button>
-                </div>
-                <p className={styles.headerShareHint}>Share with friends to see your compatibility</p>
-              </div>
-            )}
           </header>
 
           {/* Utopia Card */}
@@ -436,9 +414,27 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
             </div>
           )}
 
-          {/* Your World link */}
+          {/* Share link + Your World */}
           {userSlug && !isViewingOther && (
             <div className={styles.yourWorldSection}>
+              <div className={styles.shareBox}>
+                <div className={styles.shareBoxRow}>
+                  <span className={styles.shareBoxLink}>
+                    livenowclub.vercel.app/meet/{userSlug}
+                  </span>
+                  <button
+                    className={styles.shareBoxCopyButton}
+                    onClick={() => {
+                      navigator.clipboard.writeText(`https://livenowclub.vercel.app/meet/${userSlug}`);
+                      setLinkCopied(true);
+                      setTimeout(() => setLinkCopied(false), 2000);
+                    }}
+                  >
+                    {linkCopied ? "Copied!" : "Copy Link"}
+                  </button>
+                </div>
+                <p className={styles.shareBoxHint}>Share with friends to see your compatibility</p>
+              </div>
               <Link href="/me" className={styles.yourWorldLink}>
                 Go to Your World →
               </Link>
@@ -699,28 +695,6 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
             {!isViewingOther && combinationContent && (
               <p className={styles.tagline}>{combinationContent.tagline}</p>
             )}
-
-            {/* Personal share link - in header for visibility */}
-            {userSlug && !isViewingOther && (
-              <div className={styles.headerShare}>
-                <div className={styles.headerShareRow}>
-                  <span className={styles.headerShareLink}>
-                    livenowclub.vercel.app/meet/{userSlug}
-                  </span>
-                  <button
-                    className={styles.headerCopyButton}
-                    onClick={() => {
-                      navigator.clipboard.writeText(`https://livenowclub.vercel.app/meet/${userSlug}`);
-                      setLinkCopied(true);
-                      setTimeout(() => setLinkCopied(false), 2000);
-                    }}
-                  >
-                    {linkCopied ? "Copied!" : "Copy Link"}
-                  </button>
-                </div>
-                <p className={styles.headerShareHint}>Share with friends to see your compatibility</p>
-              </div>
-            )}
           </header>
 
           {/* Utopia Card */}
@@ -740,6 +714,32 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
             </div>
           )}
 
+          {/* Share link + Your World */}
+          {userSlug && !isViewingOther && (
+            <div className={styles.yourWorldSection}>
+              <div className={styles.shareBox}>
+                <div className={styles.shareBoxRow}>
+                  <span className={styles.shareBoxLink}>
+                    livenowclub.vercel.app/meet/{userSlug}
+                  </span>
+                  <button
+                    className={styles.shareBoxCopyButton}
+                    onClick={() => {
+                      navigator.clipboard.writeText(`https://livenowclub.vercel.app/meet/${userSlug}`);
+                      setLinkCopied(true);
+                      setTimeout(() => setLinkCopied(false), 2000);
+                    }}
+                  >
+                    {linkCopied ? "Copied!" : "Copy Link"}
+                  </button>
+                </div>
+                <p className={styles.shareBoxHint}>Share with friends to see your compatibility</p>
+              </div>
+              <Link href="/me" className={styles.yourWorldLink}>
+                Go to Your World →
+              </Link>
+            </div>
+          )}
 
           {/* Rarity Signal */}
           {!isViewingOther && (
