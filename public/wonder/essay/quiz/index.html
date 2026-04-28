@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-version="2.1-20260427-2305">
+<html lang="en" data-version="2.2-20260428-0530">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -2377,6 +2377,8 @@
 
       const url = `/wonder/essay/quiz/result?${params.toString()}`;
       console.log('[Quiz] Redirecting to:', url);
+      // DEBUG: Show alert before redirect
+      alert('DEBUG: Redirecting to:\n' + url + '\n\nIdentity: ' + (identity || 'NULL') + '\nAnswers: ' + JSON.stringify(userAnswers));
       return url;
     }
 
