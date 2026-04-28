@@ -14,7 +14,7 @@ export default function Header() {
     setHasQuizId(!!userId);
   }, []);
 
-  const isMyUtopias = pathname === "/wonder/essay/quiz/my-utopias";
+  const isYourWorld = pathname === "/me";
 
   return (
     <header className="header">
@@ -36,10 +36,10 @@ export default function Header() {
         </Link>
         {hasQuizId && (
           <Link
-            href="/wonder/essay/quiz/my-utopias"
-            className={isMyUtopias ? "active my-utopias" : "my-utopias"}
+            href="/me"
+            className={isYourWorld ? "active your-world" : "your-world"}
           >
-            My Utopias
+            Your World
           </Link>
         )}
       </nav>

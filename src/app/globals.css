@@ -370,13 +370,13 @@ p {
   background: var(--pink);
 }
 
-/* My Utopias link - personal, so highlighted */
-.nav a.my-utopias {
+/* Your World link - personal, so highlighted */
+.nav a.your-world {
   color: var(--pink);
   font-weight: 500;
 }
 
-.nav a.my-utopias:hover {
+.nav a.your-world:hover {
   opacity: 0.8;
 }
 
