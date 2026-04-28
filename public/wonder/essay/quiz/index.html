@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-version="2.0-20260427-1945">
+<html lang="en" data-version="2.1-20260427-2305">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- v2.0 - Updated copy 2026-04-27 at 19:45 UTC - CACHE BUST -->
+  <!-- v2.1 - Fixed identity URL generation 2026-04-27 at 23:05 UTC - CACHE BUST -->
   <title>What Do You Believe About the Future? | The Live Now Club</title>
   <meta name="description" content="Discover the version of the future you're building. What is your unique worldview?">
 
@@ -1957,9 +1957,17 @@
       let raw = { agency: 0, certainty: 0, posture: 0 };
       let max = { agency: 0, certainty: 0, posture: 0 };
 
-      userAnswers.forEach((answer, i) => {
+      console.log('[Quiz] calculateDimensions - userAnswers:', userAnswers, 'length:', userAnswers.length);
+
+      // Convert sparse array to dense array to ensure iteration works
+      const answers = Array.from({ length: 7 }, (_, i) => userAnswers[i]);
+      console.log('[Quiz] Dense answers array:', answers);
+
+      answers.forEach((answer, i) => {
+        if (answer === undefined) return; // Skip unanswered questions
         const q = i + 1;
         const scoring = DIMENSION_SCORING[q]?.[answer];
+        console.log('[Quiz] Q' + q + ':', answer, '→ scoring:', scoring);
         if (scoring) {
           raw.agency += scoring[0];
           raw.certainty += scoring[1];
@@ -1972,11 +1980,13 @@
         max.posture += Math.max(...qScores.map(s => Math.abs(s[2])));
       });
 
-      return {
+      const result = {
         agency: max.agency > 0 ? raw.agency / max.agency : 0,
         certainty: max.certainty > 0 ? raw.certainty / max.certainty : 0,
         posture: max.posture > 0 ? raw.posture / max.posture : 0
       };
+      console.log('[Quiz] Raw dimensions:', raw, 'Max:', max, 'Result:', result);
+      return result;
     }
 
     function getIdentityKey() {
@@ -2349,14 +2359,25 @@
     // Build result URL with identity key (new system) and archetype (legacy)
     function buildResultUrl(extraParams = {}) {
       const { primary, shadow } = getPrimaryAndShadow();
-      const identity = getIdentityKey();
-      const params = new URLSearchParams({
-        i: identity,  // New dimension-based identity
-        a: primary,   // Legacy archetype (for OG metadata fallback)
-        s: shadow,    // Legacy shadow
-        ...extraParams
-      });
-      return `/wonder/essay/quiz/result?${params.toString()}`;
+      let identity = null;
+      try {
+        identity = getIdentityKey();
+        console.log('[Quiz] Dimension identity:', identity, 'from answers:', userAnswers);
+      } catch (e) {
+        console.error('[Quiz] Error calculating identity:', e);
+      }
+
+      const params = new URLSearchParams();
+      if (identity) params.set('i', identity);
+      params.set('a', primary);
+      params.set('s', shadow);
+
+      // Add extra params
+      Object.entries(extraParams).forEach(([k, v]) => params.set(k, v));
+
+      const url = `/wonder/essay/quiz/result?${params.toString()}`;
+      console.log('[Quiz] Redirecting to:', url);
+      return url;
     }
 
     async function showResult() {
