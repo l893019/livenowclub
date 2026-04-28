@@ -2104,7 +2104,13 @@
         })
       }).catch(() => {});
 
+      // Reset quiz state
       currentQuestion = 1;
+      userAnswers = [];
+      scores = {};
+      archetypeKeys.forEach(k => scores[k] = 0);
+      q6Answer = null;
+
       updateProgress(1);
       showScreen('screen-1');
     }
