@@ -12,7 +12,7 @@ This is deeply personal for me. Over the last year, I've undergone Stage IV canc
 
 > Who am I when I can no longer work the way I used to? Who am I when the core values I built my identity around have been razed?
 
-As we approach a post-AI future, a potential age of abundance, I suspect these may not just be mine. As AI makes more human labor optional and shifts how we show up in the world, they become everyone's. **Who are you when you don't have to work? What holds a society together when it no longer needs your productivity?**
+As we approach a post-AI future, a potential age of abundance, I suspect these may not just be my questions. As AI makes more human labor optional and shifts how we show up in the world, they become everyone's. **Who are you when you don't have to work? What holds a society together when it no longer needs your productivity?**
 
 - Louise 
 

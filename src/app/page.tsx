@@ -11,16 +11,6 @@ import Header from "@/components/Header";
 // Pull quotes for the filmstrip - pink style
 const QUOTES = [
   {
-    slug: "maybe",
-    title: "Maybe",
-    quote: "Bad luck brings good luck, good luck brings bad luck. It's an integrated cycle.",
-  },
-  {
-    slug: "the-other-side-of-grief",
-    title: "The other side of grief",
-    quote: "Cancer hasn't shrunk my life. It has skimmed it.",
-  },
-  {
     slug: "life-is-not-empty",
     title: "Life is not empty",
     quote: "Facing my mortality has revealed how much of my life I spent curating myself into smallness. Living now has become my spiritual practice, my rebellion.",
@@ -29,6 +19,11 @@ const QUOTES = [
     slug: "fixing-the-unfixable",
     title: "Fixing the Unfixable",
     quote: "There is nothing you can say that will solve it. But, there is much you can say that will keep someone company inside of it.",
+  },
+  {
+    slug: "the-other-side-of-grief",
+    title: "The other side of grief",
+    quote: "I wept from the strangeness of return. From the terror of starting anew. From the defiant choice to love this life anyway.",
   },
   {
     slug: "embracing-free-fall",
@@ -72,7 +67,7 @@ const QUOTES = [
 const SOFT_ENTRIES = [
   {
     prompt: "I was just diagnosed",
-    href: "/navigate/cancer",
+    href: "/navigate",
     ariaLabel: "Guide for the newly diagnosed",
   },
   {
@@ -108,11 +103,11 @@ const FEATURED = {
 
 // Editor's Pick - your handpicked recommendation
 const EDITORS_PICK = {
-  slug: "the-other-side-of-grief",
-  title: "The other side of grief",
-  excerpt: "Learning to rebuild life after cancer, finding joy in everyday moments.",
+  slug: "fixing-the-unfixable",
+  title: "Fixing the Unfixable",
+  excerpt: "What to say when there's nothing you can say.",
   type: "essay",
-  image: "/images/the-other-side-of-grief.jpg",
+  image: "/images/fixing-the-unfixable.jpg",
 };
 
 // Most recent pieces (by date)
@@ -124,22 +119,22 @@ const RECENT = [
     image: "/images/soulmd.jpg",
   },
   {
-    slug: "maybe",
-    title: "Maybe",
-    type: "essay",
-    image: "/images/maybe.jpg",
-  },
-  {
     slug: "if-you-can-keep-your-head-about-you",
     title: "If you can keep your head about you",
     type: "essay",
     image: "/images/keep-your-head.jpg",
   },
   {
-    slug: "the-case-for-magical-thinking",
-    title: "The case for magical thinking",
+    slug: "life-is-not-empty",
+    title: "Life is not empty",
     type: "essay",
-    image: "/images/the-case-for-magical-thinking.jpg",
+    image: "/images/life-is-not-empty.jpg",
+  },
+  {
+    slug: "expecting-the-unexpected",
+    title: "Expecting the Unexpected",
+    type: "guide",
+    image: "/images/expecting-the-unexpected.jpg",
   },
 ];
 
