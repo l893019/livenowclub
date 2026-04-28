@@ -15,8 +15,8 @@ export default function EmailCapture({
   identity,
   quizAnswers,
   context = 'essay',
-  title = 'Want deeper insights?',
-  description = 'Get essays and reflections delivered to your inbox.',
+  title = 'More like this?',
+  description = 'Essays on living now. Delivered occasionally.',
 }: EmailCaptureProps) {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -127,12 +127,12 @@ export default function EmailCapture({
         <p className={styles.consent}>
           <label>
             <input type="checkbox" required disabled={status === 'loading'} />
-            I want to receive The Live Now Club newsletter
+            Yes, send me essays
           </label>
         </p>
 
         <p className={styles.privacy}>
-          No spam. Unsubscribe anytime. Powered by Substack.
+          No spam. Unsubscribe anytime.
         </p>
 
         {status === 'error' && (

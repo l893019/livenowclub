@@ -687,8 +687,8 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
               identity={identity.name}
               quizAnswers={quizResult?.answers}
               context="quiz-result"
-              title="Want deeper insights?"
-              description="Get essays and reflections on meaning, purpose, and what we might become delivered to your inbox."
+              title="More like this?"
+              description="Essays on living now. Delivered occasionally."
             />
           )}
         </>
@@ -1099,8 +1099,8 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
               identity={archetype.name}
               quizAnswers={quizResult?.answers}
               context="quiz-result"
-              title="Want deeper insights?"
-              description="Get essays and reflections on meaning, purpose, and what we might become delivered to your inbox."
+              title="More like this?"
+              description="Essays on living now. Delivered occasionally."
             />
           )}
         </>
