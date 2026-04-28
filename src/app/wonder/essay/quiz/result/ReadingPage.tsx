@@ -163,11 +163,13 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
             const dims = calculateDimensions(convertedAnswers);
             setDimensions(dims);
 
-            // Look up identity instantly from dimensions
-            const adjIndex = getAdjectiveIndex(dims.certainty, dims.posture);
-            const foundIdentity = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIndex);
-            if (foundIdentity) {
-              setIdentity(foundIdentity);
+            // Only look up identity if we don't already have one from URL
+            if (!identityKey) {
+              const adjIndex = getAdjectiveIndex(dims.certainty, dims.posture);
+              const foundIdentity = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIndex);
+              if (foundIdentity) {
+                setIdentity(foundIdentity);
+              }
             }
 
             setIsLoadingReading(true);
@@ -232,11 +234,13 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
     const dims = calculateDimensions(answers);
     setDimensions(dims);
 
-    // Look up identity instantly from dimensions
-    const adjIndex = getAdjectiveIndex(dims.certainty, dims.posture);
-    const foundIdentity = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIndex);
-    if (foundIdentity) {
-      setIdentity(foundIdentity);
+    // Only look up identity if we don't already have one from URL
+    if (!identityKey) {
+      const adjIndex = getAdjectiveIndex(dims.certainty, dims.posture);
+      const foundIdentity = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIndex);
+      if (foundIdentity) {
+        setIdentity(foundIdentity);
+      }
     }
 
     setIsLoadingReading(true);
