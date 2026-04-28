@@ -106,6 +106,63 @@
   margin: 0 auto;
 }
 
+/* Header Share CTA */
+.headerShare {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(232, 23, 138, 0.08) 0%, rgba(244, 160, 63, 0.08) 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(232, 23, 138, 0.15);
+}
+
+.headerShareRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.headerShareLink {
+  font-size: 0.85rem;
+  color: rgba(45, 42, 38, 0.7);
+  font-family: monospace;
+  background: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid rgba(232, 23, 138, 0.2);
+}
+
+.headerCopyButton {
+  background: linear-gradient(135deg, #e8178a 0%, #f4a03f 100%);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.headerCopyButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(232, 23, 138, 0.3);
+}
+
+.headerShareHint {
+  font-size: 0.8rem;
+  color: rgba(45, 42, 38, 0.5);
+  margin: 0.5rem 0 0;
+  text-align: center;
+}
+
+/* Your World Section */
+.yourWorldSection {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
 /* Utopia Card */
 .utopiaCard {
   background: white;

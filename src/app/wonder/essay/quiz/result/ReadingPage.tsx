@@ -90,7 +90,7 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
     const userId = localStorage.getItem("quiz-user-id");
     setHasQuizUserId(!!userId);
 
-    // Load user slug from localStorage or fetch from API
+    // Load user slug from localStorage or fetch/generate from API
     const storedSlug = localStorage.getItem("userSlug");
     if (storedSlug) {
       setUserSlug(storedSlug);
@@ -98,10 +98,37 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
       // Fetch user data to get slug
       fetch(`/api/utopia/user/${userId}`)
         .then(res => res.json())
-        .then(data => {
+        .then(async data => {
           if (data.user?.slug) {
             setUserSlug(data.user.slug);
             localStorage.setItem("userSlug", data.user.slug);
+          } else {
+            // Backfill: Generate slug for existing users who don't have one
+            const storedResult = localStorage.getItem("quiz-user-result");
+            if (storedResult) {
+              try {
+                const parsed = JSON.parse(storedResult);
+                const result = {
+                  id: userId,
+                  name: parsed.name || "Anonymous",
+                  archetype: parsed.archetype,
+                  secondaryArchetype: parsed.secondaryArchetype,
+                  answers: parsed.answers,
+                };
+                const saveRes = await fetch('/api/utopia/save-result', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ result })
+                });
+                const saveData = await saveRes.json();
+                if (saveData.slug) {
+                  setUserSlug(saveData.slug);
+                  localStorage.setItem("userSlug", saveData.slug);
+                }
+              } catch (e) {
+                console.error("Failed to backfill slug:", e);
+              }
+            }
           }
         })
         .catch(console.error);
@@ -368,6 +395,28 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
           <header className={styles.header}>
             <p className={styles.label}>{labelText}</p>
             <h1 className={styles.name}>{identity.name}</h1>
+
+            {/* Personal share link - in header for visibility */}
+            {userSlug && !isViewingOther && (
+              <div className={styles.headerShare}>
+                <div className={styles.headerShareRow}>
+                  <span className={styles.headerShareLink}>
+                    livenowclub.vercel.app/meet/{userSlug}
+                  </span>
+                  <button
+                    className={styles.headerCopyButton}
+                    onClick={() => {
+                      navigator.clipboard.writeText(`https://livenowclub.vercel.app/meet/${userSlug}`);
+                      setLinkCopied(true);
+                      setTimeout(() => setLinkCopied(false), 2000);
+                    }}
+                  >
+                    {linkCopied ? "Copied!" : "Copy Link"}
+                  </button>
+                </div>
+                <p className={styles.headerShareHint}>Share with friends to see your compatibility</p>
+              </div>
+            )}
           </header>
 
           {/* Utopia Card */}
@@ -387,28 +436,9 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
             </div>
           )}
 
-          {/* Personal share link */}
+          {/* Your World link */}
           {userSlug && !isViewingOther && (
-            <div className={styles.shareSection}>
-              <p className={styles.shareLabel}>Share your link</p>
-              <div className={styles.linkBox}>
-                <span className={styles.linkText}>
-                  livenowclub.vercel.app/meet/{userSlug}
-                </span>
-                <button
-                  className={styles.copyLinkButton}
-                  onClick={() => {
-                    navigator.clipboard.writeText(`https://livenowclub.vercel.app/meet/${userSlug}`);
-                    setLinkCopied(true);
-                    setTimeout(() => setLinkCopied(false), 2000);
-                  }}
-                >
-                  {linkCopied ? "Copied!" : "Copy"}
-                </button>
-              </div>
-              <p className={styles.shareHint}>
-                Send to friends to see your compatibility
-              </p>
+            <div className={styles.yourWorldSection}>
               <Link href="/me" className={styles.yourWorldLink}>
                 Go to Your World →
               </Link>
@@ -625,9 +655,31 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
             {!isViewingOther && combinationContent && (
               <p className={styles.tagline}>{combinationContent.tagline}</p>
             )}
+
+            {/* Personal share link - in header for visibility */}
+            {userSlug && !isViewingOther && (
+              <div className={styles.headerShare}>
+                <div className={styles.headerShareRow}>
+                  <span className={styles.headerShareLink}>
+                    livenowclub.vercel.app/meet/{userSlug}
+                  </span>
+                  <button
+                    className={styles.headerCopyButton}
+                    onClick={() => {
+                      navigator.clipboard.writeText(`https://livenowclub.vercel.app/meet/${userSlug}`);
+                      setLinkCopied(true);
+                      setTimeout(() => setLinkCopied(false), 2000);
+                    }}
+                  >
+                    {linkCopied ? "Copied!" : "Copy Link"}
+                  </button>
+                </div>
+                <p className={styles.headerShareHint}>Share with friends to see your compatibility</p>
+              </div>
+            )}
           </header>
 
-      {/* Utopia Card */}
+          {/* Utopia Card */}
           <div className={styles.utopiaCard}>
             <img src={imageUrl} alt={archetype.name} className={styles.utopiaImage} />
             <div className={styles.utopiaLabel}>{isViewingOther ? "Their Utopia" : "Your Utopia"}</div>
