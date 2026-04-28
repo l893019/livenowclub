@@ -29,16 +29,6 @@ export function ResultPageClient({
           --accent-pink: #e8178a;
           --accent-color: ${archetypeColor};
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-          background: var(--bg-deep);
-          color: var(--text);
-          font-family: 'Satoshi', system-ui, sans-serif;
-          font-size: 17px;
-          line-height: 1.75;
-          font-weight: 300;
-          min-height: 100vh;
-        }
       `}</style>
 
       <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
