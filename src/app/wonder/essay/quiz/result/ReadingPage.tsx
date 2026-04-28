@@ -52,6 +52,8 @@ type ReadingPageProps = {
   personName?: string;
   /** Optional: user ID to show relationship comparison with (viral loop) */
   compareUserId?: string;
+  /** Optional: identity key from URL (new dimension-based system) */
+  identityKey?: string;
 };
 
 // Map compatibility descriptions to archetype keys
@@ -72,7 +74,7 @@ const compatibilityMap: Record<string, string> = {
   "the one still figuring it out": "between",
 };
 
-export function ReadingPage({ archetypeKey, answers, onBack, groupContext, personName, compareUserId }: ReadingPageProps) {
+export function ReadingPage({ archetypeKey, answers, onBack, groupContext, personName, compareUserId, identityKey }: ReadingPageProps) {
   const [showCreateUtopia, setShowCreateUtopia] = useState(false);
   const [existingUtopia, setExistingUtopia] = useState<CreatedUtopia | null>(null);
   const [hasQuizUserId, setHasQuizUserId] = useState<boolean | null>(null);
@@ -81,7 +83,13 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
   const [isLoadingReading, setIsLoadingReading] = useState(false);
   const [readingError, setReadingError] = useState<string | null>(null);
   const [dimensions, setDimensions] = useState<Dimensions | null>(null);
-  const [identity, setIdentity] = useState<Identity | null>(null);
+  const [identity, setIdentity] = useState<Identity | null>(() => {
+    // Initialize from URL identity key if provided
+    if (identityKey) {
+      return identities[identityKey] || null;
+    }
+    return null;
+  });
   const [userSlug, setUserSlug] = useState<string | null>(null);
   const [linkCopied, setLinkCopied] = useState(false);
   const archetype = archetypes[archetypeKey];

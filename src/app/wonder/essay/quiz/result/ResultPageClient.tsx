@@ -6,12 +6,14 @@ type ResultPageClientProps = {
   archetypeKey: string;
   archetypeColor: string;
   compareUserId?: string;
+  identityKey?: string;
 };
 
 export function ResultPageClient({
   archetypeKey,
   archetypeColor,
   compareUserId,
+  identityKey,
 }: ResultPageClientProps) {
   return (
     <>
@@ -40,7 +42,7 @@ export function ResultPageClient({
       <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
       <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet" />
 
-      <ReadingPage archetypeKey={archetypeKey} compareUserId={compareUserId} />
+      <ReadingPage archetypeKey={archetypeKey} compareUserId={compareUserId} identityKey={identityKey} />
     </>
   );
 }

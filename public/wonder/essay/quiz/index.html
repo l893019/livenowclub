@@ -1925,6 +1925,80 @@
     let q6Answer = null; // For tie-breaking
     let userAnswers = []; // Track all answers
 
+    // =========================================================================
+    // DIMENSION-BASED IDENTITY SYSTEM
+    // =========================================================================
+    // Dimension scoring: each answer's effect on [agency, certainty, posture]
+    // agency: -1 = Witness, +1 = Builder
+    // certainty: -1 = Seeking, +1 = Settled
+    // posture: -1 = Protective, +1 = Expansive
+    const DIMENSION_SCORING = {
+      1: { A: [1, 0, 1], B: [-1, 0, -1], C: [-1, 0, -1], D: [0, -1, 0], E: [-1, 1, 0], F: [1, 0, -1] },
+      2: { A: [1, 1, 0], B: [-1, 1, 0], C: [-1, -1, 0], D: [0, -1, 1], E: [-1, 0, 1], F: [1, 0, -1] },
+      3: { A: [-1, 0, 0], B: [0, 0, -1], C: [0, 0, 1], D: [0, -1, 0], E: [-1, 1, 0] },
+      4: { A: [0, -1, 0], B: [1, 0, 1], C: [-1, 0, -1], D: [0, 1, 0], E: [0, -1, 1], F: [1, 0, 1] },
+      5: { A: [0, 0, 1], B: [1, 0, 0], C: [-1, 0, 0], D: [0, -1, 0], E: [0, 0, 1], F: [0, 1, -1] },
+      6: { A: [1, 1, 0], B: [-1, 1, 0], C: [-1, -1, 0], D: [0, 0, -1], E: [-1, 0, 0], F: [1, 0, 0], G: [0, -1, 0] },
+      7: { A: [1, 1, 1], B: [0, 0, -1], C: [-1, 1, 0], D: [0, -1, 0], E: [0, -1, 1], F: [0, 0, 1], G: [1, 0, 1] }
+    };
+
+    // Identity adjectives based on quadrant
+    const ADJECTIVES = {
+      'settled-expansive': ['confident', 'assured', 'bold'],
+      'settled-protective': ['steady', 'grounded', 'anchored'],
+      'seeking-expansive': ['adaptive', 'curious', 'open'],
+      'seeking-protective': ['careful', 'cautious', 'measured']
+    };
+
+    // Agency nouns
+    const NOUNS = ['witness', 'noticer', 'observer', 'maker', 'shaper', 'architect', 'builder'];
+
+    function calculateDimensions() {
+      let raw = { agency: 0, certainty: 0, posture: 0 };
+      let max = { agency: 0, certainty: 0, posture: 0 };
+
+      userAnswers.forEach((answer, i) => {
+        const q = i + 1;
+        const scoring = DIMENSION_SCORING[q]?.[answer];
+        if (scoring) {
+          raw.agency += scoring[0];
+          raw.certainty += scoring[1];
+          raw.posture += scoring[2];
+        }
+        // Calculate max possible for normalization
+        const qScores = Object.values(DIMENSION_SCORING[q] || {});
+        max.agency += Math.max(...qScores.map(s => Math.abs(s[0])));
+        max.certainty += Math.max(...qScores.map(s => Math.abs(s[1])));
+        max.posture += Math.max(...qScores.map(s => Math.abs(s[2])));
+      });
+
+      return {
+        agency: max.agency > 0 ? raw.agency / max.agency : 0,
+        certainty: max.certainty > 0 ? raw.certainty / max.certainty : 0,
+        posture: max.posture > 0 ? raw.posture / max.posture : 0
+      };
+    }
+
+    function getIdentityKey() {
+      const dims = calculateDimensions();
+
+      // Determine quadrant
+      const certLabel = dims.certainty >= 0 ? 'settled' : 'seeking';
+      const postLabel = dims.posture >= 0 ? 'expansive' : 'protective';
+      const quadrant = `${certLabel}-${postLabel}`;
+
+      // Get adjective based on position within quadrant (use middle one for now)
+      const adjectives = ADJECTIVES[quadrant];
+      const adjective = adjectives[1]; // Use middle adjective
+
+      // Get noun based on agency (map -1 to +1 range to 0-6 index)
+      const nounIndex = Math.round((dims.agency + 1) / 2 * (NOUNS.length - 1));
+      const noun = NOUNS[Math.max(0, Math.min(NOUNS.length - 1, nounIndex))];
+
+      return `${adjective}-${noun}`;
+    }
+    // =========================================================================
+
     // Check for reset parameter
     if (new URLSearchParams(window.location.search).has('reset')) {
       localStorage.removeItem('quiz-user-id');
@@ -2203,8 +2277,7 @@
       const inviteData = sessionStorage.getItem('utopia-invite');
       if (!inviteData || !userId || !userResult) {
         // Fallback to regular result
-        const { primary, shadow } = getPrimaryAndShadow();
-        window.location.href = `/wonder/essay/quiz/result?a=${primary}&s=${shadow}`;
+        window.location.href = buildResultUrl();
         return;
       }
 
@@ -2243,15 +2316,13 @@
           console.error('Join failed:', data.error);
           sessionStorage.removeItem('utopia-invite');
           alert(data.error || 'Failed to join the group. You can try again from your result page.');
-          const { primary, shadow } = getPrimaryAndShadow();
-          window.location.href = `/wonder/essay/quiz/result?a=${primary}&s=${shadow}`;
+          window.location.href = buildResultUrl();
         }
       } catch (error) {
         console.error('Failed to join utopia:', error);
         sessionStorage.removeItem('utopia-invite');
         alert('Failed to join the group. Please try again.');
-        const { primary, shadow } = getPrimaryAndShadow();
-        window.location.href = `/wonder/essay/quiz/result?a=${primary}&s=${shadow}`;
+        window.location.href = buildResultUrl();
       }
     }
 
@@ -2273,6 +2344,19 @@
       }
 
       return { primary, shadow };
+    }
+
+    // Build result URL with identity key (new system) and archetype (legacy)
+    function buildResultUrl(extraParams = {}) {
+      const { primary, shadow } = getPrimaryAndShadow();
+      const identity = getIdentityKey();
+      const params = new URLSearchParams({
+        i: identity,  // New dimension-based identity
+        a: primary,   // Legacy archetype (for OG metadata fallback)
+        s: shadow,    // Legacy shadow
+        ...extraParams
+      });
+      return `/wonder/essay/quiz/result?${params.toString()}`;
     }
 
     async function showResult() {
@@ -2340,12 +2424,12 @@
       if (compareUserId) {
         sessionStorage.removeItem('relationship-compare');
         // Redirect to result page with compare parameter
-        window.location.href = `/wonder/essay/quiz/result?a=${primary}&s=${shadow}&compare=${compareUserId}`;
+        window.location.href = buildResultUrl({ compare: compareUserId });
         return;
       }
 
       // Go to result page
-      window.location.href = `/wonder/essay/quiz/result?a=${primary}&s=${shadow}`;
+      window.location.href = buildResultUrl();
     }
 
     function shareResult() {
