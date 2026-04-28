@@ -3,7 +3,7 @@
 .reading {
   min-height: 100vh;
   background: #faf6f1;
-  padding: 3rem 1.5rem 4rem;
+  padding: 6rem 1.5rem 4rem; /* Extra top padding for header */
   max-width: 680px;
   margin: 0 auto;
   position: relative;
