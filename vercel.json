@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "headers": [
+    {
+      "source": "/wonder/essay/quiz/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
+      ]
+    }
+  ],
+  "cleanUrls": true
+}
