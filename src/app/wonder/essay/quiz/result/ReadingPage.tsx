@@ -625,12 +625,56 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
             </div>
           </section>
 
-          {/* Essay Link */}
-          <div className={styles.essayLink}>
-            <Link href="/wonder/essay" className={styles.essayLinkText}>
-              Read <em>When Purpose Is All We Have Left</em> &rarr;
+          {/* Essay Promotion Section */}
+          <section className={styles.essayPromoSection}>
+            <h2 className={styles.essayPromoTitle}>Continue the Journey</h2>
+
+            {/* Featured Essay */}
+            <Link href="/wonder/essay" className={styles.featuredEssayCard}>
+              <div className={styles.featuredEssayImage}>
+                <img
+                  src="/wonder/assets/landscapes/optimized/1.jpg"
+                  alt="When Purpose Is All We Have Left"
+                />
+              </div>
+              <div className={styles.featuredEssayContent}>
+                <span className={styles.featuredEssayLabel}>The Essay Behind the Quiz</span>
+                <h3 className={styles.featuredEssayTitle}>When Purpose Is All We Have Left</h3>
+                <p className={styles.featuredEssayExcerpt}>
+                  What happens when technology solves our survival problems? An exploration of meaning, identity, and what we might become.
+                </p>
+                <span className={styles.featuredEssayRead}>Read the essay →</span>
+              </div>
             </Link>
-          </div>
+
+            {/* More Essays */}
+            <div className={styles.moreEssays}>
+              <h3 className={styles.moreEssaysTitle}>More to Read</h3>
+              <div className={styles.essayGrid}>
+                <Link href="/read/the-live-now-club" className={styles.essayCard}>
+                  <img src="/images/the-live-now-club.gif" alt="The Live Now Club" className={styles.essayCardImage} />
+                  <div className={styles.essayCardContent}>
+                    <h4>The Live Now Club</h4>
+                    <p>Living to live, not living not to die.</p>
+                  </div>
+                </Link>
+                <Link href="/read/fixing-the-unfixable" className={styles.essayCard}>
+                  <img src="/images/fixing-the-unfixable.jpg" alt="Fixing the Unfixable" className={styles.essayCardImage} />
+                  <div className={styles.essayCardContent}>
+                    <h4>Fixing the Unfixable</h4>
+                    <p>What to say when there is nothing to say.</p>
+                  </div>
+                </Link>
+                <Link href="/read/soulmd" className={styles.essayCard}>
+                  <img src="/images/soulmd.jpg" alt="Soul.md" className={styles.essayCardImage} />
+                  <div className={styles.essayCardContent}>
+                    <h4>Soul.md</h4>
+                    <p>On AI, meaning, and what makes us human.</p>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </section>
         </>
       )}
 
@@ -978,12 +1022,56 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
             </div>
           </section>
 
-          {/* Essay Link */}
-          <div className={styles.essayLink}>
-            <Link href="/wonder/essay" className={styles.essayLinkText}>
-              Read <em>When Purpose Is All We Have Left</em> &rarr;
+          {/* Essay Promotion Section */}
+          <section className={styles.essayPromoSection}>
+            <h2 className={styles.essayPromoTitle}>Continue the Journey</h2>
+
+            {/* Featured Essay */}
+            <Link href="/wonder/essay" className={styles.featuredEssayCard}>
+              <div className={styles.featuredEssayImage}>
+                <img
+                  src="/wonder/assets/landscapes/optimized/1.jpg"
+                  alt="When Purpose Is All We Have Left"
+                />
+              </div>
+              <div className={styles.featuredEssayContent}>
+                <span className={styles.featuredEssayLabel}>The Essay Behind the Quiz</span>
+                <h3 className={styles.featuredEssayTitle}>When Purpose Is All We Have Left</h3>
+                <p className={styles.featuredEssayExcerpt}>
+                  What happens when technology solves our survival problems? An exploration of meaning, identity, and what we might become.
+                </p>
+                <span className={styles.featuredEssayRead}>Read the essay →</span>
+              </div>
             </Link>
-          </div>
+
+            {/* More Essays */}
+            <div className={styles.moreEssays}>
+              <h3 className={styles.moreEssaysTitle}>More to Read</h3>
+              <div className={styles.essayGrid}>
+                <Link href="/read/the-live-now-club" className={styles.essayCard}>
+                  <img src="/images/the-live-now-club.gif" alt="The Live Now Club" className={styles.essayCardImage} />
+                  <div className={styles.essayCardContent}>
+                    <h4>The Live Now Club</h4>
+                    <p>Living to live, not living not to die.</p>
+                  </div>
+                </Link>
+                <Link href="/read/fixing-the-unfixable" className={styles.essayCard}>
+                  <img src="/images/fixing-the-unfixable.jpg" alt="Fixing the Unfixable" className={styles.essayCardImage} />
+                  <div className={styles.essayCardContent}>
+                    <h4>Fixing the Unfixable</h4>
+                    <p>What to say when there is nothing to say.</p>
+                  </div>
+                </Link>
+                <Link href="/read/soulmd" className={styles.essayCard}>
+                  <img src="/images/soulmd.jpg" alt="Soul.md" className={styles.essayCardImage} />
+                  <div className={styles.essayCardContent}>
+                    <h4>Soul.md</h4>
+                    <p>On AI, meaning, and what makes us human.</p>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </section>
         </>
       )}
     </div>
