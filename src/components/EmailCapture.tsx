@@ -96,12 +96,6 @@ export default function EmailCapture({
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        {identity && (
-          <div className={styles.identity}>
-            <span className={styles.identityLabel}>Your Identity:</span>
-            <span className={styles.identityName}>{identity}</span>
-          </div>
-        )}
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>
 
