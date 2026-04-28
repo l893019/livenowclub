@@ -67,7 +67,7 @@ const QUOTES = [
 const SOFT_ENTRIES = [
   {
     prompt: "I was just diagnosed",
-    href: "/navigate",
+    href: "/navigate/cancer",
     ariaLabel: "Guide for the newly diagnosed",
   },
   {

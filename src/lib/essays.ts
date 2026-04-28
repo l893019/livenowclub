@@ -39,6 +39,8 @@ const PULL_QUOTES: Record<string, string> = {
   "cancer-meditations": "I am not dying from this. But it's given me some peace to think that we are all on a path toward death, that we build beautiful lives that dissolve into beautiful nothingness. And in that path, I don't want to die with my art still in me.",
   "threads-of-survival": "I think about that spider's resiliency. I think every day about it hiding from the water and gingerly sticking its leg out to make a move. Every day, I return to this moment, wrestling with the humbling truth that binds us together - both small and scared, both fighting fiercely against the tide.",
   "i-love-lou": "I met her on February 13, 2022. Like any good meet-cute, I had this feeling I had met her long ago, maybe in another lifetime. I realized I couldn't mess it up. This was going to be a very special person in my life - arguably the most special. Her name is Lou.",
+  "playing-reindeer-games": "She has manufactured every possible way for me to live my happiest life, regardless of my physical circumstance, surrounding me with beauty and joy.",
+  "god-is-in-the-trees": "I wanted to burn something to make something, the elements of carbon rearranging themselves from destruction to life.",
 };
 
 // Map titles to images
@@ -96,6 +98,8 @@ const IMAGE_MAP: Record<string, string> = {
   "in-any-given-moment-the-strongest-dream-in-that-moment-wins": "in-any-given-moment.jpg",
   "on-friendship-and-couches": "on-friendship-and-couches.jpg",
   "manifesto": "hero-playa-faded.png",
+  "playing-reindeer-games": "playing-reindeer-games.jpg",
+  "god-is-in-the-trees": "god-is-in-the-trees.gif",
 };
 
 // Curated pathways - Updated 2026-03-29 per Memoirist essay mapping
@@ -164,6 +168,7 @@ export const PATHWAYS: Pathway[] = [
     title: "Finding Joy Anyway",
     subtitle: "Because life is also beautiful.",
     essays: [
+      "playing-reindeer-games",
       "the-case-for-magical-thinking",
       "life-is-not-empty",
       "and-still-the-figs-ripen",
@@ -179,6 +184,7 @@ export const PATHWAYS: Pathway[] = [
     title: "Wonder",
     subtitle: "AI, philosophy, dreams, and the deeper questions.",
     essays: [
+      "god-is-in-the-trees", // Creation, spiritual renewal, art
       "soulmd", // AI, meaning, productivity
       "the-butterfly-dream", // Dreams, Jung, symbols
       "life-is-not-empty", // Languages, poetry, creation
@@ -508,6 +514,7 @@ export const CANCER_GUIDE: Pathway[] = [
     essays: [
       "fixing-the-unfixable", // THE essay on what to say - first for caregivers
       "expecting-the-unexpected", // Has caregiver section at the end
+      "playing-reindeer-games", // What good support looks like
       "it-takes-a-village",
     ],
   },
@@ -539,6 +546,7 @@ export const CANCER_GUIDE: Pathway[] = [
     subtitle: "Making sense of it all.",
     essays: [
       "the-live-now-club", // The core philosophy
+      "god-is-in-the-trees", // Transforming illness into art/spirituality
       "the-crack-is-where-the-light-enters",
       "the-case-for-magical-thinking",
       "and-still-the-figs-ripen",
