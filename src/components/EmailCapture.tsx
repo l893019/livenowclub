@@ -124,13 +124,6 @@ export default function EmailCapture({
           </button>
         </form>
 
-        <p className={styles.consent}>
-          <label>
-            <input type="checkbox" required disabled={status === 'loading'} />
-            Yes, send me essays
-          </label>
-        </p>
-
         <p className={styles.privacy}>
           No spam. Unsubscribe anytime.
         </p>

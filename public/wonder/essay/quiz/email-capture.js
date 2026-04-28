@@ -64,15 +64,8 @@ function createEmailCapture(identity, quizAnswers) {
         </button>
       </form>
 
-      <p style="font-size: 14px; color: #666; margin: 0 0 8px;">
-        <label style="display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer;">
-          <input type="checkbox" id="consent-checkbox" required style="cursor: pointer;" />
-          I want to receive The Live Now Club newsletter
-        </label>
-      </p>
-
       <p style="font-size: 13px; color: #999; margin: 0;">
-        No spam. Unsubscribe anytime. Powered by Substack.
+        No spam. Unsubscribe anytime.
       </p>
 
       <div id="email-message" style="margin-top: 16px; display: none;"></div>
@@ -82,16 +75,10 @@ function createEmailCapture(identity, quizAnswers) {
   const form = container.querySelector('#email-capture-form');
   const emailInput = container.querySelector('#email-input');
   const submitBtn = container.querySelector('#email-submit-btn');
-  const consentCheckbox = container.querySelector('#consent-checkbox');
   const messageDiv = container.querySelector('#email-message');
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-
-    if (!consentCheckbox.checked) {
-      showMessage('Please confirm you want to receive the newsletter', 'error');
-      return;
-    }
 
     const email = emailInput.value;
     submitBtn.disabled = true;
@@ -166,7 +153,6 @@ function createEmailCapture(identity, quizAnswers) {
         }
 
         form.style.display = 'none';
-        consentCheckbox.parentElement.parentElement.style.display = 'none';
       } else {
         showMessage(data.error || 'Something went wrong. Please try again.', 'error');
         submitBtn.disabled = false;
