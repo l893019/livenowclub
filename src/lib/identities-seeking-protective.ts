@@ -4,7 +4,7 @@
  * Quadrant characteristics:
  * - Questioning + preservation orientation
  * - Thoughtful, cautious, analytical
- * - Adjectives: Careful (most extreme), Cautious (middle), Measured (mildest)
+ * - Adjectives: Watchful (most extreme), Careful (middle), Thoughtful (mildest)
  *
  * 7 nouns x 3 adjectives = 21 identities
  */
@@ -16,12 +16,12 @@ export const seekingProtectiveIdentities: Record<string, Identity> = {
   // ARCHITECT identities (highest agency)
   // =============================================================================
 
-  'careful-architect': {
-    key: 'careful-architect',
-    name: 'Careful Architect',
+  'watchful-architect': {
+    key: 'watchful-architect',
+    name: 'Watchful Architect',
     color: '#6366f1',
     noun: 'architect',
-    adjective: 'careful',
+    adjective: 'watchful',
     quadrant: 'seeking-protective',
 
     utopia:
@@ -59,7 +59,7 @@ There's also the cost of excessive defensiveness. Systems optimized for failure 
     ],
 
     howYouGotHere:
-      "Your answers revealed someone who designs at the systems level with deep care for what could go wrong. You question assumptions while building protections. This combination of high agency, seeking orientation, and protective instinct maps to the Careful Architect.",
+      "Your answers revealed someone who designs at the systems level with deep care for what could go wrong. You question assumptions while building protections. This combination of high agency, seeking orientation, and protective instinct maps to the Watchful Architect.",
 
     alignsWith:
       'other Protective types—you share the orientation toward what could go wrong, toward building safeguards and considering risks',
@@ -99,12 +99,12 @@ There's also the cost of excessive defensiveness. Systems optimized for failure 
     },
   },
 
-  'cautious-architect': {
-    key: 'cautious-architect',
-    name: 'Cautious Architect',
+  'careful-architect': {
+    key: 'careful-architect',
+    name: 'Careful Architect',
     color: '#818cf8',
     noun: 'architect',
-    adjective: 'cautious',
+    adjective: 'careful',
     quadrant: 'seeking-protective',
 
     utopia:
@@ -142,7 +142,7 @@ There's also the social cost. Being the person who always raises concerns can po
     ],
 
     howYouGotHere:
-      'Your answers showed systems-level thinking combined with awareness of risk. You design ambitiously but not blindly. This maps to the Cautious Architect.',
+      'Your answers showed systems-level thinking combined with awareness of risk. You design ambitiously but not blindly. This maps to the Careful Architect.',
 
     alignsWith:
       'other Seeking types—you share the questioning orientation, the sense that assumptions need examination',
@@ -182,12 +182,12 @@ There's also the social cost. Being the person who always raises concerns can po
     },
   },
 
-  'measured-architect': {
-    key: 'measured-architect',
-    name: 'Measured Architect',
+  'thoughtful-architect': {
+    key: 'thoughtful-architect',
+    name: 'Thoughtful Architect',
     color: '#a5b4fc',
     noun: 'architect',
-    adjective: 'measured',
+    adjective: 'thoughtful',
     quadrant: 'seeking-protective',
 
     utopia:
@@ -211,24 +211,24 @@ This makes you reliable. Teams know your commitments will be met, your estimates
     blindSpot:
       "Your measured approach can become safe mediocrity. Sometimes breakthroughs require unmeasured commitment.",
 
-    blindSpotExpanded: `Measured isn't always right.
+    blindSpotExpanded: `Thoughtful isn't always right.
 
 Your balanced judgment serves you well in most contexts—but some achievements require imbalanced commitment. The project that changes everything might need unmeasured dedication. The breakthrough that defines a career might require throwing caution aside temporarily.
 
 There's also the risk of measured becoming comfortable. If measured means "what I'm sure I can handle," you might never discover what you're capable of when stretched.`,
 
     coreBeliefs: [
-      'Measured progress is sustainable progress',
+      'Thoughtful progress is sustainable progress',
       'Good architecture matches ambition to capacity',
       'The measured architect finishes what they start',
       'Calibration is a skill, not a limitation',
     ],
 
     howYouGotHere:
-      'Your answers showed systems-level thinking combined with balanced judgment. You design thoughtfully without overcaution or overreach. This maps to the Measured Architect.',
+      'Your answers showed systems-level thinking combined with balanced judgment. You design thoughtfully without overcaution or overreach. This maps to the Thoughtful Architect.',
 
     alignsWith:
-      'other Measured types—you share the balanced approach, the calibration of effort to circumstances',
+      'other Thoughtful types—you share the balanced approach, the calibration of effort to circumstances',
     tensionWith:
       'Adaptive types—their rapid changes can feel like lack of commitment to any particular direction',
     growsWith:
@@ -239,7 +239,7 @@ There's also the risk of measured becoming comfortable. If measured means "what 
         title: 'The Dispossessed',
         author: 'Le Guin',
         reason:
-          'Two worlds, two systems, balanced against each other. Measured architecture of society.',
+          'Two worlds, two systems, balanced against each other. Thoughtful architecture of society.',
       },
       {
         title: 'Red Mars',
@@ -251,7 +251,7 @@ There's also the risk of measured becoming comfortable. If measured means "what 
         title: 'A Memory Called Empire',
         author: 'Martine',
         reason:
-          'Political systems designed with care. Measured navigation of complex power structures.',
+          'Political systems designed with care. Thoughtful navigation of complex power structures.',
       },
     ],
 
@@ -269,12 +269,12 @@ There's also the risk of measured becoming comfortable. If measured means "what 
   // BUILDER identities (high agency)
   // =============================================================================
 
-  'careful-builder': {
-    key: 'careful-builder',
-    name: 'Careful Builder',
+  'watchful-builder': {
+    key: 'watchful-builder',
+    name: 'Watchful Builder',
     color: '#575ae0',
     noun: 'builder',
-    adjective: 'careful',
+    adjective: 'watchful',
     quadrant: 'seeking-protective',
 
     utopia:
@@ -306,16 +306,16 @@ There's also the opportunity cost. Time spent perfecting one build is time not s
 
     coreBeliefs: [
       'Quality in construction prevents crisis in operation',
-      'Careful building is efficient building—problems caught early cost less',
+      'Watchful building is efficient building—problems caught early cost less',
       'The careful builder questions everything, trusts nothing without verification',
       'Good work speaks for itself, but only if it gets finished',
     ],
 
     howYouGotHere:
-      'Your answers showed hands-on building combined with extraordinary care for quality. You make things, and you make them right. This maps to the Careful Builder.',
+      'Your answers showed hands-on building combined with extraordinary care for quality. You make things, and you make them right. This maps to the Watchful Builder.',
 
     alignsWith:
-      'other Careful types—you share the deep attention to quality, the questioning of assumptions',
+      'other Watchful types—you share the deep attention to quality, the questioning of assumptions',
     tensionWith:
       "Bold types—their speed can feel like carelessness, like they're creating problems for later",
     growsWith:
@@ -332,7 +332,7 @@ There's also the opportunity cost. Time spent perfecting one build is time not s
         title: 'Project Hail Mary',
         author: 'Weir',
         reason:
-          'Careful engineering saves humanity. Building with care when failure means extinction.',
+          'Watchful engineering saves humanity. Building with care when failure means extinction.',
       },
       {
         title: 'Rendezvous with Rama',
@@ -352,12 +352,12 @@ There's also the opportunity cost. Time spent perfecting one build is time not s
     },
   },
 
-  'cautious-builder': {
-    key: 'cautious-builder',
-    name: 'Cautious Builder',
+  'careful-builder': {
+    key: 'careful-builder',
+    name: 'Careful Builder',
     color: '#747ce7',
     noun: 'builder',
-    adjective: 'cautious',
+    adjective: 'careful',
     quadrant: 'seeking-protective',
 
     utopia:
@@ -388,14 +388,14 @@ Your risk-aware building produces robust results, but it also takes more time an
 There's also the danger of caution creep. If one cautious step prevents one problem, maybe two cautious steps prevent two problems? This reasoning leads to ever-increasing overhead that eventually crushes the building itself.`,
 
     coreBeliefs: [
-      'Cautious building is smart building—it accounts for reality',
+      'Careful building is smart building—it accounts for reality',
       'Risk awareness should inform construction, not prevent it',
       'The cautious builder builds appropriate protection, not maximum protection',
       'What could fail is as important as what should work',
     ],
 
     howYouGotHere:
-      'Your answers showed hands-on building combined with awareness of risk. You construct with your eyes open to what could go wrong. This maps to the Cautious Builder.',
+      'Your answers showed hands-on building combined with awareness of risk. You construct with your eyes open to what could go wrong. This maps to the Careful Builder.',
 
     alignsWith:
       'other Protective types—you share the orientation toward risk, toward building safeguards into what you create',
@@ -421,7 +421,7 @@ There's also the danger of caution creep. If one cautious step prevents one prob
         title: 'Tau Zero',
         author: 'Anderson',
         reason:
-          'Building under pressure as the universe dies around you. Cautious action when there\'s no margin for error.',
+          'Building under pressure as the universe dies around you. Careful action when there\'s no margin for error.',
       },
     ],
 
@@ -435,12 +435,12 @@ There's also the danger of caution creep. If one cautious step prevents one prob
     },
   },
 
-  'measured-builder': {
-    key: 'measured-builder',
-    name: 'Measured Builder',
+  'thoughtful-builder': {
+    key: 'thoughtful-builder',
+    name: 'Thoughtful Builder',
     color: '#98a2f5',
     noun: 'builder',
-    adjective: 'measured',
+    adjective: 'thoughtful',
     quadrant: 'seeking-protective',
 
     utopia:
@@ -464,7 +464,7 @@ Teams value your measured building because they can count on it. Your estimates 
     blindSpot:
       'Your measured pace can become comfortable limitation. Sometimes construction needs to accelerate beyond sustainable pace.',
 
-    blindSpotExpanded: `Measured isn't always appropriate.
+    blindSpotExpanded: `Thoughtful isn't always appropriate.
 
 Your sustainable pace serves you well usually—but some situations require unsustainable bursts. The deadline that can't move. The opportunity with an expiration date. Your measured approach can be a liability when speed matters more than sustainability.
 
@@ -472,16 +472,16 @@ There's also the question of what "measured" is measured against. If your baseli
 
     coreBeliefs: [
       'Sustainable building produces more than heroic sprints',
-      'Measured pace enables measured quality',
+      'Thoughtful pace enables measured quality',
       'Reliable progress compounds into significant achievement',
       'The measured builder finishes what they start',
     ],
 
     howYouGotHere:
-      'Your answers showed hands-on building combined with sustainable, steady approach. You construct reliably at an appropriate pace. This maps to the Measured Builder.',
+      'Your answers showed hands-on building combined with sustainable, steady approach. You construct reliably at an appropriate pace. This maps to the Thoughtful Builder.',
 
     alignsWith:
-      'other Measured types—you share the balanced approach, the steady progress toward worthwhile goals',
+      'other Thoughtful types—you share the balanced approach, the steady progress toward worthwhile goals',
     tensionWith:
       'Adaptive types—their frequent changes can feel like lack of commitment to seeing things through',
     growsWith:
@@ -498,7 +498,7 @@ There's also the question of what "measured" is measured against. If your baseli
         title: 'The Long Way to a Small, Angry Planet',
         author: 'Chambers',
         reason:
-          'A crew that builds and maintains together. Measured work that sustains community.',
+          'A crew that builds and maintains together. Thoughtful work that sustains community.',
       },
       {
         title: 'Becky Chambers\' Monk and Robot',
@@ -522,12 +522,12 @@ There's also the question of what "measured" is measured against. If your baseli
   // MAKER identities (mid-high agency)
   // =============================================================================
 
-  'careful-maker': {
-    key: 'careful-maker',
-    name: 'Careful Maker',
+  'watchful-maker': {
+    key: 'watchful-maker',
+    name: 'Watchful Maker',
     color: '#4b4ecf',
     noun: 'maker',
-    adjective: 'careful',
+    adjective: 'watchful',
     quadrant: 'seeking-protective',
 
     utopia:
@@ -560,15 +560,15 @@ There's also the danger of care becoming control. Making with care is about serv
     coreBeliefs: [
       'Care in making shows in the made',
       'Objects carry the attention given to them',
-      'Careful craft is an expression of respect—for materials, for use, for the world',
+      'Watchful craft is an expression of respect—for materials, for use, for the world',
       'What deserves making deserves care in making',
     ],
 
     howYouGotHere:
-      'Your answers showed hands-on making combined with deep care for the work. You craft with attention that shows in results. This maps to the Careful Maker.',
+      'Your answers showed hands-on making combined with deep care for the work. You craft with attention that shows in results. This maps to the Watchful Maker.',
 
     alignsWith:
-      'other Careful types—you share the deep attention to quality, the commitment to doing work right',
+      'other Watchful types—you share the deep attention to quality, the commitment to doing work right',
     tensionWith:
       "Bold types—their rapid making can feel careless, like they don't respect the craft",
     growsWith:
@@ -585,7 +585,7 @@ There's also the danger of care becoming control. Making with care is about serv
         title: 'Piranesi',
         author: 'Clarke',
         reason:
-          'Careful attention to a strange world. Making meaning through devoted observation.',
+          'Watchful attention to a strange world. Making meaning through devoted observation.',
       },
       {
         title: 'A Wizard of Earthsea',
@@ -605,12 +605,12 @@ There's also the danger of care becoming control. Making with care is about serv
     },
   },
 
-  'cautious-maker': {
-    key: 'cautious-maker',
-    name: 'Cautious Maker',
+  'careful-maker': {
+    key: 'careful-maker',
+    name: 'Careful Maker',
     color: '#676cd6',
     noun: 'maker',
-    adjective: 'cautious',
+    adjective: 'careful',
     quadrant: 'seeking-protective',
 
     utopia:
@@ -642,16 +642,16 @@ There's also aesthetic cost. Robustness can conflict with elegance. Your cautiou
 
     coreBeliefs: [
       'Made objects should account for the stresses they will face',
-      'Cautious making serves users by anticipating failures',
+      'Careful making serves users by anticipating failures',
       'Durability is a form of respect for materials and makers',
       'What breaks easily was made carelessly',
     ],
 
     howYouGotHere:
-      'Your answers showed hands-on making combined with awareness of how things fail. You craft with durability in mind. This maps to the Cautious Maker.',
+      'Your answers showed hands-on making combined with awareness of how things fail. You craft with durability in mind. This maps to the Careful Maker.',
 
     alignsWith:
-      'other Cautious types—you share the awareness of risk, the thinking about what could go wrong',
+      'other Careful types—you share the awareness of risk, the thinking about what could go wrong',
     tensionWith:
       "Adaptive types—their experimental making can feel reckless, like they don't respect durability",
     growsWith:
@@ -688,12 +688,12 @@ There's also aesthetic cost. Robustness can conflict with elegance. Your cautiou
     },
   },
 
-  'measured-maker': {
-    key: 'measured-maker',
-    name: 'Measured Maker',
+  'thoughtful-maker': {
+    key: 'thoughtful-maker',
+    name: 'Thoughtful Maker',
     color: '#8b90ee',
     noun: 'maker',
-    adjective: 'measured',
+    adjective: 'thoughtful',
     quadrant: 'seeking-protective',
 
     utopia:
@@ -715,26 +715,26 @@ Your measured approach means your work maintains consistent quality. You don't o
 Over time, consistent making compounds into significant achievement. The measured maker who produces reliably accumulates a body of work that inconsistent brilliant makers often don't.`,
 
     blindSpot:
-      'Your consistency can become rut. Measured making can miss the breakthrough that requires unmeasured commitment.',
+      'Your consistency can become rut. Thoughtful making can miss the breakthrough that requires unmeasured commitment.',
 
     blindSpotExpanded: `Reliable isn't always remarkable.
 
 Your consistent craft produces predictable quality—but remarkable often requires unpredictable. The breakthrough piece that defines a career might require abandoning your measured approach temporarily, risking failure for the chance at transcendence.
 
-There's also the question of growth. Measured making can become comfortable making. If you're not occasionally stretching beyond your measured capacity, you might not be developing.`,
+There's also the question of growth. Thoughtful making can become comfortable making. If you're not occasionally stretching beyond your measured capacity, you might not be developing.`,
 
     coreBeliefs: [
       'Consistent making compounds into significant achievement',
-      'Measured craft is sustainable craft',
+      'Thoughtful craft is sustainable craft',
       'Reliability is its own form of excellence',
       'The measured maker finishes what they start',
     ],
 
     howYouGotHere:
-      'Your answers showed hands-on making combined with balanced, consistent approach. You craft reliably over time. This maps to the Measured Maker.',
+      'Your answers showed hands-on making combined with balanced, consistent approach. You craft reliably over time. This maps to the Thoughtful Maker.',
 
     alignsWith:
-      'other Measured types—you share the balanced approach, the sustainable pace toward worthwhile goals',
+      'other Thoughtful types—you share the balanced approach, the sustainable pace toward worthwhile goals',
     tensionWith:
       'Adaptive types—their experimental making can feel inconsistent, lacking the reliability of committed craft',
     growsWith:
@@ -775,12 +775,12 @@ There's also the question of growth. Measured making can become comfortable maki
   // SHAPER identities (mid agency)
   // =============================================================================
 
-  'careful-shaper': {
-    key: 'careful-shaper',
-    name: 'Careful Shaper',
+  'watchful-shaper': {
+    key: 'watchful-shaper',
+    name: 'Watchful Shaper',
     color: '#3f42be',
     noun: 'shaper',
-    adjective: 'careful',
+    adjective: 'watchful',
     quadrant: 'seeking-protective',
 
     utopia:
@@ -808,7 +808,7 @@ People trust you with things they value because you won't carelessly destroy wha
 
 Your protective instinct can become over-protective. Sometimes what needs to happen is genuine disruption—breaking what exists to make space for what needs to come. Your careful shaping might be too careful, preserving things that should be let go.
 
-There's also the pace problem. Careful transformation is slow transformation. When change needs to happen faster than your careful approach allows, your care becomes obstacle.`,
+There's also the pace problem. Watchful transformation is slow transformation. When change needs to happen faster than your careful approach allows, your care becomes obstacle.`,
 
     coreBeliefs: [
       'Good transformation preserves what deserves preservation',
@@ -818,7 +818,7 @@ There's also the pace problem. Careful transformation is slow transformation. Wh
     ],
 
     howYouGotHere:
-      'Your answers showed willingness to transform combined with deep care about preserving what works. You reshape thoughtfully. This maps to the Careful Shaper.',
+      'Your answers showed willingness to transform combined with deep care about preserving what works. You reshape thoughtfully. This maps to the Watchful Shaper.',
 
     alignsWith:
       'other Protective types—you share the orientation toward preservation, toward not breaking what works',
@@ -858,12 +858,12 @@ There's also the pace problem. Careful transformation is slow transformation. Wh
     },
   },
 
-  'cautious-shaper': {
-    key: 'cautious-shaper',
-    name: 'Cautious Shaper',
+  'careful-shaper': {
+    key: 'careful-shaper',
+    name: 'Careful Shaper',
     color: '#5a5cc5',
     noun: 'shaper',
-    adjective: 'cautious',
+    adjective: 'careful',
     quadrant: 'seeking-protective',
 
     utopia:
@@ -896,15 +896,15 @@ There's also the cost of preparation. Building fallbacks takes resources. Your c
     coreBeliefs: [
       'Wise transformation accounts for potential failure',
       'Fallbacks enable bolder change by making it safer',
-      'Cautious shaping serves ambition by reducing risk',
+      'Careful shaping serves ambition by reducing risk',
       'Risk awareness should inform change, not prevent it',
     ],
 
     howYouGotHere:
-      'Your answers showed willingness to transform combined with awareness of risk. You shape change with fallbacks and contingencies. This maps to the Cautious Shaper.',
+      'Your answers showed willingness to transform combined with awareness of risk. You shape change with fallbacks and contingencies. This maps to the Careful Shaper.',
 
     alignsWith:
-      'other Cautious types—you share the awareness of risk, the preparation for what could go wrong',
+      'other Careful types—you share the awareness of risk, the preparation for what could go wrong',
     tensionWith:
       'Bold types—their confident transformation can feel reckless, like they haven\'t thought through what could fail',
     growsWith:
@@ -921,7 +921,7 @@ There's also the cost of preparation. Building fallbacks takes resources. Your c
         title: 'An Unkindness of Ghosts',
         author: 'Solomon',
         reason:
-          'Resistance on a generation ship. Careful rebellion with fallback plans.',
+          'Resistance on a generation ship. Watchful rebellion with fallback plans.',
       },
       {
         title: 'The Power',
@@ -941,12 +941,12 @@ There's also the cost of preparation. Building fallbacks takes resources. Your c
     },
   },
 
-  'measured-shaper': {
-    key: 'measured-shaper',
-    name: 'Measured Shaper',
+  'thoughtful-shaper': {
+    key: 'thoughtful-shaper',
+    name: 'Thoughtful Shaper',
     color: '#7e7ee7',
     noun: 'shaper',
-    adjective: 'measured',
+    adjective: 'thoughtful',
     quadrant: 'seeking-protective',
 
     utopia:
@@ -978,16 +978,16 @@ There's also the question of what "sustainable" really means. If your baseline i
 
     coreBeliefs: [
       'Sustainable transformation outlasts revolutionary disruption',
-      'Measured shaping respects the capacity for change',
+      'Thoughtful shaping respects the capacity for change',
       'Pace should match what can be absorbed',
       'The measured shaper serves lasting change, not dramatic change',
     ],
 
     howYouGotHere:
-      'Your answers showed willingness to transform combined with balanced judgment about pace. You shape change sustainably. This maps to the Measured Shaper.',
+      'Your answers showed willingness to transform combined with balanced judgment about pace. You shape change sustainably. This maps to the Thoughtful Shaper.',
 
     alignsWith:
-      'other Measured types—you share the balanced approach, the sustainable pace toward worthwhile goals',
+      'other Thoughtful types—you share the balanced approach, the sustainable pace toward worthwhile goals',
     tensionWith:
       'Adaptive types—their rapid reshaping can feel destabilizing, like change for its own sake',
     growsWith:
@@ -998,7 +998,7 @@ There's also the question of what "sustainable" really means. If your baseline i
         title: 'Ministry for the Future',
         author: 'Robinson',
         reason:
-          'Measured planetary transformation. Change at the pace civilization can absorb.',
+          'Thoughtful planetary transformation. Change at the pace civilization can absorb.',
       },
       {
         title: 'New York 2140',
@@ -1028,12 +1028,12 @@ There's also the question of what "sustainable" really means. If your baseline i
   // OBSERVER identities (mid-low agency)
   // =============================================================================
 
-  'careful-observer': {
-    key: 'careful-observer',
-    name: 'Careful Observer',
+  'watchful-observer': {
+    key: 'watchful-observer',
+    name: 'Watchful Observer',
     color: '#3336ad',
     noun: 'observer',
-    adjective: 'careful',
+    adjective: 'watchful',
     quadrant: 'seeking-protective',
 
     utopia:
@@ -1061,20 +1061,20 @@ People value your careful seeing because you don't report assumptions as observa
 
 Your attention to accurate observation can focus you on trees while missing forests. The careful examination of each element might not add up to understanding of the whole. Sometimes less careful, more sweeping observation reveals what detailed scrutiny cannot.
 
-There's also the time cost. Careful observation is slow observation. In situations that require rapid assessment, your careful approach might take longer than available.`,
+There's also the time cost. Watchful observation is slow observation. In situations that require rapid assessment, your careful approach might take longer than available.`,
 
     coreBeliefs: [
       'Accurate observation requires verification, not assumption',
-      'Careful seeing is the foundation of sound judgment',
+      'Watchful seeing is the foundation of sound judgment',
       'What you think you saw and what you actually saw are different questions',
       'The careful observer serves truth by not rushing it',
     ],
 
     howYouGotHere:
-      'Your answers showed observational orientation combined with extraordinary care for accuracy. You see things carefully and verify what you observe. This maps to the Careful Observer.',
+      'Your answers showed observational orientation combined with extraordinary care for accuracy. You see things carefully and verify what you observe. This maps to the Watchful Observer.',
 
     alignsWith:
-      'other Careful types—you share the deep attention to accuracy, the questioning of assumptions',
+      'other Watchful types—you share the deep attention to accuracy, the questioning of assumptions',
     tensionWith:
       "Bold types—their quick assessments can feel careless, like they haven't really looked",
     growsWith:
@@ -1085,7 +1085,7 @@ There's also the time cost. Careful observation is slow observation. In situatio
         title: 'Solaris',
         author: 'Lem',
         reason:
-          'Careful scientific observation of the unknowable. Verification pushed to its limits.',
+          'Watchful scientific observation of the unknowable. Verification pushed to its limits.',
       },
       {
         title: 'Blindsight',
@@ -1111,12 +1111,12 @@ There's also the time cost. Careful observation is slow observation. In situatio
     },
   },
 
-  'cautious-observer': {
-    key: 'cautious-observer',
-    name: 'Cautious Observer',
+  'careful-observer': {
+    key: 'careful-observer',
+    name: 'Careful Observer',
     color: '#4d4cb4',
     noun: 'observer',
-    adjective: 'cautious',
+    adjective: 'careful',
     quadrant: 'seeking-protective',
 
     utopia:
@@ -1149,15 +1149,15 @@ There's also the social cost. Constantly qualifying your observations with uncer
     coreBeliefs: [
       'Observation can deceive—approach it with appropriate skepticism',
       'Knowing the limits of your perception serves truth',
-      'Cautious observation reports uncertainty alongside observation',
+      'Careful observation reports uncertainty alongside observation',
       'The cautious observer serves reliability by acknowledging unreliability',
     ],
 
     howYouGotHere:
-      'Your answers showed observational orientation combined with awareness of perceptual limits. You see things while questioning your own seeing. This maps to the Cautious Observer.',
+      'Your answers showed observational orientation combined with awareness of perceptual limits. You see things while questioning your own seeing. This maps to the Careful Observer.',
 
     alignsWith:
-      'other Cautious types—you share the awareness of how things can go wrong, even in perception',
+      'other Careful types—you share the awareness of how things can go wrong, even in perception',
     tensionWith:
       "Confident types—their certain observations can feel overconfident, like they haven't questioned their own seeing",
     growsWith:
@@ -1180,7 +1180,7 @@ There's also the social cost. Constantly qualifying your observations with uncer
         title: 'Dark Intelligence',
         author: 'Asher',
         reason:
-          'Watching AI with appropriate skepticism. Cautious observation of powerful forces.',
+          'Watching AI with appropriate skepticism. Careful observation of powerful forces.',
       },
     ],
 
@@ -1194,12 +1194,12 @@ There's also the social cost. Constantly qualifying your observations with uncer
     },
   },
 
-  'measured-observer': {
-    key: 'measured-observer',
-    name: 'Measured Observer',
+  'thoughtful-observer': {
+    key: 'thoughtful-observer',
+    name: 'Thoughtful Observer',
     color: '#716cdf',
     noun: 'observer',
-    adjective: 'measured',
+    adjective: 'thoughtful',
     quadrant: 'seeking-protective',
 
     utopia:
@@ -1223,7 +1223,7 @@ People value your measured observation because it's actionable. You don't give t
     blindSpot:
       'Your practical orientation can miss insight that emerges from extended observation. Sometimes looking longer reveals what measured observation cannot.',
 
-    blindSpotExpanded: `Measured can be shallow.
+    blindSpotExpanded: `Thoughtful can be shallow.
 
 Your calibration of observation to decision needs means you stop observing when you have "enough." But some understanding only emerges from observation that exceeds practical necessity. The insight that changes everything might require looking longer than your measured approach allows.
 
@@ -1231,16 +1231,16 @@ There's also the question of what counts as "enough." If your baseline is conser
 
     coreBeliefs: [
       'Observation should serve action, not postpone it indefinitely',
-      'Measured observation balances thoroughness with timeliness',
+      'Thoughtful observation balances thoroughness with timeliness',
       'Practical seeing is wise seeing—it gives decisions what they need',
       'The measured observer serves decision-making by observing appropriately',
     ],
 
     howYouGotHere:
-      'Your answers showed observational orientation combined with practical, balanced judgment. You observe enough to decide wisely. This maps to the Measured Observer.',
+      'Your answers showed observational orientation combined with practical, balanced judgment. You observe enough to decide wisely. This maps to the Thoughtful Observer.',
 
     alignsWith:
-      'other Measured types—you share the balanced approach, the practical orientation toward action',
+      'other Thoughtful types—you share the balanced approach, the practical orientation toward action',
     tensionWith:
       'Adaptive types—their constantly shifting observation can feel unfocused, observing without concluding',
     growsWith:
@@ -1251,7 +1251,7 @@ There's also the question of what counts as "enough." If your baseline is conser
         title: 'Contact',
         author: 'Sagan',
         reason:
-          'Measured scientific observation meets the unknown. Practical seeing of the impossible.',
+          'Thoughtful scientific observation meets the unknown. Practical seeing of the impossible.',
       },
       {
         title: 'The Calculating Stars',
@@ -1281,12 +1281,12 @@ There's also the question of what counts as "enough." If your baseline is conser
   // NOTICER identities (low agency)
   // =============================================================================
 
-  'careful-noticer': {
-    key: 'careful-noticer',
-    name: 'Careful Noticer',
+  'watchful-noticer': {
+    key: 'watchful-noticer',
+    name: 'Watchful Noticer',
     color: '#272a9c',
     noun: 'noticer',
-    adjective: 'careful',
+    adjective: 'watchful',
     quadrant: 'seeking-protective',
 
     utopia:
@@ -1324,10 +1324,10 @@ There's also the selectivity question. Noticing everything carefully is impossib
     ],
 
     howYouGotHere:
-      'Your answers showed attention to detail combined with extraordinary care for accuracy. You notice small things and verify them. This maps to the Careful Noticer.',
+      'Your answers showed attention to detail combined with extraordinary care for accuracy. You notice small things and verify them. This maps to the Watchful Noticer.',
 
     alignsWith:
-      'other Careful types—you share the deep attention to accuracy, the commitment to verified perception',
+      'other Watchful types—you share the deep attention to accuracy, the commitment to verified perception',
     tensionWith:
       "Bold types—their quick attention can feel careless, like they aren't really noticing",
     growsWith:
@@ -1344,7 +1344,7 @@ There's also the selectivity question. Noticing everything carefully is impossib
         title: 'Recursion',
         author: 'Crouch',
         reason:
-          'Attention to memory\'s details. Careful noticing when reality shifts.',
+          'Attention to memory\'s details. Watchful noticing when reality shifts.',
       },
       {
         title: 'The Long Earth',
@@ -1364,12 +1364,12 @@ There's also the selectivity question. Noticing everything carefully is impossib
     },
   },
 
-  'cautious-noticer': {
-    key: 'cautious-noticer',
-    name: 'Cautious Noticer',
+  'careful-noticer': {
+    key: 'careful-noticer',
+    name: 'Careful Noticer',
     color: '#403ca3',
     noun: 'noticer',
-    adjective: 'cautious',
+    adjective: 'careful',
     quadrant: 'seeking-protective',
 
     utopia:
@@ -1401,13 +1401,13 @@ There's also the cost of negativity. Noticing primarily through a warning-sign l
 
     coreBeliefs: [
       'Small signals often precede big changes—notice them early',
-      'Cautious noticing serves protection by catching warnings',
+      'Careful noticing serves protection by catching warnings',
       'What doesn\'t fit the pattern deserves attention',
       'Early warning detection prevents later crisis',
     ],
 
     howYouGotHere:
-      'Your answers showed attention to detail combined with awareness of risk. You notice small things that might indicate bigger problems. This maps to the Cautious Noticer.',
+      'Your answers showed attention to detail combined with awareness of risk. You notice small things that might indicate bigger problems. This maps to the Careful Noticer.',
 
     alignsWith:
       'other Protective types—you share the orientation toward risk, toward catching what could go wrong early',
@@ -1447,12 +1447,12 @@ There's also the cost of negativity. Noticing primarily through a warning-sign l
     },
   },
 
-  'measured-noticer': {
-    key: 'measured-noticer',
-    name: 'Measured Noticer',
+  'thoughtful-noticer': {
+    key: 'thoughtful-noticer',
+    name: 'Thoughtful Noticer',
     color: '#645ad7',
     noun: 'noticer',
-    adjective: 'measured',
+    adjective: 'thoughtful',
     quadrant: 'seeking-protective',
 
     utopia:
@@ -1484,16 +1484,16 @@ There's also the recalibration question. Your sense of what matters comes from s
 
     coreBeliefs: [
       'Attention should go where it serves',
-      'Measured noticing balances thoroughness with practicality',
+      'Thoughtful noticing balances thoroughness with practicality',
       'Not everything deserves equal attention—calibrate wisely',
       'The measured noticer serves usefulness, not exhaustiveness',
     ],
 
     howYouGotHere:
-      'Your answers showed attention to detail combined with practical, balanced judgment. You notice what matters without getting lost. This maps to the Measured Noticer.',
+      'Your answers showed attention to detail combined with practical, balanced judgment. You notice what matters without getting lost. This maps to the Thoughtful Noticer.',
 
     alignsWith:
-      'other Measured types—you share the balanced approach, the practical orientation toward usefulness',
+      'other Thoughtful types—you share the balanced approach, the practical orientation toward usefulness',
     tensionWith:
       'Curious types—their unfocused noticing can feel inefficient, attending to everything without purpose',
     growsWith:
@@ -1510,7 +1510,7 @@ There's also the recalibration question. Your sense of what matters comes from s
         title: 'Never Let Me Go',
         author: 'Ishiguro',
         reason:
-          'Gradually noticing the truth of your situation. Measured recognition.',
+          'Gradually noticing the truth of your situation. Thoughtful recognition.',
       },
       {
         title: 'All Systems Red',
@@ -1534,12 +1534,12 @@ There's also the recalibration question. Your sense of what matters comes from s
   // WITNESS identities (lowest agency)
   // =============================================================================
 
-  'careful-witness': {
-    key: 'careful-witness',
-    name: 'Careful Witness',
+  'watchful-witness': {
+    key: 'watchful-witness',
+    name: 'Watchful Witness',
     color: '#1b1e8b',
     noun: 'witness',
-    adjective: 'careful',
+    adjective: 'watchful',
     quadrant: 'seeking-protective',
 
     utopia:
@@ -1577,10 +1577,10 @@ There's also the question of warmth. Careful, verified presence can feel clinica
     ],
 
     howYouGotHere:
-      'Your answers showed witnessing orientation combined with extraordinary care for accuracy. You are present carefully, examining your own presence. This maps to the Careful Witness.',
+      'Your answers showed witnessing orientation combined with extraordinary care for accuracy. You are present carefully, examining your own presence. This maps to the Watchful Witness.',
 
     alignsWith:
-      'other Careful types—you share the deep attention to accuracy, the questioning of assumptions',
+      'other Watchful types—you share the deep attention to accuracy, the questioning of assumptions',
     tensionWith:
       "Bold types—their quick presence can feel careless, like they aren't really witnessing",
     growsWith:
@@ -1591,7 +1591,7 @@ There's also the question of warmth. Careful, verified presence can feel clinica
         title: 'Slaughterhouse-Five',
         author: 'Vonnegut',
         reason:
-          'Bearing witness to war across time. Careful presence to unspeakable things.',
+          'Bearing witness to war across time. Watchful presence to unspeakable things.',
       },
       {
         title: 'The Handmaid\'s Tale',
@@ -1617,12 +1617,12 @@ There's also the question of warmth. Careful, verified presence can feel clinica
     },
   },
 
-  'cautious-witness': {
-    key: 'cautious-witness',
-    name: 'Cautious Witness',
+  'careful-witness': {
+    key: 'careful-witness',
+    name: 'Careful Witness',
     color: '#332c92',
     noun: 'witness',
-    adjective: 'cautious',
+    adjective: 'careful',
     quadrant: 'seeking-protective',
 
     utopia:
@@ -1654,13 +1654,13 @@ There's also the question of whose protection matters most. Your cautiousness ab
 
     coreBeliefs: [
       'Presence carries risks worth attending to',
-      'Cautious witnessing is sustainable witnessing',
+      'Careful witnessing is sustainable witnessing',
       'Boundaries protect both witness and witnessed',
       'The cautious witness accounts for the complexity of being present',
     ],
 
     howYouGotHere:
-      'Your answers showed witnessing orientation combined with awareness of risk. You are present while managing the risks of presence. This maps to the Cautious Witness.',
+      'Your answers showed witnessing orientation combined with awareness of risk. You are present while managing the risks of presence. This maps to the Careful Witness.',
 
     alignsWith:
       'other Protective types—you share the orientation toward risk, toward building safeguards into presence',
@@ -1700,12 +1700,12 @@ There's also the question of whose protection matters most. Your cautiousness ab
     },
   },
 
-  'measured-witness': {
-    key: 'measured-witness',
-    name: 'Measured Witness',
+  'thoughtful-witness': {
+    key: 'thoughtful-witness',
+    name: 'Thoughtful Witness',
     color: '#5748cf',
     noun: 'witness',
-    adjective: 'measured',
+    adjective: 'thoughtful',
     quadrant: 'seeking-protective',
 
     utopia:
@@ -1729,7 +1729,7 @@ People value your measured witnessing because it fits. You don't overwhelm with 
     blindSpot:
       'Your measured witnessing can miss what requires unmeasured presence. Some moments need everything, not calibration.',
 
-    blindSpotExpanded: `Measured isn't always enough.
+    blindSpotExpanded: `Thoughtful isn't always enough.
 
 Your balanced judgment about presence assumes that balance is appropriate. But some things need to be witnessed without measure—with everything you have, beyond what's calibrated. Your measured approach might be insufficient for moments that require unmeasured devotion.
 
@@ -1737,16 +1737,16 @@ There's also the question of authenticity. Calibrated presence can feel calculat
 
     coreBeliefs: [
       "Presence should fit what's being witnessed",
-      'Measured witnessing serves without overwhelming or abandoning',
+      'Thoughtful witnessing serves without overwhelming or abandoning',
       'Calibration is a form of respect for what needs witnessing',
       'The measured witness offers what each moment needs',
     ],
 
     howYouGotHere:
-      'Your answers showed witnessing orientation combined with balanced, practical judgment. You are present appropriately to each context. This maps to the Measured Witness.',
+      'Your answers showed witnessing orientation combined with balanced, practical judgment. You are present appropriately to each context. This maps to the Thoughtful Witness.',
 
     alignsWith:
-      'other Measured types—you share the balanced approach, the calibration of effort to circumstance',
+      'other Thoughtful types—you share the balanced approach, the calibration of effort to circumstance',
     tensionWith:
       'Adaptive types—their shifting presence can feel unpredictable, changing without clear reason',
     growsWith:
@@ -1757,7 +1757,7 @@ There's also the question of authenticity. Calibrated presence can feel calculat
         title: 'The Road',
         author: 'McCarthy',
         reason:
-          'Measured witnessing of aftermath. Presence calibrated to what can be borne.',
+          'Thoughtful witnessing of aftermath. Presence calibrated to what can be borne.',
       },
       {
         title: 'Oryx and Crake',

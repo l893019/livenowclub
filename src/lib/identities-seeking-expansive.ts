@@ -4,7 +4,7 @@
  * Quadrant characteristics:
  * - Questioning + growth orientation
  * - Curious, experimental, open to change
- * - Adjectives: Adaptive (most extreme), Curious (middle), Open (mildest)
+ * - Adjectives: Adventurous (most extreme), Curious (middle), Open (mildest)
  *
  * 7 nouns x 3 adjectives = 21 identities
  */
@@ -16,12 +16,12 @@ export const seekingExpansiveIdentities: Record<string, Identity> = {
   // ARCHITECT identities (highest agency)
   // =============================================================================
 
-  'adaptive-architect': {
-    key: 'adaptive-architect',
-    name: 'Adaptive Architect',
+  'adventurous-architect': {
+    key: 'adventurous-architect',
+    name: 'Adventurous Architect',
     color: '#7c3aed',
     noun: 'architect',
-    adjective: 'adaptive',
+    adjective: 'adventurous',
     quadrant: 'seeking-expansive',
 
     utopia:
@@ -59,7 +59,7 @@ There's also the complexity cost. Systems designed for maximum adaptability are 
     ],
 
     howYouGotHere:
-      "Your answers revealed someone who designs at the systems level while remaining fundamentally open to new information. You don't just tolerate uncertainty—you build it into your architecture. This combination of high agency and adaptive questioning maps to the Adaptive Architect.",
+      "Your answers revealed someone who designs at the systems level while remaining fundamentally open to new information. You don't just tolerate uncertainty—you build it into your architecture. This combination of high agency and adaptive questioning maps to the Adventurous Architect.",
 
     alignsWith:
       'other Seekers—you share the orientation toward questioning and discovery, the sense that answers are provisional and worth revisiting',
@@ -79,7 +79,7 @@ There's also the complexity cost. Systems designed for maximum adaptability are 
         title: 'A Fire Upon the Deep',
         author: 'Vinge',
         reason:
-          'A galaxy organized into zones of thought, each with different rules. Adaptive architecture at cosmic scale.',
+          'A galaxy organized into zones of thought, each with different rules. Adventurous architecture at cosmic scale.',
       },
       {
         title: 'The Player of Games',
@@ -269,12 +269,12 @@ There's also the question of vision. Open systems still need someone making deci
   // BUILDER identities (high agency)
   // =============================================================================
 
-  'adaptive-builder': {
-    key: 'adaptive-builder',
-    name: 'Adaptive Builder',
+  'adventurous-builder': {
+    key: 'adventurous-builder',
+    name: 'Adventurous Builder',
     color: '#7034d6',
     noun: 'builder',
-    adjective: 'adaptive',
+    adjective: 'adventurous',
     quadrant: 'seeking-expansive',
 
     utopia:
@@ -312,7 +312,7 @@ There's also depth versus breadth. Your rapid iteration produces many versions b
     ],
 
     howYouGotHere:
-      'Your answers showed a hands-on builder orientation combined with high adaptability. You make things, and you adjust rapidly based on what the making teaches you. This maps to the Adaptive Builder.',
+      'Your answers showed a hands-on builder orientation combined with high adaptability. You make things, and you adjust rapidly based on what the making teaches you. This maps to the Adventurous Builder.',
 
     alignsWith:
       'other Seekers—you share the fundamental openness to new information, the willingness to change based on what you learn',
@@ -522,12 +522,12 @@ There's also the question of vision. Open building can become building by commit
   // MAKER identities (mid-high agency)
   // =============================================================================
 
-  'adaptive-maker': {
-    key: 'adaptive-maker',
-    name: 'Adaptive Maker',
+  'adventurous-maker': {
+    key: 'adventurous-maker',
+    name: 'Adventurous Maker',
     color: '#642ebf',
     noun: 'maker',
-    adjective: 'adaptive',
+    adjective: 'adventurous',
     quadrant: 'seeking-expansive',
 
     utopia:
@@ -565,7 +565,7 @@ There's also the question of when to insist on better conditions rather than ada
     ],
 
     howYouGotHere:
-      "Your answers showed a hands-on maker orientation combined with high adaptability. You create things, and you're remarkably flexible about how. This maps to the Adaptive Maker.",
+      "Your answers showed a hands-on maker orientation combined with high adaptability. You create things, and you're remarkably flexible about how. This maps to the Adventurous Maker.",
 
     alignsWith:
       'other Seekers—you share the openness to changing conditions, the willingness to adjust based on circumstances',
@@ -775,12 +775,12 @@ There's also the question of craft secrets. Some knowledge is protected for reas
   // SHAPER identities (mid agency)
   // =============================================================================
 
-  'adaptive-shaper': {
-    key: 'adaptive-shaper',
-    name: 'Adaptive Shaper',
+  'adventurous-shaper': {
+    key: 'adventurous-shaper',
+    name: 'Adventurous Shaper',
     color: '#5828a8',
     noun: 'shaper',
-    adjective: 'adaptive',
+    adjective: 'adventurous',
     quadrant: 'seeking-expansive',
 
     utopia:
@@ -808,7 +808,7 @@ This makes your transformations stick. Because you work with rather than against
 
 Your responsiveness to context can become a limitation when the context itself is the problem. If you only shape in ways the situation permits, you may never achieve the more radical transformations that are sometimes needed.
 
-There's also the question of direction. Adaptive shaping can become reactive—always responding to conditions rather than steering toward a vision. Your flexibility is a strength, but it needs the backbone of knowing what you're shaping toward.`,
+There's also the question of direction. Adventurous shaping can become reactive—always responding to conditions rather than steering toward a vision. Your flexibility is a strength, but it needs the backbone of knowing what you're shaping toward.`,
 
     coreBeliefs: [
       'Good transformation meets things where they are',
@@ -818,7 +818,7 @@ There's also the question of direction. Adaptive shaping can become reactive—a
     ],
 
     howYouGotHere:
-      "Your answers showed willingness to transform what exists combined with high adaptability. You reshape, but you reshape responsively—adjusting your approach to what each situation needs. This maps to the Adaptive Shaper.",
+      "Your answers showed willingness to transform what exists combined with high adaptability. You reshape, but you reshape responsively—adjusting your approach to what each situation needs. This maps to the Adventurous Shaper.",
 
     alignsWith:
       'other Seekers—you share the openness to adjusting based on what you learn',
@@ -1028,12 +1028,12 @@ There's also the question of expertise. Openness to all input can mean giving eq
   // OBSERVER identities (mid-low agency)
   // =============================================================================
 
-  'adaptive-observer': {
-    key: 'adaptive-observer',
-    name: 'Adaptive Observer',
+  'adventurous-observer': {
+    key: 'adventurous-observer',
+    name: 'Adventurous Observer',
     color: '#4c2291',
     noun: 'observer',
-    adjective: 'adaptive',
+    adjective: 'adventurous',
     quadrant: 'seeking-expansive',
 
     utopia:
@@ -1061,7 +1061,7 @@ This makes you valuable as a translator between viewpoints. You can understand w
 
 Your constant moving between viewpoints means you don't stay long with any. The understanding that comes from sustained attention—from really sitting with one way of seeing—may elude you. You know many perspectives but may not know any deeply.
 
-There's also the question of commitment. Adaptive observation can become a way of avoiding the responsibility that comes from taking a position. If you're always shifting perspective, you never have to defend any particular view.`,
+There's also the question of commitment. Adventurous observation can become a way of avoiding the responsibility that comes from taking a position. If you're always shifting perspective, you never have to defend any particular view.`,
 
     coreBeliefs: [
       'Every perspective reveals something and conceals something',
@@ -1071,7 +1071,7 @@ There's also the question of commitment. Adaptive observation can become a way o
     ],
 
     howYouGotHere:
-      "Your answers showed an observational orientation combined with high adaptability. You watch, but you watch from many angles. This maps to the Adaptive Observer.",
+      "Your answers showed an observational orientation combined with high adaptability. You watch, but you watch from many angles. This maps to the Adventurous Observer.",
 
     alignsWith:
       'other Seekers—you share the openness to changing positions, the willingness to question what you thought you knew',
@@ -1281,12 +1281,12 @@ There's also the question of integration. Open observation that never synthesize
   // NOTICER identities (low agency)
   // =============================================================================
 
-  'adaptive-noticer': {
-    key: 'adaptive-noticer',
-    name: 'Adaptive Noticer',
+  'adventurous-noticer': {
+    key: 'adventurous-noticer',
+    name: 'Adventurous Noticer',
     color: '#401c7a',
     noun: 'noticer',
-    adjective: 'adaptive',
+    adjective: 'adventurous',
     quadrant: 'seeking-expansive',
 
     utopia:
@@ -1324,7 +1324,7 @@ There's also the question of manipulation. Your attention follows what's calling
     ],
 
     howYouGotHere:
-      'Your answers showed a noticing orientation combined with high adaptability. You attend to details, but which details you attend to adapts to what the situation offers. This maps to the Adaptive Noticer.',
+      'Your answers showed a noticing orientation combined with high adaptability. You attend to details, but which details you attend to adapts to what the situation offers. This maps to the Adventurous Noticer.',
 
     alignsWith:
       'other Seekers—you share the openness to following where things lead rather than predetermining the path',
@@ -1534,12 +1534,12 @@ There's also the question of synthesis. Open noticing that never organizes produ
   // WITNESS identities (lowest agency)
   // =============================================================================
 
-  'adaptive-witness': {
-    key: 'adaptive-witness',
-    name: 'Adaptive Witness',
+  'adventurous-witness': {
+    key: 'adventurous-witness',
+    name: 'Adventurous Witness',
     color: '#341664',
     noun: 'witness',
-    adjective: 'adaptive',
+    adjective: 'adventurous',
     quadrant: 'seeking-expansive',
 
     utopia:
@@ -1567,7 +1567,7 @@ This makes you valuable across contexts that need different kinds of presence. T
 
 Your commitment to being what each situation needs can mean never being simply yourself. Your presence becomes reactive, shaped entirely by external demands. But authentic witnessing requires you to bring something—not just absorb and reflect what's there.
 
-There's also the question of limits. Adaptive witnessing can mean never setting boundaries about what you're willing to witness. But some things cost too much to see; some presences take too much. Your adaptability needs limits to remain sustainable.`,
+There's also the question of limits. Adventurous witnessing can mean never setting boundaries about what you're willing to witness. But some things cost too much to see; some presences take too much. Your adaptability needs limits to remain sustainable.`,
 
     coreBeliefs: [
       'Different moments need different witnesses',
@@ -1577,7 +1577,7 @@ There's also the question of limits. Adaptive witnessing can mean never setting 
     ],
 
     howYouGotHere:
-      'Your answers showed a witnessing orientation combined with high adaptability. You are present, but how you are present adapts to what is needed. This maps to the Adaptive Witness.',
+      'Your answers showed a witnessing orientation combined with high adaptability. You are present, but how you are present adapts to what is needed. This maps to the Adventurous Witness.',
 
     alignsWith:
       'other Seekers—you share the openness to changing how you show up based on what you encounter',

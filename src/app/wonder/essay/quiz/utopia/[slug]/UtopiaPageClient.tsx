@@ -13,6 +13,7 @@ import { NotificationSettings } from "./NotificationSettings";
 import { ReadingPage } from "@/app/wonder/essay/quiz/result/ReadingPage";
 import { archetypes } from "@/lib/archetypes";
 import { getMemberIdentity } from "@/lib/identities";
+import { arrayToQuizAnswers } from "@/lib/dimensions";
 import type { UtopiaMember } from "@/lib/utopia";
 import styles from "./UtopiaPageClient.module.css";
 
@@ -228,9 +229,11 @@ export function UtopiaPageClient({
     const them = members.find((m) => m.id === selectedMemberId);
 
     if (them) {
+      const theirAnswers = them.answers ? arrayToQuizAnswers(them.answers) : undefined;
       return (
         <ReadingPage
           archetypeKey={them.archetype}
+          answers={theirAnswers ?? undefined}
           onBack={handleBackFromTheirReading}
           groupContext={{
             utopiaSlug: slug,
@@ -249,9 +252,11 @@ export function UtopiaPageClient({
     const me = members.find((m) => m.id === actualUserIdForProfile);
 
     if (me) {
+      const myAnswers = me.answers ? arrayToQuizAnswers(me.answers) : undefined;
       return (
         <ReadingPage
           archetypeKey={me.archetype}
+          answers={myAnswers ?? undefined}
           onBack={handleBackToRadar}
           groupContext={{
             utopiaSlug: slug,

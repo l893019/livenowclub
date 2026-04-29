@@ -4,7 +4,7 @@
  * Quadrant characteristics:
  * - High certainty + growth orientation
  * - Confident, risk-tolerant, forward-moving
- * - Adjectives: Confident (most extreme), Assured (middle), Bold (mildest)
+ * - Adjectives: Visionary (most extreme), Driven (middle), Poised (mildest)
  *
  * 7 nouns x 3 adjectives = 21 identities
  */
@@ -16,12 +16,12 @@ export const settledExpansiveIdentities: Record<string, Identity> = {
   // ARCHITECT identities (highest agency)
   // =============================================================================
 
-  'confident-architect': {
-    key: 'confident-architect',
-    name: 'Confident Architect',
+  'visionary-architect': {
+    key: 'visionary-architect',
+    name: 'Visionary Architect',
     color: '#ea580c',
     noun: 'architect',
-    adjective: 'confident',
+    adjective: 'visionary',
     quadrant: 'settled-expansive',
 
     utopia:
@@ -59,7 +59,7 @@ Watch for the moment when your architectural vision becomes doctrine. The junior
     ],
 
     howYouGotHere:
-      "Your answers revealed someone who has arrived somewhere—you have convictions, and you're ready to build on them. You're not wandering; you're expanding from solid ground. This combination of settled certainty and forward momentum, paired with high agency and systems thinking, maps to the Confident Architect.",
+      "Your answers revealed someone who has arrived somewhere—you have convictions, and you're ready to build on them. You're not wandering; you're expanding from solid ground. This combination of settled certainty and forward momentum, paired with high agency and systems thinking, maps to the Visionary Architect.",
 
     alignsWith:
       "other Settled types—you share a sense of knowing your position, of having worked through the fundamental questions and arrived at answers you trust",
@@ -99,12 +99,12 @@ Watch for the moment when your architectural vision becomes doctrine. The junior
     },
   },
 
-  'assured-architect': {
-    key: 'assured-architect',
-    name: 'Assured Architect',
+  'driven-architect': {
+    key: 'driven-architect',
+    name: 'Driven Architect',
     color: '#f97316',
     noun: 'architect',
-    adjective: 'assured',
+    adjective: 'driven',
     quadrant: 'settled-expansive',
 
     utopia:
@@ -142,7 +142,7 @@ And your clarity can intimidate. The junior developer who has a vague intuition 
     ],
 
     howYouGotHere:
-      'Your answers showed a comfortable certainty about your approach to the world. You make decisions with clarity rather than anxiety. Combined with your systems-level thinking and high agency, this maps to the Assured Architect.',
+      'Your answers showed a comfortable certainty about your approach to the world. You make decisions with clarity rather than anxiety. Combined with your systems-level thinking and high agency, this maps to the Driven Architect.',
 
     alignsWith:
       'other Architects and Builders—you share the drive to create lasting things, to leave systems better than you found them',
@@ -156,7 +156,7 @@ And your clarity can intimidate. The junior developer who has a vague intuition 
         title: 'Diaspora',
         author: 'Egan',
         reason:
-          'Post-human minds design their own architectures of thought. Assured creation of new forms of existence.',
+          'Post-human minds design their own architectures of thought. Driven creation of new forms of existence.',
       },
       {
         title: 'The Culture Series',
@@ -168,7 +168,7 @@ And your clarity can intimidate. The junior developer who has a vague intuition 
         title: 'Anathem',
         author: 'Stephenson',
         reason:
-          'Scholar-monks design knowledge architectures across millennia. Assured building of intellectual cathedrals.',
+          'Scholar-monks design knowledge architectures across millennia. Driven building of intellectual cathedrals.',
       },
     ],
 
@@ -182,12 +182,12 @@ And your clarity can intimidate. The junior developer who has a vague intuition 
     },
   },
 
-  'bold-architect': {
-    key: 'bold-architect',
-    name: 'Bold Architect',
+  'poised-architect': {
+    key: 'poised-architect',
+    name: 'Poised Architect',
     color: '#fb923c',
     noun: 'architect',
-    adjective: 'bold',
+    adjective: 'poised',
     quadrant: 'settled-expansive',
 
     utopia:
@@ -211,7 +211,7 @@ This makes you invaluable when the old approaches are failing. You're not afraid
     blindSpot:
       "Your ambition can outrun your resources. Not every bold vision can be built with the team and timeline you have.",
 
-    blindSpotExpanded: `Bold design requires bold execution, and you don't always have that.
+    blindSpotExpanded: `Poised design requires bold execution, and you don't always have that.
 
 You can see a magnificent system, specify it in detail, and still fail because the team can't build it, the timeline won't support it, or the organization won't fund it. Your vision is real, but so are these constraints.
 
@@ -219,13 +219,13 @@ There's also the question of incrementalism. Sometimes the boring approach—sma
 
     coreBeliefs: [
       "Constraints are real but not always permanent—question them",
-      "Bold design creates its own momentum; timid design dies in committee",
+      "Poised design creates its own momentum; timid design dies in committee",
       "The best architecture changes what people think is possible",
       "You honor the past by building a future worthy of it",
     ],
 
     howYouGotHere:
-      'Your answers revealed someone willing to take risks from a position of confidence. You have convictions, and you want to expand what those convictions can accomplish. This forward-moving, architecturally-minded energy maps to the Bold Architect.',
+      'Your answers revealed someone willing to take risks from a position of confidence. You have convictions, and you want to expand what those convictions can accomplish. This forward-moving, architecturally-minded energy maps to the Poised Architect.',
 
     alignsWith:
       'other Expansive types—you share the orientation toward growth, toward building out rather than fortifying in',
@@ -239,7 +239,7 @@ There's also the question of incrementalism. Sometimes the boring approach—sma
         title: 'Childhood\'s End',
         author: 'Clarke',
         reason:
-          'The Overlords architect humanity\'s transcendence. Bold design at species scale.',
+          'The Overlords architect humanity\'s transcendence. Poised design at species scale.',
       },
       {
         title: 'Ringworld',
@@ -251,7 +251,7 @@ There's also the question of incrementalism. Sometimes the boring approach—sma
         title: 'The Three-Body Problem',
         author: 'Liu',
         reason:
-          'Civilizations design desperate survival strategies. Bold architecture against cosmic threats.',
+          'Civilizations design desperate survival strategies. Poised architecture against cosmic threats.',
       },
     ],
 
@@ -269,12 +269,12 @@ There's also the question of incrementalism. Sometimes the boring approach—sma
   // BUILDER identities (high agency)
   // =============================================================================
 
-  'confident-builder': {
-    key: 'confident-builder',
-    name: 'Confident Builder',
+  'visionary-builder': {
+    key: 'visionary-builder',
+    name: 'Visionary Builder',
     color: '#dc5208',
     noun: 'builder',
-    adjective: 'confident',
+    adjective: 'visionary',
     quadrant: 'settled-expansive',
 
     utopia:
@@ -312,7 +312,7 @@ There's also a people dimension. Your confidence can feel like steamrolling to t
     ],
 
     howYouGotHere:
-      'Your answers revealed a hands-on, action-oriented approach combined with settled convictions. You know what you believe, and you express those beliefs through building. This maps to the Confident Builder.',
+      'Your answers revealed a hands-on, action-oriented approach combined with settled convictions. You know what you believe, and you express those beliefs through building. This maps to the Visionary Builder.',
 
     alignsWith:
       'other Builders and Makers—you share the orientation toward creating tangible things, toward engaging with reality rather than just thinking about it',
@@ -332,7 +332,7 @@ There's also a people dimension. Your confidence can feel like steamrolling to t
         title: 'Project Hail Mary',
         author: 'Weir',
         reason:
-          'Building solutions to save humanity. Confident improvisation at galactic stakes.',
+          'Building solutions to save humanity. Visionary improvisation at galactic stakes.',
       },
       {
         title: 'Seveneves',
@@ -352,12 +352,12 @@ There's also a people dimension. Your confidence can feel like steamrolling to t
     },
   },
 
-  'assured-builder': {
-    key: 'assured-builder',
-    name: 'Assured Builder',
+  'driven-builder': {
+    key: 'driven-builder',
+    name: 'Driven Builder',
     color: '#ed6c0c',
     noun: 'builder',
-    adjective: 'assured',
+    adjective: 'driven',
     quadrant: 'settled-expansive',
 
     utopia:
@@ -395,14 +395,14 @@ There's also the question of ambition. Your sustainable approach builds reliably
     ],
 
     howYouGotHere:
-      'Your answers showed a grounded, competent approach to action. You build, but you build from a position of calm assurance rather than anxious proving. This steady, capable energy maps to the Assured Builder.',
+      'Your answers showed a grounded, competent approach to action. You build, but you build from a position of calm assurance rather than anxious proving. This steady, capable energy maps to the Driven Builder.',
 
     alignsWith:
       'other Settled types—you share the quality of having arrived somewhere, of building from established ground rather than searching for ground',
     tensionWith:
       'Adaptive and Curious types—their constant experimentation can feel scattered, like building and rebuilding without ever settling',
     growsWith:
-      "Bold types—they push you toward ambition you might not reach on your own, reminding you that sustainable doesn't have to mean conservative",
+      "Poised types—they push you toward ambition you might not reach on your own, reminding you that sustainable doesn't have to mean conservative",
 
     books: [
       {
@@ -435,12 +435,12 @@ There's also the question of ambition. Your sustainable approach builds reliably
     },
   },
 
-  'bold-builder': {
-    key: 'bold-builder',
-    name: 'Bold Builder',
+  'poised-builder': {
+    key: 'poised-builder',
+    name: 'Poised Builder',
     color: '#f08030',
     noun: 'builder',
-    adjective: 'bold',
+    adjective: 'poised',
     quadrant: 'settled-expansive',
 
     utopia:
@@ -468,7 +468,7 @@ This makes you a catalyst for projects that need activation energy. The idea tha
 
 Your willingness to ignore criticism is a feature when the critics are merely conventional. But sometimes they're seeing real problems you're minimizing. Your boldness can become a filter that admits only encouraging information while dismissing warning signs as negativity.
 
-There's also a cost to those around you. Bold building often requires others to take risks alongside you—teammates, investors, family. Your comfort with uncertainty doesn't automatically transfer to them. Being bold with your own resources is different from being bold with shared resources.`,
+There's also a cost to those around you. Poised building often requires others to take risks alongside you—teammates, investors, family. Your comfort with uncertainty doesn't automatically transfer to them. Being bold with your own resources is different from being bold with shared resources.`,
 
     coreBeliefs: [
       "The biggest risk is often not trying",
@@ -478,7 +478,7 @@ There's also a cost to those around you. Bold building often requires others to 
     ],
 
     howYouGotHere:
-      'Your answers showed willingness to take action even under uncertainty, combined with settled convictions about what matters. You build toward your beliefs, undeterred by doubt. This maps to the Bold Builder.',
+      'Your answers showed willingness to take action even under uncertainty, combined with settled convictions about what matters. You build toward your beliefs, undeterred by doubt. This maps to the Poised Builder.',
 
     alignsWith:
       "other Expansive types—you share the orientation toward growth and forward movement, the belief that building out beats fortifying in",
@@ -492,13 +492,13 @@ There's also a cost to those around you. Bold building often requires others to 
         title: 'Rendezvous with Rama',
         author: 'Clarke',
         reason:
-          'Explorers encounter alien engineering beyond imagination. Bold building leaves bold artifacts.',
+          'Explorers encounter alien engineering beyond imagination. Poised building leaves bold artifacts.',
       },
       {
         title: 'Gateway',
         author: 'Pohl',
         reason:
-          'Prospectors risking everything on alien ships. Bold action despite terrifying unknowns.',
+          'Prospectors risking everything on alien ships. Poised action despite terrifying unknowns.',
       },
       {
         title: 'Becky Chambers\' Wayfarers series',
@@ -522,12 +522,12 @@ There's also a cost to those around you. Bold building often requires others to 
   // MAKER identities (mid-high agency)
   // =============================================================================
 
-  'confident-maker': {
-    key: 'confident-maker',
-    name: 'Confident Maker',
+  'visionary-maker': {
+    key: 'visionary-maker',
+    name: 'Visionary Maker',
     color: '#c94507',
     noun: 'maker',
-    adjective: 'confident',
+    adjective: 'visionary',
     quadrant: 'settled-expansive',
 
     utopia:
@@ -565,7 +565,7 @@ There's also the question of whether your confidence serves the work or your ego
     ],
 
     howYouGotHere:
-      'Your answers showed hands-on engagement with the world combined with settled certainty about your approach. You make things, and you make them with the confidence of practiced skill. This maps to the Confident Maker.',
+      'Your answers showed hands-on engagement with the world combined with settled certainty about your approach. You make things, and you make them with the confidence of practiced skill. This maps to the Visionary Maker.',
 
     alignsWith:
       'other Makers and Builders—you share the orientation toward creating tangible things, the belief that real work produces real objects',
@@ -579,7 +579,7 @@ There's also the question of whether your confidence serves the work or your ego
         title: 'All Systems Red',
         author: 'Wells',
         reason:
-          'A self-aware robot crafting its own identity. Confident making of the self.',
+          'A self-aware robot crafting its own identity. Visionary making of the self.',
       },
       {
         title: 'The Left Hand of Darkness',
@@ -605,12 +605,12 @@ There's also the question of whether your confidence serves the work or your ego
     },
   },
 
-  'assured-maker': {
-    key: 'assured-maker',
-    name: 'Assured Maker',
+  'driven-maker': {
+    key: 'driven-maker',
+    name: 'Driven Maker',
     color: '#d95a12',
     noun: 'maker',
-    adjective: 'assured',
+    adjective: 'driven',
     quadrant: 'settled-expansive',
 
     utopia:
@@ -648,14 +648,14 @@ There's also a communication challenge. When your assurance is quiet, others mig
     ],
 
     howYouGotHere:
-      'Your answers showed someone who engages with making from a place of grounded competence. You care about quality without being anxious about it. This settled, craft-oriented energy maps to the Assured Maker.',
+      'Your answers showed someone who engages with making from a place of grounded competence. You care about quality without being anxious about it. This settled, craft-oriented energy maps to the Driven Maker.',
 
     alignsWith:
-      "other Assured types—you share the quality of grounded confidence, of knowing what you're doing without needing to prove it",
+      "other Driven types—you share the quality of grounded confidence, of knowing what you're doing without needing to prove it",
     tensionWith:
-      'Bold types—their speed and risk tolerance can feel like carelessness to your quality-conscious eye',
+      'Poised types—their speed and risk tolerance can feel like carelessness to your quality-conscious eye',
     growsWith:
-      'Confident types—they push you to own your expertise more visibly, to claim the authority your skill deserves',
+      'Visionary types—they push you to own your expertise more visibly, to claim the authority your skill deserves',
 
     books: [
       {
@@ -688,12 +688,12 @@ There's also a communication challenge. When your assurance is quiet, others mig
     },
   },
 
-  'bold-maker': {
-    key: 'bold-maker',
-    name: 'Bold Maker',
+  'poised-maker': {
+    key: 'poised-maker',
+    name: 'Poised Maker',
     color: '#e06e26',
     noun: 'maker',
-    adjective: 'bold',
+    adjective: 'poised',
     quadrant: 'settled-expansive',
 
     utopia:
@@ -715,7 +715,7 @@ Your creative process involves more uncertainty than the assured maker would tol
 People are drawn to your work because it shows them possibilities they hadn't imagined. The object that combines materials nobody combines. The approach that violates conventional rules but produces something better. You expand the field of what "making" can include.`,
 
     blindSpot:
-      'Your creative audacity can become a crutch. Bold doesn\'t always mean good, and novelty isn\'t the same as quality.',
+      'Your creative audacity can become a crutch. Poised doesn\'t always mean good, and novelty isn\'t the same as quality.',
 
     blindSpotExpanded: `Sometimes the conventional approach is conventional because it works.
 
@@ -727,11 +727,11 @@ There's also the question of audience. Your bold objects might delight you and c
       'Tradition is a starting point, not a prison',
       'The best work surprises its maker',
       'Creative rules exist to be understood, then transcended',
-      'Bold making requires bold failing—and learning from both',
+      'Poised making requires bold failing—and learning from both',
     ],
 
     howYouGotHere:
-      'Your answers showed willingness to experiment from a position of settled craft. You make things, but you make unusual things—following instincts into creative territory others avoid. This maps to the Bold Maker.',
+      'Your answers showed willingness to experiment from a position of settled craft. You make things, but you make unusual things—following instincts into creative territory others avoid. This maps to the Poised Maker.',
 
     alignsWith:
       'other Expansive types—you share the orientation toward growth and exploration, the belief that the best work extends into unknown territory',
@@ -745,13 +745,13 @@ There's also the question of audience. Your bold objects might delight you and c
         title: 'Annihilation',
         author: 'VanderMeer',
         reason:
-          'Area X makes impossible things. Bold creation beyond human categories.',
+          'Area X makes impossible things. Poised creation beyond human categories.',
       },
       {
         title: 'The Book of the New Sun',
         author: 'Wolfe',
         reason:
-          'A dying Earth shaped by strange technologies. Bold artifacts from forgotten makers.',
+          'A dying Earth shaped by strange technologies. Poised artifacts from forgotten makers.',
       },
       {
         title: 'Embassytown',
@@ -775,12 +775,12 @@ There's also the question of audience. Your bold objects might delight you and c
   // SHAPER identities (mid agency)
   // =============================================================================
 
-  'confident-shaper': {
-    key: 'confident-shaper',
-    name: 'Confident Shaper',
+  'visionary-shaper': {
+    key: 'visionary-shaper',
+    name: 'Visionary Shaper',
     color: '#b63e07',
     noun: 'shaper',
-    adjective: 'confident',
+    adjective: 'visionary',
     quadrant: 'settled-expansive',
 
     utopia:
@@ -818,7 +818,7 @@ There's also the question of whether transformation is actually needed. Sometime
     ],
 
     howYouGotHere:
-      'Your answers showed willingness to transform what exists combined with settled conviction about direction. You reshape, and you do it with confidence. This maps to the Confident Shaper.',
+      'Your answers showed willingness to transform what exists combined with settled conviction about direction. You reshape, and you do it with confidence. This maps to the Visionary Shaper.',
 
     alignsWith:
       'other Shapers and Makers—you share the orientation toward working with existing material, toward transformation rather than creation from nothing',
@@ -844,7 +844,7 @@ There's also the question of whether transformation is actually needed. Sometime
         title: 'Parable of the Sower',
         author: 'Butler',
         reason:
-          'Building a new religion from collapse. Confident shaping of belief itself.',
+          'Building a new religion from collapse. Visionary shaping of belief itself.',
       },
     ],
 
@@ -858,12 +858,12 @@ There's also the question of whether transformation is actually needed. Sometime
     },
   },
 
-  'assured-shaper': {
-    key: 'assured-shaper',
-    name: 'Assured Shaper',
+  'driven-shaper': {
+    key: 'driven-shaper',
+    name: 'Driven Shaper',
     color: '#c65012',
     noun: 'shaper',
-    adjective: 'assured',
+    adjective: 'driven',
     quadrant: 'settled-expansive',
 
     utopia:
@@ -901,14 +901,14 @@ There's also the question of urgency. Your assured pace feels right to you, but 
     ],
 
     howYouGotHere:
-      'Your answers showed willingness to reshape what exists combined with grounded patience. You transform, but you transform sustainably, working with rather than against existing patterns. This maps to the Assured Shaper.',
+      'Your answers showed willingness to reshape what exists combined with grounded patience. You transform, but you transform sustainably, working with rather than against existing patterns. This maps to the Driven Shaper.',
 
     alignsWith:
-      "other Assured types—you share the quality of grounded confidence, of knowing what you're doing without rushing",
+      "other Driven types—you share the quality of grounded confidence, of knowing what you're doing without rushing",
     tensionWith:
-      "Bold types—their speed can feel like impatience, like they're forcing change rather than cultivating it",
+      "Poised types—their speed can feel like impatience, like they're forcing change rather than cultivating it",
     growsWith:
-      'Confident types—they push you to move faster when speed matters, to trust your judgment enough to act decisively',
+      'Visionary types—they push you to move faster when speed matters, to trust your judgment enough to act decisively',
 
     books: [
       {
@@ -941,12 +941,12 @@ There's also the question of urgency. Your assured pace feels right to you, but 
     },
   },
 
-  'bold-shaper': {
-    key: 'bold-shaper',
-    name: 'Bold Shaper',
+  'poised-shaper': {
+    key: 'poised-shaper',
+    name: 'Poised Shaper',
     color: '#d46326',
     noun: 'shaper',
-    adjective: 'bold',
+    adjective: 'poised',
     quadrant: 'settled-expansive',
 
     utopia:
@@ -974,7 +974,7 @@ This makes you a catalyst. In stuck situations, you're the one who breaks the st
 
 Once you've decided, you're moving. And the people raising objections start to sound like friction, not wisdom. You may dismiss concerns that deserved more weight. You may shape things into forms that serve your vision but not others' needs.
 
-Bold shaping requires bold accountability. When your confident action causes harm, can you feel it? Or does your certainty protect you from feedback? The very settledness that gives you power can become armor against learning.`,
+Poised shaping requires bold accountability. When your confident action causes harm, can you feel it? Or does your certainty protect you from feedback? The very settledness that gives you power can become armor against learning.`,
 
     coreBeliefs: [
       'Perfect is the enemy of good, but so is endless deliberation',
@@ -984,7 +984,7 @@ Bold shaping requires bold accountability. When your confident action causes har
     ],
 
     howYouGotHere:
-      "Your answers showed confidence paired with willingness to act. You didn't agonize over hypotheticals—you leaned toward engagement, shaping, moving. But unlike pure builders, you're not starting from scratch. You're reshaping what exists. This settled, expansive agency maps to the Bold Shaper.",
+      "Your answers showed confidence paired with willingness to act. You didn't agonize over hypotheticals—you leaned toward engagement, shaping, moving. But unlike pure builders, you're not starting from scratch. You're reshaping what exists. This settled, expansive agency maps to the Poised Shaper.",
 
     alignsWith:
       'other Settled types—you share a sense of having arrived somewhere, knowing your position',
@@ -1028,12 +1028,12 @@ Bold shaping requires bold accountability. When your confident action causes har
   // OBSERVER identities (mid-low agency)
   // =============================================================================
 
-  'confident-observer': {
-    key: 'confident-observer',
-    name: 'Confident Observer',
+  'visionary-observer': {
+    key: 'visionary-observer',
+    name: 'Visionary Observer',
     color: '#a3380a',
     noun: 'observer',
-    adjective: 'confident',
+    adjective: 'visionary',
     quadrant: 'settled-expansive',
 
     utopia:
@@ -1059,9 +1059,9 @@ Your confident observation makes you a truth-teller. People come to you when the
 
     blindSpotExpanded: `You trust your eyes, but should you always?
 
-Confident perception can become resistant to revision. When your observation conflicts with others' observations, you assume they're wrong. But perception is constructed—shaped by expectation, attention, context. Your confident seeing has blind spots you can't see by definition.
+Visionary perception can become resistant to revision. When your observation conflicts with others' observations, you assume they're wrong. But perception is constructed—shaped by expectation, attention, context. Your confident seeing has blind spots you can't see by definition.
 
-There's also the question of action. Confident observation without action is just confident spectatorship. At some point, what you see demands a response. Does your observer identity protect you from the risks of participation?`,
+There's also the question of action. Visionary observation without action is just confident spectatorship. At some point, what you see demands a response. Does your observer identity protect you from the risks of participation?`,
 
     coreBeliefs: [
       'Clear seeing is the foundation of wise acting',
@@ -1071,7 +1071,7 @@ There's also the question of action. Confident observation without action is jus
     ],
 
     howYouGotHere:
-      'Your answers showed strong perceptual engagement with the world combined with settled confidence in your observations. You watch, and you trust what you see. This maps to the Confident Observer.',
+      'Your answers showed strong perceptual engagement with the world combined with settled confidence in your observations. You watch, and you trust what you see. This maps to the Visionary Observer.',
 
     alignsWith:
       'other Observers and Noticers—you share the orientation toward perception rather than action, toward understanding before intervening',
@@ -1085,7 +1085,7 @@ There's also the question of action. Confident observation without action is jus
         title: 'Blindsight',
         author: 'Watts',
         reason:
-          'Observers encountering alien consciousness. Confident perception pushed to its limits.',
+          'Observers encountering alien consciousness. Visionary perception pushed to its limits.',
       },
       {
         title: 'Speaker for the Dead',
@@ -1111,12 +1111,12 @@ There's also the question of action. Confident observation without action is jus
     },
   },
 
-  'assured-observer': {
-    key: 'assured-observer',
-    name: 'Assured Observer',
+  'driven-observer': {
+    key: 'driven-observer',
+    name: 'Driven Observer',
     color: '#b34815',
     noun: 'observer',
-    adjective: 'assured',
+    adjective: 'driven',
     quadrant: 'settled-expansive',
 
     utopia:
@@ -1154,14 +1154,14 @@ And your assurance can make you miss urgent signals. When something requires fas
     ],
 
     howYouGotHere:
-      'Your answers showed sustained attention combined with grounded confidence in your approach. You observe patiently, trusting that time will reveal what it reveals. This maps to the Assured Observer.',
+      'Your answers showed sustained attention combined with grounded confidence in your approach. You observe patiently, trusting that time will reveal what it reveals. This maps to the Driven Observer.',
 
     alignsWith:
       'other Settled types—you share the quality of having found your approach and trusting it',
     tensionWith:
-      "Bold types—their rapid action can feel like premature closure, moving before they've really seen",
+      "Poised types—their rapid action can feel like premature closure, moving before they've really seen",
     growsWith:
-      'Confident types—they push you to trust your observations enough to act on them, not just continue watching',
+      'Visionary types—they push you to trust your observations enough to act on them, not just continue watching',
 
     books: [
       {
@@ -1194,12 +1194,12 @@ And your assurance can make you miss urgent signals. When something requires fas
     },
   },
 
-  'bold-observer': {
-    key: 'bold-observer',
-    name: 'Bold Observer',
+  'poised-observer': {
+    key: 'poised-observer',
+    name: 'Poised Observer',
     color: '#c45a28',
     noun: 'observer',
-    adjective: 'bold',
+    adjective: 'poised',
     quadrant: 'settled-expansive',
 
     utopia:
@@ -1232,12 +1232,12 @@ There's also the question of complicity. Observing injustice without acting agai
     coreBeliefs: [
       'Looking away doesn\'t make things disappear—it just makes you ignorant',
       'Uncomfortable truths are still truths',
-      'Bold observation requires courage, not cruelty',
+      'Poised observation requires courage, not cruelty',
       'What you refuse to see controls you more than what you face',
     ],
 
     howYouGotHere:
-      'Your answers showed willingness to look at uncomfortable realities combined with settled confidence in your approach. You observe what others avoid, and you do it without flinching. This maps to the Bold Observer.',
+      'Your answers showed willingness to look at uncomfortable realities combined with settled confidence in your approach. You observe what others avoid, and you do it without flinching. This maps to the Poised Observer.',
 
     alignsWith:
       'other Expansive types—you share the willingness to move into uncomfortable territory, to expand rather than retreat',
@@ -1257,7 +1257,7 @@ There's also the question of complicity. Observing injustice without acting agai
         title: 'Never Let Me Go',
         author: 'Ishiguro',
         reason:
-          'Watching mortality with quiet horror. Bold observation of what cannot be changed.',
+          'Watching mortality with quiet horror. Poised observation of what cannot be changed.',
       },
       {
         title: '1984',
@@ -1281,12 +1281,12 @@ There's also the question of complicity. Observing injustice without acting agai
   // NOTICER identities (low agency)
   // =============================================================================
 
-  'confident-noticer': {
-    key: 'confident-noticer',
-    name: 'Confident Noticer',
+  'visionary-noticer': {
+    key: 'visionary-noticer',
+    name: 'Visionary Noticer',
     color: '#8f3210',
     noun: 'noticer',
-    adjective: 'confident',
+    adjective: 'visionary',
     quadrant: 'settled-expansive',
 
     utopia:
@@ -1324,7 +1324,7 @@ There's also the question of communication. Your detailed noticing can be hard t
     ],
 
     howYouGotHere:
-      'Your answers showed attention to small things combined with confidence in that attention. You notice details others miss, and you trust what you notice. This maps to the Confident Noticer.',
+      'Your answers showed attention to small things combined with confidence in that attention. You notice details others miss, and you trust what you notice. This maps to the Visionary Noticer.',
 
     alignsWith:
       'other Noticers and Witnesses—you share the orientation toward receiving rather than acting, toward attention rather than intervention',
@@ -1344,7 +1344,7 @@ There's also the question of communication. Your detailed noticing can be hard t
         title: 'Stories of Your Life and Others',
         author: 'Chiang',
         reason:
-          'Noticing the deep structure of reality. Confident perception across dimensions.',
+          'Noticing the deep structure of reality. Visionary perception across dimensions.',
       },
       {
         title: 'Piranesi',
@@ -1364,12 +1364,12 @@ There's also the question of communication. Your detailed noticing can be hard t
     },
   },
 
-  'assured-noticer': {
-    key: 'assured-noticer',
-    name: 'Assured Noticer',
+  'driven-noticer': {
+    key: 'driven-noticer',
+    name: 'Driven Noticer',
     color: '#9f421a',
     noun: 'noticer',
-    adjective: 'assured',
+    adjective: 'driven',
     quadrant: 'settled-expansive',
 
     utopia:
@@ -1407,14 +1407,14 @@ There's also the question of urgency. Patient noticing is a luxury that not all 
     ],
 
     howYouGotHere:
-      'Your answers showed patient attention to details combined with grounded confidence in your approach. You notice without rushing, trusting that sustained attention reveals what it reveals. This maps to the Assured Noticer.',
+      'Your answers showed patient attention to details combined with grounded confidence in your approach. You notice without rushing, trusting that sustained attention reveals what it reveals. This maps to the Driven Noticer.',
 
     alignsWith:
-      'other Assured types—you share the quality of unhurried confidence, of trusting your process',
+      'other Driven types—you share the quality of unhurried confidence, of trusting your process',
     tensionWith:
-      "Bold types—their quick action can feel like they're concluding before they've really noticed",
+      "Poised types—their quick action can feel like they're concluding before they've really noticed",
     growsWith:
-      'Confident types—they push you to trust your noticing enough to act on it',
+      'Visionary types—they push you to trust your noticing enough to act on it',
 
     books: [
       {
@@ -1447,12 +1447,12 @@ There's also the question of urgency. Patient noticing is a luxury that not all 
     },
   },
 
-  'bold-noticer': {
-    key: 'bold-noticer',
-    name: 'Bold Noticer',
+  'poised-noticer': {
+    key: 'poised-noticer',
+    name: 'Poised Noticer',
     color: '#af5430',
     noun: 'noticer',
-    adjective: 'bold',
+    adjective: 'poised',
     quadrant: 'settled-expansive',
 
     utopia:
@@ -1480,17 +1480,17 @@ This makes you a pattern-interrupter. When you point out what you notice, people
 
 Your tendency to notice what others overlook can become a habit of looking for what's wrong with the conventional view. This is valuable when the conventional view is problematic—but not everything needs to be questioned. Some things are obvious because they're obviously true.
 
-There's also the question of reception. Bold noticing can come across as criticism of everyone who failed to notice. People may feel accused rather than enlightened. Learning to share your noticing in ways that invite curiosity rather than defensiveness is important work.`,
+There's also the question of reception. Poised noticing can come across as criticism of everyone who failed to notice. People may feel accused rather than enlightened. Learning to share your noticing in ways that invite curiosity rather than defensiveness is important work.`,
 
     coreBeliefs: [
       'The most important things to notice are often hiding in plain sight',
       'Consensus can create blindness—what everyone sees, no one examines',
-      'Bold noticing serves truth, not contrarianism',
+      'Poised noticing serves truth, not contrarianism',
       'The obvious is worth questioning precisely because it seems obvious',
     ],
 
     howYouGotHere:
-      'Your answers showed willingness to question the obvious combined with settled confidence in your attention. You notice what hides in plain sight, and you trust what you notice. This maps to the Bold Noticer.',
+      'Your answers showed willingness to question the obvious combined with settled confidence in your attention. You notice what hides in plain sight, and you trust what you notice. This maps to the Poised Noticer.',
 
     alignsWith:
       'other Expansive types—you share the willingness to push into uncomfortable territory, to notice what others prefer not to see',
@@ -1504,19 +1504,19 @@ There's also the question of reception. Bold noticing can come across as critici
         title: 'The Dispossessed',
         author: 'Le Guin',
         reason:
-          'Physicist noticing what his society cannot see. Bold perception across ideologies.',
+          'Physicist noticing what his society cannot see. Poised perception across ideologies.',
       },
       {
         title: 'Snow Crash',
         author: 'Stephenson',
         reason:
-          'Noticing the hidden structures of language and culture. Bold pattern recognition.',
+          'Noticing the hidden structures of language and culture. Poised pattern recognition.',
       },
       {
         title: 'The City & The City',
         author: 'Miéville',
         reason:
-          'Two cities occupying the same space, trained not to notice each other. Bold seeing.',
+          'Two cities occupying the same space, trained not to notice each other. Poised seeing.',
       },
     ],
 
@@ -1534,12 +1534,12 @@ There's also the question of reception. Bold noticing can come across as critici
   // WITNESS identities (lowest agency)
   // =============================================================================
 
-  'confident-witness': {
-    key: 'confident-witness',
-    name: 'Confident Witness',
+  'visionary-witness': {
+    key: 'visionary-witness',
+    name: 'Visionary Witness',
     color: '#7c2c14',
     noun: 'witness',
-    adjective: 'confident',
+    adjective: 'visionary',
     quadrant: 'settled-expansive',
 
     utopia:
@@ -1577,7 +1577,7 @@ There's also the question of what you do with what you witness. Pure witnessing 
     ],
 
     howYouGotHere:
-      'Your answers showed deep presence combined with settled confidence in that presence. You witness, and you trust that witnessing matters. This maps to the Confident Witness.',
+      'Your answers showed deep presence combined with settled confidence in that presence. You witness, and you trust that witnessing matters. This maps to the Visionary Witness.',
 
     alignsWith:
       'other Witnesses and Noticers—you share the orientation toward presence rather than action, toward receiving rather than changing',
@@ -1591,7 +1591,7 @@ There's also the question of what you do with what you witness. Pure witnessing 
         title: 'The Left Hand of Darkness',
         author: 'Le Guin',
         reason:
-          'Bearing witness to an alien culture. Confident presence across difference.',
+          'Bearing witness to an alien culture. Visionary presence across difference.',
       },
       {
         title: 'Flowers for Algernon',
@@ -1617,12 +1617,12 @@ There's also the question of what you do with what you witness. Pure witnessing 
     },
   },
 
-  'assured-witness': {
-    key: 'assured-witness',
-    name: 'Assured Witness',
+  'driven-witness': {
+    key: 'driven-witness',
+    name: 'Driven Witness',
     color: '#8c3c1e',
     noun: 'witness',
-    adjective: 'assured',
+    adjective: 'driven',
     quadrant: 'settled-expansive',
 
     utopia:
@@ -1660,14 +1660,14 @@ There's also the question of what your presence enables. If your steady witnessi
     ],
 
     howYouGotHere:
-      'Your answers showed grounded presence without anxiety about needing to do more. You witness with assurance, trusting that your steady attendance matters. This maps to the Assured Witness.',
+      'Your answers showed grounded presence without anxiety about needing to do more. You witness with assurance, trusting that your steady attendance matters. This maps to the Driven Witness.',
 
     alignsWith:
       'other Settled types—you share the quality of having found your place and trusting it',
     tensionWith:
-      "Bold types—their action-orientation can feel like they can't just be present, like they always need to be doing",
+      "Poised types—their action-orientation can feel like they can't just be present, like they always need to be doing",
     growsWith:
-      "Confident types—they push you to trust your witnessing enough to share what you've seen",
+      "Visionary types—they push you to trust your witnessing enough to share what you've seen",
 
     books: [
       {
@@ -1700,12 +1700,12 @@ There's also the question of what your presence enables. If your steady witnessi
     },
   },
 
-  'bold-witness': {
-    key: 'bold-witness',
-    name: 'Bold Witness',
+  'poised-witness': {
+    key: 'poised-witness',
+    name: 'Poised Witness',
     color: '#9c4e34',
     noun: 'witness',
-    adjective: 'bold',
+    adjective: 'poised',
     quadrant: 'settled-expansive',
 
     utopia:
@@ -1733,7 +1733,7 @@ This makes you a keeper of uncomfortable truths. The things that society would r
 
 Your boldness about seeing difficult things can cross into territory that's more about your own experience than about what's being witnessed. Are you present because your presence matters, or because you want to be someone who witnesses hard things? The ego of the bold witness is worth examining.
 
-There's also the question of consent. Does the person or situation being witnessed want your attention? Bold witnessing without permission can become intrusion, documenting what deserves privacy, making public what was meant to be hidden.`,
+There's also the question of consent. Does the person or situation being witnessed want your attention? Poised witnessing without permission can become intrusion, documenting what deserves privacy, making public what was meant to be hidden.`,
 
     coreBeliefs: [
       'Some truths need witnesses even when nothing can be done',
@@ -1743,7 +1743,7 @@ There's also the question of consent. Does the person or situation being witness
     ],
 
     howYouGotHere:
-      'Your answers showed willingness to be present to difficulty combined with settled confidence in that presence. You witness what others avoid, trusting that the witnessing matters. This maps to the Bold Witness.',
+      'Your answers showed willingness to be present to difficulty combined with settled confidence in that presence. You witness what others avoid, trusting that the witnessing matters. This maps to the Poised Witness.',
 
     alignsWith:
       'other Expansive types—you share the willingness to move toward discomfort rather than away from it',
@@ -1763,7 +1763,7 @@ There's also the question of consent. Does the person or situation being witness
         title: 'Kindred',
         author: 'Butler',
         reason:
-          'Forced to witness slavery firsthand. Bold presence in unbearable history.',
+          'Forced to witness slavery firsthand. Poised presence in unbearable history.',
       },
       {
         title: 'The Fifth Season',

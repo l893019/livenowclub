@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import styles from "./MeetPageClient.module.css";
+import Header from "@/components/Header";
 
 type TargetUser = {
   id: string;
@@ -43,89 +43,95 @@ export function MeetPageClient({ targetUser }: Props) {
   };
 
   return (
-    <div className={styles.page}>
-      {/* Hero Image */}
-      <div className={styles.heroImage}>
-        <img
-          src="/wonder/assets/landscapes/optimized/1.jpg"
-          alt="Abstract landscape"
-        />
-        <div className={styles.heroOverlay} />
-      </div>
+    <>
+      <Header />
 
-      {/* Content */}
-      <div className={styles.content}>
-        <header className={styles.header}>
-          <Link href="/" className={styles.logoLink}>
-            <span className={styles.logo}>The Live Now Club</span>
-          </Link>
-          <span className={styles.label}>From Wonder</span>
-        </header>
+      <main className="meet-page">
+        {/* Hero Section */}
+        <section className="meet-hero">
+          <div className="meet-hero-image">
+            <img
+              src="/wonder/assets/landscapes/optimized/1.jpg"
+              alt="Abstract landscape"
+            />
+            <div className="meet-hero-overlay" />
+          </div>
 
-        <main className={styles.main}>
-          <h1 className={styles.title}>When Purpose Is All We Have Left</h1>
+          <div className="meet-hero-content">
+            <span className="meet-label">From Wonder</span>
+            <h1>When Purpose Is All We Have Left</h1>
+            <p className="meet-subtitle">
+              An interactive exploration of human purpose through the lens of sci-fi.
+            </p>
+          </div>
+        </section>
 
-          <p className={styles.description}>
-            An interactive exploration of human purpose through the lens of sci-fi.
-          </p>
-
-          <div className={styles.details}>
+        {/* Content Section */}
+        <section className="meet-content">
+          <div className="meet-details">
             <p>7 questions. No right answers.</p>
             <p>Just a mirror for how you think about the future.</p>
           </div>
 
           {hasCompletedQuiz ? (
-            <>
-              <button className={styles.primaryButton} onClick={handleSeeConnection}>
+            <div className="meet-cta">
+              <button className="btn btn-primary" onClick={handleSeeConnection}>
                 See Where You Intersect
               </button>
-              <p className={styles.subtext}>
-                You've already taken the quiz.
-              </p>
-            </>
+              <p className="meet-subtext">You've already taken the quiz.</p>
+            </div>
           ) : (
-            <>
-              <button className={styles.primaryButton} onClick={handleStartQuiz}>
+            <div className="meet-cta">
+              <button className="btn btn-primary" onClick={handleStartQuiz}>
                 Discover Your Worldview
               </button>
-              <p className={styles.subtext}>3 minutes</p>
-            </>
+              <p className="meet-subtext">Takes about 3 minutes</p>
+            </div>
           )}
-        </main>
 
-        {/* Personal touch from inviter */}
-        <footer className={styles.footer}>
-          <div className={styles.divider} />
-
-          {targetUser.identityName ? (
-            <div className={styles.inviterSection}>
-              <p className={styles.inviterIntro}>
-                <span className={styles.inviterName}>{targetUser.name}</span> took this quiz and discovered they're
-              </p>
-              <p className={styles.inviterIdentity}>
-                {targetUser.identityName}
-              </p>
-              {targetUser.identityDescription && (
-                <p className={styles.inviterDescription}>
-                  {targetUser.identityDescription}
+          {/* Personal touch from inviter */}
+          <div className="meet-inviter">
+            <div className="meet-divider" />
+            {targetUser.identityName ? (
+              <>
+                <p className="meet-inviter-intro">
+                  <strong>{targetUser.name}</strong> took this quiz and discovered they're
                 </p>
-              )}
-              <p className={styles.inviterPrompt}>
-                After you finish, you'll see where your worldviews intersect.
-              </p>
-            </div>
-          ) : (
-            <div className={styles.inviterSection}>
-              <p className={styles.inviterIntro}>
-                <span className={styles.inviterName}>{targetUser.name}</span> took this quiz.
-              </p>
-              <p className={styles.inviterPrompt}>
-                After you finish, you'll see where your worldviews intersect.
-              </p>
-            </div>
-          )}
-        </footer>
-      </div>
-    </div>
+                <p className="meet-inviter-identity">{targetUser.identityName}</p>
+                {targetUser.identityDescription && (
+                  <p className="meet-inviter-description">
+                    "{targetUser.identityDescription}"
+                  </p>
+                )}
+                <p className="meet-inviter-prompt">
+                  After you finish, you'll see where your worldviews intersect.
+                </p>
+              </>
+            ) : (
+              <>
+                <p className="meet-inviter-intro">
+                  <strong>{targetUser.name}</strong> took this quiz.
+                </p>
+                <p className="meet-inviter-prompt">
+                  After you finish, you'll see where your worldviews intersect.
+                </p>
+              </>
+            )}
+          </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="footer">
+        <p className="footer-quote">What if now is all we have?</p>
+        <nav className="footer-nav">
+          <Link href="/read">Read</Link>
+          <Link href="/navigate">Navigate</Link>
+          <Link href="/wonder">Wonder</Link>
+          <Link href="/connect">Connect</Link>
+        </nav>
+        <p className="footer-copy">&copy; 2026 Louise Ireland</p>
+      </footer>
+    </>
   );
 }

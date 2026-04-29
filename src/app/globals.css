@@ -6931,3 +6931,171 @@ p {
     padding: var(--space-8) var(--space-6);
   }
 }
+
+/* ============================================
+   MEET PAGE - Viral Loop Landing
+   ============================================ */
+
+.meet-page {
+  min-height: calc(100vh - 80px);
+  padding-top: 80px; /* Account for fixed header */
+}
+
+.meet-hero {
+  position: relative;
+  height: 50vh;
+  min-height: 300px;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.meet-hero-image {
+  position: absolute;
+  inset: 0;
+}
+
+.meet-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.meet-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(250, 246, 241, 0) 0%,
+    rgba(250, 246, 241, 0.6) 60%,
+    rgba(250, 246, 241, 1) 100%
+  );
+}
+
+.meet-hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-8) var(--page-margin);
+  text-align: center;
+}
+
+.meet-label {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--pink);
+  margin-bottom: var(--space-3);
+}
+
+.meet-hero-content h1 {
+  font-family: var(--font-sans);
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 500;
+  color: var(--charcoal);
+  margin-bottom: var(--space-3);
+}
+
+.meet-subtitle {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  color: var(--text-dim);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.meet-content {
+  max-width: var(--content-narrow);
+  margin: 0 auto;
+  padding: var(--space-10) var(--page-margin);
+  text-align: center;
+}
+
+.meet-details {
+  margin-bottom: var(--space-8);
+}
+
+.meet-details p {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+.meet-cta {
+  margin-bottom: var(--space-12);
+}
+
+.meet-subtext {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: var(--space-3);
+}
+
+.meet-inviter {
+  padding-top: var(--space-8);
+}
+
+.meet-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--charcoal);
+  opacity: 0.15;
+  margin: 0 auto var(--space-6);
+}
+
+.meet-inviter-intro {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text-dim);
+  margin-bottom: var(--space-2);
+}
+
+.meet-inviter-intro strong {
+  color: var(--charcoal);
+  font-weight: 500;
+}
+
+.meet-inviter-identity {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--pink);
+  margin-bottom: var(--space-3);
+}
+
+.meet-inviter-description {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--text-dim);
+  max-width: 400px;
+  margin: 0 auto var(--space-4);
+  line-height: 1.6;
+}
+
+.meet-inviter-prompt {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .meet-hero {
+    height: 40vh;
+    min-height: 250px;
+  }
+
+  .meet-hero-content {
+    padding: var(--space-6) var(--page-margin-mobile);
+  }
+
+  .meet-content {
+    padding: var(--space-8) var(--page-margin-mobile);
+  }
+}

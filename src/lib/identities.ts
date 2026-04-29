@@ -29,22 +29,22 @@ export type Quadrant =
   | 'seeking-protective'
 
 export type Adjective =
-  // Settled + Expansive
-  | 'confident'
-  | 'assured'
-  | 'bold'
-  // Settled + Protective
-  | 'steady'
-  | 'grounded'
-  | 'anchored'
-  // Seeking + Expansive
-  | 'adaptive'
-  | 'curious'
-  | 'open'
-  // Seeking + Protective
-  | 'careful'
-  | 'cautious'
-  | 'measured'
+  // Settled + Expansive (certain + growth-oriented)
+  | 'visionary'  // most extreme
+  | 'driven'     // middle
+  | 'poised'     // mildest
+  // Settled + Protective (certain + cautious)
+  | 'rooted'     // most extreme
+  | 'steady'     // middle
+  | 'grounded'   // mildest
+  // Seeking + Expansive (questioning + growth-oriented)
+  | 'adventurous' // most extreme
+  | 'curious'     // middle
+  | 'open'        // mildest
+  // Seeking + Protective (questioning + cautious)
+  | 'watchful'    // most extreme
+  | 'careful'     // middle
+  | 'thoughtful'  // mildest
 
 export type Identity = {
   // Core
@@ -131,28 +131,28 @@ export const NOUNS: Noun[] = [
  * Ordered by intensity within each quadrant.
  */
 export const ADJECTIVES_BY_QUADRANT: Record<Quadrant, Adjective[]> = {
-  'settled-expansive': ['confident', 'assured', 'bold'],
-  'settled-protective': ['steady', 'grounded', 'anchored'],
-  'seeking-expansive': ['adaptive', 'curious', 'open'],
-  'seeking-protective': ['careful', 'cautious', 'measured'],
+  'settled-expansive': ['visionary', 'driven', 'poised'],
+  'settled-protective': ['rooted', 'steady', 'grounded'],
+  'seeking-expansive': ['adventurous', 'curious', 'open'],
+  'seeking-protective': ['watchful', 'careful', 'thoughtful'],
 }
 
 /**
  * All adjectives as a flat array.
  */
 export const ADJECTIVES: Adjective[] = [
-  'confident',
-  'assured',
-  'bold',
+  'visionary',
+  'driven',
+  'poised',
+  'rooted',
   'steady',
   'grounded',
-  'anchored',
-  'adaptive',
+  'adventurous',
   'curious',
   'open',
+  'watchful',
   'careful',
-  'cautious',
-  'measured',
+  'thoughtful',
 ]
 
 // =============================================================================
@@ -181,107 +181,107 @@ export const QUADRANT_BASE_COLORS: Record<Quadrant, string> = {
 export const IDENTITY_COLORS: Record<string, string> = {
   // Settled + Expansive (Orange/Gold family)
   // High agency - saturated, bright
-  'confident-architect': '#ea580c',
-  'assured-architect': '#f97316',
-  'bold-architect': '#fb923c',
-  'confident-builder': '#dc5208',
-  'assured-builder': '#ed6c0c',
-  'bold-builder': '#f08030',
+  'visionary-architect': '#ea580c',
+  'driven-architect': '#f97316',
+  'poised-architect': '#fb923c',
+  'visionary-builder': '#dc5208',
+  'driven-builder': '#ed6c0c',
+  'poised-builder': '#f08030',
   // Mid agency - medium saturation
-  'confident-maker': '#c94507',
-  'assured-maker': '#d95a12',
-  'bold-maker': '#e06e26',
-  'confident-shaper': '#b63e07',
-  'assured-shaper': '#c65012',
-  'bold-shaper': '#d46326',
+  'visionary-maker': '#c94507',
+  'driven-maker': '#d95a12',
+  'poised-maker': '#e06e26',
+  'visionary-shaper': '#b63e07',
+  'driven-shaper': '#c65012',
+  'poised-shaper': '#d46326',
   // Low agency - softer, muted
-  'confident-observer': '#a3380a',
-  'assured-observer': '#b34815',
-  'bold-observer': '#c45a28',
-  'confident-noticer': '#8f3210',
-  'assured-noticer': '#9f421a',
-  'bold-noticer': '#af5430',
-  'confident-witness': '#7c2c14',
-  'assured-witness': '#8c3c1e',
-  'bold-witness': '#9c4e34',
+  'visionary-observer': '#a3380a',
+  'driven-observer': '#b34815',
+  'poised-observer': '#c45a28',
+  'visionary-noticer': '#8f3210',
+  'driven-noticer': '#9f421a',
+  'poised-noticer': '#af5430',
+  'visionary-witness': '#7c2c14',
+  'driven-witness': '#8c3c1e',
+  'poised-witness': '#9c4e34',
 
   // Settled + Protective (Teal/Green family)
   // High agency - saturated, bright
-  'steady-architect': '#0d9488',
-  'grounded-architect': '#14b8a6',
-  'anchored-architect': '#2dd4bf',
-  'steady-builder': '#0b8579',
-  'grounded-builder': '#10a392',
-  'anchored-builder': '#25c0ab',
+  'rooted-architect': '#0d9488',
+  'steady-architect': '#14b8a6',
+  'grounded-architect': '#2dd4bf',
+  'rooted-builder': '#0b8579',
+  'steady-builder': '#10a392',
+  'grounded-builder': '#25c0ab',
   // Mid agency - medium saturation
-  'steady-maker': '#09756b',
-  'grounded-maker': '#0c8f80',
-  'anchored-maker': '#1aab98',
-  'steady-shaper': '#08665d',
-  'grounded-shaper': '#0a7c70',
-  'anchored-shaper': '#159586',
+  'rooted-maker': '#09756b',
+  'steady-maker': '#0c8f80',
+  'grounded-maker': '#1aab98',
+  'rooted-shaper': '#08665d',
+  'steady-shaper': '#0a7c70',
+  'grounded-shaper': '#159586',
   // Low agency - softer, muted
-  'steady-observer': '#065750',
-  'grounded-observer': '#086a62',
-  'anchored-observer': '#108074',
-  'steady-noticer': '#054943',
-  'grounded-noticer': '#065954',
-  'anchored-noticer': '#0b6c64',
-  'steady-witness': '#043b38',
-  'grounded-witness': '#054a46',
-  'anchored-witness': '#085a56',
+  'rooted-observer': '#065750',
+  'steady-observer': '#086a62',
+  'grounded-observer': '#108074',
+  'rooted-noticer': '#054943',
+  'steady-noticer': '#065954',
+  'grounded-noticer': '#0b6c64',
+  'rooted-witness': '#043b38',
+  'steady-witness': '#054a46',
+  'grounded-witness': '#085a56',
 
   // Seeking + Expansive (Violet/Purple family)
   // High agency - saturated, bright
-  'adaptive-architect': '#7c3aed',
+  'adventurous-architect': '#7c3aed',
   'curious-architect': '#8b5cf6',
   'open-architect': '#a78bfa',
-  'adaptive-builder': '#7034d6',
+  'adventurous-builder': '#7034d6',
   'curious-builder': '#8050e5',
   'open-builder': '#9a7af3',
   // Mid agency - medium saturation
-  'adaptive-maker': '#642ebf',
+  'adventurous-maker': '#642ebf',
   'curious-maker': '#7444ce',
   'open-maker': '#8d68e6',
-  'adaptive-shaper': '#5828a8',
+  'adventurous-shaper': '#5828a8',
   'curious-shaper': '#6838b7',
   'open-shaper': '#8056d8',
   // Low agency - softer, muted
-  'adaptive-observer': '#4c2291',
+  'adventurous-observer': '#4c2291',
   'curious-observer': '#5c2ca0',
   'open-observer': '#7344ca',
-  'adaptive-noticer': '#401c7a',
+  'adventurous-noticer': '#401c7a',
   'curious-noticer': '#502688',
   'open-noticer': '#6638bb',
-  'adaptive-witness': '#341664',
+  'adventurous-witness': '#341664',
   'curious-witness': '#442070',
   'open-witness': '#5a2cac',
 
   // Seeking + Protective (Indigo/Blue family)
   // High agency - saturated, bright
-  'careful-architect': '#6366f1',
-  'cautious-architect': '#818cf8',
-  'measured-architect': '#a5b4fc',
-  'careful-builder': '#575ae0',
-  'cautious-builder': '#747ce7',
-  'measured-builder': '#98a2f5',
+  'watchful-architect': '#6366f1',
+  'careful-architect': '#818cf8',
+  'thoughtful-architect': '#a5b4fc',
+  'watchful-builder': '#575ae0',
+  'careful-builder': '#747ce7',
+  'thoughtful-builder': '#98a2f5',
   // Mid agency - medium saturation
-  'careful-maker': '#4b4ecf',
-  'cautious-maker': '#676cd6',
-  'measured-maker': '#8b90ee',
-  'careful-shaper': '#3f42be',
-  'cautious-shaper': '#5a5cc5',
-  'measured-shaper': '#7e7ee7',
+  'watchful-maker': '#4b4ecf',
+  'careful-maker': '#676cd6',
+  'thoughtful-maker': '#8b90ee',
+  'watchful-shaper': '#3f42be',
+  'careful-shaper': '#5a5cc5',
+  'thoughtful-shaper': '#7e7ee7',
   // Low agency - softer, muted
-  'careful-observer': '#3336ad',
-  'cautious-observer': '#4d4cb4',
-  'measured-observer': '#716cdf',
-  'careful-noticer': '#272a9c',
-  'cautious-noticer': '#403ca3',
-  'measured-noticer': '#645ad7',
-  'careful-witness': '#1b1e8b',
-  'cautious-witness': '#332c92',
-  'measured-witness': '#5748cf',
+  'watchful-observer': '#3336ad',
+  'careful-observer': '#4d4cb4',
+  'thoughtful-observer': '#716cdf',
+  'watchful-noticer': '#272a9c',
+  'careful-noticer': '#403ca3',
+  'thoughtful-noticer': '#645ad7',
+  'watchful-witness': '#1b1e8b',
+  'careful-witness': '#332c92',
+  'thoughtful-witness': '#5748cf',
 }
 
 // =============================================================================
@@ -483,23 +483,23 @@ export function getIdentityFromDimensions(
  */
 const ARCHETYPE_TO_IDENTITY: Record<string, string> = {
   // High agency, optimistic
-  citizen: 'confident-builder',      // The Abundant → expansive builder
-  shaper: 'bold-architect',          // The Builder → bold creator
-  architect: 'assured-architect',    // The Architect → structured vision
-  alive: 'bold-builder',             // The Alive → vital creator
-  friction: 'adaptive-builder',      // The Challenger → pushes boundaries
+  citizen: 'visionary-builder',      // The Abundant → expansive builder
+  shaper: 'poised-architect',        // The Builder → poised creator
+  architect: 'driven-architect',     // The Architect → structured vision
+  alive: 'poised-builder',           // The Alive → vital creator
+  friction: 'adventurous-builder',   // The Challenger → pushes boundaries
 
   // Mid agency, balanced
   mender: 'open-maker',              // The Mender → healing through making
   between: 'curious-shaper',         // The Between → bridges understanding
-  rooted: 'anchored-maker',          // The Rooted → grounded creation
+  rooted: 'grounded-maker',          // The Rooted → grounded creation
 
   // Lower agency, receptive
-  presence: 'grounded-observer',     // The Present → embodied attention
+  presence: 'steady-observer',       // The Present → embodied attention
   swimmer: 'curious-observer',       // The Deep → questioning witness
-  conscience: 'careful-observer',    // The Guardian → watchful protector
-  cleareyed: 'measured-observer',    // The Clear-Eyed → honest seeing
-  embers: 'steady-noticer',          // The Keeper → preserving attention
+  conscience: 'watchful-observer',   // The Guardian → watchful protector
+  cleareyed: 'thoughtful-observer',  // The Clear-Eyed → honest seeing
+  embers: 'rooted-noticer',          // The Keeper → preserving attention
   unbound: 'open-witness',           // The Unbound → transcendent presence
 }
 

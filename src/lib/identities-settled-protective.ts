@@ -4,7 +4,7 @@
  * Quadrant characteristics:
  * - High certainty + preservation orientation
  * - Grounded, careful, preserving what works
- * - Adjectives: Steady (most extreme), Grounded (middle), Anchored (mildest)
+ * - Adjectives: Rooted (most extreme), Steady (middle), Grounded (mildest)
  *
  * 7 nouns x 3 adjectives = 21 identities
  */
@@ -16,12 +16,12 @@ export const settledProtectiveIdentities: Record<string, Identity> = {
   // ARCHITECT identities (highest agency)
   // =============================================================================
 
-  'steady-architect': {
-    key: 'steady-architect',
-    name: 'Steady Architect',
+  'rooted-architect': {
+    key: 'rooted-architect',
+    name: 'Rooted Architect',
     color: '#0d9488',
     noun: 'architect',
-    adjective: 'steady',
+    adjective: 'rooted',
     quadrant: 'settled-protective',
 
     utopia:
@@ -59,7 +59,7 @@ There's also opportunity cost. The energy you spend on protection might sometime
     ],
 
     howYouGotHere:
-      'Your answers revealed someone who designs from a place of settled conviction with an eye toward preservation. You think in terms of what could go wrong and how to prevent it. This protective, systems-level thinking maps to the Steady Architect.',
+      'Your answers revealed someone who designs from a place of settled conviction with an eye toward preservation. You think in terms of what could go wrong and how to prevent it. This protective, systems-level thinking maps to the Rooted Architect.',
 
     alignsWith:
       'other Settled types—you share the quality of having arrived at convictions you trust, of knowing your position',
@@ -99,12 +99,12 @@ There's also opportunity cost. The energy you spend on protection might sometime
     },
   },
 
-  'grounded-architect': {
-    key: 'grounded-architect',
-    name: 'Grounded Architect',
+  'steady-architect': {
+    key: 'steady-architect',
+    name: 'Steady Architect',
     color: '#14b8a6',
     noun: 'architect',
-    adjective: 'grounded',
+    adjective: 'steady',
     quadrant: 'settled-protective',
 
     utopia:
@@ -132,17 +132,17 @@ People come to you when they need architecture that's both reliable and not rigi
 
 The balance you value—stability with flexibility, roots with growth—can prevent you from recognizing when more radical change is needed. Sometimes the foundation itself is the problem. Sometimes rooted growth means stunted growth. Your instinct to protect can limit the scale of transformation you're willing to consider.
 
-There's also the question of whose stability you're protecting. Grounded architecture often serves those already well-served by existing structures. When the roots are in soil that's poisoned, rootedness isn't wisdom—it's complicity.`,
+There's also the question of whose stability you're protecting. Steady architecture often serves those already well-served by existing structures. When the roots are in soil that's poisoned, rootedness isn't wisdom—it's complicity.`,
 
     coreBeliefs: [
       'The strongest systems have both deep roots and flexible branches',
       'Stability is not the enemy of change—chaos is',
       'Understanding what must not change enables understanding what can',
-      'Grounded architecture serves the future by respecting the past',
+      'Steady architecture serves the future by respecting the past',
     ],
 
     howYouGotHere:
-      'Your answers showed systems thinking combined with a preference for preservation that allows for evolution. You design for stability without rigidity. This balanced, protective approach maps to the Grounded Architect.',
+      'Your answers showed systems thinking combined with a preference for preservation that allows for evolution. You design for stability without rigidity. This balanced, protective approach maps to the Steady Architect.',
 
     alignsWith:
       'other Protective types—you share the orientation toward preservation, toward building things that last',
@@ -156,7 +156,7 @@ There's also the question of whose stability you're protecting. Grounded archite
         title: 'Aurora',
         author: 'Robinson',
         reason:
-          'A generation ship learns the limits of closed systems. Grounded understanding of what sustainability actually requires.',
+          'A generation ship learns the limits of closed systems. Steady understanding of what sustainability actually requires.',
       },
       {
         title: 'The Ministry for the Future',
@@ -168,7 +168,7 @@ There's also the question of whose stability you're protecting. Grounded archite
         title: 'Ecotopia',
         author: 'Callenbach',
         reason:
-          'A society rebuilt on ecological principles. Grounded architecture serving sustainable life.',
+          'A society rebuilt on ecological principles. Steady architecture serving sustainable life.',
       },
     ],
 
@@ -182,12 +182,12 @@ There's also the question of whose stability you're protecting. Grounded archite
     },
   },
 
-  'anchored-architect': {
-    key: 'anchored-architect',
-    name: 'Anchored Architect',
+  'grounded-architect': {
+    key: 'grounded-architect',
+    name: 'Grounded Architect',
     color: '#2dd4bf',
     noun: 'architect',
-    adjective: 'anchored',
+    adjective: 'grounded',
     quadrant: 'settled-protective',
 
     utopia:
@@ -220,15 +220,15 @@ There's also the danger of false anchors. The values you think are central might
     coreBeliefs: [
       'Clear centers enable flexible edges',
       'Resilience comes from knowing what you can\'t afford to lose',
-      'Anchored architecture bends without breaking',
+      'Grounded architecture bends without breaking',
       'The best systems know what they\'re for',
     ],
 
     howYouGotHere:
-      'Your answers revealed a clear sense of what matters combined with flexibility about everything else. You design from the center outward, protecting essentials while remaining adaptable. This maps to the Anchored Architect.',
+      'Your answers revealed a clear sense of what matters combined with flexibility about everything else. You design from the center outward, protecting essentials while remaining adaptable. This maps to the Grounded Architect.',
 
     alignsWith:
-      'other Anchored types—you share the quality of knowing your center, of building from clear priorities',
+      'other Grounded types—you share the quality of knowing your center, of building from clear priorities',
     tensionWith:
       'Adaptive types—their constant flexibility can seem like absence of conviction, like they don\'t know what they stand for',
     growsWith:
@@ -269,12 +269,12 @@ There's also the danger of false anchors. The values you think are central might
   // BUILDER identities (high agency)
   // =============================================================================
 
-  'steady-builder': {
-    key: 'steady-builder',
-    name: 'Steady Builder',
+  'rooted-builder': {
+    key: 'rooted-builder',
+    name: 'Rooted Builder',
     color: '#0b8579',
     noun: 'builder',
-    adjective: 'steady',
+    adjective: 'rooted',
     quadrant: 'settled-protective',
 
     utopia:
@@ -298,7 +298,7 @@ The things you build inherit your steadiness. They're not flashy, but they work.
     blindSpot:
       'Your steady pace can become inflexibility about timelines. Sometimes situations demand faster work, and your sustainable pace isn\'t sustainable for the situation.',
 
-    blindSpotExpanded: `Steady isn't always the right speed.
+    blindSpotExpanded: `Rooted isn't always the right speed.
 
 Your commitment to building properly can make you resistant to situations that require building faster. Yes, cutting corners has costs—but so does missing windows of opportunity. Your steady approach is valuable, but it's not the only valuable approach.
 
@@ -307,15 +307,15 @@ There's also the question of perfectionism disguised as diligence. "Doing it pro
     coreBeliefs: [
       'Lasting construction requires patient construction',
       'Speed without sustainability is just deferred cost',
-      'Steady effort compounds; heroic effort exhausts',
+      'Rooted effort compounds; heroic effort exhausts',
       'What you build reflects how you build',
     ],
 
     howYouGotHere:
-      'Your answers showed hands-on building combined with a steady, sustainable approach. You create things that last because you take the time to build them right. This maps to the Steady Builder.',
+      'Your answers showed hands-on building combined with a steady, sustainable approach. You create things that last because you take the time to build them right. This maps to the Rooted Builder.',
 
     alignsWith:
-      'other Steady types—you share the quality of patient persistence, of valuing sustainability over speed',
+      'other Rooted types—you share the quality of patient persistence, of valuing sustainability over speed',
     tensionWith:
       'Bold types—their rapid action can seem careless, like they\'re creating problems for future builders to fix',
     growsWith:
@@ -332,7 +332,7 @@ There's also the question of perfectionism disguised as diligence. "Doing it pro
         title: 'The Long Earth',
         author: 'Pratchett & Baxter',
         reason:
-          'Steady exploration of infinite worlds. Building at sustainable pace across unlimited frontier.',
+          'Rooted exploration of infinite worlds. Building at sustainable pace across unlimited frontier.',
       },
       {
         title: 'Children of Time',
@@ -352,12 +352,12 @@ There's also the question of perfectionism disguised as diligence. "Doing it pro
     },
   },
 
-  'grounded-builder': {
-    key: 'grounded-builder',
-    name: 'Grounded Builder',
+  'steady-builder': {
+    key: 'steady-builder',
+    name: 'Steady Builder',
     color: '#10a392',
     noun: 'builder',
-    adjective: 'grounded',
+    adjective: 'steady',
     quadrant: 'settled-protective',
 
     utopia:
@@ -391,14 +391,14 @@ There's also a question of whose needs you're grounding yourself in. Practical b
       'Building should serve real needs, not theoretical ones',
       'Understanding users is as important as understanding materials',
       'Practicality is not the enemy of quality—it\'s the foundation',
-      'Grounded building starts with grounded listening',
+      'Steady building starts with grounded listening',
     ],
 
     howYouGotHere:
-      'Your answers showed practical building combined with attention to real needs. You create things that work because you stay connected to what people actually require. This maps to the Grounded Builder.',
+      'Your answers showed practical building combined with attention to real needs. You create things that work because you stay connected to what people actually require. This maps to the Steady Builder.',
 
     alignsWith:
-      'other Grounded types—you share the orientation toward practical reality, toward what actually works rather than what should work',
+      'other Steady types—you share the orientation toward practical reality, toward what actually works rather than what should work',
     tensionWith:
       'Adaptive types—their constant experimentation can seem unfocused, like building without clear purpose',
     growsWith:
@@ -409,7 +409,7 @@ There's also a question of whose needs you're grounding yourself in. Practical b
         title: 'The Martian',
         author: 'Weir',
         reason:
-          'Practical problem-solving with available materials. Grounded building that actually works.',
+          'Practical problem-solving with available materials. Steady building that actually works.',
       },
       {
         title: 'Farmer in the Sky',
@@ -435,12 +435,12 @@ There's also a question of whose needs you're grounding yourself in. Practical b
     },
   },
 
-  'anchored-builder': {
-    key: 'anchored-builder',
-    name: 'Anchored Builder',
+  'grounded-builder': {
+    key: 'grounded-builder',
+    name: 'Grounded Builder',
     color: '#25c0ab',
     noun: 'builder',
-    adjective: 'anchored',
+    adjective: 'grounded',
     quadrant: 'settled-protective',
 
     utopia:
@@ -474,14 +474,14 @@ There's also the question of changing purpose. What if your anchor was set wrong
       'Purposeful building is more efficient than aimless construction',
       'Direction prevents drift',
       'The best building connects every piece to a larger whole',
-      'Anchored builders serve their purpose, not their egos',
+      'Grounded builders serve their purpose, not their egos',
     ],
 
     howYouGotHere:
-      'Your answers showed construction oriented by clear purpose. You build with everything connected to a larger vision. This maps to the Anchored Builder.',
+      'Your answers showed construction oriented by clear purpose. You build with everything connected to a larger vision. This maps to the Grounded Builder.',
 
     alignsWith:
-      'other Anchored types—you share the quality of building from clear centers, of knowing what you\'re doing and why',
+      'other Grounded types—you share the quality of building from clear centers, of knowing what you\'re doing and why',
     tensionWith:
       'Curious types—their exploratory building can seem aimless, lacking the direction that makes building worthwhile',
     growsWith:
@@ -522,12 +522,12 @@ There's also the question of changing purpose. What if your anchor was set wrong
   // MAKER identities (mid-high agency)
   // =============================================================================
 
-  'steady-maker': {
-    key: 'steady-maker',
-    name: 'Steady Maker',
+  'rooted-maker': {
+    key: 'rooted-maker',
+    name: 'Rooted Maker',
     color: '#09756b',
     noun: 'maker',
-    adjective: 'steady',
+    adjective: 'rooted',
     quadrant: 'settled-protective',
 
     utopia:
@@ -555,20 +555,20 @@ This makes you sought-after for work that matters. The gift that needs to last. 
 
 Your craft is steady, which means it's also somewhat predictable. The same hands that make reliable objects might be capable of making surprising ones—if you were willing to unsettle your practice. But your steadiness resists unsettling. It prefers the known.
 
-There's also the question of whether reliability serves the work or just your comfort. Is your consistent approach the best approach, or just the familiar one? Steady makers sometimes need to disrupt themselves to keep growing.`,
+There's also the question of whether reliability serves the work or just your comfort. Is your consistent approach the best approach, or just the familiar one? Rooted makers sometimes need to disrupt themselves to keep growing.`,
 
     coreBeliefs: [
       'Reliable craft is built through steady practice',
       'Shortcuts create objects that can\'t be trusted',
-      'What you make reflects how you make—be steady',
+      'What you make reflects how you make—be rooted',
       'The best making is a practice, not a performance',
     ],
 
     howYouGotHere:
-      'Your answers showed craft combined with steady, patient practice. You make reliably because you practice reliably. This maps to the Steady Maker.',
+      'Your answers showed craft combined with steady, patient practice. You make reliably because you practice reliably. This maps to the Rooted Maker.',
 
     alignsWith:
-      'other Steady types—you share the orientation toward patient practice, toward craft built through repetition',
+      'other Rooted types—you share the orientation toward patient practice, toward craft built through repetition',
     tensionWith:
       'Bold types—their experimental making can seem undisciplined, producing unreliable objects',
     growsWith:
@@ -585,7 +585,7 @@ There's also the question of whether reliability serves the work or just your co
         title: 'Anathem',
         author: 'Stephenson',
         reason:
-          'Monks maintaining knowledge through centuries of practice. Steady craft across generations.',
+          'Monks maintaining knowledge through centuries of practice. Rooted craft across generations.',
       },
       {
         title: 'The Sparrow',
@@ -605,12 +605,12 @@ There's also the question of whether reliability serves the work or just your co
     },
   },
 
-  'grounded-maker': {
-    key: 'grounded-maker',
-    name: 'Grounded Maker',
+  'steady-maker': {
+    key: 'steady-maker',
+    name: 'Steady Maker',
     color: '#0c8f80',
     noun: 'maker',
-    adjective: 'grounded',
+    adjective: 'steady',
     quadrant: 'settled-protective',
 
     utopia:
@@ -638,7 +638,7 @@ People value your grounded making because it produces things that actually work.
 
 Your connection to materials and practical use serves you well—but some important making is speculative, abstract, disconnected from immediate use. Art that challenges rather than comforts. Objects that provoke rather than serve. Your groundedness can dismiss this work as ungrounded when it's actually differently grounded.
 
-There's also the risk of parochialism. Grounded making can become making only for your local context, your familiar needs, your known materials. Expanding your ground—encountering different traditions, different uses, different materials—keeps grounded making alive.`,
+There's also the risk of parochialism. Steady making can become making only for your local context, your familiar needs, your known materials. Expanding your ground—encountering different traditions, different uses, different materials—keeps grounded making alive.`,
 
     coreBeliefs: [
       'Good making requires good understanding of materials',
@@ -648,10 +648,10 @@ There's also the risk of parochialism. Grounded making can become making only fo
     ],
 
     howYouGotHere:
-      'Your answers showed making connected to materials and real use. You create things grounded in physical reality and daily needs. This maps to the Grounded Maker.',
+      'Your answers showed making connected to materials and real use. You create things grounded in physical reality and daily needs. This maps to the Steady Maker.',
 
     alignsWith:
-      'other Grounded types—you share connection to practical reality, to making that serves actual needs',
+      'other Steady types—you share connection to practical reality, to making that serves actual needs',
     tensionWith:
       'Adaptive types—their experimental making can seem disconnected from material reality',
     growsWith:
@@ -668,7 +668,7 @@ There's also the risk of parochialism. Grounded making can become making only fo
         title: 'The Word for World Is Forest',
         author: 'Le Guin',
         reason:
-          'A people whose craft is woven into their ecosystem. Grounded making in harmony with place.',
+          'A people whose craft is woven into their ecosystem. Steady making in harmony with place.',
       },
       {
         title: 'A Fire Upon the Deep',
@@ -688,12 +688,12 @@ There's also the risk of parochialism. Grounded making can become making only fo
     },
   },
 
-  'anchored-maker': {
-    key: 'anchored-maker',
-    name: 'Anchored Maker',
+  'grounded-maker': {
+    key: 'grounded-maker',
+    name: 'Grounded Maker',
     color: '#1aab98',
     noun: 'maker',
-    adjective: 'anchored',
+    adjective: 'grounded',
     quadrant: 'settled-protective',
 
     utopia:
@@ -721,7 +721,7 @@ This intentionality shows in your objects. They're not random accumulations of t
 
 Your commitment to making with purpose can screen out valuable undirected exploration. Play, accident, purposeless experimentation—these produce insights that intentional making cannot. Your anchor is valuable, but so is occasionally pulling it up.
 
-There's also the question of whose purposes your making serves. Anchored in your own intentions, you might miss purposes that others see in your work. Sometimes what you made for one reason turns out to matter for completely different reasons. Holding your anchor lightly allows for these discoveries.`,
+There's also the question of whose purposes your making serves. Grounded in your own intentions, you might miss purposes that others see in your work. Sometimes what you made for one reason turns out to matter for completely different reasons. Holding your anchor lightly allows for these discoveries.`,
 
     coreBeliefs: [
       'Making without purpose produces objects without meaning',
@@ -731,10 +731,10 @@ There's also the question of whose purposes your making serves. Anchored in your
     ],
 
     howYouGotHere:
-      'Your answers showed making guided by clear intention. You create deliberately, with purpose underlying your craft. This maps to the Anchored Maker.',
+      'Your answers showed making guided by clear intention. You create deliberately, with purpose underlying your craft. This maps to the Grounded Maker.',
 
     alignsWith:
-      'other Anchored types—you share the quality of knowing your why, of making from clear purpose',
+      'other Grounded types—you share the quality of knowing your why, of making from clear purpose',
     tensionWith:
       'Open types—their purposeless making can seem like waste, like craft without direction',
     growsWith:
@@ -775,12 +775,12 @@ There's also the question of whose purposes your making serves. Anchored in your
   // SHAPER identities (mid agency)
   // =============================================================================
 
-  'steady-shaper': {
-    key: 'steady-shaper',
-    name: 'Steady Shaper',
+  'rooted-shaper': {
+    key: 'rooted-shaper',
+    name: 'Rooted Shaper',
     color: '#08665d',
     noun: 'shaper',
-    adjective: 'steady',
+    adjective: 'rooted',
     quadrant: 'settled-protective',
 
     utopia:
@@ -818,10 +818,10 @@ There's also the question of what your steadiness enables. If the status quo is 
     ],
 
     howYouGotHere:
-      'Your answers showed willingness to transform what exists combined with patient, sustainable approach. You shape things at a pace they can absorb. This maps to the Steady Shaper.',
+      'Your answers showed willingness to transform what exists combined with patient, sustainable approach. You shape things at a pace they can absorb. This maps to the Rooted Shaper.',
 
     alignsWith:
-      'other Steady types—you share the orientation toward patient persistence, toward change that lasts because it wasn\'t rushed',
+      'other Rooted types—you share the orientation toward patient persistence, toward change that lasts because it wasn\'t rushed',
     tensionWith:
       'Bold types—their rapid transformation can seem disruptive, creating resistance that undoes the change',
     growsWith:
@@ -858,12 +858,12 @@ There's also the question of what your steadiness enables. If the status quo is 
     },
   },
 
-  'grounded-shaper': {
-    key: 'grounded-shaper',
-    name: 'Grounded Shaper',
+  'steady-shaper': {
+    key: 'steady-shaper',
+    name: 'Steady Shaper',
     color: '#0a7c70',
     noun: 'shaper',
-    adjective: 'grounded',
+    adjective: 'steady',
     quadrant: 'settled-protective',
 
     utopia:
@@ -896,15 +896,15 @@ There's also the trap of endless understanding. You can always understand more b
     coreBeliefs: [
       'Understanding before changing produces better change',
       'What works should be preserved, not thoughtlessly disrupted',
-      'Grounded shaping respects what it transforms',
+      'Steady shaping respects what it transforms',
       'Good transformation is surgical, not sledgehammer',
     ],
 
     howYouGotHere:
-      'Your answers showed willingness to transform combined with deep attention to what you\'re working with. You shape from understanding, preserving what works. This maps to the Grounded Shaper.',
+      'Your answers showed willingness to transform combined with deep attention to what you\'re working with. You shape from understanding, preserving what works. This maps to the Steady Shaper.',
 
     alignsWith:
-      'other Grounded types—you share the orientation toward understanding reality before acting on it',
+      'other Steady types—you share the orientation toward understanding reality before acting on it',
     tensionWith:
       'Adaptive types—their rapid reshaping can seem careless, changing things without understanding them',
     growsWith:
@@ -941,12 +941,12 @@ There's also the trap of endless understanding. You can always understand more b
     },
   },
 
-  'anchored-shaper': {
-    key: 'anchored-shaper',
-    name: 'Anchored Shaper',
+  'grounded-shaper': {
+    key: 'grounded-shaper',
+    name: 'Grounded Shaper',
     color: '#159586',
     noun: 'shaper',
-    adjective: 'anchored',
+    adjective: 'grounded',
     quadrant: 'settled-protective',
 
     utopia:
@@ -979,15 +979,15 @@ There's also the trap of values-as-excuse. "I'm not changing this because of my 
     coreBeliefs: [
       'Change should serve values, not just happen',
       'Principled transformation builds trust',
-      'Anchored shaping is coherent shaping',
+      'Grounded shaping is coherent shaping',
       'What you won\'t change reveals what you believe',
     ],
 
     howYouGotHere:
-      'Your answers showed willingness to transform combined with clear values guiding the transformation. You shape from principles you\'ve decided matter. This maps to the Anchored Shaper.',
+      'Your answers showed willingness to transform combined with clear values guiding the transformation. You shape from principles you\'ve decided matter. This maps to the Grounded Shaper.',
 
     alignsWith:
-      'other Anchored types—you share the quality of knowing what you stand for, of acting from clear principles',
+      'other Grounded types—you share the quality of knowing what you stand for, of acting from clear principles',
     tensionWith:
       'Curious types—their exploratory shaping can seem unprincipled, changing things without clear values',
     growsWith:
@@ -1028,12 +1028,12 @@ There's also the trap of values-as-excuse. "I'm not changing this because of my 
   // OBSERVER identities (mid-low agency)
   // =============================================================================
 
-  'steady-observer': {
-    key: 'steady-observer',
-    name: 'Steady Observer',
+  'rooted-observer': {
+    key: 'rooted-observer',
+    name: 'Rooted Observer',
     color: '#065750',
     noun: 'observer',
-    adjective: 'steady',
+    adjective: 'rooted',
     quadrant: 'settled-protective',
 
     utopia:
@@ -1061,20 +1061,20 @@ People come to you for perspective that requires long attention. What's really h
 
 Your commitment to steady observation can become an excuse for not acting. You're still gathering information. You're still developing understanding. But at some point, what you've observed needs to produce something beyond more observation.
 
-There's also the trap of neutrality. Steady observation positions you as outside the action, which can feel neutral but isn't. What you choose to watch, how long you watch, what you do with your observations—these are choices with consequences. Your steadiness is a stance, not an absence of stance.`,
+There's also the trap of neutrality. Rooted observation positions you as outside the action, which can feel neutral but isn't. What you choose to watch, how long you watch, what you do with your observations—these are choices with consequences. Your steadiness is a stance, not an absence of stance.`,
 
     coreBeliefs: [
       'Patience in observation produces understanding that haste cannot',
       'Some patterns only emerge over long watching',
-      'Steady attention is its own form of commitment',
+      'Rooted attention is its own form of commitment',
       'What the persistent observer sees, the impatient observer misses',
     ],
 
     howYouGotHere:
-      'Your answers showed observational orientation combined with steady patience. You watch over time, seeing what short attention cannot. This maps to the Steady Observer.',
+      'Your answers showed observational orientation combined with steady patience. You watch over time, seeing what short attention cannot. This maps to the Rooted Observer.',
 
     alignsWith:
-      'other Steady types—you share the orientation toward patience, toward persistence that accumulates into understanding',
+      'other Rooted types—you share the orientation toward patience, toward persistence that accumulates into understanding',
     tensionWith:
       'Bold types—their quick action can seem premature, moving before they\'ve watched long enough',
     growsWith:
@@ -1111,12 +1111,12 @@ There's also the trap of neutrality. Steady observation positions you as outside
     },
   },
 
-  'grounded-observer': {
-    key: 'grounded-observer',
-    name: 'Grounded Observer',
+  'steady-observer': {
+    key: 'steady-observer',
+    name: 'Steady Observer',
     color: '#086a62',
     noun: 'observer',
-    adjective: 'grounded',
+    adjective: 'steady',
     quadrant: 'settled-protective',
 
     utopia:
@@ -1138,7 +1138,7 @@ Your grounded observation isn't distorted by what you want to be true or what yo
 This makes you valuable when clear-eyed assessment matters. The situation that needs honest evaluation, not cheerleading. The problem that needs to be seen clearly before it can be solved. You provide the grounded perception that decisions require.`,
 
     blindSpot:
-      'Your realistic perception can become cynicism. Grounded observation that only sees problems misses possibilities.',
+      'Your realistic perception can become cynicism. Steady observation that only sees problems misses possibilities.',
 
     blindSpotExpanded: `Reality includes more than limitations.
 
@@ -1149,15 +1149,15 @@ There's also the question of what realism even is. Everyone's perception is part
     coreBeliefs: [
       'Clear perception requires commitment to truth over comfort',
       'What you want to see and what is there are different questions',
-      'Grounded observation serves reality, not wishful thinking',
+      'Steady observation serves reality, not wishful thinking',
       'Accurate seeing is the foundation of wise acting',
     ],
 
     howYouGotHere:
-      'Your answers showed observational orientation combined with commitment to seeing accurately. You observe what\'s actually there, not what you want to see. This maps to the Grounded Observer.',
+      'Your answers showed observational orientation combined with commitment to seeing accurately. You observe what\'s actually there, not what you want to see. This maps to the Steady Observer.',
 
     alignsWith:
-      'other Grounded types—you share commitment to reality, to seeing and working with what actually is',
+      'other Steady types—you share commitment to reality, to seeing and working with what actually is',
     tensionWith:
       'Adaptive types—their optimistic seeing can seem like denial, perception shaped by hope rather than truth',
     growsWith:
@@ -1174,7 +1174,7 @@ There's also the question of what realism even is. Everyone's perception is part
         title: 'Arrival',
         author: 'Chiang',
         reason:
-          'A linguist perceives alien time. Grounded observation that changes everything.',
+          'A linguist perceives alien time. Steady observation that changes everything.',
       },
       {
         title: 'Contact',
@@ -1194,12 +1194,12 @@ There's also the question of what realism even is. Everyone's perception is part
     },
   },
 
-  'anchored-observer': {
-    key: 'anchored-observer',
-    name: 'Anchored Observer',
+  'grounded-observer': {
+    key: 'grounded-observer',
+    name: 'Grounded Observer',
     color: '#108074',
     noun: 'observer',
-    adjective: 'anchored',
+    adjective: 'grounded',
     quadrant: 'settled-protective',
 
     utopia:
@@ -1227,20 +1227,20 @@ This anchored attention makes you efficient. In overwhelming environments where 
 
 Your anchored observation sees what it's looking for—but what about the important things you're not looking for? Directed attention is efficient, but it can miss the surprising development, the unexpected pattern, the important thing that doesn't fit your categories.
 
-There's also the question of who set your direction. Your sense of what matters came from somewhere. Is it still serving you, or are you observing through outdated priorities? Anchored observers need to occasionally lift their anchor and observe undirectedly, to check whether their direction still makes sense.`,
+There's also the question of who set your direction. Your sense of what matters came from somewhere. Is it still serving you, or are you observing through outdated priorities? Grounded observers need to occasionally lift their anchor and observe undirectedly, to check whether their direction still makes sense.`,
 
     coreBeliefs: [
       'Purposeful observation is more efficient than undirected reception',
       'Knowing what matters enables seeing what matters',
-      'Anchored attention cuts through noise to find signal',
+      'Grounded attention cuts through noise to find signal',
       'Direction should be chosen deliberately, not inherited carelessly',
     ],
 
     howYouGotHere:
-      'Your answers showed observational orientation combined with clear sense of what matters. You watch with purpose, attention directed by values. This maps to the Anchored Observer.',
+      'Your answers showed observational orientation combined with clear sense of what matters. You watch with purpose, attention directed by values. This maps to the Grounded Observer.',
 
     alignsWith:
-      'other Anchored types—you share the quality of knowing what matters, of directing energy according to values',
+      'other Grounded types—you share the quality of knowing what matters, of directing energy according to values',
     tensionWith:
       'Open types—their undirected observation can seem inefficient, absorbing everything without purpose',
     growsWith:
@@ -1281,12 +1281,12 @@ There's also the question of who set your direction. Your sense of what matters 
   // NOTICER identities (low agency)
   // =============================================================================
 
-  'steady-noticer': {
-    key: 'steady-noticer',
-    name: 'Steady Noticer',
+  'rooted-noticer': {
+    key: 'rooted-noticer',
+    name: 'Rooted Noticer',
     color: '#054943',
     noun: 'noticer',
-    adjective: 'steady',
+    adjective: 'rooted',
     quadrant: 'settled-protective',
 
     utopia:
@@ -1314,7 +1314,7 @@ People value your steady noticing because it reveals what's really happening ben
 
 Your steady attention is valuable for slow-developing patterns, but some situations need fast recognition. The urgent signal that demands immediate response might not fit your patient approach. Learning when to accelerate your noticing is important.
 
-There's also the question of action. Patient noticing can become permanent noticing—always accumulating more, never concluding anything. At some point, what you've noticed needs to lead somewhere. Steady noticing without eventual action is just steady watching.`,
+There's also the question of action. Patient noticing can become permanent noticing—always accumulating more, never concluding anything. At some point, what you've noticed needs to lead somewhere. Rooted noticing without eventual action is just steady watching.`,
 
     coreBeliefs: [
       'Small things add up to big things when you notice them long enough',
@@ -1324,10 +1324,10 @@ There's also the question of action. Patient noticing can become permanent notic
     ],
 
     howYouGotHere:
-      'Your answers showed attention to small things combined with patient persistence. You notice steadily over time, accumulating understanding. This maps to the Steady Noticer.',
+      'Your answers showed attention to small things combined with patient persistence. You notice steadily over time, accumulating understanding. This maps to the Rooted Noticer.',
 
     alignsWith:
-      'other Steady types—you share the orientation toward patient persistence, toward attention that accumulates',
+      'other Rooted types—you share the orientation toward patient persistence, toward attention that accumulates',
     tensionWith:
       'Bold types—their quick conclusions can seem hasty, deciding before they\'ve noticed enough',
     growsWith:
@@ -1364,12 +1364,12 @@ There's also the question of action. Patient noticing can become permanent notic
     },
   },
 
-  'grounded-noticer': {
-    key: 'grounded-noticer',
-    name: 'Grounded Noticer',
+  'steady-noticer': {
+    key: 'steady-noticer',
+    name: 'Steady Noticer',
     color: '#065954',
     noun: 'noticer',
-    adjective: 'grounded',
+    adjective: 'steady',
     quadrant: 'settled-protective',
 
     utopia:
@@ -1402,15 +1402,15 @@ There's also the risk of ordinary as comfort zone. You notice what's familiar be
     coreBeliefs: [
       'The ordinary is full of things worth noticing',
       'Presence reveals what distraction conceals',
-      'Grounded attention finds richness in the everyday',
+      'Steady attention finds richness in the everyday',
       'What\'s here deserves as much noticing as what\'s elsewhere',
     ],
 
     howYouGotHere:
-      'Your answers showed attention to detail combined with connection to immediate reality. You notice what\'s present in ordinary life. This maps to the Grounded Noticer.',
+      'Your answers showed attention to detail combined with connection to immediate reality. You notice what\'s present in ordinary life. This maps to the Steady Noticer.',
 
     alignsWith:
-      'other Grounded types—you share connection to immediate reality, to what\'s actually present',
+      'other Steady types—you share connection to immediate reality, to what\'s actually present',
     tensionWith:
       'Adaptive types—their attention to possibilities can seem disconnected from what\'s actually here',
     growsWith:
@@ -1447,12 +1447,12 @@ There's also the risk of ordinary as comfort zone. You notice what's familiar be
     },
   },
 
-  'anchored-noticer': {
-    key: 'anchored-noticer',
-    name: 'Anchored Noticer',
+  'grounded-noticer': {
+    key: 'grounded-noticer',
+    name: 'Grounded Noticer',
     color: '#0b6c64',
     noun: 'noticer',
-    adjective: 'anchored',
+    adjective: 'grounded',
     quadrant: 'settled-protective',
 
     utopia:
@@ -1490,10 +1490,10 @@ There's also the question of whose values are doing the anchoring. You inherited
     ],
 
     howYouGotHere:
-      'Your answers showed attention to detail combined with clear values. You notice what your values tell you matters. This maps to the Anchored Noticer.',
+      'Your answers showed attention to detail combined with clear values. You notice what your values tell you matters. This maps to the Grounded Noticer.',
 
     alignsWith:
-      'other Anchored types—you share the quality of directing attention according to values, of knowing what matters',
+      'other Grounded types—you share the quality of directing attention according to values, of knowing what matters',
     tensionWith:
       'Open types—their undirected noticing can seem unfocused, missing what matters by attending to everything',
     growsWith:
@@ -1534,12 +1534,12 @@ There's also the question of whose values are doing the anchoring. You inherited
   // WITNESS identities (lowest agency)
   // =============================================================================
 
-  'steady-witness': {
-    key: 'steady-witness',
-    name: 'Steady Witness',
+  'rooted-witness': {
+    key: 'rooted-witness',
+    name: 'Rooted Witness',
     color: '#043b38',
     noun: 'witness',
-    adjective: 'steady',
+    adjective: 'rooted',
     quadrant: 'settled-protective',
 
     utopia:
@@ -1577,10 +1577,10 @@ There's also the cost of stillness to yourself. Always holding space for others,
     ],
 
     howYouGotHere:
-      'Your answers showed deep presence combined with patient steadiness. You witness over time, providing continuity of attention that others lack. This maps to the Steady Witness.',
+      'Your answers showed deep presence combined with patient steadiness. You witness over time, providing continuity of attention that others lack. This maps to the Rooted Witness.',
 
     alignsWith:
-      'other Steady types—you share the orientation toward patient persistence, toward presence that accumulates',
+      'other Rooted types—you share the orientation toward patient persistence, toward presence that accumulates',
     tensionWith:
       'Bold types—their constant action can seem like inability to be still, to simply witness',
     growsWith:
@@ -1591,7 +1591,7 @@ There's also the cost of stillness to yourself. Always holding space for others,
         title: 'A Canticle for Leibowitz',
         author: 'Miller',
         reason:
-          'Monks witnessing humanity across centuries of rise and fall. Steady presence through cycles.',
+          'Monks witnessing humanity across centuries of rise and fall. Rooted presence through cycles.',
       },
       {
         title: 'The Road',
@@ -1603,7 +1603,7 @@ There's also the cost of stillness to yourself. Always holding space for others,
         title: 'Never Let Me Go',
         author: 'Ishiguro',
         reason:
-          'Students witness each other\'s fates with quiet constancy. Steady presence unto the end.',
+          'Students witness each other\'s fates with quiet constancy. Rooted presence unto the end.',
       },
     ],
 
@@ -1617,12 +1617,12 @@ There's also the cost of stillness to yourself. Always holding space for others,
     },
   },
 
-  'grounded-witness': {
-    key: 'grounded-witness',
-    name: 'Grounded Witness',
+  'steady-witness': {
+    key: 'steady-witness',
+    name: 'Steady Witness',
     color: '#054a46',
     noun: 'witness',
-    adjective: 'grounded',
+    adjective: 'steady',
     quadrant: 'settled-protective',
 
     utopia:
@@ -1660,10 +1660,10 @@ There's also the danger of insider blindness. Being part of what you witness mea
     ],
 
     howYouGotHere:
-      'Your answers showed presence combined with connection to place and community. You witness from belonging, rooted in specific context. This maps to the Grounded Witness.',
+      'Your answers showed presence combined with connection to place and community. You witness from belonging, rooted in specific context. This maps to the Steady Witness.',
 
     alignsWith:
-      'other Grounded types—you share connection to specific reality, to place and community',
+      'other Steady types—you share connection to specific reality, to place and community',
     tensionWith:
       'Adaptive types—their mobility can seem rootless, witnessing without belonging',
     growsWith:
@@ -1700,12 +1700,12 @@ There's also the danger of insider blindness. Being part of what you witness mea
     },
   },
 
-  'anchored-witness': {
-    key: 'anchored-witness',
-    name: 'Anchored Witness',
+  'grounded-witness': {
+    key: 'grounded-witness',
+    name: 'Grounded Witness',
     color: '#085a56',
     noun: 'witness',
-    adjective: 'anchored',
+    adjective: 'grounded',
     quadrant: 'settled-protective',
 
     utopia:
@@ -1738,15 +1738,15 @@ There's also the danger of withholding witness. "That doesn't deserve my attenti
     coreBeliefs: [
       'Purposeful witnessing directs presence where it matters',
       'Not everything deserves attention—discernment is required',
-      'Anchored presence is meaningful presence',
+      'Grounded presence is meaningful presence',
       'What you witness reveals what you value',
     ],
 
     howYouGotHere:
-      'Your answers showed presence combined with clear values about what deserves attention. You witness purposefully, directed by principles. This maps to the Anchored Witness.',
+      'Your answers showed presence combined with clear values about what deserves attention. You witness purposefully, directed by principles. This maps to the Grounded Witness.',
 
     alignsWith:
-      'other Anchored types—you share the quality of directing energy according to values, of knowing what deserves attention',
+      'other Grounded types—you share the quality of directing energy according to values, of knowing what deserves attention',
     tensionWith:
       'Open types—their undirected witnessing can seem unfocused, present to everything and therefore nothing',
     growsWith:
@@ -1763,7 +1763,7 @@ There's also the danger of withholding witness. "That doesn't deserve my attenti
         title: 'Speaker for the Dead',
         author: 'Card',
         reason:
-          'A speaker witnesses lives purposefully: to tell truth about the dead. Anchored presence.',
+          'A speaker witnesses lives purposefully: to tell truth about the dead. Grounded presence.',
       },
       {
         title: 'The Left Hand of Darkness',

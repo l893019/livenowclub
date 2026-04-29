@@ -170,10 +170,10 @@ const ADJECTIVE_POOLS: {
   posture: 'expansive' | 'protective'
   adjectives: string[]
 }[] = [
-  { certainty: 'settled', posture: 'expansive', adjectives: ['Confident', 'Assured', 'Bold'] },
-  { certainty: 'settled', posture: 'protective', adjectives: ['Steady', 'Grounded', 'Anchored'] },
-  { certainty: 'seeking', posture: 'expansive', adjectives: ['Adaptive', 'Curious', 'Open'] },
-  { certainty: 'seeking', posture: 'protective', adjectives: ['Careful', 'Cautious', 'Measured'] },
+  { certainty: 'settled', posture: 'expansive', adjectives: ['Visionary', 'Driven', 'Poised'] },
+  { certainty: 'settled', posture: 'protective', adjectives: ['Rooted', 'Steady', 'Grounded'] },
+  { certainty: 'seeking', posture: 'expansive', adjectives: ['Adventurous', 'Curious', 'Open'] },
+  { certainty: 'seeking', posture: 'protective', adjectives: ['Watchful', 'Careful', 'Thoughtful'] },
 ]
 
 /**
@@ -199,7 +199,7 @@ function pickByIntensity(items: string[], intensity: number): string {
 
 /**
  * Generate an identity label from dimension scores.
- * Format: "[Adjective] [Noun]" — e.g., "Confident Builder", "Careful Observer"
+ * Format: "[Adjective] [Noun]" — e.g., "Visionary Builder", "Watchful Observer"
  */
 /**
  * Convert array-format answers to QuizAnswers object format.
