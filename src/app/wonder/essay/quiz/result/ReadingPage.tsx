@@ -454,13 +454,15 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
 
           <div className={styles.divider} />
 
-          {/* How You Got Here */}
-          <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>How You Got Here</h2>
-            <p className={styles.bodyText}>{identity.howYouGotHere}</p>
-          </section>
+          {/* How You Got Here - only show if no LLM reading (avoids duplicate with "Your Pattern") */}
+          {!reading && (
+            <section className={styles.section}>
+              <h2 className={styles.sectionTitle}>How You Got Here</h2>
+              <p className={styles.bodyText}>{identity.howYouGotHere}</p>
+            </section>
+          )}
 
-          <div className={styles.divider} />
+          {!reading && <div className={styles.divider} />}
 
           {/* The Worldview */}
           <section className={styles.section}>
@@ -490,13 +492,15 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
 
           <div className={styles.divider} />
 
-          {/* Your Blind Spot */}
-          <div className={styles.blindSpot}>
-            <div className={styles.blindSpotLabel}>Something to Consider</div>
-            <p className={styles.blindSpotText}>{identity.blindSpot}</p>
-          </div>
+          {/* Your Blind Spot - only show if no LLM tradeoff (avoids duplicate with "The Tradeoff") */}
+          {!reading?.tradeoff && (
+            <div className={styles.blindSpot}>
+              <div className={styles.blindSpotLabel}>Something to Consider</div>
+              <p className={styles.blindSpotText}>{identity.blindSpot}</p>
+            </div>
+          )}
 
-          <div className={styles.divider} />
+          {!reading?.tradeoff && <div className={styles.divider} />}
 
           {/* Where You Fall */}
           <section className={styles.section}>
