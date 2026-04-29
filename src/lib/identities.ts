@@ -9,6 +9,8 @@
  * compatibility insights, book recommendations, and famous figures.
  */
 
+import { arrayToQuizAnswers, calculateDimensions } from './dimensions'
+
 // =============================================================================
 // Core Types
 // =============================================================================
@@ -523,11 +525,9 @@ export function getMemberIdentity(
 ): Identity | undefined {
   // If we have answers, calculate identity from dimensions
   if (answers?.length === 7) {
-    // Convert string answers to numbers if needed
-    const numericAnswers = answers.map(a => typeof a === 'string' ? parseInt(a, 10) : a)
-    // Import dynamically to avoid circular deps
-    const { arrayToQuizAnswers, calculateDimensions } = require('./dimensions')
-    const quizAnswers = arrayToQuizAnswers(numericAnswers)
+    // Ensure answers are strings (quiz answers are 'A', 'B', 'C', 'D')
+    const stringAnswers = answers.map(a => String(a))
+    const quizAnswers = arrayToQuizAnswers(stringAnswers)
     if (quizAnswers) {
       const dims = calculateDimensions(quizAnswers)
       const adjIdx = getAdjectiveIndex(dims.certainty, dims.posture)

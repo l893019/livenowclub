@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 
 type TargetUser = {
@@ -19,16 +20,14 @@ type Props = {
 
 export function MeetPageClient({ targetUser }: Props) {
   const router = useRouter();
-  const [hasCompletedQuiz, setHasCompletedQuiz] = useState(false);
+  const [hasCompletedQuiz, setHasCompletedQuiz] = useState<boolean | null>(null);
 
   useEffect(() => {
-    // Check if user has already completed quiz
+    // Check if user has already completed quiz (reading from localStorage on mount is valid)
     const storedUserId = localStorage.getItem("quiz-user-id");
     const storedResult = localStorage.getItem("quiz-user-result");
-
-    if (storedUserId && storedResult) {
-      setHasCompletedQuiz(true);
-    }
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setHasCompletedQuiz(Boolean(storedUserId && storedResult));
   }, []);
 
   const handleStartQuiz = () => {
@@ -42,6 +41,36 @@ export function MeetPageClient({ targetUser }: Props) {
     router.push(`/wonder/essay/quiz/result?compare=${targetUser.id}`);
   };
 
+  // Don't render CTA until we know quiz status
+  if (hasCompletedQuiz === null) {
+    return (
+      <>
+        <Header />
+        <main className="meet-page">
+          <section className="meet-hero">
+            <div className="meet-hero-image">
+              <Image
+                src="/wonder/assets/landscapes/optimized/1.jpg"
+                alt="Abstract landscape"
+                fill
+                style={{ objectFit: "cover" }}
+                priority
+              />
+              <div className="meet-hero-overlay" />
+            </div>
+            <div className="meet-hero-content">
+              <span className="meet-label">From Wonder</span>
+              <h1>When Purpose Is All We Have Left</h1>
+              <p className="meet-subtitle">
+                An interactive exploration of human purpose through the lens of sci-fi.
+              </p>
+            </div>
+          </section>
+        </main>
+      </>
+    );
+  }
+
   return (
     <>
       <Header />
@@ -50,9 +79,12 @@ export function MeetPageClient({ targetUser }: Props) {
         {/* Hero Section */}
         <section className="meet-hero">
           <div className="meet-hero-image">
-            <img
+            <Image
               src="/wonder/assets/landscapes/optimized/1.jpg"
               alt="Abstract landscape"
+              fill
+              style={{ objectFit: "cover" }}
+              priority
             />
             <div className="meet-hero-overlay" />
           </div>
@@ -78,7 +110,7 @@ export function MeetPageClient({ targetUser }: Props) {
               <button className="btn btn-primary" onClick={handleSeeConnection}>
                 See Where You Intersect
               </button>
-              <p className="meet-subtext">You've already taken the quiz.</p>
+              <p className="meet-subtext">You&apos;ve already taken the quiz.</p>
             </div>
           ) : (
             <div className="meet-cta">
@@ -95,16 +127,16 @@ export function MeetPageClient({ targetUser }: Props) {
             {targetUser.identityName ? (
               <>
                 <p className="meet-inviter-intro">
-                  <strong>{targetUser.name}</strong> took this quiz and discovered they're
+                  <strong>{targetUser.name}</strong> took this quiz and discovered they&apos;re
                 </p>
                 <p className="meet-inviter-identity">{targetUser.identityName}</p>
                 {targetUser.identityDescription && (
                   <p className="meet-inviter-description">
-                    "{targetUser.identityDescription}"
+                    &ldquo;{targetUser.identityDescription}&rdquo;
                   </p>
                 )}
                 <p className="meet-inviter-prompt">
-                  After you finish, you'll see where your worldviews intersect.
+                  After you finish, you&apos;ll see where your worldviews intersect.
                 </p>
               </>
             ) : (
@@ -113,7 +145,7 @@ export function MeetPageClient({ targetUser }: Props) {
                   <strong>{targetUser.name}</strong> took this quiz.
                 </p>
                 <p className="meet-inviter-prompt">
-                  After you finish, you'll see where your worldviews intersect.
+                  After you finish, you&apos;ll see where your worldviews intersect.
                 </p>
               </>
             )}
