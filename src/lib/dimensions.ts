@@ -186,14 +186,14 @@ function pickByIntensity(items: string[], intensity: number): string {
   const normalized = Math.min(Math.max(intensity, 0), 1)
 
   // Higher intensity → lower index (stronger word)
-  // Split into thirds: >0.66 → 0, >0.33 → 1, else → 2
+  // Thresholds aligned with getAdjectiveIndex: >0.7 → 0, >0.4 → 1, else → 2
   if (items.length === 1) return items[0]
   if (items.length === 2) {
     return normalized > 0.5 ? items[0] : items[1]
   }
   // 3+ items
-  if (normalized > 0.66) return items[0]
-  if (normalized > 0.33) return items[1]
+  if (normalized > 0.7) return items[0]
+  if (normalized > 0.4) return items[1]
   return items[Math.min(2, items.length - 1)]
 }
 
