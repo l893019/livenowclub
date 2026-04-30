@@ -16,9 +16,28 @@ export async function generateMetadata({ params }: Props) {
   const essay = getEssayBySlug(slug);
   if (!essay) return { title: "Essay Not Found" };
 
+  const url = `https://livenowclub.com/read/${slug}`;
+  const image = essay.image
+    ? `https://livenowclub.com${essay.image}`
+    : "https://livenowclub.com/images/og-default.jpg";
+
   return {
     title: `${essay.title} | The Live Now Club`,
     description: essay.excerpt,
+    openGraph: {
+      title: essay.title,
+      description: essay.excerpt,
+      url,
+      type: "article",
+      images: [{ url: image, width: 1200, height: 630 }],
+      siteName: "The Live Now Club",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: essay.title,
+      description: essay.excerpt,
+      images: [image],
+    },
   };
 }
 
