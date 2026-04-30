@@ -1,6 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/navigate',
+        destination: '/navigate/cancer',
+        permanent: true,
+      },
+      {
+        source: '/navigate/life',
+        destination: '/philosophy',
+        permanent: true,
+      },
+    ];
+  },
   async rewrites() {
     return [
       {

@@ -328,6 +328,7 @@ export default function HomePage() {
           <Link href="/navigate">Navigate</Link>
           <Link href="/wonder">Wonder</Link>
           <Link href="/connect">Connect</Link>
+          <Link href="/philosophy">Philosophy</Link>
         </nav>
         <p className="footer-copy">&copy; 2026 Louise Ireland</p>
       </footer>

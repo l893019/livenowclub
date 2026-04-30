@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Navigate Life | The Live Now Club",
+  title: "Philosophy | The Live Now Club",
   description:
     "My rules for living fully. I've tested these against mortality, heartbreak, and starting over.",
   keywords: [
@@ -13,14 +13,13 @@ export const metadata = {
     "living fully",
     "mindfulness",
     "wisdom",
-    "book recommendations",
   ],
   openGraph: {
-    title: "Navigate Life",
+    title: "Philosophy",
     description:
       "My rules for living fully.",
     type: "website",
-    url: "https://livenowclub.vercel.app/navigate/life",
+    url: "https://livenowclub.vercel.app/philosophy",
   },
 };
 
@@ -105,7 +104,7 @@ const MANIFESTO_RULES = [
   "Write out of love for all parts of your being, no matter how ugly or uncool or idiotic they may be",
 ];
 
-export default function NavigateLifePage() {
+export default function PhilosophyPage() {
   return (
     <>
       {/* Header */}
@@ -115,21 +114,16 @@ export default function NavigateLifePage() {
         </Link>
         <nav className="nav">
           <Link href="/read">Read</Link>
-          <Link href="/navigate" className="active">Navigate</Link>
+          <Link href="/navigate">Navigate</Link>
           <Link href="/wonder">Wonder</Link>
           <Link href="/connect">Connect</Link>
         </nav>
       </header>
 
       <div className="life-container">
-        {/* Breadcrumb */}
-        <div className="navigate-breadcrumb">
-          <Link href="/navigate">← Back</Link>
-        </div>
-
         {/* Hero */}
         <section className="life-hero">
-          <span className="life-label">Navigate Life</span>
+          <span className="life-label">Philosophy</span>
           <h1>The inputs that shape me</h1>
           <p>
             My rules for living fully.
