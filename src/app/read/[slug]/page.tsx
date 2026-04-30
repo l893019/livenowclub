@@ -51,5 +51,27 @@ export default async function EssayPage({ params }: Props) {
 
   const relatedEssays = getRelatedEssays(essay, 3);
 
-  return <EssayContent essay={essay} relatedEssays={relatedEssays} />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: essay.title,
+    description: essay.excerpt,
+    image: essay.image ? `https://livenowclub.vercel.app${essay.image}` : undefined,
+    datePublished: essay.date,
+    author: {
+      "@type": "Person",
+      name: "Louise Ireland",
+      url: "https://livenowclub.vercel.app/about",
+    },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <EssayContent essay={essay} relatedEssays={relatedEssays} />
+    </>
+  );
 }
