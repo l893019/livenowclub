@@ -246,55 +246,66 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
           </aside>
         )}
 
-        {/* Subscribe CTA */}
-        <div className="essay-subscribe-cta">
-          <p className="cta-text">Join me on this journey. New essays land in your inbox almost every week.</p>
-          <a
-            href="https://louiseireland.substack.com/subscribe"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-button"
-          >
-            Subscribe
-          </a>
-        </div>
-
-        {/* Share */}
-        <div className="essay-share">
-          <span className="essay-share-label">Share this piece</span>
-          <div className="essay-share-buttons">
-            <button onClick={handleShareTwitter} className="share-btn" aria-label="Share on Twitter">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
-            </button>
-            <button onClick={handleCopyLink} className="share-btn" aria-label="Copy link">
-              {copied ? (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <polyline points="20 6 9 17 4 12" />
+        {/* Essay Footer */}
+        <div className="essay-footer">
+          {/* Share Row */}
+          <div className="essay-share">
+            <span className="essay-share-label">Share</span>
+            <div className="essay-share-buttons">
+              <button onClick={handleShareTwitter} className="share-btn" aria-label="Share on Twitter">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
-              ) : (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-                </svg>
-              )}
-            </button>
+              </button>
+              <button onClick={handleCopyLink} className="share-btn" aria-label="Copy link">
+                {copied ? (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                ) : (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                  </svg>
+                )}
+              </button>
+            </div>
+            {copied && <span className="copied-toast">Link copied!</span>}
           </div>
-          {copied && <span className="copied-toast">Link copied!</span>}
-        </div>
 
-        {/* Comment CTA */}
-        <div className="essay-subscribe-cta">
-          <p className="cta-text">If this resonated, leave a heart or comment on Substack and share with a friend. It helps me get discovered.</p>
-          <a
-            href={essay.substackUrl || "https://louiseireland.substack.com"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-button"
-          >
-            Leave a comment
-          </a>
+          {/* CTA Grid */}
+          <div className="essay-cta-grid">
+            <a
+              href="https://louiseireland.substack.com/subscribe"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="essay-cta-card"
+            >
+              <span className="cta-icon">✉️</span>
+              <span className="cta-label">Subscribe</span>
+              <span className="cta-desc">New essays in your inbox</span>
+            </a>
+            <a
+              href="https://ko-fi.com/louiseireland"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="essay-cta-card"
+            >
+              <span className="cta-icon">☕</span>
+              <span className="cta-label">Support</span>
+              <span className="cta-desc">Buy me a coffee</span>
+            </a>
+            <a
+              href={essay.substackUrl || "https://louiseireland.substack.com"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="essay-cta-card"
+            >
+              <span className="cta-icon">💬</span>
+              <span className="cta-label">Comment</span>
+              <span className="cta-desc">Join the conversation</span>
+            </a>
+          </div>
         </div>
 
         {/* Read Next */}
@@ -318,6 +329,19 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
             </div>
           </section>
         )}
+
+        {/* Site Footer */}
+        <footer className="essay-site-footer">
+          <nav className="essay-footer-nav">
+            <Link href="/read">Read</Link>
+            <Link href="/navigate">Navigate</Link>
+            <Link href="/wonder">Wonder</Link>
+            <Link href="/connect">Connect</Link>
+            <Link href="/philosophy">Philosophy</Link>
+            <a href="https://ko-fi.com/louiseireland" target="_blank" rel="noopener noreferrer">Ko-fi</a>
+          </nav>
+          <p className="essay-footer-copy">&copy; 2026 Louise Ireland</p>
+        </footer>
       </div>
 
       {/* Floating Subscribe */}
@@ -543,15 +567,20 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
           transform: translateY(-2px);
         }
 
+        /* Essay Footer */
+        .essay-footer {
+          max-width: 780px;
+          margin: 32px auto 0;
+          padding-top: 24px;
+          border-top: 1px solid rgba(45, 42, 38, 0.1);
+        }
+
         /* Share Section */
         .essay-share {
-          max-width: 780px;
-          margin: 24px auto 0;
           display: flex;
           align-items: center;
           gap: 12px;
-          padding-top: 20px;
-          border-top: 1px solid rgba(45, 42, 38, 0.1);
+          margin-bottom: 24px;
         }
 
         .essay-share-label {
@@ -596,6 +625,56 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         @keyframes fadeIn {
           from { opacity: 0; }
           to { opacity: 1; }
+        }
+
+        /* CTA Grid */
+        .essay-cta-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 12px;
+        }
+
+        .essay-cta-card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 20px 16px;
+          background: white;
+          border: 1px solid rgba(45, 42, 38, 0.1);
+          text-align: center;
+          transition: all 0.2s;
+        }
+
+        .essay-cta-card:hover {
+          border-color: #e8178a;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .cta-icon {
+          font-size: 24px;
+          margin-bottom: 8px;
+        }
+
+        .cta-label {
+          font-family: "Satoshi", sans-serif;
+          font-size: 12px;
+          font-weight: 500;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: #2d2a26;
+          margin-bottom: 4px;
+        }
+
+        .cta-desc {
+          font-size: 12px;
+          color: rgba(45, 42, 38, 0.5);
+        }
+
+        @media (max-width: 600px) {
+          .essay-cta-grid {
+            grid-template-columns: 1fr;
+          }
         }
 
         /* Read Next Section */
@@ -672,6 +751,42 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
           .read-next-grid {
             grid-template-columns: 1fr;
           }
+        }
+
+        /* Site Footer */
+        .essay-site-footer {
+          max-width: 780px;
+          margin: 48px auto 0;
+          padding: 32px 0;
+          text-align: center;
+          border-top: 1px solid rgba(45, 42, 38, 0.1);
+        }
+
+        .essay-footer-nav {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 24px;
+          margin-bottom: 16px;
+        }
+
+        .essay-footer-nav a {
+          font-family: "Satoshi", sans-serif;
+          font-size: 12px;
+          font-weight: 400;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: rgba(45, 42, 38, 0.5);
+          transition: color 0.2s;
+        }
+
+        .essay-footer-nav a:hover {
+          color: #e8178a;
+        }
+
+        .essay-footer-copy {
+          font-size: 12px;
+          color: rgba(45, 42, 38, 0.35);
         }
       `}</style>
     </>

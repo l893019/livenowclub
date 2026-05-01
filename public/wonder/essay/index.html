@@ -1704,6 +1704,62 @@
       line-height: 1.8;
     }
 
+    /* ESSAY CTA SECTION */
+    .essay-cta-section {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    .essay-cta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .essay-cta-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 16px;
+      background: white;
+      border: 1px solid rgba(45, 42, 38, 0.1);
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .essay-cta-card:hover {
+      border-color: #e8178a;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .cta-icon {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .cta-label {
+      font-family: "Satoshi", sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #2d2a26;
+      margin-bottom: 4px;
+    }
+
+    .cta-desc {
+      font-size: 12px;
+      color: rgba(45, 42, 38, 0.5);
+    }
+
+    @media (max-width: 600px) {
+      .essay-cta-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* FOOTER */
     .site-footer {
       padding: 48px 24px;
@@ -3143,6 +3199,27 @@
   <div class="landscape-divider">
     <img loading="lazy" src="/wonder/assets/landscapes/optimized/3.jpg" alt="Surreal landscape">
   </div>
+
+  <!-- ESSAY CTA FOOTER -->
+  <section class="essay-cta-section">
+    <div class="essay-cta-grid">
+      <a href="https://louiseireland.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="essay-cta-card">
+        <span class="cta-icon">✉️</span>
+        <span class="cta-label">Subscribe</span>
+        <span class="cta-desc">New essays in your inbox</span>
+      </a>
+      <a href="https://ko-fi.com/louiseireland" target="_blank" rel="noopener noreferrer" class="essay-cta-card">
+        <span class="cta-icon">☕</span>
+        <span class="cta-label">Support</span>
+        <span class="cta-desc">Buy me a coffee</span>
+      </a>
+      <a href="/wonder/essay/quiz" class="essay-cta-card">
+        <span class="cta-icon">🔮</span>
+        <span class="cta-label">Take the Quiz</span>
+        <span class="cta-desc">Discover your utopia type</span>
+      </a>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="site-footer">
