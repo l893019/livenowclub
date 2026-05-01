@@ -1704,6 +1704,71 @@
       line-height: 1.8;
     }
 
+    /* FLOATING SUBSCRIBE */
+    .subscribe-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 100;
+    }
+
+    .subscribe-float a {
+      display: block;
+      padding: 12px 24px;
+      background: var(--accent-pink);
+      color: white;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 4px 12px rgba(232, 23, 138, 0.3);
+      transition: all 0.2s;
+    }
+
+    .subscribe-float a:hover {
+      background: #c9146f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(232, 23, 138, 0.4);
+    }
+
+    /* QUIZ CTA INLINE */
+    .quiz-cta-inline {
+      text-align: center;
+      padding: 48px 24px;
+      background: linear-gradient(180deg, var(--bg) 0%, rgba(232, 23, 138, 0.03) 100%);
+    }
+
+    .quiz-cta-label {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-pink);
+      margin-bottom: 16px;
+    }
+
+    .quiz-cta-button {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--accent-pink);
+      color: white;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 50px;
+      letter-spacing: 0.05em;
+      transition: all 0.3s ease;
+    }
+
+    .quiz-cta-button:hover {
+      background: #c9146f;
+      transform: translateY(-2px);
+    }
+
     /* ESSAY CTA SECTION */
     .essay-cta-section {
       max-width: 780px;
@@ -2319,10 +2384,6 @@
     <div class="hero-content">
       <h1>When Purpose Is All We Have Left</h1>
       <p class="subtitle">What 200+ sci-fi books reveal about meaning.</p>
-      <div style="margin-top: 40px; text-align: center;">
-        <p style="font-size: 13px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-pink); margin-bottom: 12px;">Discover the Version of the Future You're Building</p>
-        <a href="/wonder/essay/quiz" style="display: inline-block; padding: 14px 32px; background: var(--accent-pink); color: white; font-family: var(--sans); font-size: 14px; font-weight: 500; text-decoration: none; border-radius: 50px; letter-spacing: 0.05em; transition: all 0.3s ease;">Take the Quiz →</a>
-      </div>
     </div>
     <div class="scroll-hint">SCROLL</div>
   </section>
@@ -2417,6 +2478,12 @@
       </div>
     </div>
   </section>
+
+  <!-- QUIZ CTA -->
+  <div class="quiz-cta-inline">
+    <p class="quiz-cta-label">Discover the Version of the Future You're Building</p>
+    <a href="/wonder/essay/quiz" class="quiz-cta-button">Take the Quiz →</a>
+  </div>
 
   <section style="background: var(--bg); padding: 60px 0;">
     <div class="container">
@@ -3882,6 +3949,11 @@
     });
 
   </script>
+
+  <!-- Floating Subscribe -->
+  <div class="subscribe-float">
+    <a href="https://louiseireland.substack.com/subscribe" target="_blank" rel="noopener noreferrer">Subscribe</a>
+  </div>
 </body>
 </html>
 
