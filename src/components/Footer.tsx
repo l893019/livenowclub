@@ -23,12 +23,12 @@ export default function Footer() {
             Substack
           </a>
           <a
-            href="https://ko-fi.com/louiseireland"
+            href="https://ko-fi.com/livenowclub"
             target="_blank"
             rel="noopener noreferrer"
             className="footer-link"
           >
-            Ko-fi
+            Support
           </a>
         </div>
       </div>

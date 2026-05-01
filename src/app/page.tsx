@@ -329,7 +329,7 @@ export default function HomePage() {
           <Link href="/wonder">Wonder</Link>
           <Link href="/connect">Connect</Link>
           <Link href="/philosophy">Philosophy</Link>
-          <a href="https://ko-fi.com/louiseireland" target="_blank" rel="noopener noreferrer">Ko-fi</a>
+          <a href="https://ko-fi.com/livenowclub" target="_blank" rel="noopener noreferrer">Support</a>
         </nav>
         <p className="footer-copy">&copy; 2026 Louise Ireland</p>
       </footer>

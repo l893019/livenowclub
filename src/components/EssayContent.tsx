@@ -286,14 +286,14 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
               <span className="cta-desc">New essays in your inbox</span>
             </a>
             <a
-              href="https://ko-fi.com/louiseireland"
+              href="https://ko-fi.com/livenowclub"
               target="_blank"
               rel="noopener noreferrer"
               className="essay-cta-card"
             >
               <span className="cta-icon">☕</span>
               <span className="cta-label">Support</span>
-              <span className="cta-desc">Buy me a coffee</span>
+              <span className="cta-desc">Support the Live Now Club</span>
             </a>
             <a
               href={essay.substackUrl || "https://louiseireland.substack.com"}
@@ -338,7 +338,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
             <Link href="/wonder">Wonder</Link>
             <Link href="/connect">Connect</Link>
             <Link href="/philosophy">Philosophy</Link>
-            <a href="https://ko-fi.com/louiseireland" target="_blank" rel="noopener noreferrer">Ko-fi</a>
+            <a href="https://ko-fi.com/livenowclub" target="_blank" rel="noopener noreferrer">Support</a>
           </nav>
           <p className="essay-footer-copy">&copy; 2026 Louise Ireland</p>
         </footer>
