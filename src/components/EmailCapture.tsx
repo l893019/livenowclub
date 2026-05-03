@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './EmailCapture.module.css';
 
 type EmailCaptureProps = {
@@ -22,6 +22,25 @@ export default function EmailCapture({
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
   const [substackUrl, setSubstackUrl] = useState('');
+  const [isDismissed, setIsDismissed] = useState(false);
+
+  // Check if previously dismissed
+  useEffect(() => {
+    const dismissed = localStorage.getItem('email-capture-dismissed');
+    if (dismissed === 'true') {
+      setIsDismissed(true);
+    }
+  }, []);
+
+  const handleDismiss = () => {
+    localStorage.setItem('email-capture-dismissed', 'true');
+    setIsDismissed(true);
+  };
+
+  // Don't render if dismissed
+  if (isDismissed) {
+    return null;
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -72,6 +91,13 @@ export default function EmailCapture({
   if (status === 'success') {
     return (
       <div className={styles.container}>
+        <button
+          onClick={handleDismiss}
+          className={styles.closeButton}
+          aria-label="Dismiss"
+        >
+          ×
+        </button>
         <div className={styles.success}>
           <div className={styles.successIcon}>✓</div>
           <h3>{message}</h3>
@@ -95,6 +121,13 @@ export default function EmailCapture({
 
   return (
     <div className={styles.container}>
+      <button
+        onClick={handleDismiss}
+        className={styles.closeButton}
+        aria-label="Dismiss"
+      >
+        ×
+      </button>
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>
