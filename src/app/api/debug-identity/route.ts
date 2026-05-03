@@ -46,7 +46,6 @@ export async function GET(request: NextRequest) {
       userId,
       user: {
         name: user.name,
-        archetype: user.archetype,
       },
       answers,
       quizAnswers,

@@ -15,10 +15,14 @@ export const metadata: Metadata = {
   description: "Essays and poems on life, love, cancer, and the relentless pursuit of joy and whimsy despite it all.",
   keywords: ["essays", "cancer", "memoir", "poetry", "life", "mortality", "Louise Ireland"],
   authors: [{ name: "Louise Ireland" }],
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     title: "The Live Now Club | Louise Ireland",
     description: "Essays and poems on life, love, cancer, and the relentless pursuit of joy and whimsy despite it all.",
-    url: "https://livenowclub.vercel.app",
+    url: "https://livenowclub.com",
     siteName: "The Live Now Club",
     locale: "en_US",
     type: "website",

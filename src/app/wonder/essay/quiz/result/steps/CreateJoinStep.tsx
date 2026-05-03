@@ -5,13 +5,9 @@ import { useRouter } from "next/navigation";
 import { generateStarName } from "@/lib/star-names";
 import styles from "./CreateJoinStep.module.css";
 
-type CreateJoinStepProps = {
-  archetypeKey: string;
-};
-
 type CreateStatus = "idle" | "loading" | "error";
 
-export function CreateJoinStep({ archetypeKey }: CreateJoinStepProps) {
+export function CreateJoinStep() {
   const router = useRouter();
   // Generate a random star name once on mount
   const suggestedName = useMemo(() => generateStarName(), []);

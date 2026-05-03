@@ -76,7 +76,6 @@ export default function DemoUtopiaPage() {
       const answers = me.answers ? arrayToQuizAnswers(me.answers) : undefined;
       return (
         <ReadingPage
-          archetypeKey={me.archetype}
           answers={answers ?? undefined}
           onBack={handleBackToRadar}
           groupContext={{
@@ -119,7 +118,6 @@ export default function DemoUtopiaPage() {
       const answers = them.answers ? arrayToQuizAnswers(them.answers) : undefined;
       return (
         <ReadingPage
-          archetypeKey={them.archetype}
           answers={answers ?? undefined}
           onBack={() => setCurrentView("relationship")}
           groupContext={{

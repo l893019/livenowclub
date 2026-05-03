@@ -6,7 +6,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const result: UserResult = body.result;
 
-    if (!result || !result.id || !result.name || !result.archetype) {
+    if (!result || !result.id || !result.name) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }

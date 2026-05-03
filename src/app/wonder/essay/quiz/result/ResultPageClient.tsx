@@ -5,14 +5,12 @@ import Header from "@/components/Header";
 import { ReadingPage } from "./ReadingPage";
 
 type ResultPageClientProps = {
-  archetypeKey: string;
-  archetypeColor: string;
+  identityKey?: string | null;
   compareUserId?: string;
 };
 
 export function ResultPageClient({
-  archetypeKey,
-  archetypeColor,
+  identityKey,
   compareUserId,
 }: ResultPageClientProps) {
   return (
@@ -25,7 +23,6 @@ export function ResultPageClient({
           --text-dim: rgba(45,42,38,0.7);
           --text-muted: rgba(45,42,38,0.45);
           --accent-pink: #e8178a;
-          --accent-color: ${archetypeColor};
         }
       `}</style>
 
@@ -34,7 +31,7 @@ export function ResultPageClient({
 
       <Header />
 
-      <ReadingPage archetypeKey={archetypeKey} compareUserId={compareUserId} />
+      <ReadingPage identityKey={identityKey} compareUserId={compareUserId} />
 
       <footer className="footer">
         <p className="footer-quote">What if now is all we have?</p>

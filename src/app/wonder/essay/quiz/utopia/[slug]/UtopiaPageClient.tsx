@@ -232,7 +232,6 @@ export function UtopiaPageClient({
       const theirAnswers = them.answers ? arrayToQuizAnswers(them.answers) : undefined;
       return (
         <ReadingPage
-          archetypeKey={them.archetype}
           answers={theirAnswers ?? undefined}
           onBack={handleBackFromTheirReading}
           groupContext={{
@@ -255,7 +254,6 @@ export function UtopiaPageClient({
       const myAnswers = me.answers ? arrayToQuizAnswers(me.answers) : undefined;
       return (
         <ReadingPage
-          archetypeKey={me.archetype}
           answers={myAnswers ?? undefined}
           onBack={handleBackToRadar}
           groupContext={{

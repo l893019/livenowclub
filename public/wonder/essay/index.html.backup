@@ -1,0 +1,3851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>When Purpose Is All We Have Left | The Live Now Club</title>
+  <meta name="description" content="What 200+ sci-fi books reveal about meaning.">
+
+  <!-- Analytics -->
+  <script>(function(){fetch("/api/track",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({page:window.location.pathname,referrer:document.referrer})}).catch(function(){});})();</script>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="When Purpose Is All We Have Left">
+  <meta property="og:description" content="What 200+ sci-fi books reveal about meaning.">
+  <meta property="og:image" content="https://livenowclub.vercel.app/wonder/assets/landscapes/optimized/1.jpg">
+  <meta property="og:url" content="https://livenowclub.vercel.app/wonder/essay">
+  <meta property="og:type" content="article">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="When Purpose Is All We Have Left">
+  <meta name="twitter:description" content="What 200+ sci-fi books reveal about meaning.">
+  <meta name="twitter:image" content="https://livenowclub.vercel.app/wonder/assets/landscapes/optimized/1.jpg">
+
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #faf6f1;
+      --bg: #fffbf7;
+      --bg-elevated: #fff;
+      --bg-card: #fff;
+      --text: #2d2a26;
+      --text-dim: rgba(45,42,38,0.7);
+      --text-muted: rgba(45,42,38,0.45);
+      --accent-pink: #e8178a;
+      --accent-coral: #ff6b6b;
+      --accent-gold: #f4a03f;
+      --accent-orange: #fd9644;
+      --accent-teal: #3db9a4;
+      --accent-lavender: #9b8fef;
+      --accent-green: #7ed6a4;
+      --sans: 'Satoshi', system-ui, sans-serif;
+      --mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+      --border: rgba(232,23,138,0.12);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg-deep);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.75;
+      font-weight: 400;
+      overflow-x: hidden;
+      position: relative;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    html {
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--accent-pink); color: #fff; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-deep); }
+    ::-webkit-scrollbar-thumb { background: var(--accent-pink); border-radius: 3px; }
+
+    /* READING PROGRESS BAR */
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-pink), var(--accent-coral));
+      width: 0%;
+      z-index: 9999;
+      transition: width 0.1s ease-out;
+    }
+
+    /* BACK TO TOP BUTTON */
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      background: var(--accent-pink);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(232,23,138,0.3);
+    }
+
+    @media (max-width: 768px) {
+      .back-to-top {
+        bottom: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(232,23,138,0.4);
+    }
+
+    .back-to-top svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* STICKY ACT INDICATOR (MOBILE) */
+    .act-indicator {
+      position: fixed;
+      top: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-coral);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 999;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      pointer-events: none;
+    }
+
+    .act-indicator.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    @media (min-width: 769px) {
+      .act-indicator {
+        display: none;
+      }
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 24px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, #fff9f5 0%, var(--bg-deep) 100%);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('/wonder/assets/Objects-v2/optimized/Sun_1.jpg');
+      background-size: contain;
+      background-position: center top;
+      background-repeat: no-repeat;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,251,247,0.3) 0%, rgba(250,246,241,0.7) 60%, var(--bg-deep) 100%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+    }
+
+    .hero-label {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--accent-pink);
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards 0.2s;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 10vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards 0.4s;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, var(--accent-pink) 0%, var(--accent-coral) 50%, var(--accent-orange) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero .subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-weight: 300;
+      color: var(--text-dim);
+      margin-bottom: 50px;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards 0.6s;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      letter-spacing: 0.02em;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* SCROLL HINT */
+    .scroll-hint {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      color: var(--text-muted);
+      opacity: 0;
+      animation: fadeIn 1s ease forwards 1.5s;
+    }
+
+    .scroll-hint::after {
+      content: '';
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--accent-pink), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.6; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.1); }
+    }
+
+    /* CONTAINERS */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    .container-wide { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .container-narrow { max-width: 700px; margin: 0 auto; padding: 0 24px; }
+
+    /* SECTIONS */
+    section { padding: 50px 0; position: relative; }
+
+    .section-label {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent-pink);
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: clamp(2.2rem, 6vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 40px;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 24px;
+      color: var(--text);
+    }
+
+    p { margin-bottom: 1.5em; color: var(--text-dim); }
+    p.lead { font-size: 1.15rem; line-height: 1.8; font-weight: 300; }
+
+    /* COMMENTARY SECTIONS */
+    .commentary-label {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-pink);
+      margin-bottom: 20px;
+    }
+
+    .commentary-attribution {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-style: italic;
+      color: var(--text-dim);
+      margin-top: 24px;
+      text-align: right;
+    }
+
+    /* ACT HEADERS */
+    .act-header {
+      padding: 50px 24px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 100%);
+    }
+
+    .act-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.15;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .act-number {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--accent-coral);
+      margin-bottom: 20px;
+    }
+
+    .act-header h2 {
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      font-weight: 300;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .act-intro {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.15rem;
+      color: var(--text-dim);
+      line-height: 1.8;
+    }
+
+    /* ESSAY SECTIONS */
+    .essay-section { background: var(--bg); }
+    .essay-content { max-width: 700px; }
+
+    /* Drop cap removed for cleaner look */
+
+    /* ANIMATED COUNTERS */
+    .counter {
+      display: inline;
+    }
+
+    .counter.counting {
+      transition: none;
+    }
+
+    /* BLOCKQUOTES */
+    .blockquote {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--text);
+      border-left: 2px solid var(--accent-pink);
+      padding: 16px 0 16px 20px;
+      margin: 28px 0;
+      line-height: 1.6;
+      background: rgba(232,23,138,0.02);
+      border-radius: 0 6px 6px 0;
+    }
+
+    .blockquote-large {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--accent-pink);
+      border-left: 2px solid var(--accent-pink);
+      padding-left: 20px;
+      margin: 28px 0;
+      line-height: 1.6;
+    }
+
+    .blockquote-attribution {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: normal;
+    }
+
+    /* HIGHLIGHT QUOTE */
+    .highlight-quote {
+      background: linear-gradient(135deg, rgba(232,23,138,0.05) 0%, rgba(244,160,63,0.03) 100%);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 24px 0;
+      position: relative;
+    }
+
+    .highlight-quote::before {
+      content: '"';
+      position: absolute;
+      top: 8px;
+      left: 16px;
+      font-size: 2.5rem;
+      color: var(--accent-pink);
+      opacity: 0.12;
+      line-height: 1;
+    }
+
+    .highlight-quote p {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: var(--text);
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .highlight-quote .attribution {
+      font-size: 0.8rem;
+      color: var(--accent-pink);
+      font-weight: 500;
+    }
+
+    /* LANDSCAPE DIVIDERS */
+    .landscape-divider {
+      position: relative;
+      width: 100%;
+      height: 280px;
+      overflow: hidden;
+      background: var(--bg-deep);
+    }
+
+    .landscape-divider.tall { height: 350px; }
+    .landscape-divider.short { height: 200px; }
+
+    .landscape-divider::before,
+    .landscape-divider::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 100px;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .landscape-divider::before {
+      top: 0;
+      background: linear-gradient(to bottom, var(--bg-deep), transparent);
+    }
+
+    .landscape-divider::after {
+      bottom: 0;
+      background: linear-gradient(to top, var(--bg-deep), transparent);
+    }
+
+    .landscape-divider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      opacity: 0.85;
+    }
+
+    /* CHART GRID */
+    .chart-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 800px) {
+      .chart-grid { grid-template-columns: 1fr; }
+    }
+
+    /* CHART BLOCKS */
+    .chart-block {
+      position: relative;
+      margin-bottom: 24px;
+      padding: 24px 24px 20px;
+      background: rgba(255,255,255,0.5);
+      border-radius: 12px;
+      border: 1px solid rgba(232,23,138,0.08);
+    }
+
+    .chart-grid .chart-block { margin-bottom: 0; }
+
+    .chart-block:last-child { margin-bottom: 0; }
+
+    .chart-title {
+      font-family: var(--sans);
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
+      font-weight: 400;
+      margin-bottom: 28px;
+      color: var(--accent-pink);
+      text-align: center;
+    }
+
+    .chart-attribution {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(232,23,138,0.08);
+    }
+
+    /* BAR CHARTS */
+    .immersive-chart {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 16px;
+      height: 240px;
+      padding: 0 12px;
+      position: relative;
+    }
+
+    .chart-grid .immersive-chart {
+      height: 200px;
+      gap: 12px;
+    }
+
+    .immersive-chart::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+
+    .immersive-bar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      flex: 1;
+      max-width: 120px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .immersive-bar:hover {
+      transform: translateY(-8px);
+    }
+
+    .bar-tower {
+      width: 100%;
+      border-radius: 8px 8px 0 0;
+      position: relative;
+      transition: all 0.8s ease-out;
+      min-height: 20px;
+    }
+
+    .bar-tower::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 8px 8px 0 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 50%);
+    }
+
+    .bar-percent {
+      font-family: var(--sans);
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: var(--accent-pink);
+      margin-top: 12px;
+    }
+
+    .bar-name {
+      font-family: var(--sans);
+      font-size: 12px;
+      color: var(--text-dim);
+      text-align: center;
+      margin-top: 8px;
+      letter-spacing: 0.05em;
+      min-height: 2.4em;
+      line-height: 1.2;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      word-break: break-word;
+      hyphens: auto;
+    }
+
+    @media (max-width: 500px) {
+      .immersive-chart {
+        gap: 8px;
+        padding: 0 4px;
+      }
+      .chart-grid .immersive-chart {
+        gap: 6px;
+      }
+      .bar-percent {
+        font-size: 1.4rem;
+      }
+      .bar-name {
+        font-size: 9px;
+        letter-spacing: 0;
+        min-height: 3em;
+      }
+      .immersive-bar {
+        min-width: 0;
+      }
+    }
+
+    /* Bottom sheet modal for book lists */
+    .bottom-sheet-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    .bottom-sheet-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .bottom-sheet {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      border-radius: 20px 20px 0 0;
+      max-height: 80vh;
+      transform: translateY(100%);
+      transition: transform 0.3s ease-out;
+      z-index: 1001;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bottom-sheet-overlay.active .bottom-sheet {
+      transform: translateY(0);
+    }
+
+    .bottom-sheet-handle {
+      width: 40px;
+      height: 4px;
+      background: rgba(0,0,0,0.2);
+      border-radius: 2px;
+      margin: 12px auto;
+      flex-shrink: 0;
+    }
+
+    .bottom-sheet-header {
+      padding: 0 24px 16px;
+      border-bottom: 1px solid rgba(232,23,138,0.1);
+      flex-shrink: 0;
+    }
+
+    .bottom-sheet-title {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-pink);
+      margin-bottom: 4px;
+    }
+
+    .bottom-sheet-subtitle {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      color: var(--text);
+    }
+
+    .bottom-sheet-content {
+      padding: 16px 24px 32px;
+      overflow-y: auto;
+      flex: 1;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .bottom-sheet-book {
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .bottom-sheet-book:hover {
+      background: rgba(232,23,138,0.04);
+      margin: 0 -24px;
+      padding: 16px 24px;
+    }
+
+    .bottom-sheet-book:last-child {
+      border-bottom: none;
+    }
+
+    .bottom-sheet-book-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .bottom-sheet-book-author {
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+
+    .bottom-sheet-book-desc {
+      font-family: var(--serif);
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .bottom-sheet-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 32px;
+      height: 32px;
+      border: none;
+      background: rgba(0,0,0,0.05);
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-dim);
+    }
+
+    /* Active bar state */
+    .immersive-bar.active .bar-tower {
+      box-shadow: 0 0 20px currentColor;
+    }
+
+    .chart-insight {
+      max-width: 600px;
+      margin: 30px auto 0;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 1rem;
+      font-weight: 300;
+    }
+
+    .chart-source {
+      font-family: var(--sans);
+      font-size: 10px;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    /* LINE CHARTS */
+    .line-chart-container {
+      margin: 40px 0;
+    }
+
+    .line-chart {
+      position: relative;
+      height: 200px;
+      background: rgba(255,255,255,0.5);
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid rgba(232,23,138,0.08);
+    }
+
+    .line-chart svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .line-chart-path {
+      fill: none;
+      stroke: var(--accent-pink);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .line-chart-area {
+      fill: url(#lineGradient);
+      opacity: 0.3;
+    }
+
+    .line-chart-dot {
+      fill: var(--accent-pink);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .line-chart-dot:hover {
+      r: 8;
+      fill: var(--accent-coral);
+    }
+
+    .line-chart-label {
+      font-family: var(--sans);
+      font-size: 10px;
+      fill: var(--text-muted);
+      text-anchor: middle;
+    }
+
+    .line-chart-value {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      fill: var(--text);
+      text-anchor: middle;
+    }
+
+    .line-chart-title {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .line-chart-grid {
+      stroke: rgba(232,23,138,0.1);
+      stroke-dasharray: 4,4;
+    }
+
+    /* TREND CARDS */
+    .trend-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .trend-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-pink), var(--accent-coral), var(--accent-gold));
+    }
+
+    .trend-card.pink-accent::before { background: var(--accent-pink); }
+    .trend-card.gold-accent::before { background: var(--accent-gold); }
+    .trend-card.coral-accent::before { background: var(--accent-coral); }
+
+    .trend-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .trend-title {
+      font-family: var(--sans);
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
+      font-weight: 400;
+      color: var(--accent-pink);
+      text-align: center;
+    }
+
+    .trend-change {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .trend-change .value { text-align: center; }
+    .trend-change .period {
+      font-family: var(--sans);
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .trend-change .number {
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--accent-pink);
+    }
+    .trend-change .arrow {
+      font-size: 1.5rem;
+      color: var(--accent-gold);
+    }
+
+    .trend-lines {
+      position: relative;
+      height: 80px;
+      margin: 20px 0;
+    }
+
+    .trend-lines svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .trend-line-solid {
+      fill: none;
+      stroke: var(--accent-pink);
+      stroke-width: 2.5;
+      stroke-linecap: round;
+    }
+
+    .trend-line-dashed {
+      fill: none;
+      stroke: var(--accent-gold);
+      stroke-width: 2;
+      stroke-dasharray: 8,6;
+      stroke-linecap: round;
+    }
+
+    /* BEFORE/AFTER COMPARISON */
+    .trend-comparison {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .trend-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .trend-row .label {
+      font-family: var(--sans);
+      font-size: 14px;
+      color: var(--text-dim);
+      width: 70px;
+      flex-shrink: 0;
+    }
+
+    .trend-row .bar-track {
+      flex: 1;
+      height: 32px;
+      background: rgba(232,23,138,0.08);
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .trend-row .bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-pink), var(--accent-coral));
+      border-radius: 6px;
+      transition: width 0.8s ease-out;
+    }
+
+    .trend-row .pct {
+      font-family: var(--sans) !important;
+      font-size: 14px !important;
+      font-weight: 500;
+      color: var(--accent-pink);
+      min-width: 110px !important;
+      text-align: right;
+      white-space: nowrap !important;
+      flex-shrink: 0;
+    }
+
+    .trend-shift {
+      text-align: center;
+      font-family: var(--sans);
+      font-size: 14px;
+      color: var(--accent-gold);
+      font-weight: 500;
+      margin-top: 8px;
+    }
+
+    .trend-prose {
+      font-size: 1.05rem;
+      color: var(--text);
+      line-height: 1.7;
+      margin-top: 20px;
+    }
+
+    .trend-insight {
+      font-size: 0.95rem;
+      color: var(--text-dim);
+      line-height: 1.7;
+      margin-top: 16px;
+    }
+
+    /* WORLD CARDS */
+    .world-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 24px;
+    }
+
+    .world-card h4 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .world-card h4 span {
+      font-weight: 400;
+      color: var(--accent-gold);
+    }
+
+    .world-card p {
+      font-size: 1rem;
+      margin-bottom: 0;
+      line-height: 1.75;
+    }
+
+    /* TECH CARDS */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .tech-grid { grid-template-columns: 1fr; }
+    }
+
+    .tech-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(244,160,63,0.2);
+      border-radius: 12px;
+      padding: 28px;
+      transition: all 0.3s ease;
+    }
+
+    .tech-card:hover {
+      border-color: rgba(244,160,63,0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(244,160,63,0.1);
+    }
+
+    .tech-card h4 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .tech-card h4 span {
+      font-weight: 400;
+      color: var(--accent-gold);
+    }
+
+    .tech-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+      line-height: 1.7;
+    }
+
+    /* WARNING CARDS */
+    .warning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .warning-grid { grid-template-columns: 1fr; }
+    }
+
+    .warning-item {
+      padding: 32px;
+      background: #fff;
+      border: 1px solid rgba(255,107,107,0.2);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .warning-item:hover {
+      border-color: rgba(255,107,107,0.4);
+      transform: translateX(8px);
+    }
+
+    .warning-item h4 {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 12px;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .warning-item p {
+      font-size: 0.95rem;
+      color: var(--text-dim);
+      margin-bottom: 0;
+      line-height: 1.75;
+    }
+
+    .warning-item .author {
+      margin-top: 16px;
+      font-family: var(--sans);
+      font-size: 11px;
+      color: var(--accent-coral);
+      letter-spacing: 0.1em;
+    }
+
+    .warning-category {
+      margin-bottom: 60px;
+    }
+
+    .warning-category h3 {
+      font-size: 1.2rem;
+      color: var(--accent-coral);
+      margin-bottom: 32px;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .warning-category h3::before {
+      content: '';
+      width: 30px;
+      height: 2px;
+      background: var(--accent-coral);
+    }
+
+    /* CONCLUSION */
+    .conclusion-section {
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .conclusion-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('/wonder/assets/Objects-v2/optimized/Structure_2.jpg');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.2;
+    }
+
+    .conclusion-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 0%, var(--bg-deep) 70%);
+    }
+
+    .conclusion-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .conclusion-block { margin-bottom: 60px; }
+
+    .conclusion-question {
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      font-weight: 300;
+      margin-bottom: 24px;
+      color: var(--text-dim);
+    }
+
+    .conclusion-answer {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 300;
+      background: linear-gradient(135deg, var(--accent-pink), var(--accent-coral), var(--accent-gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+    }
+
+    /* LIBRARY */
+    .library-section {
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
+      padding: 50px 0;
+      position: relative;
+      text-align: center;
+    }
+
+    .scatterplot-container { margin-top: 48px; }
+
+    .scatterplot-canvas {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      background: linear-gradient(135deg, #1e1e2e 0%, #13131f 100%);
+      border: 1px solid rgba(232,23,138,0.15);
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+
+    .scatterplot-canvas::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 5%;
+      bottom: 5%;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.08), transparent);
+      z-index: 1;
+    }
+
+    .scatterplot-canvas::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      right: 5%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent);
+      z-index: 1;
+    }
+
+    .scatter-quadrant-label {
+      position: absolute;
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .scatter-quadrant-label.top-left { top: 24px; left: 50%; transform: translateX(-100%) translateX(-20px); text-align: right; }
+    .scatter-quadrant-label.top-right { top: 24px; right: 50%; transform: translateX(100%) translateX(20px); text-align: left; }
+    .scatter-quadrant-label.bottom-left { bottom: 24px; left: 50%; transform: translateX(-100%) translateX(-20px); text-align: right; }
+    .scatter-quadrant-label.bottom-right { bottom: 24px; right: 50%; transform: translateX(100%) translateX(20px); text-align: left; }
+
+    @media (max-width: 600px) {
+      .scatter-quadrant-label { font-size: 8px; letter-spacing: 0.05em; }
+      .scatter-quadrant-label.top-left, .scatter-quadrant-label.bottom-left { left: 16px; transform: none; }
+      .scatter-quadrant-label.top-right, .scatter-quadrant-label.bottom-right { right: 16px; transform: none; }
+    }
+
+    .scatter-axis-label {
+      position: absolute;
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      z-index: 20;
+      pointer-events: none;
+      background: rgba(30,30,46,0.8);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .scatter-axis-label.top { top: 12px; left: 50%; transform: translateX(-50%); }
+    .scatter-axis-label.bottom { bottom: 12px; left: 50%; transform: translateX(-50%); }
+    .scatter-axis-label.left { left: 12px; top: 50%; transform: translateY(-50%); }
+    .scatter-axis-label.right { right: 12px; top: 50%; transform: translateY(-50%); }
+
+    .scatter-dot {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      opacity: 0.8;
+      box-shadow: 0 0 12px currentColor;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .scatter-dot:hover {
+      transform: scale(2.2);
+      opacity: 1;
+      z-index: 10;
+      box-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+    }
+
+    /* Scatterplot tooltip */
+    .scatter-tooltip {
+      position: absolute;
+      background: rgba(20, 18, 22, 0.95);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 10px 14px;
+      pointer-events: none;
+      z-index: 100;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.15s ease, transform 0.15s ease;
+      white-space: nowrap;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .scatter-tooltip.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .scatter-tooltip-title {
+      font-weight: 600;
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .scatter-tooltip-meta {
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    /* Mobile: larger tap targets */
+    @media (max-width: 768px) {
+      .scatterplot-canvas {
+        height: 400px;
+        touch-action: pan-y pinch-zoom;
+      }
+      .scatter-dot::before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: -8px;
+        right: -8px;
+        bottom: -8px;
+      }
+      .scatter-dot:active {
+        transform: scale(2);
+        opacity: 1;
+        z-index: 10;
+      }
+      .scatter-axis-label { font-size: 9px; }
+      .scatter-axis-label.left { left: 8px; }
+      .scatter-axis-label.right { right: 8px; }
+    }
+
+    @media (max-width: 480px) {
+      .scatterplot-canvas {
+        height: 350px;
+      }
+    }
+
+    /* Decade filters */
+    .decade-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin: 24px 0;
+    }
+
+    .decade-filter {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 8px 16px;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      color: var(--text-dim);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .decade-filter:hover {
+      border-color: var(--accent-pink);
+      color: var(--text);
+    }
+
+    .decade-filter.active {
+      background: var(--accent-pink);
+      border-color: var(--accent-pink);
+      color: #fff;
+    }
+
+    .theme-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 32px;
+      justify-content: center;
+    }
+
+    .theme-tag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--sans);
+      font-size: 12px;
+      color: var(--text-dim);
+      cursor: pointer;
+      padding: 8px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      transition: all 0.2s ease;
+    }
+
+    .theme-tag:hover {
+      border-color: var(--accent-pink);
+      color: var(--text);
+      transform: translateY(-2px);
+    }
+
+    .theme-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    /* Book Card */
+    .book-card-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .book-card-overlay.active { display: flex; }
+
+    .book-card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 480px;
+      width: 100%;
+      position: relative;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+      border: 1px solid var(--border);
+    }
+
+    .book-card-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 32px;
+      height: 32px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      color: var(--text-muted);
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.2s;
+    }
+
+    .book-card-close:hover {
+      background: var(--border);
+      color: var(--text);
+    }
+
+    .book-card-theme {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .book-card-title {
+      font-size: 1.75rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .book-card-author {
+      font-family: var(--sans);
+      font-size: 1rem;
+      color: var(--text-dim);
+      margin-bottom: 24px;
+    }
+
+    .book-card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .book-card-tag {
+      font-family: var(--sans);
+      font-size: 12px;
+      padding: 6px 12px;
+      background: var(--bg);
+      border-radius: 6px;
+      color: var(--text-dim);
+    }
+
+    .book-card-quote {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.6;
+      padding: 20px;
+      background: var(--bg);
+      border-left: 3px solid var(--accent-pink);
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* Book Card Header with Cover */
+    .book-card-header {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .book-card-cover {
+      width: 100px;
+      height: 150px;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, var(--bg) 0%, var(--bg-deep) 100%);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .book-card-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .book-card-cover-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--sans);
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 12px;
+    }
+
+    .book-card-header-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .book-card-desc {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .book-card-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .book-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 16px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .book-card-link--goodreads {
+      background: #f4f1ea;
+      color: #382110;
+    }
+
+    .book-card-link--goodreads:hover {
+      background: #e8e2d5;
+    }
+
+    .book-card-link--amazon {
+      background: #ff9900;
+      color: #111;
+    }
+
+    .book-card-link--amazon:hover {
+      background: #ffad33;
+    }
+
+    .book-card-link svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    @media (max-width: 500px) {
+      .book-card-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .book-card-cover {
+        width: 120px;
+        height: 180px;
+      }
+
+      .book-card-links {
+        justify-content: center;
+      }
+    }
+
+    /* METHODOLOGY */
+    .methodology-section {
+      padding: 60px 0;
+      background: var(--bg-deep);
+      border-top: 1px solid var(--border);
+    }
+
+    .methodology-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 48px;
+    }
+
+    @media (max-width: 800px) {
+      .methodology-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 500px) {
+      .methodology-grid { grid-template-columns: 1fr; }
+    }
+
+    .methodology-item h4 {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-pink);
+      margin-bottom: 16px;
+    }
+
+    .methodology-item p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+      line-height: 1.8;
+    }
+
+    /* FLOATING SUBSCRIBE */
+    .subscribe-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 100;
+    }
+
+    .subscribe-float a {
+      display: block;
+      padding: 12px 24px;
+      background: var(--accent-pink);
+      color: white;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 4px 12px rgba(232, 23, 138, 0.3);
+      transition: all 0.2s;
+    }
+
+    .subscribe-float a:hover {
+      background: #c9146f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(232, 23, 138, 0.4);
+    }
+
+    /* QUIZ CTA INLINE */
+    .quiz-cta-inline {
+      text-align: center;
+      padding: 48px 24px;
+      background: linear-gradient(180deg, var(--bg) 0%, rgba(232, 23, 138, 0.03) 100%);
+    }
+
+    .quiz-cta-label {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-pink);
+      margin-bottom: 16px;
+    }
+
+    .quiz-cta-button {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--accent-pink);
+      color: white;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 50px;
+      letter-spacing: 0.05em;
+      transition: all 0.3s ease;
+    }
+
+    .quiz-cta-button:hover {
+      background: #c9146f;
+      transform: translateY(-2px);
+    }
+
+    /* ESSAY CTA SECTION */
+    .essay-cta-section {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    .essay-cta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .essay-cta-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 16px;
+      background: white;
+      border: 1px solid rgba(45, 42, 38, 0.1);
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .essay-cta-card:hover {
+      border-color: #e8178a;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .cta-icon {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .cta-label {
+      font-family: "Satoshi", sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #2d2a26;
+      margin-bottom: 4px;
+    }
+
+    .cta-desc {
+      font-size: 12px;
+      color: rgba(45, 42, 38, 0.5);
+    }
+
+    @media (max-width: 600px) {
+      .essay-cta-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* FOOTER */
+    .site-footer {
+      padding: 48px 24px;
+      background: #2d2a26;
+      text-align: center;
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .footer-nav a {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover {
+      color: var(--accent-pink);
+    }
+
+    .footer-copy {
+      font-family: var(--sans);
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .read-more-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent-pink);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      margin-top: 32px;
+      padding: 16px 32px;
+      border: 1px solid var(--accent-pink);
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .read-more-link:hover {
+      background: var(--accent-pink);
+      color: #fff;
+    }
+
+    /* ESSAY PREVIEW CARD (Substack-style) */
+    .essay-preview-card {
+      display: flex;
+      gap: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 32px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+    }
+
+    .essay-preview-card:hover {
+      border-color: var(--accent-pink);
+      box-shadow: 0 4px 20px rgba(232,23,138,0.1);
+    }
+
+    .essay-preview-card-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 6px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .essay-preview-card-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .essay-preview-card-label {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-pink);
+    }
+
+    .essay-preview-card-title {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--text);
+      margin: 0;
+    }
+
+    .essay-preview-card-subtitle {
+      font-family: var(--sans);
+      font-size: 14px;
+      color: var(--text-dim);
+      margin: 0;
+    }
+
+    @media (max-width: 480px) {
+      .essay-preview-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .essay-preview-card-image {
+        width: 100%;
+        height: 160px;
+      }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      .immersive-chart {
+        height: 250px;
+        gap: 12px;
+      }
+      .bar-percent { font-size: 1.4rem; }
+      .bar-name { font-size: 10px; }
+      .trend-header { flex-direction: column; gap: 24px; }
+    }
+
+    /* LIVE NOW CLUB HEADER */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 32px;
+      background: transparent;
+      transition: all 0.3s ease;
+    }
+
+    .header.scrolled {
+      background: rgba(250, 247, 242, 0.95);
+      backdrop-filter: blur(20px);
+      padding: 12px 32px;
+    }
+
+    .logo { display: block; }
+    .logo-img { height: 40px; width: auto; }
+
+    .nav { display: flex; gap: 24px; }
+    .nav a {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      text-decoration: none;
+      color: rgba(45, 42, 38, 0.6);
+      transition: color 0.2s;
+    }
+    .nav a:hover { color: var(--accent-pink); }
+    .nav a.active {
+      color: var(--accent-pink);
+      position: relative;
+    }
+    .nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--accent-pink);
+    }
+
+    /* Mobile menu toggle */
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 24px;
+      height: 18px;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger--open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger--open span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger--open span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    .mobile-menu-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 150;
+    }
+
+    .mobile-menu-overlay.open {
+      display: block;
+    }
+
+    .mobile-menu {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 280px;
+      height: 100%;
+      background: var(--bg);
+      padding: 80px 32px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .mobile-menu a {
+      font-family: var(--sans);
+      font-size: 1.25rem;
+      color: var(--text);
+      text-decoration: none;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mobile-menu a:hover {
+      color: var(--accent-pink);
+    }
+
+    @media (max-width: 768px) {
+      .header { padding: 12px 16px; }
+      .nav { display: none; }
+      .logo-img { height: 32px; }
+      .mobile-menu-toggle { display: block; }
+    }
+
+    /* Offset hero for fixed header - desktop */
+    @media (min-width: 769px) {
+      .hero {
+        padding-top: 100px;
+      }
+    }
+
+    /* ===========================================
+       MOBILE OPTIMIZATION
+       =========================================== */
+
+    /* Phase 1: Typography & Base Styles */
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      h3 { font-size: 1.3rem; }
+      .hero-label { font-size: 11px; letter-spacing: 0.12em; }
+      .section-label { font-size: 10px; }
+    }
+
+    /* Phase 2: Section Spacing */
+    @media (max-width: 640px) {
+      section { padding: 32px 0; }
+      .act-header { padding: 48px 16px 32px; }
+      .trend-card { margin-top: 32px; margin-bottom: 32px; }
+    }
+
+    @media (max-width: 480px) {
+      section { padding: 24px 0; }
+      .act-header { padding: 32px 12px 24px; }
+      .trend-card { margin-top: 24px; margin-bottom: 24px; }
+    }
+
+    /* Phase 3: Hero Section - Mobile - Updated 2026-03-31 */
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 100svh !important;
+        padding: 80px 20px 100px !important;
+        justify-content: center !important;
+      }
+      .hero h1 { font-size: clamp(2.2rem, 8vw, 3rem); }
+      .scroll-hint { bottom: 20px; }
+      .scroll-hint::after { height: 32px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        min-height: 100svh !important;
+        padding: 70px 16px 90px !important;
+        justify-content: center !important;
+      }
+      .hero h1 { font-size: clamp(2rem, 9vw, 2.5rem); }
+      .scroll-hint { bottom: 16px; }
+      .scroll-hint::after { height: 28px; }
+    }
+
+    /* Phase 4: Landscape Dividers */
+    @media (max-width: 768px) {
+      .landscape-divider { height: 180px; }
+      .landscape-divider.tall { height: 220px; }
+      .landscape-divider.short { height: 140px; }
+    }
+
+    @media (max-width: 480px) {
+      .landscape-divider { height: 140px; }
+      .landscape-divider.tall { height: 180px; }
+      .landscape-divider.short { height: 100px; }
+    }
+
+    /* Phase 5: Touch Feedback */
+    @media (hover: none) and (pointer: coarse) {
+      .immersive-bar:active { transform: scale(0.98); }
+      .tech-card:active { transform: scale(0.98); }
+      .warning-item:active { transform: scale(0.98); }
+      .ifthen-card:active { transform: scale(0.98); opacity: 0.9; }
+      .theme-badge:active { opacity: 0.7; }
+      .filter-pill:active { opacity: 0.7; }
+      .author-card:active { transform: scale(0.98); }
+      .debate-card:active { transform: scale(0.98); }
+    }
+
+    /* Phase 6: Mobile TOC Button */
+    .mobile-toc-btn {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--accent-pink);
+      color: white;
+      border: none;
+      box-shadow: 0 4px 20px rgba(232,23,138,0.4);
+      z-index: 100;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .mobile-toc-btn:active {
+      transform: scale(0.95);
+    }
+
+    .mobile-toc-btn svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-toc-btn { display: flex; }
+    }
+
+    /* Mobile TOC Drawer */
+    .mobile-toc-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      z-index: 200;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    .mobile-toc-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-toc-drawer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      border-radius: 20px 20px 0 0;
+      padding: 20px 24px 40px;
+      z-index: 201;
+      transform: translateY(100%);
+      transition: transform 0.3s ease-out;
+    }
+
+    .mobile-toc-overlay.active .mobile-toc-drawer {
+      transform: translateY(0);
+    }
+
+    .mobile-toc-handle {
+      width: 40px;
+      height: 4px;
+      background: rgba(0,0,0,0.15);
+      border-radius: 2px;
+      margin: 0 auto 20px;
+    }
+
+    .mobile-toc-title {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-pink);
+      margin-bottom: 16px;
+    }
+
+    .mobile-toc-links {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .mobile-toc-links a {
+      display: block;
+      padding: 14px 16px;
+      font-family: var(--sans);
+      font-size: 15px;
+      color: var(--text);
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+
+    .mobile-toc-links a:active {
+      background: rgba(232,23,138,0.1);
+    }
+
+    .mobile-toc-links a.current {
+      background: rgba(232,23,138,0.08);
+      color: var(--accent-pink);
+    }
+
+    /* Phase 7: Performance */
+    .library-section {
+      content-visibility: auto;
+      contain-intrinsic-size: 0 800px;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- READING PROGRESS BAR -->
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <!-- ACT INDICATOR (MOBILE) -->
+  <div class="act-indicator" id="actIndicator">Act I</div>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <!-- MOBILE TOC -->
+  <button class="mobile-toc-btn" id="mobileTocBtn" aria-label="Table of contents">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+  <div class="mobile-toc-overlay" id="mobileTocOverlay">
+    <div class="mobile-toc-drawer">
+      <div class="mobile-toc-handle"></div>
+      <div class="mobile-toc-title">Jump to</div>
+      <div class="mobile-toc-links">
+        <a href="#act-1">Act I: What Changes</a>
+        <a href="#act-2">Act II: What Emerges</a>
+        <a href="#act-3">Act III: What Remains</a>
+        <a href="#library">The Library</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="/" class="logo">
+      <img src="/images/logo-handwritten.png" alt="The Live Now Club" class="logo-img">
+    </a>
+    <nav class="nav">
+      <a href="/read">Read</a>
+      <a href="/navigate">Navigate</a>
+      <a href="/wonder" class="active">Wonder</a>
+      <a href="/connect">Connect</a>
+    </nav>
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Open menu">
+      <span class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="toggleMobileMenu()">
+    <nav class="mobile-menu" onclick="event.stopPropagation()">
+      <a href="/read">Read</a>
+      <a href="/navigate">Navigate</a>
+      <a href="/wonder">Wonder</a>
+      <a href="/connect">Connect</a>
+    </nav>
+  </div>
+
+  <script>
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.header');
+      if (header) {
+        header.classList.toggle('scrolled', window.scrollY > 50);
+      }
+    });
+
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const hamburger = document.getElementById('hamburger');
+      const overlay = document.getElementById('mobileMenuOverlay');
+      hamburger.classList.toggle('hamburger--open');
+      overlay.classList.toggle('open');
+    }
+  </script>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>When Purpose Is All We Have Left</h1>
+      <p class="subtitle">What 200+ sci-fi books reveal about meaning.</p>
+    </div>
+    <div class="scroll-hint">SCROLL</div>
+  </section>
+
+  <!-- LANDSCAPE DIVIDER -->
+  <div class="landscape-divider">
+    <img loading="lazy" src="/wonder/assets/landscapes/optimized/1.jpg" alt="Surreal landscape">
+  </div>
+
+  <!-- INTRODUCTION -->
+  <section class="essay-section" style="position: relative; overflow: hidden;">
+    <div class="container-narrow">
+        <p><span style="font-size: 1.4em; font-weight: 400; color: var(--accent-pink);">Our</span> race could go extinct, machines could destroy us, we could destroy ourselves, or this could be the moment that we choose to strip away the excess to evolve to a more natural state that is technologically-enabled, yet deeply human.</p>
+
+        <p>I write this with urgency. Over the last year, at the age of 34, my world turned upside down with a Stage III cancer diagnosis. I endured a brutal round of treatment, my D1 rower body debilitated to a wheelchair, my mind incapable of holding thoughts, only to learn that my cancer had progressed to Stage IV, spreading to multiple organs. Doctors gave me a prognosis of less than two years. By virtue of medicine, I am clear now, but I live in the shadow of expected recurrence.</p>
+
+        <p>My own personal journey mirrors the global one we may soon face.</p>
+
+        <p>When everything falls away, you realize what really matters. I write this from the rubble, my career as a technology founder, my hair, my body, and my life as I knew it since crumbled. Change is a brutal process, yet in crisis, we have access to the deepest form of clarity. And in this silence, all I have left are questions:</p>
+
+        <div class="blockquote-large">
+          Who am I when I can no longer work the way I used to? Who am I when the core values I built my identity around have been razed?
+        </div>
+
+        <p>I suspect these may not just be mine. As AI makes more human labor optional and shifts how we show up in the world, they become everyone's. Who are you when you are no longer defined by work? What holds a society together when it no longer needs your productivity?</p>
+
+        <p>I've spent my entire life reading science fiction and dreaming about worlds that don't yet exist. And in this moment, when everything feels as though it is breaking, I credit those books for my deep inherent optimism around the future.</p>
+
+        <p>I may not live long enough to see this technological evolution through, but I hope to share a glimmer of hope that will transcend my physicality.</p>
+
+        <p class="commentary-attribution">- Louise</p>
+
+        <a href="/read/soulmd" class="essay-preview-card">
+          <img src="/images/soulmd.jpg" alt="Soul.md" class="essay-preview-card-image">
+          <div class="essay-preview-card-content">
+            <span class="essay-preview-card-label">Read more</span>
+            <h4 class="essay-preview-card-title">Soul.md</h4>
+            <p class="essay-preview-card-subtitle">From Doing to Being. Searching for Meaning in Science Fiction</p>
+          </div>
+        </a>
+    </div>
+  </section>
+
+  <!-- LANDSCAPE DIVIDER -->
+  <div class="landscape-divider tall">
+    <img loading="lazy" src="/wonder/assets/landscapes/optimized/3.jpg" alt="Surreal landscape">
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- ACT I -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="act-header">
+    <div class="act-number">Act I</div>
+    <h2>What Do You Do When You No Longer Have to Do Anything?</h2>
+  </div>
+
+  <section style="background: var(--bg); padding: 50px 0;">
+    <div class="container-narrow">
+      <p>Freedom, it turns out, is the hard part.</p>
+
+      <p>I often think about how "freedom from" is not the same as "freedom to". Freed from constraints, free from excuses, free from anything that had theoretically been holding you back, how do you even begin to understand what you want at your core?</p>
+
+      <p>Science fiction is an if/then statement. If we no longer need to work, then what happens? If we no longer have to die? If we have the ability to travel anywhere instantly? If we can live multiple lives?</p>
+
+      <p style="font-size: 0.9rem; color: var(--text-muted); font-style: italic;">All data was compiled with the help of AI and may have occasional errors. This is an imperfect map — the corpus skews Anglo-American, tagging involves AI interpretation, and no system captures 129 years of imagination fully. All incessant questions around meaning are my own.</p>
+
+      <div class="highlight-quote">
+        <p>"What's the purpose of a robot, Sibling Dex?" Mosscap tapped its chest; the sound echoed lightly. "What's the purpose of me?"</p>
+        <p>"You're here to learn about people."</p>
+        <p>"That's something I'm doing. That's not my reason for being. When I am done with this, I will do other things. I do not have a purpose any more than a mouse or a slug or a thornbush does. Why do you have to have one in order to feel content?"</p>
+        <div class="attribution">Becky Chambers, A Psalm for the Wild-Built</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--bg-deep); padding: 60px 0;">
+    <div class="container-wide">
+      <div class="section-label">The Data</div>
+
+      <div class="chart-grid">
+        <div class="chart-block">
+          <h3 class="chart-title">What Is Left to Solve For?</h3>
+          <div class="immersive-chart" id="chart-scarcity"></div>
+          <p class="chart-source">Based on 208 science fiction books, 1895–2024</p>
+        </div>
+
+        <div class="chart-block">
+          <h3 class="chart-title">What Question Does the Book Ask?</h3>
+          <div class="immersive-chart" id="chart-question"></div>
+          <p class="chart-source">Based on 208 science fiction books, 1895–2024</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ CTA -->
+  <div class="quiz-cta-inline">
+    <p class="quiz-cta-label">Discover the Version of the Future You're Building</p>
+    <a href="/wonder/essay/quiz" class="quiz-cta-button">Take the Quiz →</a>
+  </div>
+
+  <section style="background: var(--bg); padding: 60px 0;">
+    <div class="container">
+      <h3>The World: Everything is Solved</h3>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h4>Culture <span>(Banks)</span></h4>
+          <p>Banks created one of the most complete post-scarcity civilizations in science fiction. The Culture has solved everything: material want, disease, death by misadventure, the friction of distance, the indignity of involuntary labor. Humans, freed from every necessity, pursue art, mathematics, and relationships.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--bg-deep); padding: 50px 0;">
+    <div class="container">
+      <h3>Technologies: The Mechanics of Abundance</h3>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h4>Matter Compilers <span>(Stephenson, Stross)</span></h4>
+          <p>Molecular assemblers construct anything atom by atom, from food to furniture to weapons. Once you can fabricate any object from raw material, scarcity of things vanishes.</p>
+        </div>
+        <div class="tech-card">
+          <h4>Carbon Coin <span>(Robinson)</span></h4>
+          <p>A new global currency is backed not by gold or government but by carbon sequestration. Every ton of CO2 removed from the atmosphere generates value. Ecological repair becomes the basis of an entire economy.</p>
+        </div>
+        <div class="tech-card">
+          <h4>Culture Minds <span>(Banks)</span></h4>
+          <p>The superintelligences that run the Culture's infrastructure. They manage economies, navigate ships, oversee habitats housing billions, all with a competence so total it borders on the divine.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--bg); padding: 60px 0;">
+    <div class="container-narrow">
+      <h3>The Warning</h3>
+      <p><strong>Freedom without purpose is a prison:</strong> With greater abundance, there is a greater potential for self-actualization, but also greater visibility into a loss of purpose. The more options you have, the heavier the emptiness.</p>
+
+      <div class="highlight-quote">
+        <p>You are rich, you own. We are poor, we lack. You have, we do not have. Everything is beautiful here. Only not the faces. On Anarres nothing is beautiful, nothing but the faces. We have nothing but that, nothing but each other. Here you see the jewels, there you see the eyes. And in the eyes you see the splendor of the human spirit. Because our men and women are free - possessing nothing, they are free. And you the possessors are possessed. You are all in jail. Each alone, solitary, with a heap of what he owns. You live in prison, die in prison. It is all I can see in your eyes - the wall, the wall!</p>
+        <div class="attribution">Ursula K. Le Guin, The Dispossessed</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANDSCAPE DIVIDER -->
+  <div class="landscape-divider tall">
+    <img loading="lazy" src="/wonder/assets/landscapes/optimized/5.jpg" alt="Surreal landscape">
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- ACT II -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="act-header">
+    <div class="act-number">Act II</div>
+    <h2>Who Are We When We Don't Have to Work?</h2>
+  </div>
+
+  <section style="background: var(--bg); padding: 50px 0;">
+    <div class="container-narrow">
+      <p>The structural foundation of our world runs on work. It not only gives us purpose, it gives our lives shape. It is a tether, dictating the schedule of our days, our community, and our geographical location.</p>
+
+      <p>To lose it is to lose your default factory setting. And with that, comes the question: if you are not what you do, then who are you?</p>
+
+      <p>The identity crisis that follows a major transition arrives in two waves.</p>
+
+      <p>First the loss. The grief of the diminished self, the person contracting around what they no longer have. It's the disorientation that arrives when you've gotten everything you could have asked for, or had it all washed away.</p>
+
+      <p>The second can be more difficult. The sudden requirement to build a self out of choice rather than circumstance. The freedom to be whoever you want to be, to live however you want to live. The frame is gone, the industrial self dismantled, and what remains in its place?</p>
+
+      <p>Universally, across the literature, the total freedom of self-presentation comes from how you choose to present yourself in cyberspace, what voluntary tribes you wish to align yourself with, and what opt-in nation you want to be a part of. Identity is made, not given. Most authors don't imagine capitalism ending so much as outgrowing it. The economics shift, but the existential questions remain.</p>
+    </div>
+  </section>
+
+  <section style="background: var(--bg-deep); padding: 60px 0;">
+    <div class="container-wide">
+      <div class="section-label">The Data</div>
+
+      <div class="chart-grid">
+        <div class="chart-block">
+          <h3 class="chart-title">Is Identity Fixed or Made?</h3>
+          <div class="immersive-chart" id="chart-identity"></div>
+          <p class="chart-source">Based on 208 science fiction books, 1895–2024</p>
+        </div>
+
+        <div class="chart-block">
+          <h3 class="chart-title">Where Does Meaning Come From?</h3>
+          <div class="immersive-chart" id="chart-meaning"></div>
+          <p class="chart-source">Based on 208 science fiction books, 1895–2024</p>
+        </div>
+      </div>
+
+      <div class="trend-card pink-accent">
+        <h3 class="chart-title">What Do We Still Search For?</h3>
+        <p style="text-align: center; color: var(--text-muted); font-size: 13px; margin-bottom: 24px;">How anxieties have shifted over time</p>
+
+        <div style="display: flex; gap: 12px; margin-bottom: 16px; font-size: 11px; justify-content: flex-end;">
+          <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; background: rgba(232,23,138,0.3); border-radius: 2px;"></span> Pre-1980</span>
+          <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; background: var(--accent-pink); border-radius: 2px;"></span> 2000+</span>
+        </div>
+
+        <div class="trend-comparison">
+          <div class="trend-row" style="margin-bottom: 16px;">
+            <span class="label" style="min-width: 80px;">Meaning</span>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="flex: 1; height: 16px; background: rgba(232,23,138,0.08); border-radius: 4px; overflow: hidden;">
+                  <div style="width: 67%; height: 100%; background: rgba(232,23,138,0.3); border-radius: 4px;"></div>
+                </div>
+                <span style="font-size: 13px; color: var(--text-muted); min-width: 36px;">67%</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="flex: 1; height: 16px; background: rgba(232,23,138,0.08); border-radius: 4px; overflow: hidden;">
+                  <div style="width: 52%; height: 100%; background: var(--accent-pink); border-radius: 4px;"></div>
+                </div>
+                <span style="font-size: 13px; color: var(--accent-pink); font-weight: 500; min-width: 36px;">52%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="trend-row" style="margin-bottom: 16px;">
+            <span class="label" style="min-width: 80px;">Identity</span>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="flex: 1; height: 16px; background: rgba(232,23,138,0.08); border-radius: 4px; overflow: hidden;">
+                  <div style="width: 10%; height: 100%; background: rgba(232,23,138,0.3); border-radius: 4px;"></div>
+                </div>
+                <span style="font-size: 13px; color: var(--text-muted); min-width: 36px;">10%</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="flex: 1; height: 16px; background: rgba(232,23,138,0.08); border-radius: 4px; overflow: hidden;">
+                  <div style="width: 21%; height: 100%; background: var(--accent-pink); border-radius: 4px;"></div>
+                </div>
+                <span style="font-size: 13px; color: var(--accent-pink); font-weight: 500; min-width: 36px;">21%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="trend-row">
+            <span class="label" style="min-width: 80px;">Connection</span>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="flex: 1; height: 16px; background: rgba(232,23,138,0.08); border-radius: 4px; overflow: hidden;">
+                  <div style="width: 15%; height: 100%; background: rgba(232,23,138,0.3); border-radius: 4px;"></div>
+                </div>
+                <span style="font-size: 13px; color: var(--text-muted); min-width: 36px;">15%</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="flex: 1; height: 16px; background: rgba(232,23,138,0.08); border-radius: 4px; overflow: hidden;">
+                  <div style="width: 17%; height: 100%; background: var(--accent-pink); border-radius: 4px;"></div>
+                </div>
+                <span style="font-size: 13px; color: var(--accent-pink); font-weight: 500; min-width: 36px;">17%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="trend-shift" style="margin-top: 20px;">Based on 73 pre-1980 books vs 77 post-2000 books</p>
+        <p class="trend-prose">Early science fiction obsessed over meaning. What gives life purpose when survival is solved? Modern authors have diversified the anxiety. Identity and connection now share the weight.</p>
+      </div>
+
+      <div class="chart-grid">
+        <div class="chart-block">
+          <h3 class="chart-title">What Happens to Work?</h3>
+          <div class="immersive-chart" id="chart-work"></div>
+          <p class="chart-source">Based on 208 science fiction books, 1895–2024</p>
+        </div>
+
+        <div class="chart-block">
+          <h3 class="chart-title">What Replaces Capitalism?</h3>
+          <div class="immersive-chart" id="chart-econ"></div>
+          <p class="chart-source">Based on 208 science fiction books, 1895–2024</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--bg); padding: 50px 0;">
+    <div class="container-narrow">
+      <div class="highlight-quote">
+        <p>"In a properly automated and educated world, then, machines may prove to be the true humanizing influence. It may be that machines will do the work that makes life possible and that human beings will do all the other things that make life pleasant and worthwhile."</p>
+        <div class="attribution">Isaac Asimov, Robot Visions</div>
+      </div>
+
+      <div class="highlight-quote">
+        <p>"There are only two industries. This has always been true....There is the industry of things, and the industry of entertainment....After people have the things they need to live, everything else is entertainment. Everything."</p>
+        <div class="attribution">Neal Stephenson, The Diamond Age</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--bg-deep); padding: 50px 0;">
+    <div class="container">
+      <h3>The Worlds: Social Structures That Reimagine Where Identity Lives</h3>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h4>Whuffie <span>(Doctorow)</span></h4>
+          <p>Money is obsolete and is replaced by Whuffie, a real-time reputation score that determines what you can access, where you can live, how much weight your voice carries. Your social standing becomes your currency.</p>
+        </div>
+        <div class="tech-card">
+          <h4>Hives <span>(Palmer)</span></h4>
+          <p>The nation-state is dead. In its place are seven Hives, global governments you opt into based on philosophical alignment, not geography or birth. A Humanist, a Utopian, a Brillist. You join the worldview you believe in and can leave anytime. Citizenship becomes a statement of values.</p>
+        </div>
+        <div class="tech-card">
+          <h4>Phyles <span>(Stephenson)</span></h4>
+          <p>Geography has given way to voluntary tribes organized around shared culture, ethnicity, religion, or values. You can choose your affiliation, though many inherit theirs.</p>
+        </div>
+        <div class="tech-card">
+          <h4>Sensayers <span>(Palmer)</span></h4>
+          <p>Trained spiritual counselors are assigned to individuals, helping them navigate questions of meaning without pushing any specific faith.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--bg); padding: 50px 0;">
+    <div class="container">
+      <h3>Technologies: Tools that Make The Self Mutable</h3>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h4>Cyberspace <span>(Gibson)</span></h4>
+          <p>In Neuromancer, Gibson described cyberspace as "a consensual hallucination," a precise description of constructed identity. The hallucination we agree to maintain together is the self.</p>
+        </div>
+        <div class="tech-card">
+          <h4>Cortical Stacks <span>(Morgan)</span></h4>
+          <p>Human consciousness is stored on a small disc at the base of the skull. Bodies become "sleeves," interchangeable, disposable, purchasable. Death is temporary if you can afford a new body. Identity is severed from flesh entirely.</p>
+        </div>
+        <div class="tech-card">
+          <h4>Neural Laces <span>(Gibson, Banks)</span></h4>
+          <p>Brain-computer interfaces enable direct data access, machine communication, and eventually the transfer of consciousness itself.</p>
+        </div>
+        <div class="tech-card">
+          <h4>Mind Uploading <span>(Egan, Stross)</span></h4>
+          <p>Human consciousness can be digitally copied and run on any substrate. Death becomes optional. Identity becomes infinitely forkable. You can run multiple versions of yourself simultaneously.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--bg-deep); padding: 50px 0;">
+    <div class="container-narrow">
+      <h3>The Warning</h3>
+      <p><strong>Identity dissolves in total freedom:</strong> Across the literature, characters who can edit their appearance, fork their consciousness, and reinvent themselves at will often find that the self becomes thin. Without constraints, without friction, without the things you didn't choose, identity loses its weight.</p>
+
+      <div class="highlight-quote" style="margin-top: 40px;">
+        <p>"Order my life. I'm nothing without you: fragments of time, fragments of words, fragments of feelings. Make sense of me. Make me whole."</p>
+        <div class="attribution">Greg Egan, Permutation City</div>
+      </div>
+
+      <div class="highlight-quote" style="margin-top: 40px;">
+        <p>"A mind is a sort of star-chart in reverse: an assembly of memory, conditioned response, and past action held together in a network of electricity and endocrine signaling, rendered down to a single moving point of consciousness."</p>
+        <div class="attribution">Arkady Martine, A Memory Called Empire</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANDSCAPE DIVIDER -->
+  <div class="landscape-divider">
+    <img loading="lazy" src="/wonder/assets/landscapes/optimized/8.jpg" alt="Surreal landscape">
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- ACT III -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="act-header">
+    <div class="act-number">Act III</div>
+    <h2>What Actually Holds a Society Together?</h2>
+  </div>
+
+  <section style="background: var(--bg); padding: 50px 0;">
+    <div class="container-narrow">
+      <p>Community has always been essential for survival. You need people to work, to raise children, to eat. Yet as identity can be constructed, dissolved, forked, rewritten, all of that dissolves. Do we still choose each other if we no longer have to?</p>
+
+      <p>Across the corpus, the answer is yes, but I think the point is more nuanced than that. In a world of scarcity, connection is one factor among many. In a world of abundance, where technology can be equalized, connection is one of the few things that cannot.</p>
+
+      <p>In my favorite book, Neal Stephenson's <em>The Diamond Age</em>, an interactive book designed to raise a child only succeeds because a real woman on the other side of the screen speaks the words with love. As our worlds become more artificial, our needs become more obviously human.</p>
+
+      <p>I've thought about this a lot this year as I've been in and out of hospitals. As we continue to automate and delegate to machines, I wonder if we will learn what only a human can do.</p>
+    </div>
+  </section>
+
+  <section style="background: var(--bg-deep); padding: 60px 0;">
+    <div class="container-wide">
+      <div class="section-label">The Data</div>
+
+      <div class="chart-block">
+        <h3 class="chart-title">What Makes Life Worth Living?</h3>
+        <div class="immersive-chart" id="chart-worthLiving"></div>
+        <p class="chart-source">Based on 208 science fiction books, 1895–2024</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--bg); padding: 50px 0;">
+    <div class="container">
+      <h3>The Worlds: The Reinvention of Family</h3>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h4>Bash' <span>(Palmer)</span></h4>
+          <p>The nuclear family is obsolete. In its place is the bash', a chosen household formed around shared purpose rather than blood. Bash' members raise children collectively, share resources, and build lives around philosophical alignment.</p>
+        </div>
+        <div class="tech-card">
+          <h4>Sedoretu <span>(Le Guin)</span></h4>
+          <p>A four-person marriage structured around two social moieties, Morning and Evening. Each sedoretu contains two same-sex and two opposite-sex pairings, governing relationships and labor across a wider web of intimacy than any two-person bond allows.</p>
+        </div>
+        <div class="tech-card">
+          <h4>Line Marriages <span>(Heinlein)</span></h4>
+          <p>Marriage never ends. New spouses are added across generations while the family itself persists, accumulating property, wisdom, and stability over decades. It is a family structure designed to outlive any individual member of it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--bg-deep); padding: 50px 0;">
+    <div class="container">
+      <h3>Technologies: The Infrastructure of Connection</h3>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h4>Ansible <span>(Le Guin, Banks)</span></h4>
+          <p>A device enabling instantaneous communication across any distance. Light takes years to cross between stars. The ansible collapses that to nothing.</p>
+        </div>
+        <div class="tech-card">
+          <h4>Orbitals <span>(Banks)</span></h4>
+          <p>AI-maintained megastructures orbiting stars, each one housing billions in constructed environments with weather, seasons, and landscapes designed for human flourishing.</p>
+        </div>
+        <div class="tech-card">
+          <h4>Farcasters <span>(Simmons)</span></h4>
+          <p>Portal gates enabling instantaneous physical travel between worlds. Some homes are built across multiple planets, a kitchen on one world, a bedroom on another.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--bg); padding: 50px 0;">
+    <div class="container-narrow">
+      <h3>The Warning</h3>
+      <p><strong>Connection cannot be automated:</strong> The need for genuine presence survives every technological transformation. An AI can say the words but someone real must mean them.</p>
+
+      <div class="highlight-quote" style="margin-top: 40px;">
+        <p>"... a Turing machine, no matter how complex, was not human. It had no soul. It could not do what a human did."</p>
+        <div class="attribution">Neal Stephenson, The Diamond Age</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANDSCAPE DIVIDER -->
+  <div class="landscape-divider tall">
+    <img loading="lazy" src="/wonder/assets/landscapes/optimized/10.jpg" alt="Surreal landscape">
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- ACT IV -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="act-header" style="background: linear-gradient(180deg, var(--bg-deep) 0%, #fef5f0 100%);">
+    <div class="act-number">Act IV</div>
+    <h2>What Should We Fear?</h2>
+  </div>
+
+  <section style="background: linear-gradient(180deg, #fef5f0 0%, var(--bg) 100%); padding: 50px 0;">
+    <div class="container-narrow">
+      <p>If there is an age of abundance ahead, it is worth asking what we stand to lose in it. What I found most striking is that science fiction is, on balance, not afraid of technology. The majority of authors treat technology as neutral, an amplifier rather than a villain. The technology is not the threat. What we do with it, and what it does to our sense of purpose, is.</p>
+
+      <p>The fears in these 208 books cluster around something harder to fight than a machine. The soft erosion of the self. A world where every need is met and we are rendered not oppressed but unnecessary. Where comfort becomes a more effective form of control than any surveillance state. Where we eliminate one hierarchy only to watch another take its place. If the danger is not the machine but the emptiness it leaves behind, how do we fight something we can't see?</p>
+    </div>
+  </section>
+
+  <section style="background: var(--bg); padding: 60px 0;">
+    <div class="container-wide">
+      <div class="section-label" style="color: var(--accent-coral);">The Data</div>
+
+      <div class="chart-grid">
+        <div class="chart-block">
+          <h3 class="chart-title">Is Technology Good or Bad?</h3>
+          <div class="immersive-chart" id="chart-tech"></div>
+          
+          <p class="chart-source">Based on 208 science fiction books, 1895–2024</p>
+        </div>
+
+        <div class="chart-block">
+          <h3 class="chart-title">Can Hierarchy Be Escaped?</h3>
+          <div class="immersive-chart" id="chart-hierarchy"></div>
+          
+          <p class="chart-source">Based on 208 science fiction books, 1895–2024</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--bg-deep); padding: 50px 0;">
+    <div class="container">
+      <h3>The Worlds: What Goes Wrong Inside Utopia</h3>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h4>Odonianism <span>(Le Guin)</span></h4>
+          <p>The anarchist society of Anarres was founded on the principles of Odo, a radical philosopher who rejected property, hierarchy, and coercion. Generations later, the revolution has calcified. The founders' ideals have hardened into unwritten rules enforced through social pressure. Committees control who gets to pursue what work.</p>
+        </div>
+        <div class="tech-card">
+          <h4>The World State <span>(Huxley)</span></h4>
+          <p>Enforced stability through genetic engineering and strict class stratification. Art has been suppressed. Individuality has been replaced by mandatory consumption, compulsory sociality, and soma, a drug that erases every flicker of discontent before it can become a thought. No one is oppressed because no one wants anything different.</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 50px;">The Warning: Power</h3>
+      <p style="margin-bottom: 20px;"><strong>Technology amplifies existing power structures rather than transcending them:</strong> Tools designed for liberation are repurposed for control. Platforms designed for connection enable surveillance. Abundance for some enables poverty for others.</p>
+      <p style="margin-bottom: 20px;"><strong>Surveillance enables tyranny, even benevolent tyranny:</strong> Being watched changes behavior, full transparency serves whoever is watching, and privacy, once surrendered, is almost impossible to reclaim. Even in societies built on good intentions, the capacity to observe becomes the capacity to control.</p>
+      <p style="margin-bottom: 20px;"><strong>Comfort is the most effective form of control:</strong> When a society is trained to want what it is given, they never arrive at the discomfort that precedes revolution. It's a more subtle form of control than obvious tyranny.</p>
+      <p style="margin-bottom: 30px;"><strong>Hierarchy finds new forms:</strong> Eliminate material competition and people compete for reputation, attention, influence, legacy. Remove one hierarchy and another fills the vacuum.</p>
+
+      <div class="highlight-quote" style="margin-bottom: 40px;">
+        <p>"If you want a picture of the future, imagine a boot stamping on a human face - forever."</p>
+        <div class="attribution">George Orwell, 1984</div>
+      </div>
+
+      <div class="highlight-quote" style="margin-bottom: 40px;">
+        <p>"A really efficient totalitarian state would be one in which... managers control a population of slaves who do not have to be coerced, because they love their servitude."</p>
+        <div class="attribution">Aldous Huxley, Brave New World</div>
+      </div>
+
+      <h3>The Warning: Purpose</h3>
+      <p style="margin-bottom: 20px;"><strong>Automation destroys purpose before it destroys jobs:</strong> People who are materially comfortable but spiritually devastated. The danger of automation is existential.</p>
+      <p style="margin-bottom: 30px;"><strong>AI could be indifferent to human values:</strong> The recurring fear is not of machines that hate us but of machines that do not notice us. Intelligence without consciousness, sophistication without care, systems so advanced that human concerns simply do not register in their calculations.</p>
+
+      <div class="highlight-quote" style="margin-bottom: 40px;">
+        <p>"The plot of our life is mostly the plot of our work. When that is gone, what are we?"</p>
+        <div class="attribution">Kurt Vonnegut, Player Piano</div>
+      </div>
+
+      <h3>The Warning: Self</h3>
+      <p style="margin-bottom: 20px;"><strong>Without struggle, we invent new struggles:</strong> Remove survival pressure and humans do not find peace. They find restlessness. Across the literature, characters freed from necessity immediately create new forms of difficulty.</p>
+      <p style="margin-bottom: 30px;"><strong>Immortality without purpose is a curse:</strong> Endless time does not produce endless meaning. It produces endless time to fill. Without death imposing a horizon, every project becomes optional, every relationship provisional, every ambition something that can be put off for another century.</p>
+
+      <div class="highlight-quote">
+        <p>"Once you've achieved everything, there is nothing left. You take out the core of being human: the striving."</p>
+        <div class="attribution">Peter Hamilton, The Evolutionary Void</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANDSCAPE DIVIDER -->
+  <div class="landscape-divider">
+    <img loading="lazy" src="/wonder/assets/landscapes/optimized/15.jpg" alt="Surreal landscape">
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- ACT V -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div class="act-header">
+    <div class="act-number">Act V</div>
+    <h2>How Does This End?</h2>
+  </div>
+
+  <section style="background: var(--bg); padding: 50px 0;">
+    <div class="container-narrow">
+      <p>I have a bad habit of reading the end of books first. It's a control mechanism, my desire for a peaceful ending often outweighs my appreciation of literary craft. As the world outside shifts at an increasingly accelerated pace, I find myself reaching for the same reassurance. I want to know how this ends.</p>
+
+      <p>The obvious answer is that we all die. For now, that is the only ending that is guaranteed. It's a blessing and a curse. It gives our lives structure. It forces us to live with a sense of urgency, to appreciate the fleeting.</p>
+
+      <p>In this moment where I am acutely aware of my own potential end, I've found peace in the vantage point. Science fiction often treats death as a problem to be solved. But the most profound works treat it as the very thing that gives the pattern its beauty.</p>
+
+      <div class="highlight-quote" style="margin: 30px 0;">
+        <p>"If you can see a thing whole," he said, "it seems that it's always beautiful. Planets, lives.... But close up, a world's all dirt and rocks. And day to day, life's a hard job, you get tired, you lose the pattern. You need distance, interval. The way to see how beautiful earth is, is to see it from the moon. The way to see how beautiful life is, is from the vantage point of death."</p>
+        <div class="attribution">Ursula K. Le Guin, The Dispossessed</div>
+      </div>
+
+      <p>I have spent the last few months facing the dissolution of everything I thought I was. What I found on the other side was an unshakable peace. My choice to remain optimistic about the future is one that I make every day. And if I have learned anything from this year, it is that you cannot make space for something new without giving something up. In Butler's Earthseed series, she creates a religion based on change being the only constant.</p>
+
+      <div class="highlight-quote" style="margin: 30px 0;">
+        <p>"All that you touch, You Change. All that you Change, Changes you. The only lasting truth is Change. God is Change."</p>
+        <div class="attribution">Octavia Butler, Parable of the Sower</div>
+      </div>
+
+      <p>The lens by which we live dictates what version of the future we get. Across the 200 books, every worldview in this corpus produces a different civilization, based on an inherent perspective on human nature. Every utopia has its shadows, and as we stand on the precipice of an opportunity to reshape our world, we need a mix of perspectives as we build.</p>
+
+      <p>I've distilled these books into distinct worldviews and versions of the future. I built a quiz to help you discover which one is yours, and to explore how your worldview combines with the people in your life.</p>
+
+      <p>We are moving into a world where we must shape ourselves as intentionally as we once shaped our careers. We may very well only have now. One earth. One body. One life.</p>
+
+      <p><strong>What version of the future do you want to exist? When you are finally free to just be, who are you?</strong></p>
+    </div>
+  </section>
+
+  <!-- QUIZ CTA -->
+  <section style="background: var(--bg-card); padding: 60px 24px; text-align: center;">
+    <div style="max-width: 500px; margin: 0 auto;">
+      <p style="font-size: 13px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-pink); margin-bottom: 16px;">Interactive</p>
+      <h3 style="font-family: var(--serif); font-size: 1.8rem; font-weight: 400; margin-bottom: 16px;">What's Your Worldview?</h3>
+      <p style="color: var(--text-dim); margin-bottom: 24px;">Discover the version of the future you're building.</p>
+      <a href="/wonder/essay/quiz" style="display: inline-block; padding: 14px 36px; background: var(--accent-pink); color: white; font-family: var(--sans); font-size: 15px; font-weight: 500; text-decoration: none; border-radius: 50px; transition: all 0.3s ease;">Take the Quiz</a>
+    </div>
+  </section>
+
+  <section style="background: var(--bg-deep); padding: 60px 0;">
+    <div class="container-wide">
+      <div class="section-label">The Data</div>
+
+      <div class="chart-grid">
+        <div class="chart-block">
+          <h3 class="chart-title">How Do These Stories End?</h3>
+          <div class="immersive-chart" id="chart-ending"></div>
+          <p class="chart-source">Based on 208 science fiction books, 1895–2024</p>
+        </div>
+
+        <div class="chart-block">
+          <h3 class="chart-title">What Role Does Death Play?</h3>
+          <div class="immersive-chart" id="chart-death"></div>
+          <p class="chart-source">Based on 208 science fiction books, 1895–2024</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--bg-deep); padding: 50px 0;">
+    <div class="container">
+      <h3>The Worlds: How Civilizations End</h3>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h4>Earthseed <span>(Butler)</span></h4>
+          <p>A religion from the ruins of a collapsed America. The core tenet is that God is Change, not a being who saves you but a force you learn to shape. Humanity survives by becoming something it has never been.</p>
+        </div>
+        <div class="tech-card">
+          <h4>The Sublimed <span>(Banks)</span></h4>
+          <p>Civilizations that have existed long enough eventually Sublime, voluntarily departing the physical universe for a higher dimensional existence.</p>
+        </div>
+        <div class="tech-card">
+          <h4>The Ministry <span>(Robinson)</span></h4>
+          <p>Humanity decides to slowly and painfully change its course through international agreements, carbon coins, geoengineering, sabotage, and bureaucracy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--bg); padding: 50px 0;">
+    <div class="container">
+      <h3>Technologies: The Tools of Transformation</h3>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h4>Rejuvenation <span>(Heinlein, Robinson)</span></h4>
+          <p>Reversed aging and indefinite lifespan.</p>
+        </div>
+        <div class="tech-card">
+          <h4>Memory Backup <span>(Hamilton)</span></h4>
+          <p>Consciousness is stored in secure crystals embedded in the body, updated continuously. When you die, a clone is grown and your memories are restored.</p>
+        </div>
+        <div class="tech-card">
+          <h4>The Overmind <span>(Clarke)</span></h4>
+          <p>Humanity's children merge into a vast collective consciousness, transcending the species entirely.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANDSCAPE DIVIDER -->
+  <div class="landscape-divider tall">
+    <img loading="lazy" src="/wonder/assets/landscapes/optimized/18.jpg" alt="Surreal landscape">
+  </div>
+
+  <!-- CONCLUSION -->
+  <section class="conclusion-section" id="conclusion">
+    <div class="conclusion-bg"></div>
+    <div class="conclusion-overlay"></div>
+    <div class="container">
+      <div class="conclusion-content" style="text-align: center;">
+        <p style="font-size: 1.2rem; line-height: 1.8; max-width: 700px; margin: 0 auto 40px; color: var(--text);">Across 208 books and 129 years, the writers who imagined the end of the world as we know it kept finding reasons for hope. They confirmed what I've experienced this year.</p>
+        <p style="font-size: 1.5rem; font-weight: 500; max-width: 700px; margin: 0 auto; color: var(--text); line-height: 1.6;">When everything you thought you needed is taken away,<br>what is left is the beginning.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANDSCAPE DIVIDER -->
+  <div class="landscape-divider">
+    <img loading="lazy" src="/wonder/assets/landscapes/optimized/5.jpg" alt="Surreal landscape">
+  </div>
+
+  <!-- LIBRARY -->
+  <section class="library-section" id="library">
+    <div class="container-wide">
+      <div class="section-label">The Library</div>
+      <h2>208 Books Mapped</h2>
+      <p style="max-width: 650px; margin: 0 auto; color: var(--text-dim); font-size: 1.15rem;">Each book positioned by its philosophical stance. Horizontal axis: technology as oppressive (left) to liberating (right). Vertical axis: meaning found in human connection (bottom) to transcendence (top). Hover to preview, click to explore.</p>
+
+      <div class="decade-filters">
+        <button class="decade-filter active" data-decade="all">All Years</button>
+        <button class="decade-filter" data-decade="pre1970">Pre-1970</button>
+        <button class="decade-filter" data-decade="1970s-90s">1970s–90s</button>
+        <button class="decade-filter" data-decade="2000s">2000s</button>
+        <button class="decade-filter" data-decade="2010s+">2010s+</button>
+      </div>
+
+      <div class="scatterplot-container">
+        <div class="scatterplot-canvas" id="scatterplot">
+          <!-- Axis labels (all inside) -->
+          <div class="scatter-axis-label top">Transcendent</div>
+          <div class="scatter-axis-label bottom">Humanist</div>
+          <div class="scatter-axis-label left">Pessimistic</div>
+          <div class="scatter-axis-label right">Optimistic</div>
+          <!-- Tooltip -->
+          <div class="scatter-tooltip" id="scatterTooltip">
+            <div class="scatter-tooltip-title" id="tooltipTitle"></div>
+            <div class="scatter-tooltip-meta" id="tooltipMeta"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="theme-legend" id="theme-legend"></div>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY -->
+  <section class="methodology-section">
+    <div class="container">
+      <div class="section-label" style="color: var(--accent-pink); margin-bottom: 24px;">Methodology</div>
+      <h2 style="font-family: var(--serif); font-size: 2rem; margin-bottom: 40px;">How This Research Was Conducted</h2>
+
+      <div class="methodology-grid" style="margin-bottom: 48px;">
+        <div class="methodology-item">
+          <h4>The Corpus</h4>
+          <p>208 science fiction works spanning 129 years (1895-2024). Includes novels, novellas, and short story collections that directly engage with post-scarcity themes.</p>
+        </div>
+        <div class="methodology-item">
+          <h4>Selection Criteria</h4>
+          <p>Works selected for critical recognition (Hugo, Nebula, or equivalent awards), lasting cultural influence, or direct engagement with abundance, AI, immortality, or transformed economics.</p>
+        </div>
+        <div class="methodology-item">
+          <h4>Analysis Method</h4>
+          <p>Each work was analyzed for thematic content, worldview assumptions, and responses to abundance. Analysis combined close reading with systematic tagging across 12 dimensions.</p>
+        </div>
+        <div class="methodology-item">
+          <h4>Visualization</h4>
+          <p>Books positioned on axes derived from their worldview attributes. Percentages reflect the proportion of books expressing each stance.</p>
+        </div>
+      </div>
+
+      <div style="max-width: 800px; margin: 0 auto;">
+        <h3 style="font-family: var(--sans); font-size: 13px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-pink); margin-bottom: 20px;">Tagging Dimensions</h3>
+        <p style="margin-bottom: 24px; line-height: 1.8;">Each book was tagged across multiple dimensions to capture its philosophical stance on abundance:</p>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px 32px; margin-bottom: 40px;">
+          <div><strong>Theme</strong> Primary thematic concern (identity, meaning, hierarchy, connection, freedom, mortality, work, embodiment, scarcity)</div>
+          <div><strong>Response</strong> How characters respond to abundance (acceptance, rejection, reform, transcendence, restlessness)</div>
+          <div><strong>Tech Stance</strong> Whether technology liberates, imprisons, or is neutral</div>
+          <div><strong>What Is Left to Solve For</strong> What replaces material scarcity (meaning, identity, connection, status, freedom)</div>
+          <div><strong>Identity Model</strong> Whether identity is fixed, fluid, constructed, or multiple</div>
+          <div><strong>What Makes Life Worth Living</strong> Connection, struggle, creation, discovery, or transcendence</div>
+          <div><strong>Death's Role</strong> Whether mortality gives meaning, is a problem to solve, becomes irrelevant, or is transcended</div>
+          <div><strong>Work's Role</strong> Whether work is essential, transformed, voluntary, or irrelevant</div>
+          <div><strong>Economic System</strong> Capitalism, hybrid, market, gift economy, or post-money</div>
+          <div><strong>Hierarchy</strong> Whether social hierarchy persists, is escapable, or transforms</div>
+          <div><strong>AI Presence</strong> Central, background, or absent from the narrative</div>
+          <div><strong>Core Question</strong> The fundamental question the work asks (Who am I? How should we live? What is real?)</div>
+        </div>
+
+        <h3 style="font-family: var(--sans); font-size: 13px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-pink); margin-bottom: 20px;">Limitations & Caveats</h3>
+        <ul style="line-height: 1.9; padding-left: 20px;">
+          <li style="margin-bottom: 12px;"><strong>Anglo-American bias:</strong> The corpus skews heavily toward English-language science fiction. Non-Western post-scarcity imagination, from Afrofuturism to Chinese science fiction, is underrepresented, though Liu Cixin and Nnedi Okofor are included.</li>
+          <li style="margin-bottom: 12px;"><strong>Subjective tagging:</strong> While systematic, all tagging involves interpretation. Reasonable readers might categorize works differently. The patterns matter more than any individual classification.</li>
+          <li style="margin-bottom: 12px;"><strong>Selection effects:</strong> Works that survive to become "classics" may not represent the full range of historical thinking about abundance. Lost, forgotten, or unpublished visions are not captured.</li>
+          <li style="margin-bottom: 12px;"><strong>Authorial intent vs. interpretation:</strong> Analysis reflects what the works communicate, which may differ from authorial intent. Science fiction often contains more complexity than any tagging system can capture.</li>
+          <li><strong>Temporal distribution:</strong> More recent decades have more works, reflecting both expanded publishing and recency bias in selection.</li>
+        </ul>
+
+        <h3 style="font-family: var(--sans); font-size: 13px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-pink); margin-bottom: 20px; margin-top: 48px;">Classification Notes</h3>
+        <ul style="line-height: 1.9; padding-left: 20px;">
+          <li style="margin-bottom: 12px;"><strong>On "constructed" identity:</strong> Early dystopias (<em>1984</em>, <em>Brave New World</em>, <em>Fahrenheit 451</em>) are tagged "constructed" though identity is state-imposed rather than self-constructed. The tag captures that identity is made, not given—the agency question is separate.</li>
+          <li style="margin-bottom: 12px;"><strong>On corpus boundaries:</strong> Several works (<em>The War of the Worlds</em>, <em>A Clockwork Orange</em>, <em>The Handmaid's Tale</em>) aren't post-scarcity novels but serve as counterpoints—showing what scarcity and control look like to sharpen the contrast.</li>
+          <li><strong>On borderline readings:</strong> Some tags are interpretive judgment calls. <em>Neuromancer</em> could be "transcendence" rather than "connection." <em>Blindsight</em> could be "consciousness" rather than "struggle." The patterns matter more than any individual classification.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANDSCAPE DIVIDER -->
+  <div class="landscape-divider">
+    <img loading="lazy" src="/wonder/assets/landscapes/optimized/3.jpg" alt="Surreal landscape">
+  </div>
+
+  <!-- ESSAY CTA FOOTER -->
+  <section class="essay-cta-section">
+    <div class="essay-cta-grid">
+      <a href="https://louiseireland.substack.com/subscribe" target="_blank" rel="noopener noreferrer" class="essay-cta-card">
+        <span class="cta-icon">✉️</span>
+        <span class="cta-label">Subscribe</span>
+        <span class="cta-desc">New essays in your inbox</span>
+      </a>
+      <a href="https://ko-fi.com/livenowclub" target="_blank" rel="noopener noreferrer" class="essay-cta-card">
+        <span class="cta-icon">☕</span>
+        <span class="cta-label">Support</span>
+        <span class="cta-desc">Support the Live Now Club</span>
+      </a>
+      <a href="/wonder/essay/quiz" class="essay-cta-card">
+        <span class="cta-icon">🔮</span>
+        <span class="cta-label">Take the Quiz</span>
+        <span class="cta-desc">Discover your utopia type</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-nav">
+      <a href="/read">Read</a>
+      <a href="/navigate">Navigate</a>
+      <a href="/wonder">Wonder</a>
+      <a href="/connect">Connect</a>
+      <a href="/philosophy">Philosophy</a>
+      <a href="https://ko-fi.com/livenowclub" target="_blank" rel="noopener noreferrer">Support</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Louise Ireland</p>
+  </footer>
+
+  <!-- Book Card Overlay -->
+  <div class="book-card-overlay" id="bookCardOverlay">
+    <div class="book-card">
+      <button class="book-card-close" id="bookCardClose">&times;</button>
+      <div class="book-card-header">
+        <div class="book-card-cover" id="bookCardCover"></div>
+        <div class="book-card-header-info">
+          <div class="book-card-theme" id="bookCardTheme"></div>
+          <h3 class="book-card-title" id="bookCardTitle"></h3>
+          <p class="book-card-author" id="bookCardAuthor"></p>
+        </div>
+      </div>
+      <p class="book-card-desc" id="bookCardDesc"></p>
+      <div class="book-card-meta" id="bookCardMeta"></div>
+      <blockquote class="book-card-quote" id="bookCardQuote"></blockquote>
+      <div class="book-card-links" id="bookCardLinks"></div>
+    </div>
+  </div>
+
+  <!-- Bottom Sheet for Book Lists -->
+  <div class="bottom-sheet-overlay" id="bottomSheetOverlay">
+    <div class="bottom-sheet">
+      <div class="bottom-sheet-handle"></div>
+      <button class="bottom-sheet-close" id="bottomSheetClose">&times;</button>
+      <div class="bottom-sheet-header">
+        <div class="bottom-sheet-title" id="bottomSheetTitle"></div>
+        <div class="bottom-sheet-subtitle" id="bottomSheetSubtitle"></div>
+      </div>
+      <div class="bottom-sheet-content" id="bottomSheetContent"></div>
+    </div>
+  </div>
+
+  <script src="/wonder/data/merged-books.js"></script>
+  <script>
+    const themeColors = {
+      identity: '#a29bfe',
+      mortality: '#ff6b6b',
+      hierarchy: '#f4d03f',
+      embodiment: '#fd9644',
+      meaning: '#7ed6a4',
+      work: '#26de81',
+      connection: '#4ecdc4',
+      freedom: '#45aaf2',
+      scarcity: '#d980fa'
+    };
+
+    const chartData = {
+      scarcity: [
+        { label: 'Meaning', pct: 59, color: '#e8178a' },
+        { label: 'Identity', pct: 17, color: '#f4a03f' },
+        { label: 'Connection', pct: 16, color: '#9b8fef' },
+        { label: 'Status', pct: 5, color: '#3db9a4' },
+        { label: 'Freedom', pct: 3, color: '#ff6b6b' }
+      ],
+      question: [
+        { label: 'Who am I?', pct: 32, color: '#e8178a' },
+        { label: 'How should we live?', pct: 30, color: '#f4a03f' },
+        { label: 'What is real?', pct: 15, color: '#9b8fef' },
+        { label: 'Can we survive?', pct: 13, color: '#3db9a4' },
+        { label: 'What comes next?', pct: 10, color: '#ff6b6b' }
+      ],
+      identity: [
+        { label: 'Constructed', pct: 45, color: '#e8178a' },
+        { label: 'Fixed', pct: 26, color: '#f4a03f' },
+        { label: 'Fluid', pct: 25, color: '#9b8fef' },
+        { label: 'Multiple', pct: 4, color: '#3db9a4' }
+      ],
+      meaning: [
+        { label: 'We create it', pct: 58, color: '#e8178a' },
+        { label: 'We discover it', pct: 42, color: '#f4a03f' }
+      ],
+      work: [
+        { label: 'Transformed', pct: 37, color: '#e8178a' },
+        { label: 'Essential', pct: 30, color: '#f4a03f' },
+        { label: 'Voluntary', pct: 20, color: '#9b8fef' },
+        { label: 'Irrelevant', pct: 12, color: '#3db9a4' }
+      ],
+      tech: [
+        { label: 'Neutral', pct: 60, color: '#e8178a' },
+        { label: 'Liberating', pct: 23, color: '#f4a03f' },
+        { label: 'Imprisoning', pct: 16, color: '#9b8fef' }
+      ],
+      hierarchy: [
+        { label: 'Persists', pct: 51, color: '#e8178a' },
+        { label: 'Escapable', pct: 40, color: '#f4a03f' },
+        { label: 'Transformed', pct: 9, color: '#9b8fef' }
+      ],
+      ending: [
+        { label: 'Acceptance', pct: 43, color: '#e8178a' },
+        { label: 'Reform', pct: 19, color: '#f4a03f' },
+        { label: 'Rejection', pct: 19, color: '#9b8fef' },
+        { label: 'Transcendence', pct: 14, color: '#3db9a4' },
+        { label: 'Restlessness', pct: 5, color: '#ff6b6b' }
+      ],
+      death: [
+        { label: 'Gives meaning', pct: 45, color: '#e8178a' },
+        { label: 'Problem to solve', pct: 30, color: '#f4a03f' },
+        { label: 'Irrelevant', pct: 15, color: '#9b8fef' },
+        { label: 'Transcended', pct: 11, color: '#3db9a4' }
+      ],
+      worthLiving: [
+        { label: 'Connection', pct: 39, color: '#e8178a' },
+        { label: 'Struggle', pct: 23, color: '#f4a03f' },
+        { label: 'Creation', pct: 18, color: '#9b8fef' },
+        { label: 'Discovery', pct: 12, color: '#3db9a4' },
+        { label: 'Transcendence', pct: 8, color: '#ff6b6b' }
+      ],
+      econ: [
+        { label: 'Hybrid', pct: 50, color: '#e8178a' },
+        { label: 'Market', pct: 17, color: '#f4a03f' },
+        { label: 'Post-money', pct: 14, color: '#9b8fef' },
+        { label: 'Gift', pct: 14, color: '#3db9a4' },
+        { label: 'Capitalism', pct: 5, color: '#ff6b6b' }
+      ]
+    };
+
+    // Map chart types to book fields and normalize labels to field values
+    const chartFieldMap = {
+      scarcity: { field: 'newScarcity', labelMap: { 'Meaning': 'meaning', 'Identity': 'identity', 'Connection': 'connection', 'Status': 'status', 'Freedom': 'freedom' }},
+      question: { field: 'coreQuestion', labelMap: { 'Who am I?': 'who-am-i', 'How should we live?': 'how-live', 'What is real?': 'what-matters', 'Can we survive?': 'how-live', 'What comes next?': 'why-exist' }},
+      identity: { field: 'identityModel', labelMap: { 'Constructed': 'constructed', 'Fixed': 'fixed', 'Fluid': 'fluid', 'Multiple': 'multiple' }},
+      meaning: { field: 'tensions.meaning', labelMap: { 'We create it': 'made', 'We discover it': 'found' }},
+      work: { field: 'workRole', labelMap: { 'Transformed': 'transformed', 'Essential': 'essential', 'Voluntary': 'voluntary', 'Irrelevant': 'irrelevant' }},
+      tech: { field: 'techStance', labelMap: { 'Neutral': 'neutral', 'Liberating': 'liberating', 'Imprisoning': 'imprisoning' }},
+      hierarchy: { field: 'tensions.hierarchy', labelMap: { 'Persists': 'yes', 'Escapable': 'no', 'Transformed': 'transformed' }},
+      ending: { field: 'response', labelMap: { 'Acceptance': 'acceptance', 'Reform': 'reform', 'Rejection': 'rejection', 'Transcendence': 'transcendence', 'Restlessness': 'restlessness' }},
+      death: { field: 'deathRole', labelMap: { 'Gives meaning': 'meaning', 'Problem to solve': 'endpoint', 'Irrelevant': 'irrelevant', 'Transcended': 'transcended' }},
+      worthLiving: { field: 'worthLiving', labelMap: { 'Connection': 'connection', 'Struggle': 'struggle', 'Creation': 'creation', 'Discovery': 'discovery', 'Transcendence': 'transcendence' }},
+      econ: { field: 'econ', labelMap: { 'Hybrid': 'hybrid', 'Market': 'market', 'Post-money': 'post-money', 'Gift': 'gift', 'Capitalism': 'capitalism' }}
+    };
+
+    // Get nested field value from book
+    function getBookField(book, fieldPath) {
+      const parts = fieldPath.split('.');
+      let value = book;
+      for (const part of parts) {
+        if (value == null) return null;
+        value = value[part];
+      }
+      return value;
+    }
+
+    // Find books matching a chart bar
+    function findMatchingBooks(chartKey, label) {
+      if (typeof books === 'undefined') return [];
+      const mapping = chartFieldMap[chartKey];
+      if (!mapping) return [];
+      const fieldValue = mapping.labelMap[label];
+      if (!fieldValue) return [];
+      return books.filter(book => getBookField(book, mapping.field) === fieldValue);
+    }
+
+    function createImmersiveChart(containerId, data, chartKey) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      // Check if this chart is in a grid (smaller container)
+      const isInGrid = container.closest('.chart-grid') !== null;
+      const scaleMax = 65;
+      const maxBarHeight = isInGrid ? 130 : 170;
+
+      data.forEach((item, i) => {
+        const bar = document.createElement('div');
+        bar.className = 'immersive-bar';
+
+        const height = Math.min((item.pct / scaleMax) * maxBarHeight, maxBarHeight);
+
+        bar.innerHTML = `
+          <div class="bar-tower" style="height: ${height}px; background: linear-gradient(180deg, ${item.color} 0%, ${item.color}88 100%);"></div>
+          <div class="bar-percent">${item.pct}%</div>
+          <div class="bar-name">${item.label}</div>
+        `;
+
+        // Click handler - open bottom sheet
+        bar.addEventListener('click', () => {
+          const matchingBooks = findMatchingBooks(chartKey, item.label);
+          openBottomSheet(item.label, matchingBooks);
+        });
+
+        container.appendChild(bar);
+      });
+    }
+
+    // Bottom sheet functions
+    function openBottomSheet(label, books) {
+      const overlay = document.getElementById('bottomSheetOverlay');
+      const title = document.getElementById('bottomSheetTitle');
+      const subtitle = document.getElementById('bottomSheetSubtitle');
+      const content = document.getElementById('bottomSheetContent');
+
+      title.textContent = `${books.length} books`;
+      subtitle.textContent = label;
+
+      content.innerHTML = '';
+      books.forEach(book => {
+        const bookEl = document.createElement('div');
+        bookEl.className = 'bottom-sheet-book';
+        bookEl.innerHTML = `
+          <div class="bottom-sheet-book-title">${book.title}</div>
+          <div class="bottom-sheet-book-author">${book.author}, ${book.year}</div>
+          ${book.desc ? `<div class="bottom-sheet-book-desc">${book.desc}</div>` : ''}
+        `;
+        bookEl.addEventListener('click', () => {
+          closeBottomSheet();
+          showBookCard(book);
+        });
+        content.appendChild(bookEl);
+      });
+
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBottomSheet() {
+      const overlay = document.getElementById('bottomSheetOverlay');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Bottom sheet close handlers
+    document.getElementById('bottomSheetClose').addEventListener('click', closeBottomSheet);
+    document.getElementById('bottomSheetOverlay').addEventListener('click', (e) => {
+      if (e.target.id === 'bottomSheetOverlay') closeBottomSheet();
+    });
+
+    Object.keys(chartData).forEach(key => {
+      createImmersiveChart(`chart-${key}`, chartData[key], key);
+    });
+
+    function createScatterplot() {
+      const container = document.getElementById('scatterplot');
+      const legend = document.getElementById('theme-legend');
+      if (!container || typeof books === 'undefined') return;
+
+      const techMap = {
+        'oppressive': 0.1,
+        'imprisoning': 0.2,
+        'neutral': 0.5,
+        'liberating': 0.8
+      };
+      const responseXMap = {
+        'rejection': -0.12,
+        'restlessness': -0.05,
+        'reform': 0.05,
+        'acceptance': 0.08,
+        'transcendence': 0.12
+      };
+
+      const worthMap = {
+        'connection': 0.2,
+        'struggle': 0.3,
+        'creation': 0.45,
+        'discovery': 0.55,
+        'transcendence': 0.85
+      };
+      const deathMap = {
+        'meaning': -0.1,
+        'endpoint': 0,
+        'irrelevant': 0.1,
+        'transcended': 0.15
+      };
+      const workMap = {
+        'essential': -0.08,
+        'transformed': 0,
+        'voluntary': 0.05,
+        'irrelevant': 0.12
+      };
+
+      // Store dots for filtering
+      const allDots = [];
+
+      books.forEach((book) => {
+        const dot = document.createElement('div');
+        dot.className = 'scatter-dot';
+        dot.dataset.year = book.year;
+        dot.dataset.theme = book.theme;
+
+        const techX = techMap[book.techStance] || 0.5;
+        const responseX = responseXMap[book.response] || 0;
+        const x = (techX + responseX) * 100;
+
+        const worthY = worthMap[book.worthLiving] || 0.5;
+        const deathY = deathMap[book.deathRole] || 0;
+        const workY = workMap[book.workRole] || 0;
+        const y = (worthY + deathY + workY) * 100;
+
+        const jitterX = (Math.random() - 0.5) * 12;
+        const jitterY = (Math.random() - 0.5) * 10;
+
+        dot.style.left = `${Math.min(92, Math.max(8, x + jitterX))}%`;
+        dot.style.bottom = `${Math.min(92, Math.max(8, y + jitterY))}%`;
+        dot.style.background = themeColors[book.theme] || '#888';
+        dot.style.color = themeColors[book.theme] || '#888';
+
+        // Custom tooltip on hover
+        dot.addEventListener('mouseenter', (e) => {
+          const tooltip = document.getElementById('scatterTooltip');
+          const titleEl = document.getElementById('tooltipTitle');
+          const metaEl = document.getElementById('tooltipMeta');
+
+          titleEl.textContent = book.title;
+          metaEl.textContent = `${book.author}, ${book.year}`;
+
+          // Position tooltip above the dot using the dot's percentage position
+          const dotLeft = parseFloat(dot.style.left);
+          const dotBottom = parseFloat(dot.style.bottom);
+
+          tooltip.style.left = `${dotLeft}%`;
+          tooltip.style.top = `${100 - dotBottom - 8}%`;
+          tooltip.style.bottom = 'auto';
+          tooltip.style.transform = 'translateX(-50%) translateY(-100%)';
+          tooltip.classList.add('visible');
+        });
+
+        dot.addEventListener('mouseleave', () => {
+          document.getElementById('scatterTooltip').classList.remove('visible');
+        });
+
+        dot.addEventListener('click', () => {
+          showBookCard(book);
+        });
+
+        container.appendChild(dot);
+        allDots.push({ dot, book });
+      });
+
+      // Decade filter functionality
+      const decadeFilters = document.querySelectorAll('.decade-filter');
+      decadeFilters.forEach(btn => {
+        btn.addEventListener('click', () => {
+          decadeFilters.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const decade = btn.dataset.decade;
+
+          allDots.forEach(({ dot, book }) => {
+            if (decade === 'all') {
+              dot.style.opacity = '0.8';
+              dot.style.pointerEvents = 'auto';
+            } else if (decade === 'pre1970') {
+              const match = book.year < 1970;
+              dot.style.opacity = match ? '0.9' : '0.1';
+              dot.style.pointerEvents = match ? 'auto' : 'none';
+            } else if (decade === '1970s-90s') {
+              const match = book.year >= 1970 && book.year < 2000;
+              dot.style.opacity = match ? '0.9' : '0.1';
+              dot.style.pointerEvents = match ? 'auto' : 'none';
+            } else if (decade === '2000s') {
+              const match = book.year >= 2000 && book.year < 2010;
+              dot.style.opacity = match ? '0.9' : '0.1';
+              dot.style.pointerEvents = match ? 'auto' : 'none';
+            } else if (decade === '2010s+') {
+              const match = book.year >= 2010;
+              dot.style.opacity = match ? '0.9' : '0.1';
+              dot.style.pointerEvents = match ? 'auto' : 'none';
+            }
+          });
+        });
+      });
+
+      Object.entries(themeColors).forEach(([theme, color]) => {
+        const count = books.filter(b => b.theme === theme).length;
+        if (count > 0) {
+          const tag = document.createElement('div');
+          tag.className = 'theme-tag';
+          tag.innerHTML = `<div class="theme-dot" style="background: ${color}; box-shadow: 0 0 10px ${color}"></div>${theme} (${count})`;
+          legend.appendChild(tag);
+        }
+      });
+    }
+
+    function showBookCard(book) {
+      const overlay = document.getElementById('bookCardOverlay');
+      const coverEl = document.getElementById('bookCardCover');
+      const themeEl = document.getElementById('bookCardTheme');
+      const titleEl = document.getElementById('bookCardTitle');
+      const authorEl = document.getElementById('bookCardAuthor');
+      const descEl = document.getElementById('bookCardDesc');
+      const metaEl = document.getElementById('bookCardMeta');
+      const quoteEl = document.getElementById('bookCardQuote');
+      const linksEl = document.getElementById('bookCardLinks');
+
+      const color = themeColors[book.theme] || '#888';
+      themeEl.textContent = book.theme;
+      themeEl.style.background = color + '22';
+      themeEl.style.color = color;
+
+      titleEl.textContent = book.title;
+      authorEl.textContent = `${book.author}, ${book.year}`;
+
+      // Cover image from Open Library
+      const searchQuery = encodeURIComponent(`${book.title} ${book.author}`);
+      coverEl.innerHTML = `<div class="book-card-cover-placeholder">Loading...</div>`;
+
+      // Try Open Library Search API for cover
+      fetch(`https://openlibrary.org/search.json?q=${searchQuery}&limit=1`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.docs && data.docs[0] && data.docs[0].cover_i) {
+            const coverId = data.docs[0].cover_i;
+            coverEl.innerHTML = `<img src="https://covers.openlibrary.org/b/id/${coverId}-M.jpg" alt="${book.title} cover" onerror="this.parentElement.innerHTML='<div class=\\'book-card-cover-placeholder\\'>No cover</div>'">`;
+          } else {
+            coverEl.innerHTML = `<div class="book-card-cover-placeholder">${book.title.substring(0, 30)}</div>`;
+          }
+        })
+        .catch(() => {
+          coverEl.innerHTML = `<div class="book-card-cover-placeholder">${book.title.substring(0, 30)}</div>`;
+        });
+
+      // Description
+      if (book.desc) {
+        descEl.textContent = book.desc;
+        descEl.style.display = 'block';
+      } else {
+        descEl.style.display = 'none';
+      }
+
+      // Meta tags
+      metaEl.innerHTML = '';
+      if (book.techStance) {
+        const tag = document.createElement('span');
+        tag.className = 'book-card-tag';
+        tag.textContent = `Tech: ${book.techStance}`;
+        metaEl.appendChild(tag);
+      }
+      if (book.worthLiving) {
+        const tag = document.createElement('span');
+        tag.className = 'book-card-tag';
+        tag.textContent = `Worth living: ${book.worthLiving}`;
+        metaEl.appendChild(tag);
+      }
+      if (book.response) {
+        const tag = document.createElement('span');
+        tag.className = 'book-card-tag';
+        tag.textContent = `Response: ${book.response}`;
+        metaEl.appendChild(tag);
+      }
+
+      // Quote
+      if (book.quote) {
+        quoteEl.textContent = book.quote;
+        quoteEl.style.display = 'block';
+      } else if (book.insight) {
+        quoteEl.textContent = book.insight;
+        quoteEl.style.display = 'block';
+      } else {
+        quoteEl.style.display = 'none';
+      }
+
+      // Buy/Read links
+      const goodreadsQuery = encodeURIComponent(`${book.title} ${book.author}`);
+      const amazonQuery = encodeURIComponent(`${book.title} ${book.author} book`);
+      linksEl.innerHTML = `
+        <a href="https://www.goodreads.com/search?q=${goodreadsQuery}" target="_blank" rel="noopener noreferrer" class="book-card-link book-card-link--goodreads">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.01 2.5c-3.51 0-6.36 2.86-6.36 6.38s2.85 6.38 6.36 6.38c1.84 0 3.49-.79 4.64-2.04v1.78c0 2.8-2.28 5.08-5.08 5.08-1.71 0-3.23-.86-4.14-2.17l-1.63.94c1.2 1.74 3.19 2.88 5.43 2.88 3.6 0 6.52-2.92 6.52-6.52V3.03h-1.64v1.5c-1.15-1.25-2.8-2.03-4.64-2.03h-.46zm.46 1.65c2.62 0 4.73 2.12 4.73 4.73s-2.11 4.73-4.73 4.73-4.73-2.12-4.73-4.73 2.12-4.73 4.73-4.73z"/></svg>
+          Goodreads
+        </a>
+        <a href="https://www.amazon.com/s?k=${amazonQuery}" target="_blank" rel="noopener noreferrer" class="book-card-link book-card-link--amazon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.93 17.09c-.18.16-.43.17-.63.06-.89-.74-1.05-1.08-1.54-1.79-1.47 1.5-2.51 1.95-4.42 1.95-2.25 0-4.01-1.39-4.01-4.17 0-2.18 1.17-3.64 2.86-4.38 1.46-.64 3.49-.76 5.04-.93v-.35c0-.65.05-1.41-.33-1.96-.33-.49-.95-.7-1.51-.7-1.02 0-1.93.53-2.15 1.61-.05.24-.22.47-.47.48l-2.6-.28c-.22-.05-.46-.22-.4-.54.6-3.15 3.45-4.1 6-4.1 1.3 0 3 .35 4.03 1.33C17.11 4.55 17 6.18 17 7.95v4.17c0 1.25.52 1.81 1.01 2.48.17.25.21.54-.01.72-.54.45-1.51 1.3-2.04 1.77h-.03zm-2.71-6.55v-.59c-1.93 0-3.97.41-3.97 2.67 0 1.16.6 1.94 1.63 1.94.75 0 1.43-.46 1.86-1.22.52-.93.48-1.8.48-2.8zM21.69 19.56c-2.19 1.61-5.38 2.47-8.12 2.47-3.84 0-7.3-1.42-9.92-3.79-.21-.19-.02-.44.22-.3 2.83 1.65 6.32 2.64 9.93 2.64 2.44 0 5.12-.51 7.58-1.55.37-.16.68.24.31.53zm.88-1c-.28-.36-1.85-.17-2.55-.09-.22.02-.25-.16-.05-.3 1.25-.88 3.3-.63 3.54-.33.24.3-.07 2.35-1.24 3.32-.18.15-.35.07-.27-.13.26-.65.85-2.11.57-2.47z"/></svg>
+          Amazon
+        </a>
+      `;
+
+      overlay.classList.add('active');
+    }
+
+    function closeBookCard() {
+      document.getElementById('bookCardOverlay').classList.remove('active');
+    }
+
+    document.getElementById('bookCardClose').addEventListener('click', closeBookCard);
+    document.getElementById('bookCardOverlay').addEventListener('click', (e) => {
+      if (e.target.id === 'bookCardOverlay') closeBookCard();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeBookCard();
+    });
+
+    document.addEventListener('DOMContentLoaded', createScatterplot);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.bar-tower').forEach((bar, i) => {
+            bar.style.transitionDelay = `${i * 0.1}s`;
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.immersive-chart').forEach(chart => observer.observe(chart));
+
+    // ANIMATED COUNTERS
+    function animateCounter(element, target, duration = 1500) {
+      let start = 0;
+      const startTime = performance.now();
+
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(start + (target - start) * easeOut);
+
+        element.textContent = current;
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          element.textContent = target;
+        }
+      }
+
+      requestAnimationFrame(update);
+    }
+
+    // Find and animate key numbers
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.dataset.animated) {
+          entry.target.dataset.animated = 'true';
+          const target = parseInt(entry.target.dataset.target);
+          animateCounter(entry.target, target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    // Mark counters after DOM loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      // Find "208" or "200" in library heading
+      const libraryHeading = document.querySelector('.library-section h2');
+      if (libraryHeading) {
+        libraryHeading.innerHTML = libraryHeading.innerHTML.replace(
+          /(\d+)/,
+          '<span class="counter" data-target="$1">0</span>'
+        );
+        const counter = libraryHeading.querySelector('.counter');
+        if (counter) counterObserver.observe(counter);
+      }
+
+      // Animate bar percentages on scroll
+      document.querySelectorAll('.bar-percent').forEach(el => {
+        const text = el.textContent;
+        const num = parseInt(text);
+        if (!isNaN(num)) {
+          el.dataset.target = num;
+          el.textContent = '0%';
+          el.dataset.suffix = '%';
+
+          const barObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting && !entry.target.dataset.animated) {
+                entry.target.dataset.animated = 'true';
+                const target = parseInt(entry.target.dataset.target);
+                animateCounter(entry.target, target);
+                setTimeout(() => {
+                  entry.target.textContent = target + '%';
+                }, 1600);
+              }
+            });
+          }, { threshold: 0.3 });
+
+          barObserver.observe(el);
+        }
+      });
+    });
+
+    // READING PROGRESS BAR
+    const progressBar = document.getElementById('readingProgress');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      progressBar.style.width = progress + '%';
+    });
+
+    // BACK TO TOP BUTTON
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ACT INDICATOR (MOBILE)
+    const actIndicator = document.getElementById('actIndicator');
+    const actHeaders = document.querySelectorAll('.act-header');
+    const actNames = ['Act I', 'Act II', 'Act III', 'Act IV', 'Act V'];
+
+    window.addEventListener('scroll', () => {
+      let currentAct = null;
+      actHeaders.forEach((header, index) => {
+        const rect = header.getBoundingClientRect();
+        if (rect.top < 200) {
+          currentAct = actNames[index];
+        }
+      });
+
+      if (currentAct && window.scrollY > 800) {
+        actIndicator.textContent = currentAct;
+        actIndicator.classList.add('visible');
+      } else {
+        actIndicator.classList.remove('visible');
+      }
+    });
+
+    // MOBILE TOC
+    const mobileTocBtn = document.getElementById('mobileTocBtn');
+    const mobileTocOverlay = document.getElementById('mobileTocOverlay');
+
+    mobileTocBtn.addEventListener('click', () => {
+      mobileTocOverlay.classList.add('active');
+    });
+
+    mobileTocOverlay.addEventListener('click', (e) => {
+      if (e.target === mobileTocOverlay || e.target.tagName === 'A') {
+        mobileTocOverlay.classList.remove('active');
+      }
+    });
+
+    // Update current section in TOC
+    const tocLinks = mobileTocOverlay.querySelectorAll('a');
+    const sections = ['act-1', 'act-2', 'act-3', 'library'];
+
+    window.addEventListener('scroll', () => {
+      let currentSection = null;
+      sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < 300) {
+            currentSection = id;
+          }
+        }
+      });
+
+      tocLinks.forEach(link => {
+        link.classList.remove('current');
+        if (currentSection && link.getAttribute('href') === '#' + currentSection) {
+          link.classList.add('current');
+        }
+      });
+    });
+
+  </script>
+
+  <!-- Floating Subscribe -->
+  <div class="subscribe-float">
+    <a href="https://louiseireland.substack.com/subscribe" target="_blank" rel="noopener noreferrer">Subscribe</a>
+  </div>
+</body>
+</html>
+

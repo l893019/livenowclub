@@ -40,12 +40,12 @@ export function RevealAnimation({
       </div>
 
       <div className={styles.content}>
-        {/* "Your Archetype" label */}
+        {/* "Your Identity" label */}
         <div className={`${styles.label} ${phase >= 1 ? styles.visible : ""}`}>
-          Your Archetype
+          Your Identity
         </div>
 
-        {/* Archetype name with gradient */}
+        {/* Identity name with gradient */}
         <h1
           className={`${styles.name} ${phase >= 2 ? styles.visible : ""}`}
           style={{ "--archetype-color": archetypeColor } as React.CSSProperties}

@@ -1853,76 +1853,7 @@
       }
     };
 
-    // ARCHETYPE ORDER FOR SCORING
-    const archetypeKeys = ['citizen', 'shaper', 'architect', 'presence', 'swimmer', 'rooted', 'conscience', 'embers', 'friction', 'unbound', 'alive', 'mender', 'cleareyed', 'between'];
-
-    // SCORING MATRIX - Each answer adds to hidden variables, which map to archetypes
-    const scoring = {
-      1: {
-        A: { shaper: 2, citizen: 1 },
-        B: { conscience: 2, architect: 1 },
-        C: { embers: 2, cleareyed: 1 },
-        D: { swimmer: 2, between: 1 },
-        E: { presence: 2, alive: 1 },
-        F: { friction: 2, mender: 1 }
-      },
-      2: {
-        A: { shaper: 2, friction: 1 },
-        B: { architect: 2, presence: 1 },
-        C: { swimmer: 2, rooted: 1 },
-        D: { between: 2, alive: 1 },
-        E: { unbound: 2, citizen: 1 },
-        F: { conscience: 2, mender: 1 }
-      },
-      3: {
-        A: { presence: 2, mender: 1 },
-        B: { conscience: 2, cleareyed: 1 },
-        C: { citizen: 2, alive: 1, unbound: 1 },
-        D: { swimmer: 2, architect: 1, cleareyed: 1 },
-        E: { rooted: 2, between: 1 }
-      },
-      4: {
-        A: { swimmer: 2, cleareyed: 1 },
-        B: { conscience: 2, friction: 1 },
-        C: { conscience: 2, embers: 1 },
-        D: { citizen: 2, alive: 1 },
-        E: { between: 2, presence: 1 },
-        F: { friction: 2, unbound: 1 }
-      },
-      5: {
-        A: { alive: 2, citizen: 1 },
-        B: { shaper: 2, friction: 1 },
-        C: { presence: 2, rooted: 1 },
-        D: { swimmer: 2, between: 1 },
-        E: { unbound: 2 },
-        F: { conscience: 2, cleareyed: 1 }
-      },
-      6: {
-        A: { shaper: 2, friction: 1 },
-        B: { presence: 2, architect: 1 },
-        C: { swimmer: 2, unbound: 1 },
-        D: { embers: 2, cleareyed: 1 },
-        E: { alive: 2, rooted: 1 },
-        F: { mender: 2, architect: 1 },
-        G: { between: 2 }
-      },
-      7: {
-        A: { shaper: 2, architect: 1 },
-        B: { conscience: 2, embers: 1 },
-        C: { presence: 2, mender: 1 },
-        D: { between: 2, swimmer: 1 },
-        E: { between: 2, presence: 1 },
-        F: { unbound: 2, swimmer: 1 },
-        G: { alive: 2, mender: 1 }
-      }
-    };
-
-    // Initialize scores
-    let scores = {};
-    archetypeKeys.forEach(k => scores[k] = 0);
-
     let currentQuestion = 0;
-    let q6Answer = null; // For tie-breaking
     let userAnswers = []; // Track all answers
 
     // =========================================================================
@@ -2107,29 +2038,14 @@
       // Reset quiz state
       currentQuestion = 1;
       userAnswers = [];
-      scores = {};
-      archetypeKeys.forEach(k => scores[k] = 0);
-      q6Answer = null;
 
       updateProgress(1);
       showScreen('screen-1');
     }
 
     function answer(question, choice) {
-      const questionScores = scoring[question][choice];
-      if (questionScores) {
-        for (const [archetype, points] of Object.entries(questionScores)) {
-          scores[archetype] += points;
-        }
-      }
-
       // Track answer
       userAnswers[question - 1] = choice;
-
-      // Track Q6 answer for tie-breaking
-      if (question === 6) {
-        q6Answer = choice;
-      }
 
       currentQuestion = question + 1;
 
@@ -2143,14 +2059,10 @@
           userId = generateUUID();
           localStorage.setItem('quiz-user-id', userId);
         }
-        const { primary, shadow } = getPrimaryAndShadow();
         userResult = {
           id: userId,
           name: userResult?.name || '',
           email: userResult?.email || null,
-          archetype: primary,
-          secondaryArchetype: shadow,
-          scores: { ...scores },
           answers: [...userAnswers],
           createdAt: userResult?.createdAt || new Date().toISOString()
         };
@@ -2163,25 +2075,9 @@
       if (currentQuestion <= 1) return;
 
       const prevQuestion = currentQuestion - 1;
-      const prevChoice = userAnswers[prevQuestion - 1];
-
-      // Subtract scores from previous answer
-      if (prevChoice) {
-        const questionScores = scoring[prevQuestion][prevChoice];
-        if (questionScores) {
-          for (const [archetype, points] of Object.entries(questionScores)) {
-            scores[archetype] -= points;
-          }
-        }
-      }
 
       // Clear the answer
       userAnswers[prevQuestion - 1] = undefined;
-
-      // Clear Q6 tie-breaker if going back from Q7
-      if (prevQuestion === 6) {
-        q6Answer = null;
-      }
 
       currentQuestion = prevQuestion;
       updateProgress(prevQuestion);
@@ -2189,12 +2085,7 @@
     }
 
     function updateExistingResult() {
-      const { primary, shadow } = getPrimaryAndShadow();
-
       // Update stored result
-      userResult.archetype = primary;
-      userResult.secondaryArchetype = shadow;
-      userResult.scores = { ...scores };
       userResult.answers = [...userAnswers];
 
       localStorage.setItem('quiz-user-result', JSON.stringify(userResult));
@@ -2235,16 +2126,11 @@
         localStorage.setItem('quiz-user-id', userId);
       }
 
-      const { primary, shadow } = getPrimaryAndShadow();
-
       // Create result object
       userResult = {
         id: userId,
         name: name,
         email: email,
-        archetype: primary,
-        secondaryArchetype: shadow,
-        scores: { ...scores },
         answers: [...userAnswers],
         createdAt: new Date().toISOString()
       };
@@ -2317,10 +2203,15 @@
           sessionStorage.removeItem('utopia-invite');
 
           // Store join info for animation on group page
+          let identity = null;
+          try {
+            identity = getIdentityKey();
+          } catch (e) {}
+
           sessionStorage.setItem('just-joined-utopia', JSON.stringify({
             slug: invite.slug,
             userId: userId,
-            archetype: userResult.archetype,
+            identity: identity,
             name: userResult.name || 'Anonymous',
             inviterId: invite.inviterId || null
           }));
@@ -2342,29 +2233,8 @@
       }
     }
 
-    function getPrimaryAndShadow() {
-      const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
-      let primary = sorted[0][0];
-      let shadow = sorted[1][0];
-
-      // Tie-breaking with Q6 if needed
-      if (sorted[0][1] === sorted[1][1] && q6Answer) {
-        const q6Mapping = {
-          A: 'shaper', B: 'presence', C: 'swimmer', D: 'embers',
-          E: 'alive', F: 'mender', G: 'between'
-        };
-        if (q6Mapping[q6Answer]) {
-          primary = q6Mapping[q6Answer];
-          shadow = sorted.find(([k]) => k !== primary)[0];
-        }
-      }
-
-      return { primary, shadow };
-    }
-
-    // Build result URL with identity key (new system) and archetype (legacy)
+    // Build result URL with identity key
     function buildResultUrl(extraParams = {}) {
-      const { primary, shadow } = getPrimaryAndShadow();
       let identity = null;
       try {
         identity = getIdentityKey();
@@ -2374,8 +2244,6 @@
 
       const params = new URLSearchParams();
       if (identity) params.set('i', identity);
-      params.set('a', primary);
-      params.set('s', shadow);
 
       // Add extra params
       Object.entries(extraParams).forEach(([k, v]) => params.set(k, v));
@@ -2385,7 +2253,12 @@
     }
 
     async function showResult() {
-      const { primary, shadow } = getPrimaryAndShadow();
+      let identity = null;
+      try {
+        identity = getIdentityKey();
+      } catch (e) {
+        console.error('Error calculating identity:', e);
+      }
 
       // Track quiz completed event
       fetch('/api/track', {
@@ -2394,7 +2267,7 @@
         body: JSON.stringify({
           event: 'quiz_completed',
           page: window.location.pathname,
-          metadata: { primary, shadow }
+          metadata: { identity }
         })
       }).catch(() => {});
 
@@ -2483,10 +2356,7 @@
     }
 
     function retakeQuiz() {
-      scores = {};
-      archetypeKeys.forEach(k => scores[k] = 0);
       currentQuestion = 0;
-      q6Answer = null;
       userAnswers = [];
       updateProgress(0);
       showScreen('screen-intro');
