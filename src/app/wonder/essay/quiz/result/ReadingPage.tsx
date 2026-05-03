@@ -94,78 +94,46 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
   const [linkCopied, setLinkCopied] = useState(false);
   const archetype = archetypes[archetypeKey];
 
-  // Check if user has taken the quiz and load their result
+  // Check if user has taken the quiz and load their result from API
+  // IMPORTANT: We fetch from API (not localStorage) to ensure consistency with /me page
   useEffect(() => {
     const userId = localStorage.getItem("quiz-user-id");
     setHasQuizUserId(!!userId);
 
-    // Load user slug from localStorage or fetch/generate from API
-    const storedSlug = localStorage.getItem("userSlug");
-    if (storedSlug) {
-      setUserSlug(storedSlug);
-    } else if (userId) {
-      // Fetch user data to get slug
-      fetch(`/api/utopia/user/${userId}`)
-        .then(res => res.json())
-        .then(async data => {
-          if (data.user?.slug) {
-            setUserSlug(data.user.slug);
-            localStorage.setItem("userSlug", data.user.slug);
-          } else {
-            // Backfill: Generate slug for existing users who don't have one
-            const storedResult = localStorage.getItem("quiz-user-result");
-            if (storedResult) {
-              try {
-                const parsed = JSON.parse(storedResult);
-                const result = {
-                  id: userId,
-                  name: parsed.name || "Anonymous",
-                  archetype: parsed.archetype,
-                  secondaryArchetype: parsed.secondaryArchetype,
-                  answers: parsed.answers,
-                };
-                const saveRes = await fetch('/api/utopia/save-result', {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({ result })
-                });
-                const saveData = await saveRes.json();
-                if (saveData.slug) {
-                  setUserSlug(saveData.slug);
-                  localStorage.setItem("userSlug", saveData.slug);
-                }
-              } catch (e) {
-                console.error("Failed to backfill slug:", e);
-              }
-            }
-          }
-        })
-        .catch(console.error);
+    if (!userId || answers) {
+      // If no userId or answers prop is provided, skip API fetch
+      return;
     }
 
-    // Load quiz result for personalization
-    try {
-      const stored = localStorage.getItem("quiz-user-result");
-      if (stored) {
-        const parsed = JSON.parse(stored);
+    // Fetch user data from API - this is the authoritative source
+    fetch(`/api/utopia/user/${userId}`)
+      .then(res => res.json())
+      .then(data => {
+        if (!data.user) return;
+
+        const user = data.user;
+
+        // Set slug
+        if (user.slug) {
+          setUserSlug(user.slug);
+          localStorage.setItem("userSlug", user.slug);
+        }
+
+        // Set quiz result for personalization features
         setQuizResult({
-          archetype: parsed.archetype,
-          secondaryArchetype: parsed.secondaryArchetype,
-          scores: parsed.scores || {},
-          answers: parsed.answers || [],
+          archetype: user.archetype,
+          secondaryArchetype: user.secondaryArchetype,
+          scores: {}, // API doesn't return scores, that's fine
+          answers: user.answers || [],
         });
 
-        // If no answers prop provided, convert localStorage answers and generate reading
-        if (!answers && parsed.answers && Array.isArray(parsed.answers)) {
-          const convertedAnswers = arrayToQuizAnswers(parsed.answers);
+        // Calculate identity from API answers (same as /me page does)
+        if (user.answers && Array.isArray(user.answers) && user.answers.length === 7) {
+          const convertedAnswers = arrayToQuizAnswers(user.answers);
           if (convertedAnswers) {
-            // Calculate dimensions from answers
             const dims = calculateDimensions(convertedAnswers);
             setDimensions(dims);
 
-            // ALWAYS recalculate identity from answers when viewing YOUR OWN results
-            // This ensures consistency with /me page which also recalculates
-            // The URL ?i= parameter is ONLY for OG images and sharing, not for display
             const adjIndex = getAdjectiveIndex(dims.certainty, dims.posture);
             const foundIdentity = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIndex);
             if (foundIdentity) {
@@ -174,10 +142,8 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
             }
           }
         }
-      }
-    } catch (e) {
-      console.error("Failed to parse quiz result:", e);
-    }
+      })
+      .catch(console.error);
   }, [answers]);
 
   // Check if utopia was already created (user named it before quiz)
