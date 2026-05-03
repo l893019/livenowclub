@@ -8,6 +8,12 @@
 
   <!-- Analytics -->
   <script>(function(){fetch("/api/track",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({page:window.location.pathname,referrer:document.referrer})}).catch(function(){});})();</script>
+    // Screenshot mode detection
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('screenshot') === 'true') {
+      document.body.classList.add('screenshot-mode');
+    }
+
 
   <!-- Open Graph -->
   <meta property="og:title" content="When Purpose Is All We Have Left">
@@ -2292,6 +2298,19 @@
       contain-intrinsic-size: 0 800px;
     }
 
+
+    /* SCREENSHOT MODE */
+    body.screenshot-mode .header,
+    body.screenshot-mode .reading-progress,
+    body.screenshot-mode .back-to-top,
+    body.screenshot-mode .mobile-toc-btn,
+    body.screenshot-mode .mobile-toc-overlay,
+    body.screenshot-mode .act-indicator,
+    body.screenshot-mode .scroll-hint,
+    body.screenshot-mode .subscribe-float,
+    body.screenshot-mode .mobile-menu-overlay {
+      display: none !important;
+    }
   </style>
 </head>
 <body>
@@ -2360,6 +2379,12 @@
   </div>
 
   <script>
+    // Screenshot mode detection
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('screenshot') === 'true') {
+      document.body.classList.add('screenshot-mode');
+    }
+
     // Header scroll effect
     window.addEventListener('scroll', () => {
       const header = document.querySelector('.header');
@@ -3227,6 +3252,12 @@
 
   <script src="/wonder/data/merged-books.js"></script>
   <script>
+    // Screenshot mode detection
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('screenshot') === 'true') {
+      document.body.classList.add('screenshot-mode');
+    }
+
     const themeColors = {
       identity: '#a29bfe',
       mortality: '#ff6b6b',
