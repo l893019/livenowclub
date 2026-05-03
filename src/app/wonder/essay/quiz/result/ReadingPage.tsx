@@ -90,6 +90,14 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
   // Always recalculate from localStorage to ensure consistency with /me page.
   // Only use URL identity when explicitly viewing someone else's results.
   const [identity, setIdentity] = useState<Identity | null>(null);
+  // DEBUG: Track calculation details
+  const [identityDebug, setIdentityDebug] = useState<{
+    source: string;
+    answers: string;
+    dims: { agency: number; certainty: number; posture: number } | null;
+    adjIdx: number | null;
+    combinedIntensity: number | null;
+  } | null>(null);
   const [userSlug, setUserSlug] = useState<string | null>(null);
   const [linkCopied, setLinkCopied] = useState(false);
   const archetype = archetypes[archetypeKey];
@@ -135,7 +143,18 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
             setDimensions(dims);
 
             const adjIndex = getAdjectiveIndex(dims.certainty, dims.posture);
+            const combinedIntensity = (Math.abs(dims.certainty) + Math.abs(dims.posture)) / 2;
             const foundIdentity = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIndex);
+
+            // DEBUG: Track calculation details
+            setIdentityDebug({
+              source: 'API',
+              answers: user.answers.join(','),
+              dims,
+              adjIdx: adjIndex,
+              combinedIntensity,
+            });
+
             if (foundIdentity) {
               setIdentity(foundIdentity);
               setReading(identityToReading(foundIdentity));
@@ -180,7 +199,18 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
     // When answers prop is provided, ALWAYS calculate identity from those answers
     // This handles both your own results and viewing others (when answers are passed)
     const adjIndex = getAdjectiveIndex(dims.certainty, dims.posture);
+    const combinedIntensity = (Math.abs(dims.certainty) + Math.abs(dims.posture)) / 2;
     const foundIdentity = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIndex);
+
+    // DEBUG: Track calculation details
+    setIdentityDebug({
+      source: 'answers prop',
+      answers: Object.values(answers).join(','),
+      dims,
+      adjIdx: adjIndex,
+      combinedIntensity,
+    });
+
     if (foundIdentity) {
       setIdentity(foundIdentity);
       setReading(identityToReading(foundIdentity));
@@ -325,6 +355,15 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
           <header className={styles.header}>
             <p className={styles.label}>{labelText}</p>
             <h1 className={styles.name}>{identity.name}</h1>
+            {/* DEBUG - remove after fixing */}
+            {identityDebug && (
+              <details style={{ fontSize: '10px', color: '#888', marginTop: '8px' }}>
+                <summary>Debug (results)</summary>
+                <pre style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>
+                  {JSON.stringify(identityDebug, null, 2)}
+                </pre>
+              </details>
+            )}
           </header>
 
           {/* Utopia Card */}

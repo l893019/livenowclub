@@ -73,13 +73,26 @@ export function MePageClient() {
   };
 
   // Get identity from user answers
-  const getIdentity = (answers: string[]) => {
+  const getIdentityWithDebug = (answers: string[]) => {
     const quizAnswers = arrayToQuizAnswers(answers);
-    if (!quizAnswers) return null;
+    if (!quizAnswers) return { identity: null, debug: null };
     const dims = calculateDimensions(quizAnswers);
     const adjIdx = getAdjectiveIndex(dims.certainty, dims.posture);
-    return getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIdx);
+    const identity = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIdx);
+    const combinedIntensity = (Math.abs(dims.certainty) + Math.abs(dims.posture)) / 2;
+    return {
+      identity,
+      debug: {
+        answers: answers.join(','),
+        dims,
+        adjIdx,
+        combinedIntensity,
+      },
+    };
   };
+
+  // Legacy wrapper for backward compatibility
+  const getIdentity = (answers: string[]) => getIdentityWithDebug(answers).identity;
 
   if (isLoading) {
     return (
@@ -96,7 +109,7 @@ export function MePageClient() {
     return null;
   }
 
-  const identity = user.answers ? getIdentity(user.answers) : null;
+  const { identity, debug } = user.answers ? getIdentityWithDebug(user.answers) : { identity: null, debug: null };
 
   return (
     <>
@@ -109,6 +122,15 @@ export function MePageClient() {
             <h1 className={styles.identityName} style={{ color: identity?.color }}>
               {identity?.name || "Unknown"}
             </h1>
+            {/* DEBUG - remove after fixing */}
+            {debug && (
+              <details style={{ fontSize: '10px', color: '#888', marginTop: '8px' }}>
+                <summary>Debug (/me)</summary>
+                <pre style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>
+                  {JSON.stringify(debug, null, 2)}
+                </pre>
+              </details>
+            )}
             <Link href="/wonder/essay/quiz/result" className={styles.viewResultsLink}>
               View your full results →
             </Link>
