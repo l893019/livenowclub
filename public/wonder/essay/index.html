@@ -3860,6 +3860,22 @@
 
   </script>
 
+  <!-- Clean Mode for Screenshots -->
+  <script>
+    // Hide UI chrome when ?clean=true is in URL
+    if (window.location.search.includes('clean=true')) {
+      const style = document.createElement('style');
+      style.textContent = `
+        .subscribe-float,
+        .mobile-menu-toggle,
+        .scroll-indicator {
+          display: none !important;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  </script>
+
   <!-- Floating Subscribe -->
   <div class="subscribe-float">
     <a href="https://louiseireland.substack.com/subscribe" target="_blank" rel="noopener noreferrer">Subscribe</a>
