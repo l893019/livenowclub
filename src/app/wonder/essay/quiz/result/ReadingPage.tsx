@@ -84,13 +84,14 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
   const [isLoadingReading, setIsLoadingReading] = useState(false);
   const [readingError, setReadingError] = useState<string | null>(null);
   const [dimensions, setDimensions] = useState<Dimensions | null>(null);
-  const [identity, setIdentity] = useState<Identity | null>(() => {
-    // Initialize from URL identity key if provided
-    if (identityKey) {
-      return identities[identityKey] || null;
-    }
-    return null;
-  });
+  // Determine if viewing someone else's results (vs your own)
+  // This is true when personName is provided (e.g., viewing a friend's result)
+  const isViewingOther = !!personName;
+
+  // IMPORTANT: Never trust URL identity key for your own results.
+  // Always recalculate from localStorage to ensure consistency with /me page.
+  // Only use URL identity when explicitly viewing someone else's results.
+  const [identity, setIdentity] = useState<Identity | null>(null);
   const [userSlug, setUserSlug] = useState<string | null>(null);
   const [linkCopied, setLinkCopied] = useState(false);
   const archetype = archetypes[archetypeKey];
@@ -156,7 +157,7 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
           answers: parsed.answers || [],
         });
 
-        // If no answers prop provided, convert localStorage answers and fetch LLM reading
+        // If no answers prop provided, convert localStorage answers and generate reading
         if (!answers && parsed.answers && Array.isArray(parsed.answers)) {
           const convertedAnswers = arrayToQuizAnswers(parsed.answers);
           if (convertedAnswers) {
@@ -164,21 +165,14 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
             const dims = calculateDimensions(convertedAnswers);
             setDimensions(dims);
 
-            // Only look up identity if we don't already have one from URL
-            if (!identityKey) {
-              const adjIndex = getAdjectiveIndex(dims.certainty, dims.posture);
-              const foundIdentity = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIndex);
-              if (foundIdentity) {
-                setIdentity(foundIdentity);
-                // Use pre-generated reading from identity content (instant, no API call)
-                setReading(identityToReading(foundIdentity));
-              }
-            } else {
-              // Identity from URL - use its pre-generated reading
-              const urlIdentity = identities[identityKey];
-              if (urlIdentity) {
-                setReading(identityToReading(urlIdentity));
-              }
+            // ALWAYS recalculate identity from answers when viewing YOUR OWN results
+            // This ensures consistency with /me page which also recalculates
+            // The URL ?i= parameter is ONLY for OG images and sharing, not for display
+            const adjIndex = getAdjectiveIndex(dims.certainty, dims.posture);
+            const foundIdentity = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIndex);
+            if (foundIdentity) {
+              setIdentity(foundIdentity);
+              setReading(identityToReading(foundIdentity));
             }
           }
         }
@@ -219,23 +213,15 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
     const dims = calculateDimensions(answers);
     setDimensions(dims);
 
-    // Only look up identity if we don't already have one from URL
-    if (!identityKey) {
-      const adjIndex = getAdjectiveIndex(dims.certainty, dims.posture);
-      const foundIdentity = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIndex);
-      if (foundIdentity) {
-        setIdentity(foundIdentity);
-        // Use pre-generated reading from identity content (instant, no API call)
-        setReading(identityToReading(foundIdentity));
-      }
-    } else {
-      // Identity from URL - use its pre-generated reading
-      const urlIdentity = identities[identityKey];
-      if (urlIdentity) {
-        setReading(identityToReading(urlIdentity));
-      }
+    // When answers prop is provided, ALWAYS calculate identity from those answers
+    // This handles both your own results and viewing others (when answers are passed)
+    const adjIndex = getAdjectiveIndex(dims.certainty, dims.posture);
+    const foundIdentity = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIndex);
+    if (foundIdentity) {
+      setIdentity(foundIdentity);
+      setReading(identityToReading(foundIdentity));
     }
-  }, [answers, identityKey]);
+  }, [answers]);
 
   // Create connection if came from someone's link
   useEffect(() => {
@@ -322,8 +308,6 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
     ? getAnswerJourney(quizResult.answers)
     : [];
 
-  // Determine if this is viewing someone else's reading
-  const isViewingOther = !!personName;
   // Determine article (a/an) based on first letter of name
   // Archetype names start with "The " so don't need an article
   const getArticle = (name: string) => {
