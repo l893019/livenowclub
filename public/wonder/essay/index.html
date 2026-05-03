@@ -1713,6 +1713,32 @@
       z-index: 100;
     }
 
+    .subscribe-close {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border: 1px solid rgba(232, 23, 138, 0.12);
+      border-radius: 50%;
+      font-size: 18px;
+      line-height: 1;
+      color: #999;
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.2s;
+    }
+
+    .subscribe-close:hover {
+      background: #f5f5f5;
+      color: #666;
+      border-color: #666;
+    }
+
     .subscribe-float a {
       display: block;
       padding: 12px 24px;
@@ -3877,9 +3903,22 @@
   </script>
 
   <!-- Floating Subscribe -->
-  <div class="subscribe-float">
+  <div class="subscribe-float" id="subscribeFloat">
+    <button class="subscribe-close" onclick="dismissSubscribe()" aria-label="Dismiss">×</button>
     <a href="https://louiseireland.substack.com/subscribe" target="_blank" rel="noopener noreferrer">Subscribe</a>
   </div>
+
+  <script>
+    // Check if subscribe button was previously dismissed
+    if (localStorage.getItem('subscribe-dismissed') === 'true') {
+      document.getElementById('subscribeFloat').style.display = 'none';
+    }
+
+    function dismissSubscribe() {
+      localStorage.setItem('subscribe-dismissed', 'true');
+      document.getElementById('subscribeFloat').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
 

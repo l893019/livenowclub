@@ -2331,15 +2331,11 @@
     }
 
     function shareResult() {
-      const primaryKey = window.quizResultKey;
-      const shadowKey = window.quizShadowKey;
       const identityKey = getIdentityKey();
 
       const text = `What's your post-scarcity worldview?`;
       const params = new URLSearchParams();
       if (identityKey) params.set('i', identityKey);
-      params.set('a', primaryKey);
-      params.set('s', shadowKey);
       const url = `https://livenowclub.vercel.app/wonder/essay/quiz/result?${params.toString()}`;
 
       if (navigator.share) {
