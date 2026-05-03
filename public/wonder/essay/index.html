@@ -2292,7 +2292,7 @@
       contain-intrinsic-size: 0 800px;
     }
 
-    /* SCREENSHOT MODE */
+    /* Screenshot Mode */
     body.screenshot-mode .header,
     body.screenshot-mode .reading-progress,
     body.screenshot-mode .back-to-top,
@@ -2304,7 +2304,6 @@
     body.screenshot-mode .mobile-menu-overlay {
       display: none !important;
     }
-
   </style>
 </head>
 <body>
@@ -2373,9 +2372,8 @@
   </div>
 
   <script>
-    // Screenshot mode detection
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('screenshot') === 'true') {
+    // Screenshot mode
+    if (new URLSearchParams(window.location.search).get('screenshot') === 'true') {
       document.body.classList.add('screenshot-mode');
     }
 
