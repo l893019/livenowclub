@@ -102,19 +102,56 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
   const [linkCopied, setLinkCopied] = useState(false);
   const archetype = archetypes[archetypeKey];
 
-  // Check if user has taken the quiz and load their result from API
-  // IMPORTANT: We fetch from API (not localStorage) to ensure consistency with /me page
+  // SINGLE SOURCE OF TRUTH: Load and calculate identity
+  // Priority: answers prop > API fetch
+  // This prevents race conditions between multiple calculation paths
   useEffect(() => {
     const userId = localStorage.getItem("quiz-user-id");
     setHasQuizUserId(!!userId);
 
-    if (!userId || answers) {
-      // If no userId or answers prop is provided, skip API fetch
-      return;
+    // PRIORITY 1: If answers prop provided, use it (viewing others or specific results)
+    if (answers) {
+      // Check if we have all 7 answers
+      const answerKeys = Object.keys(answers);
+      const hasAllAnswers = answerKeys.length === 7 &&
+        answerKeys.every(key => answers[key as keyof QuizAnswers]);
+
+      if (hasAllAnswers) {
+        // Calculate dimensions from answers prop
+        const dims = calculateDimensions(answers);
+        setDimensions(dims);
+
+        const adjIndex = getAdjectiveIndex(dims.certainty, dims.posture);
+        const combinedIntensity = (Math.abs(dims.certainty) + Math.abs(dims.posture)) / 2;
+        const foundIdentity = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIndex);
+
+        // DEBUG: Track calculation details
+        setIdentityDebug({
+          source: 'answers prop',
+          answers: Object.values(answers).join(','),
+          dims,
+          adjIdx: adjIndex,
+          combinedIntensity,
+        });
+
+        if (foundIdentity) {
+          setIdentity(foundIdentity);
+          setReading(identityToReading(foundIdentity));
+        }
+      }
+      return; // Exit early - don't fetch from API
     }
 
+    // PRIORITY 2: If no answers prop but have userId, fetch from API
+    if (!userId) {
+      return; // No data source available
+    }
+
+    // Use AbortController to cancel fetch if component unmounts or answers prop changes
+    const abortController = new AbortController();
+
     // Fetch user data from API - this is the authoritative source
-    fetch(`/api/utopia/user/${userId}`)
+    fetch(`/api/utopia/user/${userId}`, { signal: abortController.signal })
       .then(res => res.json())
       .then(data => {
         if (!data.user) return;
@@ -162,7 +199,17 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
           }
         }
       })
-      .catch(console.error);
+      .catch((error) => {
+        // Ignore abort errors - these are expected when component unmounts
+        if (error.name !== 'AbortError') {
+          console.error('Failed to fetch user data:', error);
+        }
+      });
+
+    // Cleanup: cancel fetch if component unmounts or answers changes
+    return () => {
+      abortController.abort();
+    };
   }, [answers]);
 
   // Check if utopia was already created (user named it before quiz)
@@ -176,46 +223,6 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
       }
     }
   }, []);
-
-  // Fetch LLM-generated reading when answers are provided
-  useEffect(() => {
-    if (!answers) {
-      return;
-    }
-
-    // Check if we have all 7 answers
-    const answerKeys = Object.keys(answers);
-    const hasAllAnswers = answerKeys.length === 7 &&
-      answerKeys.every(key => answers[key as keyof QuizAnswers]);
-
-    if (!hasAllAnswers) {
-      return;
-    }
-
-    // Calculate dimensions from answers prop
-    const dims = calculateDimensions(answers);
-    setDimensions(dims);
-
-    // When answers prop is provided, ALWAYS calculate identity from those answers
-    // This handles both your own results and viewing others (when answers are passed)
-    const adjIndex = getAdjectiveIndex(dims.certainty, dims.posture);
-    const combinedIntensity = (Math.abs(dims.certainty) + Math.abs(dims.posture)) / 2;
-    const foundIdentity = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIndex);
-
-    // DEBUG: Track calculation details
-    setIdentityDebug({
-      source: 'answers prop',
-      answers: Object.values(answers).join(','),
-      dims,
-      adjIdx: adjIndex,
-      combinedIntensity,
-    });
-
-    if (foundIdentity) {
-      setIdentity(foundIdentity);
-      setReading(identityToReading(foundIdentity));
-    }
-  }, [answers]);
 
   // Create connection if came from someone's link
   useEffect(() => {
@@ -335,6 +342,34 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
         <img src={identityImageUrl || dimensionImageUrl || imageUrl} alt="" />
       </div>
 
+      {/* DEBUG - ALWAYS VISIBLE - remove after fixing */}
+      <div style={{
+        position: 'fixed',
+        top: '60px',
+        right: '20px',
+        background: 'white',
+        border: '2px solid red',
+        padding: '12px',
+        borderRadius: '8px',
+        maxWidth: '400px',
+        zIndex: 9999,
+        fontSize: '11px',
+        fontFamily: 'monospace'
+      }}>
+        <div style={{ fontWeight: 'bold', marginBottom: '8px', color: 'red' }}>DEBUG INFO</div>
+        <div><strong>identity:</strong> {identity ? identity.name : 'NULL'}</div>
+        <div><strong>archetype:</strong> {archetype.name}</div>
+        {identityDebug && (
+          <details style={{ marginTop: '8px' }}>
+            <summary>Calculation Details</summary>
+            <pre style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-all', fontSize: '10px' }}>
+              {JSON.stringify(identityDebug, null, 2)}
+            </pre>
+          </details>
+        )}
+        {!identityDebug && <div style={{ color: 'orange' }}>No calculation data</div>}
+      </div>
+
       {/* Back button when in inline context */}
       {onBack && (
         <button className={styles.backButton} onClick={onBack}>
@@ -355,15 +390,6 @@ export function ReadingPage({ archetypeKey, answers, onBack, groupContext, perso
           <header className={styles.header}>
             <p className={styles.label}>{labelText}</p>
             <h1 className={styles.name}>{identity.name}</h1>
-            {/* DEBUG - remove after fixing */}
-            {identityDebug && (
-              <details style={{ fontSize: '10px', color: '#888', marginTop: '8px' }}>
-                <summary>Debug (results)</summary>
-                <pre style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>
-                  {JSON.stringify(identityDebug, null, 2)}
-                </pre>
-              </details>
-            )}
           </header>
 
           {/* Utopia Card */}
