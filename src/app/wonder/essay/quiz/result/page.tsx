@@ -65,3 +65,4 @@ export default async function QuizResultPage({ searchParams }: Props) {
     />
   );
 }
+// Cache bust 1777852224
