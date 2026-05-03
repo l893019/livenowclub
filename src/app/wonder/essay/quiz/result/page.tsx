@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ResultPageClient } from "./ResultPageClient";
 import { archetypes } from "@/lib/archetypes";
-import { identities } from "@/lib/identities";
+import { identities } from "@/lib/identities"; // Used in generateMetadata for OG
 
 type Props = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
@@ -63,20 +63,19 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 
 export default async function QuizResultPage({ searchParams }: Props) {
   const params = await searchParams;
-  const identityKey = typeof params.i === 'string' ? params.i : undefined;
   const archetypeKey = typeof params.a === 'string' ? params.a : 'citizen';
   const compareUserId = typeof params.compare === 'string' ? params.compare : undefined;
 
-  // Try identity first, fall back to archetype
-  const identity = identityKey ? identities[identityKey] : null;
+  // NOTE: We intentionally do NOT pass identityKey to the client.
+  // The client will recalculate identity from localStorage to ensure
+  // consistency with /me page. URL ?i= is only for OG metadata (above).
   const archetype = archetypes[archetypeKey] || archetypes.citizen;
 
   return (
     <ResultPageClient
       archetypeKey={archetypeKey}
-      archetypeColor={identity?.color || archetype.color}
+      archetypeColor={archetype.color}
       compareUserId={compareUserId}
-      identityKey={identityKey}
     />
   );
 }

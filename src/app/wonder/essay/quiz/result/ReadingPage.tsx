@@ -53,8 +53,6 @@ type ReadingPageProps = {
   personName?: string;
   /** Optional: user ID to show relationship comparison with (viral loop) */
   compareUserId?: string;
-  /** Optional: identity key from URL (new dimension-based system) */
-  identityKey?: string;
 };
 
 // Map compatibility descriptions to archetype keys
@@ -75,7 +73,7 @@ const compatibilityMap: Record<string, string> = {
   "the one still figuring it out": "between",
 };
 
-export function ReadingPage({ archetypeKey, answers, onBack, groupContext, personName, compareUserId, identityKey }: ReadingPageProps) {
+export function ReadingPage({ archetypeKey, answers, onBack, groupContext, personName, compareUserId }: ReadingPageProps) {
   const [showCreateUtopia, setShowCreateUtopia] = useState(false);
   const [existingUtopia, setExistingUtopia] = useState<CreatedUtopia | null>(null);
   const [hasQuizUserId, setHasQuizUserId] = useState<boolean | null>(null);

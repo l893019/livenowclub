@@ -8,14 +8,12 @@ type ResultPageClientProps = {
   archetypeKey: string;
   archetypeColor: string;
   compareUserId?: string;
-  identityKey?: string;
 };
 
 export function ResultPageClient({
   archetypeKey,
   archetypeColor,
   compareUserId,
-  identityKey,
 }: ResultPageClientProps) {
   return (
     <>
@@ -36,7 +34,7 @@ export function ResultPageClient({
 
       <Header />
 
-      <ReadingPage archetypeKey={archetypeKey} compareUserId={compareUserId} identityKey={identityKey} />
+      <ReadingPage archetypeKey={archetypeKey} compareUserId={compareUserId} />
 
       <footer className="footer">
         <p className="footer-quote">What if now is all we have?</p>

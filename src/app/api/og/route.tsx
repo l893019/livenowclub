@@ -1,8 +1,10 @@
 import { ImageResponse } from '@vercel/og';
 import { NextRequest } from 'next/server';
+import { identities } from '@/lib/identities';
 
 export const runtime = 'edge';
 
+// Legacy archetype data for backward compatibility
 const archetypes: Record<string, { name: string; utopia: string; color: string }> = {
   citizen: {
     name: "The Abundant",
@@ -78,11 +80,16 @@ const archetypes: Record<string, { name: string; utopia: string; color: string }
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
+  const identityKey = searchParams.get('identity');
   const archetype = searchParams.get('archetype') || 'citizen';
   const shadow = searchParams.get('shadow');
   const name = searchParams.get('name');
 
-  const data = archetypes[archetype] || archetypes.citizen;
+  // Prefer identity system, fall back to archetype
+  const identity = identityKey ? identities[identityKey] : null;
+  const data = identity
+    ? { name: identity.name, utopia: identity.utopia, color: identity.color }
+    : archetypes[archetype] || archetypes.citizen;
   const shadowData = shadow ? archetypes[shadow] : null;
 
   return new ImageResponse(

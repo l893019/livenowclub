@@ -299,10 +299,22 @@ p {
   letter-spacing: 0.02em;
   transition: transform 0.2s ease;
   display: inline-block;
+  /* Better touch target on mobile */
+  padding: 0.25rem 0;
 }
 
 .text-link:hover {
   transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .text-link {
+    /* Ensure adequate touch target */
+    padding: 0.5rem 0;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
 }
 
 /* ============================================
@@ -501,6 +513,34 @@ p {
   mix-blend-mode: screen;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    min-height: 90vh;
+    padding: var(--space-lg) var(--page-margin-mobile);
+  }
+
+  .hero-handwritten {
+    max-width: 90%;
+  }
+
+  .btn--primary {
+    /* Ensure 44x44px minimum tap target */
+    min-height: 48px;
+    padding: 16px 32px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 85vh;
+  }
+
+  .hero-handwritten {
+    max-width: 95%;
+  }
+}
+
 /* ============================================
    INTRO
    ============================================ */
@@ -537,6 +577,8 @@ p {
   .intro {
     flex-direction: column;
     text-align: center;
+    padding: var(--space-8) var(--page-margin-mobile);
+    gap: var(--space-5);
   }
 
   .intro-text {
@@ -546,6 +588,20 @@ p {
   .intro-photo {
     width: 160px;
     height: 160px;
+  }
+}
+
+@media (max-width: 400px) {
+  .intro {
+    padding: var(--space-6) var(--page-margin-mobile);
+  }
+
+  .intro-greeting {
+    font-size: 1.35rem;
+  }
+
+  .intro-body {
+    font-size: 1rem;
   }
 }
 
@@ -609,6 +665,31 @@ p {
 .quote-carousel {
   padding: var(--space-md) 0;
   overflow: hidden;
+  position: relative;
+}
+
+/* Scroll hints for mobile - fade edges */
+@media (max-width: 768px) {
+  .quote-carousel::before,
+  .quote-carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .quote-carousel::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--cream) 0%, transparent 100%);
+  }
+
+  .quote-carousel::after {
+    right: 0;
+    background: linear-gradient(270deg, var(--cream) 0%, transparent 100%);
+  }
 }
 
 .carousel-track {
@@ -638,6 +719,8 @@ p {
   border-radius: 10px;
   border: none;
   position: relative;
+  /* Ensure card is tappable on touch devices */
+  -webkit-tap-highlight-color: rgba(232,23,138,0.1);
 }
 
 .carousel-card::before {
@@ -705,6 +788,8 @@ p {
   .carousel-card {
     flex: 0 0 280px;
     padding: 18px 20px 18px 44px;
+    /* Snap to start for better mobile UX */
+    scroll-snap-align: start;
   }
 
   .carousel-card::before {
@@ -715,6 +800,27 @@ p {
 
   .carousel-card blockquote {
     font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .carousel-track {
+    padding: 0 var(--page-margin-mobile);
+    gap: var(--space-3);
+  }
+}
+
+@media (max-width: 375px) {
+  .carousel-card {
+    flex: 0 0 260px;
+    padding: 16px 18px 16px 40px;
+  }
+
+  .carousel-card blockquote {
+    font-size: 0.85rem;
+  }
+
+  .carousel-card cite {
+    font-size: 0.8rem;
   }
 }
 
@@ -784,14 +890,27 @@ p {
   .soft-entries-grid {
     flex-direction: column;
     align-items: center;
-    gap: var(--space-sm);
+    gap: var(--space-3);
   }
 
   .soft-entry {
     font-size: 0.9rem;
-    padding: 0.75rem 1.5rem;
-    min-width: 220px;
+    /* Ensure 44x44px minimum tap target */
+    padding: 0.875rem 1.75rem;
+    min-width: 240px;
+    min-height: 44px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 375px) {
+  .soft-entry {
+    min-width: 200px;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.85rem;
   }
 }
 
@@ -3740,10 +3859,28 @@ p {
 @media (max-width: 900px) {
   .worth-reading-layout {
     grid-template-columns: 1fr;
+    gap: var(--space-lg);
   }
 
   .recent-stack {
     grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 600px) {
+  .worth-reading-layout {
+    gap: var(--space-md);
+  }
+
+  .recent-stack {
+    /* Stack cards vertically on small screens for better readability */
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .recent-item-content {
+    padding: var(--space-4);
   }
 }
 
@@ -3834,6 +3971,38 @@ p {
   .btn--primary {
     padding: 0.875rem 1.5rem;
     font-size: 0.8rem;
+    min-height: 44px;
+  }
+
+  .recent-item-content h4 {
+    font-size: 0.95rem;
+  }
+
+  .pick-content h4 {
+    font-size: 1.15rem;
+  }
+
+  .interactive-content h3 {
+    font-size: 1.35rem;
+  }
+}
+
+/* iPhone SE and very small devices */
+@media (max-width: 375px) {
+  :root {
+    --page-margin-mobile: 12px;
+  }
+
+  .worth-reading {
+    padding: var(--space-sm) var(--space-3);
+  }
+
+  .featured {
+    padding: var(--space-sm) var(--space-3);
+  }
+
+  .recent-item-content {
+    padding: var(--space-3);
   }
 
   .featured-text h2 {

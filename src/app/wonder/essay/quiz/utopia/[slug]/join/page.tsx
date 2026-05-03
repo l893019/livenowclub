@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { getUtopia } from "@/lib/utopia";
 import { getMemberIdentity } from "@/lib/identities";
 import { archetypes } from "@/lib/archetypes";
-import { InviterRadarPreview } from "./InviterRadarPreview";
+import { InviterDimensionPreview } from "./InviterDimensionPreview";
 import Header from "@/components/Header";
 import styles from "./JoinUtopia.module.css";
 
@@ -88,8 +88,8 @@ export default async function JoinUtopiaPage({ params }: Props) {
         </div>
 
         <div className={styles.radarPreview}>
-          <InviterRadarPreview
-            inviterArchetype={founderArchetype}
+          <InviterDimensionPreview
+            inviterAnswers={founder?.answers}
             inviterColor={founderColor}
             inviterName={founderName}
           />
