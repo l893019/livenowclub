@@ -56,6 +56,7 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
   const [savingName, setSavingName] = useState(false);
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
+  const [hasUserName, setHasUserName] = useState(false);
 
   // SINGLE SOURCE OF TRUTH: Load and calculate identity
   useEffect(() => {
@@ -102,6 +103,16 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
         if (!data.user) return;
 
         const user = data.user;
+
+        // Check if user has a name (not just empty string or "Anonymous")
+        if (user.name && user.name !== "Anonymous") {
+          setHasUserName(true);
+          setUserName(user.name);
+        }
+
+        if (user.email) {
+          setUserEmail(user.email);
+        }
 
         if (user.slug) {
           setUserSlug(user.slug);
@@ -231,6 +242,7 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
       const data = await response.json();
       if (data.slug) {
         setUserSlug(data.slug);
+        setHasUserName(true);
         localStorage.setItem("userSlug", data.slug);
       }
     } catch (error) {
@@ -281,8 +293,8 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
       {/* Share section with three states */}
       {!isViewingOther && (
         <div className={styles.yourWorldSection}>
-          {!userSlug ? (
-            // State 1 & 2: No slug yet - show name entry or saving
+          {!hasUserName || !userSlug ? (
+            // State 1 & 2: No name/slug yet - show name entry or saving
             savingName ? (
               <div className={styles.shareBox}>
                 <button className={styles.savingButton} disabled>
@@ -316,7 +328,7 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
               </div>
             )
           ) : (
-            // State 3: Has slug - show share box
+            // State 3: Has name AND slug - show share box
             <>
               <div className={styles.shareBox}>
                 <h3 className={styles.shareTitle}>Share Your Worldview</h3>
