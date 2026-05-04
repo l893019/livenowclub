@@ -516,6 +516,22 @@ export function getIdentityFromArchetype(archetypeKey: string): Identity | undef
 }
 
 /**
+ * Reverse mapping: identity key → archetype key
+ * Used for relationship comparison (which still uses archetype pair dynamics)
+ */
+const IDENTITY_TO_ARCHETYPE: Record<string, string> = Object.fromEntries(
+  Object.entries(ARCHETYPE_TO_IDENTITY).map(([archetype, identity]) => [identity, archetype])
+)
+
+/**
+ * Get the closest archetype key for an identity.
+ * Returns undefined if identity not mapped.
+ */
+export function getArchetypeFromIdentity(identityKey: string): string | undefined {
+  return IDENTITY_TO_ARCHETYPE[identityKey]
+}
+
+/**
  * Get identity for a member, preferring calculated from answers,
  * falling back to archetype mapping.
  */

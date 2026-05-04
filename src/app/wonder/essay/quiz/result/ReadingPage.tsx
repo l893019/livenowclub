@@ -12,6 +12,7 @@ import {
   getIdentityFromDimensions,
   getIdentityImage,
   getAdjectiveIndex,
+  getArchetypeFromIdentity,
   type Identity,
 } from "@/lib/identities";
 import type { IndividualReading } from "@/lib/reading-prompts";
@@ -539,6 +540,20 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
           ))}
         </div>
       </section>
+
+      {/* Relationship Comparison */}
+      {compareUserId && identity && (() => {
+        const archetypeKey = getArchetypeFromIdentity(identity.key);
+        return archetypeKey ? (
+          <>
+            <div className={styles.divider} />
+            <RelationshipComparison
+              yourArchetypeKey={archetypeKey}
+              compareUserId={compareUserId}
+            />
+          </>
+        ) : null;
+      })()}
 
       {/* Essay Promotion */}
       <section className={styles.essayPromoSection}>
