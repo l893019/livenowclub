@@ -6,9 +6,9 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const result: UserResult = body.result;
 
-    if (!result || !result.id || !result.name) {
+    if (!result || !result.id) {
       return NextResponse.json(
-        { error: 'Missing required fields' },
+        { error: 'Missing required fields: id' },
         { status: 400 }
       );
     }

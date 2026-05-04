@@ -268,7 +268,7 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
           <p style={{ marginTop: '1rem', color: 'rgba(45, 42, 38, 0.7)' }}>
             Please complete the quiz first, or contact support if you believe this is an error.
           </p>
-          <Link href="/wonder" style={{
+          <Link href="/wonder/essay/quiz" style={{
             display: 'inline-block',
             marginTop: '2rem',
             padding: '12px 24px',
@@ -277,7 +277,7 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
             textDecoration: 'none',
             borderRadius: '4px'
           }}>
-            Go to Quiz
+            Take the Quiz
           </Link>
         </div>
       </div>
