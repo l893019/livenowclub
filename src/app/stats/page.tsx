@@ -55,6 +55,22 @@ type Stats = {
       createdBy: string;
     }>;
   };
+  engagement: {
+    avgSessionDuration: number;
+    avgPagesPerSession: string;
+    bounceRate: number;
+    totalSessions: number;
+    topEngagingPages: Array<{
+      page: string;
+      avgTimeSeconds: number;
+      views: number;
+    }>;
+    exitPages: Array<{
+      page: string;
+      exits: number;
+      exitRate: number;
+    }>;
+  };
 };
 
 export default function StatsPage() {
@@ -149,6 +165,181 @@ export default function StatsPage() {
           </button>
         </div>
       </div>
+
+      {/* Engagement Metrics - User Behavior Insights */}
+      {stats.engagement && stats.engagement.totalSessions > 0 && (
+        <div style={{ marginBottom: '40px' }}>
+          <h2 style={{ fontSize: '24px', marginBottom: '20px', color: '#4a90e2' }}>🎯 User Engagement & Behavior</h2>
+
+          {/* Key Metrics */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', marginBottom: '24px' }}>
+            <div style={{ background: '#fff', border: '2px solid #4a90e2', borderRadius: '8px', padding: '20px' }}>
+              <div style={{ fontSize: '13px', color: '#666', marginBottom: '8px' }}>Avg Session Duration</div>
+              <div style={{ fontSize: '28px', fontWeight: 'bold', color: '#4a90e2' }}>
+                {Math.floor(stats.engagement.avgSessionDuration / 60)}m {stats.engagement.avgSessionDuration % 60}s
+              </div>
+              <div style={{ fontSize: '11px', color: '#999', marginTop: '4px' }}>
+                {stats.engagement.avgSessionDuration > 180 ? '🟢 Great engagement!' : stats.engagement.avgSessionDuration > 60 ? '🟡 Good' : '🔴 Improve engagement'}
+              </div>
+            </div>
+
+            <div style={{ background: '#fff', border: '2px solid #50c878', borderRadius: '8px', padding: '20px' }}>
+              <div style={{ fontSize: '13px', color: '#666', marginBottom: '8px' }}>Pages per Session</div>
+              <div style={{ fontSize: '28px', fontWeight: 'bold', color: '#50c878' }}>
+                {stats.engagement.avgPagesPerSession}
+              </div>
+              <div style={{ fontSize: '11px', color: '#999', marginTop: '4px' }}>
+                {Number(stats.engagement.avgPagesPerSession) > 3 ? '🟢 Excellent!' : Number(stats.engagement.avgPagesPerSession) > 1.5 ? '🟡 Good' : '🔴 Users not exploring'}
+              </div>
+            </div>
+
+            <div style={{ background: '#fff', border: '2px solid #ff6b6b', borderRadius: '8px', padding: '20px' }}>
+              <div style={{ fontSize: '13px', color: '#666', marginBottom: '8px' }}>Bounce Rate</div>
+              <div style={{ fontSize: '28px', fontWeight: 'bold', color: '#ff6b6b' }}>
+                {stats.engagement.bounceRate}%
+              </div>
+              <div style={{ fontSize: '11px', color: '#999', marginTop: '4px' }}>
+                {stats.engagement.bounceRate < 40 ? '🟢 Excellent!' : stats.engagement.bounceRate < 60 ? '🟡 Average' : '🔴 High drop-off'}
+              </div>
+            </div>
+
+            <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: '8px', padding: '20px' }}>
+              <div style={{ fontSize: '13px', color: '#666', marginBottom: '8px' }}>Total Sessions</div>
+              <div style={{ fontSize: '28px', fontWeight: 'bold' }}>{stats.engagement.totalSessions}</div>
+            </div>
+          </div>
+
+          {/* Engagement Insights */}
+          <div style={{ background: '#f8f9fa', border: '1px solid #dee2e6', borderRadius: '8px', padding: '20px', marginBottom: '24px' }}>
+            <h3 style={{ fontSize: '16px', marginBottom: '12px', fontWeight: '600' }}>💡 Insights & Recommendations</h3>
+            <div style={{ fontSize: '14px', lineHeight: '1.8', color: '#495057' }}>
+              {stats.engagement.bounceRate > 60 && (
+                <div style={{ marginBottom: '12px' }}>
+                  <span style={{ fontWeight: '600', color: '#ff6b6b' }}>⚠️ High Bounce Rate:</span> {stats.engagement.bounceRate}% of visitors leave after one page.
+                  Try adding:
+                  <ul style={{ marginTop: '6px', marginBottom: '0', paddingLeft: '24px' }}>
+                    <li>Related article links at the end of posts</li>
+                    <li>Clear calls-to-action to explore more content</li>
+                    <li>"Read Next" recommendations</li>
+                  </ul>
+                </div>
+              )}
+              {Number(stats.engagement.avgPagesPerSession) < 2 && (
+                <div style={{ marginBottom: '12px' }}>
+                  <span style={{ fontWeight: '600', color: '#ffa500' }}>📊 Low Pages/Session:</span> Users view {stats.engagement.avgPagesPerSession} pages on average.
+                  Encourage exploration with:
+                  <ul style={{ marginTop: '6px', marginBottom: '0', paddingLeft: '24px' }}>
+                    <li>Internal linking between related essays</li>
+                    <li>A "Popular Posts" sidebar widget</li>
+                    <li>Content clusters around themes</li>
+                  </ul>
+                </div>
+              )}
+              {stats.engagement.avgSessionDuration < 60 && (
+                <div style={{ marginBottom: '12px' }}>
+                  <span style={{ fontWeight: '600', color: '#dc3545' }}>⏱️ Short Sessions:</span> Average session is under 1 minute.
+                  Keep users engaged longer with:
+                  <ul style={{ marginTop: '6px', marginBottom: '0', paddingLeft: '24px' }}>
+                    <li>Compelling opening paragraphs that hook readers</li>
+                    <li>Break up long text with subheadings and images</li>
+                    <li>Interactive elements like the quiz</li>
+                  </ul>
+                </div>
+              )}
+              {stats.engagement.bounceRate < 40 && Number(stats.engagement.avgPagesPerSession) > 3 && stats.engagement.avgSessionDuration > 180 && (
+                <div style={{ color: '#28a745', fontWeight: '600' }}>
+                  ✅ Excellent engagement! Users are exploring your content deeply and staying engaged.
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Pages That Keep Users Engaged */}
+          {stats.engagement.topEngagingPages.length > 0 && (
+            <div style={{ marginBottom: '24px' }}>
+              <h3 style={{ fontSize: '18px', marginBottom: '12px', fontWeight: '600' }}>⏰ Pages That Keep Users Engaged (Avg Time on Page)</h3>
+              <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden' }}>
+                {stats.engagement.topEngagingPages.map((page, i) => {
+                  const minutes = Math.floor(page.avgTimeSeconds / 60);
+                  const seconds = page.avgTimeSeconds % 60;
+                  const isArticle = page.page.startsWith('/read/');
+                  const articleName = isArticle
+                    ? page.page.replace('/read/', '').split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+                    : page.page;
+
+                  return (
+                    <div
+                      key={i}
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        padding: '14px 16px',
+                        borderBottom: i < stats.engagement.topEngagingPages.length - 1 ? '1px solid #eee' : 'none',
+                        background: i === 0 ? '#f0f8ff' : 'transparent',
+                      }}
+                    >
+                      <div style={{ flex: 1 }}>
+                        <div style={{ fontWeight: i === 0 ? '600' : '500', marginBottom: '4px' }}>
+                          {i === 0 && '🏆 '}
+                          {isArticle ? `📖 ${articleName}` : articleName}
+                        </div>
+                        <div style={{ fontSize: '12px', color: '#999' }}>{page.views} views</div>
+                      </div>
+                      <div style={{ fontSize: '18px', fontWeight: 'bold', color: '#4a90e2' }}>
+                        {minutes > 0 ? `${minutes}m ${seconds}s` : `${seconds}s`}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* Exit Pages - Where Users Leave */}
+          {stats.engagement.exitPages.length > 0 && (
+            <div>
+              <h3 style={{ fontSize: '18px', marginBottom: '12px', fontWeight: '600' }}>🚪 Exit Pages (Where Users Leave)</h3>
+              <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden' }}>
+                {stats.engagement.exitPages.map((page, i) => {
+                  const isArticle = page.page.startsWith('/read/');
+                  const articleName = isArticle
+                    ? page.page.replace('/read/', '').split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+                    : page.page;
+
+                  return (
+                    <div
+                      key={i}
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        padding: '14px 16px',
+                        borderBottom: i < stats.engagement.exitPages.length - 1 ? '1px solid #eee' : 'none',
+                      }}
+                    >
+                      <div style={{ flex: 1 }}>
+                        <div style={{ fontWeight: '500', marginBottom: '4px' }}>
+                          {isArticle ? `📖 ${articleName}` : articleName}
+                        </div>
+                        <div style={{ fontSize: '12px', color: '#999' }}>
+                          {page.exits} exits • {page.exitRate}% exit rate
+                        </div>
+                      </div>
+                      <div style={{ fontSize: '16px', fontWeight: 'bold', color: '#ff6b6b' }}>
+                        {page.exits}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              <div style={{ fontSize: '13px', color: '#666', marginTop: '12px', fontStyle: 'italic' }}>
+                💡 Tip: Add "Read More" links or related content suggestions to these pages to reduce exits.
+              </div>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Content Engagement - What People Are Reading */}
       <div style={{ marginBottom: '40px' }}>

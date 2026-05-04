@@ -3,12 +3,28 @@
 import { useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 
+// Generate or retrieve session ID
+function getSessionId(): string {
+  if (typeof window === 'undefined') return '';
+
+  let sessionId = sessionStorage.getItem('analytics-session-id');
+  if (!sessionId) {
+    sessionId = `${Date.now()}-${Math.random().toString(36).substring(2, 15)}`;
+    sessionStorage.setItem('analytics-session-id', sessionId);
+  }
+  return sessionId;
+}
+
 export default function Analytics() {
   const pathname = usePathname();
   const scrollDepthTracked = useRef<Set<number>>(new Set());
   const startTime = useRef<number>(Date.now());
+  const sessionId = useRef<string>('');
 
   useEffect(() => {
+    // Initialize session ID
+    sessionId.current = getSessionId();
+
     // Track pageview
     const trackPageview = async () => {
       try {
@@ -18,6 +34,7 @@ export default function Analytics() {
           body: JSON.stringify({
             page: pathname,
             referrer: document.referrer,
+            sessionId: sessionId.current,
           }),
         });
       } catch (error) {
@@ -58,6 +75,7 @@ export default function Analytics() {
             body: JSON.stringify({
               event: 'scroll_depth',
               page: pathname,
+              sessionId: sessionId.current,
               metadata: { depth: milestone },
             }),
           }).catch(() => {});
@@ -75,6 +93,7 @@ export default function Analytics() {
         const data = JSON.stringify({
           event: 'time_on_page',
           page: pathname,
+          sessionId: sessionId.current,
           metadata: { seconds: timeSpent },
         });
 

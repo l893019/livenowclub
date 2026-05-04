@@ -5,7 +5,7 @@ const redis = new Redis(process.env.REDIS_URL || '');
 
 export async function POST(request: NextRequest) {
   try {
-    const { page, referrer, event, identity, context, metadata } = await request.json();
+    const { page, referrer, event, identity, context, metadata, sessionId } = await request.json();
 
     // Get visitor info
     const ip = request.headers.get('x-forwarded-for') ||
@@ -19,6 +19,63 @@ export async function POST(request: NextRequest) {
 
     const timestamp = new Date().toISOString();
     const date = timestamp.split('T')[0]; // YYYY-MM-DD
+    const now = Date.now();
+
+    // Track session if sessionId provided
+    if (sessionId) {
+      const sessionKey = `session:${sessionId}`;
+      const sessionData = await redis.get(sessionKey);
+
+      if (sessionData) {
+        // Existing session - update
+        const session = JSON.parse(sessionData);
+        session.lastPage = page;
+        session.lastSeen = now;
+        session.pageCount = (session.pageCount || 1) + 1;
+        session.pages = session.pages || [];
+        session.pages.push({ page, timestamp: now });
+
+        await redis.setex(sessionKey, 1800, JSON.stringify(session)); // 30 min expiry
+      } else {
+        // New session
+        const session = {
+          id: sessionId,
+          startPage: page,
+          lastPage: page,
+          startTime: now,
+          lastSeen: now,
+          pageCount: 1,
+          pages: [{ page, timestamp: now }],
+          referrer,
+          country,
+        };
+
+        await redis.setex(sessionKey, 1800, JSON.stringify(session));
+
+        // Track daily sessions
+        await redis.incr(`stats:sessions:${date}`);
+      }
+
+      // Store completed sessions for analysis
+      const sessionAge = now - (sessionData ? JSON.parse(sessionData).lastSeen : now);
+      if (sessionAge > 300000) { // 5 minutes of inactivity = session ended
+        const session = JSON.parse(sessionData || '{}');
+        const duration = session.lastSeen - session.startTime;
+
+        await redis.zadd(
+          `stats:sessions:completed`,
+          now,
+          JSON.stringify({
+            ...session,
+            duration,
+            endTime: now,
+          })
+        );
+
+        // Keep last 1000 completed sessions
+        await redis.zremrangebyrank(`stats:sessions:completed`, 0, -1001);
+      }
+    }
 
     // Track events (quiz started, email signup, etc.)
     if (event) {

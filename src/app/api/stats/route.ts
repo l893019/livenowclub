@@ -41,6 +41,14 @@ export async function GET(request: NextRequest) {
         total: 0,
         recent: [],
       },
+      engagement: {
+        avgSessionDuration: 0,
+        avgPagesPerSession: 0,
+        bounceRate: 0,
+        totalSessions: 0,
+        topEngagingPages: [],
+        exitPages: [],
+      },
     };
 
     // Get date range
@@ -245,6 +253,80 @@ export async function GET(request: NextRequest) {
       createdAt: u.createdAt,
       createdBy: u.createdBy,
     }));
+
+    // Calculate engagement metrics from completed sessions
+    const completedSessions = await redis.zrange('stats:sessions:completed', 0, -1);
+    const sessions = completedSessions.map(s => {
+      try {
+        return JSON.parse(s);
+      } catch {
+        return null;
+      }
+    }).filter(Boolean);
+
+    if (sessions.length > 0) {
+      // Average session duration (in seconds)
+      const totalDuration = sessions.reduce((sum, s) => sum + (s.duration || 0), 0);
+      stats.engagement.avgSessionDuration = Math.round(totalDuration / sessions.length / 1000);
+
+      // Average pages per session
+      const totalPages = sessions.reduce((sum, s) => sum + (s.pageCount || 1), 0);
+      stats.engagement.avgPagesPerSession = (totalPages / sessions.length).toFixed(1);
+
+      // Bounce rate (single page sessions)
+      const bounces = sessions.filter(s => (s.pageCount || 1) === 1).length;
+      stats.engagement.bounceRate = Math.round((bounces / sessions.length) * 100);
+
+      // Total sessions in period
+      stats.engagement.totalSessions = sessions.length;
+
+      // Top engaging pages (by avg time spent)
+      const pageEngagement: Record<string, { totalTime: number; count: number; exits: number }> = {};
+
+      sessions.forEach(s => {
+        if (s.pages && s.pages.length > 1) {
+          for (let i = 0; i < s.pages.length - 1; i++) {
+            const page = s.pages[i].page;
+            const timeOnPage = s.pages[i + 1].timestamp - s.pages[i].timestamp;
+
+            if (!pageEngagement[page]) {
+              pageEngagement[page] = { totalTime: 0, count: 0, exits: 0 };
+            }
+            pageEngagement[page].totalTime += timeOnPage;
+            pageEngagement[page].count += 1;
+          }
+        }
+
+        // Track exit pages (last page in session)
+        if (s.lastPage) {
+          if (!pageEngagement[s.lastPage]) {
+            pageEngagement[s.lastPage] = { totalTime: 0, count: 0, exits: 0 };
+          }
+          pageEngagement[s.lastPage].exits += 1;
+        }
+      });
+
+      // Sort by average time spent
+      stats.engagement.topEngagingPages = Object.entries(pageEngagement)
+        .map(([page, data]) => ({
+          page,
+          avgTimeSeconds: data.count > 0 ? Math.round(data.totalTime / data.count / 1000) : 0,
+          views: data.count,
+        }))
+        .filter(p => p.avgTimeSeconds > 0)
+        .sort((a, b) => b.avgTimeSeconds - a.avgTimeSeconds)
+        .slice(0, 10);
+
+      // Top exit pages
+      stats.engagement.exitPages = Object.entries(pageEngagement)
+        .map(([page, data]) => ({
+          page,
+          exits: data.exits,
+          exitRate: data.count > 0 ? Math.round((data.exits / data.count) * 100) : 0,
+        }))
+        .sort((a, b) => b.exits - a.exits)
+        .slice(0, 10);
+    }
 
     return NextResponse.json(stats);
   } catch (error) {
