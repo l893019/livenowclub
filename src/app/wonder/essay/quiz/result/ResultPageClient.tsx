@@ -16,11 +16,18 @@ export function ResultPageClient({
   compareUserId,
 }: ResultPageClientProps) {
   const [userId, setUserId] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const storedUserId = localStorage.getItem("quiz-user-id");
     setUserId(storedUserId);
+    setIsLoading(false);
   }, []);
+
+  // Wait for localStorage to load before deciding what to show
+  if (isLoading) {
+    return null; // Or show a minimal loading state
+  }
 
   // If compareUserId exists and we have a userId, show comparison view
   const showComparison = compareUserId && userId && compareUserId !== userId;
