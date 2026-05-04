@@ -19,7 +19,6 @@ type Props = {
 };
 
 export function MeetPageClient({ targetUser }: Props) {
-  const router = useRouter();
   const [hasCompletedQuiz, setHasCompletedQuiz] = useState<boolean | null>(null);
 
   useEffect(() => {
@@ -33,12 +32,6 @@ export function MeetPageClient({ targetUser }: Props) {
   const handleStartQuiz = () => {
     // Store target user ID for connection creation after quiz
     localStorage.setItem("connectWith", targetUser.id);
-    window.location.href = "/wonder/essay";
-  };
-
-  const handleSeeConnection = () => {
-    // Go directly to result with comparison
-    window.location.href = `/wonder/essay/quiz/result?compare=${targetUser.id}`;
   };
 
   // Don't render CTA until we know quiz status
@@ -107,16 +100,23 @@ export function MeetPageClient({ targetUser }: Props) {
 
           {hasCompletedQuiz ? (
             <div className="meet-cta">
-              <button className="btn btn--primary" onClick={handleSeeConnection}>
+              <Link
+                href={`/wonder/essay/quiz/result?compare=${targetUser.id}`}
+                className="btn btn--primary"
+              >
                 See Where You Intersect
-              </button>
+              </Link>
               <p className="meet-subtext">You&apos;ve already taken the quiz.</p>
             </div>
           ) : (
             <div className="meet-cta">
-              <button className="btn btn--primary" onClick={handleStartQuiz}>
+              <Link
+                href="/wonder/essay"
+                className="btn btn--primary"
+                onClick={handleStartQuiz}
+              >
                 Discover Your Worldview
-              </button>
+              </Link>
               <p className="meet-subtext">Takes about 3 minutes</p>
             </div>
           )}
