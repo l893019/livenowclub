@@ -98,6 +98,11 @@ export default function StatsPage() {
   const totalVisitors = Object.values(stats.visitors).reduce((a, b) => a + b, 0);
   const avgPageviews = Math.round(totalPageviews / days);
 
+  // Categorize pages
+  const articles = stats.topPages.filter(p => p.page.startsWith('/read/') && p.page !== '/read' && p.page !== '/read/all');
+  const quizPages = stats.topPages.filter(p => p.page.includes('/quiz'));
+  const otherPages = stats.topPages.filter(p => !p.page.startsWith('/read/') && !p.page.includes('/quiz'));
+
   return (
     <div style={{ padding: '40px', fontFamily: 'system-ui', maxWidth: '1200px', margin: '0 auto' }}>
       <div style={{ marginBottom: '40px' }}>
@@ -143,6 +148,124 @@ export default function StatsPage() {
             Last 90 days
           </button>
         </div>
+      </div>
+
+      {/* Content Engagement - What People Are Reading */}
+      <div style={{ marginBottom: '40px' }}>
+        <h2 style={{ fontSize: '24px', marginBottom: '20px', color: '#e8178a' }}>📖 What People Are Reading</h2>
+
+        {/* Top Articles */}
+        {articles.length > 0 && (
+          <div style={{ marginBottom: '24px' }}>
+            <h3 style={{ fontSize: '18px', marginBottom: '12px', fontWeight: '600' }}>Top Articles ({articles.reduce((sum, a) => sum + a.views, 0).toLocaleString()} total views)</h3>
+            <div style={{ background: '#fff', border: '2px solid #e8178a', borderRadius: '8px', overflow: 'hidden' }}>
+              {articles.slice(0, 10).map((page, i) => {
+                const articleName = page.page.replace('/read/', '').split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+                const percentage = articles.length > 0 ? ((page.views / articles.reduce((sum, a) => sum + a.views, 0)) * 100).toFixed(1) : 0;
+                return (
+                  <div
+                    key={i}
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      padding: '16px',
+                      borderBottom: i < Math.min(articles.length, 10) - 1 ? '1px solid #f0f0f0' : 'none',
+                      background: i === 0 ? '#fff9fc' : 'transparent',
+                    }}
+                  >
+                    <div style={{ flex: 1 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '6px' }}>
+                        {i === 0 && <span style={{ fontSize: '20px' }}>🏆</span>}
+                        <span style={{ fontWeight: i === 0 ? '700' : '500', fontSize: i === 0 ? '15px' : '14px' }}>
+                          {articleName}
+                        </span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                        <div style={{
+                          flex: 1,
+                          height: '6px',
+                          background: '#f0f0f0',
+                          borderRadius: '3px',
+                          maxWidth: '300px',
+                          overflow: 'hidden'
+                        }}>
+                          <div style={{
+                            height: '100%',
+                            background: i === 0 ? '#e8178a' : '#ffc0e0',
+                            borderRadius: '3px',
+                            width: `${percentage}%`,
+                            transition: 'width 0.3s ease'
+                          }} />
+                        </div>
+                        <span style={{ fontSize: '12px', color: '#999', minWidth: '45px' }}>{percentage}%</span>
+                      </div>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginLeft: '16px' }}>
+                      <span style={{
+                        fontSize: i === 0 ? '24px' : '18px',
+                        fontWeight: 'bold',
+                        color: i === 0 ? '#e8178a' : '#333'
+                      }}>
+                        {page.views.toLocaleString()}
+                      </span>
+                      <span style={{ fontSize: '12px', color: '#999' }}>views</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* Quiz Engagement */}
+        {quizPages.length > 0 && (
+          <div style={{ marginBottom: '24px' }}>
+            <h3 style={{ fontSize: '18px', marginBottom: '12px', fontWeight: '600' }}>Quiz Engagement ({quizPages.reduce((sum, q) => sum + q.views, 0).toLocaleString()} total views)</h3>
+            <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden' }}>
+              {quizPages.slice(0, 5).map((page, i) => {
+                const pageName = page.page.split('/').pop() || page.page;
+                return (
+                  <div
+                    key={i}
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      padding: '14px 16px',
+                      borderBottom: i < Math.min(quizPages.length, 5) - 1 ? '1px solid #eee' : 'none',
+                    }}
+                  >
+                    <span style={{ fontFamily: 'monospace', fontSize: '13px', color: '#666' }}>{page.page}</span>
+                    <span style={{ fontWeight: 'bold', fontSize: '15px' }}>{page.views.toLocaleString()}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* Other Popular Pages */}
+        {otherPages.length > 0 && (
+          <div>
+            <h3 style={{ fontSize: '18px', marginBottom: '12px', fontWeight: '600' }}>Other Popular Pages</h3>
+            <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden' }}>
+              {otherPages.slice(0, 5).map((page, i) => (
+                <div
+                  key={i}
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    padding: '14px 16px',
+                    borderBottom: i < Math.min(otherPages.length, 5) - 1 ? '1px solid #eee' : 'none',
+                  }}
+                >
+                  <span style={{ fontFamily: 'monospace', fontSize: '13px', color: '#666' }}>{page.page}</span>
+                  <span style={{ fontWeight: 'bold', fontSize: '15px' }}>{page.views.toLocaleString()}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Summary Cards */}
@@ -378,26 +501,6 @@ export default function StatsPage() {
         </div>
       )}
 
-      {/* Top Pages */}
-      <div style={{ marginBottom: '40px' }}>
-        <h2 style={{ fontSize: '20px', marginBottom: '16px' }}>Top Pages</h2>
-        <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden' }}>
-          {stats.topPages.map((page, i) => (
-            <div
-              key={i}
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                padding: '16px',
-                borderBottom: i < stats.topPages.length - 1 ? '1px solid #eee' : 'none',
-              }}
-            >
-              <span style={{ fontFamily: 'monospace', fontSize: '14px' }}>{page.page}</span>
-              <span style={{ fontWeight: 'bold' }}>{page.views.toLocaleString()}</span>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* Referrers */}
       <div style={{ marginBottom: '40px' }}>
@@ -449,26 +552,69 @@ export default function StatsPage() {
         </div>
       </div>
 
-      {/* Recent Activity */}
-      <div>
-        <h2 style={{ fontSize: '20px', marginBottom: '16px' }}>Recent Activity</h2>
+      {/* Recent Reading Activity */}
+      <div style={{ marginBottom: '40px' }}>
+        <h2 style={{ fontSize: '20px', marginBottom: '16px' }}>Recent Reading Activity</h2>
         <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden' }}>
-          {stats.recent.map((visit, i) => (
-            <div
-              key={i}
-              style={{
-                padding: '12px 16px',
-                borderBottom: i < stats.recent.length - 1 ? '1px solid #eee' : 'none',
-                fontSize: '13px',
-              }}
-            >
-              <div style={{ fontFamily: 'monospace', marginBottom: '4px' }}>{visit.page}</div>
-              <div style={{ color: '#666', fontSize: '12px' }}>
-                {new Date(visit.timestamp).toLocaleString()} • {visit.country} •{' '}
-                {visit.referrer || 'Direct'}
-              </div>
+          {stats.recent.filter(v => v.page.startsWith('/read/')).length > 0 ? (
+            stats.recent.filter(v => v.page.startsWith('/read/')).map((visit, i) => {
+              const articleName = visit.page.replace('/read/', '').split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+              return (
+                <div
+                  key={i}
+                  style={{
+                    padding: '12px 16px',
+                    borderBottom: i < stats.recent.filter(v => v.page.startsWith('/read/')).length - 1 ? '1px solid #eee' : 'none',
+                    fontSize: '13px',
+                  }}
+                >
+                  <div style={{ fontWeight: '500', marginBottom: '4px', color: '#333' }}>📖 {articleName}</div>
+                  <div style={{ color: '#666', fontSize: '12px' }}>
+                    {new Date(visit.timestamp).toLocaleString()} • {visit.country} •{' '}
+                    {visit.referrer || 'Direct'}
+                  </div>
+                </div>
+              );
+            })
+          ) : (
+            <div style={{ padding: '24px', textAlign: 'center', color: '#999' }}>
+              No recent article reads in the last 20 visits
             </div>
-          ))}
+          )}
+        </div>
+      </div>
+
+      {/* All Recent Activity */}
+      <div>
+        <h2 style={{ fontSize: '20px', marginBottom: '16px' }}>All Recent Activity</h2>
+        <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden' }}>
+          {stats.recent.map((visit, i) => {
+            const isArticle = visit.page.startsWith('/read/');
+            const isQuiz = visit.page.includes('/quiz');
+            let emoji = '📄';
+            if (isArticle) emoji = '📖';
+            else if (isQuiz) emoji = '✨';
+
+            return (
+              <div
+                key={i}
+                style={{
+                  padding: '12px 16px',
+                  borderBottom: i < stats.recent.length - 1 ? '1px solid #eee' : 'none',
+                  fontSize: '13px',
+                  background: isArticle ? '#fffef9' : 'transparent',
+                }}
+              >
+                <div style={{ fontFamily: 'monospace', marginBottom: '4px' }}>
+                  {emoji} {visit.page}
+                </div>
+                <div style={{ color: '#666', fontSize: '12px' }}>
+                  {new Date(visit.timestamp).toLocaleString()} • {visit.country} •{' '}
+                  {visit.referrer || 'Direct'}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
