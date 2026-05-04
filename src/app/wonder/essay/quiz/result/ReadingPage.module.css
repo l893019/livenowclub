@@ -1151,6 +1151,45 @@
   text-decoration: underline;
 }
 
+/* Quick Share Section (no name required) */
+.quickShareSection {
+  margin-bottom: 1.5rem;
+}
+
+/* Share Divider */
+.shareDivider {
+  position: relative;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.shareDivider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: rgba(232, 23, 138, 0.15);
+}
+
+.shareDivider span {
+  position: relative;
+  display: inline-block;
+  padding: 0 12px;
+  background: linear-gradient(135deg, rgba(232, 23, 138, 0.08) 0%, rgba(244, 160, 63, 0.08) 100%);
+  font-size: 0.85rem;
+  color: rgba(45, 42, 38, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+
+/* Personalized Share Section (with name) */
+.personalizedShareSection {
+  padding-top: 0.5rem;
+}
+
 /* Responsive - Desktop */
 @media (min-width: 640px) {
   .reading {

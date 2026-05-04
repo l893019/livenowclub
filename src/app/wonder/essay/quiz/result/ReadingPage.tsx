@@ -398,27 +398,57 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
             ) : (
               <div className={styles.shareBox}>
                 <h3 className={styles.shareTitle}>Share Your Worldview</h3>
-                <p className={styles.sharePrompt}>Enter your name to create your shareable link</p>
-                <form onSubmit={handleSaveName} className={styles.shareForm}>
-                  <input
-                    type="text"
-                    value={userName}
-                    onChange={(e) => setUserName(e.target.value)}
-                    placeholder="Your name"
-                    className={styles.shareInput}
-                    required
-                  />
-                  <input
-                    type="email"
-                    value={userEmail}
-                    onChange={(e) => setUserEmail(e.target.value)}
-                    placeholder="Email (optional)"
-                    className={styles.shareInput}
-                  />
-                  <button type="submit" className={styles.saveButton}>
-                    Save & Get Link
-                  </button>
-                </form>
+
+                {/* Quick share - no name required */}
+                <div className={styles.quickShareSection}>
+                  <p className={styles.sharePrompt}>Share your result instantly:</p>
+                  <div className={styles.shareBoxRow}>
+                    <span className={styles.shareBoxLink}>
+                      livenowclub.com/wonder/essay/quiz/result?identity={identity.key}
+                    </span>
+                    <button
+                      className={styles.shareBoxCopyButton}
+                      onClick={() => {
+                        const anonymousLink = `https://livenowclub.com/wonder/essay/quiz/result?identity=${identity.key}`;
+                        navigator.clipboard.writeText(anonymousLink);
+                        setLinkCopied(true);
+                        setTimeout(() => setLinkCopied(false), 2000);
+                      }}
+                    >
+                      {linkCopied ? "Copied!" : "Copy Link"}
+                    </button>
+                  </div>
+                </div>
+
+                {/* Divider */}
+                <div className={styles.shareDivider}>
+                  <span>or</span>
+                </div>
+
+                {/* Personalized link with name */}
+                <div className={styles.personalizedShareSection}>
+                  <p className={styles.sharePrompt}>Create a personalized link with your name:</p>
+                  <form onSubmit={handleSaveName} className={styles.shareForm}>
+                    <input
+                      type="text"
+                      value={userName}
+                      onChange={(e) => setUserName(e.target.value)}
+                      placeholder="Your name"
+                      className={styles.shareInput}
+                      required
+                    />
+                    <input
+                      type="email"
+                      value={userEmail}
+                      onChange={(e) => setUserEmail(e.target.value)}
+                      placeholder="Email (optional)"
+                      className={styles.shareInput}
+                    />
+                    <button type="submit" className={styles.saveButton}>
+                      Save & Get Link
+                    </button>
+                  </form>
+                </div>
               </div>
             )
           ) : (
