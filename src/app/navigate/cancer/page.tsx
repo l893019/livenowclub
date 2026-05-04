@@ -116,17 +116,34 @@ export default function NavigateCancerPage() {
           <p>
             A mix of practical guidance for navigating cancer diagnosis, treatment, and beyond combined with my own journey.
           </p>
+          <div style={{ marginTop: "24px" }}>
+            <Link
+              href="/read/expecting-the-unexpected"
+              className="btn btn--primary"
+              style={{ marginRight: "12px" }}
+            >
+              Read the Full Guide
+            </Link>
+            <a
+              href="/expecting-the-unexpected-guide.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn--secondary"
+            >
+              Download PDF
+            </a>
+          </div>
         </section>
 
         {/* Quick Links */}
         <section className="navigate-quick-links">
           <div className="quick-links-grid">
             {[
-              { href: "#just-diagnosed", num: "01", title: "Just Diagnosed", sub: "Start here" },
-              { href: "#during-treatment", num: "02", title: "During Treatment", sub: "Practical guidance" },
-              { href: "#for-caregivers", num: "03", title: "For Caregivers", sub: "Supporting someone" },
-              { href: "#living-with-uncertainty", num: "04", title: "Living with Uncertainty", sub: "Holding it loosely" },
-              { href: "#finding-meaning", num: "05", title: "Finding Meaning", sub: "Making sense of it" },
+              { href: "/read/expecting-the-unexpected#before-you-start-treatment", num: "01", title: "Just Diagnosed", sub: "Start here" },
+              { href: "/read/expecting-the-unexpected#treatment", num: "02", title: "During Treatment", sub: "Practical guidance" },
+              { href: "/read/expecting-the-unexpected#how-do-you-support-a-friend-with-cancer", num: "03", title: "For Caregivers", sub: "Supporting someone" },
+              { href: "/read/expecting-the-unexpected#survivorship", num: "04", title: "Living with Uncertainty", sub: "Holding it loosely" },
+              { href: "/read/expecting-the-unexpected#core-principles", num: "05", title: "Core Principles", sub: "Essential guidance" },
             ].map((item) => (
               <Link key={item.href} href={item.href} className="quick-link-card">
                 <span className="quick-link-number">{item.num}</span>

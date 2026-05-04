@@ -8,7 +8,7 @@ If you’re going through this, I hope something here helps. If someone you love
 
 I'm also opening up the chat for anyone else who may be going through something like this and wants to share what's helping them **live now, live fully**.
 
-Please pass this along to anyone who could use it ❤️. A pdf version is [here](https://static1.squarespace.com/static/68baddbc65e901527cbfd30f/t/693ee015670f423dc00de98e/1765728277861/Expecting+the+Unexpected+LNC+VF.pdf). 
+Please pass this along to anyone who could use it ❤️. A pdf version is [here](/expecting-the-unexpected-guide.pdf). 
 
 > *Thank you to Bibi for inspiring me to do this, my sister for encouraging me, and Alexandra, MC, and my mom for sanity-checking.*
 
