@@ -2646,6 +2646,20 @@
           <p class="chart-source">Based on 208 science fiction books, 1895–2024</p>
         </div>
       </div>
+
+      <div class="chart-grid">
+        <div class="chart-block">
+          <h3 class="chart-title">What Is Education For?</h3>
+          <div class="immersive-chart" id="chart-education"></div>
+          <p class="chart-source">Based on 208 science fiction books, 1895–2024</p>
+        </div>
+
+        <div class="chart-block">
+          <h3 class="chart-title">What Replaces Traditional Schools?</h3>
+          <div class="immersive-chart" id="chart-schools"></div>
+          <p class="chart-source">Based on 208 science fiction books, 1895–2024</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -3294,6 +3308,21 @@
         { label: 'Post-money', pct: 14, color: '#9b8fef' },
         { label: 'Gift', pct: 14, color: '#3db9a4' },
         { label: 'Capitalism', pct: 5, color: '#ff6b6b' }
+      ],
+      education: [
+        { label: 'Character & self-actualization', pct: 57, color: '#e8178a' },
+        { label: 'Conditioning & control', pct: 18, color: '#f4a03f' },
+        { label: 'Lifelong practice', pct: 11, color: '#9b8fef' },
+        { label: 'Absent or irrelevant', pct: 8, color: '#3db9a4' },
+        { label: 'Mentorship & transmission', pct: 4, color: '#ff6b6b' },
+        { label: 'Sorting & class', pct: 2, color: '#a29bfe' }
+      ],
+      schools: [
+        { label: 'Education obsolete', pct: 46, color: '#e8178a' },
+        { label: 'AI tutors', pct: 27, color: '#f4a03f' },
+        { label: 'Apprenticeship guilds', pct: 25, color: '#9b8fef' },
+        { label: 'Schools unchanged', pct: 1, color: '#3db9a4' },
+        { label: 'Direct knowledge transfer', pct: 1, color: '#ff6b6b' }
       ]
     };
 
@@ -3309,7 +3338,9 @@
       ending: { field: 'response', labelMap: { 'Acceptance': 'acceptance', 'Reform': 'reform', 'Rejection': 'rejection', 'Transcendence': 'transcendence', 'Restlessness': 'restlessness' }},
       death: { field: 'deathRole', labelMap: { 'Gives meaning': 'meaning', 'Problem to solve': 'endpoint', 'Irrelevant': 'irrelevant', 'Transcended': 'transcended' }},
       worthLiving: { field: 'worthLiving', labelMap: { 'Connection': 'connection', 'Struggle': 'struggle', 'Creation': 'creation', 'Discovery': 'discovery', 'Transcendence': 'transcendence' }},
-      econ: { field: 'econ', labelMap: { 'Hybrid': 'hybrid', 'Market': 'market', 'Post-money': 'post-money', 'Gift': 'gift', 'Capitalism': 'capitalism' }}
+      econ: { field: 'econ', labelMap: { 'Hybrid': 'hybrid', 'Market': 'market', 'Post-money': 'post-money', 'Gift': 'gift', 'Capitalism': 'capitalism' }},
+      education: { field: 'educationPurpose', labelMap: { 'Character & self-actualization': 'character-actualization', 'Conditioning & control': 'conditioning-control', 'Lifelong practice': 'lifelong-practice', 'Absent or irrelevant': 'absent-irrelevant', 'Mentorship & transmission': 'mentorship-transmission', 'Sorting & class': 'sorting-class' }},
+      schools: { field: 'schoolReplacement', labelMap: { 'Education obsolete': 'obsolete', 'AI tutors': 'ai-tutors', 'Apprenticeship guilds': 'apprenticeship', 'Schools unchanged': 'unchanged', 'Direct knowledge transfer': 'direct-transfer' }}
     };
 
     // Get nested field value from book

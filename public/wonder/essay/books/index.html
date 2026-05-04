@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reading List: My Favorite Sci-Fi Books | The Live Now Club</title>
+  <meta name="description" content="28 essential science fiction books about meaning, work, and what it means to be human.">
+
+  <!-- Analytics -->
+  <script>(function(){fetch("/api/track",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({page:window.location.pathname,referrer:document.referrer})}).catch(function(){});})();</script>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Reading List: My Favorite Sci-Fi Books">
+  <meta property="og:description" content="28 essential science fiction books about meaning, work, and what it means to be human.">
+  <meta property="og:image" content="https://livenowclub.vercel.app/wonder/assets/landscapes/optimized/1.jpg">
+  <meta property="og:url" content="https://livenowclub.vercel.app/wonder/essay/books">
+  <meta property="og:type" content="article">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Reading List: My Favorite Sci-Fi Books">
+  <meta name="twitter:description" content="28 essential science fiction books about meaning, work, and what it means to be human.">
+  <meta name="twitter:image" content="https://livenowclub.vercel.app/wonder/assets/landscapes/optimized/1.jpg">
+
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #faf6f1;
+      --bg: #fffbf7;
+      --bg-elevated: #fff;
+      --bg-card: #fff;
+      --text: #2d2a26;
+      --text-dim: rgba(45,42,38,0.7);
+      --text-muted: rgba(45,42,38,0.45);
+      --accent-pink: #e8178a;
+      --accent-coral: #ff6b6b;
+      --accent-gold: #f4a03f;
+      --accent-orange: #fd9644;
+      --accent-teal: #3db9a4;
+      --accent-lavender: #9b8fef;
+      --accent-green: #7ed6a4;
+      --sans: 'Satoshi', system-ui, sans-serif;
+      --mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+      --border: rgba(232,23,138,0.12);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg-deep);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.75;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    ::selection { background: var(--accent-pink); color: #fff; }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    .header {
+      margin-bottom: 48px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent-pink);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 32px;
+      transition: gap 0.2s ease;
+    }
+
+    .back-link:hover {
+      gap: 4px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .intro {
+      background: rgba(232,23,138,0.03);
+      border-left: 3px solid var(--accent-pink);
+      padding: 20px 24px;
+      margin-bottom: 48px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--text);
+    }
+
+    .books-list {
+      margin-bottom: 56px;
+    }
+
+    .book {
+      margin-bottom: 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(232,23,138,0.08);
+    }
+
+    .book:last-child {
+      border-bottom: none;
+    }
+
+    .book-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .book-info {
+      flex: 1;
+    }
+
+    .book-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+
+    .book-author {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+
+    .book-year {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-family: var(--mono);
+    }
+
+    .book-link {
+      background: var(--accent-pink);
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      display: inline-block;
+    }
+
+    .book-link:hover {
+      background: #c91377;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(232,23,138,0.2);
+    }
+
+    .footer {
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 2px solid var(--border);
+      text-align: center;
+    }
+
+    .footer-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .footer-link {
+      color: var(--accent-pink);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .book-header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .book-link {
+        align-self: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <a href="/wonder/essay" class="back-link">← Back to essay</a>
+      <h1>Reading List</h1>
+      <p class="subtitle">My favorite science fiction books about meaning, work, and what it means to be human</p>
+    </div>
+
+    <div class="intro">
+      These 28 books shaped my thinking for the wonder essay. They explore what happens when the fundamental variables of human life shift—when we no longer need to work, when scarcity dissolves, when anything becomes possible. Each one asks: what remains?
+    </div>
+
+    <div class="books-list">
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">A Psalm for the Wild-Built</div>
+            <div class="book-author">Becky Chambers</div>
+            <div class="book-year">2021</div>
+          </div>
+          <a href="https://www.amazon.com/dp/1250236215?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">Hyperion</div>
+            <div class="book-author">Dan Simmons</div>
+            <div class="book-year">1989</div>
+          </div>
+          <a href="https://www.amazon.com/dp/0553283685?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">Diaspora</div>
+            <div class="book-author">Greg Egan</div>
+            <div class="book-year">1997</div>
+          </div>
+          <a href="https://www.amazon.com/dp/0575082097?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">Permutation City</div>
+            <div class="book-author">Greg Egan</div>
+            <div class="book-year">1994</div>
+          </div>
+          <a href="https://www.amazon.com/dp/1597805394?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">The Causal Angel</div>
+            <div class="book-author">Hannu Rajaniemi</div>
+            <div class="book-year">2014</div>
+          </div>
+          <a href="https://www.amazon.com/dp/0765329549?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">The Fractal Prince</div>
+            <div class="book-author">Hannu Rajaniemi</div>
+            <div class="book-year">2012</div>
+          </div>
+          <a href="https://www.amazon.com/dp/0765329514?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">The Quantum Thief</div>
+            <div class="book-author">Hannu Rajaniemi</div>
+            <div class="book-year">2010</div>
+          </div>
+          <a href="https://www.amazon.com/dp/0765367564?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">Consider Phlebas</div>
+            <div class="book-author">Iain M. Banks</div>
+            <div class="book-year">1987</div>
+          </div>
+          <a href="https://www.amazon.com/dp/031600538X?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">The Player of Games</div>
+            <div class="book-author">Iain M. Banks</div>
+            <div class="book-year">1988</div>
+          </div>
+          <a href="https://www.amazon.com/dp/0316005401?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">Klara and the Sun</div>
+            <div class="book-author">Kazuo Ishiguro</div>
+            <div class="book-year">2021</div>
+          </div>
+          <a href="https://www.amazon.com/dp/059331817X?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">Never Let Me Go</div>
+            <div class="book-author">Kazuo Ishiguro</div>
+            <div class="book-year">2005</div>
+          </div>
+          <a href="https://www.amazon.com/dp/1400078776?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">Player Piano</div>
+            <div class="book-author">Kurt Vonnegut</div>
+            <div class="book-year">1952</div>
+          </div>
+          <a href="https://www.amazon.com/dp/0385333781?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">Death's End</div>
+            <div class="book-author">Liu Cixin</div>
+            <div class="book-year">2010</div>
+          </div>
+          <a href="https://www.amazon.com/dp/0765386631?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">The Dark Forest</div>
+            <div class="book-author">Liu Cixin</div>
+            <div class="book-year">2008</div>
+          </div>
+          <a href="https://www.amazon.com/dp/0765386690?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">The Three-Body Problem</div>
+            <div class="book-author">Liu Cixin</div>
+            <div class="book-year">2008</div>
+          </div>
+          <a href="https://www.amazon.com/dp/0765382032?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">The Diamond Age</div>
+            <div class="book-author">Neal Stephenson</div>
+            <div class="book-year">1995</div>
+          </div>
+          <a href="https://www.amazon.com/dp/0553380966?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">Parable of the Sower</div>
+            <div class="book-author">Octavia Butler</div>
+            <div class="book-year">1993</div>
+          </div>
+          <a href="https://www.amazon.com/dp/1538732181?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">Piranesi</div>
+            <div class="book-author">Susanna Clarke</div>
+            <div class="book-year">2020</div>
+          </div>
+          <a href="https://www.amazon.com/dp/1635575680?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">Anxiety Is the Dizziness of Freedom</div>
+            <div class="book-author">Ted Chiang</div>
+            <div class="book-year">2019</div>
+          </div>
+          <a href="https://www.amazon.com/dp/1101972122?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">Exhalation</div>
+            <div class="book-author">Ted Chiang</div>
+            <div class="book-year">2019</div>
+          </div>
+          <a href="https://www.amazon.com/dp/1101947888?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">Stories of Your Life and Others</div>
+            <div class="book-author">Ted Chiang</div>
+            <div class="book-year">2002</div>
+          </div>
+          <a href="https://www.amazon.com/dp/1101972122?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">Story of Your Life</div>
+            <div class="book-author">Ted Chiang</div>
+            <div class="book-year">1998</div>
+          </div>
+          <a href="https://www.amazon.com/dp/1101972122?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">The Lifecycle of Software Objects</div>
+            <div class="book-author">Ted Chiang</div>
+            <div class="book-year">2010</div>
+          </div>
+          <a href="https://www.amazon.com/dp/1596063173?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">The Dispossessed</div>
+            <div class="book-author">Ursula K. Le Guin</div>
+            <div class="book-year">1974</div>
+          </div>
+          <a href="https://www.amazon.com/dp/0060512750?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">The Lathe of Heaven</div>
+            <div class="book-author">Ursula K. Le Guin</div>
+            <div class="book-year">1971</div>
+          </div>
+          <a href="https://www.amazon.com/dp/1416556966?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">The Ones Who Walk Away from Omelas</div>
+            <div class="book-author">Ursula K. Le Guin</div>
+            <div class="book-year">1973</div>
+          </div>
+          <a href="https://www.amazon.com/dp/0060914343?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">A Fire Upon the Deep</div>
+            <div class="book-author">Vernor Vinge</div>
+            <div class="book-year">1992</div>
+          </div>
+          <a href="https://www.amazon.com/dp/0812515285?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">Rainbows End</div>
+            <div class="book-author">Vernor Vinge</div>
+            <div class="book-year">2006</div>
+          </div>
+          <a href="https://www.amazon.com/dp/0812536363?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-header">
+          <div class="book-info">
+            <div class="book-title">Neuromancer</div>
+            <div class="book-author">William Gibson</div>
+            <div class="book-year">1984</div>
+          </div>
+          <a href="https://www.amazon.com/dp/0441569595?tag=livenowclub0f-20" class="book-link" target="_blank" rel="noopener">Get Book</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p class="footer-text">
+        These books are part of my <a href="/wonder/essay" class="footer-link">wonder essay</a> on searching for meaning in science fiction.<br>
+        <small>This page contains Amazon affiliate links. If you purchase through these links, I may earn a small commission at no additional cost to you.</small>
+      </p>
+    </div>
+  </div>
+</body>
+</html>

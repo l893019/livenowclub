@@ -1,0 +1,22 @@
+{
+  "categories": {
+    "educationPurpose": {
+      "character-actualization": "Education for personal growth, identity formation, self-discovery, transformation",
+      "lifelong-practice": "Continuous learning as an ongoing process without endpoint, discovery-driven",
+      "sorting-class": "Hierarchical selection, meritocracy, class stratification through education/testing",
+      "conditioning-control": "Behavioral programming, social control, indoctrination, engineered compliance",
+      "mentorship-transmission": "Personal teaching relationships, craft knowledge passed through human connection",
+      "absent-irrelevant": "Education not addressed or irrelevant to the story/world"
+    },
+    "schoolReplacement": {
+      "virtual-neural": "Virtual academies, neural simulations, cyberspace learning environments",
+      "ai-tutors": "AI-driven teaching, machine educators, automated instruction",
+      "direct-transfer": "Mind uploading, neural downloads, direct knowledge implantation",
+      "apprenticeship": "Craft-based learning, guild systems, master-apprentice relationships",
+      "self-organized": "Community-driven learning, voluntary collectives, peer education",
+      "unchanged": "Traditional schools, universities, academies still exist",
+      "obsolete": "No formal education structures, learning happens informally or not at all"
+    }
+  },
+  "manual_reviews": {}
+}

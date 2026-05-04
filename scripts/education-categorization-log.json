@@ -1,0 +1,2290 @@
+[
+  {
+    "index": 1,
+    "title": "Too Like the Lightning",
+    "year": 2016,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 2,
+    "title": "Service Model",
+    "year": 2024,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 3,
+    "title": "Revelation Space",
+    "year": 2000,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 4,
+    "title": "Pushing Ice",
+    "year": 2005,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 5,
+    "title": "House of Suns",
+    "year": 2008,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 6,
+    "title": "Brave New World",
+    "year": 1932,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 7,
+    "title": "The Demolished Man",
+    "year": 1953,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 8,
+    "title": "The Stars My Destination",
+    "year": 1956,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 9,
+    "title": "The Martian",
+    "year": 2011,
+    "purpose": "lifelong-practice",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Continuous learning/discovery/problem-solving",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 10,
+    "title": "Project Hail Mary",
+    "year": 2021,
+    "purpose": "lifelong-practice",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Continuous learning/discovery/problem-solving",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 11,
+    "title": "Ancillary Justice",
+    "year": 2013,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 12,
+    "title": "Ancillary Sword",
+    "year": 2014,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 13,
+    "title": "Ancillary Mercy",
+    "year": 2015,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 14,
+    "title": "Translation State",
+    "year": 2023,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 15,
+    "title": "A Clockwork Orange",
+    "year": 1962,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 16,
+    "title": "Hard to Be a God",
+    "year": 1964,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 17,
+    "title": "Roadside Picnic",
+    "year": 1972,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 18,
+    "title": "The Doomed City",
+    "year": 1989,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 19,
+    "title": "A Memory Called Empire",
+    "year": 2019,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 20,
+    "title": "A Desolation Called Peace",
+    "year": 2021,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 21,
+    "title": "Childhood's End",
+    "year": 1953,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 22,
+    "title": "2001: A Space Odyssey",
+    "year": 1968,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 23,
+    "title": "Rendezvous with Rama",
+    "year": 1973,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 24,
+    "title": "The Long Way to a Small, Angry Planet",
+    "year": 2014,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 25,
+    "title": "A Closed and Common Orbit",
+    "year": 2016,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 26,
+    "title": "Record of a Spaceborn Few",
+    "year": 2018,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 27,
+    "title": "A Psalm for the Wild-Built",
+    "year": 2021,
+    "purpose": "absent-irrelevant",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Education not central to the narrative",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 28,
+    "title": "The Galaxy, and the Ground Within",
+    "year": 2021,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 29,
+    "title": "Schismatrix Plus",
+    "year": 1985,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 30,
+    "title": "Islands in the Net",
+    "year": 1988,
+    "purpose": "absent-irrelevant",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Education not central to the narrative",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 31,
+    "title": "Distraction",
+    "year": 1998,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 32,
+    "title": "Downbelow Station",
+    "year": 1981,
+    "purpose": "lifelong-practice",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Continuous learning/discovery/problem-solving",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 33,
+    "title": "Cyteen",
+    "year": 1988,
+    "purpose": "conditioning-control",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 34,
+    "title": "Contact",
+    "year": 1985,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 35,
+    "title": "Singularity Sky",
+    "year": 2003,
+    "purpose": "lifelong-practice",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Continuous learning/discovery/problem-solving",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 36,
+    "title": "Iron Sunrise",
+    "year": 2004,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 37,
+    "title": "Accelerando",
+    "year": 2005,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 38,
+    "title": "Glasshouse",
+    "year": 2006,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 39,
+    "title": "Perdido Street Station",
+    "year": 2000,
+    "purpose": "conditioning-control",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 40,
+    "title": "The Scar",
+    "year": 2002,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 41,
+    "title": "Iron Council",
+    "year": 2004,
+    "purpose": "lifelong-practice",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Continuous learning/discovery/problem-solving",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 42,
+    "title": "The City & The City",
+    "year": 2009,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 43,
+    "title": "Embassytown",
+    "year": 2011,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 44,
+    "title": "City",
+    "year": 1952,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 45,
+    "title": "Way Station",
+    "year": 1963,
+    "purpose": "mentorship-transmission",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Personal teaching/craft transmission/mentorship",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 46,
+    "title": "The Road",
+    "year": 2006,
+    "purpose": "mentorship-transmission",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Personal teaching/craft transmission/mentorship",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 47,
+    "title": "Down and Out in the Magic Kingdom",
+    "year": 2003,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 48,
+    "title": "Walkaway",
+    "year": 2017,
+    "purpose": "lifelong-practice",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Continuous learning/discovery/problem-solving",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 49,
+    "title": "The Bezzle",
+    "year": 2024,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 50,
+    "title": "Hyperion",
+    "year": 1989,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 51,
+    "title": "Flowers for Algernon",
+    "year": 1966,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 52,
+    "title": "The Hitchhiker's Guide to the Galaxy",
+    "year": 1979,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 53,
+    "title": "The Machine Stops",
+    "year": 1909,
+    "purpose": "lifelong-practice",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Continuous learning/discovery/problem-solving",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 54,
+    "title": "Station Eleven",
+    "year": 2014,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 55,
+    "title": "Ecotopia",
+    "year": 1975,
+    "purpose": "lifelong-practice",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Continuous learning/discovery/problem-solving",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 56,
+    "title": "Dune",
+    "year": 1965,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 57,
+    "title": "Dune Messiah",
+    "year": 1969,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 58,
+    "title": "Children of Dune",
+    "year": 1976,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 59,
+    "title": "God Emperor of Dune",
+    "year": 1981,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 60,
+    "title": "Man Plus",
+    "year": 1976,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 61,
+    "title": "Gateway",
+    "year": 1977,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 62,
+    "title": "Jem",
+    "year": 1979,
+    "purpose": "absent-irrelevant",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Education not central to the narrative",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 63,
+    "title": "The Space Merchants",
+    "year": 1953,
+    "purpose": "lifelong-practice",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Continuous learning/discovery/problem-solving",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 64,
+    "title": "The Book of the New Sun",
+    "year": 1983,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 65,
+    "title": "Nineteen Eighty-Four",
+    "year": 1949,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 66,
+    "title": "Quarantine",
+    "year": 1992,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 67,
+    "title": "Permutation City",
+    "year": 1994,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 68,
+    "title": "Distress",
+    "year": 1995,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 69,
+    "title": "Diaspora",
+    "year": 1997,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 70,
+    "title": "Schild's Ladder",
+    "year": 2002,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 71,
+    "title": "The Time Machine",
+    "year": 1895,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 72,
+    "title": "The Island of Doctor Moreau",
+    "year": 1896,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 73,
+    "title": "The War of the Worlds",
+    "year": 1898,
+    "purpose": "absent-irrelevant",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Education not central to the narrative",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 74,
+    "title": "The Quantum Thief",
+    "year": 2010,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 75,
+    "title": "The Fractal Prince",
+    "year": 2012,
+    "purpose": "character-actualization",
+    "replacement": "direct-transfer",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Direct knowledge transfer/uploading"
+    }
+  },
+  {
+    "index": 76,
+    "title": "The Causal Angel",
+    "year": 2014,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 77,
+    "title": "The Glass Bead Game",
+    "year": 1943,
+    "purpose": "lifelong-practice",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Continuous learning/discovery/problem-solving",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 78,
+    "title": "Consider Phlebas",
+    "year": 1987,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 79,
+    "title": "The Player of Games",
+    "year": 1988,
+    "purpose": "conditioning-control",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 80,
+    "title": "The State of the Art",
+    "year": 1989,
+    "purpose": "absent-irrelevant",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Education not central to the narrative",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 81,
+    "title": "Use of Weapons",
+    "year": 1990,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 82,
+    "title": "Excession",
+    "year": 1996,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 83,
+    "title": "Inversions",
+    "year": 1998,
+    "purpose": "mentorship-transmission",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Personal teaching/craft transmission/mentorship",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 84,
+    "title": "Look to Windward",
+    "year": 2000,
+    "purpose": "mentorship-transmission",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Personal teaching/craft transmission/mentorship",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 85,
+    "title": "Matter",
+    "year": 2008,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 86,
+    "title": "Surface Detail",
+    "year": 2010,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 87,
+    "title": "The Hydrogen Sonata",
+    "year": 2012,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 88,
+    "title": "I, Robot",
+    "year": 1950,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 89,
+    "title": "Foundation",
+    "year": 1951,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 90,
+    "title": "The Caves of Steel",
+    "year": 1954,
+    "purpose": "conditioning-control",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 91,
+    "title": "The End of Eternity",
+    "year": 1955,
+    "purpose": "absent-irrelevant",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Education not central to the narrative",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 92,
+    "title": "The Female Man",
+    "year": 1975,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 93,
+    "title": "The Forever War",
+    "year": 1974,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 94,
+    "title": "Stand on Zanzibar",
+    "year": 1968,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 95,
+    "title": "The Sheep Look Up",
+    "year": 1972,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 96,
+    "title": "The Shockwave Rider",
+    "year": 1975,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 97,
+    "title": "The Light Brigade",
+    "year": 2019,
+    "purpose": "absent-irrelevant",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Education not central to the narrative",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 98,
+    "title": "Never Let Me Go",
+    "year": 2005,
+    "purpose": "conditioning-control",
+    "replacement": "unchanged",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Traditional educational institutions exist"
+    }
+  },
+  {
+    "index": 99,
+    "title": "Klara and the Sun",
+    "year": 2021,
+    "purpose": "conditioning-control",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 100,
+    "title": "The Star Fraction",
+    "year": 1995,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 101,
+    "title": "The Cassini Division",
+    "year": 1998,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 102,
+    "title": "The Wild Shore",
+    "year": 1984,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 103,
+    "title": "The Gold Coast",
+    "year": 1988,
+    "purpose": "lifelong-practice",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Continuous learning/discovery/problem-solving",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 104,
+    "title": "Pacific Edge",
+    "year": 1990,
+    "purpose": "mentorship-transmission",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Personal teaching/craft transmission/mentorship",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 105,
+    "title": "Red Mars",
+    "year": 1992,
+    "purpose": "lifelong-practice",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Continuous learning/discovery/problem-solving",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 106,
+    "title": "Green Mars",
+    "year": 1993,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 107,
+    "title": "Blue Mars",
+    "year": 1996,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 108,
+    "title": "2312",
+    "year": 2012,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 109,
+    "title": "Aurora",
+    "year": 2015,
+    "purpose": "absent-irrelevant",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Education not central to the narrative",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 110,
+    "title": "New York 2140",
+    "year": 2017,
+    "purpose": "lifelong-practice",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Continuous learning/discovery/problem-solving",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 111,
+    "title": "The Ministry for the Future",
+    "year": 2020,
+    "purpose": "absent-irrelevant",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Education not central to the narrative",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 112,
+    "title": "Player Piano",
+    "year": 1952,
+    "purpose": "conditioning-control",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 113,
+    "title": "The Sirens of Titan",
+    "year": 1959,
+    "purpose": "absent-irrelevant",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Education not central to the narrative",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 114,
+    "title": "Cat's Cradle",
+    "year": 1963,
+    "purpose": "mentorship-transmission",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Personal teaching/craft transmission/mentorship",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 115,
+    "title": "Slaughterhouse-Five",
+    "year": 1969,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 116,
+    "title": "Ringworld",
+    "year": 1970,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 117,
+    "title": "The Three-Body Problem",
+    "year": 2008,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 118,
+    "title": "The Dark Forest",
+    "year": 2008,
+    "purpose": "absent-irrelevant",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Education not central to the narrative",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 119,
+    "title": "Death's End",
+    "year": 2010,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 120,
+    "title": "The Handmaid's Tale",
+    "year": 1985,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 121,
+    "title": "Oryx and Crake",
+    "year": 2003,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 122,
+    "title": "The Year of the Flood",
+    "year": 2009,
+    "purpose": "lifelong-practice",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Continuous learning/discovery/problem-solving",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 123,
+    "title": "MaddAddam",
+    "year": 2013,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 124,
+    "title": "Woman on the Edge of Time",
+    "year": 1976,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 125,
+    "title": "System Collapse",
+    "year": 2023,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 126,
+    "title": "The Fifth Season",
+    "year": 2015,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 127,
+    "title": "The Obelisk Gate",
+    "year": 2016,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 128,
+    "title": "The Stone Sky",
+    "year": 2017,
+    "purpose": "mentorship-transmission",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Personal teaching/craft transmission/mentorship",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 129,
+    "title": "The Power",
+    "year": 2016,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 130,
+    "title": "Snow Crash",
+    "year": 1992,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 131,
+    "title": "The Diamond Age",
+    "year": 1995,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 132,
+    "title": "Anathem",
+    "year": 2008,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 133,
+    "title": "Seveneves",
+    "year": 2015,
+    "purpose": "lifelong-practice",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Continuous learning/discovery/problem-solving",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 134,
+    "title": "Binti",
+    "year": 2015,
+    "purpose": "character-actualization",
+    "replacement": "unchanged",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Traditional educational institutions exist"
+    }
+  },
+  {
+    "index": 135,
+    "title": "Kindred",
+    "year": 1979,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 136,
+    "title": "Wild Seed",
+    "year": 1980,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 137,
+    "title": "Bloodchild",
+    "year": 1984,
+    "purpose": "absent-irrelevant",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Education not central to the narrative",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 138,
+    "title": "Dawn",
+    "year": 1987,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 139,
+    "title": "Adulthood Rites",
+    "year": 1988,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 140,
+    "title": "Imago",
+    "year": 1989,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 141,
+    "title": "Parable of the Sower",
+    "year": 1993,
+    "purpose": "lifelong-practice",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Continuous learning/discovery/problem-solving",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 142,
+    "title": "Parable of the Talents",
+    "year": 1998,
+    "purpose": "mentorship-transmission",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Personal teaching/craft transmission/mentorship",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 143,
+    "title": "Ender's Game",
+    "year": 1985,
+    "purpose": "sorting-class",
+    "replacement": "unchanged",
+    "reasoning": {
+      "purpose": "Educational selection/hierarchy/testing mechanism",
+      "replacement": "Traditional educational institutions exist"
+    }
+  },
+  {
+    "index": 144,
+    "title": "Starfish",
+    "year": 1999,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 145,
+    "title": "Blindsight",
+    "year": 2006,
+    "purpose": "conditioning-control",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 146,
+    "title": "Echopraxia",
+    "year": 2014,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 147,
+    "title": "The Freeze-Frame Revolution",
+    "year": 2018,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 148,
+    "title": "The Man in the High Castle",
+    "year": 1962,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 149,
+    "title": "Do Androids Dream of Electric Sheep?",
+    "year": 1968,
+    "purpose": "conditioning-control",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 150,
+    "title": "Ubik",
+    "year": 1969,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 151,
+    "title": "A Scanner Darkly",
+    "year": 1977,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 152,
+    "title": "VALIS",
+    "year": 1981,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 153,
+    "title": "Fahrenheit 451",
+    "year": 1953,
+    "purpose": "lifelong-practice",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Continuous learning/discovery/problem-solving",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 154,
+    "title": "The Mountain in the Sea",
+    "year": 2022,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 155,
+    "title": "Altered Carbon",
+    "year": 2002,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 156,
+    "title": "Spin",
+    "year": 2005,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 157,
+    "title": "Double Star",
+    "year": 1956,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 158,
+    "title": "Starship Troopers",
+    "year": 1959,
+    "purpose": "sorting-class",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Educational selection/hierarchy/testing mechanism",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 159,
+    "title": "Stranger in a Strange Land",
+    "year": 1961,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 160,
+    "title": "The Moon Is a Harsh Mistress",
+    "year": 1966,
+    "purpose": "absent-irrelevant",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Education not central to the narrative",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 161,
+    "title": "Time Enough for Love",
+    "year": 1973,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 162,
+    "title": "Dying Inside",
+    "year": 1972,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 163,
+    "title": "Lord Valentine's Castle",
+    "year": 1980,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 164,
+    "title": "Lord of Light",
+    "year": 1967,
+    "purpose": "sorting-class",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Educational selection/hierarchy/testing mechanism",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 165,
+    "title": "Babel-17",
+    "year": 1966,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 166,
+    "title": "Empire Star",
+    "year": 1966,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 167,
+    "title": "The Einstein Intersection",
+    "year": 1967,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 168,
+    "title": "Nova",
+    "year": 1968,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 169,
+    "title": "Dhalgren",
+    "year": 1975,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 170,
+    "title": "Trouble on Triton",
+    "year": 1976,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 171,
+    "title": "Stars in My Pocket Like Grains of Sand",
+    "year": 1984,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 172,
+    "title": "Solaris",
+    "year": 1961,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 173,
+    "title": "The Cyberiad",
+    "year": 1965,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 174,
+    "title": "His Master's Voice",
+    "year": 1968,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 175,
+    "title": "The Futurological Congress",
+    "year": 1971,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 176,
+    "title": "Piranesi",
+    "year": 2020,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 177,
+    "title": "Story of Your Life",
+    "year": 1998,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 178,
+    "title": "Stories of Your Life and Others",
+    "year": 2002,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 179,
+    "title": "Exhalation",
+    "year": 2008,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 180,
+    "title": "The Lifecycle of Software Objects",
+    "year": 2010,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 181,
+    "title": "Anxiety Is the Dizziness of Freedom",
+    "year": 2019,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 182,
+    "title": "More Than Human",
+    "year": 1953,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 183,
+    "title": "The Left Hand of Darkness",
+    "year": 1969,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 184,
+    "title": "The Lathe of Heaven",
+    "year": 1971,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 185,
+    "title": "The Word for World is Forest",
+    "year": 1972,
+    "purpose": "absent-irrelevant",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Education not central to the narrative",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 186,
+    "title": "The Ones Who Walk Away from Omelas",
+    "year": 1973,
+    "purpose": "absent-irrelevant",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Education not central to the narrative",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 187,
+    "title": "The Dispossessed",
+    "year": 1974,
+    "purpose": "lifelong-practice",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Continuous learning/discovery/problem-solving",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 188,
+    "title": "Always Coming Home",
+    "year": 1985,
+    "purpose": "lifelong-practice",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Continuous learning/discovery/problem-solving",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 189,
+    "title": "Tehanu",
+    "year": 1990,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 190,
+    "title": "Four Ways to Forgiveness",
+    "year": 1995,
+    "purpose": "sorting-class",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Educational selection/hierarchy/testing mechanism",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 191,
+    "title": "The Telling",
+    "year": 2000,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 192,
+    "title": "The Birthday of the World",
+    "year": 2002,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 193,
+    "title": "The Peace War",
+    "year": 1984,
+    "purpose": "lifelong-practice",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Continuous learning/discovery/problem-solving",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 194,
+    "title": "Marooned in Realtime",
+    "year": 1986,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 195,
+    "title": "A Fire Upon the Deep",
+    "year": 1992,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 196,
+    "title": "A Deepness in the Sky",
+    "year": 1999,
+    "purpose": "lifelong-practice",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Continuous learning/discovery/problem-solving",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 197,
+    "title": "Rainbows End",
+    "year": 2006,
+    "purpose": "character-actualization",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 198,
+    "title": "A Canticle for Leibowitz",
+    "year": 1959,
+    "purpose": "conditioning-control",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 199,
+    "title": "Neuromancer",
+    "year": 1984,
+    "purpose": "conditioning-control",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 200,
+    "title": "Count Zero",
+    "year": 1986,
+    "purpose": "conditioning-control",
+    "replacement": "virtual-neural",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Virtual/simulated learning environments"
+    }
+  },
+  {
+    "index": 201,
+    "title": "Mona Lisa Overdrive",
+    "year": 1988,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 202,
+    "title": "Virtual Light",
+    "year": 1993,
+    "purpose": "lifelong-practice",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Continuous learning/discovery/problem-solving",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 203,
+    "title": "Idoru",
+    "year": 1996,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 204,
+    "title": "All Tomorrow's Parties",
+    "year": 1999,
+    "purpose": "character-actualization",
+    "replacement": "apprenticeship",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "Craft/guild/apprenticeship systems"
+    }
+  },
+  {
+    "index": 205,
+    "title": "The Peripheral",
+    "year": 2014,
+    "purpose": "conditioning-control",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Social control/conditioning/programming",
+      "replacement": "Formal education absent/obsolete"
+    }
+  },
+  {
+    "index": 206,
+    "title": "Agency",
+    "year": 2020,
+    "purpose": "lifelong-practice",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Continuous learning/discovery/problem-solving",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 207,
+    "title": "The Difference Engine",
+    "year": 1990,
+    "purpose": "character-actualization",
+    "replacement": "ai-tutors",
+    "reasoning": {
+      "purpose": "Identity formation/self-discovery/transformation",
+      "replacement": "AI-mediated learning"
+    }
+  },
+  {
+    "index": 208,
+    "title": "We",
+    "year": 1924,
+    "purpose": "absent-irrelevant",
+    "replacement": "obsolete",
+    "reasoning": {
+      "purpose": "Education not central to the narrative",
+      "replacement": "Formal education absent/obsolete"
+    }
+  }
+]

@@ -10,6 +10,10 @@
       "destination": "/wonder/essay/quiz/explore/index.html"
     },
     {
+      "source": "/wonder/essay/books",
+      "destination": "/wonder/essay/books/index.html"
+    },
+    {
       "source": "/wonder/essay",
       "destination": "/wonder/essay/index.html"
     }
