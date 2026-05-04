@@ -53,6 +53,9 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
   const [identity, setIdentity] = useState<Identity | null>(null);
   const [userSlug, setUserSlug] = useState<string | null>(null);
   const [linkCopied, setLinkCopied] = useState(false);
+  const [savingName, setSavingName] = useState(false);
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
 
   // SINGLE SOURCE OF TRUTH: Load and calculate identity
   useEffect(() => {
@@ -195,6 +198,49 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
     ? identity.utopia
     : identity.utopia.replace(/^Their /i, "Your ");
 
+  const handleSaveName = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!userName.trim()) return;
+
+    setSavingName(true);
+    try {
+      const userId = localStorage.getItem("quiz-user-id");
+      const storedResult = localStorage.getItem("quiz-user-result");
+
+      if (!userId || !storedResult) {
+        alert("Please complete the quiz first");
+        return;
+      }
+
+      const userResult = JSON.parse(storedResult);
+      userResult.name = userName.trim();
+      if (userEmail.trim()) {
+        userResult.email = userEmail.trim();
+      }
+
+      // Save to localStorage
+      localStorage.setItem("quiz-user-result", JSON.stringify(userResult));
+
+      // Save to API and get slug
+      const response = await fetch("/api/utopia/save-result", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ result: userResult }),
+      });
+
+      const data = await response.json();
+      if (data.slug) {
+        setUserSlug(data.slug);
+        localStorage.setItem("userSlug", data.slug);
+      }
+    } catch (error) {
+      console.error("Failed to save name:", error);
+      alert("Failed to save. Please try again.");
+    } finally {
+      setSavingName(false);
+    }
+  };
+
   return (
     <div className={styles.reading}>
       {/* Background landscape */}
@@ -232,30 +278,70 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
         </div>
       )}
 
-      {/* Share link */}
-      {userSlug && !isViewingOther && (
+      {/* Share section with three states */}
+      {!isViewingOther && (
         <div className={styles.yourWorldSection}>
-          <div className={styles.shareBox}>
-            <div className={styles.shareBoxRow}>
-              <span className={styles.shareBoxLink}>
-                livenowclub.vercel.app/meet/{userSlug}
-              </span>
-              <button
-                className={styles.shareBoxCopyButton}
-                onClick={() => {
-                  navigator.clipboard.writeText(`https://livenowclub.vercel.app/meet/${userSlug}`);
-                  setLinkCopied(true);
-                  setTimeout(() => setLinkCopied(false), 2000);
-                }}
-              >
-                {linkCopied ? "Copied!" : "Copy Link"}
-              </button>
-            </div>
-            <p className={styles.shareBoxHint}>Share with friends to see your compatibility</p>
-          </div>
-          <Link href="/me" className={styles.yourWorldLink}>
-            Go to Your World →
-          </Link>
+          {!userSlug ? (
+            // State 1 & 2: No slug yet - show name entry or saving
+            savingName ? (
+              <div className={styles.shareBox}>
+                <button className={styles.savingButton} disabled>
+                  ⟳ Saving...
+                </button>
+              </div>
+            ) : (
+              <div className={styles.shareBox}>
+                <h3 className={styles.shareTitle}>Share Your Worldview</h3>
+                <p className={styles.sharePrompt}>Enter your name to create your shareable link</p>
+                <form onSubmit={handleSaveName} className={styles.shareForm}>
+                  <input
+                    type="text"
+                    value={userName}
+                    onChange={(e) => setUserName(e.target.value)}
+                    placeholder="Your name"
+                    className={styles.shareInput}
+                    required
+                  />
+                  <input
+                    type="email"
+                    value={userEmail}
+                    onChange={(e) => setUserEmail(e.target.value)}
+                    placeholder="Email (optional)"
+                    className={styles.shareInput}
+                  />
+                  <button type="submit" className={styles.saveButton}>
+                    Save & Get Link
+                  </button>
+                </form>
+              </div>
+            )
+          ) : (
+            // State 3: Has slug - show share box
+            <>
+              <div className={styles.shareBox}>
+                <h3 className={styles.shareTitle}>Share Your Worldview</h3>
+                <div className={styles.shareBoxRow}>
+                  <span className={styles.shareBoxLink}>
+                    livenowclub.com/meet/{userSlug}
+                  </span>
+                  <button
+                    className={styles.shareBoxCopyButton}
+                    onClick={() => {
+                      navigator.clipboard.writeText(`https://livenowclub.com/meet/${userSlug}`);
+                      setLinkCopied(true);
+                      setTimeout(() => setLinkCopied(false), 2000);
+                    }}
+                  >
+                    {linkCopied ? "Copied!" : "Copy Link"}
+                  </button>
+                </div>
+                <p className={styles.shareBoxHint}>Share with friends to see your compatibility</p>
+              </div>
+              <Link href="/me" className={styles.yourWorldLink}>
+                Go to Your World →
+              </Link>
+            </>
+          )}
         </div>
       )}
 

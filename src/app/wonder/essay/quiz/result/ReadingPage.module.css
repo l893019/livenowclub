@@ -214,6 +214,69 @@
   text-align: center;
 }
 
+/* Share form (name entry state) */
+.shareTitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2d2a26;
+  margin: 0 0 0.5rem;
+}
+
+.sharePrompt {
+  font-size: 0.9rem;
+  color: rgba(45, 42, 38, 0.6);
+  margin: 0 0 1rem;
+}
+
+.shareForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.shareInput {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid rgba(232, 23, 138, 0.2);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: white;
+  font-family: inherit;
+}
+
+.shareInput:focus {
+  outline: none;
+  border-color: rgba(232, 23, 138, 0.4);
+}
+
+.saveButton {
+  background: linear-gradient(135deg, #e8178a 0%, #f4a03f 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.saveButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(232, 23, 138, 0.3);
+}
+
+.savingButton {
+  background: rgba(232, 23, 138, 0.3);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: not-allowed;
+}
+
 /* Utopia Card */
 .utopiaCard {
   background: white;
