@@ -31,11 +31,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
   }
 
+  const displayName = user.name === "Anonymous" ? "Someone" : user.name;
+
   return {
-    title: `${user.name} shared their worldview with you | Live Now Club`,
-    description: `${user.name} is ${identityName}. Take the quiz to discover yours and see where your worldviews intersect.`,
+    title: `${displayName} shared their worldview with you | Live Now Club`,
+    description: `${displayName} is ${identityName}. Take the quiz to discover yours and see where your worldviews intersect.`,
     openGraph: {
-      title: `${user.name} shared their worldview with you`,
+      title: `${displayName} shared their worldview with you`,
       description: `Take the worldview quiz to discover yours and see where you intersect.`,
       images: ["/wonder/assets/landscapes/optimized/1.jpg"],
     },
