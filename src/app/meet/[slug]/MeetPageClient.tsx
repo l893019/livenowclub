@@ -33,12 +33,12 @@ export function MeetPageClient({ targetUser }: Props) {
   const handleStartQuiz = () => {
     // Store target user ID for connection creation after quiz
     localStorage.setItem("connectWith", targetUser.id);
-    router.push("/wonder/essay");
+    window.location.href = "/wonder/essay";
   };
 
   const handleSeeConnection = () => {
     // Go directly to result with comparison
-    router.push(`/wonder/essay/quiz/result?compare=${targetUser.id}`);
+    window.location.href = `/wonder/essay/quiz/result?compare=${targetUser.id}`;
   };
 
   // Don't render CTA until we know quiz status
