@@ -5,6 +5,24 @@ import { identities } from '@/lib/identities';
 const redis = new Redis(process.env.REDIS_URL || '');
 
 export async function GET(request: NextRequest) {
+  // Admin API key validation
+  const apiKey = request.headers.get('x-admin-api-key')
+  const expectedKey = process.env.ADMIN_API_KEY
+
+  if (!expectedKey) {
+    return NextResponse.json(
+      { error: 'Server configuration error' },
+      { status: 500 }
+    )
+  }
+
+  if (!apiKey || apiKey !== expectedKey) {
+    return NextResponse.json(
+      { error: 'Unauthorized' },
+      { status: 401 }
+    )
+  }
+
   try {
     const searchParams = request.nextUrl.searchParams;
     const days = parseInt(searchParams.get('days') || '7');
