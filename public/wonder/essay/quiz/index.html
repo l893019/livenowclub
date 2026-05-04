@@ -2043,7 +2043,7 @@
       showScreen('screen-1');
     }
 
-    function answer(question, choice) {
+    async function answer(question, choice) {
       // Track answer
       userAnswers[question - 1] = choice;
 
@@ -2067,6 +2067,22 @@
           createdAt: userResult?.createdAt || new Date().toISOString()
         };
         localStorage.setItem('quiz-user-result', JSON.stringify(userResult));
+
+        // Save to API before showing result
+        try {
+          const saveResponse = await fetch('/api/utopia/save-result', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ result: userResult })
+          });
+          const saveData = await saveResponse.json();
+          if (saveData.slug) {
+            localStorage.setItem('userSlug', saveData.slug);
+          }
+        } catch (error) {
+          console.error('Failed to save result:', error);
+        }
+
         showResult();
       }
     }
@@ -2084,24 +2100,26 @@
       showScreen('screen-' + prevQuestion);
     }
 
-    function updateExistingResult() {
+    async function updateExistingResult() {
       // Update stored result
       userResult.answers = [...userAnswers];
 
       localStorage.setItem('quiz-user-result', JSON.stringify(userResult));
 
       // Save to API and capture slug
-      fetch('/api/utopia/save-result', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ result: userResult })
-      }).then(res => res.json())
-        .then(data => {
-          if (data.slug) {
-            localStorage.setItem('userSlug', data.slug);
-          }
-        })
-        .catch(console.error);
+      try {
+        const response = await fetch('/api/utopia/save-result', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ result: userResult })
+        });
+        const data = await response.json();
+        if (data.slug) {
+          localStorage.setItem('userSlug', data.slug);
+        }
+      } catch (error) {
+        console.error('Failed to save result:', error);
+      }
 
       showResult();
     }
