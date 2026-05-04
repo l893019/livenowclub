@@ -742,6 +742,28 @@
   color: #e8178a;
 }
 
+/* Quick Links */
+.quickLinks {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(45, 42, 38, 0.1);
+}
+
+.quickLink {
+  font-size: 0.9rem;
+  color: rgba(45, 42, 38, 0.7);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-weight: 500;
+}
+
+.quickLink:hover {
+  color: #e8178a;
+  text-decoration: underline;
+}
+
 /* Actions Row */
 .actionsRow {
   display: flex;

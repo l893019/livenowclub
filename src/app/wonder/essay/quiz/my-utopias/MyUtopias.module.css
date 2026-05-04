@@ -41,6 +41,19 @@
   margin: 0;
 }
 
+.backToMe {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: rgba(45, 42, 38, 0.6);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.backToMe:hover {
+  color: #e8178a;
+}
+
 /* Grid of utopia cards */
 .utopiasGrid {
   display: grid;

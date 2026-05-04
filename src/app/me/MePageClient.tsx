@@ -190,13 +190,16 @@ export function MePageClient() {
           )}
         </section>
 
-        {/* Groups Section - Placeholder for Phase 3 */}
+        {/* Groups Section */}
         <section className={styles.section}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Your Groups (0)</h2>
+            <h2 className={styles.sectionTitle}>Your Groups</h2>
+            <Link href="/wonder/essay/quiz/my-utopias" className={styles.seeAll}>
+              View all groups
+            </Link>
           </div>
           <div className={styles.emptyState}>
-            <p>Groups coming soon! Create groups from your connections.</p>
+            <p>Create groups from your connections to explore worldviews together.</p>
           </div>
         </section>
       </div>

@@ -58,6 +58,9 @@ export default function MyUtopiasPage() {
         <div className={styles.pageHeader}>
           <div className={styles.pageLabel}>Your Worlds</div>
           <h1 className={styles.pageTitle}>My Utopias</h1>
+          <Link href="/me" className={styles.backToMe}>
+            ← Back to Your World
+          </Link>
         </div>
 
         {loading && (

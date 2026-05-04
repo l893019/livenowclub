@@ -60,6 +60,9 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
   const [userEmail, setUserEmail] = useState("");
   const [hasUserName, setHasUserName] = useState(false);
 
+  // Also check URL params client-side for compareUserId (in case it was added dynamically)
+  const [effectiveCompareUserId, setEffectiveCompareUserId] = useState<string | undefined>(compareUserId);
+
   // SINGLE SOURCE OF TRUTH: Load and calculate identity
   useEffect(() => {
     const userId = localStorage.getItem("quiz-user-id");
@@ -94,15 +97,29 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
       return;
     }
 
-    // PRIORITY 2: If no answers prop but have userId, fetch from API
-    if (!userId) return;
+    // PRIORITY 3: If no answers prop but have userId, fetch from API
+    if (!userId) {
+      console.warn('No userId found in localStorage');
+      return;
+    }
 
     const abortController = new AbortController();
 
+    console.log('Fetching user data for userId:', userId);
     fetch(`/api/utopia/user/${userId}`, { signal: abortController.signal })
-      .then(res => res.json())
+      .then(res => {
+        console.log('API response status:', res.status);
+        if (!res.ok) {
+          throw new Error(`API returned ${res.status}`);
+        }
+        return res.json();
+      })
       .then(data => {
-        if (!data.user) return;
+        console.log('API response data:', data);
+        if (!data.user) {
+          console.warn('No user data in API response');
+          return;
+        }
 
         const user = data.user;
 
@@ -131,10 +148,15 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
             const foundIdentity = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIndex);
 
             if (foundIdentity) {
+              console.log('Identity calculated:', foundIdentity.name);
               setIdentity(foundIdentity);
               setReading(identityToReading(foundIdentity));
+            } else {
+              console.warn('Could not determine identity from dimensions');
             }
           }
+        } else {
+          console.warn('User answers missing or invalid:', user.answers);
         }
       })
       .catch((error) => {
@@ -164,16 +186,50 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
   useEffect(() => {
     const userId = localStorage.getItem("quiz-user-id");
 
-    // Check for compareUserId from URL params
-    if (compareUserId && userId && compareUserId !== userId) {
+    // Check for compareUserId from URL params OR sessionStorage (from /meet link)
+    let compareUserIdToUse = compareUserId;
+
+    // Also check URL params client-side in case they were added dynamically
+    if (!compareUserIdToUse && typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlCompare = urlParams.get('compare');
+      if (urlCompare) {
+        compareUserIdToUse = urlCompare;
+      }
+    }
+
+    if (!compareUserIdToUse) {
+      const storedCompareUserId = sessionStorage.getItem("relationship-compare");
+      if (storedCompareUserId) {
+        compareUserIdToUse = storedCompareUserId;
+        // Clear it after reading so it doesn't persist
+        sessionStorage.removeItem("relationship-compare");
+      }
+    }
+
+    if (compareUserIdToUse && userId && compareUserIdToUse !== userId) {
+      // Update state to show comparison UI immediately
+      setEffectiveCompareUserId(compareUserIdToUse);
+
+      // Create the connection (non-blocking - don't await)
       fetch('/api/connections/create', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           userId,
-          connectWithUserId: compareUserId,
+          connectWithUserId: compareUserIdToUse,
         }),
-      }).catch(console.error);
+      }).catch((err) => {
+        console.warn('Failed to create connection (non-critical):', err);
+        // Don't block the UI if this fails
+      });
+
+      // If we got the ID from sessionStorage, update the URL to show the comparison
+      if (!compareUserId && typeof window !== 'undefined') {
+        const url = new URL(window.location.href);
+        url.searchParams.set('compare', compareUserIdToUse);
+        window.history.replaceState({}, '', url.toString());
+      }
     }
   }, [compareUserId]);
 
@@ -512,6 +568,18 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
               </button>
             )}
           </div>
+
+          {/* Quick Links to Connections and Groups */}
+          {hasQuizUserId && (
+            <div className={styles.quickLinks}>
+              <Link href="/me" className={styles.quickLink}>
+                View Your Connections
+              </Link>
+              <Link href="/wonder/essay/quiz/my-utopias" className={styles.quickLink}>
+                View Your Groups
+              </Link>
+            </div>
+          )}
         </section>
       )}
 
@@ -542,14 +610,14 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
       </section>
 
       {/* Relationship Comparison */}
-      {compareUserId && identity && (() => {
+      {effectiveCompareUserId && identity && (() => {
         const archetypeKey = getArchetypeFromIdentity(identity.key);
         return archetypeKey ? (
           <>
             <div className={styles.divider} />
             <RelationshipComparison
               yourArchetypeKey={archetypeKey}
-              compareUserId={compareUserId}
+              compareUserId={effectiveCompareUserId}
             />
           </>
         ) : null;

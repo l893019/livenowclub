@@ -46,6 +46,12 @@ export function CreateJoinStep() {
         throw new Error(data.error || "Failed to create group");
       }
 
+      // Store created utopia so result page knows about it
+      sessionStorage.setItem("created-utopia", JSON.stringify({
+        slug: data.room.slug,
+        name: data.room.name,
+      }));
+
       // Redirect to the new group page
       router.push(`/wonder/essay/quiz/utopia/${data.room.slug}`);
     } catch (error) {
