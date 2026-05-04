@@ -130,11 +130,15 @@
   background: rgba(45, 42, 38, 0.03);
   border-radius: 12px;
   text-decoration: none;
-  transition: background 0.2s ease;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
 }
 
 .connectionCard:hover {
-  background: rgba(45, 42, 38, 0.06);
+  background: rgba(232, 23, 138, 0.05);
+  border-color: rgba(232, 23, 138, 0.15);
+  transform: translateX(4px);
 }
 
 .connectionName {
