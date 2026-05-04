@@ -74,7 +74,7 @@ const jsonLd = {
         "@type": "ListItem",
         position: 2,
         name: "During Treatment",
-        description: "Practical guidance for the hardest days.",
+        description: "Practical guidance and poetic musings for the hardest days.",
       },
       {
         "@type": "ListItem",
