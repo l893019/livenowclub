@@ -238,12 +238,47 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
     return <CreateJoinStep />;
   }
 
-  // Loading state
-  if (!identity) {
+  // Loading state - but timeout after 3 seconds
+  const [showError, setShowError] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!identity) {
+        setShowError(true);
+      }
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [identity]);
+
+  if (!identity && !showError) {
     return (
       <div className={styles.reading}>
         <div className={styles.loading}>
           <p>Calculating your identity...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!identity && showError) {
+    return (
+      <div className={styles.reading}>
+        <div className={styles.loading}>
+          <h2>Unable to load your results</h2>
+          <p style={{ marginTop: '1rem', color: 'rgba(45, 42, 38, 0.7)' }}>
+            Please complete the quiz first, or contact support if you believe this is an error.
+          </p>
+          <Link href="/wonder" style={{
+            display: 'inline-block',
+            marginTop: '2rem',
+            padding: '12px 24px',
+            background: '#e8178a',
+            color: 'white',
+            textDecoration: 'none',
+            borderRadius: '4px'
+          }}>
+            Go to Quiz
+          </Link>
         </div>
       </div>
     );
