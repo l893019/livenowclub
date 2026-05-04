@@ -310,6 +310,88 @@ export default function NavigateCancerPage() {
           </div>
         </section>
 
+        {/* Helpful Resources */}
+        <section className="guide-section guide-section--resources">
+          <div className="guide-section-inner">
+            <div className="guide-section-header">
+              <span className="guide-section-number">Resources</span>
+              <h2>Helpful Organizations & Tools</h2>
+              <p>Organizations and resources mentioned in the comprehensive guide</p>
+            </div>
+            <div className="resources-grid">
+              <div className="resource-category">
+                <h3>Support & Community</h3>
+                <ul className="resource-list">
+                  <li>
+                    <a href="https://imermanangels.org/" target="_blank" rel="noopener noreferrer">
+                      <strong>Imerman Angels</strong>
+                      <span>One-on-one cancer support matching you with a mentor</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.caringbridge.org/" target="_blank" rel="noopener noreferrer">
+                      <strong>CaringBridge</strong>
+                      <span>Free websites to share health updates with loved ones</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.mealtrain.com/" target="_blank" rel="noopener noreferrer">
+                      <strong>Meal Train</strong>
+                      <span>Organize meal support from friends and family</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div className="resource-category">
+                <h3>Fertility Preservation</h3>
+                <ul className="resource-list">
+                  <li>
+                    <a href="https://www.ccrm.com/" target="_blank" rel="noopener noreferrer">
+                      <strong>CCRM Fertility</strong>
+                      <span>Fertility clinic specializing in egg freezing</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://chickmission.com/" target="_blank" rel="noopener noreferrer">
+                      <strong>Chick Mission</strong>
+                      <span>Financial assistance for fertility preservation</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div className="resource-category">
+                <h3>Mental Health & Meditation</h3>
+                <ul className="resource-list">
+                  <li>
+                    <a href="https://drjoedispenza.com/" target="_blank" rel="noopener noreferrer">
+                      <strong>Joe Dispenza</strong>
+                      <span>Guided meditations for healing</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.monroeinstitute.org/pages/expand" target="_blank" rel="noopener noreferrer">
+                      <strong>Expand by Monroe</strong>
+                      <span>Meditation app with health-specific programs</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.calm.com/" target="_blank" rel="noopener noreferrer">
+                      <strong>Calm</strong>
+                      <span>Sleep stories and calming meditations</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.wakingup.com/" target="_blank" rel="noopener noreferrer">
+                      <strong>Waking Up</strong>
+                      <span>Meditation and philosophical discussions</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* All Cancer Writing - Chronological Timeline */}
         <section className="journey-section">
           <div className="journey-header">

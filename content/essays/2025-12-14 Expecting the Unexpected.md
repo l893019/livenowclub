@@ -139,7 +139,7 @@ Ideally, you will need one person who will be there with you for every appointme
 
 You will need to consider how you get to the hospital and set up a system for meal trains and support.
 
-  * Some friends have used CaringBridge and Meals on Wheels for this function.
+  * Some friends have used [CaringBridge](https://www.caringbridge.org/) and [Meal Train](https://www.mealtrain.com/) for this function.
 
   * A lot of people will show up for you at the start of treatment, make sure you plan for midway and later in the treatment. It’s not that people don’t care; they just get busy with their lives.
 
@@ -147,7 +147,7 @@ You will need to consider how you get to the hospital and set up a system for me
 
 We were fortunate to have a few contacts who had also recently suffered from cervical cancer. It was very useful to have someone to trade notes with on their exact experience.
 
-  * If you don’t know someone, I would recommend reaching out to Immerman’s Angels.
+  * If you don't know someone, I would recommend reaching out to [Imerman Angels](https://imermanangels.org/).
 
 ## 2) Reduce the Information Flow In
 
@@ -314,7 +314,7 @@ Have a bag ready to go with core essentials:
 
 ### Egg freezing
 
-If you wish to have this future option, doctors will recommend egg retrieval as soon as possible, so as not to delay treatment. This, unfortunately, was not an option for me. But here are two places that we found along the way: CCRM, Chick Mission
+If you wish to have this future option, doctors will recommend egg retrieval as soon as possible, so as not to delay treatment. This, unfortunately, was not an option for me. But here are two places that we found along the way: [CCRM Fertility](https://www.ccrm.com/), [Chick Mission](https://chickmission.com/)
 
 ### Get your cancer uniform
 
@@ -412,13 +412,13 @@ Box breathing
 
 Meditation - I use a couple of different apps (for different purposes):
 
-  * Joe Dispenza (you can buy meditations online)
+  * [Joe Dispenza](https://drjoedispenza.com/) (you can buy meditations online)
 
-  * Expand by Monroe (go-to for meditations, they have several health-specific ones)
+  * [Expand by Monroe](https://www.monroeinstitute.org/pages/expand) (go-to for meditations, they have several health-specific ones)
 
-  * Calm (bedtime stories, emergency calm meditations)
+  * [Calm](https://www.calm.com/) (bedtime stories, emergency calm meditations)
 
-  * Waking Up (philosophical discussions on life)
+  * [Waking Up](https://www.wakingup.com/) (philosophical discussions on life)
 
 ### Identify therapist support early
 

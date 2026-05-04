@@ -4247,6 +4247,67 @@ p {
   padding: var(--space-8);
 }
 
+/* Resources Section */
+.guide-section--resources {
+  background: var(--off-white);
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+}
+
+.resource-category h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--pink);
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.01em;
+}
+
+.resource-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resource-list li {
+  margin-bottom: var(--space-4);
+}
+
+.resource-list a {
+  display: block;
+  padding: var(--space-4);
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.resource-list a:hover {
+  border-color: var(--pink);
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.resource-list strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.resource-list span {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
 .guide-card-type {
   display: block;
   font-family: var(--font-sans);
