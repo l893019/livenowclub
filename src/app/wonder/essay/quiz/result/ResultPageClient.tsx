@@ -25,6 +25,9 @@ export function ResultPageClient({
   // If compareUserId exists and we have a userId, show comparison view
   const showComparison = compareUserId && userId && compareUserId !== userId;
 
+  // If compareUserId exists but no userId, user needs to take quiz first
+  const needsToTakeQuiz = compareUserId && !userId;
+
   return (
     <>
       <style>{`
@@ -43,7 +46,36 @@ export function ResultPageClient({
 
       <Header />
 
-      {showComparison ? (
+      {needsToTakeQuiz ? (
+        <div style={{
+          maxWidth: '600px',
+          margin: '120px auto',
+          padding: '40px 20px',
+          textAlign: 'center'
+        }}>
+          <h2 style={{ fontSize: '28px', marginBottom: '16px', color: 'var(--text)' }}>
+            Take the Quiz First
+          </h2>
+          <p style={{ fontSize: '16px', lineHeight: '1.6', color: 'var(--text-dim)', marginBottom: '32px' }}>
+            To see this comparison, you need to discover your own worldview first.
+          </p>
+          <Link
+            href="/wonder/essay/quiz"
+            style={{
+              display: 'inline-block',
+              padding: '12px 32px',
+              background: 'var(--accent-pink)',
+              color: 'white',
+              textDecoration: 'none',
+              borderRadius: '4px',
+              fontSize: '16px',
+              fontWeight: '500'
+            }}
+          >
+            Take the Quiz
+          </Link>
+        </div>
+      ) : showComparison ? (
         <ComparisonView userId={userId} compareUserId={compareUserId} />
       ) : (
         <ReadingPage identityKey={identityKey} compareUserId={compareUserId} />
