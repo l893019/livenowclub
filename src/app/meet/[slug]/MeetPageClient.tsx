@@ -127,7 +127,7 @@ export function MeetPageClient({ targetUser }: Props) {
             {targetUser.identityName ? (
               <>
                 <p className="meet-inviter-intro">
-                  <strong>{targetUser.name}</strong> took this quiz and discovered they&apos;re
+                  <strong>{targetUser.name === "Anonymous" ? "Someone" : targetUser.name}</strong> took this quiz and discovered they&apos;re
                 </p>
                 <p className="meet-inviter-identity">{targetUser.identityName}</p>
                 {targetUser.identityDescription && (
@@ -142,7 +142,7 @@ export function MeetPageClient({ targetUser }: Props) {
             ) : (
               <>
                 <p className="meet-inviter-intro">
-                  <strong>{targetUser.name}</strong> took this quiz.
+                  <strong>{targetUser.name === "Anonymous" ? "Someone" : targetUser.name}</strong> took this quiz.
                 </p>
                 <p className="meet-inviter-prompt">
                   After you finish, you&apos;ll see where your worldviews intersect.

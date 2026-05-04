@@ -122,15 +122,6 @@ export function MePageClient() {
             <h1 className={styles.identityName} style={{ color: identity?.color }}>
               {identity?.name || "Unknown"}
             </h1>
-            {/* DEBUG - remove after fixing */}
-            {debug && (
-              <details style={{ fontSize: '10px', color: '#888', marginTop: '8px' }}>
-                <summary>Debug (/me)</summary>
-                <pre style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>
-                  {JSON.stringify(debug, null, 2)}
-                </pre>
-              </details>
-            )}
             <Link href="/wonder/essay/quiz/result" className={styles.viewResultsLink}>
               View your full results →
             </Link>
