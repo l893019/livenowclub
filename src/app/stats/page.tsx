@@ -32,6 +32,28 @@ type Stats = {
     completionRate: number;
     signupRate: number;
   };
+  users: {
+    total: number;
+    recent: Array<{
+      id: string;
+      name: string;
+      archetype: string;
+      email: string | null;
+      createdAt: string;
+    }>;
+    byIdentity: Record<string, number>;
+    byDate: Record<string, number>;
+  };
+  utopias: {
+    total: number;
+    recent: Array<{
+      slug: string;
+      name: string;
+      memberCount: number;
+      createdAt: string;
+      createdBy: string;
+    }>;
+  };
 };
 
 export default function StatsPage() {
@@ -137,8 +159,16 @@ export default function StatsPage() {
           <div style={{ fontSize: '32px', fontWeight: 'bold' }}>{avgPageviews.toLocaleString()}</div>
         </div>
         <div style={{ background: '#e8178a', color: '#fff', padding: '24px', borderRadius: '8px' }}>
+          <div style={{ fontSize: '14px', opacity: 0.9, marginBottom: '8px' }}>Quiz Users</div>
+          <div style={{ fontSize: '32px', fontWeight: 'bold' }}>{stats.users.total.toLocaleString()}</div>
+        </div>
+        <div style={{ background: '#4a90e2', color: '#fff', padding: '24px', borderRadius: '8px' }}>
           <div style={{ fontSize: '14px', opacity: 0.9, marginBottom: '8px' }}>Email Signups</div>
           <div style={{ fontSize: '32px', fontWeight: 'bold' }}>{stats.emails.total.toLocaleString()}</div>
+        </div>
+        <div style={{ background: '#50c878', color: '#fff', padding: '24px', borderRadius: '8px' }}>
+          <div style={{ fontSize: '14px', opacity: 0.9, marginBottom: '8px' }}>Utopias Created</div>
+          <div style={{ fontSize: '32px', fontWeight: 'bold' }}>{stats.utopias.total.toLocaleString()}</div>
         </div>
       </div>
 
@@ -167,6 +197,116 @@ export default function StatsPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Quiz Users */}
+      {stats.users && stats.users.total > 0 && (
+        <div style={{ marginBottom: '40px' }}>
+          <h2 style={{ fontSize: '20px', marginBottom: '16px' }}>Quiz Users ({stats.users.total.toLocaleString()})</h2>
+
+          {/* Identity Distribution */}
+          {Object.keys(stats.users.byIdentity).length > 0 && (
+            <div style={{ marginBottom: '24px' }}>
+              <h3 style={{ fontSize: '16px', marginBottom: '12px', color: '#666' }}>Identity Distribution</h3>
+              <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden' }}>
+                {Object.entries(stats.users.byIdentity)
+                  .sort(([, a], [, b]) => b - a)
+                  .map(([identity, count], i) => {
+                    const percentage = ((count / stats.users.total) * 100).toFixed(1);
+                    return (
+                      <div
+                        key={i}
+                        style={{
+                          display: 'flex',
+                          justifyContent: 'space-between',
+                          alignItems: 'center',
+                          padding: '12px 16px',
+                          borderBottom: i < Object.keys(stats.users.byIdentity).length - 1 ? '1px solid #eee' : 'none',
+                        }}
+                      >
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: 1 }}>
+                          <span style={{ fontSize: '14px', fontWeight: '500' }}>{identity}</span>
+                          <div style={{ flex: 1, height: '8px', background: '#f0f0f0', borderRadius: '4px', maxWidth: '200px' }}>
+                            <div style={{ height: '100%', background: '#e8178a', borderRadius: '4px', width: `${percentage}%` }} />
+                          </div>
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                          <span style={{ fontSize: '13px', color: '#666' }}>{percentage}%</span>
+                          <span style={{ fontSize: '16px', fontWeight: 'bold' }}>{count}</span>
+                        </div>
+                      </div>
+                    );
+                  })}
+              </div>
+            </div>
+          )}
+
+          {/* Recent Users */}
+          {stats.users.recent && stats.users.recent.length > 0 && (
+            <div>
+              <h3 style={{ fontSize: '16px', marginBottom: '12px', color: '#666' }}>Recent Quiz Completions</h3>
+              <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden' }}>
+                {stats.users.recent.map((user, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      padding: '12px 16px',
+                      borderBottom: i < stats.users.recent.length - 1 ? '1px solid #eee' : 'none',
+                      fontSize: '13px',
+                    }}
+                  >
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
+                      <div>
+                        <span style={{ fontWeight: '500', marginRight: '8px' }}>{user.name}</span>
+                        <span style={{ color: '#e8178a', fontSize: '12px' }}>{user.archetype}</span>
+                      </div>
+                      <span style={{ color: '#666', fontSize: '12px' }}>
+                        {new Date(user.createdAt).toLocaleDateString()}
+                      </span>
+                    </div>
+                    {user.email && (
+                      <div style={{ color: '#999', fontSize: '12px' }}>{user.email}</div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Utopias */}
+      {stats.utopias && stats.utopias.total > 0 && (
+        <div style={{ marginBottom: '40px' }}>
+          <h2 style={{ fontSize: '20px', marginBottom: '16px' }}>Utopias ({stats.utopias.total.toLocaleString()})</h2>
+          <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden' }}>
+            {stats.utopias.recent.map((utopia, i) => (
+              <div
+                key={i}
+                style={{
+                  padding: '12px 16px',
+                  borderBottom: i < stats.utopias.recent.length - 1 ? '1px solid #eee' : 'none',
+                  fontSize: '13px',
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
+                  <div>
+                    <span style={{ fontWeight: '500', marginRight: '8px' }}>{utopia.name}</span>
+                    <span style={{ color: '#50c878', fontSize: '12px' }}>
+                      {utopia.memberCount} {utopia.memberCount === 1 ? 'member' : 'members'}
+                    </span>
+                  </div>
+                  <span style={{ color: '#666', fontSize: '12px' }}>
+                    {new Date(utopia.createdAt).toLocaleDateString()}
+                  </span>
+                </div>
+                <div style={{ color: '#999', fontSize: '12px', fontFamily: 'monospace' }}>
+                  /wonder/essay/quiz/utopia/{utopia.slug}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       )}

@@ -30,6 +30,16 @@ export async function GET(request: NextRequest) {
         completionRate: 0,
         signupRate: 0,
       },
+      users: {
+        total: 0,
+        recent: [],
+        byIdentity: {},
+        byDate: {},
+      },
+      utopias: {
+        total: 0,
+        recent: [],
+      },
     };
 
     // Get date range
@@ -145,6 +155,86 @@ export async function GET(request: NextRequest) {
     if (stats.funnel.quizCompleted > 0) {
       stats.funnel.signupRate = Math.round((stats.funnel.emailSignup / stats.funnel.quizCompleted) * 100);
     }
+
+    // Get user stats
+    const userKeys = await redis.keys('user:*');
+    // Filter out user:{id}:utopias keys, only get user:{id} keys
+    const actualUserKeys = userKeys.filter(k => !k.includes(':utopias'));
+    stats.users.total = actualUserKeys.length;
+
+    // Get all users and sort by creation date
+    const users: any[] = [];
+    for (const key of actualUserKeys) {
+      try {
+        const userData = await redis.get(key);
+        if (userData) {
+          const user = JSON.parse(userData);
+          users.push(user);
+
+          // Count by identity/archetype
+          const identity = user.archetype || 'Unknown';
+          stats.users.byIdentity[identity] = (stats.users.byIdentity[identity] || 0) + 1;
+
+          // Count by date
+          if (user.createdAt) {
+            const date = user.createdAt.split('T')[0];
+            if (dates.includes(date)) {
+              stats.users.byDate[date] = (stats.users.byDate[date] || 0) + 1;
+            }
+          }
+        }
+      } catch (e) {
+        // Skip invalid user data
+        continue;
+      }
+    }
+
+    // Sort by creation date and get recent users
+    users.sort((a, b) => {
+      const dateA = new Date(a.createdAt || 0).getTime();
+      const dateB = new Date(b.createdAt || 0).getTime();
+      return dateB - dateA;
+    });
+
+    stats.users.recent = users.slice(0, 20).map(u => ({
+      id: u.id,
+      name: u.name,
+      archetype: u.archetype,
+      email: u.email,
+      createdAt: u.createdAt,
+    }));
+
+    // Get utopia stats
+    const utopiaKeys = await redis.keys('utopia:*');
+    stats.utopias.total = utopiaKeys.length;
+
+    const utopias: any[] = [];
+    for (const key of utopiaKeys) {
+      try {
+        const utopiaData = await redis.get(key);
+        if (utopiaData) {
+          const utopia = JSON.parse(utopiaData);
+          utopias.push(utopia);
+        }
+      } catch (e) {
+        continue;
+      }
+    }
+
+    // Sort by creation date and get recent utopias
+    utopias.sort((a, b) => {
+      const dateA = new Date(a.createdAt || 0).getTime();
+      const dateB = new Date(b.createdAt || 0).getTime();
+      return dateB - dateA;
+    });
+
+    stats.utopias.recent = utopias.slice(0, 10).map(u => ({
+      slug: u.slug,
+      name: u.name,
+      memberCount: u.members?.length || 0,
+      createdAt: u.createdAt,
+      createdBy: u.createdBy,
+    }));
 
     return NextResponse.json(stats);
   } catch (error) {
