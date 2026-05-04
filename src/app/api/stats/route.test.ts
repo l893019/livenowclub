@@ -23,6 +23,18 @@ describe('/api/stats', () => {
     process.env.ADMIN_API_KEY = originalEnv
   })
 
+  it('should return 500 when ADMIN_API_KEY environment variable is not set', async () => {
+    delete process.env.ADMIN_API_KEY
+    const request = new NextRequest('http://localhost:3000/api/stats', {
+      headers: { 'x-admin-api-key': 'any-key' }
+    })
+    const response = await GET(request)
+
+    expect(response.status).toBe(500)
+    const data = await response.json()
+    expect(data.error).toBe('Server configuration error')
+  })
+
   it('should return 401 when no API key provided', async () => {
     const request = new NextRequest('http://localhost:3000/api/stats')
     const response = await GET(request)
