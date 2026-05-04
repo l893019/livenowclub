@@ -1,0 +1,143 @@
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 500;
+  margin: 0 0 12px 0;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: rgba(45, 42, 38, 0.6);
+  margin: 0;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 80px 20px;
+  font-size: 16px;
+}
+
+.loading {
+  color: rgba(45, 42, 38, 0.6);
+}
+
+.error {
+  color: #dc2626;
+}
+
+.reading {
+  max-width: 640px;
+  margin: 48px auto;
+  padding: 0 16px;
+}
+
+.intro {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 0 32px 0;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.narrative {
+  font-size: 17px;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.narrative p {
+  margin: 0 0 24px 0;
+}
+
+.narrative p:last-child {
+  margin-bottom: 0;
+}
+
+.actions {
+  max-width: 480px;
+  margin: 64px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 16px;
+}
+
+.primaryButton,
+.secondaryButton {
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  display: block;
+}
+
+.primaryButton {
+  background: var(--accent-pink);
+  color: white;
+}
+
+.primaryButton:hover {
+  background: #d1157a;
+}
+
+.secondaryButton {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(45, 42, 38, 0.2);
+}
+
+.secondaryButton:hover {
+  border-color: var(--accent-pink);
+  color: var(--accent-pink);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .container {
+    padding: 32px 16px 60px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .intro {
+    font-size: 18px;
+  }
+
+  .narrative {
+    font-size: 16px;
+  }
+
+  .actions {
+    margin-top: 48px;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+}
