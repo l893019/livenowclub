@@ -2646,6 +2646,22 @@
           <p class="chart-source">Based on 208 science fiction books, 1895–2024</p>
         </div>
       </div>
+
+      <p class="trend-prose" style="margin-top: 40px;">Not every future imagines schools at all. Among the 34 books where education is central, it exists to build a self or becomes indistinguishable from life itself. When traditional schools disappear, they're replaced by apprenticeships, AI tutors, or nothing formal at all.</p>
+
+      <div class="chart-grid">
+        <div class="chart-block">
+          <h3 class="chart-title">What Is Education For?</h3>
+          <div class="immersive-chart" id="chart-education"></div>
+          <p class="chart-source">Among 34 books where education is central, 1924–2016</p>
+        </div>
+
+        <div class="chart-block">
+          <h3 class="chart-title">What Replaces Traditional Schools?</h3>
+          <div class="immersive-chart" id="chart-schools"></div>
+          <p class="chart-source">Among 34 books where education is central, 1924–2016</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -3294,6 +3310,21 @@
         { label: 'Post-money', pct: 14, color: '#9b8fef' },
         { label: 'Gift', pct: 14, color: '#3db9a4' },
         { label: 'Capitalism', pct: 5, color: '#ff6b6b' }
+      ],
+      education: [
+        { label: 'Character & self-actualization', pct: 35, color: '#e8178a' },
+        { label: 'Lifelong practice', pct: 32, color: '#f4a03f' },
+        { label: 'Conditioning & control', pct: 18, color: '#9b8fef' },
+        { label: 'Mentorship & transmission', pct: 12, color: '#3db9a4' },
+        { label: 'Sorting & class', pct: 3, color: '#ff6b6b' }
+      ],
+      schools: [
+        { label: 'Schools become obsolete', pct: 47, color: '#e8178a' },
+        { label: 'Apprenticeship', pct: 18, color: '#f4a03f' },
+        { label: 'AI tutors', pct: 15, color: '#9b8fef' },
+        { label: 'Conditioning systems', pct: 9, color: '#3db9a4' },
+        { label: 'Self-organized', pct: 6, color: '#ff6b6b' },
+        { label: 'Schools unchanged', pct: 6, color: '#a29bfe' }
       ]
     };
 
@@ -3309,7 +3340,9 @@
       ending: { field: 'response', labelMap: { 'Acceptance': 'acceptance', 'Reform': 'reform', 'Rejection': 'rejection', 'Transcendence': 'transcendence', 'Restlessness': 'restlessness' }},
       death: { field: 'deathRole', labelMap: { 'Gives meaning': 'meaning', 'Problem to solve': 'endpoint', 'Irrelevant': 'irrelevant', 'Transcended': 'transcended' }},
       worthLiving: { field: 'worthLiving', labelMap: { 'Connection': 'connection', 'Struggle': 'struggle', 'Creation': 'creation', 'Discovery': 'discovery', 'Transcendence': 'transcendence' }},
-      econ: { field: 'econ', labelMap: { 'Hybrid': 'hybrid', 'Market': 'market', 'Post-money': 'post-money', 'Gift': 'gift', 'Capitalism': 'capitalism' }}
+      econ: { field: 'econ', labelMap: { 'Hybrid': 'hybrid', 'Market': 'market', 'Post-money': 'post-money', 'Gift': 'gift', 'Capitalism': 'capitalism' }},
+      education: { field: 'educationPurpose', labelMap: { 'Character & self-actualization': 'character-actualization', 'Conditioning & control': 'conditioning-control', 'Mentorship & transmission': 'mentorship-transmission', 'Sorting & class': 'sorting-class', 'Lifelong practice': 'lifelong-practice' }},
+      schools: { field: 'schoolReplacement', labelMap: { 'Schools become obsolete': 'obsolete', 'Apprenticeship': 'apprenticeship', 'AI tutors': 'ai-tutors', 'Conditioning systems': 'conditioning-systems', 'Self-organized': 'self-organized', 'Schools unchanged': 'unchanged' }}
     };
 
     // Get nested field value from book
