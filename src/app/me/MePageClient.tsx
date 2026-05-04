@@ -165,7 +165,9 @@ export function MePageClient() {
                     className={styles.connectionCard}
                   >
                     <span className={styles.connectionName}>
-                      {conn.otherUser.name}
+                      {conn.otherUser.name && conn.otherUser.name !== "Anonymous"
+                        ? conn.otherUser.name
+                        : "Someone"}
                     </span>
                     <span
                       className={styles.connectionIdentity}

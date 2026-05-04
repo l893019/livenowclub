@@ -100,23 +100,23 @@ export function MeetPageClient({ targetUser }: Props) {
 
           {hasCompletedQuiz ? (
             <div className="meet-cta">
-              <Link
+              <a
                 href={`/wonder/essay/quiz/result?compare=${targetUser.id}`}
                 className="btn btn--primary"
               >
                 See Where You Intersect
-              </Link>
+              </a>
               <p className="meet-subtext">You&apos;ve already taken the quiz.</p>
             </div>
           ) : (
             <div className="meet-cta">
-              <Link
+              <a
                 href="/wonder/essay"
                 className="btn btn--primary"
                 onClick={handleStartQuiz}
               >
                 Discover Your Worldview
-              </Link>
+              </a>
               <p className="meet-subtext">Takes about 3 minutes</p>
             </div>
           )}
