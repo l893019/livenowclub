@@ -107,14 +107,14 @@ export function MeetPageClient({ targetUser }: Props) {
 
           {hasCompletedQuiz ? (
             <div className="meet-cta">
-              <button className="btn btn-primary" onClick={handleSeeConnection}>
+              <button className="btn btn--primary" onClick={handleSeeConnection}>
                 See Where You Intersect
               </button>
               <p className="meet-subtext">You&apos;ve already taken the quiz.</p>
             </div>
           ) : (
             <div className="meet-cta">
-              <button className="btn btn-primary" onClick={handleStartQuiz}>
+              <button className="btn btn--primary" onClick={handleStartQuiz}>
                 Discover Your Worldview
               </button>
               <p className="meet-subtext">Takes about 3 minutes</p>
