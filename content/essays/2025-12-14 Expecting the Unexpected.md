@@ -6,7 +6,7 @@ My scans are tomorrow, and in honor of whatever may come, I wanted to share some
 
 If you’re going through this, I hope something here helps. If someone you love is going through this, scroll to the end, there’s a section for you, too.
 
-I’m also opening up the chat for anyone else who may be going through something like this and wants to share what’s helping them **live** **now, live fully**.
+I'm also opening up the chat for anyone else who may be going through something like this and wants to share what's helping them **live now, live fully**.
 
 Please pass this along to anyone who could use it ❤️. A pdf version is [here](https://static1.squarespace.com/static/68baddbc65e901527cbfd30f/t/693ee015670f423dc00de98e/1765728277861/Expecting+the+Unexpected+LNC+VF.pdf). 
 
@@ -676,9 +676,7 @@ NOTES ON NUTRITION IN RECOVERY
 
   * My nutritionist helped me a lot with supplements to rebuild my gut
 
-  * I’ve had a lot of success with a low-glycemic Mediterranean diet.
-
-  * 
+  * I've had a lot of success with a low-glycemic Mediterranean diet.
 
  **FIELD NOTE**
 

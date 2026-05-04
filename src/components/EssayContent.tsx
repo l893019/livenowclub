@@ -69,6 +69,8 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
   const result: string[] = [];
   const psContent: string[] = [];
   let blockquoteBuffer: string[] = [];
+  let listBuffer: string[] = [];
+  let listType: 'ul' | 'ol' | null = null;
   let inOrbitsSection = false;
   let inPsSection = false;
 
@@ -76,6 +78,15 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
     if (blockquoteBuffer.length > 0) {
       result.push(`<blockquote>${blockquoteBuffer.join("<br />")}</blockquote>`);
       blockquoteBuffer = [];
+    }
+  };
+
+  const flushList = () => {
+    if (listBuffer.length > 0 && listType) {
+      const tag = listType === 'ul' ? 'ul' : 'ol';
+      result.push(`<${tag}>${listBuffer.join('')}</${tag}>`);
+      listBuffer = [];
+      listType = null;
     }
   };
 
@@ -163,6 +174,33 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
     // Not a blockquote line, flush any buffered blockquotes
     flushBlockquote();
 
+    // Handle unordered list items (*, -, or +)
+    const ulMatch = line.match(/^(\s*)[*\-+]\s+(.+)$/);
+    if (ulMatch) {
+      const content = processInlineFormatting(ulMatch[2]);
+      if (listType !== 'ul') {
+        flushList();
+        listType = 'ul';
+      }
+      listBuffer.push(`<li>${content}</li>`);
+      continue;
+    }
+
+    // Handle ordered list items (1., 2., etc.)
+    const olMatch = line.match(/^(\s*)\d+\.\s+(.+)$/);
+    if (olMatch) {
+      const content = processInlineFormatting(olMatch[2]);
+      if (listType !== 'ol') {
+        flushList();
+        listType = 'ol';
+      }
+      listBuffer.push(`<li>${content}</li>`);
+      continue;
+    }
+
+    // Not a list item, flush any buffered lists
+    flushList();
+
     if (line.trim() === "") {
       // For poems, empty lines create stanza breaks
       if (isPoem) {
@@ -196,6 +234,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
   }
 
   flushBlockquote(); // Flush any remaining blockquotes
+  flushList(); // Flush any remaining lists
   const contentHtml = result.join("\n");
 
   return (
@@ -510,6 +549,25 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         .essay-content :global(em) {
           font-style: italic;
           color: rgba(45, 42, 38, 0.8);
+        }
+
+        .essay-content :global(ul),
+        .essay-content :global(ol) {
+          margin: 1.25em 0;
+          padding-left: 1.5em;
+        }
+
+        .essay-content :global(li) {
+          margin-bottom: 0.5em;
+          line-height: 1.75;
+        }
+
+        .essay-content :global(ul) {
+          list-style-type: disc;
+        }
+
+        .essay-content :global(ol) {
+          list-style-type: decimal;
         }
 
         /* PS Note */
