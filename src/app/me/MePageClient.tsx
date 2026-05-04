@@ -73,26 +73,34 @@ export function MePageClient() {
   };
 
   // Get identity from user answers
-  const getIdentityWithDebug = (answers: string[]) => {
-    const quizAnswers = arrayToQuizAnswers(answers);
-    if (!quizAnswers) return { identity: null, debug: null };
-    const dims = calculateDimensions(quizAnswers);
-    const adjIdx = getAdjectiveIndex(dims.certainty, dims.posture);
-    const identity = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIdx);
-    const combinedIntensity = (Math.abs(dims.certainty) + Math.abs(dims.posture)) / 2;
-    return {
-      identity,
-      debug: {
-        answers: answers.join(','),
-        dims,
-        adjIdx,
-        combinedIntensity,
-      },
-    };
+  const getIdentityWithDebug = (answers: string[] | undefined | null) => {
+    if (!answers || !Array.isArray(answers) || answers.length !== 7) {
+      return { identity: null, debug: null };
+    }
+    try {
+      const quizAnswers = arrayToQuizAnswers(answers);
+      if (!quizAnswers) return { identity: null, debug: null };
+      const dims = calculateDimensions(quizAnswers);
+      const adjIdx = getAdjectiveIndex(dims.certainty, dims.posture);
+      const identity = getIdentityFromDimensions(dims.agency, dims.certainty, dims.posture, adjIdx);
+      const combinedIntensity = (Math.abs(dims.certainty) + Math.abs(dims.posture)) / 2;
+      return {
+        identity,
+        debug: {
+          answers: answers.join(','),
+          dims,
+          adjIdx,
+          combinedIntensity,
+        },
+      };
+    } catch (error) {
+      console.error('Failed to calculate identity:', error);
+      return { identity: null, debug: null };
+    }
   };
 
   // Legacy wrapper for backward compatibility
-  const getIdentity = (answers: string[]) => getIdentityWithDebug(answers).identity;
+  const getIdentity = (answers: string[] | undefined | null) => getIdentityWithDebug(answers).identity;
 
   if (isLoading) {
     return (
@@ -109,7 +117,7 @@ export function MePageClient() {
     return null;
   }
 
-  const { identity, debug } = user.answers ? getIdentityWithDebug(user.answers) : { identity: null, debug: null };
+  const { identity, debug } = getIdentityWithDebug(user.answers);
 
   return (
     <>
