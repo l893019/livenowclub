@@ -101,13 +101,47 @@ export function generateSlug(starName: string): string {
 // =============================================================================
 
 export async function saveUserResult(result: UserResult): Promise<void> {
-  await redis.set(`user:${result.id}`, JSON.stringify(result));
+  // Set with 90-day TTL to ensure persistence (90 days = 7,776,000 seconds)
+  await redis.set(`user:${result.id}`, JSON.stringify(result), 'EX', 7776000);
 }
 
 export async function getUserResult(userId: string): Promise<UserResult | null> {
   const data = await redis.get(`user:${userId}`);
-  if (!data) return null;
-  return JSON.parse(data);
+  if (data) {
+    return JSON.parse(data);
+  }
+
+  // Fallback: Try to reconstruct user from utopias they're a member of
+  const utopiaKeys = await redis.keys('utopia:*');
+  for (const key of utopiaKeys) {
+    const utopiaData = await redis.get(key);
+    if (!utopiaData) continue;
+
+    try {
+      const utopia = JSON.parse(utopiaData);
+      const member = utopia.members?.find((m: any) => m.id === userId);
+      if (member && member.archetype && member.answers) {
+        // Reconstruct user from utopia member data
+        const reconstructed: UserResult = {
+          id: userId,
+          name: member.name || 'Anonymous',
+          archetype: member.archetype,
+          secondaryArchetype: member.secondaryArchetype || '',
+          scores: member.scores || {},
+          answers: member.answers,
+          email: member.email || '',
+          slug: member.slug || '',
+        };
+        // Save it back to Redis for future use
+        await saveUserResult(reconstructed);
+        return reconstructed;
+      }
+    } catch (e) {
+      continue;
+    }
+  }
+
+  return null;
 }
 
 export async function getUserBySlug(slug: string): Promise<UserResult | null> {
@@ -136,8 +170,8 @@ export async function generateUserSlug(userId: string, name: string): Promise<st
     suffix++;
   }
 
-  // Save slug -> userId mapping
-  await redis.set(`slug:${slug}`, userId);
+  // Save slug -> userId mapping with 90-day TTL
+  await redis.set(`slug:${slug}`, userId, 'EX', 7776000);
 
   // Update user with slug
   const user = await getUserResult(userId);

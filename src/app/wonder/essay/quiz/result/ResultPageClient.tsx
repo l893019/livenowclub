@@ -1,8 +1,10 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Header from "@/components/Header";
 import { ReadingPage } from "./ReadingPage";
+import { ComparisonView } from "./ComparisonView";
 
 type ResultPageClientProps = {
   identityKey?: string | null;
@@ -13,6 +15,16 @@ export function ResultPageClient({
   identityKey,
   compareUserId,
 }: ResultPageClientProps) {
+  const [userId, setUserId] = useState<string | null>(null);
+
+  useEffect(() => {
+    const storedUserId = localStorage.getItem("quiz-user-id");
+    setUserId(storedUserId);
+  }, []);
+
+  // If compareUserId exists and we have a userId, show comparison view
+  const showComparison = compareUserId && userId && compareUserId !== userId;
+
   return (
     <>
       <style>{`
@@ -31,7 +43,11 @@ export function ResultPageClient({
 
       <Header />
 
-      <ReadingPage identityKey={identityKey} compareUserId={compareUserId} />
+      {showComparison ? (
+        <ComparisonView userId={userId} compareUserId={compareUserId} />
+      ) : (
+        <ReadingPage identityKey={identityKey} compareUserId={compareUserId} />
+      )}
 
       <footer className="footer">
         <p className="footer-quote">What if now is all we have?</p>
