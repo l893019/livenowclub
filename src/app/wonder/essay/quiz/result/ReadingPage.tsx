@@ -540,17 +540,6 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
         </div>
       </section>
 
-      {/* Relationship Comparison */}
-      {compareUserId && identity && (
-        <>
-          <div className={styles.divider} />
-          <RelationshipComparison
-            yourArchetypeKey={identity.key}
-            compareUserId={compareUserId}
-          />
-        </>
-      )}
-
       {/* Essay Promotion */}
       <section className={styles.essayPromoSection}>
         <h2 className={styles.essayPromoTitle}>Continue the Journey</h2>
