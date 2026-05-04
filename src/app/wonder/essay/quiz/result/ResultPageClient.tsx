@@ -26,7 +26,7 @@ export function ResultPageClient({
 
   // Wait for localStorage to load before deciding what to show
   if (isLoading) {
-    return null; // Or show a minimal loading state
+    return null;
   }
 
   // If compareUserId exists and we have a userId, show comparison view
