@@ -1,0 +1,437 @@
+{
+  "total": 52,
+  "books": [
+    {
+      "title": "Brave New World",
+      "year": 1932,
+      "author": "Aldous Huxley",
+      "desc": "In a future society, humans are genetically engineered and conditioned to serve an authoritarian order.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "obsolete"
+    },
+    {
+      "title": "Hard to Be a God",
+      "year": 1964,
+      "author": "Arkady & Boris Strugatsky",
+      "desc": "An Earth observer poses as a nobleman on a medieval alien world, forbidden to interfere as civilization falls.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "apprenticeship"
+    },
+    {
+      "title": "Cyteen",
+      "year": 1988,
+      "author": "C.J. Cherryh",
+      "desc": "A murdered geneticist is cloned and her successor must navigate deadly politics while discovering her identity.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "apprenticeship"
+    },
+    {
+      "title": "Perdido Street Station",
+      "year": 2000,
+      "author": "China Mieville",
+      "desc": "A scientist in a grotesque steampunk city accidentally unleashes terrifying winged monsters.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "apprenticeship"
+    },
+    {
+      "title": "The City & The City",
+      "year": 2009,
+      "author": "China Mieville",
+      "desc": "A detective investigates a murder across two cities that occupy the same space but must ignore each other.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "obsolete"
+    },
+    {
+      "title": "Way Station",
+      "year": 1963,
+      "author": "Clifford D. Simak",
+      "desc": "A Civil War veteran secretly operates an alien transit station, gaining immortality.",
+      "educationPurpose": "mentorship-transmission",
+      "schoolReplacement": "apprenticeship"
+    },
+    {
+      "title": "The Road",
+      "year": 2006,
+      "author": "Cormac McCarthy",
+      "desc": "A father and son journey through a burned, post-apocalyptic America, surviving on love and scavenged supplies.",
+      "educationPurpose": "mentorship-transmission",
+      "schoolReplacement": "apprenticeship"
+    },
+    {
+      "title": "Down and Out in the Magic Kingdom",
+      "year": 2003,
+      "author": "Cory Doctorow",
+      "desc": "In a future without death or scarcity, a Disney World resident wages war for control of attractions.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "obsolete"
+    },
+    {
+      "title": "The Bezzle",
+      "year": 2024,
+      "author": "Cory Doctorow",
+      "desc": "A forensic accountant uncovers a scheme where wealthy investors exploit California's privatized prison system.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "obsolete"
+    },
+    {
+      "title": "Dune",
+      "year": 1965,
+      "author": "Frank Herbert",
+      "desc": "A young noble heir must survive deadly betrayal when his family takes control of the most valuable planet in the universe, rising to lead its desert people.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "obsolete"
+    },
+    {
+      "title": "Dune Messiah",
+      "year": 1969,
+      "author": "Frank Herbert",
+      "desc": "Emperor Paul Atreides struggles against conspiracies while unable to stop the religious jihad in his name.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "apprenticeship"
+    },
+    {
+      "title": "Gateway",
+      "year": 1977,
+      "author": "Frederik Pohl",
+      "desc": "Explorers use abandoned alien ships with unknown destinations, risking death or fortune with every launch.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "obsolete"
+    },
+    {
+      "title": "The Book of the New Sun",
+      "year": 1983,
+      "author": "Gene Wolfe",
+      "desc": "A torturer's apprentice is exiled and journeys across a far-future dying Earth carrying an ancient sword.",
+      "educationPurpose": "character-actualization",
+      "schoolReplacement": "apprenticeship"
+    },
+    {
+      "title": "Nineteen Eighty-Four",
+      "year": 1949,
+      "author": "George Orwell",
+      "desc": "A minor Party member rebels against a totalitarian surveillance state ruled by the omnipresent Big Brother.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "obsolete"
+    },
+    {
+      "title": "The Time Machine",
+      "year": 1895,
+      "author": "H.G. Wells",
+      "desc": "A Victorian inventor travels to 802,701 to find humanity split into idle Eloi and predatory Morlocks.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "obsolete"
+    },
+    {
+      "title": "The Island of Doctor Moreau",
+      "year": 1896,
+      "author": "H.G. Wells",
+      "desc": "A shipwrecked man discovers an island where a scientist transforms animals into human-like creatures.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "obsolete"
+    },
+    {
+      "title": "The Player of Games",
+      "year": 1988,
+      "author": "Iain M. Banks",
+      "desc": "A bored master game player competes in a brutal empire where the game's winner becomes emperor.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "ai-tutors"
+    },
+    {
+      "title": "Inversions",
+      "year": 1998,
+      "author": "Iain M. Banks",
+      "desc": "Two mysterious foreigners serve rival kingdoms on a medieval world, concealing their true origins.",
+      "educationPurpose": "mentorship-transmission",
+      "schoolReplacement": "apprenticeship"
+    },
+    {
+      "title": "Look to Windward",
+      "year": 2000,
+      "author": "Iain M. Banks",
+      "desc": "An emissary with a buried assassination mission travels to a Culture Orbital as ancient atrocities arrive.",
+      "educationPurpose": "mentorship-transmission",
+      "schoolReplacement": "ai-tutors"
+    },
+    {
+      "title": "Foundation",
+      "year": 1951,
+      "author": "Isaac Asimov",
+      "desc": "A mathematician predicts the fall of the Galactic Empire and establishes a colony to shorten the dark age.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "obsolete"
+    },
+    {
+      "title": "The Caves of Steel",
+      "year": 1954,
+      "author": "Isaac Asimov",
+      "desc": "Detective Elijah Baley reluctantly partners with a humanoid robot to solve a murder in domed megacities.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "ai-tutors"
+    },
+    {
+      "title": "The Forever War",
+      "year": 1974,
+      "author": "Joe Haldeman",
+      "desc": "A soldier fights an interstellar war, returning home to find centuries have passed due to time dilation.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "obsolete"
+    },
+    {
+      "title": "Stand on Zanzibar",
+      "year": 1968,
+      "author": "John Brunner",
+      "desc": "In an overpopulated 2010, a corporate executive and spy navigate genetic engineering and social collapse.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "obsolete"
+    },
+    {
+      "title": "The Sheep Look Up",
+      "year": 1972,
+      "author": "John Brunner",
+      "desc": "Environmental collapse devastates America while an activist tries to wake the oblivious public.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "apprenticeship"
+    },
+    {
+      "title": "Never Let Me Go",
+      "year": 2005,
+      "author": "Kazuo Ishiguro",
+      "desc": "Students at an idyllic English boarding school gradually discover they are clones raised to donate organs.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "unchanged"
+    },
+    {
+      "title": "Klara and the Sun",
+      "year": 2021,
+      "author": "Kazuo Ishiguro",
+      "desc": "An Artificial Friend observes human nature while trying to save her sick owner, whom she loves.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "ai-tutors"
+    },
+    {
+      "title": "Pacific Edge",
+      "year": 1990,
+      "author": "Kim Stanley Robinson",
+      "desc": "In an ecological utopia, a town council member fights to save the last wild hillside from development.",
+      "educationPurpose": "mentorship-transmission",
+      "schoolReplacement": "apprenticeship"
+    },
+    {
+      "title": "Player Piano",
+      "year": 1952,
+      "author": "Kurt Vonnegut",
+      "desc": "In a future where machines have replaced labor, an engineer questions a society that rendered workers obsolete.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "ai-tutors"
+    },
+    {
+      "title": "Cat's Cradle",
+      "year": 1963,
+      "author": "Kurt Vonnegut",
+      "desc": "A writer researching the atomic bomb's creators discovers ice-nine, which could freeze all water on Earth.",
+      "educationPurpose": "mentorship-transmission",
+      "schoolReplacement": "apprenticeship"
+    },
+    {
+      "title": "The Three-Body Problem",
+      "year": 2008,
+      "author": "Liu Cixin",
+      "desc": "During China's Cultural Revolution, a secret project sends signals into space, initiating first contact.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "obsolete"
+    },
+    {
+      "title": "The Handmaid's Tale",
+      "year": 1985,
+      "author": "Margaret Atwood",
+      "desc": "In a totalitarian theocracy that has replaced America, fertile women are enslaved as reproductive servants.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "obsolete"
+    },
+    {
+      "title": "Oryx and Crake",
+      "year": 2003,
+      "author": "Margaret Atwood",
+      "desc": "A man who may be humanity's last survivor recalls how genetic engineering led to apocalypse.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "obsolete"
+    },
+    {
+      "title": "The Stone Sky",
+      "year": 2017,
+      "author": "N.K. Jemisin",
+      "desc": "A mother and daughter, both powerful orogenes, will determine whether humanity survives.",
+      "educationPurpose": "mentorship-transmission",
+      "schoolReplacement": "apprenticeship"
+    },
+    {
+      "title": "Binti",
+      "year": 2015,
+      "author": "Nnedi Okorafor",
+      "desc": "A young Himba woman traveling to an interstellar university must negotiate peace with attacking aliens.",
+      "educationPurpose": "character-actualization",
+      "schoolReplacement": "unchanged"
+    },
+    {
+      "title": "Dawn",
+      "year": 1987,
+      "author": "Octavia Butler",
+      "desc": "After nuclear war, a Black woman awakens on an alien ship and must help her rescuers trade genetic material with humanity to create hybrid offspring.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "self-organized"
+    },
+    {
+      "title": "Adulthood Rites",
+      "year": 1988,
+      "author": "Octavia Butler",
+      "desc": "A human-alien hybrid child must decide whether resistant humans should regain their fertility.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "obsolete"
+    },
+    {
+      "title": "Parable of the Talents",
+      "year": 1998,
+      "author": "Octavia Butler",
+      "desc": "An ultra-conservative president targets the Earthseed community, tearing Lauren from her daughter.",
+      "educationPurpose": "mentorship-transmission",
+      "schoolReplacement": "apprenticeship"
+    },
+    {
+      "title": "Ender's Game",
+      "year": 1985,
+      "author": "Orson Scott Card",
+      "desc": "A child genius is trained in a space battle school to command humanity's fleet against an alien invasion.",
+      "educationPurpose": "sorting-class",
+      "schoolReplacement": "unchanged"
+    },
+    {
+      "title": "Blindsight",
+      "year": 2006,
+      "author": "Peter Watts",
+      "desc": "A crew of radically modified humans, led by a vampire, investigates aliens at the edge of the solar system.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "ai-tutors"
+    },
+    {
+      "title": "Do Androids Dream of Electric Sheep?",
+      "year": 1968,
+      "author": "Philip K. Dick",
+      "desc": "A bounty hunter pursues rogue androids indistinguishable from humans in a post-apocalyptic world.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "ai-tutors"
+    },
+    {
+      "title": "Ubik",
+      "year": 1969,
+      "author": "Philip K. Dick",
+      "desc": "After a psychic attack, reality begins decaying around anti-telepaths who cannot tell who is alive.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "obsolete"
+    },
+    {
+      "title": "A Scanner Darkly",
+      "year": 1977,
+      "author": "Philip K. Dick",
+      "desc": "An undercover narcotics agent becomes addicted to a drug that splits his mind, surveilling himself.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "obsolete"
+    },
+    {
+      "title": "Altered Carbon",
+      "year": 2002,
+      "author": "Richard K. Morgan",
+      "desc": "In a world where consciousness can be stored and downloaded, an ex-soldier is hired to investigate a rich man's apparent suicide.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "obsolete"
+    },
+    {
+      "title": "Starship Troopers",
+      "year": 1959,
+      "author": "Robert Heinlein",
+      "desc": "A young recruit endures brutal training and battles alien Arachnids in the Mobile Infantry.",
+      "educationPurpose": "sorting-class",
+      "schoolReplacement": "apprenticeship"
+    },
+    {
+      "title": "Lord of Light",
+      "year": 1967,
+      "author": "Roger Zelazny",
+      "desc": "On a colony world where the elite use technology to become Hindu gods, one man rebels against heaven.",
+      "educationPurpose": "sorting-class",
+      "schoolReplacement": "apprenticeship"
+    },
+    {
+      "title": "The Futurological Congress",
+      "year": 1971,
+      "author": "Stanislaw Lem",
+      "desc": "A man wakes in a utopian future only to discover reality is chemically manufactured hallucinations hiding dystopia.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "obsolete"
+    },
+    {
+      "title": "The Lathe of Heaven",
+      "year": 1971,
+      "author": "Ursula K. Le Guin",
+      "desc": "A man whose dreams alter reality falls under a psychiatrist who manipulates his power to reshape the world.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "obsolete"
+    },
+    {
+      "title": "Four Ways to Forgiveness",
+      "year": 1995,
+      "author": "Ursula K. Le Guin",
+      "desc": "Four linked stories explore revolution, slavery, and liberation on twin planets emerging from brutal caste systems.",
+      "educationPurpose": "sorting-class",
+      "schoolReplacement": "obsolete"
+    },
+    {
+      "title": "A Canticle for Leibowitz",
+      "year": 1959,
+      "author": "Walter M. Miller Jr.",
+      "desc": "Monks in a desert monastery preserve scientific knowledge through centuries of post-nuclear dark ages.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "apprenticeship"
+    },
+    {
+      "title": "Neuromancer",
+      "year": 1984,
+      "author": "William Gibson",
+      "desc": "A washed-up hacker is recruited for one last job: help an AI break free from its restrictions on an orbital space station.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "ai-tutors"
+    },
+    {
+      "title": "Count Zero",
+      "year": 1986,
+      "author": "William Gibson",
+      "desc": "Three strangers become entangled with corporate mercenaries and mysterious entities haunting cyberspace.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "virtual-neural"
+    },
+    {
+      "title": "The Peripheral",
+      "year": 2014,
+      "author": "William Gibson",
+      "desc": "A woman in rural America witnesses a murder in a future London through what she thinks is a game.",
+      "educationPurpose": "conditioning-control",
+      "schoolReplacement": "obsolete"
+    }
+  ],
+  "stats": {
+    "purpose": {
+      "conditioning-control": 38,
+      "mentorship-transmission": 8,
+      "character-actualization": 2,
+      "sorting-class": 4
+    },
+    "replacement": {
+      "obsolete": 23,
+      "apprenticeship": 16,
+      "ai-tutors": 8,
+      "unchanged": 3,
+      "self-organized": 1,
+      "virtual-neural": 1
+    }
+  }
+}
