@@ -111,7 +111,7 @@ export function MeetPageClient({ targetUser }: Props) {
           ) : (
             <div className="meet-cta">
               <a
-                href="/wonder/essay"
+                href="/wonder/essay/quiz"
                 className="btn btn--primary"
                 onClick={handleStartQuiz}
               >
