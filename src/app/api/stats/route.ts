@@ -6,8 +6,8 @@ const redis = new Redis(process.env.REDIS_URL || '');
 
 export async function GET(request: NextRequest) {
   // Admin API key validation
-  const apiKey = request.headers.get('x-admin-api-key')
-  const expectedKey = process.env.ADMIN_API_KEY
+  const apiKey = request.headers.get('x-admin-api-key');
+  const expectedKey = process.env.ADMIN_API_KEY;
 
   if (!expectedKey) {
     return NextResponse.json(
