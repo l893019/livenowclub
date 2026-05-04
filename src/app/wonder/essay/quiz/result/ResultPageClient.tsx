@@ -24,6 +24,9 @@ export function ResultPageClient({
     setUserId(storedUserId);
   }, []);
 
+  // Don't render comparison-related UI until we've checked localStorage
+  const isCheckingComparison = compareUserId && !mounted;
+
   // If compareUserId exists and we have a userId, show comparison view
   const showComparison = mounted && compareUserId && userId && compareUserId !== userId;
 
@@ -48,7 +51,11 @@ export function ResultPageClient({
 
       <Header />
 
-      {needsToTakeQuiz ? (
+      {isCheckingComparison ? (
+        <div style={{ padding: '120px 20px', textAlign: 'center', color: 'var(--text-dim)' }}>
+          Loading...
+        </div>
+      ) : needsToTakeQuiz ? (
         <div style={{
           maxWidth: '600px',
           margin: '120px auto',
@@ -80,7 +87,7 @@ export function ResultPageClient({
       ) : showComparison ? (
         <ComparisonView userId={userId} compareUserId={compareUserId} />
       ) : (
-        <ReadingPage identityKey={identityKey} compareUserId={compareUserId} />
+        <ReadingPage identityKey={identityKey} />
       )}
 
       <footer className="footer">
