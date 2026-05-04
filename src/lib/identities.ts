@@ -498,7 +498,7 @@ const ARCHETYPE_TO_IDENTITY: Record<string, string> = {
 
   // Lower agency, receptive
   presence: 'steady-observer',       // The Present → embodied attention
-  swimmer: 'curious-observer',       // The Deep → questioning witness
+  swimmer: 'open-observer',          // The Deep → open to possibilities
   conscience: 'watchful-observer',   // The Guardian → watchful protector
   cleareyed: 'thoughtful-observer',  // The Clear-Eyed → honest seeing
   embers: 'rooted-noticer',          // The Keeper → preserving attention
