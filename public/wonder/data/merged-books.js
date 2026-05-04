@@ -42,9 +42,7 @@ const books = [
     "coreQuestion": "how-live",
     "aiPresence": "absent",
     "debatesWith": "The Dispossessed",
-    "desc": "In a 25th-century utopia where religion is outlawed, a convict discovers a child whose wishes come true.",
-    "educationPurpose": "mentorship-transmission",
-    "schoolReplacement": "apprenticeship"
+    "desc": "In a 25th-century utopia where religion is outlawed, a convict discovers a child whose wishes come true."
   },
   {
     "title": "Service Model",
@@ -258,9 +256,7 @@ const books = [
     "coreQuestion": "what-matters",
     "aiPresence": "absent",
     "debatesWith": "The Dispossessed",
-    "desc": "In a future society, humans are genetically engineered and conditioned to serve an authoritarian order.",
-    "educationPurpose": "conditioning-control",
-    "schoolReplacement": "conditioning-systems"
+    "desc": "In a future society, humans are genetically engineered and conditioned to serve an authoritarian order."
   },
   {
     "title": "The Demolished Man",
@@ -644,9 +640,7 @@ const books = [
     "coreQuestion": "who-am-i",
     "aiPresence": "absent",
     "debatesWith": "Brave New World",
-    "desc": "A violent teenage gang leader undergoes state-mandated aversion therapy, raising questions about free will.",
-    "educationPurpose": "conditioning-control",
-    "schoolReplacement": "conditioning-systems"
+    "desc": "A violent teenage gang leader undergoes state-mandated aversion therapy, raising questions about free will."
   },
   {
     "title": "Hard to Be a God",
@@ -1069,9 +1063,7 @@ const books = [
     "coreQuestion": "who-am-i",
     "aiPresence": "central",
     "debatesWith": "A Psalm for the Wild-Built",
-    "desc": "A ship's AI downloaded into an illegal humanoid body learns to navigate the world with a hidden engineer.",
-    "educationPurpose": "character-actualization",
-    "schoolReplacement": "ai-tutors"
+    "desc": "A ship's AI downloaded into an illegal humanoid body learns to navigate the world with a hidden engineer."
   },
   {
     "title": "Record of a Spaceborn Few",
@@ -1418,9 +1410,7 @@ const books = [
     "coreQuestion": "who-am-i",
     "aiPresence": "absent",
     "debatesWith": "Dawn",
-    "desc": "A murdered geneticist is cloned and her successor must navigate deadly politics while discovering her identity.",
-    "educationPurpose": "conditioning-control",
-    "schoolReplacement": "obsolete"
+    "desc": "A murdered geneticist is cloned and her successor must navigate deadly politics while discovering her identity."
   },
   {
     "title": "Contact",
@@ -2193,9 +2183,7 @@ const books = [
     "workRole": "transformed",
     "coreQuestion": "who-am-i",
     "aiPresence": "absent",
-    "desc": "A man with intellectual disabilities undergoes experimental surgery to increase his intelligence, with tragic results.",
-    "educationPurpose": "character-actualization",
-    "schoolReplacement": "obsolete"
+    "desc": "A man with intellectual disabilities undergoes experimental surgery to increase his intelligence, with tragic results."
   },
   {
     "title": "The Hitchhiker's Guide to the Galaxy",
@@ -2753,9 +2741,7 @@ const books = [
     "workRole": "essential",
     "coreQuestion": "who-am-i",
     "aiPresence": "background",
-    "desc": "A torturer's apprentice is exiled and journeys across a far-future dying Earth carrying an ancient sword.",
-    "educationPurpose": "character-actualization",
-    "schoolReplacement": "apprenticeship"
+    "desc": "A torturer's apprentice is exiled and journeys across a far-future dying Earth carrying an ancient sword."
   },
   {
     "title": "Nineteen Eighty-Four",
@@ -2801,9 +2787,7 @@ const books = [
     "coreQuestion": "what-matters",
     "aiPresence": "absent",
     "debatesWith": "Brave New World",
-    "desc": "A minor Party member rebels against a totalitarian surveillance state ruled by the omnipresent Big Brother.",
-    "educationPurpose": "conditioning-control",
-    "schoolReplacement": "obsolete"
+    "desc": "A minor Party member rebels against a totalitarian surveillance state ruled by the omnipresent Big Brother."
   },
   {
     "title": "Quarantine",
@@ -3365,9 +3349,7 @@ const books = [
     "coreQuestion": "why-exist",
     "aiPresence": "central",
     "debatesWith": "A Psalm for the Wild-Built",
-    "desc": "A shape-changing mercenary hunts a fugitive Mind during the galaxy-spanning Idiran-Culture War.",
-    "educationPurpose": "lifelong-practice",
-    "schoolReplacement": "obsolete"
+    "desc": "A shape-changing mercenary hunts a fugitive Mind during the galaxy-spanning Idiran-Culture War."
   },
   {
     "title": "The Player of Games",
@@ -3412,9 +3394,7 @@ const books = [
     "coreQuestion": "who-am-i",
     "aiPresence": "central",
     "debatesWith": "Ender's Game",
-    "desc": "A bored master game player competes in a brutal empire where the game's winner becomes emperor.",
-    "educationPurpose": "lifelong-practice",
-    "schoolReplacement": "obsolete"
+    "desc": "A bored master game player competes in a brutal empire where the game's winner becomes emperor."
   },
   {
     "title": "The State of the Art",
@@ -3504,9 +3484,7 @@ const books = [
     "coreQuestion": "who-am-i",
     "aiPresence": "background",
     "debatesWith": "The Forever War",
-    "desc": "A Culture agent with a hidden past undertakes dangerous missions while his traumatic history unfolds.",
-    "educationPurpose": "lifelong-practice",
-    "schoolReplacement": "obsolete"
+    "desc": "A Culture agent with a hidden past undertakes dangerous missions while his traumatic history unfolds."
   },
   {
     "title": "Excession",
@@ -3550,9 +3528,7 @@ const books = [
     "coreQuestion": "what-matters",
     "aiPresence": "central",
     "debatesWith": "Consider Phlebas",
-    "desc": "Culture Minds confront a mysterious artifact from another universe while dealing with a brutal civilization.",
-    "educationPurpose": "lifelong-practice",
-    "schoolReplacement": "obsolete"
+    "desc": "Culture Minds confront a mysterious artifact from another universe while dealing with a brutal civilization."
   },
   {
     "title": "Inversions",
@@ -3595,9 +3571,7 @@ const books = [
     "coreQuestion": "how-live",
     "aiPresence": "absent",
     "debatesWith": "The Dispossessed",
-    "desc": "Two mysterious foreigners serve rival kingdoms on a medieval world, concealing their true origins.",
-    "educationPurpose": "lifelong-practice",
-    "schoolReplacement": "obsolete"
+    "desc": "Two mysterious foreigners serve rival kingdoms on a medieval world, concealing their true origins."
   },
   {
     "title": "Look to Windward",
@@ -3641,9 +3615,7 @@ const books = [
     "coreQuestion": "what-matters",
     "aiPresence": "central",
     "debatesWith": "Use of Weapons",
-    "desc": "An emissary with a buried assassination mission travels to a Culture Orbital as ancient atrocities arrive.",
-    "educationPurpose": "lifelong-practice",
-    "schoolReplacement": "obsolete"
+    "desc": "An emissary with a buried assassination mission travels to a Culture Orbital as ancient atrocities arrive."
   },
   {
     "title": "Matter",
@@ -3687,9 +3659,7 @@ const books = [
     "coreQuestion": "what-matters",
     "aiPresence": "central",
     "debatesWith": "Surface Detail",
-    "desc": "Three royal siblings are caught in war and conspiracy on a vast artificial shellworld.",
-    "educationPurpose": "lifelong-practice",
-    "schoolReplacement": "obsolete"
+    "desc": "Three royal siblings are caught in war and conspiracy on a vast artificial shellworld."
   },
   {
     "title": "Surface Detail",
@@ -3734,9 +3704,7 @@ const books = [
     "coreQuestion": "what-matters",
     "aiPresence": "central",
     "debatesWith": "Permutation City",
-    "desc": "A murdered slave seeks revenge as a secret war over virtual afterlife Hells threatens to become real.",
-    "educationPurpose": "lifelong-practice",
-    "schoolReplacement": "obsolete"
+    "desc": "A murdered slave seeks revenge as a secret war over virtual afterlife Hells threatens to become real."
   },
   {
     "title": "The Hydrogen Sonata",
@@ -3780,9 +3748,7 @@ const books = [
     "coreQuestion": "why-exist",
     "aiPresence": "central",
     "debatesWith": "Childhood's End",
-    "desc": "A civilization prepares to Sublime while one soldier searches for a man who knows their secret history.",
-    "educationPurpose": "lifelong-practice",
-    "schoolReplacement": "obsolete"
+    "desc": "A civilization prepares to Sublime while one soldier searches for a man who knows their secret history."
   },
   {
     "title": "I, Robot",
@@ -4875,9 +4841,7 @@ const books = [
     "coreQuestion": "what-matters",
     "aiPresence": "central",
     "debatesWith": "Brave New World",
-    "desc": "In a future where machines have replaced labor, an engineer questions a society that rendered workers obsolete.",
-    "educationPurpose": "sorting-class",
-    "schoolReplacement": "obsolete"
+    "desc": "In a future where machines have replaced labor, an engineer questions a society that rendered workers obsolete."
   },
   {
     "title": "The Sirens of Titan",
@@ -5223,9 +5187,7 @@ const books = [
     "coreQuestion": "who-am-i",
     "aiPresence": "absent",
     "debatesWith": "Nineteen Eighty-Four",
-    "desc": "In a totalitarian theocracy that has replaced America, fertile women are enslaved as reproductive servants.",
-    "educationPurpose": "conditioning-control",
-    "schoolReplacement": "obsolete"
+    "desc": "In a totalitarian theocracy that has replaced America, fertile women are enslaved as reproductive servants."
   },
   {
     "title": "Oryx and Crake",
@@ -5401,9 +5363,7 @@ const books = [
     "coreQuestion": "how-live",
     "aiPresence": "absent",
     "debatesWith": "Brave New World",
-    "desc": "A woman in a psychiatric hospital is contacted by a visitor from a utopian future she may help create.",
-    "educationPurpose": "lifelong-practice",
-    "schoolReplacement": "apprenticeship"
+    "desc": "A woman in a psychiatric hospital is contacted by a visitor from a utopian future she may help create."
   },
   {
     "title": "System Collapse",
@@ -5492,9 +5452,7 @@ const books = [
     "coreQuestion": "how-live",
     "aiPresence": "absent",
     "debatesWith": "Parable of the Sower",
-    "desc": "On a seismically unstable world, a woman with forbidden earth-manipulating powers searches for her daughter.",
-    "educationPurpose": "character-actualization",
-    "schoolReplacement": "conditioning-systems"
+    "desc": "On a seismically unstable world, a woman with forbidden earth-manipulating powers searches for her daughter."
   },
   {
     "title": "The Obelisk Gate",
@@ -5668,9 +5626,7 @@ const books = [
     "coreQuestion": "who-am-i",
     "aiPresence": "background",
     "debatesWith": "Neuromancer",
-    "desc": "A hacker pizza deliveryman investigates a virtual drug that can infect minds in both the Metaverse and reality.",
-    "educationPurpose": "character-actualization",
-    "schoolReplacement": "ai-tutors"
+    "desc": "A hacker pizza deliveryman investigates a virtual drug that can infect minds in both the Metaverse and reality."
   },
   {
     "title": "The Diamond Age",
@@ -5715,9 +5671,7 @@ const books = [
     "coreQuestion": "who-am-i",
     "aiPresence": "background",
     "debatesWith": "Walkaway",
-    "desc": "A young girl in a nanotech future receives an interactive book designed to raise her to think for herself.",
-    "educationPurpose": "character-actualization",
-    "schoolReplacement": "ai-tutors"
+    "desc": "A young girl in a nanotech future receives an interactive book designed to raise her to think for herself."
   },
   {
     "title": "Anathem",
@@ -5761,9 +5715,7 @@ const books = [
     "coreQuestion": "what-matters",
     "aiPresence": "central",
     "debatesWith": "Snow Crash",
-    "desc": "Cloistered scholar-monks on an alien world are called out when an extraterrestrial ship appears in orbit.",
-    "educationPurpose": "character-actualization",
-    "schoolReplacement": "self-organized"
+    "desc": "Cloistered scholar-monks on an alien world are called out when an extraterrestrial ship appears in orbit."
   },
   {
     "title": "Seveneves",
@@ -5852,9 +5804,7 @@ const books = [
     "coreQuestion": "who-am-i",
     "aiPresence": "absent",
     "debatesWith": "Ancillary Justice",
-    "desc": "A young Himba woman traveling to an interstellar university must negotiate peace with attacking aliens.",
-    "educationPurpose": "character-actualization",
-    "schoolReplacement": "unchanged"
+    "desc": "A young Himba woman traveling to an interstellar university must negotiate peace with attacking aliens."
   },
   {
     "title": "Kindred",
@@ -5899,9 +5849,7 @@ const books = [
     "coreQuestion": "who-am-i",
     "aiPresence": "absent",
     "debatesWith": "The Time Machine",
-    "desc": "A Black woman in 1970s Los Angeles is repeatedly pulled back in time to save her white ancestor, a slave owner whose survival ensures her own existence.",
-    "educationPurpose": "character-actualization",
-    "schoolReplacement": "obsolete"
+    "desc": "A Black woman in 1970s Los Angeles is repeatedly pulled back in time to save her white ancestor, a slave owner whose survival ensures her own existence."
   },
   {
     "title": "Wild Seed",
@@ -6163,9 +6111,7 @@ const books = [
     "coreQuestion": "how-live",
     "aiPresence": "absent",
     "debatesWith": "The Road",
-    "desc": "A hyperempathic teenager flees her walled community in climate-ravaged 2020s California and founds a religion.",
-    "educationPurpose": "mentorship-transmission",
-    "schoolReplacement": "apprenticeship"
+    "desc": "A hyperempathic teenager flees her walled community in climate-ravaged 2020s California and founds a religion."
   },
   {
     "title": "Parable of the Talents",
@@ -6253,9 +6199,7 @@ const books = [
     "coreQuestion": "who-am-i",
     "aiPresence": "background",
     "debatesWith": "Starship Troopers",
-    "desc": "A child genius is trained in a space battle school to command humanity's fleet against an alien invasion.",
-    "educationPurpose": "character-actualization",
-    "schoolReplacement": "unchanged"
+    "desc": "A child genius is trained in a space battle school to command humanity's fleet against an alien invasion."
   },
   {
     "title": "Starfish",
@@ -7845,9 +7789,7 @@ const books = [
     "coreQuestion": "what-matters",
     "aiPresence": "central",
     "debatesWith": "Klara and the Sun",
-    "desc": "Trainers raise AI pets over decades, facing obsolescence and questions about digital consciousness and personhood.",
-    "educationPurpose": "mentorship-transmission",
-    "schoolReplacement": "ai-tutors"
+    "desc": "Trainers raise AI pets over decades, facing obsolescence and questions about digital consciousness and personhood."
   },
   {
     "title": "Anxiety Is the Dizziness of Freedom",
@@ -8153,9 +8095,7 @@ const books = [
     "coreQuestion": "how-live",
     "aiPresence": "absent",
     "debatesWith": "Brave New World",
-    "desc": "A physicist from an anarchist moon travels to his capitalist mother planet, questioning both societies.",
-    "educationPurpose": "character-actualization",
-    "schoolReplacement": "self-organized"
+    "desc": "A physicist from an anarchist moon travels to his capitalist mother planet, questioning both societies."
   },
   {
     "title": "Always Coming Home",
@@ -8199,9 +8139,7 @@ const books = [
     "coreQuestion": "how-live",
     "aiPresence": "background",
     "debatesWith": "The Dispossessed",
-    "desc": "A fictional ethnography of the Kesh, a peaceful people living in a post-apocalyptic Napa Valley.",
-    "educationPurpose": "lifelong-practice",
-    "schoolReplacement": "apprenticeship"
+    "desc": "A fictional ethnography of the Kesh, a peaceful people living in a post-apocalyptic Napa Valley."
   },
   {
     "title": "Tehanu",
@@ -8589,9 +8527,7 @@ const books = [
     "coreQuestion": "who-am-i",
     "aiPresence": "background",
     "debatesWith": "The Machine Stops",
-    "desc": "A recovering Alzheimer's patient navigates augmented reality while becoming a pawn in a bioweapon conspiracy.",
-    "educationPurpose": "character-actualization",
-    "schoolReplacement": "ai-tutors"
+    "desc": "A recovering Alzheimer's patient navigates augmented reality while becoming a pawn in a bioweapon conspiracy."
   },
   {
     "title": "A Canticle for Leibowitz",
@@ -8634,9 +8570,7 @@ const books = [
     "coreQuestion": "why-exist",
     "aiPresence": "absent",
     "debatesWith": "The Road",
-    "desc": "Monks in a desert monastery preserve scientific knowledge through centuries of post-nuclear dark ages.",
-    "educationPurpose": "mentorship-transmission",
-    "schoolReplacement": "apprenticeship"
+    "desc": "Monks in a desert monastery preserve scientific knowledge through centuries of post-nuclear dark ages."
   },
   {
     "title": "Neuromancer",
@@ -9066,8 +9000,6 @@ const books = [
     "coreQuestion": "who-am-i",
     "aiPresence": "absent",
     "debatesWith": "1984",
-    "desc": "In a glass-walled totalitarian city, an engineer's forbidden love awakens dangerous individuality and rebellion.",
-    "educationPurpose": "conditioning-control",
-    "schoolReplacement": "obsolete"
+    "desc": "In a glass-walled totalitarian city, an engineer's forbidden love awakens dangerous individuality and rebellion."
   }
 ];
