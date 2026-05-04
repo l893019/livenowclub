@@ -5,7 +5,12 @@ const redis = new Redis(process.env.REDIS_URL || '');
 
 export async function POST(request: NextRequest) {
   try {
-    const { page, referrer, event, identity, context, metadata, sessionId } = await request.json();
+    const { page, referrer, event, identity, context, metadata, sessionId, noTrack } = await request.json();
+
+    // Skip tracking if noTrack flag is set
+    if (noTrack) {
+      return NextResponse.json({ success: true, tracked: false });
+    }
 
     // Get visitor info
     const ip = request.headers.get('x-forwarded-for') ||

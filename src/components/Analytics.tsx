@@ -22,6 +22,9 @@ export default function Analytics() {
   const sessionId = useRef<string>('');
 
   useEffect(() => {
+    // Check for noTrack preference
+    const noTrack = localStorage.getItem('analytics-no-track') === 'true';
+
     // Initialize session ID
     sessionId.current = getSessionId();
 
@@ -35,6 +38,7 @@ export default function Analytics() {
             page: pathname,
             referrer: document.referrer,
             sessionId: sessionId.current,
+            noTrack,
           }),
         });
       } catch (error) {
@@ -55,6 +59,9 @@ export default function Analytics() {
     const isEssayPage = pathname.includes('/read/') || pathname.includes('/wonder/essay/');
 
     if (!isEssayPage) return;
+
+    // Check for noTrack preference
+    const noTrack = localStorage.getItem('analytics-no-track') === 'true';
 
     // Track scroll depth
     const handleScroll = () => {
@@ -77,6 +84,7 @@ export default function Analytics() {
               page: pathname,
               sessionId: sessionId.current,
               metadata: { depth: milestone },
+              noTrack,
             }),
           }).catch(() => {});
         }
@@ -95,6 +103,7 @@ export default function Analytics() {
           page: pathname,
           sessionId: sessionId.current,
           metadata: { seconds: timeSpent },
+          noTrack,
         });
 
         if (navigator.sendBeacon) {

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Redis from 'ioredis';
-import { identities } from '@/lib/identities';
+import { getIdentityFromArchetype } from '@/lib/identities';
 
 const redis = new Redis(process.env.REDIS_URL || '');
 
@@ -182,7 +182,7 @@ export async function GET(request: NextRequest) {
 
           // Count by identity/archetype - use friendly name
           const archetype = user.archetype || 'Unknown';
-          const identity = identities[archetype];
+          const identity = getIdentityFromArchetype(archetype);
           const identityName = identity ? identity.name : archetype;
           stats.users.byIdentity[identityName] = (stats.users.byIdentity[identityName] || 0) + 1;
 
@@ -208,8 +208,8 @@ export async function GET(request: NextRequest) {
     });
 
     stats.users.recent = users.slice(0, 20).map(u => {
-      // Get the friendly identity name from the identities map
-      const identity = identities[u.archetype];
+      // Get the friendly identity name from the archetype
+      const identity = getIdentityFromArchetype(u.archetype);
       const identityName = identity ? identity.name : u.archetype;
 
       return {
