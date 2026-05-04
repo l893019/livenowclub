@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { CreateJoinStep } from "./steps/CreateJoinStep";
 import { DimensionSpectrum } from "./DimensionSpectrum";
+import { RelationshipComparison } from "./RelationshipComparison";
 import EmailCapture from "@/components/EmailCapture";
 import { arrayToQuizAnswers, calculateDimensions, type QuizAnswers, type Dimensions } from "@/lib/dimensions";
 import {
@@ -160,22 +161,20 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
 
   // Create connection if came from someone's link
   useEffect(() => {
-    const connectWith = localStorage.getItem("connectWith");
     const userId = localStorage.getItem("quiz-user-id");
 
-    if (connectWith && userId && connectWith !== userId) {
+    // Check for compareUserId from URL params
+    if (compareUserId && userId && compareUserId !== userId) {
       fetch('/api/connections/create', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           userId,
-          connectWithUserId: connectWith,
+          connectWithUserId: compareUserId,
         }),
-      }).then(() => {
-        localStorage.removeItem("connectWith");
       }).catch(console.error);
     }
-  }, []);
+  }, [compareUserId]);
 
   // Show utopia creation flow
   if (showCreateUtopia && !existingUtopia) {
@@ -540,6 +539,17 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
           ))}
         </div>
       </section>
+
+      {/* Relationship Comparison */}
+      {compareUserId && identity && (
+        <>
+          <div className={styles.divider} />
+          <RelationshipComparison
+            yourArchetypeKey={identity.key}
+            compareUserId={compareUserId}
+          />
+        </>
+      )}
 
       {/* Essay Promotion */}
       <section className={styles.essayPromoSection}>
