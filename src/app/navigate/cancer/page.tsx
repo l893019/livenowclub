@@ -28,7 +28,7 @@ function getYear(dateStr: string): string {
 export const metadata = {
   title: "Cancer Guide: Navigating Diagnosis, Treatment & Beyond | The Live Now Club",
   description:
-    "A comprehensive guide to navigating cancer, written by a survivor. Practical advice for newly diagnosed patients, those in treatment, caregivers, and anyone seeking meaning through illness.",
+    "A comprehensive, practical guide to navigating cancer from diagnosis through treatment and survivorship. Written by cervical cancer survivor Louise Ireland. Free PDF download available. Includes advice for newly diagnosed patients, those in treatment, caregivers, and support resources.",
   keywords: [
     "cancer guide",
     "cancer diagnosis",
@@ -39,54 +39,111 @@ export const metadata = {
     "living with cancer",
     "coping with cancer",
     "cancer meditation",
-    "cancer essays",
+    "cancer resource guide",
+    "newly diagnosed cancer",
+    "cancer patient support",
+    "chemotherapy tips",
+    "radiation therapy advice",
+    "cancer survivorship",
+    "how to support cancer patient",
+    "cancer mental health",
+    "cervical cancer survivor",
+    "free cancer guide",
+    "cancer guide pdf",
   ],
   openGraph: {
     title: "Cancer Guide: Navigating Diagnosis, Treatment & Beyond",
     description:
-      "A comprehensive guide to navigating cancer, written by a survivor. Practical advice for newly diagnosed patients, those in treatment, and caregivers.",
+      "A comprehensive guide to navigating cancer, written by a survivor. Practical advice for newly diagnosed patients, those in treatment, and caregivers. Free PDF available.",
     type: "website",
-    url: "https://livenowclub.vercel.app/navigate/cancer",
+    url: "https://livenowclub.com/navigate/cancer",
+    siteName: "The Live Now Club",
+    images: [
+      {
+        url: "https://livenowclub.com/images/og-cancer-guide.png",
+        width: 1200,
+        height: 630,
+        alt: "Cancer Guide: Everything I Wish Someone Had Told Me",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cancer Guide: Navigating Diagnosis, Treatment & Beyond",
+    description: "Comprehensive cancer guide from diagnosis to survivorship. Written by survivor Louise Ireland. Free PDF download.",
+    images: ["https://livenowclub.com/images/og-cancer-guide.png"],
+  },
+  alternates: {
+    canonical: "https://livenowclub.com/navigate/cancer",
   },
 };
 
 // JSON-LD structured data for SEO
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
+  "@type": "MedicalWebPage",
   name: "Cancer Guide: Navigating Diagnosis, Treatment & Beyond",
   description:
-    "A comprehensive guide to navigating cancer, written by a survivor. Practical advice for newly diagnosed patients, those in treatment, caregivers, and anyone seeking meaning through illness.",
+    "A comprehensive guide to navigating cancer, written by a cervical cancer survivor. Practical advice for newly diagnosed patients, those in treatment, caregivers, and anyone seeking meaning through illness.",
+  url: "https://livenowclub.com/navigate/cancer",
+  datePublished: "2024-12-14",
+  dateModified: new Date().toISOString().split('T')[0],
   author: {
     "@type": "Person",
     name: "Louise Ireland",
+    description: "Cervical cancer survivor and author",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "The Live Now Club",
+    url: "https://livenowclub.com",
+  },
+  about: {
+    "@type": "MedicalCondition",
+    name: "Cancer",
+  },
+  specialty: "Oncology",
+  audience: {
+    "@type": "PeopleAudience",
+    audienceType: "Cancer patients, caregivers, and supporters",
   },
   mainEntity: {
     "@type": "ItemList",
     itemListElement: [
       {
-        "@type": "ListItem",
+        "@type": "HowTo",
         position: 1,
-        name: "Just Diagnosed",
-        description: "Everything I wish someone had told me at the start.",
+        name: "Before You Start Treatment",
+        description: "Everything to prepare before beginning cancer treatment",
+        url: "https://livenowclub.com/read/expecting-the-unexpected#before-you-start-treatment",
       },
       {
-        "@type": "ListItem",
+        "@type": "HowTo",
         position: 2,
         name: "During Treatment",
-        description: "Practical guidance and poetic musings for the hardest days.",
+        description: "Practical guidance for navigating chemotherapy, radiation, and other treatments",
+        url: "https://livenowclub.com/read/expecting-the-unexpected#treatment",
       },
       {
-        "@type": "ListItem",
+        "@type": "HowTo",
         position: 3,
         name: "For Caregivers",
-        description: "How to support someone you love through this.",
+        description: "How to support someone you love through cancer treatment",
+        url: "https://livenowclub.com/read/expecting-the-unexpected#how-do-you-support-a-friend-with-cancer",
       },
       {
-        "@type": "ListItem",
+        "@type": "Article",
         position: 4,
-        name: "Finding Meaning",
-        description: "Making sense of it all.",
+        name: "Survivorship",
+        description: "Life after cancer treatment and long-term healing",
+        url: "https://livenowclub.com/read/expecting-the-unexpected#survivorship",
+      },
+      {
+        "@type": "Article",
+        position: 5,
+        name: "Core Principles",
+        description: "Essential guidance for anyone going through cancer",
+        url: "https://livenowclub.com/read/expecting-the-unexpected#core-principles",
       },
     ],
   },
