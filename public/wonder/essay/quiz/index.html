@@ -2159,6 +2159,16 @@
           return;
         }
 
+        // Check if this is a share result flow
+        if (pendingAction === 'share-result') {
+          sessionStorage.removeItem('pending-action');
+          btn.textContent = 'Sharing...';
+          // Go back to results, then trigger share
+          showResult();
+          setTimeout(() => shareResult(), 100);
+          return;
+        }
+
         // Check if this is a join flow
         const inviteData = sessionStorage.getItem('utopia-invite');
         if (inviteData) {
@@ -2330,13 +2340,44 @@
       window.location.href = buildResultUrl();
     }
 
-    function shareResult() {
-      const identityKey = getIdentityKey();
+    async function shareResult() {
+      if (!userResult || !userId) {
+        alert('Please complete the quiz first.');
+        return;
+      }
 
-      const text = `What's your post-scarcity worldview?`;
-      const params = new URLSearchParams();
-      if (identityKey) params.set('i', identityKey);
-      const url = `https://livenowclub.vercel.app/wonder/essay/quiz/result?${params.toString()}`;
+      // If user doesn't have a name yet, show the name/email prompt first
+      if (!userResult.name) {
+        sessionStorage.setItem('pending-action', 'share-result');
+        showScreen('screen-name');
+        return;
+      }
+
+      // Get or save slug
+      let slug = localStorage.getItem('userSlug');
+      if (!slug) {
+        try {
+          const saveResponse = await fetch('/api/utopia/save-result', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ result: userResult })
+          });
+          const saveData = await saveResponse.json();
+          if (saveData.slug) {
+            slug = saveData.slug;
+            localStorage.setItem('userSlug', slug);
+          }
+        } catch (error) {
+          console.error('Failed to save result:', error);
+        }
+      }
+
+      // Share personalized meet link
+      const url = slug
+        ? `https://livenowclub.vercel.app/meet/${slug}`
+        : `https://livenowclub.vercel.app/wonder/essay/quiz/result?i=${getIdentityKey()}`;
+
+      const text = `I just discovered my post-scarcity worldview. Take the quiz and see where we intersect!`;
 
       if (navigator.share) {
         navigator.share({ title: text, text, url });
