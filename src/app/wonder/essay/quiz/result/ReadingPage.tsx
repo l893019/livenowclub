@@ -260,28 +260,31 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
     );
   }
 
-  if (!identity && showError) {
-    return (
-      <div className={styles.reading}>
-        <div className={styles.loading}>
-          <h2>Unable to load your results</h2>
-          <p style={{ marginTop: '1rem', color: 'rgba(45, 42, 38, 0.7)' }}>
-            Please complete the quiz first, or contact support if you believe this is an error.
-          </p>
-          <Link href="/wonder/essay/quiz" style={{
-            display: 'inline-block',
-            marginTop: '2rem',
-            padding: '12px 24px',
-            background: '#e8178a',
-            color: 'white',
-            textDecoration: 'none',
-            borderRadius: '4px'
-          }}>
-            Take the Quiz
-          </Link>
+  if (!identity) {
+    if (showError) {
+      return (
+        <div className={styles.reading}>
+          <div className={styles.loading}>
+            <h2>Unable to load your results</h2>
+            <p style={{ marginTop: '1rem', color: 'rgba(45, 42, 38, 0.7)' }}>
+              Please complete the quiz first, or contact support if you believe this is an error.
+            </p>
+            <Link href="/wonder/essay/quiz" style={{
+              display: 'inline-block',
+              marginTop: '2rem',
+              padding: '12px 24px',
+              background: '#e8178a',
+              color: 'white',
+              textDecoration: 'none',
+              borderRadius: '4px'
+            }}>
+              Take the Quiz
+            </Link>
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
+    return null;
   }
 
   const getArticle = (name: string) => {

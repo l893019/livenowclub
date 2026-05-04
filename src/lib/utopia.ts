@@ -131,6 +131,7 @@ export async function getUserResult(userId: string): Promise<UserResult | null> 
           answers: member.answers,
           email: member.email || '',
           slug: member.slug || '',
+          createdAt: member.joinedAt || new Date().toISOString(),
         };
         // Save it back to Redis for future use
         await saveUserResult(reconstructed);
