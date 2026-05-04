@@ -169,74 +169,88 @@ function categorizeEducation(book) {
     reasoning.replacement = 'Traditional educational institutions exist';
   }
 
-  // 2. VIRTUAL/NEURAL - Simulations, cyberspace learning
+  // 2. DIRECT TRANSFER - Mind uploading, neural downloads (check before virtual-neural)
   else if (
-    (desc.includes('simulation') && desc.includes('training')) ||
-    desc.includes('virtual reality') ||
-    desc.includes('virtual world') ||
-    (desc.includes('cyberspace') || persists.includes('cyberspace')) ||
-    desc.includes('matrix') ||
-    desc.includes('neural simulation')
-  ) {
-    schoolReplacement = 'virtual-neural';
-    reasoning.replacement = 'Virtual/simulated learning environments';
-  }
-
-  // 3. DIRECT TRANSFER - Mind uploading, neural downloads
-  else if (
-    desc.includes('upload') && desc.includes('knowledge') ||
+    desc.includes('upload') && (desc.includes('knowledge') || desc.includes('mind') || desc.includes('consciousness')) ||
     desc.includes('download') && (desc.includes('skill') || desc.includes('memory')) ||
-    desc.includes('neural implant') ||
+    desc.includes('neural implant') && desc.includes('knowledge') ||
     desc.includes('mind transfer') ||
     desc.includes('consciousness transfer') ||
     desc.includes('direct knowledge') ||
     persists.includes('mind_uploading') ||
     persists.includes('neural_laces') ||
-    (book.deathRole === 'transcended' && desc.includes('digital'))
+    (book.deathRole === 'transcended' && book.identityModel === 'multiple') ||
+    desc.includes('digitize') && desc.includes('mind')
   ) {
     schoolReplacement = 'direct-transfer';
     reasoning.replacement = 'Direct knowledge transfer/uploading';
+  }
+
+  // 3. VIRTUAL/NEURAL - Simulations, cyberspace learning
+  else if (
+    (desc.includes('simulation') && (desc.includes('training') || desc.includes('virtual'))) ||
+    desc.includes('virtual reality') ||
+    desc.includes('virtual world') ||
+    desc.includes('cyberspace') ||
+    persists.includes('cyberspace') ||
+    desc.includes('matrix') ||
+    desc.includes('neural network') && themes.includes('identity') ||
+    desc.includes('digital') && themes.includes('connection')
+  ) {
+    schoolReplacement = 'virtual-neural';
+    reasoning.replacement = 'Virtual/simulated learning environments';
   }
 
   // 4. AI TUTORS - AI-driven education
   else if (
     book.aiPresence === 'central' ||
     book.aiPresence === 'companion' ||
-    (desc.includes('ai') && (desc.includes('teach') || desc.includes('learn') || desc.includes('guide')))
+    (book.aiPresence === 'background' && (desc.includes('robot') || desc.includes('android'))) ||
+    desc.includes('ai') && (desc.includes('teach') || desc.includes('learn') || desc.includes('guide'))
   ) {
     schoolReplacement = 'ai-tutors';
     reasoning.replacement = 'AI-mediated learning';
   }
 
-  // 5. APPRENTICESHIP - Craft-based, guild learning
+  // 5. APPRENTICESHIP - Craft-based, guild, mentor learning (broader criteria)
   else if (
     persists.includes('craft') ||
+    persists.includes('care') && book.workRole === 'essential' ||
     desc.includes('apprentice') ||
     desc.includes('guild') ||
     desc.includes('craftsman') ||
-    desc.includes('master craftsman') ||
-    (educationPurpose === 'mentorship-transmission')
+    desc.includes('master') && themes.includes('work') ||
+    (educationPurpose === 'mentorship-transmission') ||
+    (educationPurpose === 'lifelong-practice' && persists.includes('craft')) ||
+    // Skills passed through work/doing
+    (book.workRole === 'essential' && persists.includes('difficulty')) ||
+    (book.workRole === 'transformed' && persists.includes('craft'))
   ) {
     schoolReplacement = 'apprenticeship';
     reasoning.replacement = 'Craft/guild/apprenticeship systems';
   }
 
-  // 6. SELF-ORGANIZED - Community, collective learning
+  // 6. SELF-ORGANIZED - Community, collective, voluntary learning
   else if (
     desc.includes('self-taught') ||
-    desc.includes('collective') && desc.includes('learn') ||
-    desc.includes('community') && desc.includes('education') ||
-    (persists.includes('community') && book.workRole === 'voluntary') ||
-    desc.includes('cooperat') && themes.includes('connection')
+    desc.includes('collective') && (desc.includes('learn') || desc.includes('knowledge')) ||
+    desc.includes('community') && (desc.includes('education') || desc.includes('share') || desc.includes('teach')) ||
+    (persists.includes('community') && (book.workRole === 'voluntary' || book.workRole === 'transformed')) ||
+    desc.includes('cooperat') && themes.includes('connection') ||
+    // Anarchist/decentralized societies
+    (book.econ === 'gift' && themes.includes('freedom')) ||
+    (book.tensions?.hierarchy === 'no' && themes.includes('connection')) ||
+    // Discovery-based, peer learning
+    (educationPurpose === 'lifelong-practice' && !persists.includes('craft') && book.workRole === 'voluntary')
   ) {
     schoolReplacement = 'self-organized';
     reasoning.replacement = 'Self-organized/community learning';
   }
 
-  // 7. OBSOLETE - No formal education
+  // 7. OBSOLETE - No formal education (stricter criteria now)
   else {
     schoolReplacement = 'obsolete';
-    reasoning.replacement = 'Formal education absent/obsolete';
+    reasoning.replacement = 'No structured learning systems';
   }
 
   return { educationPurpose, schoolReplacement, reasoning };

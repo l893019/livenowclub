@@ -3318,11 +3318,13 @@
         { label: 'Sorting & class', pct: 2, color: '#a29bfe' }
       ],
       schools: [
-        { label: 'Education obsolete', pct: 46, color: '#e8178a' },
-        { label: 'AI tutors', pct: 27, color: '#f4a03f' },
-        { label: 'Apprenticeship guilds', pct: 25, color: '#9b8fef' },
-        { label: 'Schools unchanged', pct: 1, color: '#3db9a4' },
-        { label: 'Direct knowledge transfer', pct: 1, color: '#ff6b6b' }
+        { label: 'Apprenticeship guilds', pct: 31, color: '#e8178a' },
+        { label: 'No formal schools', pct: 31, color: '#f4a03f' },
+        { label: 'AI tutors', pct: 25, color: '#9b8fef' },
+        { label: 'Self-organized learning', pct: 8, color: '#3db9a4' },
+        { label: 'Direct knowledge transfer', pct: 2, color: '#ff6b6b' },
+        { label: 'Virtual/neural academies', pct: 1, color: '#a29bfe' },
+        { label: 'Schools unchanged', pct: 1, color: '#74b9ff' }
       ]
     };
 
@@ -3340,7 +3342,7 @@
       worthLiving: { field: 'worthLiving', labelMap: { 'Connection': 'connection', 'Struggle': 'struggle', 'Creation': 'creation', 'Discovery': 'discovery', 'Transcendence': 'transcendence' }},
       econ: { field: 'econ', labelMap: { 'Hybrid': 'hybrid', 'Market': 'market', 'Post-money': 'post-money', 'Gift': 'gift', 'Capitalism': 'capitalism' }},
       education: { field: 'educationPurpose', labelMap: { 'Character & self-actualization': 'character-actualization', 'Conditioning & control': 'conditioning-control', 'Lifelong practice': 'lifelong-practice', 'Absent or irrelevant': 'absent-irrelevant', 'Mentorship & transmission': 'mentorship-transmission', 'Sorting & class': 'sorting-class' }},
-      schools: { field: 'schoolReplacement', labelMap: { 'Education obsolete': 'obsolete', 'AI tutors': 'ai-tutors', 'Apprenticeship guilds': 'apprenticeship', 'Schools unchanged': 'unchanged', 'Direct knowledge transfer': 'direct-transfer' }}
+      schools: { field: 'schoolReplacement', labelMap: { 'Apprenticeship guilds': 'apprenticeship', 'No formal schools': 'obsolete', 'AI tutors': 'ai-tutors', 'Self-organized learning': 'self-organized', 'Direct knowledge transfer': 'direct-transfer', 'Virtual/neural academies': 'virtual-neural', 'Schools unchanged': 'unchanged' }}
     };
 
     // Get nested field value from book

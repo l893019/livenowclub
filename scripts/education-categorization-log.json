@@ -7,7 +7,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -48,10 +48,10 @@
     "title": "House of Suns",
     "year": 2008,
     "purpose": "character-actualization",
-    "replacement": "ai-tutors",
+    "replacement": "direct-transfer",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "AI-mediated learning"
+      "replacement": "Direct knowledge transfer/uploading"
     }
   },
   {
@@ -62,7 +62,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -73,7 +73,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -84,7 +84,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -150,7 +150,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -161,7 +161,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -169,10 +169,10 @@
     "title": "Hard to Be a God",
     "year": 1964,
     "purpose": "conditioning-control",
-    "replacement": "obsolete",
+    "replacement": "apprenticeship",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Craft/guild/apprenticeship systems"
     }
   },
   {
@@ -194,7 +194,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -205,7 +205,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -216,7 +216,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -227,7 +227,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -279,10 +279,10 @@
     "title": "Record of a Spaceborn Few",
     "year": 2018,
     "purpose": "character-actualization",
-    "replacement": "obsolete",
+    "replacement": "self-organized",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Self-organized/community learning"
     }
   },
   {
@@ -304,7 +304,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -315,7 +315,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -326,7 +326,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Education not central to the narrative",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -414,7 +414,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -458,7 +458,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -466,10 +466,10 @@
     "title": "Embassytown",
     "year": 2011,
     "purpose": "character-actualization",
-    "replacement": "obsolete",
+    "replacement": "self-organized",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Self-organized/community learning"
     }
   },
   {
@@ -480,7 +480,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -513,7 +513,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -521,10 +521,10 @@
     "title": "Walkaway",
     "year": 2017,
     "purpose": "lifelong-practice",
-    "replacement": "obsolete",
+    "replacement": "direct-transfer",
     "reasoning": {
       "purpose": "Continuous learning/discovery/problem-solving",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Direct knowledge transfer/uploading"
     }
   },
   {
@@ -535,7 +535,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -557,7 +557,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -568,7 +568,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -587,10 +587,10 @@
     "title": "Station Eleven",
     "year": 2014,
     "purpose": "character-actualization",
-    "replacement": "obsolete",
+    "replacement": "self-organized",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Self-organized/community learning"
     }
   },
   {
@@ -612,7 +612,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -620,10 +620,10 @@
     "title": "Dune Messiah",
     "year": 1969,
     "purpose": "conditioning-control",
-    "replacement": "obsolete",
+    "replacement": "apprenticeship",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Craft/guild/apprenticeship systems"
     }
   },
   {
@@ -631,10 +631,10 @@
     "title": "Children of Dune",
     "year": 1976,
     "purpose": "character-actualization",
-    "replacement": "obsolete",
+    "replacement": "apprenticeship",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Craft/guild/apprenticeship systems"
     }
   },
   {
@@ -642,10 +642,10 @@
     "title": "God Emperor of Dune",
     "year": 1981,
     "purpose": "character-actualization",
-    "replacement": "obsolete",
+    "replacement": "apprenticeship",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Craft/guild/apprenticeship systems"
     }
   },
   {
@@ -667,7 +667,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -675,10 +675,10 @@
     "title": "Jem",
     "year": 1979,
     "purpose": "absent-irrelevant",
-    "replacement": "obsolete",
+    "replacement": "apprenticeship",
     "reasoning": {
       "purpose": "Education not central to the narrative",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Craft/guild/apprenticeship systems"
     }
   },
   {
@@ -711,7 +711,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -777,7 +777,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -788,7 +788,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -799,7 +799,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Education not central to the narrative",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -807,10 +807,10 @@
     "title": "The Quantum Thief",
     "year": 2010,
     "purpose": "character-actualization",
-    "replacement": "ai-tutors",
+    "replacement": "direct-transfer",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "AI-mediated learning"
+      "replacement": "Direct knowledge transfer/uploading"
     }
   },
   {
@@ -829,10 +829,10 @@
     "title": "The Causal Angel",
     "year": 2014,
     "purpose": "character-actualization",
-    "replacement": "ai-tutors",
+    "replacement": "direct-transfer",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "AI-mediated learning"
+      "replacement": "Direct knowledge transfer/uploading"
     }
   },
   {
@@ -887,7 +887,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -975,7 +975,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -997,7 +997,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Education not central to the narrative",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1008,7 +1008,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1019,7 +1019,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1030,7 +1030,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1038,10 +1038,10 @@
     "title": "The Sheep Look Up",
     "year": 1972,
     "purpose": "conditioning-control",
-    "replacement": "obsolete",
+    "replacement": "apprenticeship",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Craft/guild/apprenticeship systems"
     }
   },
   {
@@ -1060,10 +1060,10 @@
     "title": "The Light Brigade",
     "year": 2019,
     "purpose": "absent-irrelevant",
-    "replacement": "obsolete",
+    "replacement": "apprenticeship",
     "reasoning": {
       "purpose": "Education not central to the narrative",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Craft/guild/apprenticeship systems"
     }
   },
   {
@@ -1151,7 +1151,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Continuous learning/discovery/problem-solving",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1173,7 +1173,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1217,7 +1217,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Education not central to the narrative",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1236,10 +1236,10 @@
     "title": "The Sirens of Titan",
     "year": 1959,
     "purpose": "absent-irrelevant",
-    "replacement": "obsolete",
+    "replacement": "self-organized",
     "reasoning": {
       "purpose": "Education not central to the narrative",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Self-organized/community learning"
     }
   },
   {
@@ -1261,7 +1261,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1283,7 +1283,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1291,10 +1291,10 @@
     "title": "The Dark Forest",
     "year": 2008,
     "purpose": "absent-irrelevant",
-    "replacement": "obsolete",
+    "replacement": "apprenticeship",
     "reasoning": {
       "purpose": "Education not central to the narrative",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Craft/guild/apprenticeship systems"
     }
   },
   {
@@ -1305,7 +1305,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1316,7 +1316,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1327,7 +1327,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1357,10 +1357,10 @@
     "title": "Woman on the Edge of Time",
     "year": 1976,
     "purpose": "character-actualization",
-    "replacement": "obsolete",
+    "replacement": "self-organized",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Self-organized/community learning"
     }
   },
   {
@@ -1382,7 +1382,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1390,10 +1390,10 @@
     "title": "The Obelisk Gate",
     "year": 2016,
     "purpose": "character-actualization",
-    "replacement": "obsolete",
+    "replacement": "apprenticeship",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Craft/guild/apprenticeship systems"
     }
   },
   {
@@ -1415,7 +1415,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1426,7 +1426,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1437,7 +1437,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1481,7 +1481,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1489,10 +1489,10 @@
     "title": "Wild Seed",
     "year": 1980,
     "purpose": "character-actualization",
-    "replacement": "obsolete",
+    "replacement": "apprenticeship",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Craft/guild/apprenticeship systems"
     }
   },
   {
@@ -1500,10 +1500,10 @@
     "title": "Bloodchild",
     "year": 1984,
     "purpose": "absent-irrelevant",
-    "replacement": "obsolete",
+    "replacement": "apprenticeship",
     "reasoning": {
       "purpose": "Education not central to the narrative",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Craft/guild/apprenticeship systems"
     }
   },
   {
@@ -1511,10 +1511,10 @@
     "title": "Dawn",
     "year": 1987,
     "purpose": "conditioning-control",
-    "replacement": "obsolete",
+    "replacement": "self-organized",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Self-organized/community learning"
     }
   },
   {
@@ -1525,7 +1525,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1547,7 +1547,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Continuous learning/discovery/problem-solving",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1577,10 +1577,10 @@
     "title": "Starfish",
     "year": 1999,
     "purpose": "character-actualization",
-    "replacement": "obsolete",
+    "replacement": "apprenticeship",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Craft/guild/apprenticeship systems"
     }
   },
   {
@@ -1646,7 +1646,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1657,7 +1657,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1676,10 +1676,10 @@
     "title": "Fahrenheit 451",
     "year": 1953,
     "purpose": "lifelong-practice",
-    "replacement": "obsolete",
+    "replacement": "self-organized",
     "reasoning": {
       "purpose": "Continuous learning/discovery/problem-solving",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Self-organized/community learning"
     }
   },
   {
@@ -1701,7 +1701,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1712,7 +1712,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1731,10 +1731,10 @@
     "title": "Starship Troopers",
     "year": 1959,
     "purpose": "sorting-class",
-    "replacement": "obsolete",
+    "replacement": "apprenticeship",
     "reasoning": {
       "purpose": "Educational selection/hierarchy/testing mechanism",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Craft/guild/apprenticeship systems"
     }
   },
   {
@@ -1742,10 +1742,10 @@
     "title": "Stranger in a Strange Land",
     "year": 1961,
     "purpose": "character-actualization",
-    "replacement": "obsolete",
+    "replacement": "self-organized",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Self-organized/community learning"
     }
   },
   {
@@ -1775,10 +1775,10 @@
     "title": "Dying Inside",
     "year": 1972,
     "purpose": "character-actualization",
-    "replacement": "obsolete",
+    "replacement": "self-organized",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Self-organized/community learning"
     }
   },
   {
@@ -1808,10 +1808,10 @@
     "title": "Babel-17",
     "year": 1966,
     "purpose": "character-actualization",
-    "replacement": "obsolete",
+    "replacement": "self-organized",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Self-organized/community learning"
     }
   },
   {
@@ -1844,7 +1844,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1863,10 +1863,10 @@
     "title": "Trouble on Triton",
     "year": 1976,
     "purpose": "character-actualization",
-    "replacement": "obsolete",
+    "replacement": "self-organized",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Self-organized/community learning"
     }
   },
   {
@@ -1877,7 +1877,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1885,10 +1885,10 @@
     "title": "Solaris",
     "year": 1961,
     "purpose": "character-actualization",
-    "replacement": "obsolete",
+    "replacement": "self-organized",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Self-organized/community learning"
     }
   },
   {
@@ -1921,7 +1921,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1929,10 +1929,10 @@
     "title": "Piranesi",
     "year": 2020,
     "purpose": "character-actualization",
-    "replacement": "obsolete",
+    "replacement": "self-organized",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Self-organized/community learning"
     }
   },
   {
@@ -1943,7 +1943,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -1973,10 +1973,10 @@
     "title": "The Lifecycle of Software Objects",
     "year": 2010,
     "purpose": "character-actualization",
-    "replacement": "ai-tutors",
+    "replacement": "virtual-neural",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "AI-mediated learning"
+      "replacement": "Virtual/simulated learning environments"
     }
   },
   {
@@ -1984,10 +1984,10 @@
     "title": "Anxiety Is the Dizziness of Freedom",
     "year": 2019,
     "purpose": "character-actualization",
-    "replacement": "obsolete",
+    "replacement": "self-organized",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Self-organized/community learning"
     }
   },
   {
@@ -1998,7 +1998,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -2006,10 +2006,10 @@
     "title": "The Left Hand of Darkness",
     "year": 1969,
     "purpose": "character-actualization",
-    "replacement": "obsolete",
+    "replacement": "self-organized",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Self-organized/community learning"
     }
   },
   {
@@ -2020,7 +2020,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -2028,10 +2028,10 @@
     "title": "The Word for World is Forest",
     "year": 1972,
     "purpose": "absent-irrelevant",
-    "replacement": "obsolete",
+    "replacement": "self-organized",
     "reasoning": {
       "purpose": "Education not central to the narrative",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Self-organized/community learning"
     }
   },
   {
@@ -2042,7 +2042,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Education not central to the narrative",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -2050,10 +2050,10 @@
     "title": "The Dispossessed",
     "year": 1974,
     "purpose": "lifelong-practice",
-    "replacement": "obsolete",
+    "replacement": "self-organized",
     "reasoning": {
       "purpose": "Continuous learning/discovery/problem-solving",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "Self-organized/community learning"
     }
   },
   {
@@ -2086,7 +2086,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Educational selection/hierarchy/testing mechanism",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -2097,7 +2097,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -2108,7 +2108,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -2163,7 +2163,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Identity formation/self-discovery/transformation",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -2251,7 +2251,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Social control/conditioning/programming",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   },
   {
@@ -2284,7 +2284,7 @@
     "replacement": "obsolete",
     "reasoning": {
       "purpose": "Education not central to the narrative",
-      "replacement": "Formal education absent/obsolete"
+      "replacement": "No structured learning systems"
     }
   }
 ]

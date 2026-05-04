@@ -219,7 +219,7 @@ const books = [
     "aiPresence": "central",
     "desc": "Six million years in the future, two lovers from a clone family must discover who is eliminating their line.",
     "educationPurpose": "character-actualization",
-    "schoolReplacement": "ai-tutors"
+    "schoolReplacement": "direct-transfer"
   },
   {
     "title": "Brave New World",
@@ -713,7 +713,7 @@ const books = [
     "aiPresence": "absent",
     "desc": "An Earth observer poses as a nobleman on a medieval alien world, forbidden to interfere as civilization falls.",
     "educationPurpose": "conditioning-control",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "apprenticeship"
   },
   {
     "title": "Roadside Picnic",
@@ -1160,7 +1160,7 @@ const books = [
     "debatesWith": "Aurora",
     "desc": "Five interconnected lives explore identity and belonging aboard the aging Exodus Fleet that once fled Earth.",
     "educationPurpose": "character-actualization",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "self-organized"
   },
   {
     "title": "A Psalm for the Wild-Built",
@@ -1921,7 +1921,7 @@ const books = [
     "debatesWith": "Babel-17",
     "desc": "A human colonist becomes entangled in a crisis when a new ambassador disrupts relations with aliens who cannot lie.",
     "educationPurpose": "character-actualization",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "self-organized"
   },
   {
     "title": "City",
@@ -2150,7 +2150,7 @@ const books = [
     "debatesWith": "The Dispossessed",
     "desc": "Dissidents abandon mainstream society for a post-scarcity commune, then discover how to upload consciousness.",
     "educationPurpose": "lifelong-practice",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "direct-transfer"
   },
   {
     "title": "The Bezzle",
@@ -2427,7 +2427,7 @@ const books = [
     "debatesWith": "The Peripheral",
     "desc": "A traveling theater troupe performs Shakespeare in the scattered settlements after a pandemic.",
     "educationPurpose": "character-actualization",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "self-organized"
   },
   {
     "title": "Ecotopia",
@@ -2564,7 +2564,7 @@ const books = [
     "debatesWith": "The Dispossessed",
     "desc": "Emperor Paul Atreides struggles against conspiracies while unable to stop the religious jihad in his name.",
     "educationPurpose": "conditioning-control",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "apprenticeship"
   },
   {
     "title": "Children of Dune",
@@ -2607,7 +2607,7 @@ const books = [
     "aiPresence": "absent",
     "desc": "Paul's twin children navigate assassination plots while one transforms to ensure humanity's survival.",
     "educationPurpose": "character-actualization",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "apprenticeship"
   },
   {
     "title": "God Emperor of Dune",
@@ -2654,7 +2654,7 @@ const books = [
     "debatesWith": "The End of Eternity",
     "desc": "Leto II, merged with sandworms for 3,500 years, rules as an immortal tyrant to save humanity.",
     "educationPurpose": "character-actualization",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "apprenticeship"
   },
   {
     "title": "Man Plus",
@@ -2782,7 +2782,7 @@ const books = [
     "aiPresence": "absent",
     "desc": "Three rival power blocs from a resource-depleted Earth export their conflicts to a newly discovered habitable planet.",
     "educationPurpose": "absent-irrelevant",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "apprenticeship"
   },
   {
     "title": "The Space Merchants",
@@ -3321,7 +3321,7 @@ const books = [
     "debatesWith": "Permutation City",
     "desc": "A legendary thief is freed from a virtual prison to pull off a heist in a post-human solar system.",
     "educationPurpose": "character-actualization",
-    "schoolReplacement": "ai-tutors"
+    "schoolReplacement": "direct-transfer"
   },
   {
     "title": "The Fractal Prince",
@@ -3413,7 +3413,7 @@ const books = [
     "debatesWith": "The Fractal Prince",
     "desc": "A thief and warrior race to reunite as war erupts between godlike factions across the solar system.",
     "educationPurpose": "character-actualization",
-    "schoolReplacement": "ai-tutors"
+    "schoolReplacement": "direct-transfer"
   },
   {
     "title": "The Glass Bead Game",
@@ -4283,7 +4283,7 @@ const books = [
     "debatesWith": "Stand on Zanzibar",
     "desc": "Environmental collapse devastates America while an activist tries to wake the oblivious public.",
     "educationPurpose": "conditioning-control",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "apprenticeship"
   },
   {
     "title": "The Shockwave Rider",
@@ -4372,7 +4372,7 @@ const books = [
     "debatesWith": "Starship Troopers",
     "desc": "Soldiers broken into light for teleportation find their drops through time reveal corporate war's hidden truths.",
     "educationPurpose": "absent-irrelevant",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "apprenticeship"
   },
   {
     "title": "Never Let Me Go",
@@ -5112,7 +5112,7 @@ const books = [
     "debatesWith": "Childhood's End",
     "desc": "A wealthy playboy is manipulated across space and time, discovering humanity's history served a trivial purpose.",
     "educationPurpose": "absent-irrelevant",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "self-organized"
   },
   {
     "title": "Cat's Cradle",
@@ -5337,7 +5337,7 @@ const books = [
     "debatesWith": "Contact",
     "desc": "Facing a coming alien invasion, Earth grants four men secret resources to devise humanity's hidden defense.",
     "educationPurpose": "absent-irrelevant",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "apprenticeship"
   },
   {
     "title": "Death's End",
@@ -5611,7 +5611,7 @@ const books = [
     "debatesWith": "Brave New World",
     "desc": "A woman in a psychiatric hospital is contacted by a visitor from a utopian future she may help create.",
     "educationPurpose": "character-actualization",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "self-organized"
   },
   {
     "title": "System Collapse",
@@ -5749,7 +5749,7 @@ const books = [
     "debatesWith": "The Fifth Season",
     "desc": "A mother searches for her daughter while civilization crumbles during an apocalyptic season.",
     "educationPurpose": "character-actualization",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "apprenticeship"
   },
   {
     "title": "The Stone Sky",
@@ -6165,7 +6165,7 @@ const books = [
     "debatesWith": "Frankenstein",
     "desc": "Two immortals—a body-stealing spirit and a shapeshifting healer—wage a centuries-long power struggle.",
     "educationPurpose": "character-actualization",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "apprenticeship"
   },
   {
     "title": "Bloodchild",
@@ -6209,7 +6209,7 @@ const books = [
     "aiPresence": "absent",
     "desc": "Award-winning stories exploring power, identity, and the boundaries between human and alien.",
     "educationPurpose": "absent-irrelevant",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "apprenticeship"
   },
   {
     "title": "Dawn",
@@ -6256,7 +6256,7 @@ const books = [
     "debatesWith": "Childhood's End",
     "desc": "After nuclear war, a Black woman awakens on an alien ship and must help her rescuers trade genetic material with humanity to create hybrid offspring.",
     "educationPurpose": "conditioning-control",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "self-organized"
   },
   {
     "title": "Adulthood Rites",
@@ -6526,7 +6526,7 @@ const books = [
     "aiPresence": "background",
     "desc": "Psychologically damaged humans modified to live underwater maintain a deep-ocean power station where something awakens.",
     "educationPurpose": "character-actualization",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "apprenticeship"
   },
   {
     "title": "Blindsight",
@@ -6933,7 +6933,7 @@ const books = [
     "debatesWith": "Brave New World",
     "desc": "In a future where firemen burn books, one begins to question censorship and fights to preserve literature.",
     "educationPurpose": "lifelong-practice",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "self-organized"
   },
   {
     "title": "The Mountain in the Sea",
@@ -7151,7 +7151,7 @@ const books = [
     "aiPresence": "background",
     "desc": "A young recruit endures brutal training and battles alien Arachnids in the Mobile Infantry.",
     "educationPurpose": "sorting-class",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "apprenticeship"
   },
   {
     "title": "Stranger in a Strange Land",
@@ -7198,7 +7198,7 @@ const books = [
     "debatesWith": "The Dispossessed",
     "desc": "A human raised by Martians returns to Earth and transforms society with alien powers.",
     "educationPurpose": "character-actualization",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "self-organized"
   },
   {
     "title": "The Moon Is a Harsh Mistress",
@@ -7335,7 +7335,7 @@ const books = [
     "debatesWith": "The Left Hand of Darkness",
     "desc": "A middle-aged telepath in New York slowly loses his mind-reading ability and struggles to find meaning.",
     "educationPurpose": "character-actualization",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "self-organized"
   },
   {
     "title": "Lord Valentine's Castle",
@@ -7472,7 +7472,7 @@ const books = [
     "debatesWith": "Embassytown",
     "desc": "A poet and linguist must decode an alien language being used as a weapon in an interstellar war.",
     "educationPurpose": "character-actualization",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "self-organized"
   },
   {
     "title": "Empire Star",
@@ -7698,7 +7698,7 @@ const books = [
     "debatesWith": "The Dispossessed",
     "desc": "An immigrant to a utopian moon colony struggles with identity and gender in a society at war.",
     "educationPurpose": "character-actualization",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "self-organized"
   },
   {
     "title": "Stars in My Pocket Like Grains of Sand",
@@ -7791,7 +7791,7 @@ const books = [
     "debatesWith": "Blindsight",
     "desc": "Scientists studying a sentient ocean on an alien planet are confronted by manifestations of their painful memories.",
     "educationPurpose": "character-actualization",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "self-organized"
   },
   {
     "title": "The Cyberiad",
@@ -7963,7 +7963,7 @@ const books = [
     "debatesWith": "The Library of Babel",
     "desc": "A man lives alone in an infinite house of statues and tides, unaware of his true identity.",
     "educationPurpose": "character-actualization",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "self-organized"
   },
   {
     "title": "Story of Your Life",
@@ -8149,7 +8149,7 @@ const books = [
     "debatesWith": "Klara and the Sun",
     "desc": "Trainers raise AI pets over decades, facing obsolescence and questions about digital consciousness and personhood.",
     "educationPurpose": "character-actualization",
-    "schoolReplacement": "ai-tutors"
+    "schoolReplacement": "virtual-neural"
   },
   {
     "title": "Anxiety Is the Dizziness of Freedom",
@@ -8196,7 +8196,7 @@ const books = [
     "debatesWith": "The Dispossessed",
     "desc": "Devices let people communicate with alternate-timeline selves, forcing them to confront their choices and identity.",
     "educationPurpose": "character-actualization",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "self-organized"
   },
   {
     "title": "More Than Human",
@@ -8286,7 +8286,7 @@ const books = [
     "debatesWith": "Neuromancer",
     "desc": "A human envoy struggles to understand an icebound world where inhabitants have no fixed gender.",
     "educationPurpose": "character-actualization",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "self-organized"
   },
   {
     "title": "The Lathe of Heaven",
@@ -8377,7 +8377,7 @@ const books = [
     "debatesWith": "Heart of Darkness",
     "desc": "A peaceful forest-dwelling alien race is driven to violence by human colonizers who enslave them.",
     "educationPurpose": "absent-irrelevant",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "self-organized"
   },
   {
     "title": "The Ones Who Walk Away from Omelas",
@@ -8469,7 +8469,7 @@ const books = [
     "debatesWith": "Brave New World",
     "desc": "A physicist from an anarchist moon travels to his capitalist mother planet, questioning both societies.",
     "educationPurpose": "lifelong-practice",
-    "schoolReplacement": "obsolete"
+    "schoolReplacement": "self-organized"
   },
   {
     "title": "Always Coming Home",
