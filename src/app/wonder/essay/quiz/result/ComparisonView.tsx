@@ -132,15 +132,33 @@ export function ComparisonView({ userId, compareUserId }: ComparisonViewProps) {
     );
   }
 
-  if (error || !currentUser || !otherUser || !currentDimensions || !otherDimensions || !currentIdentity || !otherIdentity) {
+  if (error) {
+    return (
+      <div className={styles.container}>
+        <div className={styles.error}>{error}</div>
+      </div>
+    );
+  }
+
+  if (!currentUser || !otherUser || !currentDimensions || !otherDimensions || !currentIdentity || !otherIdentity) {
     return (
       <div className={styles.container}>
         <div className={styles.error}>
-          {error || "Could not load comparison"}
+          Could not load comparison data. Please make sure both users have completed the quiz.
         </div>
       </div>
     );
   }
+
+  // Debug logging
+  console.log('ComparisonView Debug:', {
+    currentUser: currentUser.name,
+    otherUser: otherUser.name,
+    currentDimensions,
+    otherDimensions,
+    currentIdentity: currentIdentity.name,
+    otherIdentity: otherIdentity.name
+  });
 
   // Generate reading
   const reading = generateComparisonReading(

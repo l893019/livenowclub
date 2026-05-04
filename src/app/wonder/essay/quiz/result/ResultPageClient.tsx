@@ -16,24 +16,19 @@ export function ResultPageClient({
   compareUserId,
 }: ResultPageClientProps) {
   const [userId, setUserId] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const storedUserId = localStorage.getItem("quiz-user-id");
     setUserId(storedUserId);
-    setIsLoading(false);
   }, []);
 
-  // Wait for localStorage to load before deciding what to show
-  if (isLoading) {
-    return null;
-  }
-
   // If compareUserId exists and we have a userId, show comparison view
-  const showComparison = compareUserId && userId && compareUserId !== userId;
+  const showComparison = mounted && compareUserId && userId && compareUserId !== userId;
 
   // If compareUserId exists but no userId, user needs to take quiz first
-  const needsToTakeQuiz = compareUserId && !userId;
+  const needsToTakeQuiz = mounted && compareUserId && !userId;
 
   return (
     <>
