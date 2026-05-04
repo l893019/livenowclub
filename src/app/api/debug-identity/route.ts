@@ -4,6 +4,14 @@ import { arrayToQuizAnswers, calculateDimensions } from '@/lib/dimensions';
 import { getAdjectiveIndex, getIdentityFromDimensions } from '@/lib/identities';
 
 export async function GET(request: NextRequest) {
+  // Disable in production
+  if (process.env.NODE_ENV === 'production') {
+    return NextResponse.json(
+      { error: 'Not found' },
+      { status: 404 }
+    );
+  }
+
   const { searchParams } = new URL(request.url);
   const userId = searchParams.get('userId');
 
