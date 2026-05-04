@@ -30,8 +30,8 @@ export function MeetPageClient({ targetUser }: Props) {
   }, []);
 
   const handleStartQuiz = () => {
-    // Store target user ID for connection creation after quiz
-    localStorage.setItem("connectWith", targetUser.id);
+    // Store target user ID for comparison after quiz
+    sessionStorage.setItem("relationship-compare", targetUser.id);
   };
 
   // Don't render CTA until we know quiz status
