@@ -38,6 +38,7 @@ type Stats = {
       id: string;
       name: string;
       archetype: string;
+      identityName: string;
       email: string | null;
       createdAt: string;
     }>;
@@ -260,7 +261,7 @@ export default function StatsPage() {
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
                       <div>
                         <span style={{ fontWeight: '500', marginRight: '8px' }}>{user.name}</span>
-                        <span style={{ color: '#e8178a', fontSize: '12px' }}>{user.archetype}</span>
+                        <span style={{ color: '#e8178a', fontSize: '12px' }}>{user.identityName}</span>
                       </div>
                       <span style={{ color: '#666', fontSize: '12px' }}>
                         {new Date(user.createdAt).toLocaleDateString()}

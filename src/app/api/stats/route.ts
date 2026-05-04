@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Redis from 'ioredis';
+import { identities } from '@/lib/identities';
 
 const redis = new Redis(process.env.REDIS_URL || '');
 
@@ -171,9 +172,11 @@ export async function GET(request: NextRequest) {
           const user = JSON.parse(userData);
           users.push(user);
 
-          // Count by identity/archetype
-          const identity = user.archetype || 'Unknown';
-          stats.users.byIdentity[identity] = (stats.users.byIdentity[identity] || 0) + 1;
+          // Count by identity/archetype - use friendly name
+          const archetype = user.archetype || 'Unknown';
+          const identity = identities[archetype];
+          const identityName = identity ? identity.name : archetype;
+          stats.users.byIdentity[identityName] = (stats.users.byIdentity[identityName] || 0) + 1;
 
           // Count by date
           if (user.createdAt) {
@@ -196,13 +199,20 @@ export async function GET(request: NextRequest) {
       return dateB - dateA;
     });
 
-    stats.users.recent = users.slice(0, 20).map(u => ({
-      id: u.id,
-      name: u.name,
-      archetype: u.archetype,
-      email: u.email,
-      createdAt: u.createdAt,
-    }));
+    stats.users.recent = users.slice(0, 20).map(u => {
+      // Get the friendly identity name from the identities map
+      const identity = identities[u.archetype];
+      const identityName = identity ? identity.name : u.archetype;
+
+      return {
+        id: u.id,
+        name: u.name,
+        archetype: u.archetype,
+        identityName: identityName,
+        email: u.email,
+        createdAt: u.createdAt,
+      };
+    });
 
     // Get utopia stats
     const utopiaKeys = await redis.keys('utopia:*');
