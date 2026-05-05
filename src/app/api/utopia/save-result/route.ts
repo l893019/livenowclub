@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { saveUserResult, generateUserSlug, type UserResult } from '@/lib/utopia';
 import { createSession } from '@/lib/auth';
+import { validateUserId, validateQuizAnswers, ValidationError } from '@/lib/validation';
 
 export async function POST(request: NextRequest) {
   try {
@@ -12,6 +13,26 @@ export async function POST(request: NextRequest) {
         { error: 'Missing required fields: id' },
         { status: 400 }
       );
+    }
+
+    // Validate userId
+    try {
+      validateUserId(result.id);
+    } catch (error) {
+      if (error instanceof ValidationError) {
+        return NextResponse.json({ error: error.message }, { status: 400 });
+      }
+      throw error;
+    }
+
+    // Validate quiz answers
+    try {
+      validateQuizAnswers(result.answers);
+    } catch (error) {
+      if (error instanceof ValidationError) {
+        return NextResponse.json({ error: error.message }, { status: 400 });
+      }
+      throw error;
     }
 
     // Generate slug if not present

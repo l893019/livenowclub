@@ -37,13 +37,13 @@ describe('/api/utopia/save-result', () => {
   describe('Session Creation', () => {
     it('should create session when saving valid quiz result', async () => {
       const validResult = {
-        id: 'test-user-123',
+        id: '12345678-1234-4234-8234-123456789012',
         name: 'Test User',
         email: null,
         archetype: 'Builder',
         secondaryArchetype: 'Explorer',
         scores: { builder: 8, explorer: 6 },
-        answers: ['0', '1', '0', '1', '0', '1', '0'],
+        answers: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
         createdAt: new Date().toISOString(),
       }
 
@@ -70,13 +70,13 @@ describe('/api/utopia/save-result', () => {
 
     it('should set HTTP-only cookie for session', async () => {
       const validResult = {
-        id: 'test-user-123',
+        id: '12345678-1234-4234-8234-123456789012',
         name: 'Test User',
         email: null,
         archetype: 'Builder',
         secondaryArchetype: 'Explorer',
         scores: { builder: 8 },
-        answers: ['0', '1', '0'],
+        answers: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
         createdAt: new Date().toISOString(),
       }
 
@@ -99,13 +99,13 @@ describe('/api/utopia/save-result', () => {
 
     it('should set readable CSRF token cookie', async () => {
       const validResult = {
-        id: 'test-user-123',
+        id: '12345678-1234-4234-8234-123456789012',
         name: 'Test User',
         email: null,
         archetype: 'Builder',
         secondaryArchetype: 'Explorer',
         scores: { builder: 8 },
-        answers: ['0', '1', '0'],
+        answers: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
         createdAt: new Date().toISOString(),
       }
 
@@ -129,13 +129,13 @@ describe('/api/utopia/save-result', () => {
 
     it('should save session to Redis with correct TTL', async () => {
       const validResult = {
-        id: 'test-user-123',
+        id: '12345678-1234-4234-8234-123456789012',
         name: 'Test User',
         email: null,
         archetype: 'Builder',
         secondaryArchetype: 'Explorer',
         scores: { builder: 8 },
-        answers: ['0', '1', '0'],
+        answers: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
         createdAt: new Date().toISOString(),
       }
 
@@ -148,20 +148,20 @@ describe('/api/utopia/save-result', () => {
       await POST(request)
 
       // Check that createSession was called with the userId
-      expect(createSession).toHaveBeenCalledWith('test-user-123')
+      expect(createSession).toHaveBeenCalledWith('12345678-1234-4234-8234-123456789012')
     })
   })
 
   describe('Slug Generation', () => {
     it('should generate slug if not present', async () => {
       const validResult = {
-        id: 'test-user-123',
+        id: '12345678-1234-4234-8234-123456789012',
         name: 'Test User',
         email: null,
         archetype: 'Builder',
         secondaryArchetype: 'Explorer',
         scores: { builder: 8 },
-        answers: ['0', '1', '0'],
+        answers: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
         createdAt: new Date().toISOString(),
         // No slug provided
       }
@@ -177,18 +177,18 @@ describe('/api/utopia/save-result', () => {
 
       expect(data.success).toBe(true)
       expect(data.slug).toBe('test-slug')
-      expect(generateUserSlug).toHaveBeenCalledWith('test-user-123', 'Test User')
+      expect(generateUserSlug).toHaveBeenCalledWith('12345678-1234-4234-8234-123456789012', 'Test User')
     })
 
     it('should preserve existing slug', async () => {
       const validResult = {
-        id: 'test-user-123',
+        id: '12345678-1234-4234-8234-123456789012',
         name: 'Test User',
         email: null,
         archetype: 'Builder',
         secondaryArchetype: 'Explorer',
         scores: { builder: 8 },
-        answers: ['0', '1', '0'],
+        answers: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
         createdAt: new Date().toISOString(),
         slug: 'existing-slug',
       }
@@ -241,6 +241,131 @@ describe('/api/utopia/save-result', () => {
       const data = await response.json()
       expect(data.error).toContain('Missing required fields: id')
     })
+
+    it('should return 400 for invalid userId format', async () => {
+      const invalidResult = {
+        id: 'not-a-uuid',
+        name: 'Test User',
+        email: null,
+        archetype: 'Builder',
+        secondaryArchetype: 'Explorer',
+        scores: { builder: 8 },
+        answers: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
+        createdAt: new Date().toISOString(),
+      }
+
+      const request = new NextRequest('http://localhost:3000/api/utopia/save-result', {
+        method: 'POST',
+        body: JSON.stringify({ result: invalidResult }),
+        headers: { 'content-type': 'application/json' },
+      })
+
+      const response = await POST(request)
+
+      expect(response.status).toBe(400)
+      const data = await response.json()
+      expect(data.error).toBe('Invalid user ID format')
+    })
+
+    it('should return 400 for invalid quiz answers - not an array', async () => {
+      const invalidResult = {
+        id: '12345678-1234-4234-8234-123456789012',
+        name: 'Test User',
+        email: null,
+        archetype: 'Builder',
+        secondaryArchetype: 'Explorer',
+        scores: { builder: 8 },
+        answers: 'not-an-array',
+        createdAt: new Date().toISOString(),
+      }
+
+      const request = new NextRequest('http://localhost:3000/api/utopia/save-result', {
+        method: 'POST',
+        body: JSON.stringify({ result: invalidResult }),
+        headers: { 'content-type': 'application/json' },
+      })
+
+      const response = await POST(request)
+
+      expect(response.status).toBe(400)
+      const data = await response.json()
+      expect(data.error).toBe('Quiz answers must be an array')
+    })
+
+    it('should return 400 for invalid quiz answers - wrong length', async () => {
+      const invalidResult = {
+        id: '12345678-1234-4234-8234-123456789012',
+        name: 'Test User',
+        email: null,
+        archetype: 'Builder',
+        secondaryArchetype: 'Explorer',
+        scores: { builder: 8 },
+        answers: ['A', 'B', 'C'],
+        createdAt: new Date().toISOString(),
+      }
+
+      const request = new NextRequest('http://localhost:3000/api/utopia/save-result', {
+        method: 'POST',
+        body: JSON.stringify({ result: invalidResult }),
+        headers: { 'content-type': 'application/json' },
+      })
+
+      const response = await POST(request)
+
+      expect(response.status).toBe(400)
+      const data = await response.json()
+      expect(data.error).toBe('Quiz must have exactly 7 answers')
+    })
+
+    it('should return 400 for invalid quiz answers - invalid option', async () => {
+      const invalidResult = {
+        id: '12345678-1234-4234-8234-123456789012',
+        name: 'Test User',
+        email: null,
+        archetype: 'Builder',
+        secondaryArchetype: 'Explorer',
+        scores: { builder: 8 },
+        answers: ['A', 'B', 'C', 'D', 'E', 'F', 'Z'],
+        createdAt: new Date().toISOString(),
+      }
+
+      const request = new NextRequest('http://localhost:3000/api/utopia/save-result', {
+        method: 'POST',
+        body: JSON.stringify({ result: invalidResult }),
+        headers: { 'content-type': 'application/json' },
+      })
+
+      const response = await POST(request)
+
+      expect(response.status).toBe(400)
+      const data = await response.json()
+      expect(data.error).toBe('Invalid answer for question 7')
+    })
+
+    it('should accept valid userId and answers', async () => {
+      const validResult = {
+        id: '12345678-1234-4234-8234-123456789012',
+        name: 'Test User',
+        email: null,
+        archetype: 'Builder',
+        secondaryArchetype: 'Explorer',
+        scores: { builder: 8 },
+        answers: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
+        createdAt: new Date().toISOString(),
+      }
+
+      const request = new NextRequest('http://localhost:3000/api/utopia/save-result', {
+        method: 'POST',
+        body: JSON.stringify({ result: validResult }),
+        headers: { 'content-type': 'application/json' },
+      })
+
+      const response = await POST(request)
+
+      expect(response.status).toBe(200)
+      const data = await response.json()
+      expect(data.success).toBe(true)
+    })
   })
 
   describe('Error Handling', () => {
@@ -248,13 +373,13 @@ describe('/api/utopia/save-result', () => {
       ;(saveUserResult as jest.Mock).mockRejectedValue(new Error('Redis error'))
 
       const validResult = {
-        id: 'test-user-123',
+        id: '12345678-1234-4234-8234-123456789012',
         name: 'Test User',
         email: null,
         archetype: 'Builder',
         secondaryArchetype: 'Explorer',
         scores: { builder: 8 },
-        answers: ['0', '1', '0'],
+        answers: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
         createdAt: new Date().toISOString(),
       }
 
