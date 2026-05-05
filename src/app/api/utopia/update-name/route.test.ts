@@ -16,6 +16,10 @@ jest.mock('@/lib/utopia', () => ({
   updateUserName: jest.fn(),
 }))
 
+jest.mock('@/lib/logging', () => ({
+  logSecurityEvent: jest.fn(),
+}))
+
 jest.mock('@/lib/auth', () => ({
   requireAuth: jest.fn(),
   requireOwnership: jest.fn(),
@@ -43,6 +47,7 @@ jest.mock('@/lib/auth', () => ({
 import { POST } from './route'
 import { updateUserName } from '@/lib/utopia'
 import { requireAuth, requireOwnership, validateCSRF, UnauthorizedError, ForbiddenError, CSRFError } from '@/lib/auth'
+import * as logging from '@/lib/logging'
 
 describe('/api/utopia/update-name', () => {
   beforeEach(() => {
@@ -305,6 +310,25 @@ describe('/api/utopia/update-name', () => {
       const data = await response.json()
       expect(data.success).toBe(true)
       expect(updateUserName).toHaveBeenCalledWith('user-123', 'New Name')
+    })
+
+    it('should log name_updated event', async () => {
+      const request = new NextRequest('http://localhost:3000/api/utopia/update-name', {
+        method: 'POST',
+        body: JSON.stringify({ userId: 'user-123', name: 'New Name' }),
+        headers: {
+          'content-type': 'application/json',
+          'x-forwarded-for': '192.168.1.1',
+        },
+      })
+
+      await POST(request)
+
+      expect(logging.logSecurityEvent).toHaveBeenCalledWith('data', 'name_updated', {
+        userId: 'user-123',
+        ip: '192.168.1.1',
+        field: 'name',
+      })
     })
 
     it('should not call updateUserName before authentication', async () => {

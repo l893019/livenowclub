@@ -16,6 +16,10 @@ jest.mock('@/lib/utopia', () => ({
   updateUserEmail: jest.fn(),
 }))
 
+jest.mock('@/lib/logging', () => ({
+  logSecurityEvent: jest.fn(),
+}))
+
 jest.mock('@/lib/auth', () => ({
   requireAuth: jest.fn(),
   requireOwnership: jest.fn(),
@@ -44,6 +48,7 @@ import { POST } from './route'
 import { redis } from '@/lib/redis'
 import { updateUserEmail } from '@/lib/utopia'
 import { requireAuth, requireOwnership, validateCSRF, UnauthorizedError, ForbiddenError, CSRFError } from '@/lib/auth'
+import * as logging from '@/lib/logging'
 
 describe('/api/utopia/update-email', () => {
   beforeEach(() => {
@@ -252,6 +257,25 @@ describe('/api/utopia/update-email', () => {
       const data = await response.json()
       expect(data.success).toBe(true)
       expect(updateUserEmail).toHaveBeenCalledWith('user-123', 'new@example.com')
+    })
+
+    it('should log email_updated event', async () => {
+      const request = new NextRequest('http://localhost:3000/api/utopia/update-email', {
+        method: 'POST',
+        body: JSON.stringify({ userId: 'user-123', email: 'new@example.com' }),
+        headers: {
+          'content-type': 'application/json',
+          'x-forwarded-for': '192.168.1.1',
+        },
+      })
+
+      await POST(request)
+
+      expect(logging.logSecurityEvent).toHaveBeenCalledWith('data', 'email_updated', {
+        userId: 'user-123',
+        ip: '192.168.1.1',
+        field: 'email',
+      })
     })
 
     it('should not call updateUserEmail before authentication', async () => {

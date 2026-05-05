@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { updateUserName } from "@/lib/utopia";
 import { requireAuth, requireOwnership, validateCSRF, UnauthorizedError, ForbiddenError, CSRFError } from "@/lib/auth";
 import { sanitizeName, ValidationError } from "@/lib/validation";
+import { getClientIP } from "@/lib/ratelimit";
+import { logSecurityEvent } from "@/lib/logging";
 
 export async function POST(request: NextRequest) {
   try {
@@ -27,6 +29,14 @@ export async function POST(request: NextRequest) {
 
     await requireOwnership(sessionUserId, userId);
     await updateUserName(userId, sanitizedName);
+
+    // Log data modification
+    const ip = getClientIP(request);
+    await logSecurityEvent('data', 'name_updated', {
+      userId,
+      ip,
+      field: 'name',
+    });
 
     return NextResponse.json({ success: true });
   } catch (error) {

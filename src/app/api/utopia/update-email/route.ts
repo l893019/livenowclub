@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { updateUserEmail } from "@/lib/utopia";
 import { requireAuth, requireOwnership, validateCSRF, UnauthorizedError, ForbiddenError, CSRFError } from "@/lib/auth";
-import { checkRateLimit, RateLimitError } from "@/lib/ratelimit";
+import { checkRateLimit, RateLimitError, getClientIP } from "@/lib/ratelimit";
+import { logSecurityEvent } from "@/lib/logging";
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,6 +18,14 @@ export async function POST(request: NextRequest) {
 
     await requireOwnership(sessionUserId, userId);
     await updateUserEmail(userId, email);
+
+    // Log data modification
+    const ip = getClientIP(request);
+    await logSecurityEvent('data', 'email_updated', {
+      userId,
+      ip,
+      field: 'email',
+    });
 
     return NextResponse.json({ success: true });
   } catch (error) {
