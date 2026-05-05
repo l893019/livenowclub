@@ -16,6 +16,7 @@ import {
   type PairReading,
   type GroupReading,
 } from '@/lib/reading-prompts'
+import { checkRateLimit, getClientIP, RateLimitError, RATE_LIMITS } from '@/lib/ratelimit'
 
 // =============================================================================
 // REDIS CLIENT
@@ -209,6 +210,25 @@ async function generateGroupReading(
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limiting
+    const clientIP = getClientIP(request);
+    try {
+      await checkRateLimit('ip', clientIP, 'reading', RATE_LIMITS.reading.limit, RATE_LIMITS.reading.window);
+    } catch (error) {
+      if (error instanceof RateLimitError) {
+        return NextResponse.json(
+          { error: 'Too many requests' },
+          {
+            status: 429,
+            headers: {
+              'Retry-After': error.retryAfter.toString()
+            }
+          }
+        );
+      }
+      throw error;
+    }
+
     const body = (await request.json()) as ReadingRequest
 
     // Validate request
