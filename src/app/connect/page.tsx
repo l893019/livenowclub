@@ -6,22 +6,28 @@ import Header from "@/components/Header";
 
 export default function ConnectPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    // TODO: Replace with your Formspree endpoint
-    const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
-      method: "POST",
-      body: formData,
-      headers: { Accept: "application/json" },
-    });
+    try {
+      const response = await fetch("https://formspree.io/f/xbdwydbe", {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
 
-    if (response.ok) {
-      setSubmitted(true);
-      form.reset();
+      if (response.ok) {
+        setSubmitted(true);
+        form.reset();
+      } else {
+        setError(true);
+      }
+    } catch (err) {
+      setError(true);
     }
   };
 
@@ -44,6 +50,16 @@ export default function ConnectPage() {
           {submitted ? (
             <div className="connect-success">
               <p>Thank you. It landed.</p>
+            </div>
+          ) : error ? (
+            <div className="connect-error">
+              <p>Something went wrong. Please try again or email me directly at louiseireland@gmail.com</p>
+              <button
+                onClick={() => setError(false)}
+                className="btn btn--secondary"
+              >
+                Try Again
+              </button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="connect-form">
@@ -218,6 +234,20 @@ export default function ConnectPage() {
           color: var(--sage, #7a8b72);
           font-size: 1.25rem;
           font-style: italic;
+        }
+
+        .connect-error {
+          background: rgba(232, 23, 138, 0.05);
+          padding: 48px 32px;
+          text-align: center;
+          border: 1px solid rgba(232, 23, 138, 0.15);
+        }
+
+        .connect-error p {
+          color: var(--pink, #E8178A);
+          font-size: 1rem;
+          margin-bottom: 24px;
+          line-height: 1.6;
         }
 
         .connect-newsletter {
