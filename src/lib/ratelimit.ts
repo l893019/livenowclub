@@ -1,4 +1,5 @@
 import { redis } from './redis';
+import { logSecurityEvent } from './logging';
 
 // Common rate limits for different endpoint types
 export const RATE_LIMITS = {
@@ -32,7 +33,8 @@ export async function checkRateLimit(
   identifier: string,
   action: string,
   limit: number,
-  windowSeconds: number
+  windowSeconds: number,
+  metadata?: Record<string, any>
 ): Promise<void> {
   // Validate inputs
   if (!identifier || !action) {
@@ -51,6 +53,17 @@ export async function checkRateLimit(
     await redis.expire(key, windowSeconds);
 
     if (count > limit) {
+      // Log rate limit exceeded event
+      await logSecurityEvent('ratelimit', 'exceeded', {
+        ...(metadata || {}),
+        scope,
+        identifier: scope === 'ip' ? identifier : undefined,
+        userId: scope === 'user' ? identifier : undefined,
+        action,
+        limit,
+        count,
+      });
+
       throw new RateLimitError('Rate limit exceeded', windowSeconds);
     }
   } catch (error) {

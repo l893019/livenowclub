@@ -1,11 +1,16 @@
 import { checkRateLimit, RateLimitError, getClientIP } from './ratelimit'
 import { redis } from '@/lib/redis'
+import * as logging from './logging'
 
 jest.mock('@/lib/redis', () => ({
   redis: {
     incr: jest.fn(),
     expire: jest.fn(),
   },
+}))
+
+jest.mock('./logging', () => ({
+  logSecurityEvent: jest.fn(),
 }))
 
 describe('checkRateLimit', () => {
@@ -32,6 +37,59 @@ describe('checkRateLimit', () => {
     ).rejects.toThrow(RateLimitError)
 
     expect(redis.incr).toHaveBeenCalledWith('ratelimit:ip:127.0.0.1:test')
+  })
+
+  it('should log ratelimit exceeded event with IP', async () => {
+    ;(redis.incr as jest.Mock).mockResolvedValue(11)
+
+    await expect(
+      checkRateLimit('ip', '192.168.1.1', 'test', 10, 60)
+    ).rejects.toThrow(RateLimitError)
+
+    expect(logging.logSecurityEvent).toHaveBeenCalledWith('ratelimit', 'exceeded', {
+      scope: 'ip',
+      identifier: '192.168.1.1',
+      userId: undefined,
+      action: 'test',
+      limit: 10,
+      count: 11,
+    })
+  })
+
+  it('should log ratelimit exceeded event with userId', async () => {
+    ;(redis.incr as jest.Mock).mockResolvedValue(6)
+
+    await expect(
+      checkRateLimit('user', 'user-123', 'update-email', 5, 86400)
+    ).rejects.toThrow(RateLimitError)
+
+    expect(logging.logSecurityEvent).toHaveBeenCalledWith('ratelimit', 'exceeded', {
+      scope: 'user',
+      identifier: undefined,
+      userId: 'user-123',
+      action: 'update-email',
+      limit: 5,
+      count: 6,
+    })
+  })
+
+  it('should include additional metadata in log', async () => {
+    ;(redis.incr as jest.Mock).mockResolvedValue(11)
+
+    await expect(
+      checkRateLimit('user', 'user-123', 'api-call', 10, 60, { ip: '192.168.1.1', endpoint: '/api/test' })
+    ).rejects.toThrow(RateLimitError)
+
+    expect(logging.logSecurityEvent).toHaveBeenCalledWith('ratelimit', 'exceeded', {
+      ip: '192.168.1.1',
+      endpoint: '/api/test',
+      scope: 'user',
+      identifier: undefined,
+      userId: 'user-123',
+      action: 'api-call',
+      limit: 10,
+      count: 11,
+    })
   })
 
   it('should create correct key for user scope', async () => {
