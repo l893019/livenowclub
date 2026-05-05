@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { updateUserName } from "@/lib/utopia";
 import { requireAuth, requireOwnership, validateCSRF, UnauthorizedError, ForbiddenError, CSRFError } from "@/lib/auth";
+import { sanitizeName, ValidationError } from "@/lib/validation";
 
 export async function POST(request: NextRequest) {
   try {
@@ -13,8 +14,19 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "userId and name required" }, { status: 400 });
     }
 
+    // Sanitize and validate name
+    let sanitizedName: string;
+    try {
+      sanitizedName = sanitizeName(name);
+    } catch (error) {
+      if (error instanceof ValidationError) {
+        return NextResponse.json({ error: error.message }, { status: 400 });
+      }
+      throw error;
+    }
+
     await requireOwnership(sessionUserId, userId);
-    await updateUserName(userId, name);
+    await updateUserName(userId, sanitizedName);
 
     return NextResponse.json({ success: true });
   } catch (error) {

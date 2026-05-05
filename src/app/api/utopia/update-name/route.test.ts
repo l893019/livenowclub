@@ -201,6 +201,94 @@ describe('/api/utopia/update-name', () => {
       const data = await response.json()
       expect(data.error).toBe('userId and name required')
     })
+
+    it('should return 400 for name with HTML tags', async () => {
+      const request = new NextRequest('http://localhost:3000/api/utopia/update-name', {
+        method: 'POST',
+        body: JSON.stringify({ userId: 'user-123', name: '<script>alert("xss")</script>' }),
+        headers: { 'content-type': 'application/json' },
+      })
+
+      const response = await POST(request)
+
+      expect(response.status).toBe(400)
+      const data = await response.json()
+      // After HTML removal, remaining text has invalid characters
+      expect(data.error).toBe('Name contains invalid characters')
+    })
+
+    it('should return 400 for name with invalid characters', async () => {
+      const request = new NextRequest('http://localhost:3000/api/utopia/update-name', {
+        method: 'POST',
+        body: JSON.stringify({ userId: 'user-123', name: 'User123@!' }),
+        headers: { 'content-type': 'application/json' },
+      })
+
+      const response = await POST(request)
+
+      expect(response.status).toBe(400)
+      const data = await response.json()
+      expect(data.error).toBe('Name contains invalid characters')
+    })
+
+    it('should return 400 for name exceeding max length', async () => {
+      const longName = 'A'.repeat(51)
+      const request = new NextRequest('http://localhost:3000/api/utopia/update-name', {
+        method: 'POST',
+        body: JSON.stringify({ userId: 'user-123', name: longName }),
+        headers: { 'content-type': 'application/json' },
+      })
+
+      const response = await POST(request)
+
+      expect(response.status).toBe(400)
+      const data = await response.json()
+      expect(data.error).toBe('Name must not exceed 50 characters')
+    })
+
+    it('should return 400 for name that is only whitespace', async () => {
+      const request = new NextRequest('http://localhost:3000/api/utopia/update-name', {
+        method: 'POST',
+        body: JSON.stringify({ userId: 'user-123', name: '   ' }),
+        headers: { 'content-type': 'application/json' },
+      })
+
+      const response = await POST(request)
+
+      expect(response.status).toBe(400)
+      const data = await response.json()
+      expect(data.error).toBe('Name cannot be empty')
+    })
+
+    it('should accept valid name with spaces and hyphens', async () => {
+      const request = new NextRequest('http://localhost:3000/api/utopia/update-name', {
+        method: 'POST',
+        body: JSON.stringify({ userId: 'user-123', name: "Mary-Jane O'Brien" }),
+        headers: { 'content-type': 'application/json' },
+      })
+
+      const response = await POST(request)
+
+      expect(response.status).toBe(200)
+      const data = await response.json()
+      expect(data.success).toBe(true)
+      expect(updateUserName).toHaveBeenCalledWith('user-123', "Mary-Jane O'Brien")
+    })
+
+    it('should trim whitespace from name', async () => {
+      const request = new NextRequest('http://localhost:3000/api/utopia/update-name', {
+        method: 'POST',
+        body: JSON.stringify({ userId: 'user-123', name: '  John Doe  ' }),
+        headers: { 'content-type': 'application/json' },
+      })
+
+      const response = await POST(request)
+
+      expect(response.status).toBe(200)
+      const data = await response.json()
+      expect(data.success).toBe(true)
+      expect(updateUserName).toHaveBeenCalledWith('user-123', 'John Doe')
+    })
   })
 
   describe('Success Cases', () => {
