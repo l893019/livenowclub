@@ -38,10 +38,3 @@ The world may not get better. My cancer may not go away. But who is to say this 
 
 I write this from flight, traveling from country to country in search of a cure, in search of solace. As I look out the window, I see the moon at eye level above the clouds. From here, I can see that dying and living were never opposites. They were always the same thing, happening at once.
 
-I would love it if you shared my words with anyone you think would benefit from them. It means a lot to me to feel like I have a voice. 
-
- _Thank you, as always, for your support. It means the world to me that you’re reading and sharing my work._
-
- _This is Part I. I will share a practical guide with my best tips on navigating cancer treatment in a few days as Part II._
-
-  *  _If you have specific questions you’d like me to address in this, drop them in the comments <3_
