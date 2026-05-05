@@ -1,9 +1,29 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Redis from 'ioredis';
+import { checkRateLimit, getClientIP, RateLimitError, RATE_LIMITS } from '@/lib/ratelimit';
 
 const redis = new Redis(process.env.REDIS_URL || '');
 
 export async function POST(request: NextRequest) {
+  // Rate limiting
+  const clientIP = getClientIP(request);
+  try {
+    await checkRateLimit('ip', clientIP, 'track', RATE_LIMITS.track.limit, RATE_LIMITS.track.window);
+  } catch (error) {
+    if (error instanceof RateLimitError) {
+      return NextResponse.json(
+        { error: 'Too many requests' },
+        {
+          status: 429,
+          headers: {
+            'Retry-After': error.retryAfter.toString()
+          }
+        }
+      );
+    }
+    throw error;
+  }
+
   try {
     const { page, referrer, event, identity, context, metadata, sessionId } = await request.json();
 
