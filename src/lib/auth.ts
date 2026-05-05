@@ -1,6 +1,7 @@
 import { NextRequest } from 'next/server'
 import { redis } from './redis'
 import crypto from 'crypto'
+import { logSecurityEvent } from './logging'
 
 // Custom error classes
 export class UnauthorizedError extends Error {
@@ -46,7 +47,7 @@ function generateToken(): string {
 /**
  * Creates a new session for a user
  */
-export async function createSession(userId: string): Promise<{
+export async function createSession(userId: string, ip?: string): Promise<{
   sessionToken: string
   csrfToken: string
 }> {
@@ -67,6 +68,12 @@ export async function createSession(userId: string): Promise<{
     SESSION_DURATION
   )
 
+  // Log session creation
+  await logSecurityEvent('auth', 'session_created', {
+    userId,
+    ip,
+  })
+
   return { sessionToken, csrfToken }
 }
 
@@ -77,8 +84,16 @@ export async function createSession(userId: string): Promise<{
 export async function requireAuth(request: NextRequest): Promise<string> {
   // Extract session token from cookie
   const sessionToken = request.cookies.get('session')?.value
+  const ip = request.headers.get('x-forwarded-for')?.split(',')[0].trim()
+    || request.headers.get('x-real-ip')
+    || undefined
 
   if (!sessionToken) {
+    // Log unauthorized access attempt
+    await logSecurityEvent('auth', 'unauthorized_access', {
+      ip,
+      reason: 'No session token',
+    })
     throw new UnauthorizedError('No session token')
   }
 
@@ -86,6 +101,11 @@ export async function requireAuth(request: NextRequest): Promise<string> {
   const sessionData = await redis.get(`${SESSION_PREFIX}${sessionToken}`)
 
   if (!sessionData) {
+    // Log unauthorized access attempt
+    await logSecurityEvent('auth', 'unauthorized_access', {
+      ip,
+      reason: 'Invalid or expired session',
+    })
     throw new UnauthorizedError('Invalid or expired session')
   }
 
@@ -95,6 +115,13 @@ export async function requireAuth(request: NextRequest): Promise<string> {
   const sessionAge = Date.now() - session.createdAt
   if (sessionAge > SESSION_DURATION * 1000) {
     await redis.del(`${SESSION_PREFIX}${sessionToken}`)
+
+    // Log session expiration
+    await logSecurityEvent('auth', 'session_expired', {
+      userId: session.userId,
+      ip,
+    })
+
     throw new UnauthorizedError('Session expired')
   }
 

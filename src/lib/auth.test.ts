@@ -10,6 +10,7 @@ import {
 } from './auth'
 import { NextRequest } from 'next/server'
 import { redis } from './redis'
+import * as logging from './logging'
 
 jest.mock('./redis', () => ({
   redis: {
@@ -17,6 +18,10 @@ jest.mock('./redis', () => ({
     get: jest.fn(),
     del: jest.fn(),
   },
+}))
+
+jest.mock('./logging', () => ({
+  logSecurityEvent: jest.fn(),
 }))
 
 describe('Authentication Infrastructure', () => {
@@ -55,6 +60,17 @@ describe('Authentication Infrastructure', () => {
       expect(sessionData.createdAt).toBeDefined()
       expect(sessionData.lastActive).toBeDefined()
     })
+
+    it('should log session_created event', async () => {
+      ;(redis.set as jest.Mock).mockResolvedValue('OK')
+
+      await createSession('user-123', '192.168.1.1')
+
+      expect(logging.logSecurityEvent).toHaveBeenCalledWith('auth', 'session_created', {
+        userId: 'user-123',
+        ip: '192.168.1.1',
+      })
+    })
   })
 
   describe('requireAuth', () => {
@@ -63,6 +79,19 @@ describe('Authentication Infrastructure', () => {
 
       await expect(requireAuth(request)).rejects.toThrow(UnauthorizedError)
       await expect(requireAuth(request)).rejects.toThrow('No session token')
+    })
+
+    it('should log unauthorized_access when no session cookie', async () => {
+      const request = new NextRequest('http://localhost:3000/api/test', {
+        headers: { 'x-forwarded-for': '192.168.1.1' }
+      })
+
+      await expect(requireAuth(request)).rejects.toThrow(UnauthorizedError)
+
+      expect(logging.logSecurityEvent).toHaveBeenCalledWith('auth', 'unauthorized_access', {
+        ip: '192.168.1.1',
+        reason: 'No session token',
+      })
     })
 
     it('should throw UnauthorizedError when session not found', async () => {
@@ -74,6 +103,24 @@ describe('Authentication Infrastructure', () => {
 
       await expect(requireAuth(request)).rejects.toThrow(UnauthorizedError)
       await expect(requireAuth(request)).rejects.toThrow('Invalid or expired session')
+    })
+
+    it('should log unauthorized_access when session not found', async () => {
+      ;(redis.get as jest.Mock).mockResolvedValue(null)
+
+      const request = new NextRequest('http://localhost:3000/api/test', {
+        headers: {
+          cookie: 'session=invalid-token',
+          'x-forwarded-for': '192.168.1.1'
+        }
+      })
+
+      await expect(requireAuth(request)).rejects.toThrow(UnauthorizedError)
+
+      expect(logging.logSecurityEvent).toHaveBeenCalledWith('auth', 'unauthorized_access', {
+        ip: '192.168.1.1',
+        reason: 'Invalid or expired session',
+      })
     })
 
     it('should return userId for valid session', async () => {
@@ -113,6 +160,31 @@ describe('Authentication Infrastructure', () => {
       await expect(requireAuth(request)).rejects.toThrow(UnauthorizedError)
       await expect(requireAuth(request)).rejects.toThrow('Session expired')
       expect(redis.del).toHaveBeenCalledWith('session:expired-token')
+    })
+
+    it('should log session_expired event', async () => {
+      const sessionData = {
+        userId: 'user-123',
+        csrfToken: 'csrf-token',
+        createdAt: Date.now() - 91 * 24 * 60 * 60 * 1000, // 91 days ago
+        lastActive: Date.now(),
+      }
+      ;(redis.get as jest.Mock).mockResolvedValue(JSON.stringify(sessionData))
+      ;(redis.del as jest.Mock).mockResolvedValue(1)
+
+      const request = new NextRequest('http://localhost:3000/api/test', {
+        headers: {
+          cookie: 'session=expired-token',
+          'x-forwarded-for': '192.168.1.1'
+        }
+      })
+
+      await expect(requireAuth(request)).rejects.toThrow(UnauthorizedError)
+
+      expect(logging.logSecurityEvent).toHaveBeenCalledWith('auth', 'session_expired', {
+        userId: 'user-123',
+        ip: '192.168.1.1',
+      })
     })
   })
 
