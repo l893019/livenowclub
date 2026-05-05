@@ -10,6 +10,11 @@ export const RATE_LIMITS = {
 
   // Very strict for admin endpoints
   admin: { limit: 10, window: 60 }, // 10 req/minute
+
+  // Endpoint-specific limits
+  subscribe: { limit: 5, window: 3600 }, // 5 req/hour (email subscription)
+  reading: { limit: 10, window: 3600 }, // 10 req/hour (Anthropic API calls)
+  track: { limit: 100, window: 3600 }, // 100 req/hour (analytics tracking)
 } as const;
 
 export class RateLimitError extends Error {
