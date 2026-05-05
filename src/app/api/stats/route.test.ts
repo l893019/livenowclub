@@ -1,5 +1,6 @@
 import { GET } from './route'
 import { NextRequest } from 'next/server'
+import * as logging from '@/lib/logging'
 
 // Mock Redis to avoid connection timeouts in tests
 jest.mock('ioredis', () => {
@@ -12,10 +13,15 @@ jest.mock('ioredis', () => {
   }))
 })
 
+jest.mock('@/lib/logging', () => ({
+  logSecurityEvent: jest.fn(),
+}))
+
 describe('/api/stats', () => {
   const originalEnv = process.env.ADMIN_API_KEY
 
   beforeEach(() => {
+    jest.clearAllMocks()
     process.env.ADMIN_API_KEY = 'test-admin-key-123'
   })
 
@@ -63,5 +69,34 @@ describe('/api/stats', () => {
 
     expect(response.status).toBe(200)
     // Stats response structure validated
+  })
+
+  it('should log stats_accessed event with IP', async () => {
+    const request = new NextRequest('http://localhost:3000/api/stats', {
+      headers: {
+        'x-admin-api-key': 'test-admin-key-123',
+        'x-forwarded-for': '192.168.1.1',
+      }
+    })
+    await GET(request)
+
+    expect(logging.logSecurityEvent).toHaveBeenCalledWith('admin', 'stats_accessed', {
+      ip: '192.168.1.1',
+      endpoint: '/api/stats',
+    })
+  })
+
+  it('should log stats_accessed event without IP if not provided', async () => {
+    const request = new NextRequest('http://localhost:3000/api/stats', {
+      headers: {
+        'x-admin-api-key': 'test-admin-key-123',
+      }
+    })
+    await GET(request)
+
+    expect(logging.logSecurityEvent).toHaveBeenCalledWith('admin', 'stats_accessed', {
+      ip: undefined,
+      endpoint: '/api/stats',
+    })
   })
 })

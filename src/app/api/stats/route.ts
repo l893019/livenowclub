@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Redis from 'ioredis';
 import { identities } from '@/lib/identities';
+import { logSecurityEvent } from '@/lib/logging';
 
 const redis = new Redis(process.env.REDIS_URL || '');
 
@@ -22,6 +23,16 @@ export async function GET(request: NextRequest) {
       { status: 401 }
     )
   }
+
+  // Log admin stats access
+  const ip = request.headers.get('x-forwarded-for')?.split(',')[0].trim()
+    || request.headers.get('x-real-ip')
+    || undefined;
+
+  await logSecurityEvent('admin', 'stats_accessed', {
+    ip,
+    endpoint: '/api/stats',
+  });
 
   try {
     const searchParams = request.nextUrl.searchParams;
