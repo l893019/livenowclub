@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Redis from 'ioredis';
 import { checkRateLimit, getClientIP, RateLimitError, RATE_LIMITS } from '@/lib/ratelimit';
+import { validateEmail, ValidationError } from '@/lib/validation';
 
 const redis = new Redis(process.env.REDIS_URL || '');
 
@@ -27,8 +28,14 @@ export async function POST(request: NextRequest) {
   try {
     const { email, identity, quizAnswers, referrer } = await request.json();
 
-    if (!email || !email.includes('@')) {
-      return NextResponse.json({ error: 'Invalid email' }, { status: 400 });
+    // Validate email using comprehensive validation
+    try {
+      validateEmail(email);
+    } catch (error) {
+      if (error instanceof ValidationError) {
+        return NextResponse.json({ error: error.message }, { status: 400 });
+      }
+      throw error;
     }
 
     const timestamp = new Date().toISOString();

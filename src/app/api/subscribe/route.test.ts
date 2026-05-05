@@ -76,6 +76,97 @@ describe('/api/subscribe rate limiting', () => {
   })
 })
 
+describe('/api/subscribe email validation', () => {
+  beforeEach(() => {
+    jest.clearAllMocks()
+    // Mock rate limit to pass for validation tests
+    ;(checkRateLimit as jest.Mock).mockResolvedValue(undefined)
+  })
+
+  it('should return 400 for invalid email format', async () => {
+    const request = new NextRequest('http://localhost:3000/api/subscribe', {
+      method: 'POST',
+      body: JSON.stringify({ email: 'not-an-email' }),
+      headers: { 'content-type': 'application/json' }
+    })
+
+    const response = await POST(request)
+
+    expect(response.status).toBe(400)
+    const data = await response.json()
+    expect(data.error).toBe('Invalid email format')
+  })
+
+  it('should return 400 for email without domain', async () => {
+    const request = new NextRequest('http://localhost:3000/api/subscribe', {
+      method: 'POST',
+      body: JSON.stringify({ email: 'user@' }),
+      headers: { 'content-type': 'application/json' }
+    })
+
+    const response = await POST(request)
+
+    expect(response.status).toBe(400)
+    const data = await response.json()
+    expect(data.error).toBe('Invalid email format')
+  })
+
+  it('should return 400 for email with invalid TLD', async () => {
+    const request = new NextRequest('http://localhost:3000/api/subscribe', {
+      method: 'POST',
+      body: JSON.stringify({ email: 'user@domain.c' }),
+      headers: { 'content-type': 'application/json' }
+    })
+
+    const response = await POST(request)
+
+    expect(response.status).toBe(400)
+    const data = await response.json()
+    expect(data.error).toBe('Invalid email format')
+  })
+
+  it('should return 400 for email exceeding max length', async () => {
+    const longEmail = 'a'.repeat(250) + '@example.com'
+    const request = new NextRequest('http://localhost:3000/api/subscribe', {
+      method: 'POST',
+      body: JSON.stringify({ email: longEmail }),
+      headers: { 'content-type': 'application/json' }
+    })
+
+    const response = await POST(request)
+
+    expect(response.status).toBe(400)
+    const data = await response.json()
+    expect(data.error).toBe('Email must not exceed 254 characters')
+  })
+
+  it('should return 400 for email with consecutive dots', async () => {
+    const request = new NextRequest('http://localhost:3000/api/subscribe', {
+      method: 'POST',
+      body: JSON.stringify({ email: 'user..name@example.com' }),
+      headers: { 'content-type': 'application/json' }
+    })
+
+    const response = await POST(request)
+
+    expect(response.status).toBe(400)
+    const data = await response.json()
+    expect(data.error).toBe('Invalid email format')
+  })
+
+  it('should accept valid email address', async () => {
+    const request = new NextRequest('http://localhost:3000/api/subscribe', {
+      method: 'POST',
+      body: JSON.stringify({ email: 'valid.user@example.com' }),
+      headers: { 'content-type': 'application/json' }
+    })
+
+    const response = await POST(request)
+
+    expect(response.status).not.toBe(400)
+  })
+})
+
 describe('/api/subscribe GET endpoint (retry queue)', () => {
   const originalEnv = process.env.ADMIN_API_KEY;
 
