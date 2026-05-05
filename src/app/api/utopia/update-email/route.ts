@@ -1,26 +1,33 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { updateUserEmail } from '@/lib/utopia';
+import { NextRequest, NextResponse } from "next/server";
+import { updateUserEmail } from "@/lib/utopia";
+import { requireAuth, requireOwnership, UnauthorizedError, ForbiddenError } from "@/lib/auth";
+import { checkRateLimit, RateLimitError } from "@/lib/ratelimit";
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
-    const { userId, email } = body;
+    const sessionUserId = await requireAuth(request);
+    await checkRateLimit('user', sessionUserId, 'update-email', 3, 86400);
 
-    if (!userId) {
-      return NextResponse.json(
-        { error: 'Missing userId' },
-        { status: 400 }
-      );
+    const { userId, email } = await request.json();
+    if (!userId || !email) {
+      return NextResponse.json({ error: "userId and email required" }, { status: 400 });
     }
 
-    await updateUserEmail(userId, email || '');
+    await requireOwnership(sessionUserId, userId);
+    await updateUserEmail(userId, email);
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('[Update Email] Error:', error);
-    return NextResponse.json(
-      { error: 'Failed to update email' },
-      { status: 500 }
-    );
+    if (error instanceof UnauthorizedError) {
+      return NextResponse.json({ error: error.message }, { status: 401 });
+    }
+    if (error instanceof ForbiddenError) {
+      return NextResponse.json({ error: error.message }, { status: 403 });
+    }
+    if (error instanceof RateLimitError) {
+      return NextResponse.json({ error: error.message }, { status: 429 });
+    }
+    console.error("Error updating email:", error);
+    return NextResponse.json({ error: "Failed to update email" }, { status: 500 });
   }
 }
