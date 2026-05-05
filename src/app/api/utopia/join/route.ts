@@ -1,19 +1,33 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { joinUtopia, getUserResult } from '@/lib/utopia';
 import { sendJoinNotification } from '@/lib/email';
+import { requireAuth, UnauthorizedError } from '@/lib/auth';
 
 export async function POST(request: NextRequest) {
   try {
+    // Authenticate user
+    const sessionUserId = await requireAuth(request);
+
     const body = await request.json();
     const { slug, userId } = body;
 
     console.log('[Join Utopia] Request:', { slug, userId });
 
+    // Validate required parameters first
     if (!slug || !userId) {
       console.log('[Join Utopia] Missing params:', { slug, userId });
       return NextResponse.json(
         { error: 'Missing slug or userId' },
         { status: 400 }
+      );
+    }
+
+    // Verify sessionUserId matches userId (no joining as different user)
+    if (sessionUserId !== userId) {
+      console.log('[Join Utopia] User mismatch:', { sessionUserId, userId });
+      return NextResponse.json(
+        { error: 'Cannot join utopia as another user' },
+        { status: 403 }
       );
     }
 
@@ -82,6 +96,15 @@ export async function POST(request: NextRequest) {
     });
   } catch (error) {
     console.error('[Join Utopia] Error:', error);
+
+    // Handle UnauthorizedError
+    if (error instanceof UnauthorizedError) {
+      return NextResponse.json(
+        { error: 'Unauthorized' },
+        { status: 401 }
+      );
+    }
+
     return NextResponse.json(
       { error: 'Failed to join utopia' },
       { status: 500 }
