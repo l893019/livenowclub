@@ -1,4 +1,5 @@
 import Redis from 'ioredis';
+import { encrypt, decrypt, isEncrypted } from './crypto';
 
 // Initialize Redis client using REDIS_URL
 const redis = new Redis(process.env.REDIS_URL || '');
@@ -100,15 +101,79 @@ export function generateSlug(starName: string): string {
 // USER FUNCTIONS
 // =============================================================================
 
+/**
+ * Saves a user result to Redis with encryption of sensitive fields.
+ *
+ * Encrypted fields:
+ * - email: User's email address (if present)
+ * - answers: Quiz answers array (stored as encrypted JSON string)
+ *
+ * @param result - The user result to save
+ */
 export async function saveUserResult(result: UserResult): Promise<void> {
+  // Encrypt sensitive fields before storing
+  const encryptedResult = { ...result };
+
+  // Encrypt email if present
+  if (encryptedResult.email) {
+    encryptedResult.email = await encrypt(encryptedResult.email);
+  }
+
+  // Encrypt answers array
+  encryptedResult.answers = await encrypt(JSON.stringify(encryptedResult.answers));
+
   // Set with 90-day TTL to ensure persistence (90 days = 7,776,000 seconds)
-  await redis.set(`user:${result.id}`, JSON.stringify(result), 'EX', 7776000);
+  await redis.set(`user:${result.id}`, JSON.stringify(encryptedResult), 'EX', 7776000);
 }
 
+/**
+ * Retrieves a user result from Redis with automatic decryption and lazy migration.
+ *
+ * Decrypts sensitive fields:
+ * - email: If encrypted, decrypts to plaintext
+ * - answers: If encrypted, decrypts JSON string and parses to array
+ *
+ * Lazy migration:
+ * - If unencrypted data is detected, automatically re-saves with encryption
+ * - Ensures gradual migration from legacy unencrypted data
+ *
+ * @param userId - The user ID to retrieve
+ * @returns The user result with decrypted data, or null if not found
+ */
 export async function getUserResult(userId: string): Promise<UserResult | null> {
   const data = await redis.get(`user:${userId}`);
   if (data) {
-    return JSON.parse(data);
+    const parsed = JSON.parse(data);
+    let needsMigration = false;
+
+    // Decrypt email if present and encrypted
+    if (parsed.email && typeof parsed.email === 'string') {
+      if (isEncrypted(parsed.email)) {
+        parsed.email = await decrypt(parsed.email);
+      } else {
+        // Unencrypted data detected - mark for migration
+        needsMigration = true;
+      }
+    }
+
+    // Decrypt answers if encrypted, or detect if migration needed
+    if (parsed.answers) {
+      if (typeof parsed.answers === 'string' && isEncrypted(parsed.answers)) {
+        // Encrypted answers (stored as JSON string)
+        const decryptedAnswers = await decrypt(parsed.answers);
+        parsed.answers = JSON.parse(decryptedAnswers);
+      } else if (Array.isArray(parsed.answers)) {
+        // Unencrypted answers - mark for migration
+        needsMigration = true;
+      }
+    }
+
+    // Lazy migration: re-save with encryption if unencrypted data was detected
+    if (needsMigration) {
+      await saveUserResult(parsed);
+    }
+
+    return parsed;
   }
 
   // Fallback: Try to reconstruct user from utopias they're a member of
@@ -133,7 +198,7 @@ export async function getUserResult(userId: string): Promise<UserResult | null> 
           slug: member.slug || '',
           createdAt: member.joinedAt || new Date().toISOString(),
         };
-        // Save it back to Redis for future use
+        // Save it back to Redis for future use (with encryption)
         await saveUserResult(reconstructed);
         return reconstructed;
       }
@@ -184,7 +249,7 @@ export async function generateUserSlug(userId: string, name: string): Promise<st
   return slug;
 }
 
-export async function updateUserEmail(userId: string, email: string): Promise<void> {
+export async function updateUserEmail(userId: string, email: string | null): Promise<void> {
   const existing = await getUserResult(userId);
   if (!existing) return;
 
