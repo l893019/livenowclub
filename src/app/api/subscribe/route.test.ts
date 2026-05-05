@@ -75,3 +75,51 @@ describe('/api/subscribe rate limiting', () => {
     expect(response.headers.get('Retry-After')).toBe('3600')
   })
 })
+
+describe('/api/subscribe GET endpoint (retry queue)', () => {
+  const originalEnv = process.env.ADMIN_API_KEY;
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+    process.env.ADMIN_API_KEY = 'test-admin-key-123';
+  });
+
+  afterEach(() => {
+    process.env.ADMIN_API_KEY = originalEnv;
+  });
+
+  it('should return 401 when no API key provided', async () => {
+    const { GET } = await import('./route');
+    const request = new NextRequest('http://localhost:3000/api/subscribe');
+    const response = await GET(request);
+
+    expect(response.status).toBe(401);
+    const data = await response.json();
+    expect(data.error).toBe('Unauthorized');
+  });
+
+  it('should return 401 when invalid API key provided', async () => {
+    const { GET } = await import('./route');
+    const request = new NextRequest('http://localhost:3000/api/subscribe', {
+      headers: { 'x-admin-api-key': 'wrong-key' }
+    });
+    const response = await GET(request);
+
+    expect(response.status).toBe(401);
+    const data = await response.json();
+    expect(data.error).toBe('Unauthorized');
+  });
+
+  it('should return 500 when ADMIN_API_KEY not configured', async () => {
+    delete process.env.ADMIN_API_KEY;
+    const { GET } = await import('./route');
+    const request = new NextRequest('http://localhost:3000/api/subscribe', {
+      headers: { 'x-admin-api-key': 'any-key' }
+    });
+    const response = await GET(request);
+
+    expect(response.status).toBe(500);
+    const data = await response.json();
+    expect(data.error).toBe('Server configuration error');
+  });
+})

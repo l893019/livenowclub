@@ -35,9 +35,7 @@ export async function POST(request: NextRequest) {
     const date = timestamp.split('T')[0];
 
     // Get visitor context
-    const ip = request.headers.get('x-forwarded-for') ||
-               request.headers.get('x-real-ip') ||
-               'unknown';
+    const ip = getClientIP(request);
     const userAgent = request.headers.get('user-agent') || 'unknown';
     const visitorId = Buffer.from(`${ip}-${userAgent}`).toString('base64').slice(0, 16);
 
@@ -147,6 +145,24 @@ export async function POST(request: NextRequest) {
 
 // Retry failed Substack additions (can be called via cron or manually)
 export async function GET(request: NextRequest) {
+  // Admin API key validation
+  const apiKey = request.headers.get('x-admin-api-key');
+  const expectedKey = process.env.ADMIN_API_KEY;
+
+  if (!expectedKey) {
+    return NextResponse.json(
+      { error: 'Server configuration error' },
+      { status: 500 }
+    );
+  }
+
+  if (!apiKey || apiKey !== expectedKey) {
+    return NextResponse.json(
+      { error: 'Unauthorized' },
+      { status: 401 }
+    );
+  }
+
   try {
     // Get failed emails from retry queue
     const emails = await redis.zrange('emails:retry', 0, 9); // Process 10 at a time
