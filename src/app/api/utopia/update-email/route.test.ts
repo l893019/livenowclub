@@ -19,6 +19,7 @@ jest.mock('@/lib/utopia', () => ({
 jest.mock('@/lib/auth', () => ({
   requireAuth: jest.fn(),
   requireOwnership: jest.fn(),
+  validateCSRF: jest.fn(),
   UnauthorizedError: class UnauthorizedError extends Error {
     constructor(message: string) {
       super(message)
@@ -31,17 +32,24 @@ jest.mock('@/lib/auth', () => ({
       this.name = 'ForbiddenError'
     }
   },
+  CSRFError: class CSRFError extends Error {
+    constructor(message: string) {
+      super(message)
+      this.name = 'CSRFError'
+    }
+  },
 }))
 
 import { POST } from './route'
 import { redis } from '@/lib/redis'
 import { updateUserEmail } from '@/lib/utopia'
-import { requireAuth, requireOwnership, UnauthorizedError, ForbiddenError } from '@/lib/auth'
+import { requireAuth, requireOwnership, validateCSRF, UnauthorizedError, ForbiddenError, CSRFError } from '@/lib/auth'
 
 describe('/api/utopia/update-email', () => {
   beforeEach(() => {
     jest.clearAllMocks()
     ;(requireAuth as jest.Mock).mockResolvedValue('user-123')
+    ;(validateCSRF as jest.Mock).mockResolvedValue(undefined)
     ;(requireOwnership as jest.Mock).mockResolvedValue(undefined)
     ;(updateUserEmail as jest.Mock).mockResolvedValue(undefined)
     ;(redis.incr as jest.Mock).mockResolvedValue(1)
@@ -53,7 +61,10 @@ describe('/api/utopia/update-email', () => {
       const request = new NextRequest('http://localhost:3000/api/utopia/update-email', {
         method: 'POST',
         body: JSON.stringify({ userId: 'user-123', email: 'new@example.com' }),
-        headers: { 'content-type': 'application/json' },
+        headers: {
+          'content-type': 'application/json',
+          'cookie': 'session=test-session-token',
+        },
       })
 
       await POST(request)
@@ -75,6 +86,61 @@ describe('/api/utopia/update-email', () => {
       expect(response.status).toBe(401)
       const data = await response.json()
       expect(data.error).toBe('No session token')
+    })
+  })
+
+  describe('CSRF Protection', () => {
+    it('should validate CSRF token', async () => {
+      const request = new NextRequest('http://localhost:3000/api/utopia/update-email', {
+        method: 'POST',
+        body: JSON.stringify({ userId: 'user-123', email: 'new@example.com' }),
+        headers: {
+          'content-type': 'application/json',
+          'cookie': 'session=test-session-token',
+        },
+      })
+
+      await POST(request)
+
+      expect(validateCSRF).toHaveBeenCalledWith(request, 'test-session-token')
+    })
+
+    it('should return 403 when CSRF token is missing', async () => {
+      ;(validateCSRF as jest.Mock).mockRejectedValue(new CSRFError('CSRF token missing'))
+
+      const request = new NextRequest('http://localhost:3000/api/utopia/update-email', {
+        method: 'POST',
+        body: JSON.stringify({ userId: 'user-123', email: 'new@example.com' }),
+        headers: {
+          'content-type': 'application/json',
+          'cookie': 'session=test-session-token',
+        },
+      })
+
+      const response = await POST(request)
+
+      expect(response.status).toBe(403)
+      const data = await response.json()
+      expect(data.error).toBe('CSRF token missing')
+    })
+
+    it('should return 403 when CSRF token is invalid', async () => {
+      ;(validateCSRF as jest.Mock).mockRejectedValue(new CSRFError('Invalid CSRF token'))
+
+      const request = new NextRequest('http://localhost:3000/api/utopia/update-email', {
+        method: 'POST',
+        body: JSON.stringify({ userId: 'user-123', email: 'new@example.com' }),
+        headers: {
+          'content-type': 'application/json',
+          'cookie': 'session=test-session-token',
+        },
+      })
+
+      const response = await POST(request)
+
+      expect(response.status).toBe(403)
+      const data = await response.json()
+      expect(data.error).toBe('Invalid CSRF token')
     })
   })
 

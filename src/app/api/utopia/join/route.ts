@@ -1,12 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { joinUtopia, getUserResult } from '@/lib/utopia';
 import { sendJoinNotification } from '@/lib/email';
-import { requireAuth, UnauthorizedError } from '@/lib/auth';
+import { requireAuth, validateCSRF, UnauthorizedError, CSRFError } from '@/lib/auth';
 
 export async function POST(request: NextRequest) {
   try {
     // Authenticate user
     const sessionUserId = await requireAuth(request);
+    const sessionToken = request.cookies.get('session')?.value!;
+    await validateCSRF(request, sessionToken);
 
     const body = await request.json();
     const { slug, userId } = body;
@@ -102,6 +104,14 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { error: 'Unauthorized' },
         { status: 401 }
+      );
+    }
+
+    // Handle CSRFError
+    if (error instanceof CSRFError) {
+      return NextResponse.json(
+        { error: error.message },
+        { status: 403 }
       );
     }
 

@@ -1,11 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { updateUserEmail } from "@/lib/utopia";
-import { requireAuth, requireOwnership, UnauthorizedError, ForbiddenError } from "@/lib/auth";
+import { requireAuth, requireOwnership, validateCSRF, UnauthorizedError, ForbiddenError, CSRFError } from "@/lib/auth";
 import { checkRateLimit, RateLimitError } from "@/lib/ratelimit";
 
 export async function POST(request: NextRequest) {
   try {
     const sessionUserId = await requireAuth(request);
+    const sessionToken = request.cookies.get('session')?.value!;
+    await validateCSRF(request, sessionToken);
     await checkRateLimit('user', sessionUserId, 'update-email', 3, 86400);
 
     const { userId, email } = await request.json();
@@ -20,6 +22,9 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     if (error instanceof UnauthorizedError) {
       return NextResponse.json({ error: error.message }, { status: 401 });
+    }
+    if (error instanceof CSRFError) {
+      return NextResponse.json({ error: error.message }, { status: 403 });
     }
     if (error instanceof ForbiddenError) {
       return NextResponse.json({ error: error.message }, { status: 403 });

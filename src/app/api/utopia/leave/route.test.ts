@@ -1,11 +1,12 @@
 import { NextRequest } from 'next/server'
 import { POST } from './route'
-import { requireAuth, UnauthorizedError, ForbiddenError } from '@/lib/auth'
+import { requireAuth, validateCSRF, UnauthorizedError, ForbiddenError, CSRFError } from '@/lib/auth'
 import { leaveUtopia } from '@/lib/utopia'
 
 // Mock dependencies
 jest.mock('@/lib/auth', () => ({
   requireAuth: jest.fn(),
+  validateCSRF: jest.fn(),
   UnauthorizedError: class UnauthorizedError extends Error {
     constructor(message: string) {
       super(message)
@@ -18,6 +19,12 @@ jest.mock('@/lib/auth', () => ({
       this.name = 'ForbiddenError'
     }
   },
+  CSRFError: class CSRFError extends Error {
+    constructor(message: string) {
+      super(message)
+      this.name = 'CSRFError'
+    }
+  },
 }))
 
 jest.mock('@/lib/utopia', () => ({
@@ -28,6 +35,7 @@ describe('/api/utopia/leave', () => {
   beforeEach(() => {
     jest.clearAllMocks()
     ;(requireAuth as jest.Mock).mockResolvedValue('user-123')
+    ;(validateCSRF as jest.Mock).mockResolvedValue(undefined)
     ;(leaveUtopia as jest.Mock).mockResolvedValue(true)
   })
 
@@ -36,7 +44,10 @@ describe('/api/utopia/leave', () => {
       const request = new NextRequest('http://localhost:3000/api/utopia/leave', {
         method: 'POST',
         body: JSON.stringify({ slug: 'sirius-abc123', userId: 'user-123' }),
-        headers: { 'content-type': 'application/json' },
+        headers: {
+          'content-type': 'application/json',
+          'cookie': 'session=test-session-token',
+        },
       })
 
       await POST(request)
@@ -68,7 +79,10 @@ describe('/api/utopia/leave', () => {
       const request = new NextRequest('http://localhost:3000/api/utopia/leave', {
         method: 'POST',
         body: JSON.stringify({ slug: 'sirius-abc123', userId: 'user-123' }),
-        headers: { 'content-type': 'application/json' },
+        headers: {
+          'content-type': 'application/json',
+          'cookie': 'session=test-session-token',
+        },
       })
 
       const response = await POST(request)
@@ -76,6 +90,61 @@ describe('/api/utopia/leave', () => {
       expect(response.status).toBe(403)
       const data = await response.json()
       expect(data.error).toBe('Cannot leave utopia as another user')
+    })
+  })
+
+  describe('CSRF Protection', () => {
+    it('should validate CSRF token', async () => {
+      const request = new NextRequest('http://localhost:3000/api/utopia/leave', {
+        method: 'POST',
+        body: JSON.stringify({ slug: 'sirius-abc123', userId: 'user-123' }),
+        headers: {
+          'content-type': 'application/json',
+          'cookie': 'session=test-session-token',
+        },
+      })
+
+      await POST(request)
+
+      expect(validateCSRF).toHaveBeenCalledWith(request, 'test-session-token')
+    })
+
+    it('should return 403 when CSRF token is missing', async () => {
+      ;(validateCSRF as jest.Mock).mockRejectedValue(new CSRFError('CSRF token missing'))
+
+      const request = new NextRequest('http://localhost:3000/api/utopia/leave', {
+        method: 'POST',
+        body: JSON.stringify({ slug: 'sirius-abc123', userId: 'user-123' }),
+        headers: {
+          'content-type': 'application/json',
+          'cookie': 'session=test-session-token',
+        },
+      })
+
+      const response = await POST(request)
+
+      expect(response.status).toBe(403)
+      const data = await response.json()
+      expect(data.error).toBe('CSRF token missing')
+    })
+
+    it('should return 403 when CSRF token is invalid', async () => {
+      ;(validateCSRF as jest.Mock).mockRejectedValue(new CSRFError('Invalid CSRF token'))
+
+      const request = new NextRequest('http://localhost:3000/api/utopia/leave', {
+        method: 'POST',
+        body: JSON.stringify({ slug: 'sirius-abc123', userId: 'user-123' }),
+        headers: {
+          'content-type': 'application/json',
+          'cookie': 'session=test-session-token',
+        },
+      })
+
+      const response = await POST(request)
+
+      expect(response.status).toBe(403)
+      const data = await response.json()
+      expect(data.error).toBe('Invalid CSRF token')
     })
   })
 
