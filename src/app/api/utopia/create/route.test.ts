@@ -45,8 +45,10 @@ jest.mock('@/lib/utopia', () => ({
 }))
 
 describe('/api/utopia/create', () => {
+  const validUserId = '550e8400-e29b-41d4-a716-446655440000'
+
   const mockUserResult = {
-    id: 'user-123',
+    id: validUserId,
     name: 'Test User',
     email: null,
     archetype: 'Builder',
@@ -59,10 +61,10 @@ describe('/api/utopia/create', () => {
   const mockRoom = {
     slug: 'sirius-abc123',
     name: 'Sirius',
-    createdBy: 'user-123',
+    createdBy: validUserId,
     members: [
       {
-        id: 'user-123',
+        id: validUserId,
         name: 'Test User',
         archetype: 'Builder',
         joinedAt: new Date().toISOString(),
@@ -75,7 +77,7 @@ describe('/api/utopia/create', () => {
 
   beforeEach(() => {
     jest.clearAllMocks()
-    ;(requireAuth as jest.Mock).mockResolvedValue('user-123')
+    ;(requireAuth as jest.Mock).mockResolvedValue(validUserId)
     ;(validateCSRF as jest.Mock).mockResolvedValue(undefined)
     ;(getUserResult as jest.Mock).mockResolvedValue(mockUserResult)
     ;(createUtopia as jest.Mock).mockResolvedValue(mockRoom)
@@ -86,7 +88,7 @@ describe('/api/utopia/create', () => {
     it('should require authentication', async () => {
       const request = new NextRequest('http://localhost:3000/api/utopia/create', {
         method: 'POST',
-        body: JSON.stringify({ userId: 'user-123' }),
+        body: JSON.stringify({ userId: validUserId }),
         headers: {
           'content-type': 'application/json',
           'cookie': 'session=test-session-token',
@@ -105,7 +107,7 @@ describe('/api/utopia/create', () => {
 
       const request = new NextRequest('http://localhost:3000/api/utopia/create', {
         method: 'POST',
-        body: JSON.stringify({ userId: 'user-123' }),
+        body: JSON.stringify({ userId: validUserId }),
         headers: { 'content-type': 'application/json' },
       })
 
@@ -117,11 +119,12 @@ describe('/api/utopia/create', () => {
     })
 
     it('should verify sessionUserId matches userId', async () => {
-      ;(requireAuth as jest.Mock).mockResolvedValue('user-456') // Different user
+      const differentUserId = 'f47ac10b-58cc-4372-a567-0e02b2c3d479'
+      ;(requireAuth as jest.Mock).mockResolvedValue(differentUserId) // Different user
 
       const request = new NextRequest('http://localhost:3000/api/utopia/create', {
         method: 'POST',
-        body: JSON.stringify({ userId: 'user-123' }),
+        body: JSON.stringify({ userId: validUserId }),
         headers: {
           'content-type': 'application/json',
           'cookie': 'session=test-session-token',
@@ -140,7 +143,7 @@ describe('/api/utopia/create', () => {
     it('should validate CSRF token', async () => {
       const request = new NextRequest('http://localhost:3000/api/utopia/create', {
         method: 'POST',
-        body: JSON.stringify({ userId: 'user-123' }),
+        body: JSON.stringify({ userId: validUserId }),
         headers: {
           'content-type': 'application/json',
           'cookie': 'session=test-session-token',
@@ -157,7 +160,7 @@ describe('/api/utopia/create', () => {
 
       const request = new NextRequest('http://localhost:3000/api/utopia/create', {
         method: 'POST',
-        body: JSON.stringify({ userId: 'user-123' }),
+        body: JSON.stringify({ userId: validUserId }),
         headers: {
           'content-type': 'application/json',
           'cookie': 'session=test-session-token',
@@ -176,7 +179,7 @@ describe('/api/utopia/create', () => {
 
       const request = new NextRequest('http://localhost:3000/api/utopia/create', {
         method: 'POST',
-        body: JSON.stringify({ userId: 'user-123' }),
+        body: JSON.stringify({ userId: validUserId }),
         headers: {
           'content-type': 'application/json',
           'cookie': 'session=test-session-token',
@@ -195,7 +198,7 @@ describe('/api/utopia/create', () => {
     it('should check rate limit (5 utopias per day per user)', async () => {
       const request = new NextRequest('http://localhost:3000/api/utopia/create', {
         method: 'POST',
-        body: JSON.stringify({ userId: 'user-123' }),
+        body: JSON.stringify({ userId: validUserId }),
         headers: { 'content-type': 'application/json' },
       })
 
@@ -203,7 +206,7 @@ describe('/api/utopia/create', () => {
 
       expect(checkRateLimit).toHaveBeenCalledWith(
         'user',
-        'user-123',
+        validUserId,
         'create-utopia',
         5,
         86400 // 24 hours in seconds
@@ -217,7 +220,7 @@ describe('/api/utopia/create', () => {
 
       const request = new NextRequest('http://localhost:3000/api/utopia/create', {
         method: 'POST',
-        body: JSON.stringify({ userId: 'user-123' }),
+        body: JSON.stringify({ userId: validUserId }),
         headers: { 'content-type': 'application/json' },
       })
 
@@ -245,12 +248,116 @@ describe('/api/utopia/create', () => {
       expect(data.error).toBe('Missing userId')
     })
 
+    it('should return 400 when userId format is invalid', async () => {
+      const invalidUserIds = [
+        'not-a-uuid',
+        '123',
+        'user-123',
+        '550e8400-e29b-31d4-a716-446655440000', // version 3, not 4
+        '550e8400-e29b-41d4-c716-446655440000', // invalid variant
+        'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx',
+      ]
+
+      for (const userId of invalidUserIds) {
+        // Mock the session to match the invalid userId so we can test validation
+        ;(requireAuth as jest.Mock).mockResolvedValue(userId)
+
+        const request = new NextRequest('http://localhost:3000/api/utopia/create', {
+          method: 'POST',
+          body: JSON.stringify({ userId }),
+          headers: { 'content-type': 'application/json' },
+        })
+
+        const response = await POST(request)
+
+        expect(response.status).toBe(400)
+        const data = await response.json()
+        expect(data.error).toBe('Invalid user ID format')
+      }
+    })
+
+    it('should accept valid UUID v4 userId formats', async () => {
+      const validUserIds = [
+        '550e8400-e29b-41d4-a716-446655440000',
+        'f47ac10b-58cc-4372-a567-0e02b2c3d479',
+        'a3bb189e-8bf9-4d92-9c33-4deef1c3f7b5',
+      ]
+
+      for (const userId of validUserIds) {
+        ;(requireAuth as jest.Mock).mockResolvedValue(userId)
+
+        const request = new NextRequest('http://localhost:3000/api/utopia/create', {
+          method: 'POST',
+          body: JSON.stringify({ userId }),
+          headers: { 'content-type': 'application/json' },
+        })
+
+        const response = await POST(request)
+
+        expect(response.status).toBe(200)
+      }
+    })
+
+    it('should return 400 when customName slug format is invalid', async () => {
+      const invalidSlugs = [
+        'ab', // too short
+        'a'.repeat(31), // too long
+        'My-Utopia', // uppercase
+        'my_utopia', // underscore
+        'my utopia', // space
+        '-my-utopia', // starts with hyphen
+        'my-utopia-', // ends with hyphen
+        'my--utopia', // consecutive hyphens
+      ]
+
+      for (const customName of invalidSlugs) {
+        const request = new NextRequest('http://localhost:3000/api/utopia/create', {
+          method: 'POST',
+          body: JSON.stringify({
+            userId: validUserId,
+            customName,
+          }),
+          headers: { 'content-type': 'application/json' },
+        })
+
+        const response = await POST(request)
+
+        expect(response.status).toBe(400)
+        const data = await response.json()
+        expect(data.error).toMatch(/Slug must/)
+      }
+    })
+
+    it('should accept valid customName slug formats', async () => {
+      const validSlugs = [
+        'my-utopia',
+        'abc',
+        'test-123',
+        'my-awesome-utopia-name',
+      ]
+
+      for (const customName of validSlugs) {
+        const request = new NextRequest('http://localhost:3000/api/utopia/create', {
+          method: 'POST',
+          body: JSON.stringify({
+            userId: validUserId,
+            customName,
+          }),
+          headers: { 'content-type': 'application/json' },
+        })
+
+        const response = await POST(request)
+
+        expect(response.status).toBe(200)
+      }
+    })
+
     it('should return 404 when user result not found', async () => {
       ;(getUserResult as jest.Mock).mockResolvedValue(null)
 
       const request = new NextRequest('http://localhost:3000/api/utopia/create', {
         method: 'POST',
-        body: JSON.stringify({ userId: 'user-123' }),
+        body: JSON.stringify({ userId: validUserId }),
         headers: { 'content-type': 'application/json' },
       })
 
@@ -266,7 +373,7 @@ describe('/api/utopia/create', () => {
     it('should create utopia successfully', async () => {
       const request = new NextRequest('http://localhost:3000/api/utopia/create', {
         method: 'POST',
-        body: JSON.stringify({ userId: 'user-123' }),
+        body: JSON.stringify({ userId: validUserId }),
         headers: { 'content-type': 'application/json' },
       })
 
@@ -285,8 +392,8 @@ describe('/api/utopia/create', () => {
       const request = new NextRequest('http://localhost:3000/api/utopia/create', {
         method: 'POST',
         body: JSON.stringify({
-          userId: 'user-123',
-          customName: 'My Custom Utopia',
+          userId: validUserId,
+          customName: 'my-custom-utopia',
         }),
         headers: { 'content-type': 'application/json' },
       })
@@ -294,10 +401,10 @@ describe('/api/utopia/create', () => {
       await POST(request)
 
       expect(createUtopia).toHaveBeenCalledWith(
-        'user-123',
+        validUserId,
         'Test User',
         'Builder',
-        'My Custom Utopia',
+        'my-custom-utopia',
         ['0', '1', '0']
       )
     })
@@ -308,7 +415,7 @@ describe('/api/utopia/create', () => {
       const request = new NextRequest('http://localhost:3000/api/utopia/create', {
         method: 'POST',
         body: JSON.stringify({
-          userId: 'user-123',
+          userId: validUserId,
           email: 'test@example.com',
         }),
         headers: { 'content-type': 'application/json' },
@@ -316,7 +423,7 @@ describe('/api/utopia/create', () => {
 
       await POST(request)
 
-      expect(updateUserEmail).toHaveBeenCalledWith('user-123', 'test@example.com')
+      expect(updateUserEmail).toHaveBeenCalledWith(validUserId, 'test@example.com')
     })
   })
 
@@ -326,7 +433,7 @@ describe('/api/utopia/create', () => {
 
       const request = new NextRequest('http://localhost:3000/api/utopia/create', {
         method: 'POST',
-        body: JSON.stringify({ userId: 'user-123' }),
+        body: JSON.stringify({ userId: validUserId }),
         headers: { 'content-type': 'application/json' },
       })
 
@@ -346,7 +453,7 @@ describe('/api/utopia/create', () => {
 
       const request = new NextRequest('http://localhost:3000/api/utopia/create', {
         method: 'POST',
-        body: JSON.stringify({ userId: 'user-123' }),
+        body: JSON.stringify({ userId: validUserId }),
         headers: { 'content-type': 'application/json' },
       })
 

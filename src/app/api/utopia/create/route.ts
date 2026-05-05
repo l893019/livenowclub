@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createUtopia, getUserResult, updateUserEmail } from '@/lib/utopia';
 import { requireAuth, validateCSRF, UnauthorizedError, CSRFError } from '@/lib/auth';
 import { checkRateLimit, RateLimitError } from '@/lib/ratelimit';
+import { validateUserId, validateSlug, ValidationError } from '@/lib/validation';
 
 export async function POST(request: NextRequest) {
   try {
@@ -32,12 +33,40 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Step 4b: Validate userId format
+    try {
+      validateUserId(userId);
+    } catch (error) {
+      if (error instanceof ValidationError) {
+        return NextResponse.json(
+          { error: error.message },
+          { status: 400 }
+        );
+      }
+      throw error;
+    }
+
     // Step 5: Verify ownership - user can only create utopias for themselves
     if (sessionUserId !== userId) {
       return NextResponse.json(
         { error: 'Cannot create utopia for another user' },
         { status: 403 }
       );
+    }
+
+    // Step 5b: Validate customName slug format if provided
+    if (customName) {
+      try {
+        validateSlug(customName);
+      } catch (error) {
+        if (error instanceof ValidationError) {
+          return NextResponse.json(
+            { error: error.message },
+            { status: 400 }
+          );
+        }
+        throw error;
+      }
     }
 
     // Step 6: Get user's result to get their name and archetype
