@@ -1,77 +1,94 @@
-import { NextRequest, NextResponse } from 'next/server';
-import Redis from 'ioredis';
+import { NextRequest, NextResponse } from 'next/server'
+import { redis } from '@/lib/redis'
+import { verifyUnsubscribeToken } from '@/lib/tokens'
+import { logSecurityEvent } from '@/lib/logging'
 
-const redis = new Redis(process.env.REDIS_URL || '');
-
-export async function GET(request: NextRequest) {
-  const email = request.nextUrl.searchParams.get('email');
-
-  if (!email) {
-    return new NextResponse('Missing email parameter', { status: 400 });
-  }
+/**
+ * POST /api/unsubscribe
+ * Unsubscribes an email address from notifications
+ * Requires a signed token for security
+ *
+ * Request body:
+ *   - email: string (required)
+ *   - token: string (required, signed with UNSUBSCRIBE_SECRET)
+ */
+export async function POST(request: NextRequest) {
+  const ip = request.headers.get('x-forwarded-for')?.split(',')[0].trim()
+    || request.headers.get('x-real-ip')
+    || undefined
 
   try {
-    // Add email to unsubscribed set
-    await redis.sadd('unsubscribed', email.toLowerCase());
+    // Parse request body
+    const body = await request.json()
+    const { email, token } = body
 
-    // Return a simple HTML page confirming unsubscribe
-    const html = `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unsubscribed | The Live Now Club</title>
-  <style>
-    body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      background: #faf6f1;
-      color: #2d2a26;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      margin: 0;
+    if (!email) {
+      return NextResponse.json(
+        { error: 'Missing email parameter' },
+        { status: 400 }
+      )
     }
-    .container {
-      text-align: center;
-      max-width: 400px;
-    }
-    h1 {
-      font-size: 1.5rem;
-      font-weight: 400;
-      margin-bottom: 16px;
-    }
-    p {
-      color: rgba(45,42,38,0.7);
-      line-height: 1.6;
-      margin-bottom: 24px;
-    }
-    a {
-      color: #e8178a;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>You've been unsubscribed</h1>
-    <p>You won't receive any more notification emails from The Live Now Club.</p>
-    <a href="/">Return to The Live Now Club</a>
-  </div>
-</body>
-</html>
-    `.trim();
 
-    return new NextResponse(html, {
-      headers: { 'Content-Type': 'text/html' },
-    });
+    if (!token) {
+      return NextResponse.json(
+        { error: 'Missing token parameter' },
+        { status: 400 }
+      )
+    }
+
+    // Verify token
+    const verifiedEmail = verifyUnsubscribeToken(token)
+
+    if (!verifiedEmail) {
+      await logSecurityEvent('data', 'unsubscribe_invalid_token', {
+        email,
+        ip,
+      })
+
+      return NextResponse.json(
+        { error: 'Invalid or expired token' },
+        { status: 401 }
+      )
+    }
+
+    // Verify token matches email (case-insensitive)
+    if (verifiedEmail.toLowerCase() !== email.toLowerCase()) {
+      await logSecurityEvent('data', 'unsubscribe_token_mismatch', {
+        email,
+        tokenEmail: verifiedEmail,
+        ip,
+      })
+
+      return NextResponse.json(
+        { error: 'Token does not match email' },
+        { status: 401 }
+      )
+    }
+
+    // Add email to unsubscribed set (lowercase for consistency)
+    await redis.sadd('unsubscribed', email.toLowerCase())
+
+    // Log successful unsubscribe
+    await logSecurityEvent('data', 'unsubscribe_success', {
+      email: email.toLowerCase(),
+      ip,
+    })
+
+    return NextResponse.json({
+      success: true,
+      message: 'Successfully unsubscribed',
+    })
   } catch (error) {
-    console.error('[Unsubscribe] Error:', error);
-    return new NextResponse('Something went wrong', { status: 500 });
+    console.error('[Unsubscribe] Error:', error)
+
+    await logSecurityEvent('data', 'unsubscribe_error', {
+      ip,
+      error: (error as Error).message,
+    })
+
+    return NextResponse.json(
+      { error: 'Something went wrong' },
+      { status: 500 }
+    )
   }
 }
