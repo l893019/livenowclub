@@ -196,6 +196,33 @@ export async function updateUserEmail(userId: string, email: string): Promise<vo
   await saveUserResult(updated);
 }
 
+export async function updateUserName(userId: string, name: string): Promise<void> {
+  const existing = await getUserResult(userId);
+  if (!existing) return;
+
+  const trimmedName = name.trim();
+  if (!trimmedName) {
+    throw new Error('Name cannot be empty');
+  }
+
+  const updated: UserResult = {
+    ...existing,
+    name: trimmedName,
+  };
+
+  await saveUserResult(updated);
+
+  // Update name in all utopias this user belongs to
+  const utopias = await getUserUtopias(userId);
+  for (const utopia of utopias) {
+    const memberIndex = utopia.members.findIndex(m => m.id === userId);
+    if (memberIndex !== -1) {
+      utopia.members[memberIndex].name = trimmedName;
+      await redis.set(`utopia:${utopia.slug}`, JSON.stringify(utopia));
+    }
+  }
+}
+
 export async function updateUserArchetype(
   userId: string,
   archetype: string,

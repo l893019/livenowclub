@@ -1,57 +1,28 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { getUserResult, saveUserResult, getUtopia } from '@/lib/utopia';
-import Redis from 'ioredis';
-
-const redis = new Redis(process.env.REDIS_URL || '');
+import { NextRequest, NextResponse } from "next/server";
+import { updateUserName } from "@/lib/utopia";
+import { requireAuth, requireOwnership, UnauthorizedError, ForbiddenError } from "@/lib/auth";
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
-    const { userId, name, utopiaSlug } = body;
+    const sessionUserId = await requireAuth(request);
+    const { userId, name } = await request.json();
 
     if (!userId || !name) {
-      return NextResponse.json(
-        { error: 'Missing userId or name' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "userId and name required" }, { status: 400 });
     }
 
-    const trimmedName = name.trim();
-    if (!trimmedName) {
-      return NextResponse.json(
-        { error: 'Name cannot be empty' },
-        { status: 400 }
-      );
-    }
+    await requireOwnership(sessionUserId, userId);
+    await updateUserName(userId, name);
 
-    // Update user result
-    const userResult = await getUserResult(userId);
-    if (userResult) {
-      userResult.name = trimmedName;
-      await saveUserResult(userResult);
-    }
-
-    // If utopiaSlug provided, update name in that utopia
-    if (utopiaSlug) {
-      const utopia = await getUtopia(utopiaSlug);
-      if (utopia) {
-        const memberIndex = utopia.members.findIndex(m => m.id === userId);
-        if (memberIndex !== -1) {
-          utopia.members[memberIndex].name = trimmedName;
-          await redis.set(`utopia:${utopiaSlug}`, JSON.stringify(utopia));
-        }
-      }
-    }
-
-    return NextResponse.json({
-      success: true,
-      name: trimmedName,
-    });
+    return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Error updating name:', error);
-    return NextResponse.json(
-      { error: 'Failed to update name' },
-      { status: 500 }
-    );
+    if (error instanceof UnauthorizedError) {
+      return NextResponse.json({ error: error.message }, { status: 401 });
+    }
+    if (error instanceof ForbiddenError) {
+      return NextResponse.json({ error: error.message }, { status: 403 });
+    }
+    console.error("Error updating name:", error);
+    return NextResponse.json({ error: "Failed to update name" }, { status: 500 });
   }
 }
