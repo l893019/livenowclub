@@ -22,6 +22,38 @@ jest.mock('@/lib/ratelimit', () => {
   }
 })
 
+jest.mock('ioredis', () => {
+  return jest.fn().mockImplementation(() => ({
+    set: jest.fn().mockResolvedValue('OK'),
+    get: jest.fn().mockResolvedValue(null),
+    zadd: jest.fn().mockResolvedValue(1),
+    sadd: jest.fn().mockResolvedValue(1),
+    incr: jest.fn().mockResolvedValue(1),
+    zrange: jest.fn().mockResolvedValue([]),
+    zrem: jest.fn().mockResolvedValue(1),
+  }))
+})
+
+jest.mock('@anthropic-ai/sdk', () => {
+  return jest.fn().mockImplementation(() => ({
+    messages: {
+      create: jest.fn().mockResolvedValue({
+        content: [
+          {
+            type: 'text',
+            text: JSON.stringify({
+              identity: 'Test Identity',
+              strengths: ['Test strength'],
+              challenges: ['Test challenge'],
+              guidance: 'Test guidance'
+            })
+          }
+        ]
+      })
+    }
+  }))
+})
+
 describe('/api/reading/generate rate limiting', () => {
   beforeEach(() => {
     jest.clearAllMocks()
@@ -31,8 +63,8 @@ describe('/api/reading/generate rate limiting', () => {
     const request = new NextRequest('http://localhost:3000/api/reading/generate', {
       method: 'POST',
       body: JSON.stringify({
-        answers: [0, 1, 0, 1, 0, 1, 0],
-        members: []
+        type: 'individual',
+        answers: [0, 1, 0, 1, 0, 1, 0]
       }),
       headers: { 'content-type': 'application/json' }
     })
@@ -54,8 +86,8 @@ describe('/api/reading/generate rate limiting', () => {
     const request = new NextRequest('http://localhost:3000/api/reading/generate', {
       method: 'POST',
       body: JSON.stringify({
-        answers: [0, 1, 0, 1, 0, 1, 0],
-        members: []
+        type: 'individual',
+        answers: [0, 1, 0, 1, 0, 1, 0]
       }),
       headers: { 'content-type': 'application/json' }
     })
