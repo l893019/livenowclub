@@ -10,6 +10,13 @@ export async function GET(request: NextRequest) {
     const days = parseInt(searchParams.get('days') || '7');
 
     const stats: any = {
+      rightNow: {
+        activeVisitors: 0,
+        activeInLast5Min: 0,
+        activeInLastHour: 0,
+        currentlyReading: [],
+        recentActivity: [],
+      },
       pageviews: {},
       visitors: {},
       referrers: {},
@@ -111,6 +118,70 @@ export async function GET(request: NextRequest) {
     // Get recent visits
     const recent = await redis.zrevrange('stats:recent', 0, 19);
     stats.recent = recent.map((r) => JSON.parse(r));
+
+    // Calculate "Right Now" metrics
+    const now = Date.now();
+    const fiveMinutesAgo = now - (5 * 60 * 1000);
+    const oneHourAgo = now - (60 * 60 * 1000);
+
+    // Get all recent activity with scores (timestamps)
+    const allRecentWithScores = await redis.zrevrange('stats:recent', 0, -1, 'WITHSCORES');
+    const recentActivity = [];
+    for (let i = 0; i < allRecentWithScores.length; i += 2) {
+      const data = JSON.parse(allRecentWithScores[i]);
+      const timestamp = parseInt(allRecentWithScores[i + 1]);
+      recentActivity.push({ ...data, timestamp });
+    }
+
+    // Filter by time windows
+    const last5Min = recentActivity.filter(a => a.timestamp >= fiveMinutesAgo);
+    const lastHour = recentActivity.filter(a => a.timestamp >= oneHourAgo);
+
+    // Get active sessions in last 5 minutes
+    const activeSessions = new Set();
+    for (const activity of last5Min) {
+      // Check if this visitor has an active session
+      const sessionKeys = await redis.keys(`session:*`);
+      for (const key of sessionKeys) {
+        const sessionData = await redis.get(key);
+        if (sessionData) {
+          const session = JSON.parse(sessionData);
+          if (session.lastSeen >= fiveMinutesAgo) {
+            activeSessions.add(session.id);
+          }
+        }
+      }
+    }
+
+    stats.rightNow.activeVisitors = activeSessions.size;
+    stats.rightNow.activeInLast5Min = last5Min.length;
+    stats.rightNow.activeInLastHour = lastHour.length;
+
+    // Get what people are currently reading (last 5 min, unique pages)
+    const currentlyReadingMap = new Map();
+    for (const activity of last5Min) {
+      if (activity.page && activity.page !== '/') {
+        if (!currentlyReadingMap.has(activity.page)) {
+          currentlyReadingMap.set(activity.page, {
+            page: activity.page,
+            country: activity.country,
+            timestamp: activity.timestamp,
+          });
+        }
+      }
+    }
+    stats.rightNow.currentlyReading = Array.from(currentlyReadingMap.values())
+      .sort((a, b) => b.timestamp - a.timestamp);
+
+    // Recent activity stream (last 10 activities in last hour)
+    stats.rightNow.recentActivity = lastHour
+      .slice(0, 10)
+      .map(a => ({
+        page: a.page,
+        country: a.country,
+        timestamp: new Date(a.timestamp).toISOString(),
+        timeAgo: Math.round((now - a.timestamp) / 60000), // minutes ago
+      }));
 
     // Sort top pages
     stats.topPages.sort((a: any, b: any) => b.views - a.views);

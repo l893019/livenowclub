@@ -3,6 +3,22 @@
 import { useEffect, useState } from 'react';
 
 type Stats = {
+  rightNow: {
+    activeVisitors: number;
+    activeInLast5Min: number;
+    activeInLastHour: number;
+    currentlyReading: Array<{
+      page: string;
+      country: string;
+      timestamp: number;
+    }>;
+    recentActivity: Array<{
+      page: string;
+      country: string;
+      timestamp: string;
+      timeAgo: number;
+    }>;
+  };
   pageviews: Record<string, number>;
   visitors: Record<string, number>;
   referrers: Record<string, number>;
@@ -165,6 +181,133 @@ export default function StatsPage() {
           </button>
         </div>
       </div>
+
+      {/* Right Now - Real-time Activity */}
+      {stats.rightNow && (
+        <div style={{ marginBottom: '40px' }}>
+          <h2 style={{ fontSize: '24px', marginBottom: '20px', color: '#50c878' }}>🔴 Right Now</h2>
+
+          {/* Active Visitor Metrics */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '16px', marginBottom: '24px' }}>
+            <div style={{ background: stats.rightNow.activeVisitors > 0 ? '#e8f5e9' : '#f5f5f5', border: stats.rightNow.activeVisitors > 0 ? '2px solid #50c878' : '1px solid #eee', borderRadius: '8px', padding: '20px' }}>
+              <div style={{ fontSize: '13px', color: '#666', marginBottom: '8px' }}>Active Now</div>
+              <div style={{ fontSize: '32px', fontWeight: 'bold', color: stats.rightNow.activeVisitors > 0 ? '#50c878' : '#999' }}>
+                {stats.rightNow.activeVisitors > 0 ? '🟢 ' : ''}{stats.rightNow.activeVisitors}
+              </div>
+              <div style={{ fontSize: '11px', color: '#999', marginTop: '4px' }}>
+                {stats.rightNow.activeVisitors > 0 ? 'Live visitors' : 'No active visitors'}
+              </div>
+            </div>
+
+            <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: '8px', padding: '20px' }}>
+              <div style={{ fontSize: '13px', color: '#666', marginBottom: '8px' }}>Last 5 Minutes</div>
+              <div style={{ fontSize: '32px', fontWeight: 'bold', color: '#4a90e2' }}>
+                {stats.rightNow.activeInLast5Min}
+              </div>
+              <div style={{ fontSize: '11px', color: '#999', marginTop: '4px' }}>
+                Visits
+              </div>
+            </div>
+
+            <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: '8px', padding: '20px' }}>
+              <div style={{ fontSize: '13px', color: '#666', marginBottom: '8px' }}>Last Hour</div>
+              <div style={{ fontSize: '32px', fontWeight: 'bold', color: '#4a90e2' }}>
+                {stats.rightNow.activeInLastHour}
+              </div>
+              <div style={{ fontSize: '11px', color: '#999', marginTop: '4px' }}>
+                Visits
+              </div>
+            </div>
+          </div>
+
+          {/* Currently Reading */}
+          {stats.rightNow.currentlyReading.length > 0 && (
+            <div style={{ marginBottom: '24px' }}>
+              <h3 style={{ fontSize: '18px', marginBottom: '12px', fontWeight: '600' }}>👀 Currently Reading</h3>
+              <div style={{ background: '#fff', border: '2px solid #50c878', borderRadius: '8px', overflow: 'hidden' }}>
+                {stats.rightNow.currentlyReading.map((item, i) => {
+                  const isArticle = item.page.startsWith('/read/');
+                  const pageName = isArticle
+                    ? item.page.replace('/read/', '').split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+                    : item.page;
+                  const minutesAgo = Math.round((Date.now() - item.timestamp) / 60000);
+
+                  return (
+                    <div
+                      key={i}
+                      style={{
+                        padding: '14px 16px',
+                        borderBottom: i < stats.rightNow.currentlyReading.length - 1 ? '1px solid #eee' : 'none',
+                        background: '#f0fff4',
+                      }}
+                    >
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '4px' }}>
+                        <div style={{ flex: 1 }}>
+                          <div style={{ fontWeight: '500', marginBottom: '4px' }}>
+                            {isArticle ? '📖 ' : '📄 '}
+                            {isArticle ? pageName : pageName}
+                          </div>
+                          <div style={{ fontSize: '12px', color: '#666' }}>
+                            {item.country} • {minutesAgo === 0 ? 'Just now' : `${minutesAgo}m ago`}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* Recent Activity Stream */}
+          {stats.rightNow.recentActivity.length > 0 && (
+            <div>
+              <h3 style={{ fontSize: '18px', marginBottom: '12px', fontWeight: '600' }}>⚡ Live Activity (Last Hour)</h3>
+              <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden' }}>
+                {stats.rightNow.recentActivity.map((activity, i) => {
+                  const isArticle = activity.page.startsWith('/read/');
+                  const isQuiz = activity.page.includes('/quiz');
+                  let emoji = '📄';
+                  if (isArticle) emoji = '📖';
+                  else if (isQuiz) emoji = '✨';
+
+                  return (
+                    <div
+                      key={i}
+                      style={{
+                        padding: '12px 16px',
+                        borderBottom: i < stats.rightNow.recentActivity.length - 1 ? '1px solid #eee' : 'none',
+                        fontSize: '13px',
+                      }}
+                    >
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <div style={{ flex: 1 }}>
+                          <div style={{ fontFamily: 'monospace', marginBottom: '2px', fontSize: '12px' }}>
+                            {emoji} {activity.page}
+                          </div>
+                          <div style={{ fontSize: '11px', color: '#999' }}>
+                            {activity.country}
+                          </div>
+                        </div>
+                        <div style={{ fontSize: '11px', color: '#666', marginLeft: '12px' }}>
+                          {activity.timeAgo === 0 ? 'Just now' : `${activity.timeAgo}m ago`}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* No Activity Message */}
+          {stats.rightNow.currentlyReading.length === 0 && stats.rightNow.recentActivity.length === 0 && (
+            <div style={{ background: '#f8f9fa', border: '1px solid #dee2e6', borderRadius: '8px', padding: '24px', textAlign: 'center', color: '#666' }}>
+              No activity in the last hour
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Engagement Metrics - User Behavior Insights */}
       {stats.engagement && stats.engagement.totalSessions > 0 && (
