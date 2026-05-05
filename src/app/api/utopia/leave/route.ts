@@ -1,8 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { leaveUtopia } from '@/lib/utopia';
+import { requireAuth, UnauthorizedError, ForbiddenError } from '@/lib/auth';
 
 export async function POST(request: NextRequest) {
   try {
+    // Authenticate user first
+    const sessionUserId = await requireAuth(request);
+
     const body = await request.json();
     const { slug, userId } = body;
 
@@ -10,6 +14,14 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { error: 'Missing slug or userId' },
         { status: 400 }
+      );
+    }
+
+    // Verify sessionUserId matches userId
+    if (sessionUserId !== userId) {
+      return NextResponse.json(
+        { error: 'Cannot leave utopia as another user' },
+        { status: 403 }
       );
     }
 
@@ -24,6 +36,12 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true });
   } catch (error) {
+    if (error instanceof UnauthorizedError) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+    if (error instanceof ForbiddenError) {
+      return NextResponse.json({ error: error.message }, { status: 403 });
+    }
     console.error('Error leaving utopia:', error);
     return NextResponse.json(
       { error: 'Failed to leave utopia' },
