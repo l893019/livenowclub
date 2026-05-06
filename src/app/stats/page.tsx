@@ -87,6 +87,28 @@ type Stats = {
       exitRate: number;
     }>;
   };
+  journeys: {
+    commonPaths: Array<{
+      path: string;
+      count: number;
+      percentage: number;
+    }>;
+    entryPages: Array<{
+      page: string;
+      count: number;
+      nextPages: Array<{
+        page: string;
+        count: number;
+        percentage: number;
+      }>;
+    }>;
+    recentJourneys: Array<{
+      pages: string[];
+      duration: number;
+      country: string;
+      startTime: number;
+    }>;
+  };
 };
 
 export default function StatsPage() {
@@ -481,6 +503,112 @@ export default function StatsPage() {
               </div>
             </div>
           )}
+        </div>
+      )}
+
+      {/* User Journeys - Paths Through Site */}
+      {stats.journeys && stats.journeys.commonPaths.length > 0 && (
+        <div style={{ marginBottom: '40px' }}>
+          <h2 style={{ fontSize: '24px', marginBottom: '20px', color: '#f4a03f' }}>🗺️ User Journeys</h2>
+
+          {/* Common Paths */}
+          <div style={{ marginBottom: '24px' }}>
+            <h3 style={{ fontSize: '18px', marginBottom: '12px', fontWeight: '600' }}>Most Common Paths</h3>
+            <div style={{ background: '#fff', border: '2px solid #f4a03f', borderRadius: '8px', overflow: 'hidden' }}>
+              {stats.journeys.commonPaths.map((journey, i) => (
+                <div
+                  key={i}
+                  style={{
+                    padding: '16px',
+                    borderBottom: i < stats.journeys.commonPaths.length - 1 ? '1px solid #eee' : 'none',
+                    background: i === 0 ? '#fffbf0' : 'transparent',
+                  }}
+                >
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '8px' }}>
+                    <div style={{ flex: 1, fontFamily: 'monospace', fontSize: '13px', color: '#333', lineHeight: '1.6' }}>
+                      {i === 0 && '🏆 '}
+                      {journey.path}
+                    </div>
+                    <div style={{ marginLeft: '16px', textAlign: 'right' }}>
+                      <div style={{ fontSize: '18px', fontWeight: 'bold', color: '#f4a03f' }}>{journey.count}</div>
+                      <div style={{ fontSize: '11px', color: '#999' }}>{journey.percentage}%</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Entry Pages with Next Steps */}
+          <div style={{ marginBottom: '24px' }}>
+            <h3 style={{ fontSize: '18px', marginBottom: '12px', fontWeight: '600' }}>Entry Points & Next Steps</h3>
+            <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden' }}>
+              {stats.journeys.entryPages.map((entry, i) => (
+                <div
+                  key={i}
+                  style={{
+                    padding: '16px',
+                    borderBottom: i < stats.journeys.entryPages.length - 1 ? '1px solid #eee' : 'none',
+                  }}
+                >
+                  <div style={{ marginBottom: '8px' }}>
+                    <span style={{ fontFamily: 'monospace', fontSize: '13px', fontWeight: '600' }}>
+                      {entry.page}
+                    </span>
+                    <span style={{ marginLeft: '12px', fontSize: '12px', color: '#999' }}>
+                      ({entry.count} entries)
+                    </span>
+                  </div>
+                  {entry.nextPages.length > 0 && (
+                    <div style={{ paddingLeft: '16px' }}>
+                      {entry.nextPages.map((next, j) => (
+                        <div key={j} style={{ fontSize: '12px', color: '#666', marginBottom: '4px' }}>
+                          ↳ {next.page} <span style={{ color: '#f4a03f', fontWeight: '600' }}>({next.percentage}%)</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Recent Journeys */}
+          <div>
+            <h3 style={{ fontSize: '18px', marginBottom: '12px', fontWeight: '600' }}>Recent Sessions</h3>
+            <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden' }}>
+              {stats.journeys.recentJourneys.slice(0, 10).map((journey, i) => {
+                const minutes = Math.floor(journey.duration / 60);
+                const seconds = journey.duration % 60;
+                return (
+                  <div
+                    key={i}
+                    style={{
+                      padding: '14px 16px',
+                      borderBottom: i < 9 ? '1px solid #eee' : 'none',
+                    }}
+                  >
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '6px' }}>
+                      <div style={{ fontSize: '12px', color: '#666' }}>
+                        {journey.country} • {minutes > 0 ? `${minutes}m ${seconds}s` : `${seconds}s`}
+                      </div>
+                      <div style={{ fontSize: '11px', color: '#999' }}>
+                        {new Date(journey.startTime).toLocaleString()}
+                      </div>
+                    </div>
+                    <div style={{ fontFamily: 'monospace', fontSize: '12px', color: '#333', lineHeight: '1.8' }}>
+                      {journey.pages.map((page, j) => (
+                        <div key={j} style={{ paddingLeft: j > 0 ? '12px' : '0' }}>
+                          {j > 0 && '↓ '}
+                          {page}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       )}
 

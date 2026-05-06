@@ -399,6 +399,87 @@ export async function GET(request: NextRequest) {
         .slice(0, 10);
     }
 
+    // User Journeys - analyze session paths
+    const journeys: any = {
+      commonPaths: [],
+      entryPages: [],
+      recentJourneys: [],
+    };
+
+    // Analyze completed sessions for common paths
+    const pathCounts: Record<string, number> = {};
+    const entryPageCounts: Record<string, number> = {};
+    const entryToNextPage: Record<string, Record<string, number>> = {};
+
+    sessions.forEach(s => {
+      if (s.pages && s.pages.length > 0) {
+        // Track entry page
+        const entryPage = s.pages[0].page;
+        entryPageCounts[entryPage] = (entryPageCounts[entryPage] || 0) + 1;
+
+        // Track entry -> next page
+        if (s.pages.length > 1) {
+          const nextPage = s.pages[1].page;
+          if (!entryToNextPage[entryPage]) {
+            entryToNextPage[entryPage] = {};
+          }
+          entryToNextPage[entryPage][nextPage] = (entryToNextPage[entryPage][nextPage] || 0) + 1;
+        }
+
+        // Track full paths (first 5 pages)
+        if (s.pages.length >= 2) {
+          const path = s.pages
+            .slice(0, 5)
+            .map(p => p.page)
+            .join(' → ');
+          pathCounts[path] = (pathCounts[path] || 0) + 1;
+        }
+      }
+    });
+
+    // Get top common paths
+    journeys.commonPaths = Object.entries(pathCounts)
+      .sort(([, a], [, b]) => b - a)
+      .slice(0, 10)
+      .map(([path, count]) => ({
+        path,
+        count,
+        percentage: Math.round((count / sessions.length) * 100),
+      }));
+
+    // Get entry pages with next steps
+    journeys.entryPages = Object.entries(entryPageCounts)
+      .sort(([, a], [, b]) => b - a)
+      .slice(0, 10)
+      .map(([page, count]) => ({
+        page,
+        count,
+        nextPages: entryToNextPage[page]
+          ? Object.entries(entryToNextPage[page])
+              .sort(([, a], [, b]) => b - a)
+              .slice(0, 3)
+              .map(([nextPage, nextCount]) => ({
+                page: nextPage,
+                count: nextCount,
+                percentage: Math.round((nextCount / count) * 100),
+              }))
+          : [],
+      }));
+
+    // Get recent complete journeys (last 20)
+    journeys.recentJourneys = sessions
+      .filter(s => s.pages && s.pages.length > 1)
+      .sort((a, b) => (b.endTime || 0) - (a.endTime || 0))
+      .slice(0, 20)
+      .map(s => ({
+        pages: s.pages.map(p => p.page),
+        duration: s.duration ? Math.round(s.duration / 1000) : 0, // seconds
+        country: s.country,
+        startTime: s.startTime,
+      }));
+
+    stats.journeys = journeys;
+
     return NextResponse.json(stats);
   } catch (error) {
     console.error('Stats fetch error:', error);
