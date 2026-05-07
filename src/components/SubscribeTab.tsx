@@ -7,6 +7,7 @@ import EmailCapture from './EmailCapture';
 export default function SubscribeTab() {
   const [isVisible, setIsVisible] = useState(false);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
+  const [isSubscribed, setIsSubscribed] = useState(false);
   const [isDismissed, setIsDismissed] = useState(() => {
     if (typeof window === 'undefined') return false; // SSR safety
     try {
@@ -80,6 +81,18 @@ export default function SubscribeTab() {
     setIsPanelOpen(false);
   };
 
+  const handleSubscribeSuccess = () => {
+    setIsSubscribed(true);
+
+    // Clear dismissal - allow showing again later
+    localStorage.removeItem('subscribe-tab-dismissed-until');
+
+    // Close panel after 2 seconds
+    setTimeout(() => {
+      setIsPanelOpen(false);
+    }, 2000);
+  };
+
   // ESC key closes panel
   useEffect(() => {
     if (!isPanelOpen) return;
@@ -118,8 +131,8 @@ export default function SubscribeTab() {
         className={styles.tab}
         aria-label="Subscribe to newsletter"
       >
-        <span className={styles.tabIcon} aria-hidden="true">✉️</span>
-        <span className={styles.tabText}>Subscribe</span>
+        <span className={styles.tabIcon} aria-hidden="true">{isSubscribed ? '✓' : '✉️'}</span>
+        <span className={styles.tabText}>{isSubscribed ? 'Subscribed' : 'Subscribe'}</span>
       </button>
 
       {isPanelOpen && (
@@ -141,6 +154,7 @@ export default function SubscribeTab() {
                 context="floating-tab"
                 title="Subscribe"
                 description="Essays on living now. Delivered occasionally."
+                onSuccess={handleSubscribeSuccess}
               />
             </div>
           </div>

@@ -9,6 +9,7 @@ type EmailCaptureProps = {
   context?: 'quiz-result' | 'exit-intent' | 'essay' | 'floating-tab';
   title?: string;
   description?: string;
+  onSuccess?: () => void;
 };
 
 export default function EmailCapture({
@@ -17,6 +18,7 @@ export default function EmailCapture({
   context = 'essay',
   title = 'More like this?',
   description = 'Essays on living now. Delivered occasionally.',
+  onSuccess,
 }: EmailCaptureProps) {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -78,6 +80,11 @@ export default function EmailCapture({
             context,
           }),
         }).catch(() => {});
+
+        // Call onSuccess callback if provided
+        if (onSuccess) {
+          onSuccess();
+        }
       } else {
         setStatus('error');
         setMessage(data.error || 'Something went wrong. Please try again.');
