@@ -7,21 +7,24 @@ import EmailCapture from './EmailCapture';
 export default function SubscribeTab() {
   const [isVisible, setIsVisible] = useState(false);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
-  const [isDismissed, setIsDismissed] = useState(false);
-
-  // Check if dismissed in last 7 days
-  useEffect(() => {
-    const dismissedUntil = localStorage.getItem('subscribe-tab-dismissed-until');
-    if (dismissedUntil) {
-      const timestamp = parseInt(dismissedUntil, 10);
-      if (Date.now() < timestamp) {
-        setIsDismissed(true);
-      } else {
-        // Expired, clear it
-        localStorage.removeItem('subscribe-tab-dismissed-until');
+  const [isDismissed, setIsDismissed] = useState(() => {
+    if (typeof window === 'undefined') return false; // SSR safety
+    try {
+      const dismissedUntil = localStorage.getItem('subscribe-tab-dismissed-until');
+      if (dismissedUntil) {
+        const timestamp = parseInt(dismissedUntil, 10);
+        if (!isNaN(timestamp) && Date.now() < timestamp) {
+          return true;
+        } else {
+          // Invalid or expired, clear it
+          localStorage.removeItem('subscribe-tab-dismissed-until');
+        }
       }
+    } catch (error) {
+      console.warn('localStorage unavailable, dismissal will not persist:', error);
     }
-  }, []);
+    return false;
+  });
 
   // Track scroll depth
   useEffect(() => {
@@ -60,12 +63,17 @@ export default function SubscribeTab() {
     setIsPanelOpen(false);
     setIsVisible(false);
 
-    // Set dismissal for 7 days
-    const sevenDays = 7 * 24 * 60 * 60 * 1000;
-    const dismissedUntil = Date.now() + sevenDays;
-    localStorage.setItem('subscribe-tab-dismissed-until', dismissedUntil.toString());
-
-    setIsDismissed(true);
+    try {
+      // Set dismissal for 7 days
+      const sevenDays = 7 * 24 * 60 * 60 * 1000;
+      const dismissedUntil = Date.now() + sevenDays;
+      localStorage.setItem('subscribe-tab-dismissed-until', dismissedUntil.toString());
+      setIsDismissed(true);
+    } catch (error) {
+      console.warn('Failed to persist dismissal:', error);
+      // Still set dismissed state so tab disappears for this session
+      setIsDismissed(true);
+    }
   };
 
   const handleClosePanel = () => {
