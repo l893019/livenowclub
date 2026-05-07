@@ -430,7 +430,7 @@ export async function GET(request: NextRequest) {
         if (s.pages.length >= 2) {
           const path = s.pages
             .slice(0, 5)
-            .map(p => p.page)
+            .map((p: any) => p.page)
             .join(' → ');
           pathCounts[path] = (pathCounts[path] || 0) + 1;
         }
@@ -472,7 +472,7 @@ export async function GET(request: NextRequest) {
       .sort((a, b) => (b.endTime || 0) - (a.endTime || 0))
       .slice(0, 20)
       .map(s => ({
-        pages: s.pages.map(p => p.page),
+        pages: s.pages.map((p: any) => p.page),
         duration: s.duration ? Math.round(s.duration / 1000) : 0, // seconds
         country: s.country,
         startTime: s.startTime,
