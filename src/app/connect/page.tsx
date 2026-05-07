@@ -49,7 +49,7 @@ export default function ConnectPage() {
         <section className="connect-form-section">
           {submitted ? (
             <div className="connect-success">
-              <p>Thank you. It landed.</p>
+              <p>Thank you so much for your words!</p>
             </div>
           ) : error ? (
             <div className="connect-error">
@@ -95,7 +95,7 @@ export default function ConnectPage() {
               </div>
 
               <button type="submit" className="btn btn--primary">
-                Leave it here
+                Send now
               </button>
             </form>
           )}
