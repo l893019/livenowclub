@@ -5,6 +5,13 @@ import styles from './SubscribeTab.module.css';
 import EmailCapture from './EmailCapture';
 
 export default function SubscribeTab() {
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
+
+  // Don't show on admin/stats pages
+  if (pathname.startsWith('/stats') || pathname.startsWith('/api')) {
+    return null;
+  }
+
   const [isVisible, setIsVisible] = useState(false);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [isSubscribed, setIsSubscribed] = useState(false);
@@ -31,20 +38,29 @@ export default function SubscribeTab() {
   useEffect(() => {
     if (isDismissed) return;
 
-    const handleScroll = () => {
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollTop = window.scrollY;
-      const scrollPercent = ((scrollTop + windowHeight) / documentHeight) * 100;
+    let ticking = false;
 
-      // Show tab if scrolled 50% or more
-      if (scrollPercent >= 50) {
-        setIsVisible(true);
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const windowHeight = window.innerHeight;
+          const documentHeight = document.documentElement.scrollHeight;
+          const scrollTop = window.scrollY;
+          const scrollPercent = ((scrollTop + windowHeight) / documentHeight) * 100;
+
+          if (scrollPercent >= 50) {
+            setIsVisible(true);
+          }
+
+          ticking = false;
+        });
+
+        ticking = true;
       }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Check initial state
+    handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isDismissed]);
