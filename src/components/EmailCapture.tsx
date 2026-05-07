@@ -6,7 +6,7 @@ import styles from './EmailCapture.module.css';
 type EmailCaptureProps = {
   identity?: string;
   quizAnswers?: string[];
-  context?: 'quiz-result' | 'exit-intent' | 'essay';
+  context?: 'quiz-result' | 'exit-intent' | 'essay' | 'floating-tab';
   title?: string;
   description?: string;
 };

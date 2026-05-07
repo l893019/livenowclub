@@ -91,9 +91,34 @@ export default function SubscribeTab() {
         className={styles.tab}
         aria-label="Subscribe to newsletter"
       >
-        <span className={styles.tabIcon}>✉️</span>
+        <span className={styles.tabIcon} aria-hidden="true">✉️</span>
         <span className={styles.tabText}>Subscribe</span>
       </button>
+
+      {isPanelOpen && (
+        <>
+          <div
+            className={styles.backdrop}
+            onClick={handleClosePanel}
+          />
+          <div className={styles.panel}>
+            <button
+              onClick={handleDismiss}
+              className={styles.closeButton}
+              aria-label="Dismiss subscribe panel"
+            >
+              ✕
+            </button>
+            <div className={styles.panelContent}>
+              <EmailCapture
+                context="floating-tab"
+                title="Subscribe"
+                description="Essays on living now. Delivered occasionally."
+              />
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 }
