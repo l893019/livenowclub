@@ -3,6 +3,7 @@ import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import ExitIntentCard from "@/components/ExitIntentCard";
 import Analytics from "@/components/Analytics";
+import SubscribeTab from '@/components/SubscribeTab';
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains",
@@ -57,6 +58,7 @@ export default function RootLayout({
         <Analytics />
         {children}
         <ExitIntentCard />
+        <SubscribeTab />
       </body>
     </html>
   );
