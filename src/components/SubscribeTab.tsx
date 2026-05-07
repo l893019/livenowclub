@@ -80,5 +80,20 @@ export default function SubscribeTab() {
     setIsPanelOpen(false);
   };
 
-  return null; // Will implement render in next steps
+  if (!isVisible || isDismissed) {
+    return null;
+  }
+
+  return (
+    <>
+      <button
+        onClick={() => setIsPanelOpen(true)}
+        className={styles.tab}
+        aria-label="Subscribe to newsletter"
+      >
+        <span className={styles.tabIcon}>✉️</span>
+        <span className={styles.tabText}>Subscribe</span>
+      </button>
+    </>
+  );
 }

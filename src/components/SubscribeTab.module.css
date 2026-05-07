@@ -3,8 +3,42 @@
   position: fixed;
   right: 0;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: right center;
+
+  background: linear-gradient(135deg, #e8178a 0%, #f4407d 100%);
+  color: white;
+  border: none;
+  border-radius: 8px 8px 0 0;
+  padding: 12px 20px;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+
+  cursor: pointer;
+  box-shadow: -2px 2px 12px rgba(232, 23, 138, 0.3);
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  transition: all 0.3s ease;
   z-index: 9998;
+}
+
+.tab:hover {
+  transform: translateY(-50%) rotate(-90deg) scale(1.05);
+  box-shadow: -3px 3px 16px rgba(232, 23, 138, 0.4);
+}
+
+.tabIcon {
+  font-size: 18px;
+}
+
+.tabText {
+  white-space: nowrap;
 }
 
 /* Panel that slides in */
