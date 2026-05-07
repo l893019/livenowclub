@@ -26,6 +26,7 @@
 
   transition: all 0.3s ease;
   z-index: 9998;
+  animation: pulse 3s ease-in-out infinite;
 }
 
 .tab:hover {
@@ -113,5 +114,92 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+/* Mobile: Bottom-right circular button */
+@media (max-width: 768px) {
+  .tab {
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+    transform: none;
+    transform-origin: center;
+
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    padding: 0;
+
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .tab:hover {
+    transform: scale(1.1);
+  }
+
+  .tabText {
+    display: none; /* Icon only on mobile */
+  }
+
+  .tabIcon {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .panel {
+    width: 100%;
+    height: 90vh;
+    top: auto;
+    bottom: 0;
+    border-radius: 16px 16px 0 0;
+
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .panelContent {
+    padding: 40px 24px 24px;
+  }
+
+  .closeButton {
+    top: 16px;
+    right: 16px;
+    font-size: 32px;
+    padding: 12px;
+    /* Larger tap target */
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: -2px 2px 12px rgba(232, 23, 138, 0.3);
+  }
+  50% {
+    box-shadow: -2px 2px 20px rgba(232, 23, 138, 0.6);
+  }
+}
+
+@media (max-width: 768px) {
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0 4px 12px rgba(232, 23, 138, 0.3);
+    }
+    50% {
+      box-shadow: 0 4px 20px rgba(232, 23, 138, 0.6);
+    }
   }
 }
