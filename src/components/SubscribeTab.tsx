@@ -80,6 +80,33 @@ export default function SubscribeTab() {
     setIsPanelOpen(false);
   };
 
+  // ESC key closes panel
+  useEffect(() => {
+    if (!isPanelOpen) return;
+
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleClosePanel();
+      }
+    };
+
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, [isPanelOpen]);
+
+  // Lock body scroll when panel open
+  useEffect(() => {
+    if (isPanelOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isPanelOpen]);
+
   if (!isVisible || isDismissed) {
     return null;
   }
