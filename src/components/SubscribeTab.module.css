@@ -1,0 +1,205 @@
+/* Tab button on edge */
+.tab {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: right center;
+
+  background: linear-gradient(135deg, #e8178a 0%, #f4407d 100%);
+  color: white;
+  border: none;
+  border-radius: 8px 8px 0 0;
+  padding: 12px 20px;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+
+  cursor: pointer;
+  box-shadow: -2px 2px 12px rgba(232, 23, 138, 0.3);
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  transition: all 0.3s ease;
+  z-index: 9998;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.tab:hover {
+  transform: translateY(-50%) rotate(-90deg) scale(1.05);
+  box-shadow: -3px 3px 16px rgba(232, 23, 138, 0.4);
+}
+
+.tab:focus-visible {
+  outline: 3px solid rgba(232, 23, 138, 0.5);
+  outline-offset: 2px;
+}
+
+.tabIcon {
+  font-size: 18px;
+}
+
+.tabText {
+  white-space: nowrap;
+}
+
+/* Panel that slides in */
+.panel {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 400px;
+  max-width: 100%;
+
+  background: linear-gradient(135deg, #ffffff 0%, #fffbf8 100%);
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+
+  animation: slideIn 0.3s ease-out;
+  z-index: 9999;
+
+  overflow-y: auto;
+}
+
+/* Backdrop overlay */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease-out;
+  z-index: 9997;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  background: transparent;
+  border: none;
+  color: #999;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 8px;
+
+  transition: color 0.2s;
+  z-index: 10;
+}
+
+.closeButton:hover {
+  color: #333;
+}
+
+.panelContent {
+  padding: 60px 40px 40px;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile: Bottom-right circular button */
+@media (max-width: 768px) {
+  .tab {
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+    transform: none;
+    transform-origin: center;
+
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    padding: 0;
+
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .tab:hover {
+    transform: scale(1.1);
+  }
+
+  .tabText {
+    display: none; /* Icon only on mobile */
+  }
+
+  .tabIcon {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .panel {
+    width: 100%;
+    height: 90vh;
+    top: auto;
+    bottom: 0;
+    border-radius: 16px 16px 0 0;
+
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .panelContent {
+    padding: 40px 24px 24px;
+  }
+
+  .closeButton {
+    top: 16px;
+    right: 16px;
+    font-size: 32px;
+    padding: 12px;
+    /* Larger tap target */
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: -2px 2px 12px rgba(232, 23, 138, 0.3);
+  }
+  50% {
+    box-shadow: -2px 2px 20px rgba(232, 23, 138, 0.6);
+  }
+}
+
+@media (max-width: 768px) {
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0 4px 12px rgba(232, 23, 138, 0.3);
+    }
+    50% {
+      box-shadow: 0 4px 20px rgba(232, 23, 138, 0.6);
+    }
+  }
+}
