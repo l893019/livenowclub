@@ -9,6 +9,20 @@ export default function SubscribeTab() {
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
 
+  // Check if dismissed in last 7 days
+  useEffect(() => {
+    const dismissedUntil = localStorage.getItem('subscribe-tab-dismissed-until');
+    if (dismissedUntil) {
+      const timestamp = parseInt(dismissedUntil, 10);
+      if (Date.now() < timestamp) {
+        setIsDismissed(true);
+      } else {
+        // Expired, clear it
+        localStorage.removeItem('subscribe-tab-dismissed-until');
+      }
+    }
+  }, []);
+
   // Track scroll depth
   useEffect(() => {
     if (isDismissed) return;
@@ -41,6 +55,22 @@ export default function SubscribeTab() {
 
     return () => clearTimeout(timer);
   }, [isDismissed]);
+
+  const handleDismiss = () => {
+    setIsPanelOpen(false);
+    setIsVisible(false);
+
+    // Set dismissal for 7 days
+    const sevenDays = 7 * 24 * 60 * 60 * 1000;
+    const dismissedUntil = Date.now() + sevenDays;
+    localStorage.setItem('subscribe-tab-dismissed-until', dismissedUntil.toString());
+
+    setIsDismissed(true);
+  };
+
+  const handleClosePanel = () => {
+    setIsPanelOpen(false);
+  };
 
   return null; // Will implement render in next steps
 }
