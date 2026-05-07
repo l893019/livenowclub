@@ -33,6 +33,11 @@
   box-shadow: -3px 3px 16px rgba(232, 23, 138, 0.4);
 }
 
+.tab:focus-visible {
+  outline: 3px solid rgba(232, 23, 138, 0.5);
+  outline-offset: 2px;
+}
+
 .tabIcon {
   font-size: 18px;
 }
