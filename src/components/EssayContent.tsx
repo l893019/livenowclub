@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { Essay } from "@/lib/essays";
 import ReadingProgress from "./ReadingProgress";
+import ExitIntentPopup from "./ExitIntentPopup";
 
 type EssayContentProps = {
   essay: Essay;
@@ -240,6 +241,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
   return (
     <>
       <ReadingProgress />
+      <ExitIntentPopup enabled={true} />
 
       {/* Header */}
       <header className="header">

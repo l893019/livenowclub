@@ -1,0 +1,96 @@
+.container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: white;
+  border: 1px solid rgba(45, 42, 38, 0.15);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  padding: 24px;
+  max-width: 400px;
+  width: calc(100vw - 48px);
+  z-index: 999;
+  animation: slideInRight 0.4s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(calc(100% + 48px));
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  color: rgba(45, 42, 38, 0.3);
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.2s;
+}
+
+.closeButton:hover {
+  color: var(--charcoal, #2d2a26);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.text {
+  padding-right: 24px;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--charcoal, #2d2a26);
+  margin: 0 0 8px 0;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: rgba(45, 42, 38, 0.6);
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .container {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    width: auto;
+    max-width: none;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .subtitle {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 16px;
+  }
+
+  .content {
+    gap: 16px;
+  }
+}

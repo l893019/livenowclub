@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import Header from "@/components/Header";
+import ScrollSlideIn from "@/components/ScrollSlideIn";
 
 // ============================================
 // HOMEPAGE CONTENT CONFIG
@@ -173,6 +174,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
+      <ScrollSlideIn enabled={true} scrollThreshold={50} />
 
       {/* HERO */}
       <section className="hero">
