@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Redis from 'ioredis';
-import { getIdentityFromArchetype } from '@/lib/identities';
+import { getIdentityFromArchetype, getIdentityFromDimensions } from '@/lib/identities';
+import { arrayToQuizAnswers, calculateDimensions } from '@/lib/dimensions';
 
 const redis = new Redis(process.env.REDIS_URL || '');
 
@@ -251,10 +252,14 @@ export async function GET(request: NextRequest) {
           const user = JSON.parse(userData);
           users.push(user);
 
-          // Count by identity/archetype - use friendly name
-          const archetype = user.archetype || 'Unknown';
-          const identity = getIdentityFromArchetype(archetype);
-          const identityName = identity ? identity.name : archetype;
+          // Count by identity - calculate from quiz answers
+          let identityName = 'Unknown';
+          if (user.answers && user.answers.length > 0) {
+            const quizAnswers = arrayToQuizAnswers(user.answers);
+            const dimensions = calculateDimensions(quizAnswers);
+            const identity = getIdentityFromDimensions(dimensions);
+            identityName = identity?.name || 'Unknown';
+          }
           stats.users.byIdentity[identityName] = (stats.users.byIdentity[identityName] || 0) + 1;
 
           // Count by date
@@ -279,15 +284,23 @@ export async function GET(request: NextRequest) {
     });
 
     stats.users.recent = users.slice(0, 20).map(u => {
-      // Get the friendly identity name from the archetype
-      const identity = getIdentityFromArchetype(u.archetype);
-      const identityName = identity ? identity.name : u.archetype;
+      // Calculate identity from quiz answers
+      let identityName = 'Unknown';
+      let identityKey = 'unknown';
+      if (u.answers && u.answers.length > 0) {
+        const quizAnswers = arrayToQuizAnswers(u.answers);
+        const dimensions = calculateDimensions(quizAnswers);
+        const identity = getIdentityFromDimensions(dimensions);
+        identityName = identity?.name || 'Unknown';
+        identityKey = identity?.key || 'unknown';
+      }
 
       return {
         id: u.id,
         name: u.name,
-        archetype: u.archetype,
+        archetype: u.archetype, // Keep for backwards compatibility
         identityName: identityName,
+        identityKey: identityKey,
         email: u.email,
         createdAt: u.createdAt,
       };
