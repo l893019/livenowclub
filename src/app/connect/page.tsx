@@ -95,7 +95,7 @@ export default function ConnectPage() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="name">Name (optional)</label>
+                <label htmlFor="name">Name</label>
                 <input
                   type="text"
                   id="name"
@@ -105,7 +105,7 @@ export default function ConnectPage() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="email">Email (optional)</label>
+                <label htmlFor="email">Email</label>
                 <input
                   type="email"
                   id="email"
