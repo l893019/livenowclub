@@ -1,6 +1,20 @@
+"use client";
+
 import Link from "next/link";
 
 export default function Footer() {
+  const handleKofiClick = () => {
+    fetch('/api/track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        event: 'kofi_click',
+        page: window.location.pathname,
+        metadata: { source: 'generic_footer' }
+      })
+    }).catch(() => {});
+  };
+
   return (
     <footer className="footer">
       <div className="footer-inner">
@@ -27,6 +41,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="footer-link"
+            onClick={handleKofiClick}
           >
             Support
           </a>

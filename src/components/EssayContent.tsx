@@ -45,6 +45,18 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
     window.open(twitterUrl, "_blank", "noopener,noreferrer");
   };
 
+  const handleKofiClick = (source: string) => {
+    fetch('/api/track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        event: 'kofi_click',
+        page: `/read/${essay.slug}`,
+        metadata: { source, essay: essay.title }
+      })
+    }).catch(() => {});
+  };
+
   // Boilerplate patterns to strip
   const boilerplatePatterns = [
     /thanks for reading komorebi/i,
@@ -331,6 +343,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
               target="_blank"
               rel="noopener noreferrer"
               className="essay-cta-card"
+              onClick={() => handleKofiClick('essay_cta')}
             >
               <span className="cta-icon">☕</span>
               <span className="cta-label">Support</span>
@@ -379,7 +392,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
             <Link href="/wonder">Wonder</Link>
             <Link href="/connect">Connect</Link>
             <Link href="/philosophy">Philosophy</Link>
-            <a href="https://ko-fi.com/livenowclub" target="_blank" rel="noopener noreferrer">Support</a>
+            <a href="https://ko-fi.com/livenowclub" target="_blank" rel="noopener noreferrer" onClick={() => handleKofiClick('essay_footer')}>Support</a>
           </nav>
           <p className="essay-footer-copy">&copy; 2026 Louise Ireland</p>
         </footer>
