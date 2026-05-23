@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import ExitIntentCard from "@/components/ExitIntentCard";
 import Analytics from "@/components/Analytics";
 import SubscribeTab from '@/components/SubscribeTab';
 
@@ -57,7 +56,6 @@ export default function RootLayout({
       <body className={`${jetbrainsMono.variable} antialiased`}>
         <Analytics />
         {children}
-        <ExitIntentCard />
         <SubscribeTab />
       </body>
     </html>
