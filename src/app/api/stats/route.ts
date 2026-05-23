@@ -256,9 +256,11 @@ export async function GET(request: NextRequest) {
           let identityName = 'Unknown';
           if (user.answers && user.answers.length > 0) {
             const quizAnswers = arrayToQuizAnswers(user.answers);
-            const dimensions = calculateDimensions(quizAnswers);
-            const identity = getIdentityFromDimensions(dimensions);
-            identityName = identity?.name || 'Unknown';
+            if (quizAnswers) {
+              const dimensions = calculateDimensions(quizAnswers);
+              const identity = getIdentityFromDimensions(dimensions);
+              identityName = identity?.name || 'Unknown';
+            }
           }
           stats.users.byIdentity[identityName] = (stats.users.byIdentity[identityName] || 0) + 1;
 
@@ -289,10 +291,12 @@ export async function GET(request: NextRequest) {
       let identityKey = 'unknown';
       if (u.answers && u.answers.length > 0) {
         const quizAnswers = arrayToQuizAnswers(u.answers);
-        const dimensions = calculateDimensions(quizAnswers);
-        const identity = getIdentityFromDimensions(dimensions);
-        identityName = identity?.name || 'Unknown';
-        identityKey = identity?.key || 'unknown';
+        if (quizAnswers) {
+          const dimensions = calculateDimensions(quizAnswers);
+          const identity = getIdentityFromDimensions(dimensions);
+          identityName = identity?.name || 'Unknown';
+          identityKey = identity?.key || 'unknown';
+        }
       }
 
       return {
@@ -489,6 +493,8 @@ export async function GET(request: NextRequest) {
         duration: s.duration ? Math.round(s.duration / 1000) : 0, // seconds
         country: s.country,
         startTime: s.startTime,
+        referrer: s.referrer || '', // Include referrer data
+        visitorId: s.visitorId || '', // Include visitor ID
       }));
 
     stats.journeys = journeys;

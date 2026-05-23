@@ -13,7 +13,12 @@ export default function ConnectPage() {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
+    const name = formData.get('name') as string || 'Anonymous';
+    const email = formData.get('email') as string || '';
+    const message = formData.get('message') as string || '';
+
     try {
+      // Submit to Formspree
       const response = await fetch("https://formspree.io/f/xbdwydbe", {
         method: "POST",
         body: formData,
@@ -21,6 +26,21 @@ export default function ConnectPage() {
       });
 
       if (response.ok) {
+        // Track submission in our analytics
+        await fetch('/api/track', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            event: 'contact_form_submit',
+            page: '/connect',
+            metadata: {
+              name,
+              email,
+              message_preview: message.substring(0, 100) // First 100 chars for preview
+            }
+          })
+        }).catch(() => {}); // Don't fail if tracking fails
+
         setSubmitted(true);
         form.reset();
       } else {

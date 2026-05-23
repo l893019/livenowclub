@@ -548,6 +548,16 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
         </div>
       </section>
 
+      {/* Email Capture */}
+      {!isViewingOther && (
+        <EmailCapture
+          identity={identity.name}
+          context="quiz-result"
+          title="More like this?"
+          description="Essays on living now. Delivered occasionally."
+        />
+      )}
+
       <div className={styles.divider} />
 
       {/* Your Blind Spot */}
@@ -739,16 +749,6 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
           </div>
         </div>
       </section>
-
-      {/* Email Capture */}
-      {!isViewingOther && (
-        <EmailCapture
-          identity={identity.name}
-          context="quiz-result"
-          title="More like this?"
-          description="Essays on living now. Delivered occasionally."
-        />
-      )}
     </div>
   );
 }

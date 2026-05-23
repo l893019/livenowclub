@@ -74,6 +74,8 @@ export async function POST(request: NextRequest) {
             ...session,
             duration,
             endTime: now,
+            referrer: session.referrer || referrer || '', // Preserve original referrer
+            visitorId, // Add visitor ID for tracking
           })
         );
 
@@ -91,7 +93,7 @@ export async function POST(request: NextRequest) {
       await redis.zadd(
         `stats:events:${event}`,
         Date.now(),
-        JSON.stringify({ timestamp, identity, context, metadata, page })
+        JSON.stringify({ timestamp, identity, context, metadata, page, visitorId })
       );
 
       // Keep only last 1000 events per type

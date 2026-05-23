@@ -506,6 +506,30 @@ export default function StatsPage() {
         </div>
       )}
 
+      {/* Scroll Depth Analytics */}
+      {stats.events && stats.events.scroll_depth && (
+        <div style={{ marginBottom: '40px' }}>
+          <h2 style={{ fontSize: '24px', marginBottom: '20px', color: '#9b59b6' }}>📊 Reading Depth</h2>
+
+          <div style={{ background: '#fff', border: '2px solid #9b59b6', borderRadius: '8px', padding: '24px' }}>
+            <h3 style={{ fontSize: '18px', marginBottom: '16px', fontWeight: '600' }}>How far do people read?</h3>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '16px', marginBottom: '20px' }}>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ fontSize: '13px', color: '#666', marginBottom: '8px' }}>Total Scroll Events</div>
+                <div style={{ fontSize: '28px', fontWeight: 'bold', color: '#9b59b6' }}>
+                  {stats.events.scroll_depth}
+                </div>
+              </div>
+            </div>
+
+            <div style={{ fontSize: '13px', color: '#666', marginTop: '20px', fontStyle: 'italic', background: '#f8f9fa', padding: '16px', borderRadius: '6px' }}>
+              💡 <strong>Note:</strong> Scroll depth tracking was recently added. More detailed breakdowns (25%, 50%, 75%, 100%) coming soon as data accumulates.
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* User Journeys - Paths Through Site */}
       {stats.journeys && stats.journeys.commonPaths.length > 0 && (
         <div style={{ marginBottom: '40px' }}>
@@ -574,8 +598,10 @@ export default function StatsPage() {
           </div>
 
           {/* Recent Journeys */}
-          <div>
-            <h3 style={{ fontSize: '18px', marginBottom: '12px', fontWeight: '600' }}>Recent Sessions</h3>
+          <div style={{ marginBottom: '24px' }}>
+            <h3 style={{ fontSize: '18px', marginBottom: '12px', fontWeight: '600' }}>
+              Recent Sessions <span style={{ fontSize: '13px', color: '#999', fontWeight: '400' }}>(completed, 5+ min inactive)</span>
+            </h3>
             <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden' }}>
               {stats.journeys.recentJourneys.slice(0, 10).map((journey, i) => {
                 const minutes = Math.floor(journey.duration / 60);
@@ -609,6 +635,51 @@ export default function StatsPage() {
               })}
             </div>
           </div>
+
+          {/* Active/Recent Visits (Last Hour) */}
+          {stats.rightNow && stats.rightNow.recentActivity.length > 0 && (
+            <div>
+              <h3 style={{ fontSize: '18px', marginBottom: '12px', fontWeight: '600' }}>
+                Active/Recent Visits (Last Hour) <span style={{ fontSize: '13px', color: '#999', fontWeight: '400' }}>({stats.rightNow.activeInLastHour} visits)</span>
+              </h3>
+              <div style={{ background: '#f8f9fa', border: '1px solid #dee2e6', borderRadius: '8px', padding: '16px', marginBottom: '12px' }}>
+                <div style={{ fontSize: '13px', color: '#495057', lineHeight: '1.6' }}>
+                  <strong>Note:</strong> Visits appear here as they happen. They move to "Recent Sessions" above after 5+ minutes of inactivity.
+                </div>
+              </div>
+              <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: '8px', overflow: 'hidden' }}>
+                {stats.rightNow.recentActivity.map((activity, i) => {
+                  const isArticle = activity.page.startsWith('/read/');
+                  const isQuiz = activity.page.includes('/quiz');
+                  let emoji = '📄';
+                  if (isArticle) emoji = '📖';
+                  else if (isQuiz) emoji = '✨';
+
+                  return (
+                    <div
+                      key={i}
+                      style={{
+                        padding: '14px 16px',
+                        borderBottom: i < stats.rightNow.recentActivity.length - 1 ? '1px solid #eee' : 'none',
+                      }}
+                    >
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '6px' }}>
+                        <div style={{ fontSize: '12px', color: '#666' }}>
+                          {activity.country}
+                        </div>
+                        <div style={{ fontSize: '11px', color: '#999' }}>
+                          {activity.timeAgo === 0 ? 'Just now' : `${activity.timeAgo}m ago`}
+                        </div>
+                      </div>
+                      <div style={{ fontFamily: 'monospace', fontSize: '12px', color: '#333' }}>
+                        {emoji} {activity.page}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </div>
       )}
 
