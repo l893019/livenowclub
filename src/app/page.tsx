@@ -155,18 +155,6 @@ const INTERACTIVE = {
 // ============================================
 
 export default function HomePage() {
-  const handleKofiClick = () => {
-    fetch('/api/track', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        event: 'kofi_click',
-        page: window.location.pathname,
-        metadata: { source: 'footer' }
-      })
-    }).catch(() => {}); // Don't block navigation if tracking fails
-  };
-
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector(".header");
@@ -343,7 +331,6 @@ export default function HomePage() {
           <Link href="/wonder">Wonder</Link>
           <Link href="/connect">Connect</Link>
           <Link href="/philosophy">Philosophy</Link>
-          <a href="https://ko-fi.com/livenowclub" target="_blank" rel="noopener noreferrer" onClick={handleKofiClick}>Support</a>
         </nav>
         <p className="footer-copy">&copy; 2026 Louise Ireland</p>
       </footer>
