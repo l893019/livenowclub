@@ -638,7 +638,7 @@ p {
 
 .intro-lou {
   color: var(--text-muted);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 /* ============================================
@@ -653,7 +653,7 @@ p {
 
 .subscribe-embed-text {
   font-size: 0.95rem;
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
   color: var(--text-muted);
   margin-bottom: var(--space-sm);

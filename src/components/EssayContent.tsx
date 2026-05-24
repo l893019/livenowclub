@@ -486,7 +486,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
           max-width: 780px;
           margin: 0 auto;
           font-size: 18px;
-          font-weight: 300;
+          font-weight: 400;
           line-height: 1.75;
           color: rgba(45, 42, 38, 0.75);
         }
@@ -614,7 +614,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
 
         .cta-text {
           font-size: 1rem;
-          font-weight: 300;
+          font-weight: 400;
           color: rgba(45, 42, 38, 0.7);
           margin-bottom: 12px;
           font-style: italic;

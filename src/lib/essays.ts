@@ -100,6 +100,7 @@ const IMAGE_MAP: Record<string, string> = {
   "manifesto": "hero-playa-faded.png",
   "playing-reindeer-games": "playing-reindeer-games.jpg",
   "god-is-in-the-trees": "god-is-in-the-trees.gif",
+  "a-dream-unborn": "a-dream-unborn.jpg",
 };
 
 // Curated pathways - Updated 2026-03-29 per Memoirist essay mapping
@@ -155,6 +156,7 @@ export const PATHWAYS: Pathway[] = [
     subtitle: "For when you're carrying something heavy.",
     essays: [
       "the-other-side-of-grief", // Primary grief essay
+      "a-dream-unborn", // Grief for infertility and unrealized motherhood
       "the-ebb",
       "when-it-all-falls-out",
       "if-you-love-something-let-it-go",
