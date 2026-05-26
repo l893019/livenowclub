@@ -26,7 +26,8 @@ export function useRelatedEssaysTracking(
       const sections = document.querySelectorAll('section');
       for (const section of sections) {
         const heading = section.querySelector('h3, h2');
-        if (heading?.textContent?.includes('Related') ||
+        if (heading?.textContent?.includes('Read Next') ||
+            heading?.textContent?.includes('Related') ||
             heading?.textContent?.includes('Continue')) {
           return section;
         }
@@ -40,6 +41,11 @@ export function useRelatedEssaysTracking(
     sectionRef.current = section;
 
     // Use Intersection Observer to detect when section is visible
+    if (typeof IntersectionObserver === 'undefined') {
+      console.warn('IntersectionObserver not supported, skipping impression tracking');
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
