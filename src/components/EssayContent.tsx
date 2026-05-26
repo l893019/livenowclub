@@ -1,10 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { Essay } from "@/lib/essays";
 import ReadingProgress from "./ReadingProgress";
 import ExitIntentPopup from "./ExitIntentPopup";
+import { useScrollDepth } from '@/hooks/useScrollDepth';
+import { useRelatedEssaysTracking } from '@/hooks/useRelatedEssaysTracking';
+import { trackEvent } from '@/lib/analytics';
 
 type EssayContentProps = {
   essay: Essay;
@@ -19,6 +22,21 @@ function getReadTime(content: string): number {
 
 export default function EssayContent({ essay, relatedEssays = [] }: EssayContentProps) {
   const [copied, setCopied] = useState(false);
+
+  // Analytics tracking
+  useScrollDepth(`/read/${essay.slug}`);
+  const { trackClick } = useRelatedEssaysTracking(
+    `/read/${essay.slug}`,
+    relatedEssays
+  );
+
+  // Track page view on mount
+  useEffect(() => {
+    trackEvent({
+      event: 'pageview',
+      page: `/read/${essay.slug}`,
+    });
+  }, [essay.slug]);
 
   const formatDate = (dateStr: string) => {
     const date = new Date(dateStr);
@@ -345,7 +363,12 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
             <h2>Read Next</h2>
             <div className="read-next-grid">
               {relatedEssays.map((related) => (
-                <Link key={related.slug} href={`/read/${related.slug}`} className="read-next-card">
+                <Link
+                  key={related.slug}
+                  href={`/read/${related.slug}`}
+                  onClick={() => trackClick(related.slug)}
+                  className="read-next-card"
+                >
                   {related.image && (
                     <div className="read-next-image">
                       <img src={related.image} alt="" />
