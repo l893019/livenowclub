@@ -4,7 +4,12 @@
  * Generate a unique session ID
  */
 export function generateSessionId(): string {
-  return `${Date.now()}-${Math.random().toString(36).slice(2, 11)}`;
+  // Use crypto.randomUUID() if available
+  if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+    return crypto.randomUUID();
+  }
+  // Fallback: increase randomness
+  return `${Date.now()}-${Math.random().toString(36).slice(2, 18)}`;
 }
 
 /**
@@ -13,28 +18,34 @@ export function generateSessionId(): string {
 export function getSessionId(): string {
   if (typeof window === 'undefined') return '';
 
-  const storageKey = 'reader_session_id';
-  const expiryKey = 'reader_session_expiry';
+  try {
+    const storageKey = 'reader_session_id';
+    const expiryKey = 'reader_session_expiry';
 
-  // Check existing session
-  const existingId = localStorage.getItem(storageKey);
-  const expiry = localStorage.getItem(expiryKey);
+    // Check existing session
+    const existingId = localStorage.getItem(storageKey);
+    const expiry = localStorage.getItem(expiryKey);
 
-  // If session exists and hasn't expired (30 min), reuse it
-  if (existingId && expiry && Date.now() < parseInt(expiry)) {
-    // Extend expiry
-    const newExpiry = Date.now() + 30 * 60 * 1000; // 30 minutes
+    // If session exists and hasn't expired (30 min), reuse it
+    if (existingId && expiry && Date.now() < parseInt(expiry)) {
+      // Extend expiry
+      const newExpiry = Date.now() + 30 * 60 * 1000; // 30 minutes
+      localStorage.setItem(expiryKey, newExpiry.toString());
+      return existingId;
+    }
+
+    // Create new session
+    const newId = generateSessionId();
+    const newExpiry = Date.now() + 30 * 60 * 1000;
+    localStorage.setItem(storageKey, newId);
     localStorage.setItem(expiryKey, newExpiry.toString());
-    return existingId;
+
+    return newId;
+  } catch (error) {
+    console.error('Session ID storage error:', error);
+    // Return temporary session ID that won't persist
+    return generateSessionId();
   }
-
-  // Create new session
-  const newId = generateSessionId();
-  const newExpiry = Date.now() + 30 * 60 * 1000;
-  localStorage.setItem(storageKey, newId);
-  localStorage.setItem(expiryKey, newExpiry.toString());
-
-  return newId;
 }
 
 /**
