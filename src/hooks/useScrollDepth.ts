@@ -8,6 +8,7 @@ export function useScrollDepth(page: string) {
   const maxDepthRef = useRef(0);
   const lastReportedRef = useRef(0);
   const reportedRef = useRef(false);
+  const timeoutIdRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
   const calculateScrollDepth = useCallback(() => {
     // Calculate how far down the page the user has scrolled (0-100%)
@@ -58,10 +59,9 @@ export function useScrollDepth(page: string) {
 
   useEffect(() => {
     // Throttle scroll events
-    let timeoutId: NodeJS.Timeout;
     const throttledScroll = () => {
-      if (timeoutId) clearTimeout(timeoutId);
-      timeoutId = setTimeout(handleScroll, 100);
+      if (timeoutIdRef.current) clearTimeout(timeoutIdRef.current);
+      timeoutIdRef.current = setTimeout(handleScroll, 100);
     };
 
     window.addEventListener('scroll', throttledScroll, { passive: true });
@@ -71,7 +71,7 @@ export function useScrollDepth(page: string) {
 
     return () => {
       window.removeEventListener('scroll', throttledScroll);
-      if (timeoutId) clearTimeout(timeoutId);
+      if (timeoutIdRef.current) clearTimeout(timeoutIdRef.current);
       reportFinalDepth();
     };
   }, [handleScroll, reportFinalDepth]);
