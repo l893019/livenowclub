@@ -3,6 +3,16 @@ import Redis from 'ioredis';
 
 const redis = new Redis(process.env.REDIS_URL || '');
 
+/**
+ * Analytics tracking endpoint
+ *
+ * Tracked events:
+ * - pageview: Page views (automatic)
+ * - scroll_depth: Scroll milestones (25%, 50%, 75%, 100%)
+ * - scroll_depth_final: Final scroll position on page exit
+ * - related_essays_impression: Related Essays section became visible
+ * - related_essays_click: User clicked a related essay
+ */
 export async function POST(request: NextRequest) {
   try {
     const { page, referrer, event, identity, context, metadata, sessionId, noTrack } = await request.json();
