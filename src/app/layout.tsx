@@ -3,6 +3,8 @@ import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Analytics from "@/components/Analytics";
 import SubscribeTab from '@/components/SubscribeTab';
+import { PersonJsonLd, OrganizationJsonLd } from "@/components/JsonLd";
+
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains",
@@ -11,6 +13,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://livenowclub.com"),
+  alternates: { canonical: "/" },
   title: "The Live Now Club | Louise Ireland",
   description: "Essays and poems on life, love, cancer, and the relentless pursuit of joy and whimsy despite it all.",
   keywords: ["essays", "cancer", "memoir", "poetry", "life", "mortality", "Louise Ireland"],
@@ -57,6 +61,8 @@ export default function RootLayout({
         <Analytics />
         {children}
         <SubscribeTab />
+        <PersonJsonLd />
+        <OrganizationJsonLd />
       </body>
     </html>
   );
