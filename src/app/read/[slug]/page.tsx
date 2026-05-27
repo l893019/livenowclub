@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getAllEssays, getEssayBySlug, getRelatedEssays } from "@/lib/essays";
 import EssayContent from "@/components/EssayContent";
+import { ArticleJsonLd } from "@/components/JsonLd";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -16,13 +17,14 @@ export async function generateMetadata({ params }: Props) {
   const essay = getEssayBySlug(slug);
   if (!essay) return { title: "Essay Not Found" };
 
-  const url = `https://livenowclub.com/read/${slug}`;
+  const url = "https://livenowclub.com/read/" + slug;
   const image = essay.image
-    ? `https://livenowclub.com${essay.image}`
+    ? "https://livenowclub.com" + essay.image
     : "https://livenowclub.com/images/og-default.jpg";
 
   return {
-    title: `${essay.title} | The Live Now Club`,
+    alternates: { canonical: url },
+    title: essay.title + " | The Live Now Club",
     description: essay.excerpt,
     openGraph: {
       title: essay.title,
@@ -51,25 +53,14 @@ export default async function EssayPage({ params }: Props) {
 
   const relatedEssays = getRelatedEssays(essay, 3);
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: essay.title,
-    description: essay.excerpt,
-    image: essay.image ? `https://livenowclub.vercel.app${essay.image}` : undefined,
-    datePublished: essay.date,
-    author: {
-      "@type": "Person",
-      name: "Louise Ireland",
-      url: "https://livenowclub.vercel.app/about",
-    },
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      <ArticleJsonLd
+        slug={slug}
+        title={essay.title}
+        description={essay.excerpt}
+        publishedAt={essay.date}
+        image={essay.image}
       />
       <EssayContent essay={essay} relatedEssays={relatedEssays} />
     </>
