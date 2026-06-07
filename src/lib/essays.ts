@@ -101,6 +101,7 @@ const IMAGE_MAP: Record<string, string> = {
   "playing-reindeer-games": "playing-reindeer-games.jpg",
   "god-is-in-the-trees": "god-is-in-the-trees.gif",
   "a-dream-unborn": "a-dream-unborn.jpg",
+  "the-eye-given-everything-sees-nothing": "the-eye-given-everything-sees-nothing.jpg",
 };
 
 // Curated pathways - Updated 2026-03-29 per Memoirist essay mapping
@@ -215,6 +216,7 @@ export const PATHWAYS: Pathway[] = [
     title: "Poems",
     subtitle: "Brief meditations. Beauty in a breath.",
     essays: [
+      "the-eye-given-everything-sees-nothing",
       "and-still-the-figs-ripen",
       "sea-glass",
       "dry-lightning",
