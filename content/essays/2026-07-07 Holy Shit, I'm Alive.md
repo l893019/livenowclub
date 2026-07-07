@@ -12,7 +12,7 @@ The bubbles flew alone and in clusters. A pair of bubbles rose above, the wall b
 
 On the Fourth of July, bubbles again. There were the spritely bubbles blasting out of a plastic flower held in a toddler’s fist. There was my friend Yves’ magnificent Burning Man car, Apollonia, a constellation of bubbles. By afternoon, I spiraled and spiraled dancing in a cloud of them, each leaving only a small wet mark before vanishing.
 
-![Bubbles](/images/holy-shit-im-alive-bubbles.jpeg)
+![](/images/holy-shit-im-alive-2.jpeg)
 
 It was my first year celebrating on the west coast, trading golf carts for art cars. I was homesick all day, my mind caught in flat images from other years’ Fourths, wishing I could change a frame.
 

@@ -10,10 +10,11 @@
  *   node scripts/sync-substack.mjs            # sync missing essays
  *   node scripts/sync-substack.mjs --dry-run  # report + convert, write nothing
  *   node scripts/sync-substack.mjs --force <slug> --out <dir>  # regenerate one post into <dir>
+ *   node scripts/sync-substack.mjs --update-image-map          # also insert IMAGE_MAP + slug-override entries in essays.ts
  *
  * After a sync, still needed by hand (the script prints reminders):
- *   - IMAGE_MAP entry in src/lib/essays.ts (card thumbnails)
- *   - SUBSTACK_SLUG_OVERRIDES entry if the site slug differs from Substack's
+ *   - IMAGE_MAP / SUBSTACK_SLUG_OVERRIDES entries in src/lib/essays.ts,
+ *     unless --update-image-map was passed
  *   - Pathway / pull-quote curation
  */
 
@@ -32,6 +33,8 @@ const args = process.argv.slice(2);
 const DRY_RUN = args.includes("--dry-run");
 const FORCE_SLUG = args.includes("--force") ? args[args.indexOf("--force") + 1] : null;
 const OUT_DIR = args.includes("--out") ? args[args.indexOf("--out") + 1] : null;
+const UPDATE_IMAGE_MAP = args.includes("--update-image-map");
+const ESSAYS_TS = path.join(REPO_ROOT, "src/lib/essays.ts");
 
 // --- helpers -----------------------------------------------------------
 
@@ -219,12 +222,14 @@ async function convertPost(item) {
 
   // Download images; first one is the header
   let imgIndex = 0;
+  let headerFilename = null;
   const out = [];
   for (const block of blocks) {
     if (block.startsWith("IMG::")) {
       imgIndex += 1;
       const baseName = imgIndex === 1 ? `${slug}-header` : `${slug}-${imgIndex}`;
       const filename = await downloadImage(block.slice(5), baseName);
+      if (imgIndex === 1) headerFilename = filename;
       out.push(`![${imgIndex === 1 ? item.title : ""}](/images/${filename})`);
     } else {
       out.push(block);
@@ -250,7 +255,20 @@ async function convertPost(item) {
 
   const safeTitle = item.title.replace(/[/:]/g, "-").replace(/’/g, "'");
   const filename = `${date} ${safeTitle}.md`;
-  return { slug, filename, md };
+  return { slug, filename, md, headerFilename };
+}
+
+// Insert an entry before the closing brace of a named object literal in essays.ts
+function insertIntoEssaysTs(anchor, entry) {
+  let src = fs.readFileSync(ESSAYS_TS, "utf-8");
+  if (src.includes(entry.trim())) return false;
+  const start = src.indexOf(anchor);
+  if (start === -1) throw new Error(`could not find "${anchor}" in essays.ts`);
+  const close = src.indexOf("\n};", start);
+  if (close === -1) throw new Error(`could not find closing brace for "${anchor}"`);
+  src = src.slice(0, close) + `\n${entry}` + src.slice(close);
+  fs.writeFileSync(ESSAYS_TS, src);
+  return true;
 }
 
 async function main() {
@@ -272,7 +290,7 @@ async function main() {
     }
 
     console.log(`converting: ${item.title}`);
-    const { filename, md } = await convertPost(item);
+    const { filename, md, headerFilename } = await convertPost(item);
     const dir = OUT_DIR ?? ESSAYS_DIR;
     if (DRY_RUN) {
       console.log(`--- would write ${filename} ---\n${md}`);
@@ -283,11 +301,22 @@ async function main() {
     synced += 1;
 
     // Sanity checks the human/agent should follow up on
+    const canPatch = UPDATE_IMAGE_MAP && !DRY_RUN && !OUT_DIR;
     const substackSlug = item.link.split("/p/")[1];
     if (substackSlug && substackSlug !== slug) {
-      console.log(`  ⚠ slug mismatch: site "${slug}" vs Substack "${substackSlug}" — add to SUBSTACK_SLUG_OVERRIDES in src/lib/essays.ts`);
+      if (canPatch) {
+        insertIntoEssaysTs("const SUBSTACK_SLUG_OVERRIDES", `  "${slug}": "${substackSlug}",`);
+        console.log(`  added SUBSTACK_SLUG_OVERRIDES entry: "${slug}" → "${substackSlug}"`);
+      } else {
+        console.log(`  ⚠ slug mismatch: site "${slug}" vs Substack "${substackSlug}" — add to SUBSTACK_SLUG_OVERRIDES in src/lib/essays.ts`);
+      }
     }
-    console.log(`  → add IMAGE_MAP entry in src/lib/essays.ts: "${slug}": "${slug}-header.jpeg" (check actual extension)`);
+    if (canPatch && headerFilename) {
+      insertIntoEssaysTs("const IMAGE_MAP", `  "${slug}": "${headerFilename}",`);
+      console.log(`  added IMAGE_MAP entry: "${slug}": "${headerFilename}"`);
+    } else if (headerFilename) {
+      console.log(`  → add IMAGE_MAP entry in src/lib/essays.ts: "${slug}": "${headerFilename}"`);
+    }
     console.log(`  → consider adding "${slug}" to PATHWAYS / PULL_QUOTES in src/lib/essays.ts`);
   }
 
