@@ -44,54 +44,49 @@ export default function EmailCapture({
     return null;
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('loading');
-
-    try {
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email,
-          identity,
-          quizAnswers,
-          referrer: document.referrer,
-        }),
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        setStatus('success');
-        setMessage(data.message);
-        if (data.substackUrl) {
-          setSubstackUrl(data.substackUrl);
-        }
-
-        // Track email signup event
-        fetch('/api/track', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            event: 'email_signup',
-            page: window.location.pathname,
-            identity,
-            context,
-          }),
-        }).catch(() => {});
-
-        // Call onSuccess callback if provided
-        if (onSuccess) {
-          onSuccess();
-        }
-      } else {
-        setStatus('error');
-        setMessage(data.error || 'Something went wrong. Please try again.');
-      }
-    } catch (error) {
+    const trimmed = email.trim();
+    if (!trimmed.includes('@')) {
       setStatus('error');
-      setMessage('Failed to subscribe. Please try again.');
+      setMessage('Please enter a valid email.');
+      return;
+    }
+
+    // Substack no longer accepts server-side signups, so send the visitor
+    // to its subscribe page pre-filled. Opening synchronously inside the
+    // submit gesture keeps popup blockers out of the way.
+    const url = `https://louiseireland.substack.com/subscribe?email=${encodeURIComponent(trimmed)}&utm_source=livenowclub`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+    setSubstackUrl(url);
+    setStatus('success');
+    setMessage("One more click — confirm on Substack and you're in.");
+
+    // Record the signup + analytics in the background; UX doesn't depend on it
+    fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: trimmed,
+        identity,
+        quizAnswers,
+        referrer: document.referrer,
+      }),
+    }).catch(() => {});
+
+    fetch('/api/track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        event: 'email_signup',
+        page: window.location.pathname,
+        identity,
+        context,
+      }),
+    }).catch(() => {});
+
+    if (onSuccess) {
+      onSuccess();
     }
   };
 
@@ -110,7 +105,7 @@ export default function EmailCapture({
           <h3>{message}</h3>
           {substackUrl && (
             <div className={styles.fallback}>
-              <p>Click below to complete your subscription:</p>
+              <p>A Substack tab should have opened. If not:</p>
               <a
                 href={substackUrl}
                 target="_blank"
