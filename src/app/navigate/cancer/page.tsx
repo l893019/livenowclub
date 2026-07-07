@@ -87,7 +87,7 @@ const jsonLd = {
     "A comprehensive guide to navigating cancer, written by a cervical cancer survivor. Practical advice for newly diagnosed patients, those in treatment, caregivers, and anyone seeking meaning through illness.",
   url: "https://livenowclub.com/navigate/cancer",
   datePublished: "2024-12-14",
-  // Update this when the guide content actually changes — a build-time
+  // Update this when the guide content actually changes; a build-time
   // new Date() here claims daily freshness, which search engines discount.
   dateModified: "2026-07-07",
   author: {
@@ -151,32 +151,32 @@ const jsonLd = {
   },
 };
 
-// Visible FAQ section content — also emitted as FAQPage structured data.
+// Visible FAQ section content, also emitted as FAQPage structured data.
 // Answers are distilled from "Fixing the Unfixable" and "Expecting the
 // Unexpected"; keep them in sync with the essays.
 const FAQS = [
   {
     question: "What should you say to someone who has cancer?",
     answer:
-      "There is nothing you can say that will solve it — but there is much you can say that will keep someone company inside of it. Try: “I love you. I’m here.” “I’m thinking of you every day.” “I don’t know what to say, but I want to be with you in this.” Avoid silver linings, miracle cures, “you’re a fighter,” and asking for specifics. Sometimes the best thing to say is nothing — just sit with them.",
+      "There is nothing you can say that will solve it, but there is much you can say that will keep someone company inside of it. Try: “I love you. I’m here.” “I’m thinking of you every day.” “I don’t know what to say, but I want to be with you in this.” Avoid silver linings, miracle cures, “you’re a fighter,” and asking for specifics. Sometimes the best thing to say is nothing. Just sit with them.",
     link: { href: "/navigate/cancer/what-to-say", label: "The full guide: What to Say to Someone With Cancer" },
   },
   {
     question: "What should I do first after a cancer diagnosis?",
     answer:
-      "Build your care team before anything else: choose your hospital and oncologist, designate one advocate to attend appointments and take notes, and consider a second opinion. Then reduce the information flowing in — do not go down a Google rabbit hole. Statistics are averages of other people’s stories, not yours.",
+      "Build your care team before anything else: choose your hospital and oncologist, designate one advocate to attend appointments and take notes, and consider a second opinion. Then reduce the information flowing in. Do not go down a Google rabbit hole. Statistics are averages of other people’s stories, not yours.",
     link: { href: "/read/expecting-the-unexpected", label: "Read: Expecting the Unexpected, the full guide" },
   },
   {
     question: "How do I support a friend going through cancer treatment?",
     answer:
-      "Consistency beats grand gestures. A weekly “thinking of you, no response needed” text means more than you know — and don’t be offended if you never get a reply. Offer something specific (“Can I take something off your plate this week?”) rather than “let me know if you need anything.” Follow their energy on visits: be available without pushing.",
+      "Consistency means more than grand gestures. A weekly “thinking of you, no response needed” text goes a long way, and don’t be offended if you never get a reply. Offer something specific (“Can I take something off your plate this week?”) rather than “let me know if you need anything.” Follow their energy on visits: be available without pushing.",
     link: { href: "/read/expecting-the-unexpected#how-do-you-support-a-friend-with-cancer", label: "The full caregiver section" },
   },
   {
     question: "Is this guide medical advice?",
     answer:
-      "No. I’m a cancer survivor, not a doctor. This is lived experience — what actually helped me through diagnosis, chemotherapy, and recovery — meant to sit alongside, never replace, the guidance of your care team.",
+      "No. I’m a cancer survivor, not a doctor. This is lived experience, what actually helped me through diagnosis, chemotherapy, and recovery. It is meant to sit alongside the guidance of your care team, never replace it.",
   },
   {
     question: "Can I share or print this guide?",
@@ -219,7 +219,7 @@ export default function NavigateCancerPage() {
           <span className="navigate-label">Lou's Guide to Cancer</span>
           <h1>Everything I Wish Someone Had Told Me</h1>
           <p>
-            A practical cancer guide — from diagnosis through treatment and survivorship.
+            A practical cancer guide, from diagnosis through treatment and survivorship.
             What to prepare, what to say, and how to keep living, written by a survivor
             who has lived every page of it. Free to read, download, and share.
           </p>
@@ -239,7 +239,7 @@ export default function NavigateCancerPage() {
               Download the Free PDF
             </a>
             <a
-              href={`mailto:?subject=${encodeURIComponent("A cancer guide that actually helps")}&body=${encodeURIComponent("Thought of you. This guide was written by someone who's been through it — practical help for diagnosis, treatment, and everything after:\n\nhttps://livenowclub.com/navigate/cancer")}`}
+              href={`mailto:?subject=${encodeURIComponent("A cancer guide that actually helps")}&body=${encodeURIComponent("Thought of you. This guide was written by someone who's been through it. Practical help for diagnosis, treatment, and everything after:\n\nhttps://livenowclub.com/navigate/cancer")}`}
               className="btn btn--secondary"
             >
               Send This to Someone
@@ -511,7 +511,7 @@ export default function NavigateCancerPage() {
             <div className="guide-section-header">
               <span className="guide-section-number">FAQ</span>
               <h2>Common Questions</h2>
-              <p>The questions people ask most — at diagnosis, in treatment, and from the people who love them</p>
+              <p>The questions people ask most, at diagnosis, in treatment, and from the people who love them</p>
             </div>
             <div style={{ maxWidth: "720px", margin: "0 auto" }}>
               {FAQS.map((faq) => (

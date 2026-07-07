@@ -60,7 +60,7 @@ export default function EmailCapture({
     window.open(url, '_blank', 'noopener,noreferrer');
     setSubstackUrl(url);
     setStatus('success');
-    setMessage("One more click — confirm on Substack and you're in.");
+    setMessage("Almost done. Confirm on Substack and you're in.");
 
     // Record the signup + analytics in the background; UX doesn't depend on it
     fetch('/api/subscribe', {

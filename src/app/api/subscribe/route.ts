@@ -9,7 +9,7 @@ const SUBSTACK_URL = process.env.SUBSTACK_URL || 'https://louiseireland.substack
 // Substack no longer accepts server-side signups (its /api/v1/free endpoint
 // returns 403 without a real browser session), so this route records the
 // signup for our own records and hands the visitor off to Substack's
-// subscribe page with their email pre-filled — one click to finish.
+// subscribe page with their email pre-filled, one click to finish.
 export async function POST(request: NextRequest) {
   try {
     const { email, identity, quizAnswers, referrer } = await request.json();
@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      message: 'One more click — confirm on Substack and you\'re in.',
+      message: 'Almost done. Confirm on Substack and you\'re in.',
       substackAdded: false,
       substackUrl: `${SUBSTACK_URL}/subscribe?email=${encodeURIComponent(email)}&utm_source=livenowclub`,
     });
