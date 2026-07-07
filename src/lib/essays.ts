@@ -102,6 +102,16 @@ const IMAGE_MAP: Record<string, string> = {
   "god-is-in-the-trees": "god-is-in-the-trees.gif",
   "a-dream-unborn": "a-dream-unborn.jpg",
   "the-eye-given-everything-sees-nothing": "the-eye-given-everything-sees-nothing.jpg",
+  "silvering": "silvering-header.jpeg",
+  "in-me-the-universe-experiences-itself": "in-me-header.jpeg",
+  "how-do-you-know-what-happens-to-you-isnt-good": "how-do-you-know-header.jpeg",
+  "lifes-masquerade": "lifes-masquerade-header.png",
+  "holy-shit-im-alive": "holy-shit-im-alive-header.jpeg",
+};
+
+// Where the site slug differs from the actual Substack post slug
+const SUBSTACK_SLUG_OVERRIDES: Record<string, string> = {
+  "how-do-you-know-what-happens-to-you-isnt-good": "how-do-you-know-what-happens-to-you",
 };
 
 // Curated pathways - Updated 2026-03-29 per Memoirist essay mapping
@@ -416,7 +426,7 @@ export function getAllEssays(): Essay[] {
       pullQuote: PULL_QUOTES[slug],
       content,
       image,
-      substackUrl: `https://louiseireland.substack.com/p/${slug}`,
+      substackUrl: `https://louiseireland.substack.com/p/${SUBSTACK_SLUG_OVERRIDES[slug] ?? slug}`,
       color: COLORS[index % COLORS.length],
       tags: inferTags(title, content),
     };
