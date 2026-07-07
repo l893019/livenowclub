@@ -2,10 +2,13 @@ import { NextRequest, NextResponse } from 'next/server';
 import Redis from 'ioredis';
 import { getIdentityFromArchetype, getIdentityFromDimensions } from '@/lib/identities';
 import { arrayToQuizAnswers, calculateDimensions } from '@/lib/dimensions';
+import { requireAdmin } from '@/lib/adminAuth';
 
 const redis = new Redis(process.env.REDIS_URL || '');
 
 export async function GET(request: NextRequest) {
+  const unauthorized = requireAdmin(request);
+  if (unauthorized) return unauthorized;
   try {
     const searchParams = request.nextUrl.searchParams;
     const days = parseInt(searchParams.get('days') || '7');

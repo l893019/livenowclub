@@ -111,18 +111,43 @@ type Stats = {
   };
 };
 
+const KEY_STORAGE = 'lnc-admin-key';
+
 export default function StatsPage() {
   const [stats, setStats] = useState<Stats | null>(null);
   const [days, setDays] = useState(7);
   const [loading, setLoading] = useState(true);
+  const [adminKey, setAdminKey] = useState<string | null>(null);
+  const [keyInput, setKeyInput] = useState('');
+  const [needsKey, setNeedsKey] = useState(false);
+
+  useEffect(() => {
+    setAdminKey(localStorage.getItem(KEY_STORAGE));
+  }, []);
 
   useEffect(() => {
     const fetchStats = async () => {
+      const key = adminKey ?? localStorage.getItem(KEY_STORAGE);
+      if (!key) {
+        setNeedsKey(true);
+        setLoading(false);
+        return;
+      }
       setLoading(true);
       try {
-        const res = await fetch(`/api/stats?days=${days}`);
+        const res = await fetch(`/api/stats?days=${days}`, {
+          headers: { Authorization: `Bearer ${key}` },
+        });
+        if (res.status === 401) {
+          localStorage.removeItem(KEY_STORAGE);
+          setNeedsKey(true);
+          setStats(null);
+          setLoading(false);
+          return;
+        }
         const data = await res.json();
         setStats(data);
+        setNeedsKey(false);
       } catch (error) {
         console.error('Failed to fetch stats:', error);
       }
@@ -130,7 +155,36 @@ export default function StatsPage() {
     };
 
     fetchStats();
-  }, [days]);
+  }, [days, adminKey]);
+
+  if (needsKey) {
+    return (
+      <div style={{ padding: '40px', fontFamily: 'system-ui', maxWidth: '400px', margin: '0 auto' }}>
+        <h1>Analytics</h1>
+        <p>Enter the admin key to view stats.</p>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            const key = keyInput.trim();
+            if (!key) return;
+            localStorage.setItem(KEY_STORAGE, key);
+            setNeedsKey(false);
+            setAdminKey(key);
+          }}
+        >
+          <input
+            type="password"
+            value={keyInput}
+            onChange={(e) => setKeyInput(e.target.value)}
+            placeholder="Admin key"
+            style={{ padding: '8px 12px', width: '100%', marginBottom: '12px', boxSizing: 'border-box' }}
+            autoFocus
+          />
+          <button type="submit" style={{ padding: '8px 16px' }}>View stats</button>
+        </form>
+      </div>
+    );
+  }
 
   if (loading) {
     return (
