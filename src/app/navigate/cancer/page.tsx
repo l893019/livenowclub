@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import { CANCER_GUIDE, getCancerGuideEssays, getCancerEssays } from "@/lib/essays";
+import { GUIDES } from "@/lib/guides";
 
 // Essays that are truly practical guides (actionable, step-by-step)
 const PRACTICAL_GUIDES = ["expecting-the-unexpected", "how-to-reset-your-nervous-system"];
@@ -165,13 +166,13 @@ const FAQS = [
     question: "What should I do first after a cancer diagnosis?",
     answer:
       "Build your care team before anything else: choose your hospital and oncologist, designate one advocate to attend appointments and take notes, and consider a second opinion. Then reduce the information flowing in. Do not go down a Google rabbit hole. Statistics are averages of other people’s stories, not yours.",
-    link: { href: "/read/expecting-the-unexpected", label: "Read: Expecting the Unexpected, the full guide" },
+    link: { href: "/navigate/cancer/just-diagnosed", label: "The full guide: Just Diagnosed, What to Do First" },
   },
   {
     question: "How do I support a friend going through cancer treatment?",
     answer:
       "Consistency means more than grand gestures. A weekly “thinking of you, no response needed” text goes a long way, and don’t be offended if you never get a reply. Offer something specific (“Can I take something off your plate this week?”) rather than “let me know if you need anything.” Follow their energy on visits: be available without pushing.",
-    link: { href: "/read/expecting-the-unexpected#how-do-you-support-a-friend-with-cancer", label: "The full caregiver section" },
+    link: { href: "/navigate/cancer/how-to-help-someone-with-cancer", label: "The full guide: How to Help Someone With Cancer" },
   },
   {
     question: "Is this guide medical advice?",
@@ -256,7 +257,6 @@ export default function NavigateCancerPage() {
               { href: "/read/expecting-the-unexpected#how-do-you-support-a-friend-with-cancer", num: "03", title: "For Caregivers", sub: "Supporting someone" },
               { href: "/read/expecting-the-unexpected#survivorship", num: "04", title: "Living with Uncertainty", sub: "Holding it loosely" },
               { href: "/read/expecting-the-unexpected#core-principles", num: "05", title: "Core Principles", sub: "Essential guidance" },
-              { href: "/navigate/cancer/what-to-say", num: "06", title: "What to Say", sub: "For friends & family" },
             ].map((item) => (
               <Link key={item.href} href={item.href} className="quick-link-card">
                 <span className="quick-link-number">{item.num}</span>
@@ -264,6 +264,26 @@ export default function NavigateCancerPage() {
                 <p>{item.sub}</p>
               </Link>
             ))}
+          </div>
+        </section>
+
+        {/* Practical Guides - plain-language reference pages, one per question */}
+        <section className="guide-section">
+          <div className="guide-section-inner">
+            <div className="guide-section-header">
+              <span className="guide-section-number">Practical Guides</span>
+              <h2>One Question, One Page</h2>
+              <p>Plain-language reference pages, distilled from my essays. Made to be found, used, and passed along.</p>
+            </div>
+            <div className="quick-links-grid">
+              {GUIDES.map((g) => (
+                <Link key={g.slug} href={`/navigate/cancer/${g.slug}`} className="quick-link-card">
+                  <span className="quick-link-number">Guide</span>
+                  <h3>{g.shortTitle}</h3>
+                  <p>{g.targetQuery}</p>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 
