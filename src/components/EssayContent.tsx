@@ -357,6 +357,18 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
           </div>
         </div>
 
+        {/* Cancer guide pointer - internal link for cancer-tagged essays */}
+        {essay.tags.includes("cancer") && (
+          <aside className="essay-guide-callout">
+            <p>
+              Navigating cancer — yours or someone else's?{" "}
+              <Link href="/navigate/cancer">Start with the cancer guide</Link>
+              {" "}— everything I wish someone had told me, from diagnosis through
+              treatment and beyond.
+            </p>
+          </aside>
+        )}
+
         {/* Read Next */}
         {relatedEssays.length > 0 && (
           <section className="essay-read-next">
@@ -599,6 +611,24 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         .essay-ps strong {
           font-style: normal;
           color: #e8178a;
+        }
+
+        .essay-guide-callout {
+          max-width: 780px;
+          margin: 40px auto 0;
+          padding: 18px 22px;
+          background: rgba(45, 122, 122, 0.06);
+          border-left: 2px solid rgba(45, 122, 122, 0.4);
+          font-size: 0.95rem;
+          line-height: 1.6;
+          color: rgba(45, 42, 38, 0.8);
+        }
+
+        .essay-guide-callout :global(a) {
+          color: #2d7a7a;
+          font-weight: 500;
+          text-decoration: underline;
+          text-underline-offset: 3px;
         }
 
         /* Subscribe CTA */

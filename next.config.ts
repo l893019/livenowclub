@@ -3,6 +3,14 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   async redirects() {
     return [
+      // Canonical host: livenowclub.com (matches canonical tags and JSON-LD).
+      // Without this, www serves a full duplicate of every page.
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.livenowclub.com' }],
+        destination: 'https://livenowclub.com/:path*',
+        permanent: true,
+      },
       {
         source: '/navigate',
         destination: '/navigate/cancer',

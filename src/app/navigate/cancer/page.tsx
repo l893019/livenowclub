@@ -87,7 +87,9 @@ const jsonLd = {
     "A comprehensive guide to navigating cancer, written by a cervical cancer survivor. Practical advice for newly diagnosed patients, those in treatment, caregivers, and anyone seeking meaning through illness.",
   url: "https://livenowclub.com/navigate/cancer",
   datePublished: "2024-12-14",
-  dateModified: new Date().toISOString().split('T')[0],
+  // Update this when the guide content actually changes — a build-time
+  // new Date() here claims daily freshness, which search engines discount.
+  dateModified: "2026-07-07",
   author: {
     "@type": "Person",
     name: "Louise Ireland",
@@ -149,6 +151,51 @@ const jsonLd = {
   },
 };
 
+// Visible FAQ section content — also emitted as FAQPage structured data.
+// Answers are distilled from "Fixing the Unfixable" and "Expecting the
+// Unexpected"; keep them in sync with the essays.
+const FAQS = [
+  {
+    question: "What should you say to someone who has cancer?",
+    answer:
+      "There is nothing you can say that will solve it — but there is much you can say that will keep someone company inside of it. Try: “I love you. I’m here.” “I’m thinking of you every day.” “I don’t know what to say, but I want to be with you in this.” Avoid silver linings, miracle cures, “you’re a fighter,” and asking for specifics. Sometimes the best thing to say is nothing — just sit with them.",
+    link: { href: "/navigate/cancer/what-to-say", label: "The full guide: What to Say to Someone With Cancer" },
+  },
+  {
+    question: "What should I do first after a cancer diagnosis?",
+    answer:
+      "Build your care team before anything else: choose your hospital and oncologist, designate one advocate to attend appointments and take notes, and consider a second opinion. Then reduce the information flowing in — do not go down a Google rabbit hole. Statistics are averages of other people’s stories, not yours.",
+    link: { href: "/read/expecting-the-unexpected", label: "Read: Expecting the Unexpected, the full guide" },
+  },
+  {
+    question: "How do I support a friend going through cancer treatment?",
+    answer:
+      "Consistency beats grand gestures. A weekly “thinking of you, no response needed” text means more than you know — and don’t be offended if you never get a reply. Offer something specific (“Can I take something off your plate this week?”) rather than “let me know if you need anything.” Follow their energy on visits: be available without pushing.",
+    link: { href: "/read/expecting-the-unexpected#how-do-you-support-a-friend-with-cancer", label: "The full caregiver section" },
+  },
+  {
+    question: "Is this guide medical advice?",
+    answer:
+      "No. I’m a cancer survivor, not a doctor. This is lived experience — what actually helped me through diagnosis, chemotherapy, and recovery — meant to sit alongside, never replace, the guidance of your care team.",
+  },
+  {
+    question: "Can I share or print this guide?",
+    answer:
+      "Please do. The whole guide is free to read, and there’s a PDF you can download, print, or send to anyone who needs it. That’s why it exists.",
+    link: { href: "/expecting-the-unexpected-guide.pdf", label: "Download the PDF" },
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: { "@type": "Answer", text: f.answer },
+  })),
+};
+
 export default function NavigateCancerPage() {
   // Sort chronologically (oldest first) for the journey timeline
   const allCancerEssays = getCancerEssays().sort((a, b) => a.date.localeCompare(b.date));
@@ -157,6 +204,7 @@ export default function NavigateCancerPage() {
     <>
       {/* JSON-LD Structured Data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       <Header />
 
@@ -171,13 +219,14 @@ export default function NavigateCancerPage() {
           <span className="navigate-label">Lou's Guide to Cancer</span>
           <h1>Everything I Wish Someone Had Told Me</h1>
           <p>
-            A mix of practical guidance for navigating cancer diagnosis, treatment, and beyond combined with my own journey.
+            A practical cancer guide — from diagnosis through treatment and survivorship.
+            What to prepare, what to say, and how to keep living, written by a survivor
+            who has lived every page of it. Free to read, download, and share.
           </p>
-          <div style={{ marginTop: "24px" }}>
+          <div style={{ marginTop: "24px", display: "flex", flexWrap: "wrap", gap: "12px", justifyContent: "center" }}>
             <Link
               href="/read/expecting-the-unexpected"
               className="btn btn--primary"
-              style={{ marginRight: "12px" }}
             >
               Read the Full Guide
             </Link>
@@ -187,7 +236,13 @@ export default function NavigateCancerPage() {
               rel="noopener noreferrer"
               className="btn btn--secondary"
             >
-              Download PDF
+              Download the Free PDF
+            </a>
+            <a
+              href={`mailto:?subject=${encodeURIComponent("A cancer guide that actually helps")}&body=${encodeURIComponent("Thought of you. This guide was written by someone who's been through it — practical help for diagnosis, treatment, and everything after:\n\nhttps://livenowclub.com/navigate/cancer")}`}
+              className="btn btn--secondary"
+            >
+              Send This to Someone
             </a>
           </div>
         </section>
@@ -201,6 +256,7 @@ export default function NavigateCancerPage() {
               { href: "/read/expecting-the-unexpected#how-do-you-support-a-friend-with-cancer", num: "03", title: "For Caregivers", sub: "Supporting someone" },
               { href: "/read/expecting-the-unexpected#survivorship", num: "04", title: "Living with Uncertainty", sub: "Holding it loosely" },
               { href: "/read/expecting-the-unexpected#core-principles", num: "05", title: "Core Principles", sub: "Essential guidance" },
+              { href: "/navigate/cancer/what-to-say", num: "06", title: "What to Say", sub: "For friends & family" },
             ].map((item) => (
               <Link key={item.href} href={item.href} className="quick-link-card">
                 <span className="quick-link-number">{item.num}</span>
@@ -445,6 +501,36 @@ export default function NavigateCancerPage() {
                   </li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Common Questions - visible counterpart to the FAQPage structured data */}
+        <section className="guide-section">
+          <div className="guide-section-inner">
+            <div className="guide-section-header">
+              <span className="guide-section-number">FAQ</span>
+              <h2>Common Questions</h2>
+              <p>The questions people ask most — at diagnosis, in treatment, and from the people who love them</p>
+            </div>
+            <div style={{ maxWidth: "720px", margin: "0 auto" }}>
+              {FAQS.map((faq) => (
+                <details key={faq.question} style={{ borderBottom: "1px solid rgba(45, 42, 38, 0.12)", padding: "18px 0" }}>
+                  <summary style={{ cursor: "pointer", fontSize: "1.05rem", fontWeight: 500, color: "#2d2a26" }}>
+                    {faq.question}
+                  </summary>
+                  <p style={{ marginTop: "12px", lineHeight: 1.7, color: "rgba(45, 42, 38, 0.8)" }}>
+                    {faq.answer}
+                  </p>
+                  {faq.link && (
+                    <p style={{ marginTop: "8px" }}>
+                      <a href={faq.link.href} style={{ color: "#2d7a7a", textDecoration: "underline", textUnderlineOffset: "3px" }}>
+                        {faq.link.label} →
+                      </a>
+                    </p>
+                  )}
+                </details>
+              ))}
             </div>
           </div>
         </section>
