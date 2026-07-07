@@ -41,6 +41,12 @@ const PULL_QUOTES: Record<string, string> = {
   "i-love-lou": "I met her on February 13, 2022. Like any good meet-cute, I had this feeling I had met her long ago, maybe in another lifetime. I realized I couldn't mess it up. This was going to be a very special person in my life - arguably the most special. Her name is Lou.",
   "playing-reindeer-games": "She has manufactured every possible way for me to live my happiest life, regardless of my physical circumstance, surrounding me with beauty and joy.",
   "god-is-in-the-trees": "I wanted to burn something to make something, the elements of carbon rearranging themselves from destruction to life.",
+  "holy-shit-im-alive":
+    "Holy shit, I'm alive. I thought, suddenly overwhelmed with the joyousness of the moment. We take this aliveness for granted. We feel entitled to our hundred-plus years and a clean bill of health, unaware of what is required to maintain it.",
+  "how-do-you-know-what-happens-to-you-isnt-good":
+    "I hope I can find the beauty. I pray to surrender in wonder and keep my eyes open to what life wants to show me. This, this heartbreaking, earth-shattering darkness, could be the moment everything becomes clear.",
+  "lifes-masquerade":
+    "I saw myself, but I also saw more, our lives a woven constellation of unique experiences, each star brightening the dark night.",
 };
 
 // Map titles to images
@@ -181,6 +187,8 @@ export const PATHWAYS: Pathway[] = [
     title: "Finding Joy Anyway",
     subtitle: "Because life is also beautiful.",
     essays: [
+      "holy-shit-im-alive", // Aliveness as astonishment
+      "lifes-masquerade", // Costumes, play, and passing life on
       "playing-reindeer-games",
       "the-case-for-magical-thinking",
       "life-is-not-empty",
@@ -212,6 +220,7 @@ export const PATHWAYS: Pathway[] = [
     essays: [
       "fixing-the-unfixable", // Core philosophy
       "the-live-now-club", // Manifesto
+      "how-do-you-know-what-happens-to-you-isnt-good", // Randomness, surrender, the next wave
       "soulmd",
       "all-i-want-for-my-birthday-is-another-shot-at-life",
       "i-wrote-this-with-my-eyes",
@@ -226,6 +235,8 @@ export const PATHWAYS: Pathway[] = [
     title: "Poems",
     subtitle: "Brief meditations. Beauty in a breath.",
     essays: [
+      "silvering",
+      "in-me-the-universe-experiences-itself",
       "the-eye-given-everything-sees-nothing",
       "and-still-the-figs-ripen",
       "sea-glass",
@@ -547,6 +558,7 @@ export const CANCER_GUIDE: Pathway[] = [
     title: "Living with Uncertainty",
     subtitle: "When the ground shifts and you learn to hold it all loosely.",
     essays: [
+      "how-do-you-know-what-happens-to-you-isnt-good", // Randomness and surrender
       "you-cant-always-get-what-you-want",
       "how-are-you-after-it-all-falls-down",
       "maybe",
