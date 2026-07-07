@@ -103,10 +103,9 @@ export default function SubscribeTab() {
     // Clear dismissal - allow showing again later
     localStorage.removeItem('subscribe-tab-dismissed-until');
 
-    // Close panel after 2 seconds
-    setTimeout(() => {
-      setIsPanelOpen(false);
-    }, 2000);
+    // Keep the panel open: the success state holds the "finish on
+    // Substack" backup link, which the visitor needs if their popup
+    // blocker ate the tab we opened. They close it themselves.
   };
 
   // ESC key closes panel
