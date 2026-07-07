@@ -1,4 +1,5 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
+import { requireAdmin } from '@/lib/adminAuth';
 import Redis from 'ioredis';
 import { arrayToQuizAnswers, calculateDimensions } from '@/lib/dimensions';
 import { getIdentityFromDimensions } from '@/lib/identities';
@@ -6,7 +7,10 @@ import { getIdentityFromDimensions } from '@/lib/identities';
 const redis = new Redis(process.env.REDIS_URL || '');
 const MULTIPLIER = 3;
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  const unauthorized = requireAdmin(request);
+  if (unauthorized) return unauthorized;
+
   try {
     const userKeys = await redis.keys('user:*');
     const actualUserKeys = userKeys.filter(k => !k.includes(':utopias'));

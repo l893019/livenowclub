@@ -1,9 +1,13 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
+import { requireAdmin } from '@/lib/adminAuth';
 import Redis from 'ioredis';
 
 const redis = new Redis(process.env.REDIS_URL || '');
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  const unauthorized = requireAdmin(request);
+  if (unauthorized) return unauthorized;
+
   try {
     // Get all contact form submission events
     const contactEvents = await redis.zrevrange('stats:events:contact_form_submit', 0, -1, 'WITHSCORES');

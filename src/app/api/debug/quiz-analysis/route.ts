@@ -1,11 +1,15 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
+import { requireAdmin } from '@/lib/adminAuth';
 import Redis from 'ioredis';
 import { arrayToQuizAnswers, calculateDimensions } from '@/lib/dimensions';
 import { getIdentityFromDimensions } from '@/lib/identities';
 
 const redis = new Redis(process.env.REDIS_URL || '');
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  const unauthorized = requireAdmin(request);
+  if (unauthorized) return unauthorized;
+
   try {
     // Get all user keys
     const userKeys = await redis.keys('user:*');
