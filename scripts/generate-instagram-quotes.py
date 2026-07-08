@@ -44,20 +44,79 @@ LINE_HEIGHT = 105
 QUOTES = [
     {
         "id": 1,
-        "quote": "I've never in my life felt like it was okay to just be. The idea that my pure existence has value, without any productivity attached to it, violates every equation I've ever used to measure my worth.",
-        "source": "Soul.md",
+        "quote": "Cancer hasn't shrunk my life. It has skimmed it.",
+        "source": "The Other Side of Grief",
     },
     {
         "id": 2,
-        "quote": "Who are we when we can be anything or anyone? How do you fill your time when everything can be automated? What purpose is left when everything else is solved for?",
+        "quote": "Living not to die. Living to live. The words rearranged the air in my lungs.",
+        "source": "The Live Now Club",
+    },
+    {
+        "id": 3,
+        "quote": "We carry the sunk cost of our identities that we spent decades building. You have to write new code.",
         "source": "Soul.md",
     },
-    # Add more quotes here:
-    # {
-    #     "id": 3,
-    #     "quote": "Your quote text here.",
-    #     "source": "Essay Name",
-    # },
+    {
+        "id": 4,
+        "quote": "Dying and living were never opposites. They were always the same thing, happening at once.",
+        "source": "Fixing the Unfixable",
+    },
+    {
+        "id": 5,
+        "quote": "I care less about how big my life looks than how light it feels.",
+        "source": "Maybe",
+    },
+    {
+        "id": 6,
+        "quote": "We wait for safety to live, when the uncomfortable truth might be that living is the very thing that produces safety.",
+        "source": "The Starting Line",
+    },
+    {
+        "id": 7,
+        "quote": "A life without purpose exhausts itself. A life with vision renews.",
+        "source": "Now that you no longer have to be perfect",
+    },
+    {
+        "id": 8,
+        "quote": "The old identity has died, but the new has not yet emerged. The pot simmers, ready to be tasted.",
+        "source": "The Other Side of Grief",
+    },
+    {
+        "id": 9,
+        "quote": "Tomorrow only becomes real once we are perfect enough to deserve it.",
+        "source": "The Starting Line",
+    },
+    {
+        "id": 10,
+        "quote": "I cannot be who I was, but I have a profound opportunity to live as who I was meant to be.",
+        "source": "Maybe",
+    },
+    {
+        "id": 11,
+        "quote": "When did we decide, as a culture, that simply staying alive wasn't enough?",
+        "source": "Soul.md",
+    },
+    {
+        "id": 12,
+        "quote": "You say: I'm not going anywhere. You say: You don't have to be strong with me. You say: I don't know what to say, but I'm here.",
+        "source": "Fixing the Unfixable",
+    },
+    {
+        "id": 13,
+        "quote": "I am swimming in two currents at once, surface water moving forward while deeper water holds me in place.",
+        "source": "The Starting Line",
+    },
+    {
+        "id": 14,
+        "quote": "To love the fleeting, the folly, the things you know you will lose but that you say yes to anyway.",
+        "source": "The Other Side of Grief",
+    },
+    {
+        "id": 15,
+        "quote": "What purpose is left when everything else is solved for?",
+        "source": "Soul.md",
+    },
 ]
 
 # =============================================================================
