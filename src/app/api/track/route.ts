@@ -29,6 +29,17 @@ export async function POST(request: NextRequest) {
     const userAgent = request.headers.get('user-agent') || 'unknown';
     const country = request.headers.get('x-vercel-ip-country') || 'unknown';
 
+    // Skip bots and uptime monitors (they execute JS and hit this endpoint)
+    if (/bot|crawl|spider|slurp|monitor|pingdom|uptime|headless|lighthouse|python|curl|wget|scrapy|phantom/i.test(userAgent)) {
+      return NextResponse.json({ success: true, tracked: false });
+    }
+
+    // A pageview is the default POST (no event) or an explicit pageview event.
+    // Everything else (scroll_depth, impressions, signups) is an interaction
+    // event and must not feed pageview-derived stats: session journeys, the
+    // recent-visits feed, referrer and country counters.
+    const isPageview = !event || event === 'pageview';
+
     // Create unique visitor ID (hash of IP + user agent)
     const visitorId = Buffer.from(`${ip}-${userAgent}`).toString('base64').slice(0, 16);
 
@@ -44,11 +55,13 @@ export async function POST(request: NextRequest) {
       if (sessionData) {
         // Existing session - update
         const session = JSON.parse(sessionData);
-        session.lastPage = page;
         session.lastSeen = now;
-        session.pageCount = (session.pageCount || 1) + 1;
-        session.pages = session.pages || [];
-        session.pages.push({ page, timestamp: now });
+        if (isPageview) {
+          session.lastPage = page;
+          session.pageCount = (session.pageCount || 1) + 1;
+          session.pages = session.pages || [];
+          session.pages.push({ page, timestamp: now });
+        }
 
         await redis.setex(sessionKey, 1800, JSON.stringify(session)); // 30 min expiry
       } else {
@@ -110,32 +123,33 @@ export async function POST(request: NextRequest) {
       await redis.zremrangebyrank(`stats:events:${event}`, 0, -1001);
     }
 
-    // Track pageview (only if no event, or if it's a pageview event)
-    if (!event || event === 'pageview') {
+    // Track pageview-derived stats (pageviews, referrers, countries, recent feed)
+    const isInternalReferrer = referrer && /livenowclub\.com/i.test(referrer);
+    if (isPageview) {
       await redis.incr(`stats:pageviews:${date}:${page}`);
       await redis.incr(`stats:pageviews:${date}:total`);
+
+      // Track referrers (external only)
+      if (referrer && referrer !== '' && !isInternalReferrer) {
+        await redis.incr(`stats:referrers:${date}:${referrer}`);
+      }
+
+      // Track countries
+      await redis.incr(`stats:countries:${date}:${country}`);
+
+      // Store recent visit
+      await redis.zadd(
+        `stats:recent`,
+        Date.now(),
+        JSON.stringify({ page, timestamp, country, referrer })
+      );
+
+      // Keep only last 100 recent visits
+      await redis.zremrangebyrank('stats:recent', 0, -101);
     }
 
     // Track unique visitors (using set for deduplication)
     await redis.sadd(`stats:visitors:${date}`, visitorId);
-
-    // Track referrers
-    if (referrer && referrer !== '') {
-      await redis.incr(`stats:referrers:${date}:${referrer}`);
-    }
-
-    // Track countries
-    await redis.incr(`stats:countries:${date}:${country}`);
-
-    // Store recent visit
-    await redis.zadd(
-      `stats:recent`,
-      Date.now(),
-      JSON.stringify({ page, timestamp, country, referrer })
-    );
-
-    // Keep only last 100 recent visits
-    await redis.zremrangebyrank('stats:recent', 0, -101);
 
     // Set expiry on daily keys (keep 90 days)
     await redis.expire(`stats:pageviews:${date}:${page}`, 90 * 24 * 60 * 60);

@@ -26,7 +26,7 @@ export default function ScrollSlideIn({
     }
 
     // Check if already subscribed
-    const alreadySubscribed = localStorage.getItem('email-capture-dismissed');
+    const alreadySubscribed = localStorage.getItem('email-capture-subscribed');
     if (alreadySubscribed === 'true') {
       return;
     }

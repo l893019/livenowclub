@@ -22,7 +22,7 @@ export default function ExitIntentPopup({ enabled = true }: ExitIntentPopupProps
     }
 
     // Check if already subscribed
-    const alreadySubscribed = localStorage.getItem('email-capture-dismissed');
+    const alreadySubscribed = localStorage.getItem('email-capture-subscribed');
     if (alreadySubscribed === 'true') {
       return;
     }

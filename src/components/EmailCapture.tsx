@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from './EmailCapture.module.css';
 
 type EmailCaptureProps = {
@@ -25,17 +25,39 @@ export default function EmailCapture({
   const [message, setMessage] = useState('');
   const [substackUrl, setSubstackUrl] = useState('');
   const [isDismissed, setIsDismissed] = useState(false);
+  const impressionTracked = useRef(false);
 
-  // Check if previously dismissed
+  // Dismissal is scoped per surface; only an actual signup
+  // ('email-capture-subscribed') hides every capture surface site-wide.
+  // The old global 'email-capture-dismissed' key was almost always set from
+  // an essay footer, so it only carries over to that context.
   useEffect(() => {
-    const dismissed = localStorage.getItem('email-capture-dismissed');
-    if (dismissed === 'true') {
+    const subscribed = localStorage.getItem('email-capture-subscribed') === 'true';
+    const dismissedHere = localStorage.getItem(`email-capture-dismissed:${context}`) === 'true';
+    const legacyDismissed = context === 'essay' &&
+      localStorage.getItem('email-capture-dismissed') === 'true';
+    if (subscribed || dismissedHere || legacyDismissed) {
       setIsDismissed(true);
     }
-  }, []);
+  }, [context]);
+
+  // Track one impression per mount so conversion is measurable
+  useEffect(() => {
+    if (isDismissed || impressionTracked.current) return;
+    impressionTracked.current = true;
+    fetch('/api/track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        event: 'email_capture_impression',
+        page: window.location.pathname,
+        context,
+      }),
+    }).catch(() => {});
+  }, [isDismissed, context]);
 
   const handleDismiss = () => {
-    localStorage.setItem('email-capture-dismissed', 'true');
+    localStorage.setItem(`email-capture-dismissed:${context}`, 'true');
     setIsDismissed(true);
   };
 
@@ -61,6 +83,9 @@ export default function EmailCapture({
     setSubstackUrl(url);
     setStatus('success');
     setMessage("Almost done. Confirm on Substack and you're in.");
+
+    // A real signup quiets every capture surface site-wide
+    localStorage.setItem('email-capture-subscribed', 'true');
 
     // Record the signup + analytics in the background; UX doesn't depend on it
     fetch('/api/subscribe', {
