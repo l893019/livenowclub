@@ -94,8 +94,8 @@ export default function ExitIntentPopup({ enabled = true }: ExitIntentPopupProps
           </p>
           <EmailCapture
             context="exit-intent"
-            title="More like this?"
-            description="Essays on mortality and joy, delivered occasionally. No spam."
+            title="Before you go"
+            description="One essay most weeks, on living like now is all we have. Free."
           />
         </div>
       </div>

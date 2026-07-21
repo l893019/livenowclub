@@ -167,8 +167,8 @@ export default function SubscribeTab() {
             <div className={styles.panelContent}>
               <EmailCapture
                 context="floating-tab"
-                title="Subscribe"
-                description="Essays on living now. Delivered occasionally."
+                title="Join the club"
+                description="One essay most weeks, on living like now is all we have."
                 onSuccess={handleSubscribeSuccess}
               />
             </div>

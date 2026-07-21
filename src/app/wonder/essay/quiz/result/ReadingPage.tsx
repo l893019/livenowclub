@@ -553,8 +553,8 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
         <EmailCapture
           identity={identity.name}
           context="quiz-result"
-          title="More like this?"
-          description="Essays on living now. Delivered occasionally."
+          title="Join the club"
+          description="One essay most weeks, on living like now is all we have."
         />
       )}
 

@@ -16,8 +16,8 @@ export default function EmailCapture({
   identity,
   quizAnswers,
   context = 'essay',
-  title = 'More like this?',
-  description = 'Essays on living now. Delivered occasionally.',
+  title = 'Join the club',
+  description = 'One essay most weeks, on living like now is all we have.',
   onSuccess,
 }: EmailCaptureProps) {
   const [email, setEmail] = useState('');
@@ -156,8 +156,8 @@ export default function EmailCapture({
         ×
       </button>
       <div className={styles.content}>
-        <h3 className={styles.title}>{title}</h3>
-        <p className={styles.description}>{description}</p>
+        {title && <h3 className={styles.title}>{title}</h3>}
+        {description && <p className={styles.description}>{description}</p>}
 
         <form onSubmit={handleSubmit} className={styles.form}>
           <input
@@ -174,12 +174,12 @@ export default function EmailCapture({
             disabled={status === 'loading'}
             className={styles.button}
           >
-            {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
+            {status === 'loading' ? 'Joining...' : 'Join'}
           </button>
         </form>
 
         <p className={styles.privacy}>
-          No spam. Unsubscribe anytime.
+          Free. Unsubscribe anytime.
         </p>
 
         {status === 'error' && (

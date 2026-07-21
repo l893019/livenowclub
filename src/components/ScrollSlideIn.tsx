@@ -93,8 +93,8 @@ export default function ScrollSlideIn({
       </button>
       <div className={styles.content}>
         <div className={styles.text}>
-          <h3 className={styles.title}>Like what you're reading?</h3>
-          <p className={styles.subtitle}>Essays on mortality and joy, delivered occasionally.</p>
+          <h3 className={styles.title}>Reading along? Join the club.</h3>
+          <p className={styles.subtitle}>One essay most weeks, on living like now is all we have.</p>
         </div>
         <EmailCapture
           context="essay"
