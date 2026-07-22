@@ -389,11 +389,37 @@ export default function NavigateCancerPage() {
           </div>
         </section>
 
+        {/* After Treatment */}
+        <section id="after-treatment" className="guide-section guide-section--white">
+          <div className="guide-section-inner">
+            <div className="guide-section-header">
+              <span className="guide-section-number">04</span>
+              <h2>{CANCER_GUIDE[4].title}</h2>
+              <p>{CANCER_GUIDE[4].subtitle}</p>
+            </div>
+            <div className="guide-grid">
+              {getCancerGuideEssays("survivorship").map((essay) => (
+                <Link key={essay.slug} href={`/read/${essay.slug}`} className="guide-card">
+                  {essay.image && (
+                    <div className="guide-card-image">
+                      <img src={essay.image} alt={essay.title} />
+                    </div>
+                  )}
+                  <div className="guide-card-content">
+                    <h3>{essay.title}</h3>
+                    <p>{essay.excerpt}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Living with Uncertainty */}
         <section id="living-with-uncertainty" className="guide-section">
           <div className="guide-section-inner">
             <div className="guide-section-header">
-              <span className="guide-section-number">04</span>
+              <span className="guide-section-number">05</span>
               <h2>{CANCER_GUIDE[5].title}</h2>
               <p>{CANCER_GUIDE[5].subtitle}</p>
             </div>
@@ -419,7 +445,7 @@ export default function NavigateCancerPage() {
         <section id="finding-meaning" className="guide-section guide-section--alt">
           <div className="guide-section-inner">
             <div className="guide-section-header">
-              <span className="guide-section-number">05</span>
+              <span className="guide-section-number">06</span>
               <h2>{CANCER_GUIDE[6].title}</h2>
               <p>{CANCER_GUIDE[6].subtitle}</p>
             </div>
