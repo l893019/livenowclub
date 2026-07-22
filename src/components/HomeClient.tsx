@@ -168,7 +168,7 @@ export default function HomeClient({
   return (
     <>
       <Header />
-      <ScrollSlideIn enabled={true} scrollThreshold={50} />
+      <ScrollSlideIn enabled={true} scrollThreshold={50} suppressSelector="#join" />
 
       {/* HERO */}
       <section className="hero">

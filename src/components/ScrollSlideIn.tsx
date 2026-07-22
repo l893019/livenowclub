@@ -7,14 +7,17 @@ import styles from './ScrollSlideIn.module.css';
 type ScrollSlideInProps = {
   enabled?: boolean;
   scrollThreshold?: number; // Percentage of page scrolled (0-100)
+  suppressSelector?: string; // Hide while this element is in the viewport (e.g. an inline subscribe form)
 };
 
 export default function ScrollSlideIn({
   enabled = true,
-  scrollThreshold = 50
+  scrollThreshold = 50,
+  suppressSelector,
 }: ScrollSlideInProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [hasTriggered, setHasTriggered] = useState(false);
+  const [suppressed, setSuppressed] = useState(false);
 
   useEffect(() => {
     if (!enabled) return;
@@ -32,9 +35,21 @@ export default function ScrollSlideIn({
     }
 
     const handleScroll = () => {
-      if (hasTriggered) return;
-
       const windowHeight = window.innerHeight;
+
+      // Don't compete with an inline subscribe form that's on screen
+      let overlapping = false;
+      if (suppressSelector) {
+        const el = document.querySelector(suppressSelector);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          overlapping = rect.top < windowHeight && rect.bottom > 0;
+        }
+      }
+      setSuppressed(overlapping);
+
+      if (hasTriggered || overlapping) return;
+
       const documentHeight = document.documentElement.scrollHeight;
       const scrollTop = window.scrollY;
       const scrollPercent = ((scrollTop + windowHeight) / documentHeight) * 100;
@@ -63,7 +78,7 @@ export default function ScrollSlideIn({
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [enabled, scrollThreshold, hasTriggered]);
+  }, [enabled, scrollThreshold, hasTriggered, suppressSelector]);
 
   const handleClose = () => {
     setIsVisible(false);
@@ -80,7 +95,7 @@ export default function ScrollSlideIn({
     }).catch(() => {});
   };
 
-  if (!isVisible) return null;
+  if (!isVisible || suppressed) return null;
 
   return (
     <div className={styles.container}>
