@@ -100,6 +100,7 @@ export default function ScrollSlideIn({
           context="essay"
           title=""
           description=""
+          showDismiss={false}
         />
       </div>
     </div>

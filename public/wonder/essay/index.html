@@ -3066,8 +3066,8 @@
 
   <!-- MID-ESSAY SUBSCRIBE -->
   <div class="mid-essay-subscribe" id="midEssaySubscribe">
-    <h3>Enjoying This?</h3>
-    <p>Get more essays on meaning, AI, and the bigger questions.</p>
+    <h3>Join the club</h3>
+    <p>One essay most weeks, on living like now is all we have.</p>
     <form id="midEssayForm">
       <input
         type="email"
@@ -3075,10 +3075,10 @@
         placeholder="your@email.com"
         required
       />
-      <button type="submit" id="midEssayBtn">Subscribe</button>
+      <button type="submit" id="midEssayBtn">Join</button>
     </form>
     <div id="midEssayStatus"></div>
-    <p class="privacy-note">No spam. Unsubscribe anytime.</p>
+    <p class="privacy-note">Free. Unsubscribe anytime.</p>
   </div>
 
   <!-- ═══════════════════════════════════════════════════════════════════════ -->
@@ -4006,52 +4006,42 @@
 
       if (!form) return;
 
-      form.addEventListener('submit', async function(e) {
+      form.addEventListener('submit', function(e) {
         e.preventDefault();
 
         const email = input.value.trim();
-        if (!email) return;
+        if (!email || !email.includes('@')) return;
 
-        // Update UI
+        // Substack no longer accepts server-side signups. Open its subscribe
+        // page pre-filled, synchronously inside the submit gesture so popup
+        // blockers stay out of the way (matches EmailCapture.tsx).
+        const substackUrl = 'https://louiseireland.substack.com/subscribe?email=' +
+          encodeURIComponent(email) + '&utm_source=livenowclub';
+        window.open(substackUrl, '_blank', 'noopener,noreferrer');
+
         btn.disabled = true;
-        btn.textContent = 'Subscribing...';
-        status.className = '';
-        status.textContent = '';
+        btn.textContent = 'Joined ✓';
+        input.value = '';
+        status.className = 'success-message';
+        status.innerHTML = 'Almost done. Confirm on Substack and you\'re in. ' +
+          '<a href="' + substackUrl + '" target="_blank" rel="noopener noreferrer">Tab didn\'t open?</a>';
 
-        try {
-          const response = await fetch('/api/subscribe', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, referrer: document.referrer })
-          });
+        // Record the signup + analytics in the background; UX doesn't depend on it
+        fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, referrer: document.referrer })
+        }).catch(() => {});
 
-          const data = await response.json();
-
-          if (data.success) {
-            status.className = 'success-message';
-            status.textContent = data.message || 'Thanks! Check your email to confirm.';
-            input.value = '';
-            btn.textContent = 'Subscribed ✓';
-
-            // Track signup
-            fetch('/api/track', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                event: 'email_signup',
-                page: window.location.pathname,
-                context: 'mid-essay'
-              })
-            }).catch(() => {});
-          } else {
-            throw new Error(data.error || 'Subscription failed');
-          }
-        } catch (error) {
-          status.className = 'error-message';
-          status.textContent = error.message || 'Something went wrong. Please try again.';
-          btn.disabled = false;
-          btn.textContent = 'Subscribe';
-        }
+        fetch('/api/track', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            event: 'email_signup',
+            page: window.location.pathname,
+            context: 'mid-essay'
+          })
+        }).catch(() => {});
       });
     })();
   </script>

@@ -10,6 +10,7 @@ type EmailCaptureProps = {
   title?: string;
   description?: string;
   onSuccess?: () => void;
+  showDismiss?: boolean; // false when a parent surface provides its own close button
 };
 
 export default function EmailCapture({
@@ -19,6 +20,7 @@ export default function EmailCapture({
   title = 'Join the club',
   description = 'One essay most weeks, on living like now is all we have.',
   onSuccess,
+  showDismiss = true,
 }: EmailCaptureProps) {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -118,13 +120,15 @@ export default function EmailCapture({
   if (status === 'success') {
     return (
       <div className={styles.container}>
-        <button
-          onClick={handleDismiss}
-          className={styles.closeButton}
-          aria-label="Dismiss"
-        >
-          ×
-        </button>
+        {showDismiss && (
+          <button
+            onClick={handleDismiss}
+            className={styles.closeButton}
+            aria-label="Dismiss"
+          >
+            ×
+          </button>
+        )}
         <div className={styles.success}>
           <div className={styles.successIcon}>✓</div>
           <h3>{message}</h3>
@@ -148,13 +152,15 @@ export default function EmailCapture({
 
   return (
     <div className={styles.container}>
-      <button
-        onClick={handleDismiss}
-        className={styles.closeButton}
-        aria-label="Dismiss"
-      >
-        ×
-      </button>
+      {showDismiss && (
+        <button
+          onClick={handleDismiss}
+          className={styles.closeButton}
+          aria-label="Dismiss"
+        >
+          ×
+        </button>
+      )}
       <div className={styles.content}>
         {title && <h3 className={styles.title}>{title}</h3>}
         {description && <p className={styles.description}>{description}</p>}
