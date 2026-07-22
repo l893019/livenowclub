@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import type { Essay } from "@/lib/essays";
 import ReadingProgress from "./ReadingProgress";
 import ExitIntentPopup from "./ExitIntentPopup";
+import ScrollSlideIn from "./ScrollSlideIn";
 import { useScrollDepth } from '@/hooks/useScrollDepth';
 import { useRelatedEssaysTracking } from '@/hooks/useRelatedEssaysTracking';
 import { trackEvent } from '@/lib/analytics';
@@ -260,6 +261,8 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
     <>
       <ReadingProgress />
       <ExitIntentPopup enabled={true} />
+      {/* Hide once the reader reaches the footer's own Subscribe card */}
+      <ScrollSlideIn enabled={true} scrollThreshold={60} suppressSelector=".essay-footer" />
 
       {/* Header */}
       <header className="header">
