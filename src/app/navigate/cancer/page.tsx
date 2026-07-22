@@ -220,9 +220,8 @@ export default function NavigateCancerPage() {
           <span className="navigate-label">Lou's Guide to Cancer</span>
           <h1>Everything I Wish Someone Had Told Me</h1>
           <p>
-            A practical cancer guide, from diagnosis through treatment and survivorship.
-            What to prepare, what to say, and how to keep living, written by a survivor
-            who has lived every page of it. Free to read, download, and share.
+            Writing through my cancer journey to keep my sanity. A mix of practical
+            guides, essays, meditations, and poems.
           </p>
           <div style={{ marginTop: "24px", display: "flex", flexWrap: "wrap", gap: "12px", justifyContent: "center" }}>
             <Link
@@ -591,7 +590,7 @@ export default function NavigateCancerPage() {
 
         {/* Footer CTA */}
         <section className="guide-footer-cta">
-          <p>You're not alone in this.</p>
+          <p>Every day, I return to this moment, wrestling with the humbling truth that binds us together - both small and scared, both fighting fiercely against the tide.</p>
           <div className="guide-footer-buttons">
             <Link href="/connect" className="btn btn--primary">
               Share Your Story
