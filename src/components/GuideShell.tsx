@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Header from "@/components/Header";
+import EmailCapture from "@/components/EmailCapture";
 import { GuideInfo, GuideFaq, guideJsonLd } from "@/lib/guides";
 
 // Shared template for practical guide pages (/navigate/cancer/<slug>).
@@ -63,6 +64,8 @@ export default function GuideShell({
           </p>
 
           {children}
+
+          <EmailCapture context="guide" />
 
           <h2 style={GS.h2}>Common questions</h2>
           <div>

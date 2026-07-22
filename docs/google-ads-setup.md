@@ -1,6 +1,70 @@
 # Google Ads Setup for Cancer Guide
 
-## Overview
+## TEST CAMPAIGN SPEC (2026-07-22) — run this before anything below
+
+Goal: learn the cost per email signup with a small, capped test. The monthly
+budgets further down this doc are premature until this test reports.
+
+Attribution is live on the site as of today: any URL with utm params (or gclid)
+is tracked through to signup. Results appear in the /api/stats `acquisition`
+section (pageviews and signups per source/campaign). No gtag needed for the test.
+
+### Settings
+- Budget: $10/day, 14 days, ~$140 max. Hard stop at $140.
+- Type: Search only. Turn OFF Display Network and Search Partners.
+- Bidding: Maximize clicks with a $2.00 max CPC limit.
+- Location: United States. Language: English.
+- Kill criteria at $100 spend: zero signups, or cost per signup over $25 → pause.
+  Under $10 per signup → worth discussing scale.
+
+### Ad groups (one per guide page)
+
+Landing URLs all carry:
+`?utm_source=google&utm_medium=cpc&utm_campaign=guide-test&utm_content=<adgroup>`
+
+1. **what-to-say** → /navigate/cancer/what-to-say
+   Keywords: [what to say to someone with cancer], [what to say to a cancer patient],
+   "what to say to someone diagnosed with cancer"
+2. **prepare-for-chemo** → /navigate/cancer/how-to-prepare-for-chemo
+   Keywords: [how to prepare for chemotherapy], [chemo preparation checklist],
+   [what to bring to chemo], "first chemo what to expect"
+3. **just-diagnosed** → /navigate/cancer/just-diagnosed
+   Keywords: [just diagnosed with cancer], [what to do after cancer diagnosis],
+   "newly diagnosed with cancer what to do"
+4. **how-to-help** → /navigate/cancer/how-to-help-someone-with-cancer
+   Keywords: [how to help someone with cancer], [how to support someone with cancer],
+   "friend has cancer how to help"
+
+### Negative keywords (campaign level)
+lawyer, attorney, lawsuit, compensation, settlement, mesothelioma, jobs, salary,
+hiring, near me, insurance, medicaid, medicare, life expectancy, survival rate,
+symptoms, signs of, is it cancer, clinical trial
+
+(Informational "is it cancer" searchers aren't the audience; legal/medical/job
+queries burn budget.)
+
+### Draft ad copy (needs Louise's approval before launch; char limits: headlines 30, descriptions 90)
+
+- what-to-say: H "What to Say. From a Survivor" / "The Words That Actually Help" /
+  "Free Guide, No Signup" — D "What helped, what hurt, and what to do when there
+  are no words. From a survivor."
+- prepare-for-chemo: H "Preparing for Chemo" / "A Survivor's Checklist" /
+  "What I Wish I'd Known" — D "The checklist I wish I'd had before my first
+  infusion. Written by a survivor. Free."
+- just-diagnosed: H "Just Diagnosed?" / "What to Do First" / "From a Survivor,
+  Free" — D "The first moves that matter: care team, second opinions, staying
+  off Google. Free guide."
+- how-to-help: H "Your Friend Has Cancer" / "How to Actually Help" / "From
+  Someone Who Lived It" — D "Specific offers, consistency, and showing up after
+  everyone else moves on. Free guide."
+
+### Measuring
+`curl -H "Authorization: Bearer <ADMIN_API_KEY>" https://livenowclub.com/api/stats | jq .acquisition`
+Cost per signup = spend / acquisition.signups["google/guide-test"].
+
+---
+
+## Overview (original doc, pre-test — do not action until the test reports)
 This guide helps you set up Google Ads to reach people searching for cancer support and resources.
 
 ## Budget Recommendation

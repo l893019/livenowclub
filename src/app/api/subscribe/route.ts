@@ -12,7 +12,7 @@ const SUBSTACK_URL = process.env.SUBSTACK_URL || 'https://louiseireland.substack
 // subscribe page with their email pre-filled, one click to finish.
 export async function POST(request: NextRequest) {
   try {
-    const { email, identity, quizAnswers, referrer } = await request.json();
+    const { email, identity, quizAnswers, referrer, acquisition } = await request.json();
 
     if (!email || !email.includes('@')) {
       return NextResponse.json({ error: 'Invalid email' }, { status: 400 });
@@ -33,6 +33,7 @@ export async function POST(request: NextRequest) {
       identity,
       quizAnswers,
       referrer,
+      acquisition,
       timestamp,
       visitorId,
       substackStatus: 'handoff',
@@ -50,6 +51,12 @@ export async function POST(request: NextRequest) {
     // Track funnel metrics
     await redis.incr(`stats:emails:${date}`);
     await redis.incr(`stats:emails:total`);
+
+    // Track signups by acquisition source (utm/gclid campaigns)
+    if (acquisition && typeof acquisition === 'string') {
+      await redis.hincrby(`stats:acquisition-signups:${date}`, acquisition.slice(0, 100), 1);
+      await redis.expire(`stats:acquisition-signups:${date}`, 90 * 24 * 60 * 60);
+    }
 
     return NextResponse.json({
       success: true,

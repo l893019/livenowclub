@@ -6,7 +6,7 @@ import styles from './EmailCapture.module.css';
 type EmailCaptureProps = {
   identity?: string;
   quizAnswers?: string[];
-  context?: 'quiz-result' | 'exit-intent' | 'essay' | 'floating-tab';
+  context?: 'quiz-result' | 'exit-intent' | 'essay' | 'floating-tab' | 'guide';
   title?: string;
   description?: string;
   onSuccess?: () => void;
@@ -90,6 +90,11 @@ export default function EmailCapture({
     localStorage.setItem('email-capture-subscribed', 'true');
 
     // Record the signup + analytics in the background; UX doesn't depend on it
+    let acquisition: string | null = null;
+    try {
+      acquisition = sessionStorage.getItem('acquisition-source');
+    } catch {}
+
     fetch('/api/subscribe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -98,6 +103,7 @@ export default function EmailCapture({
         identity,
         quizAnswers,
         referrer: document.referrer,
+        acquisition: acquisition || undefined,
       }),
     }).catch(() => {});
 
@@ -109,6 +115,7 @@ export default function EmailCapture({
         page: window.location.pathname,
         identity,
         context,
+        metadata: acquisition ? { acquisition } : undefined,
       }),
     }).catch(() => {});
 

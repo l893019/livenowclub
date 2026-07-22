@@ -15,7 +15,7 @@ const redis = new Redis(process.env.REDIS_URL || '');
  */
 export async function POST(request: NextRequest) {
   try {
-    const { page, referrer, event, identity, context, metadata, sessionId, noTrack } = await request.json();
+    const { page, referrer, event, identity, context, metadata, sessionId, noTrack, acquisition } = await request.json();
 
     // Skip tracking if noTrack flag is set
     if (noTrack) {
@@ -136,6 +136,12 @@ export async function POST(request: NextRequest) {
 
       // Track countries
       await redis.incr(`stats:countries:${date}:${country}`);
+
+      // Track acquisition source (utm/gclid campaigns)
+      if (acquisition && typeof acquisition === 'string') {
+        await redis.hincrby(`stats:acquisition:${date}`, acquisition.slice(0, 100), 1);
+        await redis.expire(`stats:acquisition:${date}`, 90 * 24 * 60 * 60);
+      }
 
       // Store recent visit
       await redis.zadd(

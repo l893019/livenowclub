@@ -25,6 +25,10 @@ export async function GET(request: NextRequest) {
       visitors: {},
       referrers: {},
       countries: {},
+      acquisition: {
+        pageviews: {} as Record<string, number>,
+        signups: {} as Record<string, number>,
+      },
       recent: [],
       topPages: [],
       emails: {
@@ -92,6 +96,18 @@ export async function GET(request: NextRequest) {
         } else {
           stats.topPages.push({ page, views: parseInt(count || '0') });
         }
+      }
+
+      // Get acquisition sources (utm/gclid campaigns) and their signups
+      const acqViews = await redis.hgetall(`stats:acquisition:${date}`);
+      for (const [source, count] of Object.entries(acqViews || {})) {
+        stats.acquisition.pageviews[source] =
+          (stats.acquisition.pageviews[source] || 0) + parseInt(count || '0');
+      }
+      const acqSignups = await redis.hgetall(`stats:acquisition-signups:${date}`);
+      for (const [source, count] of Object.entries(acqSignups || {})) {
+        stats.acquisition.signups[source] =
+          (stats.acquisition.signups[source] || 0) + parseInt(count || '0');
       }
 
       // Get referrers

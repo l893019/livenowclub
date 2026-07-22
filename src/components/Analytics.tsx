@@ -28,6 +28,19 @@ export default function Analytics() {
     // Initialize session ID
     sessionId.current = getSessionId();
 
+    // Capture acquisition source (utm/gclid) once per session so paid and
+    // campaign traffic stays attributable through to signup
+    let acquisition: string | null = null;
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const source = params.get('utm_source') || (params.get('gclid') ? 'google-ads' : null);
+      if (source && !sessionStorage.getItem('acquisition-source')) {
+        const campaign = params.get('utm_campaign');
+        sessionStorage.setItem('acquisition-source', campaign ? `${source}/${campaign}` : source);
+      }
+      acquisition = sessionStorage.getItem('acquisition-source');
+    } catch {}
+
     // Track pageview
     const trackPageview = async () => {
       try {
@@ -38,6 +51,7 @@ export default function Analytics() {
             page: pathname,
             referrer: document.referrer,
             sessionId: sessionId.current,
+            acquisition: acquisition || undefined,
             noTrack,
           }),
         });
