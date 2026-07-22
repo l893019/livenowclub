@@ -3,6 +3,50 @@
 ## Overview
 Partner with cancer organizations to share the guide with people who need it most.
 
+## Execution log (2026-07-22)
+
+Decision: no paid Google Ads for now. Health-condition audience targeting is
+prohibited by Google's personalized-ads policy, informational search queries are
+what the guide pages already rank for organically, and with no revenue per
+visitor the cost per free subscriber doesn't close. Revisit if the site becomes
+a 501(c)(3): Google Ad Grants gives nonprofits $10k/month of free search ads.
+
+Wave 1 targets (drafts written, plain-voice, superseding the templates below,
+which read as AI and should not be sent as-is):
+
+| Org | Contact | Angle | Status |
+|---|---|---|---|
+| Elephants and Tea | nick@elephantsandtea.org | Essay submission (AYA magazine, 750-1000 words; also Write For Us page) | Draft ready, awaiting Gmail auth |
+| Imerman Angels | info@imermanangels.org | Resource directory listing + Mentor Angel interest. Partnerships director: Jackie Herigodt | Draft ready, awaiting Gmail auth |
+| Stupid Cancer | contact@stupidcancer.org | AYA community resource + meetup/Campference contribution | Draft ready, awaiting Gmail auth |
+| Cervivor | info@cervivor.org | Cervical-specific community, Louise's exact diagnosis | Draft below, not yet in Gmail |
+
+Blockers requiring Louise: Gmail OAuth for creating drafts; macOS Keychain
+approval for the Search Console session. Search Console review (which guide
+pages get impressions) still pending; do it before building more guide pages.
+
+Next waves: Tier 1/2 orgs listed below, plus oncology social workers (AOSW,
+aosw.org) for PDF distribution to infusion centers.
+
+### Wave 1 draft: Cervivor
+
+Subject: From a fellow cervical cancer survivor
+
+Hi,
+
+I was diagnosed with cervical cancer at 34, stage III that became stage IV
+within months. I wrote through treatment to keep my sanity, and it became a
+free guide (livenowclub.com/navigate/cancer, printable PDF, no signup) plus
+essays at livenowclub.com.
+
+If any of it would be useful to the Cervivor community, I'd love to share it.
+I'm also happy to contribute my story wherever it helps.
+
+Thank you for building this.
+
+Louise Ireland
+livenowclub.com
+
 ## Target Organizations
 
 ### Tier 1: Mentioned in the Guide (High Priority)
