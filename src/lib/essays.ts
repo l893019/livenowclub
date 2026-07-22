@@ -547,7 +547,7 @@ export const CANCER_GUIDE: Pathway[] = [
   {
     id: "survivorship",
     title: "After Treatment",
-    subtitle: "What comes next. Recovery, grief, and rebuilding.",
+    subtitle: "I wept from the strangeness of return.",
     essays: [
       "the-other-side-of-grief", // Post-treatment processing
       "life-is-not-empty", // Collapse, creation, recovery
@@ -570,7 +570,7 @@ export const CANCER_GUIDE: Pathway[] = [
   {
     id: "finding-meaning",
     title: "Finding Meaning",
-    subtitle: "Making sense of it all.",
+    subtitle: "Ever so often, a sentence arrives that splits me open.",
     essays: [
       "the-live-now-club", // The core philosophy
       "god-is-in-the-trees", // Transforming illness into art/spirituality

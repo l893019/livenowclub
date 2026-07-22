@@ -252,10 +252,10 @@ export default function NavigateCancerPage() {
           <div className="quick-links-grid">
             {[
               { href: "/read/expecting-the-unexpected#before-you-start-treatment", num: "01", title: "Just Diagnosed", sub: "Start here" },
-              { href: "/read/expecting-the-unexpected#treatment", num: "02", title: "During Treatment", sub: "Practical guidance" },
+              { href: "/read/expecting-the-unexpected#treatment", num: "02", title: "During Treatment", sub: "From the guide" },
               { href: "/read/expecting-the-unexpected#how-do-you-support-a-friend-with-cancer", num: "03", title: "For Caregivers", sub: "Supporting someone" },
               { href: "/read/expecting-the-unexpected#survivorship", num: "04", title: "Living with Uncertainty", sub: "Holding it loosely" },
-              { href: "/read/expecting-the-unexpected#core-principles", num: "05", title: "Core Principles", sub: "Essential guidance" },
+              { href: "/read/expecting-the-unexpected#core-principles", num: "05", title: "Core Principles", sub: "From the guide" },
             ].map((item) => (
               <Link key={item.href} href={item.href} className="quick-link-card">
                 <span className="quick-link-number">{item.num}</span>
@@ -272,7 +272,6 @@ export default function NavigateCancerPage() {
             <div className="guide-section-header">
               <span className="guide-section-number">Practical Guides</span>
               <h2>One Question, One Page</h2>
-              <p>Plain-language reference pages, distilled from my essays. Made to be found, used, and passed along.</p>
             </div>
             <div className="quick-links-grid">
               {GUIDES.map((g) => (
@@ -448,7 +447,7 @@ export default function NavigateCancerPage() {
             <div className="guide-section-header">
               <span className="guide-section-number">Resources</span>
               <h2>Helpful Organizations & Tools</h2>
-              <p>Organizations and resources mentioned in the comprehensive guide</p>
+              <p>What I actually used.</p>
             </div>
             <div className="resources-grid">
               <div className="resource-category">
@@ -530,7 +529,6 @@ export default function NavigateCancerPage() {
             <div className="guide-section-header">
               <span className="guide-section-number">FAQ</span>
               <h2>Common Questions</h2>
-              <p>The questions people ask most, at diagnosis, in treatment, and from the people who love them</p>
             </div>
             <div style={{ maxWidth: "720px", margin: "0 auto" }}>
               {FAQS.map((faq) => (
