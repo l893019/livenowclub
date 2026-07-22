@@ -524,7 +524,7 @@ export const CANCER_GUIDE: Pathway[] = [
   {
     id: "during-treatment",
     title: "During Treatment",
-    subtitle: "Practical guidance for the hardest days.",
+    subtitle: "A guide I wrote for myself and a mix of essays and intellectual explorations.",
     essays: [
       "how-to-reset-your-nervous-system",
       "consider-the-hospital-ceiling",
@@ -536,7 +536,7 @@ export const CANCER_GUIDE: Pathway[] = [
   {
     id: "for-caregivers",
     title: "For Caregivers",
-    subtitle: "How to support someone you love through this.",
+    subtitle: "What should you say to a cancer patient? How my mom and community supported me through this.",
     essays: [
       "fixing-the-unfixable", // THE essay on what to say - first for caregivers
       "expecting-the-unexpected", // Has caregiver section at the end
