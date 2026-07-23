@@ -2,7 +2,7 @@
 // Rich group readings for 3+ people - new 4-section structure
 // Section 1: Your Group at a Glance
 // Section 2: Who Plays What Role
-// Section 3: Where You'll Click / Where You'll Push Each Other
+// Section 3: Where You’ll Click / Where You’ll Push Each Other
 // Section 4: What Your Group Might Overdo / Underdo
 
 import { archetypes } from "@/lib/archetypes";
@@ -143,10 +143,10 @@ const quadrantStruggles: Record<Quadrant, string[]> = {
 };
 
 const quadrantMissing: Record<Quadrant, string> = {
-  reach: "No one here is pulling toward REACH — the transcendent, the visionary, the \"what if we became something entirely new?\" You're grounded. Make sure that doesn't become stuck.",
-  ground: "No one here is pulling toward GROUND — the rooted, the present, the \"what's actually here right now?\" You're reaching and building. Make sure you stay tethered.",
-  build: "No one here is pulling toward BUILD — the maker, the shaper, the \"let's make this real.\" You perceive and question. Make sure something gets made.",
-  perceive: "No one here is pulling toward PERCEIVE — the observer, the questioner, the \"what are we not seeing?\" You're all action. Make sure you don't miss what's hidden.",
+  reach: "No one here is pulling toward REACH — the transcendent, the visionary, the \"what if we became something entirely new?\" You’re grounded. Make sure that doesn’t become stuck.",
+  ground: "No one here is pulling toward GROUND — the rooted, the present, the \"what’s actually here right now?\" You’re reaching and building. Make sure you stay tethered.",
+  build: "No one here is pulling toward BUILD — the maker, the shaper, the \"let’s make this real.\" You perceive and question. Make sure something gets made.",
+  perceive: "No one here is pulling toward PERCEIVE — the observer, the questioner, the \"what are we not seeing?\" You’re all action. Make sure you don’t miss what’s hidden.",
 };
 
 function generateAtGlance(members: GroupMember[]): GroupAtGlance {
@@ -189,7 +189,7 @@ function generateAtGlance(members: GroupMember[]): GroupAtGlance {
     }
   }
 
-  // What's missing - based on empty quadrants
+  // What’s missing - based on empty quadrants
   let whatsMissing = "";
   if (empty.length > 0) {
     whatsMissing = quadrantMissing[empty[0]];
@@ -207,10 +207,10 @@ function generateAtGlance(members: GroupMember[]): GroupAtGlance {
 
 function getQuadrantVerb(quadrant: Quadrant): string {
   switch (quadrant) {
-    case "reach": return "see what's possible and reach for it";
+    case "reach": return "see what’s possible and reach for it";
     case "ground": return "stay rooted in what is";
     case "build": return "make things real";
-    case "perceive": return "see what's true";
+    case "perceive": return "see what’s true";
   }
 }
 
@@ -236,21 +236,21 @@ const archetypeRoles: Record<string, string> = {
   between: "THE QUESTION",
 };
 
-// Base descriptions for each archetype's role
+// Base descriptions for each archetype’s role
 const archetypeBaseDescriptions: Record<string, string> = {
-  citizen: "You expand what's possible. When others see limits, you see opportunities to make the pie bigger. You remind the group that scarcity is usually a design choice.",
-  shaper: "You're the engine. When the group is still weighing options, you're already prototyping. You turn insight into artifact. Without you, nothing ships.",
-  architect: "You see the invisible architecture. You're the one asking who this serves and how it could serve everyone. You design for collective ownership.",
-  presence: "You're the one who notices when the group is rushing past something important. When others want to solve, you ask: \"Are we actually feeling this?\" You slow things down — not to stall, but to arrive.",
+  citizen: "You expand what’s possible. When others see limits, you see opportunities to make the pie bigger. You remind the group that scarcity is usually a design choice.",
+  shaper: "You’re the engine. When the group is still weighing options, you’re already prototyping. You turn insight into artifact. Without you, nothing ships.",
+  architect: "You see the invisible architecture. You’re the one asking who this serves and how it could serve everyone. You design for collective ownership.",
+  presence: "You’re the one who notices when the group is rushing past something important. When others want to solve, you ask: \"Are we actually feeling this?\" You slow things down — not to stall, but to arrive.",
   swimmer: "You hold the questions. When others reach for answers, you stay in uncertainty. You remind the group that not-knowing is sometimes the most honest position.",
-  rooted: "You're the anchor. When the group gets swept up in momentum, you're the one asking whether we need to move at all. You embody the radical act of staying still.",
-  conscience: "You see what others prefer to ignore. You're the one watching for cracks, costs, who's being left out. In a room of optimists, you're the stress test.",
+  rooted: "You’re the anchor. When the group gets swept up in momentum, you’re the one asking whether we need to move at all. You embody the radical act of staying still.",
+  conscience: "You see what others prefer to ignore. You’re the one watching for cracks, costs, who’s being left out. In a room of optimists, you’re the stress test.",
   embers: "You carry the memory. When the group rushes toward the new, you remember what worked, what was lost, what deserves to be carried forward.",
-  friction: "You're the edge. You challenge comfort, question ease, push back when things get too smooth. The group needs your productive resistance.",
+  friction: "You’re the edge. You challenge comfort, question ease, push back when things get too smooth. The group needs your productive resistance.",
   unbound: "You see beyond boundaries. When the group accepts limits, you question them. You remind everyone that what seems fixed can be transcended.",
-  alive: "You feel what others analyze. You're the one asking \"what does this actually feel like?\" You ground the group in sensation and experience.",
-  mender: "You repair what's broken. When others want to build new, you see what's worth fixing. You're the one who says \"wait, this can be saved.\"",
-  cleareyed: "You tell the truth. When others soften their words, you say what's actually happening. The group needs your uncomfortable honesty.",
+  alive: "You feel what others analyze. You’re the one asking \"what does this actually feel like?\" You ground the group in sensation and experience.",
+  mender: "You repair what’s broken. When others want to build new, you see what’s worth fixing. You’re the one who says \"wait, this can be saved.\"",
+  cleareyed: "You tell the truth. When others soften their words, you say what’s actually happening. The group needs your uncomfortable honesty.",
   between: "You hold the threshold. When others demand positions, you stay in the question. You remind the group that neither/both is a valid answer.",
 };
 
@@ -273,12 +273,12 @@ function getRoleModifier(archetype: string, members: GroupMember[]): string {
         return getMinorityModifier(archetype, q);
       }
     }
-    return "You're the only one here with this orientation. Your perspective is rare in this group — make sure it gets heard.";
+    return "You’re the only one here with this orientation. Your perspective is rare in this group — make sure it gets heard.";
   }
 
   // Multiple of same archetype
   if (myCount > 1) {
-    return `There are ${myCount} of you sharing this orientation. You reinforce each other — which can be powerful or an echo chamber. Make sure you're still questioning your shared assumptions.`;
+    return `There are ${myCount} of you sharing this orientation. You reinforce each other — which can be powerful or an echo chamber. Make sure you’re still questioning your shared assumptions.`;
   }
 
   return "";
@@ -287,13 +287,13 @@ function getRoleModifier(archetype: string, members: GroupMember[]): string {
 function getMinorityModifier(archetype: string, minorityQuadrant: Quadrant): string {
   switch (minorityQuadrant) {
     case "reach":
-      return "In a group of grounders and perceivers, you're the one pulling toward possibility. They need your vision. Don't let them pull you down too far.";
+      return "In a group of grounders and perceivers, you’re the one pulling toward possibility. They need your vision. Don’t let them pull you down too far.";
     case "ground":
-      return "In a group of reachers and builders, you're the one keeping feet on earth. They need your anchor. Don't let them make you feel stuck.";
+      return "In a group of reachers and builders, you’re the one keeping feet on earth. They need your anchor. Don’t let them make you feel stuck.";
     case "build":
-      return "In a group of perceivers and questioners, you're the one who makes things real. They need your momentum. Don't let their questions stop you from acting.";
+      return "In a group of perceivers and questioners, you’re the one who makes things real. They need your momentum. Don’t let their questions stop you from acting.";
     case "perceive":
-      return "In a group of builders and doers, you're the one who sees what's true. They need your observation. Don't let their momentum rush you past what matters.";
+      return "In a group of builders and doers, you’re the one who sees what’s true. They need your observation. Don’t let their momentum rush you past what matters.";
   }
 }
 
@@ -319,7 +319,7 @@ function generateRoles(members: GroupMember[]): MemberRole[] {
 }
 
 // =============================================================================
-// SECTION 3: WHERE YOU'LL CLICK / WHERE YOU'LL PUSH
+// SECTION 3: WHERE YOU’LL CLICK / WHERE YOU’LL PUSH
 // =============================================================================
 
 function generatePairDynamics(
@@ -339,7 +339,7 @@ function generatePairDynamics(
       const pairReading = getPairReading(memberA.archetype, memberB.archetype);
       if (!pairReading) continue;
 
-      // Calculate distance to determine if it's a click or push
+      // Calculate distance to determine if it’s a click or push
       const posA = archetypePositions[memberA.archetype];
       const posB = archetypePositions[memberB.archetype];
 

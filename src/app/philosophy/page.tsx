@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Philosophy | The Live Now Club",
   description:
-    "My rules for living fully. I've tested these against mortality, heartbreak, and starting over.",
+    "My rules for living fully. I’ve tested these against mortality, heartbreak, and starting over.",
   keywords: [
     "life principles",
     "rules for living",
@@ -53,14 +53,14 @@ const RULES_FOR_ROOTING = [
   "Be the creator, not the consumer, of your life. Do not live in default mode.",
   "The certainty of death is clarifying. Let mortality sharpen your priorities daily.",
   "Spend more time excavating your own mind than scrolling through others.",
-  "You can't write your own story if you only ever say yes (or no).",
+  "You can’t write your own story if you only ever say yes (or no).",
   "Flow trumps force. Work with your energy rhythms, not artificial deadlines.",
   "Wherever your body is, bring your mind. Half-presence is the thief of all experience.",
   "Let silence punctuate your days; without it, nothing has weight.",
   "The past is fact, but the beliefs you formed about it are fiction.",
-  "Live your life in tune with nature. Avoid anything that disturbs your body's natural rhythm.",
+  "Live your life in tune with nature. Avoid anything that disturbs your body’s natural rhythm.",
   "Your body is a system; view it holistically.",
-  "Pay attention to how you feel after you leave someone. That's the truth of the relationship.",
+  "Pay attention to how you feel after you leave someone. That’s the truth of the relationship.",
   "Where you place your attention, your life will follow.",
   "Amor Fati. Love your fate and commit to your becoming.",
   "Approach the world without the urge to classify or contain.",
@@ -83,7 +83,7 @@ const RULES_FOR_ROOTING = [
   "Without boredom and rest, imagination has no space to appear.",
   "To speak only in your voice is to live in coherence.",
   "The quality of your questions determines the quality of your life.",
-  "Your dreams are your unconscious mind's way of processing what your waking mind cannot integrate.",
+  "Your dreams are your unconscious mind’s way of processing what your waking mind cannot integrate.",
   "Learn to distinguish between what drains your energy and what transforms it.",
 ];
 
@@ -91,7 +91,7 @@ const BUILDING_BLOCKS = [
   { title: "Blood", text: "Do you have too much in your system or too little? Are your cells functioning as they should?" },
   { title: "Light", text: "We are meant to live with the sun. Our bodies need light in the morning to regulate themselves. And we need the inverse: the darkness of sleep, and the rest it brings." },
   { title: "Water", text: "How much exhaustion and mental fatigue can be attributed to dehydration? It is an easy way to kill a flower." },
-  { title: "Food", text: "The healthiest diet for you is the one you can most easily digest and turn into lasting energy. It's back to whole foods, back to nature." },
+  { title: "Food", text: "The healthiest diet for you is the one you can most easily digest and turn into lasting energy. It’s back to whole foods, back to nature." },
   { title: "Breath", text: "How quickly we forget about the breath that sustains us. How grounding it is to breathe deeply, to focus on the exhale, then the inhale." },
   { title: "Spirit", text: "There is no biohack for the joy of having grass in your toes, wind in your face, staring up into the crown shyness of trees. You are more than your body, and yet you live humbly within it." },
 ];
@@ -127,7 +127,7 @@ export default function PhilosophyPage() {
           <h1>The inputs that shape me</h1>
           <p>
             My rules for living fully.
-            I've tested these against mortality, heartbreak, and starting over.
+            I’ve tested these against mortality, heartbreak, and starting over.
           </p>
         </section>
 
@@ -288,7 +288,7 @@ export default function PhilosophyPage() {
             </div>
 
             <p className="life-source">
-              From "Things I've Learned Lately" — {" "}
+              From "Things I’ve Learned Lately" — {" "}
               <Link href="/read/things-ive-learned-lately">Read the full essay →</Link>
             </p>
           </div>

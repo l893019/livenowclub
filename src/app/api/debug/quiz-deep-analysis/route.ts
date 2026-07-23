@@ -55,7 +55,7 @@ export async function GET(request: NextRequest) {
     // Question metadata
     const questionMeta = {
       q1: { topic: "First Reaction", theme: "orientation" },
-      q2: { topic: "What You'd Do", theme: "action" },
+      q2: { topic: "What You’d Do", theme: "action" },
       q3: { topic: "AI/Automation", theme: "technology" },
       q4: { topic: "Past Choices", theme: "reflection" },
       q5: { topic: "Immortality", theme: "mortality" },
@@ -124,7 +124,7 @@ export async function GET(request: NextRequest) {
         answers: pattern.split('-'),
       }));
 
-    // Dimension extremes - who's at the edges?
+    // Dimension extremes - who’s at the edges?
     const extremes = {
       highAgency: users.filter(u => u.dimensions.agency > 0.4).length,
       lowAgency: users.filter(u => u.dimensions.agency < -0.4).length,
@@ -323,25 +323,25 @@ export async function GET(request: NextRequest) {
         {
           title: "The Consensus on AI",
           finding: "48% agree AI is 'useful but not the same'",
-          insight: "Your audience draws a clear line: they'll use the tools, but they're not confused about what's lost. This isn't technophobia or techno-optimism—it's techno-realism.",
+          insight: "Your audience draws a clear line: they’ll use the tools, but they’re not confused about what’s lost. This isn’t technophobia or techno-optimism—it’s techno-realism.",
           questions: ['q3'],
         },
         {
           title: "The Four Great Splits",
           finding: "Four questions split nearly 50/50",
-          insight: "Q1 (optimism vs concern), Q4 (curiosity vs caution), Q6 (agency vs presence), Q7 (equality vs merit). These aren't random—they're the REAL tensions in how people think about utopia.",
+          insight: "Q1 (optimism vs concern), Q4 (curiosity vs caution), Q6 (agency vs presence), Q7 (equality vs merit). These aren’t random—they’re the REAL tensions in how people think about utopia.",
           questions: ['q1', 'q4', 'q6', 'q7'],
         },
         {
           title: "The Moderate Middle",
           finding: "All three dimensions cluster near zero",
-          insight: "In polarized times, thoughtful people refuse binary thinking. They're not builders OR witnesses—they're both. Not seeking OR settled—somewhere between.",
+          insight: "In polarized times, thoughtful people refuse binary thinking. They’re not builders OR witnesses—they’re both. Not seeking OR settled—somewhere between.",
           questions: ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7'],
         },
         {
           title: "The Shaper Majority",
           finding: "35% are Shapers (mid-agency)",
-          insight: "Most people don't want to architect society or just observe it. They want to shape—influence without controlling, participate without owning.",
+          insight: "Most people don’t want to architect society or just observe it. They want to shape—influence without controlling, participate without owning.",
           questions: ['q1', 'q2', 'q6'],
         },
         {
@@ -353,13 +353,13 @@ export async function GET(request: NextRequest) {
         {
           title: "No Dominant Type",
           finding: "26 identities, top one is 9.5%",
-          insight: "If everyone's different, is anyone different? Your quiz revealed a nuanced population—no archetype captures more than 1 in 10.",
+          insight: "If everyone’s different, is anyone different? Your quiz revealed a nuanced population—no archetype captures more than 1 in 10.",
           questions: ['all'],
         },
         {
           title: "The Settled-Expansive Plurality",
           finding: "36% are confident optimists",
-          insight: "The largest group isn't questioning everything OR playing it safe. They're certain enough to take risks. This is optimism without naivety.",
+          insight: "The largest group isn’t questioning everything OR playing it safe. They’re certain enough to take risks. This is optimism without naivety.",
           questions: ['q2', 'q4', 'q5'],
         },
         {

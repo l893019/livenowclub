@@ -111,7 +111,7 @@ export async function getUserResult(userId: string): Promise<UserResult | null> 
     return JSON.parse(data);
   }
 
-  // Fallback: Try to reconstruct user from utopias they're a member of
+  // Fallback: Try to reconstruct user from utopias they’re a member of
   const utopiaKeys = await redis.keys('utopia:*');
   for (const key of utopiaKeys) {
     const utopiaData = await redis.get(key);
@@ -259,7 +259,7 @@ export async function createUtopia(
   // Save utopia
   await redis.set(`utopia:${slug}`, JSON.stringify(room));
 
-  // Add to user's utopia list
+  // Add to user’s utopia list
   await addUtopiaToUser(userId, slug);
 
   return room;
@@ -314,7 +314,7 @@ export async function joinUtopia(
   // Save
   await redis.set(`utopia:${slug}`, JSON.stringify(utopia));
 
-  // Add to user's utopia list
+  // Add to user’s utopia list
   await addUtopiaToUser(userId, slug);
 
   return utopia;
@@ -330,7 +330,7 @@ export async function leaveUtopia(slug: string, userId: string): Promise<boolean
   // Save
   await redis.set(`utopia:${slug}`, JSON.stringify(utopia));
 
-  // Remove from user's utopia list
+  // Remove from user’s utopia list
   await removeUtopiaFromUser(userId, slug);
 
   return true;

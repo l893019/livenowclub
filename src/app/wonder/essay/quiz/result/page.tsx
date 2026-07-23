@@ -16,12 +16,12 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 
   // Use identity for metadata (fallback to generic if not found)
   const displayName = identity?.name || "Your Identity";
-  const displayDescription = identity?.utopia || "Discover the version of the future you're building.";
+  const displayDescription = identity?.utopia || "Discover the version of the future you’re building.";
 
   // Personalized title for shared results
   const ogTitle = userName
     ? `${userName} is ${displayName}. What are you?`
-    : "What's your post-scarcity worldview?";
+    : "What’s your post-scarcity worldview?";
 
   // Use OG API with identity
   const ogImage = identityKey

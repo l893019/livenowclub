@@ -34,7 +34,7 @@ export function MeetPageClient({ targetUser }: Props) {
     sessionStorage.setItem("relationship-compare", targetUser.id);
   };
 
-  // Don't render CTA until we know quiz status
+  // Don’t render CTA until we know quiz status
   if (hasCompletedQuiz === null) {
     return (
       <>

@@ -61,7 +61,7 @@ export function RelationshipComparison({
   }
 
   if (error || !compareUser) {
-    return null; // Silently fail - don't show anything if we can't load the user
+    return null; // Silently fail - don’t show anything if we can’t load the user
   }
 
   const yourArchetype = archetypes[yourArchetypeKey];
@@ -172,7 +172,7 @@ export function RelationshipComparison({
 
       <div className={styles.divider} />
 
-      {/* WHERE YOU'LL CLASH */}
+      {/* WHERE YOU’LL CLASH */}
       <div className={styles.section}>
         <h3 className={styles.sectionTitle}>Where You&apos;ll Clash</h3>
         {dynamic.clash.map((item, i) => (

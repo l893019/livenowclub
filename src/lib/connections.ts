@@ -95,7 +95,7 @@ export async function areConnected(userAId: string, userBId: string): Promise<bo
  */
 export async function removeConnection(userId: string, connectionId: string): Promise<void> {
   await redis.srem(`user:${userId}:connections`, connectionId);
-  // Note: We don't delete the connection itself or remove from other user's list
+  // Note: We don’t delete the connection itself or remove from other user’s list
   // The other person can still see them in their connections
 }
 

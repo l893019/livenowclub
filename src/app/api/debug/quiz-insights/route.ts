@@ -56,7 +56,7 @@ export async function GET(request: NextRequest) {
         C: "Did we lose something?",
         D: "Do we even need purpose?",
         E: "Can we just be present?",
-        F: "What's still broken?"
+        F: "What’s still broken?"
       },
       q2: {
         A: "Build something new",
@@ -64,14 +64,14 @@ export async function GET(request: NextRequest) {
         C: "Reflect first",
         D: "Keep exploring",
         E: "Dissolve into experience",
-        F: "Find what's unjust"
+        F: "Find what’s unjust"
       },
       q3: {
         A: "Useful but not the same",
         B: "Most dangerous invention",
         C: "Let us love better",
-        D: "Wonder what we'll learn",
-        E: "Don't need to perform"
+        D: "Wonder what we’ll learn",
+        E: "Don’t need to perform"
       },
       q4: {
         A: "Need to find out",

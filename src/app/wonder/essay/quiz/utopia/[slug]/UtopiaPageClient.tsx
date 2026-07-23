@@ -157,14 +157,14 @@ export function UtopiaPageClient({
   };
 
   const handleShare = async () => {
-    // Get current user's identity for personalized share text
+    // Get current user’s identity for personalized share text
     const me = members.find((m) => m.id === currentUserId);
     const myIdentity = me ? getMemberIdentity(me.answers, me.archetype) : null;
     const myIdentityName = myIdentity?.name || archetypes[me?.archetype || ""]?.name || "a unique worldview";
 
-    // Share text includes identity: "I'm a Curious Architect. What are you? Take the quiz and join my group."
+    // Share text includes identity: "I’m a Curious Architect. What are you? Take the quiz and join my group."
     const shareText = me
-      ? `I'm a ${myIdentityName}. What are you? Take the quiz and join my group.`
+      ? `I’m a ${myIdentityName}. What are you? Take the quiz and join my group.`
       : `Join ${utopiaName} — a utopia of ${members.length}.`;
 
     if (navigator.share) {
@@ -203,7 +203,7 @@ export function UtopiaPageClient({
     const them = members.find((m) => m.id === selectedMemberId);
 
     if (you && them) {
-      // Show CTA if viewer is on a deep link (viewAsUserId is set) and hasn't taken quiz (no currentUserId)
+      // Show CTA if viewer is on a deep link (viewAsUserId is set) and hasn’t taken quiz (no currentUserId)
       const viewerHasNotTakenQuiz = !!viewAsUserId && !currentUserId;
 
       return (
@@ -224,7 +224,7 @@ export function UtopiaPageClient({
     }
   }
 
-  // Their reading view (viewing another member's full reading)
+  // Their reading view (viewing another member’s full reading)
   if (currentView === "their-reading" && selectedMemberId) {
     const them = members.find((m) => m.id === selectedMemberId);
 
@@ -244,7 +244,7 @@ export function UtopiaPageClient({
     }
   }
 
-  // Profile view (current user's full reading inline)
+  // Profile view (current user’s full reading inline)
   // Always use localStorage directly to avoid any stale state issues
   const actualUserIdForProfile = typeof window !== "undefined" ? localStorage.getItem("quiz-user-id") : null;
   if (currentView === "profile" && actualUserIdForProfile) {

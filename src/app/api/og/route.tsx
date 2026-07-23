@@ -43,7 +43,7 @@ const archetypes: Record<string, { name: string; utopia: string; color: string }
   },
   embers: {
     name: "The Keeper",
-    utopia: "Your utopia's most protected resource is not water or energy. It's memory.",
+    utopia: "Your utopia’s most protected resource is not water or energy. It’s memory.",
     color: "#c97d3a"
   },
   friction: {
@@ -137,7 +137,7 @@ export async function GET(request: NextRequest) {
           {data.utopia}
         </div>
 
-        {/* Person's name if provided */}
+        {/* Person’s name if provided */}
         {name && (
           <div
             style={{
@@ -218,7 +218,7 @@ export async function GET(request: NextRequest) {
             color: 'rgba(45,42,38,0.6)',
           }}
         >
-          {name ? 'What are you? Take the quiz →' : "What's your post-scarcity worldview? Take the quiz →"}
+          {name ? 'What are you? Take the quiz →' : "What’s your post-scarcity worldview? Take the quiz →"}
         </div>
 
         {/* Accent bar - gradient if shadow exists */}

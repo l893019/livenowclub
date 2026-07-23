@@ -17,14 +17,14 @@ export default function AboutPage() {
           </div>
           <div className="about-hero-content">
             <span className="about-label">About</span>
-            <h1>I'm Louise.</h1>
+            <h1>I’m Louise.</h1>
           </div>
         </section>
 
         {/* Introduction */}
         <section className="about-section">
           <p className="about-intro">
-            I'm Louise. I am a person of many verbs <span className="verbs">(writer, founder, investor, painter, experience designer)</span> who is working on being just a noun <span className="noun">(human)</span>. I created this space to start more conversations around life, loss, illness, and the choice to choose joy every time.
+            I’m Louise. I am a person of many verbs <span className="verbs">(writer, founder, investor, painter, experience designer)</span> who is working on being just a noun <span className="noun">(human)</span>. I created this space to start more conversations around life, loss, illness, and the choice to choose joy every time.
           </p>
         </section>
 
@@ -32,7 +32,7 @@ export default function AboutPage() {
         <section className="about-section about-section--story">
           <div className="about-section-content">
             <p>
-              In February 2025, my world was turned upside down. At age 34, I was diagnosed with Stage III cervical cancer out of nowhere, my only symptom being an abnormal period. I underwent a brutal round of external and internal radiation and chemotherapy that completely debilitated me, only to learn a few months after that it hadn't completely worked. My cancer had progressed across my body to multiple organs, putting me in Stage IVB. I was given less than two years to live.
+              In February 2025, my world was turned upside down. At age 34, I was diagnosed with Stage III cervical cancer out of nowhere, my only symptom being an abnormal period. I underwent a brutal round of external and internal radiation and chemotherapy that completely debilitated me, only to learn a few months after that it hadn’t completely worked. My cancer had progressed across my body to multiple organs, putting me in Stage IVB. I was given less than two years to live.
             </p>
             <p>
               I went through another round of several chemotherapies, immunotherapies, and an experimental vaccine. I received news in early 2026 that I no longer have active cancer in my body, but I am aware of the statistics around recurrence, so I am holding everything lightly.

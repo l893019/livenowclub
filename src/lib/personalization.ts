@@ -77,8 +77,8 @@ const questionSummaries: Record<number, string> = {
   2: "how you see your role in transformation",
   3: "your relationship with comfort and challenge",
   4: "how you respond to hidden costs of utopia",
-  5: "what you'd do if you never had to work",
-  6: "how you'd spend your last day",
+  5: "what you’d do if you never had to work",
+  6: "how you’d spend your last day",
   7: "what you tell a child about the future",
 };
 
@@ -156,7 +156,7 @@ export function getRevealingQuestion(
   };
 }
 
-// Detect outlier answers (answers that don't match the user's type)
+// Detect outlier answers (answers that don’t match the user’s type)
 export function getOutlierAnswers(
   answers: string[],
   primaryArchetype: string,
@@ -254,7 +254,7 @@ export function getRaritySignal(primaryArchetype: string): {
   if (percentage <= 3) {
     description = `Only ${percentage}% share your worldview. You see something most people miss.`;
   } else if (percentage <= 8) {
-    description = `${percentage}% share your worldview. You're part of a distinct minority.`;
+    description = `${percentage}% share your worldview. You’re part of a distinct minority.`;
   } else if (percentage <= 15) {
     description = `${percentage}% share your worldview. Common enough to find your people.`;
   } else {

@@ -59,8 +59,8 @@ export async function GET(request: NextRequest) {
 </head>
 <body>
   <div class="container">
-    <h1>You've been unsubscribed</h1>
-    <p>You won't receive any more notification emails from The Live Now Club.</p>
+    <h1>You’ve been unsubscribed</h1>
+    <p>You won’t receive any more notification emails from The Live Now Club.</p>
     <a href="/">Return to The Live Now Club</a>
   </div>
 </body>

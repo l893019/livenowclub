@@ -32,7 +32,7 @@ type RawScores = {
   posture: number
 }
 
-// Scoring map: each answer's effect on dimensions
+// Scoring map: each answer’s effect on dimensions
 // Format: [agency, certainty, posture] where each is -1, 0, or +1
 const SCORING: Record<string, Record<string, [number, number, number]>> = {
   q1: {
@@ -41,7 +41,7 @@ const SCORING: Record<string, Record<string, [number, number, number]>> = {
     C: [-1, 0, -1], // "Did we lose something?" → Agency-1, Posture-1
     D: [0, -1, 0], // "Do we even need purpose?" → Certainty-1
     E: [-1, 1, 0], // "Can we just be present?" → Agency-1, Certainty+1
-    F: [1, 0, -1], // "What's still broken?" → Agency+1, Posture-1
+    F: [1, 0, -1], // "What’s still broken?" → Agency+1, Posture-1
   },
   q2: {
     A: [1, 1, 0], // "Build something new" → Agency+1, Certainty+1
@@ -49,14 +49,14 @@ const SCORING: Record<string, Record<string, [number, number, number]>> = {
     C: [-1, -1, 0], // "Reflect first" → Agency-1, Certainty-1
     D: [0, -1, 1], // "Keep exploring" → Certainty-1, Posture+1
     E: [-1, 0, 1], // "Dissolve into experience" → Agency-1, Posture+1
-    F: [1, 0, -1], // "Find what's unjust" → Agency+1, Posture-1
+    F: [1, 0, -1], // "Find what’s unjust" → Agency+1, Posture-1
   },
   q3: {
     A: [-1, 0, 0], // "Useful but not the same" → Agency-1
     B: [0, 0, -1], // "Most dangerous invention" → Posture-1
     C: [0, 0, 1], // "Let us love better?" → Posture+1
-    D: [0, -1, 0], // "Wonder what we'll learn" → Certainty-1
-    E: [-1, 1, 0], // "Don't need to perform" → Agency-1, Certainty+1
+    D: [0, -1, 0], // "Wonder what we’ll learn" → Certainty-1
+    E: [-1, 1, 0], // "Don’t need to perform" → Agency-1, Certainty+1
   },
   q4: {
     A: [0, -1, 0], // "Need to find out" → Certainty-1
@@ -81,13 +81,13 @@ const SCORING: Record<string, Record<string, [number, number, number]>> = {
     D: [0, 0, -1], // "Tending to things" → Posture-1
     E: [-1, 0, 0], // "Feel everything intensely" → Agency-1
     F: [1, 0, 0], // "Helping someone" → Agency+1
-    G: [0, -1, 0], // "Don't know what to do" → Certainty-1
+    G: [0, -1, 0], // "Don’t know what to do" → Certainty-1
   },
   q7: {
     A: [1, 1, 1], // "Build something amazing" → Agency+1, Certainty+1, Posture+1
-    B: [0, 0, -1], // "If we're careful" → Posture-1
+    B: [0, 0, -1], // "If we’re careful" → Posture-1
     C: [-1, 1, 0], // "Being present matters" → Agency-1, Certainty+1
-    D: [0, -1, 0], // "I don't know" → Certainty-1
+    D: [0, -1, 0], // "I don’t know" → Certainty-1
     E: [0, -1, 1], // "Already okay" → Certainty-1, Posture+1
     F: [0, 0, 1], // "Becoming something new" → Posture+1
     G: [1, 0, 1], // "People like you will heal" → Agency+1, Posture+1

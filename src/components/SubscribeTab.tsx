@@ -7,7 +7,7 @@ import EmailCapture from './EmailCapture';
 export default function SubscribeTab() {
   const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
 
-  // Don't show on admin/stats pages
+  // Don’t show on admin/stats pages
   if (pathname.startsWith('/stats') || pathname.startsWith('/api')) {
     return null;
   }

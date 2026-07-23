@@ -37,7 +37,7 @@ export default function ScrollSlideIn({
     const handleScroll = () => {
       const windowHeight = window.innerHeight;
 
-      // Don't compete with an inline subscribe form that's on screen
+      // Don’t compete with an inline subscribe form that’s on screen
       let overlapping = false;
       if (suppressSelector) {
         const el = document.querySelector(suppressSelector);

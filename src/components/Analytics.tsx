@@ -56,7 +56,7 @@ export default function Analytics() {
           }),
         });
       } catch (error) {
-        // Silently fail - don't break the site if analytics fails
+        // Silently fail - don’t break the site if analytics fails
         console.error('Analytics error:', error);
       }
     };
@@ -147,5 +147,5 @@ export default function Analytics() {
     };
   }, [pathname]);
 
-  return null; // This component doesn't render anything
+  return null; // This component doesn’t render anything
 }

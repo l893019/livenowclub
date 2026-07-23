@@ -22,7 +22,7 @@ export async function GET(request: NextRequest) {
         const event = JSON.parse(eventData);
         const visitorId = event.visitorId;
 
-        // Get visitor's session data
+        // Get visitor’s session data
         const sessionKeys = await redis.keys(`session:${visitorId}:*`);
         let sessionData = null;
 

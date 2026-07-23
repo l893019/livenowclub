@@ -30,8 +30,8 @@ function toThirdPerson(text: string): string {
   return text
     .replace(/\bYou\b/g, 'They')
     .replace(/\byou\b/g, 'they')
-    .replace(/\byou're\b/gi, "they're")
-    .replace(/\byou'd\b/gi, "they'd")
+    .replace(/\byou['’]re\b/gi, "they’re")
+    .replace(/\byou['’]d\b/gi, "they’d")
     .replace(/\byour\b/gi, 'their');
 }
 
@@ -160,7 +160,7 @@ function generateEmailHtml({
                     </h1>
 
                     <p style="margin: 0 0 8px; font-size: 18px; color: #e8178a; font-style: italic;">
-                      They're ${archetypeName}.
+                      They’re ${archetypeName}.
                     </p>
 
                     ${archetypeTagline ? `
@@ -174,7 +174,7 @@ function generateEmailHtml({
                       href="${relationshipUrl}"
                       style="display: inline-block; background-color: #e8178a; color: #ffffff; font-size: 16px; font-weight: 500; text-decoration: none; padding: 16px 32px; border-radius: 50px; box-shadow: 0 4px 20px rgba(232,23,138,0.25);"
                     >
-                      See What You'd Build Together
+                      See What You’d Build Together
                     </a>
 
                   </td>

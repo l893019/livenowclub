@@ -63,7 +63,7 @@ export type Identity = {
   utopia: string // "Their utopia is an experiment..."
   description: string // 2-3 sentences
   pull: string // "toward undiscovered structure"
-  edge: string // "you see systems others haven't imagined"
+  edge: string // "you see systems others haven’t imagined"
   oneSentence: string // Tweetable summary
 
   // Depth
@@ -481,7 +481,7 @@ export function getIdentityFromDimensions(
 
 /**
  * Map old archetype keys to approximate identities.
- * Used when displaying members who don't have stored answers.
+ * Used when displaying members who don’t have stored answers.
  */
 const ARCHETYPE_TO_IDENTITY: Record<string, string> = {
   // High agency, optimistic

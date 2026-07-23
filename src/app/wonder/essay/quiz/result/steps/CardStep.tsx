@@ -41,7 +41,7 @@ export function CardStep({ archetypeKey, imageUrl, onContinue, onBuildUtopia }: 
       } catch (err) {
         // User cancelled or share failed, fall through to clipboard
         if ((err as Error).name === "AbortError") {
-          return; // User cancelled, don't show anything
+          return; // User cancelled, don’t show anything
         }
       }
     }

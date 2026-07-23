@@ -28,8 +28,8 @@ export type HomeRecentItem = {
 const QUOTES = [
   {
     slug: "holy-shit-im-alive",
-    title: "Holy Shit, I'm Alive",
-    quote: "Holy shit, I'm alive. We take this aliveness for granted, unaware of what is required to maintain it.",
+    title: "Holy Shit, I’m Alive",
+    quote: "Holy shit, I’m alive. We take this aliveness for granted, unaware of what is required to maintain it.",
   },
   {
     slug: "life-is-not-empty",
@@ -43,7 +43,7 @@ const QUOTES = [
   },
   {
     slug: "how-do-you-know-what-happens-to-you-isnt-good",
-    title: "How do you know what happens to you isn't good?",
+    title: "How do you know what happens to you isn’t good?",
     quote: "I hope I can find the beauty. I pray to surrender in wonder and keep my eyes open to what life wants to show me.",
   },
   {
@@ -54,12 +54,12 @@ const QUOTES = [
   {
     slug: "embracing-free-fall",
     title: "Embracing Free Fall",
-    quote: "I'm learning to stop grasping for control and lean back into complete free fall.",
+    quote: "I’m learning to stop grasping for control and lean back into complete free fall.",
   },
   {
     slug: "cancer-meditations",
     title: "Cancer Meditations",
-    quote: "I am not dying from this. But it's given me some peace to think that we are all on a path toward death, that we build beautiful lives that dissolve into beautiful nothingness.",
+    quote: "I am not dying from this. But it’s given me some peace to think that we are all on a path toward death, that we build beautiful lives that dissolve into beautiful nothingness.",
   },
   {
     slug: "the-live-now-club",
@@ -97,7 +97,7 @@ const SOFT_ENTRIES = [
     ariaLabel: "Guide for the newly diagnosed",
   },
   {
-    prompt: "I'm carrying something heavy",
+    prompt: "I’m carrying something heavy",
     href: "/read#heavy",
     ariaLabel: "Essays about grief, loss, and burden",
   },
@@ -112,17 +112,17 @@ const SOFT_ENTRIES = [
     ariaLabel: "Poetry and meditations",
   },
   {
-    prompt: "I don't know",
+    prompt: "I don’t know",
     href: "/read#start",
     ariaLabel: "Start here",
   },
 ];
 
-// Editor's Pick - your handpicked recommendation
+// Editor’s Pick - your handpicked recommendation
 const EDITORS_PICK = {
   slug: "fixing-the-unfixable",
   title: "Fixing the Unfixable",
-  excerpt: "What to say when there's nothing you can say.",
+  excerpt: "What to say when there’s nothing you can say.",
   type: "essay",
   image: "/images/fixing-the-unfixable.jpg",
 };
@@ -187,9 +187,9 @@ export default function HomeClient({
           <img src="/images/louise-portrait-new.png" alt="Louise Ireland" />
         </div>
         <div className="intro-text">
-          <p className="intro-greeting">I'm <Link href="/about" className="intro-louise-link">Louise</Link> <span className="intro-lou">(but you may call me Lou)</span>.</p>
+          <p className="intro-greeting">I’m <Link href="/about" className="intro-louise-link">Louise</Link> <span className="intro-lou">(but you may call me Lou)</span>.</p>
           <p className="intro-body">
-            I started writing to leave a mark in case I don't survive. Now I write to live.
+            I started writing to leave a mark in case I don’t survive. Now I write to live.
           </p>
         </div>
       </section>
@@ -263,7 +263,7 @@ export default function HomeClient({
       <section className="worth-reading">
         <h3 className="section-label">Keep Reading</h3>
         <div className="worth-reading-layout">
-          {/* Editor's Pick - larger */}
+          {/* Editor’s Pick - larger */}
           <Link href={`/read/${EDITORS_PICK.slug}`} className="pick">
             <div className="pick-image">
               <img src={EDITORS_PICK.image} alt={`Editor’s Pick: ${EDITORS_PICK.title}`} />

@@ -23,17 +23,17 @@ const HERO_ROTATION: { slug: string; subtitle: string; excerpt: string }[] = [
   {
     slug: "fixing-the-unfixable",
     subtitle: "For the people standing beside someone in it",
-    excerpt: "What to say when there's nothing you can say.",
+    excerpt: "What to say when there’s nothing you can say.",
   },
   {
     slug: "how-do-you-know-what-happens-to-you-isnt-good",
     subtitle: "Notes on randomness, beauty, and the next wave",
-    excerpt: "Would you go through this all again for what you've gained?",
+    excerpt: "Would you go through this all again for what you’ve gained?",
   },
   {
     slug: "the-other-side-of-grief",
     subtitle: "On coming back",
-    excerpt: "Cancer hasn't shrunk my life. It has skimmed it.",
+    excerpt: "Cancer hasn’t shrunk my life. It has skimmed it.",
   },
   {
     slug: "expecting-the-unexpected",

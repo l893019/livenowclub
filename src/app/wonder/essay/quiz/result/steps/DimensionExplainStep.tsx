@@ -23,7 +23,7 @@ const dimensionDescriptions = {
     name: "Certainty",
     low: "Seeking",
     high: "Settled",
-    description: "Whether you're drawn to questions or have arrived at answers",
+    description: "Whether you’re drawn to questions or have arrived at answers",
   },
   posture: {
     name: "Posture",

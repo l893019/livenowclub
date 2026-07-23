@@ -207,12 +207,12 @@ export function TwoPersonView({ members, utopiaName, onMemberClick }: TwoPersonV
             </section>
 
             <section className={styles.section}>
-              <h3 className={styles.sectionLabel}>How You'll Make Decisions</h3>
+              <h3 className={styles.sectionLabel}>How You’ll Make Decisions</h3>
               <p className={styles.bodyText}>{llmReading.howDecisions}</p>
             </section>
 
             <section className={styles.section}>
-              <h3 className={styles.sectionLabel}>Where You'll Create Friction</h3>
+              <h3 className={styles.sectionLabel}>Where You’ll Create Friction</h3>
               <p className={styles.warningText}>{llmReading.friction}</p>
             </section>
 
@@ -222,7 +222,7 @@ export function TwoPersonView({ members, utopiaName, onMemberClick }: TwoPersonV
             </section>
 
             <section className={styles.section}>
-              <h3 className={styles.sectionLabel}>What You'd Build Together</h3>
+              <h3 className={styles.sectionLabel}>What You’d Build Together</h3>
               <p className={styles.bodyText}>{llmReading.whatYoudBuild}</p>
             </section>
           </>
@@ -254,7 +254,7 @@ export function TwoPersonView({ members, utopiaName, onMemberClick }: TwoPersonV
             </section>
 
             <section className={styles.section}>
-              <h3 className={styles.sectionLabel}>Where you'll clash</h3>
+              <h3 className={styles.sectionLabel}>Where you’ll clash</h3>
               <div className={styles.expandedList}>
                 {dynamic.clash.map((item, i) => (
                   <div key={i} className={styles.expandedItem}>

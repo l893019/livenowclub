@@ -69,7 +69,7 @@ export default function DemoUtopiaPage() {
     }
   };
 
-  // Profile view (current user's full reading)
+  // Profile view (current user’s full reading)
   if (currentView === "profile") {
     const me = demoMembers.find((m) => m.id === CURRENT_USER_ID);
     if (me) {

@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Get user's result to get their name and archetype
+    // Get user’s result to get their name and archetype
     const userResult = await getUserResult(userId);
     if (!userResult) {
       console.log('[Join Utopia] User not found:', userId);

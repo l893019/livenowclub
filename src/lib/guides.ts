@@ -50,7 +50,7 @@ export const GUIDES: GuideInfo[] = [
     tagline:
       "The first moves that matter: building your care team, protecting your mind from the internet, and setting up the support you’ll need later.",
     description:
-      "Just diagnosed with cancer and don't know where to start? A survivor's guide to the first steps: choosing your hospital, designating an advocate, second opinions, finding a mentor, and staying out of the Google rabbit hole.",
+      "Just diagnosed with cancer and don’t know where to start? A survivor’s guide to the first steps: choosing your hospital, designating an advocate, second opinions, finding a mentor, and staying out of the Google rabbit hole.",
     datePublished: "2026-07-07",
     dateModified: "2026-07-07",
   },

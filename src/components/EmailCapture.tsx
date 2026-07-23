@@ -63,7 +63,7 @@ export default function EmailCapture({
     setIsDismissed(true);
   };
 
-  // Don't render if dismissed
+  // Don’t render if dismissed
   if (isDismissed) {
     return null;
   }
@@ -84,12 +84,12 @@ export default function EmailCapture({
     window.open(url, '_blank', 'noopener,noreferrer');
     setSubstackUrl(url);
     setStatus('success');
-    setMessage("Almost done. Confirm on Substack and you're in.");
+    setMessage("Almost done. Confirm on Substack and you’re in.");
 
     // A real signup quiets every capture surface site-wide
     localStorage.setItem('email-capture-subscribed', 'true');
 
-    // Record the signup + analytics in the background; UX doesn't depend on it
+    // Record the signup + analytics in the background; UX doesn’t depend on it
     let acquisition: string | null = null;
     try {
       acquisition = sessionStorage.getItem('acquisition-source');

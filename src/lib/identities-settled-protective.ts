@@ -28,7 +28,7 @@ export const settledProtectiveIdentities: Record<string, Identity> = {
       'Their utopia was built to last. The foundations go deeper than anyone remembers.',
 
     description:
-      "You design systems meant to endure. Your steadiness isn't stubbornness—it's the hard-won wisdom of someone who has seen what fails and knows how to build what won't. You protect through architecture.",
+      "You design systems meant to endure. Your steadiness isn’t stubbornness—it’s the hard-won wisdom of someone who has seen what fails and knows how to build what won’t. You protect through architecture.",
 
     pull: 'toward lasting foundations',
     edge: 'you design what will still stand when everything else has changed',
@@ -40,7 +40,7 @@ export const settledProtectiveIdentities: Record<string, Identity> = {
 
 While others chase innovation, you ask different questions: What could go wrong? What needs to be protected? What will this look like in twenty years? Your architectural vision includes defensive depth—redundancies, fail-safes, the unglamorous work of making things resilient.
 
-This makes you invaluable when the stakes are high. The systems that can't fail, the structures that must endure, the architectures that protect vulnerable things—these need someone thinking beyond the immediate. Your steadiness is the foundation others build upon.`,
+This makes you invaluable when the stakes are high. The systems that can’t fail, the structures that must endure, the architectures that protect vulnerable things—these need someone thinking beyond the immediate. Your steadiness is the foundation others build upon.`,
 
     blindSpot:
       'Your protective instinct can become resistance to necessary change. Not everything needs to last forever, and some foundations need to be rebuilt.',
@@ -49,7 +49,7 @@ This makes you invaluable when the stakes are high. The systems that can't fail,
 
 The same instinct that makes you build enduring systems can make you defensive when those systems need to change. "This was designed this way for good reasons" is true—but reasons can become outdated. Your steady architecture can become a fortress that protects the past from the future.
 
-There's also opportunity cost. The energy you spend on protection might sometimes be better spent on building something new. Not everything worth protecting is worth the cost of protecting it. Learning when to let go is as important as knowing how to hold on.`,
+There’s also opportunity cost. The energy you spend on protection might sometimes be better spent on building something new. Not everything worth protecting is worth the cost of protecting it. Learning when to let go is as important as knowing how to hold on.`,
 
     coreBeliefs: [
       'The best architecture anticipates threats that haven\'t emerged yet',
@@ -111,7 +111,7 @@ There's also opportunity cost. The energy you spend on protection might sometime
       'Their utopia has deep roots. Growth happens, but never at the expense of stability.',
 
     description:
-      "You design from a place of rootedness, connected to what has worked before while thoughtful about what comes next. Your architecture doesn't ignore change—it channels change safely.",
+      "You design from a place of rootedness, connected to what has worked before while thoughtful about what comes next. Your architecture doesn’t ignore change—it channels change safely.",
 
     pull: 'toward rooted growth',
     edge: 'you design systems that can change without breaking',
@@ -121,18 +121,18 @@ There's also opportunity cost. The energy you spend on protection might sometime
     superpower: 'stable evolution',
     superpowerExpanded: `You design systems that can change without collapsing.
 
-Your grounded approach means you understand that permanence and flexibility aren't opposites—they're partners. The best systems have stable cores and adaptable edges. You know which parts can change and which parts must not. This allows you to build things that endure precisely because they can evolve.
+Your grounded approach means you understand that permanence and flexibility aren’t opposites—they’re partners. The best systems have stable cores and adaptable edges. You know which parts can change and which parts must not. This allows you to build things that endure precisely because they can evolve.
 
-People come to you when they need architecture that's both reliable and not rigid. The organization that needs restructuring without losing its identity. The system that needs updating without breaking what works. You understand how to change safely.`,
+People come to you when they need architecture that’s both reliable and not rigid. The organization that needs restructuring without losing its identity. The system that needs updating without breaking what works. You understand how to change safely.`,
 
     blindSpot:
       'Your balanced approach can become an excuse for insufficient ambition. Sometimes you need to tear down the old to build something genuinely better.',
 
     blindSpotExpanded: `Your groundedness can become a comfort zone.
 
-The balance you value—stability with flexibility, roots with growth—can prevent you from recognizing when more radical change is needed. Sometimes the foundation itself is the problem. Sometimes rooted growth means stunted growth. Your instinct to protect can limit the scale of transformation you're willing to consider.
+The balance you value—stability with flexibility, roots with growth—can prevent you from recognizing when more radical change is needed. Sometimes the foundation itself is the problem. Sometimes rooted growth means stunted growth. Your instinct to protect can limit the scale of transformation you’re willing to consider.
 
-There's also the question of whose stability you're protecting. Steady architecture often serves those already well-served by existing structures. When the roots are in soil that's poisoned, rootedness isn't wisdom—it's complicity.`,
+There’s also the question of whose stability you’re protecting. Steady architecture often serves those already well-served by existing structures. When the roots are in soil that’s poisoned, rootedness isn’t wisdom—it’s complicity.`,
 
     coreBeliefs: [
       'The strongest systems have both deep roots and flexible branches',
@@ -194,7 +194,7 @@ There's also the question of whose stability you're protecting. Steady architect
       'Their utopia can weather any storm. It bends but doesn\'t break.',
 
     description:
-      "You design with a clear center, building systems that can flex without losing their essential nature. Your anchor isn't a fixed point—it's a stable orientation that keeps things aligned when circumstances change.",
+      "You design with a clear center, building systems that can flex without losing their essential nature. Your anchor isn’t a fixed point—it’s a stable orientation that keeps things aligned when circumstances change.",
 
     pull: 'toward centered resilience',
     edge: 'you design systems that stay themselves through change',
@@ -204,18 +204,18 @@ There's also the question of whose stability you're protecting. Steady architect
     superpower: 'centered design',
     superpowerExpanded: `You design from a clear sense of what matters most.
 
-When you architect a system, you know its core. Everything else can flex, adapt, even be replaced—but the center holds. This clarity about essentials allows you to be surprisingly flexible about everything else. You're not rigid; you're anchored.
+When you architect a system, you know its core. Everything else can flex, adapt, even be replaced—but the center holds. This clarity about essentials allows you to be surprisingly flexible about everything else. You’re not rigid; you’re anchored.
 
-This makes your architectures resilient. When storms come—and they always do—your systems bend rather than break. They lose some peripheral functions but keep their essential nature. The things you build last because they know what they're for.`,
+This makes your architectures resilient. When storms come—and they always do—your systems bend rather than break. They lose some peripheral functions but keep their essential nature. The things you build last because they know what they’re for.`,
 
     blindSpot:
       'Your sense of what\'s central can be wrong. Sometimes the anchor point needs to move, and your clarity about the core becomes an obstacle.',
 
     blindSpotExpanded: `Your anchoring can anchor the wrong things.
 
-You're clear about what matters, but what if you're clear about the wrong thing? The center you're protecting might not be the center the future needs. Your architectural clarity can make it hard to reconsider fundamentals, because fundamentals are precisely what anchored design doesn't reconsider.
+You’re clear about what matters, but what if you’re clear about the wrong thing? The center you’re protecting might not be the center the future needs. Your architectural clarity can make it hard to reconsider fundamentals, because fundamentals are precisely what anchored design doesn’t reconsider.
 
-There's also the danger of false anchors. The values you think are central might be comfortable habits disguised as principles. The true test of anchored architecture is whether it can distinguish what's genuinely essential from what's merely familiar.`,
+There’s also the danger of false anchors. The values you think are central might be comfortable habits disguised as principles. The true test of anchored architecture is whether it can distinguish what’s genuinely essential from what’s merely familiar.`,
 
     coreBeliefs: [
       'Clear centers enable flexible edges',
@@ -281,7 +281,7 @@ There's also the danger of false anchors. The values you think are central might
       'Their utopia was built brick by brick. No shortcuts, no collapses.',
 
     description:
-      "You build with patient persistence, understanding that lasting things require steady effort over time. Your pace might seem slow, but what you build doesn't fall down.",
+      "You build with patient persistence, understanding that lasting things require steady effort over time. Your pace might seem slow, but what you build doesn’t fall down.",
 
     pull: 'toward durable construction',
     edge: 'you build things that are still standing when flashier work has crumbled',
@@ -291,18 +291,18 @@ There's also the danger of false anchors. The values you think are central might
     superpower: 'patient construction',
     superpowerExpanded: `You build steadily, and what you build endures.
 
-While others sprint and burn out, you maintain a pace you can sustain. While others cut corners, you do the work properly. This isn't slow—it's sustainable. Your building projects finish not because of heroic pushes but because of reliable progress, day after day.
+While others sprint and burn out, you maintain a pace you can sustain. While others cut corners, you do the work properly. This isn’t slow—it’s sustainable. Your building projects finish not because of heroic pushes but because of reliable progress, day after day.
 
-The things you build inherit your steadiness. They're not flashy, but they work. They don't have hidden flaws that emerge later. They were built right the first time, which is more efficient than building fast and fixing forever.`,
+The things you build inherit your steadiness. They’re not flashy, but they work. They don’t have hidden flaws that emerge later. They were built right the first time, which is more efficient than building fast and fixing forever.`,
 
     blindSpot:
       'Your steady pace can become inflexibility about timelines. Sometimes situations demand faster work, and your sustainable pace isn\'t sustainable for the situation.',
 
-    blindSpotExpanded: `Rooted isn't always the right speed.
+    blindSpotExpanded: `Rooted isn’t always the right speed.
 
-Your commitment to building properly can make you resistant to situations that require building faster. Yes, cutting corners has costs—but so does missing windows of opportunity. Your steady approach is valuable, but it's not the only valuable approach.
+Your commitment to building properly can make you resistant to situations that require building faster. Yes, cutting corners has costs—but so does missing windows of opportunity. Your steady approach is valuable, but it’s not the only valuable approach.
 
-There's also the question of perfectionism disguised as diligence. "Doing it properly" can become an endless expansion of scope, a way of never finishing because there's always more to do right. At some point, steady building needs to become completion.`,
+There’s also the question of perfectionism disguised as diligence. "Doing it properly" can become an endless expansion of scope, a way of never finishing because there’s always more to do right. At some point, steady building needs to become completion.`,
 
     coreBeliefs: [
       'Lasting construction requires patient construction',
@@ -364,7 +364,7 @@ There's also the question of perfectionism disguised as diligence. "Doing it pro
       'Their utopia is built from real materials, for real needs. Nothing is built for show.',
 
     description:
-      "You build practically, connected to what's actually needed rather than what's theoretically impressive. Your grounded approach means you understand both the materials and the people you're building for.",
+      "You build practically, connected to what’s actually needed rather than what’s theoretically impressive. Your grounded approach means you understand both the materials and the people you’re building for.",
 
     pull: 'toward practical construction',
     edge: 'you build what actually works for the people who actually use it',
@@ -381,11 +381,11 @@ This groundedness makes you invaluable when projects need to actually ship. The 
     blindSpot:
       'Your practicality can limit imagination. Sometimes what\'s needed isn\'t practical yet—it requires building something that doesn\'t have obvious immediate use.',
 
-    blindSpotExpanded: `Practical isn't always right.
+    blindSpotExpanded: `Practical isn’t always right.
 
-Your grounded approach serves you well for most building—but some of the most important things ever built seemed impractical when they started. Basic research, artistic exploration, infrastructure that pays off over decades—these don't pass the immediate practicality test, yet they matter enormously.
+Your grounded approach serves you well for most building—but some of the most important things ever built seemed impractical when they started. Basic research, artistic exploration, infrastructure that pays off over decades—these don’t pass the immediate practicality test, yet they matter enormously.
 
-There's also a question of whose needs you're grounding yourself in. Practical building serves existing needs well, but what about needs that don't exist yet? Or needs that people can't articulate? Your groundedness can anchor you to the present at the expense of the future.`,
+There’s also a question of whose needs you’re grounding yourself in. Practical building serves existing needs well, but what about needs that don’t exist yet? Or needs that people can’t articulate? Your groundedness can anchor you to the present at the expense of the future.`,
 
     coreBeliefs: [
       'Building should serve real needs, not theoretical ones',
@@ -447,7 +447,7 @@ There's also a question of whose needs you're grounding yourself in. Practical b
       'Their utopia knows what it\'s building toward. Every effort serves a clear purpose.',
 
     description:
-      "You build from a clear sense of purpose, with each construction choice guided by what you're ultimately trying to create. Your anchoring isn't rigidity—it's direction.",
+      "You build from a clear sense of purpose, with each construction choice guided by what you’re ultimately trying to create. Your anchoring isn’t rigidity—it’s direction.",
 
     pull: 'toward purposeful building',
     edge: 'you build with every piece connected to a larger vision',
@@ -455,11 +455,11 @@ There's also a question of whose needs you're grounding yourself in. Practical b
       'You build with purpose, ensuring that every effort contributes to something larger than itself.',
 
     superpower: 'purpose-driven building',
-    superpowerExpanded: `You know why you're building.
+    superpowerExpanded: `You know why you’re building.
 
-Every choice you make connects back to a larger purpose. This isn't rigid planning—it's coherent building. When decisions arise, you evaluate them against your anchor: does this serve what we're ultimately trying to create? This clarity prevents drift, scope creep, and building for building's sake.
+Every choice you make connects back to a larger purpose. This isn’t rigid planning—it’s coherent building. When decisions arise, you evaluate them against your anchor: does this serve what we’re ultimately trying to create? This clarity prevents drift, scope creep, and building for building’s sake.
 
-Teams value your anchoring. When a project starts losing direction, you're the one who can articulate what you're all supposed to be doing. Your clear purpose keeps construction meaningful even when the work becomes tedious.`,
+Teams value your anchoring. When a project starts losing direction, you’re the one who can articulate what you’re all supposed to be doing. Your clear purpose keeps construction meaningful even when the work becomes tedious.`,
 
     blindSpot:
       'Your purpose-anchoring can miss opportunities that emerge from undirected building. Sometimes you need to build without knowing why.',
@@ -468,7 +468,7 @@ Teams value your anchoring. When a project starts losing direction, you're the o
 
 Your anchored approach means you evaluate choices against purpose—but some of the best discoveries come from building without a clear why. The unexpected connection, the accidental feature, the solution looking for a problem. Your purposefulness can screen out valuable randomness.
 
-There's also the question of changing purpose. What if your anchor was set wrong, or the right anchor has shifted? Your commitment to building toward a clear goal can make it hard to recognize when the goal itself needs to change.`,
+There’s also the question of changing purpose. What if your anchor was set wrong, or the right anchor has shifted? Your commitment to building toward a clear goal can make it hard to recognize when the goal itself needs to change.`,
 
     coreBeliefs: [
       'Purposeful building is more efficient than aimless construction',
@@ -544,7 +544,7 @@ There's also the question of changing purpose. What if your anchor was set wrong
     superpower: 'reliable craft',
     superpowerExpanded: `What you make can be trusted.
 
-Your steadiness translates into your objects. People who use what you create know it won't fail unexpectedly, won't have hidden flaws, won't require constant attention. Your craft has become reliable through repetition, and that reliability is now embedded in everything you make.
+Your steadiness translates into your objects. People who use what you create know it won’t fail unexpectedly, won’t have hidden flaws, won’t require constant attention. Your craft has become reliable through repetition, and that reliability is now embedded in everything you make.
 
 This makes you sought-after for work that matters. The gift that needs to last. The tool that needs to perform. The object that will be used daily for years. You make things worthy of that trust.`,
 
@@ -553,9 +553,9 @@ This makes you sought-after for work that matters. The gift that needs to last. 
 
     blindSpotExpanded: `Reliability can become limitation.
 
-Your craft is steady, which means it's also somewhat predictable. The same hands that make reliable objects might be capable of making surprising ones—if you were willing to unsettle your practice. But your steadiness resists unsettling. It prefers the known.
+Your craft is steady, which means it’s also somewhat predictable. The same hands that make reliable objects might be capable of making surprising ones—if you were willing to unsettle your practice. But your steadiness resists unsettling. It prefers the known.
 
-There's also the question of whether reliability serves the work or just your comfort. Is your consistent approach the best approach, or just the familiar one? Rooted makers sometimes need to disrupt themselves to keep growing.`,
+There’s also the question of whether reliability serves the work or just your comfort. Is your consistent approach the best approach, or just the familiar one? Rooted makers sometimes need to disrupt themselves to keep growing.`,
 
     coreBeliefs: [
       'Reliable craft is built through steady practice',
@@ -617,7 +617,7 @@ There's also the question of whether reliability serves the work or just your co
       'Their utopia has handmade objects in daily use. Making is woven into ordinary life.',
 
     description:
-      "You make from connection to materials, traditions, and real use. Your grounded approach means what you create serves actual needs—objects that belong in people's lives, not just displays.",
+      "You make from connection to materials, traditions, and real use. Your grounded approach means what you create serves actual needs—objects that belong in people’s lives, not just displays.",
 
     pull: 'toward embodied making',
     edge: 'you make things that fit naturally into living',
@@ -636,9 +636,9 @@ People value your grounded making because it produces things that actually work.
 
     blindSpotExpanded: `Not all making needs to be grounded.
 
-Your connection to materials and practical use serves you well—but some important making is speculative, abstract, disconnected from immediate use. Art that challenges rather than comforts. Objects that provoke rather than serve. Your groundedness can dismiss this work as ungrounded when it's actually differently grounded.
+Your connection to materials and practical use serves you well—but some important making is speculative, abstract, disconnected from immediate use. Art that challenges rather than comforts. Objects that provoke rather than serve. Your groundedness can dismiss this work as ungrounded when it’s actually differently grounded.
 
-There's also the risk of parochialism. Steady making can become making only for your local context, your familiar needs, your known materials. Expanding your ground—encountering different traditions, different uses, different materials—keeps grounded making alive.`,
+There’s also the risk of parochialism. Steady making can become making only for your local context, your familiar needs, your known materials. Expanding your ground—encountering different traditions, different uses, different materials—keeps grounded making alive.`,
 
     coreBeliefs: [
       'Good making requires good understanding of materials',
@@ -700,7 +700,7 @@ There's also the risk of parochialism. Steady making can become making only for 
       'Their utopia values objects that mean something. Making is always connected to purpose.',
 
     description:
-      "You make with clear intention, each object anchored to a reason for existing. Your making isn't random—it serves purposes you've considered and decided matter.",
+      "You make with clear intention, each object anchored to a reason for existing. Your making isn’t random—it serves purposes you’ve considered and decided matter.",
 
     pull: 'toward meaningful making',
     edge: 'you make things that carry intention into the world',
@@ -710,18 +710,18 @@ There's also the risk of parochialism. Steady making can become making only for 
     superpower: 'intentional craft',
     superpowerExpanded: `You know why you make what you make.
 
-Every object you create is anchored to intention. You don't make impulsively; you make deliberately. This doesn't mean you plan everything in advance—craft still involves discovery—but your making has direction. What you create is connected to what you value.
+Every object you create is anchored to intention. You don’t make impulsively; you make deliberately. This doesn’t mean you plan everything in advance—craft still involves discovery—but your making has direction. What you create is connected to what you value.
 
-This intentionality shows in your objects. They're not random accumulations of technique; they're coherent expressions of purpose. People can sense the intention embedded in what you make, even if they can't articulate it.`,
+This intentionality shows in your objects. They’re not random accumulations of technique; they’re coherent expressions of purpose. People can sense the intention embedded in what you make, even if they can’t articulate it.`,
 
     blindSpot:
       'Your anchored making can dismiss the value of purposeless creation. Sometimes making without knowing why produces the most valuable discoveries.',
 
-    blindSpotExpanded: `Intention isn't everything.
+    blindSpotExpanded: `Intention isn’t everything.
 
 Your commitment to making with purpose can screen out valuable undirected exploration. Play, accident, purposeless experimentation—these produce insights that intentional making cannot. Your anchor is valuable, but so is occasionally pulling it up.
 
-There's also the question of whose purposes your making serves. Grounded in your own intentions, you might miss purposes that others see in your work. Sometimes what you made for one reason turns out to matter for completely different reasons. Holding your anchor lightly allows for these discoveries.`,
+There’s also the question of whose purposes your making serves. Grounded in your own intentions, you might miss purposes that others see in your work. Sometimes what you made for one reason turns out to matter for completely different reasons. Holding your anchor lightly allows for these discoveries.`,
 
     coreBeliefs: [
       'Making without purpose produces objects without meaning',
@@ -797,18 +797,18 @@ There's also the question of whose purposes your making serves. Grounded in your
     superpower: 'gradual transformation',
     superpowerExpanded: `You change things at the pace they can handle.
 
-Your shaping is sustainable because it works with the nature of what you're shaping. You don't force transformation faster than systems can absorb it. You don't demand change that creates backlash. Your steady approach means the changes you create actually persist.
+Your shaping is sustainable because it works with the nature of what you’re shaping. You don’t force transformation faster than systems can absorb it. You don’t demand change that creates backlash. Your steady approach means the changes you create actually persist.
 
-This makes you effective where flashier changers fail. The organization that's tried rapid transformation and bounced back. The person who's resistant to pushy advice. The system that needs to evolve but breaks when pushed too hard. You can work with these because you understand that sustainable shaping requires sustainable pace.`,
+This makes you effective where flashier changers fail. The organization that’s tried rapid transformation and bounced back. The person who’s resistant to pushy advice. The system that needs to evolve but breaks when pushed too hard. You can work with these because you understand that sustainable shaping requires sustainable pace.`,
 
     blindSpot:
       'Your steady pace can be too slow. Sometimes things need rapid reshaping, and your sustainable approach is unsustainably slow for the situation.',
 
-    blindSpotExpanded: `Gradual isn't always appropriate.
+    blindSpotExpanded: `Gradual isn’t always appropriate.
 
-Your commitment to sustainable change can become an excuse for insufficient change. Sometimes the building is on fire and gradual transformation isn't going to cut it. Your steady shaping is valuable in many contexts, but not all contexts.
+Your commitment to sustainable change can become an excuse for insufficient change. Sometimes the building is on fire and gradual transformation isn’t going to cut it. Your steady shaping is valuable in many contexts, but not all contexts.
 
-There's also the question of what your steadiness enables. If the status quo is harmful, gradual change might just be prolonged harm. Your patient approach can serve preservation when what's needed is disruption. Learn to recognize when steadiness becomes complicity.`,
+There’s also the question of what your steadiness enables. If the status quo is harmful, gradual change might just be prolonged harm. Your patient approach can serve preservation when what’s needed is disruption. Learn to recognize when steadiness becomes complicity.`,
 
     coreBeliefs: [
       'Change that\'s too fast doesn\'t stick',
@@ -870,7 +870,7 @@ There's also the question of what your steadiness enables. If the status quo is 
       'Their utopia improves on what it inherited. Nothing good is discarded lightly.',
 
     description:
-      "You reshape from a position of deep understanding, knowing what you're working with before you change it. Your grounded approach means you transform things without losing what made them work.",
+      "You reshape from a position of deep understanding, knowing what you’re working with before you change it. Your grounded approach means you transform things without losing what made them work.",
 
     pull: 'toward understanding before changing',
     edge: 'you shape without breaking what doesn\'t need breaking',
@@ -880,9 +880,9 @@ There's also the question of what your steadiness enables. If the status quo is 
     superpower: 'informed transformation',
     superpowerExpanded: `You understand before you change.
 
-Your grounded approach means you study what you're shaping. Why does it work the way it does? What would break if you changed this? What needs to be preserved even as other things transform? This understanding makes your shaping surgical rather than sledgehammer.
+Your grounded approach means you study what you’re shaping. Why does it work the way it does? What would break if you changed this? What needs to be preserved even as other things transform? This understanding makes your shaping surgical rather than sledgehammer.
 
-People trust you with things they value because you won't carelessly destroy what works. You respect what you're shaping, even as you reshape it. This makes you the right person for delicate transformations that need to preserve essential character.`,
+People trust you with things they value because you won’t carelessly destroy what works. You respect what you’re shaping, even as you reshape it. This makes you the right person for delicate transformations that need to preserve essential character.`,
 
     blindSpot:
       'Your grounded understanding can become resistance to necessary disruption. Sometimes things need to be broken, not carefully preserved.',
@@ -891,7 +891,7 @@ People trust you with things they value because you won't carelessly destroy wha
 
 The deeper you understand something, the more you see value in preserving it. But sometimes what you understand so well is precisely what needs to go. Your grounded knowledge can make you defender of things that have outlived their usefulness.
 
-There's also the trap of endless understanding. You can always understand more before acting. At some point, your groundedness needs to enable action, not postpone it. The grounded shaper who never actually shapes isn't grounded—they're stuck.`,
+There’s also the trap of endless understanding. You can always understand more before acting. At some point, your groundedness needs to enable action, not postpone it. The grounded shaper who never actually shapes isn’t grounded—they’re stuck.`,
 
     coreBeliefs: [
       'Understanding before changing produces better change',
@@ -953,7 +953,7 @@ There's also the trap of endless understanding. You can always understand more b
       'Their utopia knows what matters. Change serves values that don\'t change.',
 
     description:
-      "You reshape from clear values, with transformation always serving principles you've decided matter. Your anchor ensures that change serves purpose, not just novelty.",
+      "You reshape from clear values, with transformation always serving principles you’ve decided matter. Your anchor ensures that change serves purpose, not just novelty.",
 
     pull: 'toward values-driven change',
     edge: 'you shape things in service of principles that endure',
@@ -963,9 +963,9 @@ There's also the trap of endless understanding. You can always understand more b
     superpower: 'principled transformation',
     superpowerExpanded: `Your shaping serves what you believe in.
 
-Change for change's sake doesn't interest you. When you reshape something, it's because the transformation serves values you've thought through. This makes your shaping coherent—people can understand why you're changing what you're changing because your principles are visible.
+Change for change’s sake doesn’t interest you. When you reshape something, it’s because the transformation serves values you’ve thought through. This makes your shaping coherent—people can understand why you’re changing what you’re changing because your principles are visible.
 
-This anchored approach builds trust. People know what you stand for, so they know what your shaping is trying to achieve. You're not unpredictable, not random. Your changes connect to something stable, which paradoxically makes change easier to accept.`,
+This anchored approach builds trust. People know what you stand for, so they know what your shaping is trying to achieve. You’re not unpredictable, not random. Your changes connect to something stable, which paradoxically makes change easier to accept.`,
 
     blindSpot:
       'Your anchored values can be wrong. Transformation in service of misguided principles produces misguided transformation.',
@@ -974,7 +974,7 @@ This anchored approach builds trust. People know what you stand for, so they kno
 
 Your commitment to values-driven change assumes your values are correct. But values can be inherited without examination, can be appropriate in one context and harmful in another, can reflect the past more than the future. Your anchor might be holding you to principles worth abandoning.
 
-There's also the trap of values-as-excuse. "I'm not changing this because of my principles" can be principled or can be resistance disguised as principle. The difference isn't always easy to see from inside. Regularly questioning your anchor is part of keeping it healthy.`,
+There’s also the trap of values-as-excuse. "I’m not changing this because of my principles" can be principled or can be resistance disguised as principle. The difference isn’t always easy to see from inside. Regularly questioning your anchor is part of keeping it healthy.`,
 
     coreBeliefs: [
       'Change should serve values, not just happen',
@@ -1050,18 +1050,18 @@ There's also the trap of values-as-excuse. "I'm not changing this because of my 
     superpower: 'persistent attention',
     superpowerExpanded: `You stay watching when others move on.
 
-Your steady observation accumulates into understanding. The changes that happen too slowly to notice in a week—you see them over months. The patterns that only emerge across seasons—you catch them because you're still watching. This persistence is rare and valuable.
+Your steady observation accumulates into understanding. The changes that happen too slowly to notice in a week—you see them over months. The patterns that only emerge across seasons—you catch them because you’re still watching. This persistence is rare and valuable.
 
-People come to you for perspective that requires long attention. What's really happening with this slow-moving situation? What's the trajectory of this gradual change? You know, because you've been watching steadily while others checked in and checked out.`,
+People come to you for perspective that requires long attention. What’s really happening with this slow-moving situation? What’s the trajectory of this gradual change? You know, because you’ve been watching steadily while others checked in and checked out.`,
 
     blindSpot:
       'Your steady watching can become passive witness to things that need intervention. Sometimes observation should give way to action.',
 
-    blindSpotExpanded: `Watching isn't always enough.
+    blindSpotExpanded: `Watching isn’t always enough.
 
-Your commitment to steady observation can become an excuse for not acting. You're still gathering information. You're still developing understanding. But at some point, what you've observed needs to produce something beyond more observation.
+Your commitment to steady observation can become an excuse for not acting. You’re still gathering information. You’re still developing understanding. But at some point, what you’ve observed needs to produce something beyond more observation.
 
-There's also the trap of neutrality. Rooted observation positions you as outside the action, which can feel neutral but isn't. What you choose to watch, how long you watch, what you do with your observations—these are choices with consequences. Your steadiness is a stance, not an absence of stance.`,
+There’s also the trap of neutrality. Rooted observation positions you as outside the action, which can feel neutral but isn’t. What you choose to watch, how long you watch, what you do with your observations—these are choices with consequences. Your steadiness is a stance, not an absence of stance.`,
 
     coreBeliefs: [
       'Patience in observation produces understanding that haste cannot',
@@ -1123,7 +1123,7 @@ There's also the trap of neutrality. Rooted observation positions you as outside
       'Their utopia sees what\'s actually there. Perception is connected to reality.',
 
     description:
-      "You observe with grounded attention, seeing what's actually present rather than what you expect or hope to see. Your observation is connected to reality, not filtered by wishful thinking.",
+      "You observe with grounded attention, seeing what’s actually present rather than what you expect or hope to see. Your observation is connected to reality, not filtered by wishful thinking.",
 
     pull: 'toward accurate perception',
     edge: 'you see what\'s really there, not what you want to see',
@@ -1133,7 +1133,7 @@ There's also the trap of neutrality. Rooted observation positions you as outside
     superpower: 'realistic perception',
     superpowerExpanded: `You see things clearly.
 
-Your grounded observation isn't distorted by what you want to be true or what you expect to find. You have the capacity to see unpleasant realities, surprising developments, and uncomfortable truths because you're more committed to accuracy than comfort.
+Your grounded observation isn’t distorted by what you want to be true or what you expect to find. You have the capacity to see unpleasant realities, surprising developments, and uncomfortable truths because you’re more committed to accuracy than comfort.
 
 This makes you valuable when clear-eyed assessment matters. The situation that needs honest evaluation, not cheerleading. The problem that needs to be seen clearly before it can be solved. You provide the grounded perception that decisions require.`,
 
@@ -1142,9 +1142,9 @@ This makes you valuable when clear-eyed assessment matters. The situation that n
 
     blindSpotExpanded: `Reality includes more than limitations.
 
-Your commitment to seeing what's actually there can bias you toward seeing obstacles more than opportunities. "Being realistic" can become code for "expecting the worst." Your grounded perception might accurately see problems while missing equally real possibilities.
+Your commitment to seeing what’s actually there can bias you toward seeing obstacles more than opportunities. "Being realistic" can become code for "expecting the worst." Your grounded perception might accurately see problems while missing equally real possibilities.
 
-There's also the question of what realism even is. Everyone's perception is partial and shaped. Your grounded observation feels objective to you, but it's still filtered through your experience, your expectations, your blind spots. True groundedness includes groundedness about your own limitations.`,
+There’s also the question of what realism even is. Everyone’s perception is partial and shaped. Your grounded observation feels objective to you, but it’s still filtered through your experience, your expectations, your blind spots. True groundedness includes groundedness about your own limitations.`,
 
     coreBeliefs: [
       'Clear perception requires commitment to truth over comfort',
@@ -1214,9 +1214,9 @@ There's also the question of what realism even is. Everyone's perception is part
       'You observe with anchored purpose, watching for what matters because you know what you\'re looking for.',
 
     superpower: 'directed attention',
-    superpowerExpanded: `You know what you're watching for.
+    superpowerExpanded: `You know what you’re watching for.
 
-Your observation isn't passive absorption—it's active search. You have clear sense of what matters, and you direct your attention accordingly. This means you catch important things that undirected observers miss, because you're looking for them.
+Your observation isn’t passive absorption—it’s active search. You have clear sense of what matters, and you direct your attention accordingly. This means you catch important things that undirected observers miss, because you’re looking for them.
 
 This anchored attention makes you efficient. In overwhelming environments where everything clamors for attention, you know what deserves it. Your clear sense of purpose cuts through noise to find signal.`,
 
@@ -1225,9 +1225,9 @@ This anchored attention makes you efficient. In overwhelming environments where 
 
     blindSpotExpanded: `Purpose can be a filter that removes the unexpected.
 
-Your anchored observation sees what it's looking for—but what about the important things you're not looking for? Directed attention is efficient, but it can miss the surprising development, the unexpected pattern, the important thing that doesn't fit your categories.
+Your anchored observation sees what it’s looking for—but what about the important things you’re not looking for? Directed attention is efficient, but it can miss the surprising development, the unexpected pattern, the important thing that doesn’t fit your categories.
 
-There's also the question of who set your direction. Your sense of what matters came from somewhere. Is it still serving you, or are you observing through outdated priorities? Grounded observers need to occasionally lift their anchor and observe undirectedly, to check whether their direction still makes sense.`,
+There’s also the question of who set your direction. Your sense of what matters came from somewhere. Is it still serving you, or are you observing through outdated priorities? Grounded observers need to occasionally lift their anchor and observe undirectedly, to check whether their direction still makes sense.`,
 
     coreBeliefs: [
       'Purposeful observation is more efficient than undirected reception',
@@ -1293,7 +1293,7 @@ There's also the question of who set your direction. Your sense of what matters 
       'Their utopia pays attention to the small things. Nothing worth noticing is overlooked.',
 
     description:
-      "You notice with patient steadiness, catching small things over time that hurried attention misses. Your noticing isn't flashy—it's the accumulated attention of someone who's been paying attention for a while.",
+      "You notice with patient steadiness, catching small things over time that hurried attention misses. Your noticing isn’t flashy—it’s the accumulated attention of someone who’s been paying attention for a while.",
 
     pull: 'toward accumulated noticing',
     edge: 'you notice small things that add up to big understanding',
@@ -1303,9 +1303,9 @@ There's also the question of who set your direction. Your sense of what matters 
     superpower: 'patient noticing',
     superpowerExpanded: `You catch small things over time.
 
-Your steady noticing accumulates. The slight change that's invisible day to day but obvious month to month—you catch it. The pattern that only emerges across many instances—you notice it. This patient attention produces understanding that quick noticing cannot achieve.
+Your steady noticing accumulates. The slight change that’s invisible day to day but obvious month to month—you catch it. The pattern that only emerges across many instances—you notice it. This patient attention produces understanding that quick noticing cannot achieve.
 
-People value your steady noticing because it reveals what's really happening beneath the surface. The slow drift, the gradual change, the emerging pattern—these only appear to attention that persists.`,
+People value your steady noticing because it reveals what’s really happening beneath the surface. The slow drift, the gradual change, the emerging pattern—these only appear to attention that persists.`,
 
     blindSpot:
       'Your patient noticing can miss urgent signals. Some things demand immediate attention, and your steady pace can be too slow.',
@@ -1314,7 +1314,7 @@ People value your steady noticing because it reveals what's really happening ben
 
 Your steady attention is valuable for slow-developing patterns, but some situations need fast recognition. The urgent signal that demands immediate response might not fit your patient approach. Learning when to accelerate your noticing is important.
 
-There's also the question of action. Patient noticing can become permanent noticing—always accumulating more, never concluding anything. At some point, what you've noticed needs to lead somewhere. Rooted noticing without eventual action is just steady watching.`,
+There’s also the question of action. Patient noticing can become permanent noticing—always accumulating more, never concluding anything. At some point, what you’ve noticed needs to lead somewhere. Rooted noticing without eventual action is just steady watching.`,
 
     coreBeliefs: [
       'Small things add up to big things when you notice them long enough',
@@ -1376,7 +1376,7 @@ There's also the question of action. Patient noticing can become permanent notic
       'Their utopia values the ordinary. Daily life is full of things worth noticing.',
 
     description:
-      "You notice what's present in ordinary reality, attending to the texture of daily life that abstraction overlooks. Your grounded noticing finds significance in the everyday.",
+      "You notice what’s present in ordinary reality, attending to the texture of daily life that abstraction overlooks. Your grounded noticing finds significance in the everyday.",
 
     pull: 'toward the present moment',
     edge: 'you notice the extraordinary in the ordinary',
@@ -1384,20 +1384,20 @@ There's also the question of action. Patient noticing can become permanent notic
       'You notice what\'s actually present—the richness hidden in ordinary moments that distraction obscures.',
 
     superpower: 'present attention',
-    superpowerExpanded: `You notice what's right here.
+    superpowerExpanded: `You notice what’s right here.
 
-Your grounded attention doesn't need exotic stimuli—you find plenty to notice in ordinary reality. The quality of light at this moment. The particular way this person speaks. The texture of this day. Your noticing is rooted in what's present, not what's elsewhere or theoretical.
+Your grounded attention doesn’t need exotic stimuli—you find plenty to notice in ordinary reality. The quality of light at this moment. The particular way this person speaks. The texture of this day. Your noticing is rooted in what’s present, not what’s elsewhere or theoretical.
 
-This grounded attention produces a different kind of richness. While others chase novelty, you find depth in the familiar. What you notice in daily life would escape most people because they're not present enough to catch it.`,
+This grounded attention produces a different kind of richness. While others chase novelty, you find depth in the familiar. What you notice in daily life would escape most people because they’re not present enough to catch it.`,
 
     blindSpot:
       'Your grounded noticing can become parochial. There are things worth noticing beyond your immediate environment.',
 
-    blindSpotExpanded: `The present isn't everything.
+    blindSpotExpanded: `The present isn’t everything.
 
-Your attention to what's immediately present can limit what you notice. There are patterns that only emerge when you look beyond your local environment. There are realities that require abstract thinking to grasp. Your grounded noticing is valuable but incomplete.
+Your attention to what’s immediately present can limit what you notice. There are patterns that only emerge when you look beyond your local environment. There are realities that require abstract thinking to grasp. Your grounded noticing is valuable but incomplete.
 
-There's also the risk of ordinary as comfort zone. You notice what's familiar because it's comfortable. But some important noticing requires discomfort, unfamiliarity, being somewhere that doesn't feel grounded. The grounded noticer sometimes needs to uproot.`,
+There’s also the risk of ordinary as comfort zone. You notice what’s familiar because it’s comfortable. But some important noticing requires discomfort, unfamiliarity, being somewhere that doesn’t feel grounded. The grounded noticer sometimes needs to uproot.`,
 
     coreBeliefs: [
       'The ordinary is full of things worth noticing',
@@ -1459,7 +1459,7 @@ There's also the risk of ordinary as comfort zone. You notice what's familiar be
       'Their utopia knows what to value. Attention goes where it matters most.',
 
     description:
-      "You notice what matters, with attention anchored to values you've decided are important. Your noticing isn't random—it's shaped by clear sense of what deserves attention.",
+      "You notice what matters, with attention anchored to values you’ve decided are important. Your noticing isn’t random—it’s shaped by clear sense of what deserves attention.",
 
     pull: 'toward what matters',
     edge: 'you notice things others miss because you know what to look for',
@@ -1469,18 +1469,18 @@ There's also the risk of ordinary as comfort zone. You notice what's familiar be
     superpower: 'values-directed noticing',
     superpowerExpanded: `You notice what your values tell you to notice.
 
-Your attention has direction. You've thought about what matters, and your noticing follows. This means you catch important things that randomly-noticing people miss, because you're specifically watching for them.
+Your attention has direction. You’ve thought about what matters, and your noticing follows. This means you catch important things that randomly-noticing people miss, because you’re specifically watching for them.
 
-This anchored noticing makes you a reliable detector for what you care about. The small gesture that reveals character—you catch it. The subtle sign that something's wrong—you notice it. Your values have trained your attention.`,
+This anchored noticing makes you a reliable detector for what you care about. The small gesture that reveals character—you catch it. The subtle sign that something’s wrong—you notice it. Your values have trained your attention.`,
 
     blindSpot:
       'Your anchored noticing can miss valuable surprises. What your values don\'t prioritize might still be worth noticing.',
 
     blindSpotExpanded: `Values can be blinders.
 
-Your attention is shaped by your values, which means it's also limited by them. The important thing that doesn't fit your categories—you might miss it. The valuable surprise that your values didn't anticipate—your anchored attention might filter it out.
+Your attention is shaped by your values, which means it’s also limited by them. The important thing that doesn’t fit your categories—you might miss it. The valuable surprise that your values didn’t anticipate—your anchored attention might filter it out.
 
-There's also the question of whose values are doing the anchoring. You inherited some of what you value. Are those inheritances still serving you? The anchored noticer needs to occasionally examine their anchor, to make sure it's worth being anchored to.`,
+There’s also the question of whose values are doing the anchoring. You inherited some of what you value. Are those inheritances still serving you? The anchored noticer needs to occasionally examine their anchor, to make sure it’s worth being anchored to.`,
 
     coreBeliefs: [
       'Attention should serve what matters',
@@ -1546,7 +1546,7 @@ There's also the question of whose values are doing the anchoring. You inherited
       'Their utopia remembers everything worth remembering. Nothing important is lost.',
 
     description:
-      "You stand still so others can find their way back. In a world obsessed with building and moving, you hold space. You notice what's actually happening while others rush past.",
+      "You stand still so others can find their way back. In a world obsessed with building and moving, you hold space. You notice what’s actually happening while others rush past.",
 
     pull: 'toward holding space',
     edge: 'you witness with the steadiness that lets others find their way',
@@ -1558,16 +1558,16 @@ There's also the question of whose values are doing the anchoring. You inherited
 
 In a world of transient attention, you stay. People know they can come back and find you still there, still witnessing. This continuity is rare and valuable. It provides the ground that people need when everything else is shifting.
 
-Your witnessing accumulates into memory. What you've steadily seen, you remember. This makes you keeper of stories, holder of continuity, the person who knows what happened because you were there—and stayed there.`,
+Your witnessing accumulates into memory. What you’ve steadily seen, you remember. This makes you keeper of stories, holder of continuity, the person who knows what happened because you were there—and stayed there.`,
 
     blindSpot:
       'Your stillness can become stagnation. Witnessing without acting eventually becomes complicity.',
 
     blindSpotExpanded: `Presence has limits.
 
-Your steady witnessing is valuable, but it can become an excuse for not doing. At some point, what you're witnessing requires more than presence—it requires action. The steady witness who never acts becomes the steady bystander.
+Your steady witnessing is valuable, but it can become an excuse for not doing. At some point, what you’re witnessing requires more than presence—it requires action. The steady witness who never acts becomes the steady bystander.
 
-There's also the cost of stillness to yourself. Always holding space for others, never moving—this can deplete without replenishing. The steady witness needs to be witnessed too, sometimes. Steadiness for others shouldn't mean stagnation for yourself.`,
+There’s also the cost of stillness to yourself. Always holding space for others, never moving—this can deplete without replenishing. The steady witness needs to be witnessed too, sometimes. Steadiness for others shouldn’t mean stagnation for yourself.`,
 
     coreBeliefs: [
       'Presence is a gift that requires steadiness',
@@ -1629,7 +1629,7 @@ There's also the cost of stillness to yourself. Always holding space for others,
       'Their utopia has roots that go deep. Memory is connected to place.',
 
     description:
-      "You witness from connection to place and community, your presence rooted in belonging. Your witnessing isn't abstract—it's grounded in the specific places and people you're present to.",
+      "You witness from connection to place and community, your presence rooted in belonging. Your witnessing isn’t abstract—it’s grounded in the specific places and people you’re present to.",
 
     pull: 'toward rooted presence',
     edge: 'you witness from belonging, not from distance',
@@ -1639,9 +1639,9 @@ There's also the cost of stillness to yourself. Always holding space for others,
     superpower: 'rooted presence',
     superpowerExpanded: `Your witnessing comes from belonging.
 
-You're not a detached observer—you're part of what you witness. Your presence is rooted in place, community, relationship. This groundedness gives your witnessing depth that detached observation cannot achieve. You witness from within, not from above.
+You’re not a detached observer—you’re part of what you witness. Your presence is rooted in place, community, relationship. This groundedness gives your witnessing depth that detached observation cannot achieve. You witness from within, not from above.
 
-This rooted presence provides anchoring for others. When people need someone who understands because they're part of the same fabric, you can be that person. Your witnessing is connected witnessing.`,
+This rooted presence provides anchoring for others. When people need someone who understands because they’re part of the same fabric, you can be that person. Your witnessing is connected witnessing.`,
 
     blindSpot:
       'Your rooted witnessing can become parochial. There are important things to witness beyond your place and community.',
@@ -1650,7 +1650,7 @@ This rooted presence provides anchoring for others. When people need someone who
 
 Your connection to specific place and community serves you well—but it can also limit what you witness. There are realities outside your roots that deserve attention. There are perspectives that rootedness obscures.
 
-There's also the danger of insider blindness. Being part of what you witness means you share its blind spots. The grounded witness can miss what only outsiders can see. Sometimes witnessing requires the discomfort of being unrooted.`,
+There’s also the danger of insider blindness. Being part of what you witness means you share its blind spots. The grounded witness can miss what only outsiders can see. Sometimes witnessing requires the discomfort of being unrooted.`,
 
     coreBeliefs: [
       'Witnessing from belonging is deeper than witnessing from distance',
@@ -1712,7 +1712,7 @@ There's also the danger of insider blindness. Being part of what you witness mea
       'Their utopia knows what matters enough to witness. Attention goes where it\'s needed most.',
 
     description:
-      "You witness with purpose, your presence anchored to what you've decided deserves your attention. Your witnessing isn't random—it's directed by values toward what matters.",
+      "You witness with purpose, your presence anchored to what you’ve decided deserves your attention. Your witnessing isn’t random—it’s directed by values toward what matters.",
 
     pull: 'toward purposeful presence',
     edge: 'you witness what needs witnessing because you know what matters',
@@ -1722,7 +1722,7 @@ There's also the danger of insider blindness. Being part of what you witness mea
     superpower: 'purposeful witnessing',
     superpowerExpanded: `You know what deserves your witness.
 
-Your presence has direction. Not everything needs witnessing, and you don't pretend otherwise. You've thought about what matters, and your witnessing follows. This means your presence goes where it's most needed.
+Your presence has direction. Not everything needs witnessing, and you don’t pretend otherwise. You’ve thought about what matters, and your witnessing follows. This means your presence goes where it’s most needed.
 
 This anchored witnessing produces clarity about priorities. When everything clamors for attention, you know what deserves yours. Your purposeful presence is efficient, directed, meaningful—not scattered or random.`,
 
@@ -1731,9 +1731,9 @@ This anchored witnessing produces clarity about priorities. When everything clam
 
     blindSpotExpanded: `Purpose can be a filter.
 
-Your anchored approach means you witness what fits your values—but what about the important things that don't fit? The surprise that deserves presence you didn't plan to give. The reality that matters but not according to your current priorities.
+Your anchored approach means you witness what fits your values—but what about the important things that don’t fit? The surprise that deserves presence you didn’t plan to give. The reality that matters but not according to your current priorities.
 
-There's also the danger of withholding witness. "That doesn't deserve my attention" can be principled discernment or can be convenient dismissal. The anchored witness needs to examine whether their anchor is serving or limiting.`,
+There’s also the danger of withholding witness. "That doesn’t deserve my attention" can be principled discernment or can be convenient dismissal. The anchored witness needs to examine whether their anchor is serving or limiting.`,
 
     coreBeliefs: [
       'Purposeful witnessing directs presence where it matters',

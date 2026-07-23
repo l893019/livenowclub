@@ -157,9 +157,9 @@ export function GroupReadingStep({
 
           <div className={styles.divider} />
 
-          {/* Section 3: How You'll Move Together */}
+          {/* Section 3: How You’ll Move Together */}
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>How You'll Move Together</h2>
+            <h2 className={styles.sectionTitle}>How You’ll Move Together</h2>
             <p className={styles.bodyText}>{llmReading.groupMovement}</p>
           </section>
 
@@ -173,15 +173,15 @@ export function GroupReadingStep({
 
           <div className={styles.divider} />
 
-          {/* Section 5: What You'd Build */}
+          {/* Section 5: What You’d Build */}
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>What You'd Build</h2>
+            <h2 className={styles.sectionTitle}>What You’d Build</h2>
             <p className={styles.bodyText}>{llmReading.whatYoudBuild}</p>
           </section>
         </>
       ) : error ? (
         <div className={styles.emptyState}>
-          <p>Couldn't generate the group reading.</p>
+          <p>Couldn’t generate the group reading.</p>
           <p>Please try refreshing the page.</p>
         </div>
       ) : (

@@ -9,7 +9,7 @@ export const metadata = {
 export default function ReadPage() {
   const allEssays = getAllEssays();
 
-  // Track which essays we've shown to avoid duplicates
+  // Track which essays we’ve shown to avoid duplicates
   const shownSlugs = new Set<string>();
 
   // Helper to get essays for a pathway without duplicates
@@ -100,7 +100,7 @@ export default function ReadPage() {
         <section id="heavy" className="read-section">
           <div className="read-section-header">
             <h2>On Grief & Loss</h2>
-            <p>For when you're carrying something heavy.</p>
+            <p>For when you’re carrying something heavy.</p>
           </div>
           <div className="read-list">
             {griefLoss.map((essay) => (
@@ -188,7 +188,7 @@ export default function ReadPage() {
         <section id="self-love" className="read-section">
           <div className="read-section-header">
             <h2>Falling in Love with Yourself</h2>
-            <p>The most important relationship you'll ever have.</p>
+            <p>The most important relationship you’ll ever have.</p>
           </div>
           <div className="read-list">
             {selfLove.map((essay) => (

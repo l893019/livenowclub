@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: `${founderName} is a ${founderIdentityName}. Take the quiz to see how your worldviews fit together.`,
     openGraph: {
       title: `${founderName} invited you to compare worldviews`,
-      description: `They're a ${founderIdentityName}. Take the quiz to see how your worldviews fit together.`,
+      description: `They’re a ${founderIdentityName}. Take the quiz to see how your worldviews fit together.`,
       url: `https://livenowclub.com/wonder/essay/quiz/utopia/${slug}/join`,
       type: "website",
       images: [ogImage],
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title: `${founderName} invited you to compare worldviews`,
-      description: `They're a ${founderIdentityName}. Take the quiz to see how your worldviews fit together.`,
+      description: `They’re a ${founderIdentityName}. Take the quiz to see how your worldviews fit together.`,
       images: [ogImage],
     },
   };

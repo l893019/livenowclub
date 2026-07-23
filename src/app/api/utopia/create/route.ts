@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Get user's result to get their name and archetype
+    // Get user’s result to get their name and archetype
     const userResult = await getUserResult(userId);
     if (!userResult) {
       return NextResponse.json(
@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Update user's email if provided
+    // Update user’s email if provided
     if (email) {
       await updateUserEmail(userId, email);
     }

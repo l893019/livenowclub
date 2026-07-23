@@ -25,11 +25,11 @@ type RelationshipStepProps = {
   onPrev?: () => void;
   hasNext?: boolean;
   hasPrev?: boolean;
-  /** Callback when user wants to see the other person's full reading */
+  /** Callback when user wants to see the other person’s full reading */
   onViewTheirReading?: () => void;
-  /** If true, the current viewer hasn't taken the quiz - show CTA */
+  /** If true, the current viewer hasn’t taken the quiz - show CTA */
   viewerHasNotTakenQuiz?: boolean;
-  /** Array of all group members - for contextual "what's missing" section */
+  /** Array of all group members - for contextual "what’s missing" section */
   groupMembers?: UtopiaMember[];
 };
 
@@ -119,7 +119,7 @@ export function RelationshipStep({
     const shareUrl = `${window.location.origin}/wonder/essay/quiz/utopia/${utopiaSlug}?view=relationship&you=${you.id}&them=${them.id}`;
     const yourName = identityYou?.name || yourArchetype?.name;
     const theirName = identityThem?.name || theirArchetype?.name;
-    const shareText = `${yourName} × ${theirName} — What we'd build together`;
+    const shareText = `${yourName} × ${theirName} — What we’d build together`;
 
     if (navigator.share) {
       try {
@@ -188,7 +188,7 @@ export function RelationshipStep({
         )}
       </div>
 
-      {/* CTA for viewers who haven't taken the quiz */}
+      {/* CTA for viewers who haven’t taken the quiz */}
       {viewerHasNotTakenQuiz && (
         <QuizCTA
           variant="relationship"
@@ -254,7 +254,7 @@ export function RelationshipStep({
           <div className={styles.divider} />
 
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>How You'll Make Decisions</h2>
+            <h2 className={styles.sectionTitle}>How You’ll Make Decisions</h2>
             <div className={styles.bodyText}>
               <p>{llmReading.howDecisions}</p>
             </div>
@@ -263,7 +263,7 @@ export function RelationshipStep({
           <div className={styles.divider} />
 
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>Where You'll Create Friction</h2>
+            <h2 className={styles.sectionTitle}>Where You’ll Create Friction</h2>
             <div className={styles.bodyText}>
               <p>{llmReading.friction}</p>
             </div>
@@ -281,7 +281,7 @@ export function RelationshipStep({
           <div className={styles.divider} />
 
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>What You'd Build Together</h2>
+            <h2 className={styles.sectionTitle}>What You’d Build Together</h2>
             <div className={styles.bodyText}>
               <p>{llmReading.whatYoudBuild}</p>
             </div>
@@ -302,7 +302,7 @@ export function RelationshipStep({
           <div className={styles.divider} />
 
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>Where You'll Push Each Other</h2>
+            <h2 className={styles.sectionTitle}>Where You’ll Push Each Other</h2>
             <div className={styles.bodyText}>
               {archetypePairReading.whereYouPush.split("\n\n").map((para, i) => (
                 <p key={i}>{para}</p>
@@ -324,7 +324,7 @@ export function RelationshipStep({
           <div className={styles.divider} />
 
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>What's Missing Between You</h2>
+            <h2 className={styles.sectionTitle}>What’s Missing Between You</h2>
             <div className={styles.bodyText}>
               <p>{archetypePairReading.whatsMissing}</p>
               <p className={styles.missingAdvice}>

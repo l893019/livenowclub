@@ -26,7 +26,7 @@ export function getSessionId(): string {
     const existingId = localStorage.getItem(storageKey);
     const expiry = localStorage.getItem(expiryKey);
 
-    // If session exists and hasn't expired (30 min), reuse it
+    // If session exists and hasn’t expired (30 min), reuse it
     if (existingId && expiry && Date.now() < parseInt(expiry)) {
       // Extend expiry
       const newExpiry = Date.now() + 30 * 60 * 1000; // 30 minutes
@@ -43,7 +43,7 @@ export function getSessionId(): string {
     return newId;
   } catch (error) {
     console.error('Session ID storage error:', error);
-    // Return temporary session ID that won't persist
+    // Return temporary session ID that won’t persist
     return generateSessionId();
   }
 }
@@ -72,7 +72,7 @@ export async function trackEvent(data: {
       }),
     });
   } catch (error) {
-    // Silently fail - don't break user experience
+    // Silently fail - don’t break user experience
     console.error('Analytics error:', error);
   }
 }

@@ -15,7 +15,7 @@ export type IndividualReading = {
   identity: string // "Confident Builder"
   pattern: string // Your Pattern section
   gifts: string // What This Gives You section
-  movement: string // How You'll Move section
+  movement: string // How You’ll Move section
   tradeoff: string | null // The Tradeoff section (only if pattern is strong)
 }
 
@@ -33,7 +33,7 @@ export type PairReading = {
 
 export type GroupReading = {
   groupPattern: string       // What defines this group
-  sharedStrength: string     // What they're collectively good at
+  sharedStrength: string     // What they’re collectively good at
   groupMovement: string      // How they make decisions together
   watchFor: string           // Where they might struggle
   whatYoudBuild: string      // What this group is suited to create
@@ -167,10 +167,10 @@ const WRITING_GUIDELINES = `
 - Write directly — no hedging ("That said...", "Of course...")
 - Use "you" not "people like you"
 
-**DON'T:**
+**DON’T:**
 - Explain why someone chose what they chose
-- Add defensive qualifiers ("That's not a flaw...")
-- Use AI-isms ("It's worth noting...", "Interestingly...")
+- Add defensive qualifiers ("That’s not a flaw...")
+- Use AI-isms ("It’s worth noting...", "Interestingly...")
 - Write poetically when direct is clearer
 `
 
@@ -189,7 +189,7 @@ export function getIndividualPrompt(
 
 ${WRITING_GUIDELINES}
 
-## The Person's Answers
+## The Person’s Answers
 
 ${formatAnswersForPrompt(answers)}
 
@@ -211,25 +211,25 @@ What showed up consistently across their answers. Observable, not interpreted.
 Example:
 "You chose 'build something that lasts' over 'experience everything.' You chose 'meaningful work' over 'financial security.' You chose 'stay close to what I know' over 'keep expanding.'
 
-You're optimizing for depth. One thing, done well, for a long time."
+You’re optimizing for depth. One thing, done well, for a long time."
 
 ### 2. What This Gives You
 The gifts of this orientation, grounded in daily life.
 
 Example:
-"At work, you're the one who actually finishes things. When a friend is spiraling, you're steady. When you have a free Saturday, you don't wonder what to do — you already know."
+"At work, you’re the one who actually finishes things. When a friend is spiraling, you’re steady. When you have a free Saturday, you don’t wonder what to do — you already know."
 
-### 3. How You'll Move
+### 3. How You’ll Move
 How this pattern engages with the future.
 
 Example:
-"You'll build slowly and stay longer than most. You won't pivot at the first sign of difficulty. The risk isn't that you'll quit too early — it's that you'll stay too long."
+"You’ll build slowly and stay longer than most. You won’t pivot at the first sign of difficulty. The risk isn’t that you’ll quit too early — it’s that you’ll stay too long."
 
 ${hasTradeoff ? `### 4. The Tradeoff
 What any strong version of this pattern trades away.
 
 Example:
-"The long game trades away spontaneity. You might miss the side door because you're focused on the main entrance."` : ''}
+"The long game trades away spontaneity. You might miss the side door because you’re focused on the main entrance."` : ''}
 
 ## Output Format
 
@@ -239,7 +239,7 @@ Respond with valid JSON only. No explanation, no preamble. Match this exact stru
   "identity": "${identity.full}",
   "pattern": "Your Pattern section text here...",
   "gifts": "What This Gives You section text here...",
-  "movement": "How You'll Move section text here...",
+  "movement": "How You’ll Move section text here...",
   "tradeoff": ${hasTradeoff ? '"The Tradeoff section text here..."' : 'null'}
 }
 
@@ -299,13 +299,13 @@ What emerges when these two patterns overlap. 2-3 sentences.
 Specific to this direction. What A provides that B needs or benefits from. 2-3 sentences.
 
 Example:
-"You give them permission to slow down. They're always reaching — you remind them that where they are is also good."
+"You give them permission to slow down. They’re always reaching — you remind them that where they are is also good."
 
 ### 3. What ${personB.name} Gives ${personA.name}
 Specific to this direction. What B provides that A needs or benefits from. 2-3 sentences.
 
 Example:
-"You give them motion. They're steady, sometimes stuck. You show them that movement doesn't mean abandoning what they've built."
+"You give them motion. They’re steady, sometimes stuck. You show them that movement doesn’t mean abandoning what they’ve built."
 
 ### 4. What Emerges Together
 Something neither would create alone. 2-3 sentences.
@@ -313,16 +313,16 @@ Something neither would create alone. 2-3 sentences.
 ### 5. Your Shared Strength
 Where your patterns reinforce each other. 2-3 sentences.
 
-### 6. How You'll Make Decisions
+### 6. How You’ll Make Decisions
 The dynamic when choices need to be made. 2-3 sentences.
 
-### 7. Where You'll Create Friction
+### 7. Where You’ll Create Friction
 The predictable collision points. 2-3 sentences.
 
 ### 8. What to Watch For
 The pattern that might become problematic if unexamined. 2-3 sentences.
 
-### 9. What You'd Build Together
+### 9. What You’d Build Together
 The natural output of this combination. 2-3 sentences.
 
 ## Output Format
@@ -335,10 +335,10 @@ Respond with valid JSON only. No explanation, no preamble. Match this exact stru
   "whatBGivesA": "What ${personB.name} gives ${personA.name}...",
   "whatEmerges": "What Emerges Together text...",
   "sharedStrength": "Your Shared Strength text...",
-  "howDecisions": "How You'll Make Decisions text...",
-  "friction": "Where You'll Create Friction text...",
+  "howDecisions": "How You’ll Make Decisions text...",
+  "friction": "Where You’ll Create Friction text...",
   "watchFor": "What to Watch For text...",
-  "whatYoudBuild": "What You'd Build Together text..."
+  "whatYoudBuild": "What You’d Build Together text..."
 }
 
 Each section should be 2-3 sentences. Direct, specific, grounded in observable behavior.`
@@ -387,7 +387,7 @@ Generate a reading with these five sections:
 What kind of group this is. What shows up consistently across the members. Reference specific members by name.
 
 Example:
-"You're a group that trusts process over panic. When the world shifts, you don't scramble — you settle into your different ways of responding. Sarah starts building immediately, Marcus finds his center, Priya tends what needs protecting."
+"You’re a group that trusts process over panic. When the world shifts, you don’t scramble — you settle into your different ways of responding. Sarah starts building immediately, Marcus finds his center, Priya tends what needs protecting."
 
 ### 2. Your Shared Strength
 What this combination of people is collectively good at. Where the group excels.
@@ -395,11 +395,11 @@ What this combination of people is collectively good at. Where the group excels.
 Example:
 "When something breaks, everyone reaches for tools. No one sits with it — you fix. That means things actually get done."
 
-### 3. How You'll Move Together
+### 3. How You’ll Move Together
 How this group makes decisions, navigates disagreements, and moves as a unit.
 
 Example:
-"Sarah proposes, Marcus questions what gets lost, Priya asks if you're moving too fast. It looks like resistance, but it's how you make things stronger."
+"Sarah proposes, Marcus questions what gets lost, Priya asks if you’re moving too fast. It looks like resistance, but it’s how you make things stronger."
 
 ### 4. Watch For
 The patterns that might become problematic. Where the group might fail.
@@ -407,11 +407,11 @@ The patterns that might become problematic. Where the group might fail.
 Example:
 "Half of you protect, half expand. When resources get tight, that split will surface. Name it early or it becomes personal."
 
-### 5. What You'd Build
+### 5. What You’d Build
 The natural output of this combination. What this group is suited to create together.
 
 Example:
-"A place that feels both steady and alive. Something people stay in longer than expected. You'd build a container, not a rocket ship."
+"A place that feels both steady and alive. Something people stay in longer than expected. You’d build a container, not a rocket ship."
 
 ## Output Format
 
@@ -420,9 +420,9 @@ Respond with valid JSON only. No explanation, no preamble. Match this exact stru
 {
   "groupPattern": "Your Group Pattern text here... 2-4 sentences. Reference members by name.",
   "sharedStrength": "Your Shared Strength text here... 2-3 sentences.",
-  "groupMovement": "How You'll Move Together text here... 2-3 sentences. Reference members by name.",
+  "groupMovement": "How You’ll Move Together text here... 2-3 sentences. Reference members by name.",
   "watchFor": "Watch For text here... 2-3 sentences.",
-  "whatYoudBuild": "What You'd Build text here... 2-3 sentences."
+  "whatYoudBuild": "What You’d Build text here... 2-3 sentences."
 }
 
 Each section should feel specific to THIS combination of people, not a generic group description.`

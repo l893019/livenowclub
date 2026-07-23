@@ -41,7 +41,7 @@ export async function GET(
 ) {
   const { slug } = await params;
 
-  // Fetch utopia data via API (ioredis doesn't work in Edge runtime)
+  // Fetch utopia data via API (ioredis doesn’t work in Edge runtime)
   const origin = request.nextUrl.origin;
   const response = await fetch(`${origin}/api/utopia/${slug}`);
   const data = await response.json();

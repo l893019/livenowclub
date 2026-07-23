@@ -83,7 +83,7 @@ export default function GuideShell({
           <ul style={{ paddingLeft: "20px" }}>{goDeeper}</ul>
 
           <p style={{ ...GS.p, marginTop: "36px", fontStyle: "italic", color: "rgba(45, 42, 38, 0.6)" }}>
-            This page is lived experience, not medical advice. I'm a survivor, not a
+            This page is lived experience, not medical advice. I’m a survivor, not a
             doctor. For medical decisions, lean on your care team.
           </p>
         </article>

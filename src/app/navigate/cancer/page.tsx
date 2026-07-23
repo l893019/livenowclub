@@ -6,7 +6,7 @@ import { GUIDES } from "@/lib/guides";
 // Essays that are truly practical guides (actionable, step-by-step)
 const PRACTICAL_GUIDES = ["expecting-the-unexpected", "how-to-reset-your-nervous-system"];
 
-// Key milestones in Louise's cancer journey
+// Key milestones in Louise’s cancer journey
 const JOURNEY_MILESTONES: Record<string, string> = {
   "embracing-free-fall": "The diagnosis",
   "you-cant-always-get-what-you-want": "When cancer returned",
@@ -239,7 +239,7 @@ export default function NavigateCancerPage() {
               Download the Free PDF
             </a>
             <a
-              href={`mailto:?subject=${encodeURIComponent("A cancer guide that actually helps")}&body=${encodeURIComponent("Thought of you. This guide was written by someone who's been through it. Practical help for diagnosis, treatment, and everything after:\n\nhttps://livenowclub.com/navigate/cancer")}`}
+              href={`mailto:?subject=${encodeURIComponent("A cancer guide that actually helps")}&body=${encodeURIComponent("Thought of you. This guide was written by someone who’s been through it. Practical help for diagnosis, treatment, and everything after:\n\nhttps://livenowclub.com/navigate/cancer")}`}
               className="btn btn--secondary"
             >
               Send This to Someone

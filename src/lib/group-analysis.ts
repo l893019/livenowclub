@@ -291,22 +291,22 @@ function generateSuperpowerTitle(powers: string[]): string {
   if (powerSet.has("trusting abundance") && powerSet.has("building from scratch")) return "Abundant Creation";
   if (powerSet.has("trusting abundance") && powerSet.has("thinking in systems")) return "Systems of Plenty";
   if (powerSet.has("trusting abundance") && powerSet.has("showing up fully")) return "Present Generosity";
-  if (powerSet.has("trusting abundance") && powerSet.has("fixing what's broken")) return "Restorative Abundance";
-  if (powerSet.has("trusting abundance") && powerSet.has("spotting what's hidden")) return "Vigilant Optimism";
+  if (powerSet.has("trusting abundance") && powerSet.has("fixing what’s broken")) return "Restorative Abundance";
+  if (powerSet.has("trusting abundance") && powerSet.has("spotting what’s hidden")) return "Vigilant Optimism";
 
   // Builder + others
   if (powerSet.has("building from scratch") && powerSet.has("thinking in systems")) return "Architectural Vision";
   if (powerSet.has("building from scratch") && powerSet.has("embracing difficulty")) return "Constructive Friction";
   if (powerSet.has("building from scratch") && powerSet.has("imagining beyond limits")) return "Transcendent Construction";
-  if (powerSet.has("building from scratch") && powerSet.has("fixing what's broken")) return "Build and Mend";
+  if (powerSet.has("building from scratch") && powerSet.has("fixing what’s broken")) return "Build and Mend";
   if (powerSet.has("building from scratch") && powerSet.has("remembering what matters")) return "Building from Memory";
-  if (powerSet.has("building from scratch") && powerSet.has("spotting what's hidden")) return "Watchful Building";
+  if (powerSet.has("building from scratch") && powerSet.has("spotting what’s hidden")) return "Watchful Building";
 
   // Architect + others
-  if (powerSet.has("thinking in systems") && powerSet.has("fixing what's broken")) return "Systemic Repair";
+  if (powerSet.has("thinking in systems") && powerSet.has("fixing what’s broken")) return "Systemic Repair";
   if (powerSet.has("thinking in systems") && powerSet.has("showing up fully")) return "Present Architecture";
   if (powerSet.has("thinking in systems") && powerSet.has("remembering what matters")) return "Enduring Systems";
-  if (powerSet.has("thinking in systems") && powerSet.has("spotting what's hidden")) return "Structural Vigilance";
+  if (powerSet.has("thinking in systems") && powerSet.has("spotting what’s hidden")) return "Structural Vigilance";
 
   // Present + others
   if (powerSet.has("showing up fully") && powerSet.has("sitting with hard questions")) return "Present Inquiry";
@@ -317,21 +317,21 @@ function generateSuperpowerTitle(powers: string[]): string {
   // Questioner + others
   if (powerSet.has("sitting with hard questions") && powerSet.has("holding uncertainty")) return "Comfortable Mystery";
   if (powerSet.has("sitting with hard questions") && powerSet.has("imagining beyond limits")) return "Questioning Beyond";
-  if (powerSet.has("sitting with hard questions") && powerSet.has("spotting what's hidden")) return "Investigative Depth";
+  if (powerSet.has("sitting with hard questions") && powerSet.has("spotting what’s hidden")) return "Investigative Depth";
   if (powerSet.has("sitting with hard questions") && powerSet.has("feeling everything")) return "Felt Inquiry";
 
   // Rooted + others
   if (powerSet.has("knowing when to stop") && powerSet.has("holding uncertainty")) return "Grounded Openness";
   if (powerSet.has("knowing when to stop") && powerSet.has("remembering what matters")) return "Rooted Memory";
-  if (powerSet.has("knowing when to stop") && powerSet.has("fixing what's broken")) return "Patient Repair";
+  if (powerSet.has("knowing when to stop") && powerSet.has("fixing what’s broken")) return "Patient Repair";
 
   // Witness + others
-  if (powerSet.has("spotting what's hidden") && powerSet.has("telling hard truths")) return "Unflinching Clarity";
-  if (powerSet.has("spotting what's hidden") && powerSet.has("fixing what's broken")) return "Seeing to Mend";
-  if (powerSet.has("spotting what's hidden") && powerSet.has("remembering what matters")) return "Vigilant Memory";
+  if (powerSet.has("spotting what’s hidden") && powerSet.has("telling hard truths")) return "Unflinching Clarity";
+  if (powerSet.has("spotting what’s hidden") && powerSet.has("fixing what’s broken")) return "Seeing to Mend";
+  if (powerSet.has("spotting what’s hidden") && powerSet.has("remembering what matters")) return "Vigilant Memory";
 
   // Keeper + others
-  if (powerSet.has("remembering what matters") && powerSet.has("fixing what's broken")) return "Restorative Memory";
+  if (powerSet.has("remembering what matters") && powerSet.has("fixing what’s broken")) return "Restorative Memory";
   if (powerSet.has("remembering what matters") && powerSet.has("holding uncertainty")) return "Memory in Motion";
   if (powerSet.has("remembering what matters") && powerSet.has("feeling everything")) return "Felt History";
 
@@ -339,7 +339,7 @@ function generateSuperpowerTitle(powers: string[]): string {
   if (powerSet.has("embracing difficulty") && powerSet.has("imagining beyond limits")) return "Transcendent Struggle";
   if (powerSet.has("embracing difficulty") && powerSet.has("feeling everything")) return "Difficult Joy";
   if (powerSet.has("embracing difficulty") && powerSet.has("telling hard truths")) return "Unflinching Challenge";
-  if (powerSet.has("embracing difficulty") && powerSet.has("fixing what's broken")) return "Hard Repair";
+  if (powerSet.has("embracing difficulty") && powerSet.has("fixing what’s broken")) return "Hard Repair";
 
   // Transcendent + others
   if (powerSet.has("imagining beyond limits") && powerSet.has("feeling everything")) return "Boundless Sensation";
@@ -347,13 +347,13 @@ function generateSuperpowerTitle(powers: string[]): string {
   if (powerSet.has("imagining beyond limits") && powerSet.has("telling hard truths")) return "Truth Beyond";
 
   // Feeler + others
-  if (powerSet.has("feeling everything") && powerSet.has("fixing what's broken")) return "Healing Touch";
+  if (powerSet.has("feeling everything") && powerSet.has("fixing what’s broken")) return "Healing Touch";
   if (powerSet.has("feeling everything") && powerSet.has("telling hard truths")) return "Felt Truth";
   if (powerSet.has("feeling everything") && powerSet.has("holding uncertainty")) return "Feeling Through";
 
   // Mender + others
-  if (powerSet.has("fixing what's broken") && powerSet.has("telling hard truths")) return "Honest Repair";
-  if (powerSet.has("fixing what's broken") && powerSet.has("holding uncertainty")) return "Uncertain Mending";
+  if (powerSet.has("fixing what’s broken") && powerSet.has("telling hard truths")) return "Honest Repair";
+  if (powerSet.has("fixing what’s broken") && powerSet.has("holding uncertainty")) return "Uncertain Mending";
 
   // Truth-Teller + others
   if (powerSet.has("telling hard truths") && powerSet.has("holding uncertainty")) return "Honest Uncertainty";
@@ -369,7 +369,7 @@ function generateSuperpowerDescription(
   totalMembers: number
 ): string {
   if (superpowerCounts.length === 0) {
-    return "This group's collective strength is still emerging.";
+    return "This group’s collective strength is still emerging.";
   }
 
   const topPower = superpowerCounts[0];
@@ -377,7 +377,7 @@ function generateSuperpowerDescription(
   const secondPower = superpowerCounts[1];
   const secondArch = secondPower ? archetypes[secondPower.archetype] : null;
 
-  let para1 = `This group's dominant gift is ${topPower.power}. `;
+  let para1 = `This group’s dominant gift is ${topPower.power}. `;
   if (topPower.count > 1) {
     para1 += `With ${topPower.count} out of ${totalMembers} members sharing this orientation, it forms the core of your collective identity. `;
   }
@@ -472,7 +472,7 @@ function generateBlindSpotDescription(
       `The most significant risk for this group is a shared blind spot: ${firstBlindSpot.toLowerCase()} This pattern appears in multiple members, meaning no one in the group naturally sees past it. When everyone shares the same limitation, it becomes invisible through mutual confirmation.`
     );
   } else if (presentArchetypes.length > 0) {
-    // Find the most common archetype's blind spot
+    // Find the most common archetype’s blind spot
     const topArchetype = presentArchetypes[0];
     const topBlindSpot = archetypes[topArchetype]?.blindSpot;
     if (topBlindSpot) {
@@ -498,7 +498,7 @@ function generateBlindSpotDescription(
   // Third paragraph: risk narrative
   if (totalMembers >= 3) {
     paragraphs.push(
-      `In group decisions, watch for moments when everyone agrees too quickly. Shared blind spots create comfortable consensus where challenge is actually needed. Consider appointing a rotating devil's advocate, or explicitly inviting the perspective of missing archetypes when making important decisions.`
+      `In group decisions, watch for moments when everyone agrees too quickly. Shared blind spots create comfortable consensus where challenge is actually needed. Consider appointing a rotating devil’s advocate, or explicitly inviting the perspective of missing archetypes when making important decisions.`
     );
   }
 
@@ -511,26 +511,26 @@ function generateBlindSpotDescription(
 
 // What each archetype would add to a group
 const missingVoiceAdditions: Record<string, string> = {
-  citizen: `The Abundant would bring trust in possibility to this group. They would remind you that scarcity is often manufactured, that systems can work for everyone, and that optimism is not naivety but a position argued and defended. In discussions that drift toward zero-sum thinking, they would ask: why are we assuming there isn't enough?`,
+  citizen: `The Abundant would bring trust in possibility to this group. They would remind you that scarcity is often manufactured, that systems can work for everyone, and that optimism is not naivety but a position argued and defended. In discussions that drift toward zero-sum thinking, they would ask: why are we assuming there isn’t enough?`,
   shaper: `The Builder would bring momentum to this group. They would push when others settle, question when others accept, and remind you that everything is raw material for what comes next. In moments of stagnation, they would ask: what are we waiting for?`,
   architect: `The Architect would bring systems thinking to this group. They would see the invisible structures that shape your interactions, question who the current arrangement serves, and propose designs that distribute power rather than concentrate it. In discussions that get stuck on individuals, they would ask: what structure is creating this pattern?`,
   presence: `The Present would bring attention to this group. They would slow the conversation when it races past what matters, hold space when others fill silence with noise, and remind you that the quality of your attention shapes the quality of your outcomes. In moments of distraction, they would ask: are we actually here?`,
   swimmer: `The Deep would bring philosophical depth to this group. They would sit with questions others rush past, notice the assumptions beneath your certainties, and remind you that not-knowing can be its own form of wisdom. In moments of premature closure, they would ask: what are we still not seeing?`,
   rooted: `The Rooted would bring groundedness to this group. They would question the assumption that more and faster are always better, hold space for doing nothing when others reach for action, and remind you that stopping can be the most radical choice. In moments of acceleration, they would ask: do we actually need to do this?`,
   conscience: `The Guardian would bring vigilance to this group. They would see the costs others prefer to ignore, question systems that seem too convenient, and remind you that dystopia always arrives disguised as efficiency. In moments of comfortable agreement, they would ask: what are we not seeing?`,
-  embers: `The Keeper would bring memory to this group. They would recall what worked before, what was lost and shouldn't have been, and what wisdom already exists in human history. In moments of reinvention, they would ask: have we already solved this?`,
+  embers: `The Keeper would bring memory to this group. They would recall what worked before, what was lost and shouldn’t have been, and what wisdom already exists in human history. In moments of reinvention, they would ask: have we already solved this?`,
   friction: `The Challenger would bring challenge to this group. They would question whether ease is always good, seek difficulty when others seek comfort, and remind you that growth requires resistance. In moments of consensus, they would ask: is this too easy?`,
-  unbound: `The Transcendent would bring expansiveness to this group. They would question the boundaries you take for granted, imagine possibilities beyond current constraints, and remind you that what seems fixed can be transcended. In moments of limitation, they would ask: what if we're thinking too small?`,
+  unbound: `The Transcendent would bring expansiveness to this group. They would question the boundaries you take for granted, imagine possibilities beyond current constraints, and remind you that what seems fixed can be transcended. In moments of limitation, they would ask: what if we’re thinking too small?`,
   alive: `The Alive would bring sensation to this group. They would notice what others think past, feel what others analyze, and remind you that experience is the point. In moments of abstraction, they would ask: what does this actually feel like?`,
   mender: `The Mender would bring repair to this group. They would focus on fixing what exists rather than building new, value maintenance over innovation, and remind you that the most advanced engineering is making what exists work again. In moments of abandonment, they would ask: can this be saved?`,
-  cleareyed: `The Truth-Teller would bring honesty to this group. They would say what others soften, see what others prefer to ignore, and remind you that truth matters more than comfort. In moments of pleasant fiction, they would ask: what's actually true here?`,
+  cleareyed: `The Truth-Teller would bring honesty to this group. They would say what others soften, see what others prefer to ignore, and remind you that truth matters more than comfort. In moments of pleasant fiction, they would ask: what’s actually true here?`,
   between: `The Liminal would bring uncertainty to this group. They would question fixed positions, hold space for not-knowing, and remind you that the threshold is a valid place to stand. In moments of forced choice, they would ask: what if neither option is right?`,
 };
 
 // Questions each archetype would ask
 const missingVoiceQuestions: Record<string, string[]> = {
   citizen: [
-    "Why are we assuming there isn't enough?",
+    "Why are we assuming there isn’t enough?",
     "What would this look like if we trusted abundance?",
     "Who benefits from us thinking in scarcity terms?",
   ],
@@ -560,9 +560,9 @@ const missingVoiceQuestions: Record<string, string[]> = {
     "Is our movement toward something or away from something?",
   ],
   conscience: [
-    "What's the hidden cost here?",
+    "What’s the hidden cost here?",
     "Who is being served by this comfortable agreement?",
-    "What would a critic say that we're dismissing too quickly?",
+    "What would a critic say that we’re dismissing too quickly?",
   ],
   embers: [
     "Have we already solved this before?",
@@ -575,8 +575,8 @@ const missingVoiceQuestions: Record<string, string[]> = {
     "Would this decision feel different if it were harder?",
   ],
   unbound: [
-    "What if we're thinking too small?",
-    "What boundaries are we assuming that don't have to exist?",
+    "What if we’re thinking too small?",
+    "What boundaries are we assuming that don’t have to exist?",
     "What becomes possible if we transcend these limits?",
   ],
   alive: [
@@ -590,7 +590,7 @@ const missingVoiceQuestions: Record<string, string[]> = {
     "Are we abandoning something worth fixing?",
   ],
   cleareyed: [
-    "What's actually true here?",
+    "What’s actually true here?",
     "What are we not saying to each other?",
     "What would change if we stopped being polite about this?",
   ],
@@ -603,7 +603,7 @@ const missingVoiceQuestions: Record<string, string[]> = {
 
 /**
  * Generate missing voices analysis
- * Prioritizes by how much they'd balance the composition
+ * Prioritizes by how much they’d balance the composition
  */
 export function generateMissingVoices(
   members: GroupMember[],
@@ -615,7 +615,7 @@ export function generateMissingVoices(
     (k) => !presentArchetypes.has(k)
   );
 
-  // Score missing archetypes by how much they'd balance the composition
+  // Score missing archetypes by how much they’d balance the composition
   const scored = missingArchetypes.map((key) => {
     const pos = archetypePositions[key];
     if (!pos) return { key, balanceScore: 0 };
@@ -735,7 +735,7 @@ const quadrantQuestions: Record<Quadrant, Array<{ question: string; context: str
     "build-transcend": [
       {
         question:
-          "You're building toward something beyond the current horizon. What will you have to leave behind to get there?",
+          "You’re building toward something beyond the current horizon. What will you have to leave behind to get there?",
         context:
           "This group clusters in the build-transcend quadrant: oriented toward action and reaching beyond current limits. Your collective energy pushes outward and upward. The question invites you to consider what the pursuit of the extraordinary might cost.",
       },
@@ -749,9 +749,9 @@ const quadrantQuestions: Record<Quadrant, Array<{ question: string; context: str
     "build-root": [
       {
         question:
-          "You're building from solid ground. What foundation is strong enough to build on, and what merely feels solid?",
+          "You’re building from solid ground. What foundation is strong enough to build on, and what merely feels solid?",
         context:
-          "This group clusters in the build-root quadrant: oriented toward action grounded in what's proven. Your collective energy seeks to create from stability. The question invites you to examine whether your foundations are as secure as they seem.",
+          "This group clusters in the build-root quadrant: oriented toward action grounded in what’s proven. Your collective energy seeks to create from stability. The question invites you to examine whether your foundations are as secure as they seem.",
       },
       {
         question:
@@ -763,13 +763,13 @@ const quadrantQuestions: Record<Quadrant, Array<{ question: string; context: str
     "witness-transcend": [
       {
         question:
-          "You see beyond the obvious. What truth are you glimpsing that others aren't ready to hear?",
+          "You see beyond the obvious. What truth are you glimpsing that others aren’t ready to hear?",
         context:
           "This group clusters in the witness-transcend quadrant: oriented toward seeing clearly while reaching beyond current understanding. Your collective energy perceives what others miss. The question invites you to consider the responsibility that comes with unusual sight.",
       },
       {
         question:
-          "What would it cost you to fully articulate what you're beginning to see?",
+          "What would it cost you to fully articulate what you’re beginning to see?",
         context:
           "Your group combines the capacity for deep observation with willingness to transcend conventional understanding. This question asks about the price of translating vision into communication.",
       },
@@ -777,7 +777,7 @@ const quadrantQuestions: Record<Quadrant, Array<{ question: string; context: str
     "witness-root": [
       {
         question:
-          "You see what's actually here. What truth about the present moment is everyone else rushing past?",
+          "You see what’s actually here. What truth about the present moment is everyone else rushing past?",
         context:
           "This group clusters in the witness-root quadrant: oriented toward seeing clearly while remaining grounded in what is. Your collective energy stays present. The question invites you to articulate what your presence reveals that urgency obscures.",
       },
@@ -815,42 +815,42 @@ export function generateGroupQuestion(
 }
 
 // =============================================================================
-// 8. GROUP UTOPIA (What You'd Build Together)
+// 8. GROUP UTOPIA (What You’d Build Together)
 // =============================================================================
 
 // Quadrant descriptions for what groups build
 const quadrantBuilds: Record<Quadrant, { build: string; strong: string }> = {
   "build-transcend": {
-    build: `This group reaches upward while making things happen. You're not content with what exists—you build toward what could be. Together, you'd create ventures, projects, or practices that push past current limits while actually shipping.
+    build: `This group reaches upward while making things happen. You’re not content with what exists—you build toward what could be. Together, you’d create ventures, projects, or practices that push past current limits while actually shipping.
 
 Your shared orientation: make something that matters AND make it real. Neither pure vision nor pure execution satisfies you. You want both.`,
-    strong: `Momentum toward the new. This group doesn't get stuck in either endless planning or mindless action. You'd move quickly toward things worth moving toward.
+    strong: `Momentum toward the new. This group doesn’t get stuck in either endless planning or mindless action. You’d move quickly toward things worth moving toward.
 
-You'd be good at starting things that seem impossible, at convincing others something unprecedented is worth attempting, at maintaining energy when the work is hard.`
+You’d be good at starting things that seem impossible, at convincing others something unprecedented is worth attempting, at maintaining energy when the work is hard.`
   },
   "build-root": {
-    build: `This group builds from what's proven. You're makers who respect foundations—creating from stability rather than disruption. Together, you'd create things that last because they're built on solid ground.
+    build: `This group builds from what’s proven. You’re makers who respect foundations—creating from stability rather than disruption. Together, you’d create things that last because they’re built on solid ground.
 
-Your shared orientation: make something real AND make it endure. You're not interested in novelty for its own sake. You want to build what will still be standing.`,
-    strong: `Durability. This group creates things that survive because you take foundations seriously. You'd be good at building institutions, practices, or relationships that improve over time rather than flash and fade.
+Your shared orientation: make something real AND make it endure. You’re not interested in novelty for its own sake. You want to build what will still be standing.`,
+    strong: `Durability. This group creates things that survive because you take foundations seriously. You’d be good at building institutions, practices, or relationships that improve over time rather than flash and fade.
 
-You'd also be good at saying no to things that seem exciting but aren't worth the instability they'd introduce.`
+You’d also be good at saying no to things that seem exciting but aren’t worth the instability they’d introduce.`
   },
   "witness-transcend": {
-    build: `This group sees further than most. You're oriented toward understanding what others miss, toward perceiving beyond the obvious. Together, you'd create insight—frameworks, teachings, or art that reveals what's hidden.
+    build: `This group sees further than most. You’re oriented toward understanding what others miss, toward perceiving beyond the obvious. Together, you’d create insight—frameworks, teachings, or art that reveals what’s hidden.
 
-Your shared orientation: see clearly AND see beyond. You're not satisfied with surface truth or with staying within known limits. You want to understand the edges.`,
-    strong: `Vision. This group perceives what others don't. You'd be good at asking questions no one else thinks to ask, at noticing patterns others miss, at articulating truths that haven't been spoken yet.
+Your shared orientation: see clearly AND see beyond. You’re not satisfied with surface truth or with staying within known limits. You want to understand the edges.`,
+    strong: `Vision. This group perceives what others don’t. You’d be good at asking questions no one else thinks to ask, at noticing patterns others miss, at articulating truths that haven’t been spoken yet.
 
-You'd also be good at holding complexity—seeing multiple layers at once without needing to resolve them prematurely.`
+You’d also be good at holding complexity—seeing multiple layers at once without needing to resolve them prematurely.`
   },
   "witness-root": {
-    build: `This group stays present to what's actually here. You're not reaching for the transcendent or rushing to build—you're seeing clearly what exists right now. Together, you'd create presence, attention, and honest observation.
+    build: `This group stays present to what’s actually here. You’re not reaching for the transcendent or rushing to build—you’re seeing clearly what exists right now. Together, you’d create presence, attention, and honest observation.
 
-Your shared orientation: see clearly AND stay grounded. You're the ones who notice when the emperor has no clothes, who ask whether the obvious solution actually addresses the real problem.`,
-    strong: `Groundedness. This group doesn't get swept up in enthusiasm or urgency. You'd be good at slowing things down when speed serves no one, at asking whether action is actually needed, at being honest about what's working and what isn't.
+Your shared orientation: see clearly AND stay grounded. You’re the ones who notice when the emperor has no clothes, who ask whether the obvious solution actually addresses the real problem.`,
+    strong: `Groundedness. This group doesn’t get swept up in enthusiasm or urgency. You’d be good at slowing things down when speed serves no one, at asking whether action is actually needed, at being honest about what’s working and what isn’t.
 
-You'd also be good at maintenance—valuing what exists rather than always chasing what's next.`
+You’d also be good at maintenance—valuing what exists rather than always chasing what’s next.`
   }
 };
 
@@ -862,18 +862,18 @@ function getCompositionNarrative(composition: CompositionAnalysis): string {
 
   // Build vs Witness axis
   if (Math.abs(buildVsWitness.build - buildVsWitness.witness) < 20) {
-    narrative += "Doers and watchers in equal measure. You'll make things AND notice what's actually happening. ";
+    narrative += "Doers and watchers in equal measure. You’ll make things AND notice what’s actually happening. ";
   } else if (buildVsWitness.build > 60) {
-    narrative += "A room full of doers. You'll ship things, start things, intervene. Pausing to observe? Less natural. ";
+    narrative += "A room full of doers. You’ll ship things, start things, intervene. Pausing to observe? Less natural. ";
   } else {
-    narrative += "A room full of watchers. You'll see clearly, question deeply. But who's going to actually build the thing? ";
+    narrative += "A room full of watchers. You’ll see clearly, question deeply. But who’s going to actually build the thing? ";
   }
 
   // Root vs Transcend axis
   if (Math.abs(rootVsTranscend.root - rootVsTranscend.transcend) < 20) {
     narrative += "Grounded and reaching—present to what is, open to what could be.";
   } else if (rootVsTranscend.transcend > 60) {
-    narrative += "Eyes on the horizon. What exists now matters less than what's possible.";
+    narrative += "Eyes on the horizon. What exists now matters less than what’s possible.";
   } else {
     narrative += "Feet on the ground. Proven over possible, every time.";
   }
@@ -895,9 +895,9 @@ function getExpandingPerspectives(
   const second = missingArchetypes[1] ? archetypes[missingArchetypes[1]] : null;
 
   if (first && second) {
-    return `No one here brings ${first.superpower.toLowerCase()} or ${second.superpower.toLowerCase()}. ${first.name} and ${second.name} would ask questions this group won't think to ask.`;
+    return `No one here brings ${first.superpower.toLowerCase()} or ${second.superpower.toLowerCase()}. ${first.name} and ${second.name} would ask questions this group won’t think to ask.`;
   } else if (first) {
-    return `No one here brings ${first.superpower.toLowerCase()}. ${first.name} would see what you're all missing.`;
+    return `No one here brings ${first.superpower.toLowerCase()}. ${first.name} would see what you’re all missing.`;
   }
 
   return "";
@@ -918,7 +918,7 @@ export function generateGroupUtopia(
   // Get quadrant-based content
   const quadrantContent = quadrantBuilds[centerOfGravity.dominantQuadrant];
 
-  // Build "What You'd Build Together"
+  // Build "What You’d Build Together"
   const compositionNarrative = getCompositionNarrative(composition);
   const whatYoudBuild = `${quadrantContent.build}\n\n${compositionNarrative}`;
 
@@ -949,10 +949,10 @@ export function generateGroupUtopia(
 
   let whatWouldBeMissing = expandingPerspectives;
   if (sharedBlindSpot && maxCount >= 2) {
-    whatWouldBeMissing += `\n\nA pattern to watch: ${sharedBlindSpot.charAt(0).toLowerCase()}${sharedBlindSpot.slice(1)} This shows up in multiple members—which means it's easy for the whole group to miss.`;
+    whatWouldBeMissing += `\n\nA pattern to watch: ${sharedBlindSpot.charAt(0).toLowerCase()}${sharedBlindSpot.slice(1)} This shows up in multiple members—which means it’s easy for the whole group to miss.`;
   }
 
-  // "The Question You're Answering"
+  // "The Question You’re Answering"
   const questionYoureAnswering = groupQuestion.question;
 
   return {
@@ -970,9 +970,9 @@ export function generateGroupUtopia(
 // Short descriptions of what each quadrant builds
 const quadrantShortBuild: Record<Quadrant, string> = {
   "build-transcend": "things that reach beyond current limits",
-  "build-root": "things grounded in what's proven",
-  "witness-transcend": "insight into what others can't see",
-  "witness-root": "presence with what's actually here"
+  "build-root": "things grounded in what’s proven",
+  "witness-transcend": "insight into what others can’t see",
+  "witness-root": "presence with what’s actually here"
 };
 
 /**
@@ -988,7 +988,7 @@ export function generateJoinShiftNarrative(
     return {
       before: "nothing yet",
       after: `a ${newArch?.name || "new"} worldview`,
-      shift: "You're the first. What comes next is up to you."
+      shift: "You’re the first. What comes next is up to you."
     };
   }
 
@@ -1001,7 +1001,7 @@ export function generateJoinShiftNarrative(
     return {
       before: `${existingName}'s ${existingArch?.name || "worldview"} alone`,
       after: `${existingArch?.name || "one worldview"} meeting ${newArch?.name || "another"}`,
-      shift: `Now you can see what you'd build together.`
+      shift: `Now you can see what you’d build together.`
     };
   }
 
@@ -1016,7 +1016,7 @@ export function generateJoinShiftNarrative(
     return {
       before: "a group",
       after: "a group with a new perspective",
-      shift: "Every worldview changes what you'd build together."
+      shift: "Every worldview changes what you’d build together."
     };
   }
 
@@ -1099,7 +1099,7 @@ export function getRecommendedInvite(
 // =============================================================================
 
 /**
- * Analyze a group's composition and generate comprehensive insights
+ * Analyze a group’s composition and generate comprehensive insights
  */
 export function analyzeGroup(members: GroupMember[]): GroupAnalysis {
   if (members.length < 3) {
@@ -1137,7 +1137,7 @@ export function analyzeGroup(members: GroupMember[]): GroupAnalysis {
     centerOfGravity.position
   );
 
-  // 9. Generate group utopia (what you'd build together)
+  // 9. Generate group utopia (what you’d build together)
   const groupUtopia = generateGroupUtopia(
     members,
     centerOfGravity,

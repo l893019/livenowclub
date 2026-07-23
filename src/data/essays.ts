@@ -231,7 +231,7 @@ export const essays: Essay[] = [
   },
   {
     slug: "things-ive-learned-lately",
-    title: "Things I've Learned Lately",
+    title: "Things I’ve Learned Lately",
     date: "2025-06-22",
     section: "life",
   },
@@ -255,7 +255,7 @@ export const essays: Essay[] = [
   },
   {
     slug: "you-cant-always-get-what-you-want",
-    title: "You can't always get what you want",
+    title: "You can’t always get what you want",
     date: "2025-07-25",
     section: "life",
   },

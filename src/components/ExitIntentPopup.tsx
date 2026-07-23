@@ -31,7 +31,7 @@ export default function ExitIntentPopup({ enabled = true }: ExitIntentPopupProps
 
     const handleMouseLeave = (e: MouseEvent) => {
       // Only trigger if mouse is leaving through the top of the page
-      // and we haven't triggered before
+      // and we haven’t triggered before
       if (e.clientY <= 0 && !hasTriggered) {
         // Small delay to avoid accidental triggers
         timeout = setTimeout(() => {
@@ -88,9 +88,9 @@ export default function ExitIntentPopup({ enabled = true }: ExitIntentPopupProps
           ×
         </button>
         <div className={styles.content}>
-          <h2 className={styles.title}>Wait — don't go yet</h2>
+          <h2 className={styles.title}>Wait — don’t go yet</h2>
           <p className={styles.subtitle}>
-            If this essay resonated, there's more where it came from.
+            If this essay resonated, there’s more where it came from.
           </p>
           <EmailCapture
             context="exit-intent"

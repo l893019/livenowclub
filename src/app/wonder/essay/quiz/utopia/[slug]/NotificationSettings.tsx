@@ -48,7 +48,7 @@ export function NotificationSettings({ userId, utopiaSlug }: NotificationSetting
       if (res.ok) {
         setSavedEmail(email.trim());
         setShowForm(false);
-        setMessage("You'll be notified when someone joins!");
+        setMessage("You’ll be notified when someone joins!");
       } else {
         setMessage("Failed to save. Try again.");
       }

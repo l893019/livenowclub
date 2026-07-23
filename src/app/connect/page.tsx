@@ -39,7 +39,7 @@ export default function ConnectPage() {
               message_preview: message.substring(0, 100) // First 100 chars for preview
             }
           })
-        }).catch(() => {}); // Don't fail if tracking fails
+        }).catch(() => {}); // Don’t fail if tracking fails
 
         setSubmitted(true);
         form.reset();
@@ -61,7 +61,7 @@ export default function ConnectPage() {
           <span className="connect-label">Connect</span>
           <h1>Leave a mark</h1>
           <p className="connect-subtitle">
-            I read everything, but am admittedly not always good at replying in a timely manner. I very much appreciate your reading my words. Feel free to let me know what landed, what you'd like more of, what you're dealing with, anything that would be helpful to share! It is difficult for me to support people on a 1-1 basis, but I want to be there for you as much as I can.
+            I read everything, but am admittedly not always good at replying in a timely manner. I very much appreciate your reading my words. Feel free to let me know what landed, what you’d like more of, what you’re dealing with, anything that would be helpful to share! It is difficult for me to support people on a 1-1 basis, but I want to be there for you as much as I can.
           </p>
         </section>
 
@@ -90,7 +90,7 @@ export default function ConnectPage() {
                   name="message"
                   required
                   rows={6}
-                  placeholder="Tell me what landed, what you're sitting with, or just say hello..."
+                  placeholder="Tell me what landed, what you’re sitting with, or just say hello..."
                 />
               </div>
 
@@ -110,7 +110,7 @@ export default function ConnectPage() {
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="Only if you'd like a response"
+                  placeholder="Only if you’d like a response"
                 />
               </div>
 

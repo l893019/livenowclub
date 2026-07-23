@@ -8,7 +8,7 @@ const SUBSTACK_URL = process.env.SUBSTACK_URL || 'https://louiseireland.substack
 
 // Substack no longer accepts server-side signups (its /api/v1/free endpoint
 // returns 403 without a real browser session), so this route records the
-// signup for our own records and hands the visitor off to Substack's
+// signup for our own records and hands the visitor off to Substack’s
 // subscribe page with their email pre-filled, one click to finish.
 export async function POST(request: NextRequest) {
   try {

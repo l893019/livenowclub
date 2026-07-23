@@ -30,19 +30,19 @@ const COLORS: Essay["color"][] = ["pink", "coral", "gold", "teal", "lavender"];
 const CONTENT_DIR = path.join(process.cwd(), "content/essays");
 const IMAGES_DIR = "/images";
 
-// Compelling pull quotes for the quote wall - actual paragraphs from Louise's essays
+// Compelling pull quotes for the quote wall - actual paragraphs from Louise’s essays
 const PULL_QUOTES: Record<string, string> = {
-  "the-live-now-club": "Most people in your situation are focused on living not to die, I think what you're trying to say is that you're living to live. The words rearranged the air in my lungs. It was as if the ground shifted beneath me. The difference between survival and existence. Between holding on and inhabiting.",
-  "fixing-the-unfixable": "There is nothing you can say that will solve it. But, there is much you can say that will keep someone company inside of it. You say: I'm not going anywhere. You say: You don't have to be strong with me. You say: I don't know what to say, but I'm here.",
-  "the-other-side-of-grief": "I wept from the strangeness of return. From the terror of starting anew. From the defiant choice to love this life anyway, knowing how quickly it could disappear again. Cancer hasn't shrunk my life. It has skimmed it.",
-  "embracing-free-fall": "I'm learning to stop grasping for control and lean back into complete free fall. I don't believe in coincidences; I believe deeply that this diagnosis is another step on a path I started walking three years ago toward living my best life.",
-  "cancer-meditations": "I am not dying from this. But it's given me some peace to think that we are all on a path toward death, that we build beautiful lives that dissolve into beautiful nothingness. And in that path, I don't want to die with my art still in me.",
-  "threads-of-survival": "I think about that spider's resiliency. I think every day about it hiding from the water and gingerly sticking its leg out to make a move. Every day, I return to this moment, wrestling with the humbling truth that binds us together - both small and scared, both fighting fiercely against the tide.",
-  "i-love-lou": "I met her on February 13, 2022. Like any good meet-cute, I had this feeling I had met her long ago, maybe in another lifetime. I realized I couldn't mess it up. This was going to be a very special person in my life - arguably the most special. Her name is Lou.",
+  "the-live-now-club": "Most people in your situation are focused on living not to die, I think what you’re trying to say is that you’re living to live. The words rearranged the air in my lungs. It was as if the ground shifted beneath me. The difference between survival and existence. Between holding on and inhabiting.",
+  "fixing-the-unfixable": "There is nothing you can say that will solve it. But, there is much you can say that will keep someone company inside of it. You say: I’m not going anywhere. You say: You don’t have to be strong with me. You say: I don’t know what to say, but I’m here.",
+  "the-other-side-of-grief": "I wept from the strangeness of return. From the terror of starting anew. From the defiant choice to love this life anyway, knowing how quickly it could disappear again. Cancer hasn’t shrunk my life. It has skimmed it.",
+  "embracing-free-fall": "I’m learning to stop grasping for control and lean back into complete free fall. I don’t believe in coincidences; I believe deeply that this diagnosis is another step on a path I started walking three years ago toward living my best life.",
+  "cancer-meditations": "I am not dying from this. But it’s given me some peace to think that we are all on a path toward death, that we build beautiful lives that dissolve into beautiful nothingness. And in that path, I don’t want to die with my art still in me.",
+  "threads-of-survival": "I think about that spider’s resiliency. I think every day about it hiding from the water and gingerly sticking its leg out to make a move. Every day, I return to this moment, wrestling with the humbling truth that binds us together - both small and scared, both fighting fiercely against the tide.",
+  "i-love-lou": "I met her on February 13, 2022. Like any good meet-cute, I had this feeling I had met her long ago, maybe in another lifetime. I realized I couldn’t mess it up. This was going to be a very special person in my life - arguably the most special. Her name is Lou.",
   "playing-reindeer-games": "She has manufactured every possible way for me to live my happiest life, regardless of my physical circumstance, surrounding me with beauty and joy.",
   "god-is-in-the-trees": "I wanted to burn something to make something, the elements of carbon rearranging themselves from destruction to life.",
   "holy-shit-im-alive":
-    "Holy shit, I'm alive. I thought, suddenly overwhelmed with the joyousness of the moment. We take this aliveness for granted. We feel entitled to our hundred-plus years and a clean bill of health, unaware of what is required to maintain it.",
+    "Holy shit, I’m alive. I thought, suddenly overwhelmed with the joyousness of the moment. We take this aliveness for granted. We feel entitled to our hundred-plus years and a clean bill of health, unaware of what is required to maintain it.",
   "how-do-you-know-what-happens-to-you-isnt-good":
     "I hope I can find the beauty. I pray to surrender in wonder and keep my eyes open to what life wants to show me. This, this heartbreaking, earth-shattering darkness, could be the moment everything becomes clear.",
   "lifes-masquerade":
@@ -180,7 +180,7 @@ export const PATHWAYS: Pathway[] = [
       "if-you-love-something-let-it-go",
       "catch-pull-release",
       "how-are-you-after-it-all-falls-down",
-      // NOTE: "fixing-the-unfixable" removed - it's foundational philosophy, not grief
+      // NOTE: "fixing-the-unfixable" removed - it’s foundational philosophy, not grief
     ],
   },
   {
@@ -275,13 +275,13 @@ export const MOODS: { mood: string; prompt: string; essays: string[]; primary?: 
   },
   {
     mood: "grieving",
-    prompt: "I'm grieving",
+    prompt: "I’m grieving",
     primary: "the-other-side-of-grief",
     essays: ["the-other-side-of-grief", "and-still-the-figs-ripen", "the-ebb"],
   },
   {
     mood: "caregiver",
-    prompt: "I'm supporting someone I love",
+    prompt: "I’m supporting someone I love",
     primary: "fixing-the-unfixable", // THE essay on what to say
     essays: ["fixing-the-unfixable", "it-takes-a-village", "expecting-the-unexpected"],
   },
@@ -293,7 +293,7 @@ export const MOODS: { mood: string; prompt: string; essays: string[]; primary?: 
   },
   {
     mood: "curious",
-    prompt: "I'm curious who you are",
+    prompt: "I’m curious who you are",
     primary: "the-live-now-club",
     essays: ["the-live-now-club", "soulmd", "i-love-lou"],
   },
@@ -418,7 +418,7 @@ function extractSubtitle(content: string): string | undefined {
 // years), so normalize to typographic punctuation at read time.
 export function smartPunctuation(s: string): string {
   return s
-    .replace(/(\w)'(\w)/g, "$1’$2") // contractions and possessives: it's, Lou's
+    .replace(/(\w)'(\w)/g, "$1’$2") // contractions and possessives: it’s, Lou’s
     .replace(/(\w)'/g, "$1’") // trailing possessive: parents'
     .replace(/"([^"\n]+)"/g, "“$1”"); // paired double quotes
 }
@@ -513,7 +513,7 @@ export const CANCER_GUIDE: Pathway[] = [
     subtitle: "Everything I wish someone had told me at the start. The essays I wrote the day I learned I had cancer.",
     essays: [
       "expecting-the-unexpected", // THE practical guide - always first
-      "embracing-free-fall", // Louise's diagnosis moment
+      "embracing-free-fall", // Louise’s diagnosis moment
       "i-need-you-to-hold-my-hand",
     ],
   },

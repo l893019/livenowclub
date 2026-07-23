@@ -16,18 +16,18 @@ type GoDeepStepProps = {
 // Map compatibility descriptions to archetype keys
 const compatibilityMap: Record<string, string> = {
   "the one who wants to feel everything": "alive",
-  "the one who's watching for what's being hidden": "conscience",
+  "the one who’s watching for what’s being hidden": "conscience",
   "the one who craves difficulty": "friction",
   "the one who chose stillness": "rooted",
   "the one who guards what came before": "embers",
-  "the one who fixes what's broken": "mender",
+  "the one who fixes what’s broken": "mender",
   "the one who left the body behind": "unbound",
   "the one who lives in questions": "swimmer",
   "the one who values presence above all": "presence",
   "the one who builds collective structures": "architect",
-  "the one who can't stop building": "shaper",
+  "the one who can’t stop building": "shaper",
   "the one who tells the truth": "cleareyed",
-  "the one who's made peace with abundance": "citizen",
+  "the one who’s made peace with abundance": "citizen",
   "the one still figuring it out": "between",
 };
 
@@ -89,11 +89,11 @@ export function GoDeepStep({
         <h2 className={styles.sectionLabel}>Your People</h2>
         <div className={styles.compatibilityList}>
           <div className={styles.compatibilityItem}>
-            <span className={styles.compatibilityType}>You'll click with</span>
+            <span className={styles.compatibilityType}>You’ll click with</span>
             {renderCompatibilityLink(allyKey, allyArchetype, compatibility.ally)}
           </div>
           <div className={styles.compatibilityItem}>
-            <span className={styles.compatibilityType}>You'll clash with</span>
+            <span className={styles.compatibilityType}>You’ll clash with</span>
             {renderCompatibilityLink(
               tensionKey,
               tensionArchetype,

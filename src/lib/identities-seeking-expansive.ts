@@ -28,7 +28,7 @@ export const seekingExpansiveIdentities: Record<string, Identity> = {
       'Their utopia redesigns itself in real-time. The architecture is always learning.',
 
     description:
-      "You design systems that can evolve. Unlike architects who build for permanence, you build for change—creating structures that can reshape themselves as conditions shift. Your adaptability isn't uncertainty; it's the sophisticated understanding that good architecture anticipates its own transformation.",
+      "You design systems that can evolve. Unlike architects who build for permanence, you build for change—creating structures that can reshape themselves as conditions shift. Your adaptability isn’t uncertainty; it’s the sophisticated understanding that good architecture anticipates its own transformation.",
 
     pull: 'toward living systems',
     edge: 'you design structures that can evolve',
@@ -40,16 +40,16 @@ export const seekingExpansiveIdentities: Record<string, Identity> = {
 
 Where other architects design for permanence, you design for adaptation. Your systems include their own mechanisms for change—feedback loops, modularity, graceful degradation. You know that the world will shift, and you build accordingly.
 
-This makes you invaluable in uncertain environments. When requirements evolve, when contexts shift, when yesterday's solutions become today's problems—your adaptive architecture flexes rather than breaks. You don't just tolerate change; you design for it.`,
+This makes you invaluable in uncertain environments. When requirements evolve, when contexts shift, when yesterday’s solutions become today’s problems—your adaptive architecture flexes rather than breaks. You don’t just tolerate change; you design for it.`,
 
     blindSpot:
       'Your comfort with change can prevent you from committing. Sometimes a system needs to be finished, not eternally adaptable.',
 
-    blindSpotExpanded: `There's a point where adaptability becomes avoidance.
+    blindSpotExpanded: `There’s a point where adaptability becomes avoidance.
 
 Your architecture can always be improved, always evolve, always respond to new information. But at some point, something needs to ship. Your comfort with ongoing change can prevent you from declaring anything done, from making the hard commitment to a specific form.
 
-There's also the complexity cost. Systems designed for maximum adaptability are often more complicated than systems designed for specific purposes. Sometimes the simple, rigid solution serves better than the clever, flexible one.`,
+There’s also the complexity cost. Systems designed for maximum adaptability are often more complicated than systems designed for specific purposes. Sometimes the simple, rigid solution serves better than the clever, flexible one.`,
 
     coreBeliefs: [
       'The only constant is change—design for it',
@@ -59,12 +59,12 @@ There's also the complexity cost. Systems designed for maximum adaptability are 
     ],
 
     howYouGotHere:
-      "Your answers revealed someone who designs at the systems level while remaining fundamentally open to new information. You don't just tolerate uncertainty—you build it into your architecture. This combination of high agency and adaptive questioning maps to the Adventurous Architect.",
+      "Your answers revealed someone who designs at the systems level while remaining fundamentally open to new information. You don’t just tolerate uncertainty—you build it into your architecture. This combination of high agency and adaptive questioning maps to the Adventurous Architect.",
 
     alignsWith:
       'other Seekers—you share the orientation toward questioning and discovery, the sense that answers are provisional and worth revisiting',
     tensionWith:
-      "Settled types—their certainty can feel premature, like they've stopped asking questions that still matter",
+      "Settled types—their certainty can feel premature, like they’ve stopped asking questions that still matter",
     growsWith:
       'Protective types—they force you to consider what could go wrong with your adaptive systems, building in necessary constraints',
 
@@ -111,17 +111,17 @@ There's also the complexity cost. Systems designed for maximum adaptability are 
       'Their utopia is an experiment that keeps surprising its designers.',
 
     description:
-      "You don't build to arrive somewhere—you build to discover what's possible. Every system is a hypothesis, every structure a question asked in steel and code. Your architecture is an inquiry.",
+      "You don’t build to arrive somewhere—you build to discover what’s possible. Every system is a hypothesis, every structure a question asked in steel and code. Your architecture is an inquiry.",
 
     pull: 'toward undiscovered structure',
-    edge: "you see systems others haven't imagined",
+    edge: "you see systems others haven’t imagined",
     oneSentence:
       'You architect as exploration, letting each system teach you something about what systems can be.',
 
     superpower: 'building as exploration',
     superpowerExpanded: `For you, architecture is a form of research.
 
-You don't design because you know what should exist—you design to discover what could exist. Each project is an experiment, each structure a hypothesis about how things might work. This curiosity-driven approach produces architectures that surprise even you.
+You don’t design because you know what should exist—you design to discover what could exist. Each project is an experiment, each structure a hypothesis about how things might work. This curiosity-driven approach produces architectures that surprise even you.
 
 This makes you especially valuable at the frontier. When nobody knows what the right approach is, your willingness to build exploratory structures—to learn by making—generates possibilities that planning alone cannot. You think with your designs.`,
 
@@ -130,9 +130,9 @@ This makes you especially valuable at the frontier. When nobody knows what the r
 
     blindSpotExpanded: `Curiosity pulls you forward, but completion requires staying.
 
-Every project reaches a point where the exploration is mostly done and only execution remains. That's when you're most tempted to move on—when the interesting questions are answered and only the grind remains. But unfinished architectures don't serve anyone.
+Every project reaches a point where the exploration is mostly done and only execution remains. That’s when you’re most tempted to move on—when the interesting questions are answered and only the grind remains. But unfinished architectures don’t serve anyone.
 
-There's also the question of depth versus breadth. Your curiosity drives you to explore many possibilities, but mastery often requires staying with one approach long enough to truly understand it. The architectures you abandon may have had more to teach you.`,
+There’s also the question of depth versus breadth. Your curiosity drives you to explore many possibilities, but mastery often requires staying with one approach long enough to truly understand it. The architectures you abandon may have had more to teach you.`,
 
     coreBeliefs: [
       'Every system encodes assumptions—find the assumptions and you find the leverage',
@@ -142,12 +142,12 @@ There's also the question of depth versus breadth. Your curiosity drives you to 
     ],
 
     howYouGotHere:
-      "Your answers showed someone who designs systems while remaining genuinely curious about what's possible. You haven't stopped asking questions at the architectural level—you build to discover. This maps to the Curious Architect.",
+      "Your answers showed someone who designs systems while remaining genuinely curious about what’s possible. You haven’t stopped asking questions at the architectural level—you build to discover. This maps to the Curious Architect.",
 
     alignsWith:
       'other Curious types—you share the drive to explore, to ask questions even when answers seem settled',
     tensionWith:
-      "Confident types—their certainty can feel like they've stopped being curious about alternatives",
+      "Confident types—their certainty can feel like they’ve stopped being curious about alternatives",
     growsWith:
       'Settled types—they push you to commit to architectures rather than endlessly exploring, showing you the value of conviction',
 
@@ -194,7 +194,7 @@ There's also the question of depth versus breadth. Your curiosity drives you to 
       'Their utopia invites participation. The architecture welcomes new contributors.',
 
     description:
-      "You design systems that remain open—to modification, to input, to perspectives you haven't imagined yet. Your openness isn't indecision; it's the understanding that the best architectures create space for what's yet to come.",
+      "You design systems that remain open—to modification, to input, to perspectives you haven’t imagined yet. Your openness isn’t indecision; it’s the understanding that the best architectures create space for what’s yet to come.",
 
     pull: 'toward inclusive design',
     edge: 'you create architectures that others can extend',
@@ -204,9 +204,9 @@ There's also the question of depth versus breadth. Your curiosity drives you to 
     superpower: 'participatory design',
     superpowerExpanded: `You create architectures that invite collaboration.
 
-Your systems aren't closed boxes—they're platforms for participation. You design with extension points, with clear interfaces, with deliberate space for future contributors. This openness multiplies what your architecture can accomplish beyond what you alone could build.
+Your systems aren’t closed boxes—they’re platforms for participation. You design with extension points, with clear interfaces, with deliberate space for future contributors. This openness multiplies what your architecture can accomplish beyond what you alone could build.
 
-This makes you effective at building community around your designs. People feel welcome to contribute because your architecture clearly makes space for them. Your openness becomes generative, attracting collaborators who extend your vision in directions you couldn't have anticipated.`,
+This makes you effective at building community around your designs. People feel welcome to contribute because your architecture clearly makes space for them. Your openness becomes generative, attracting collaborators who extend your vision in directions you couldn’t have anticipated.`,
 
     blindSpot:
       'Your openness can become lack of direction. Not every input improves the system; some contributions need to be declined.',
@@ -215,7 +215,7 @@ This makes you effective at building community around your designs. People feel 
 
 Your welcoming stance can make it hard to say no. Every suggestion seems worth considering, every contribution worth including. But architecture requires choice—not everything can fit, and trying to include everything produces bloated systems that serve no one well.
 
-There's also the question of vision. Open systems still need someone making decisions about direction. Your openness can defer that responsibility, hoping that the right path will emerge from participation. Sometimes it does. Sometimes someone needs to choose.`,
+There’s also the question of vision. Open systems still need someone making decisions about direction. Your openness can defer that responsibility, hoping that the right path will emerge from participation. Sometimes it does. Sometimes someone needs to choose.`,
 
     coreBeliefs: [
       'Good architecture makes space for what cannot yet be imagined',
@@ -281,7 +281,7 @@ There's also the question of vision. Open systems still need someone making deci
       'Their utopia was built by iterating. The first version was just the beginning.',
 
     description:
-      "You build in iterations, treating each version as a learning opportunity. Your adaptability isn't lack of vision—it's the understanding that building teaches you what to build next. You ship to learn.",
+      "You build in iterations, treating each version as a learning opportunity. Your adaptability isn’t lack of vision—it’s the understanding that building teaches you what to build next. You ship to learn.",
 
     pull: 'toward iterative creation',
     edge: 'you learn faster because you build faster',
@@ -300,9 +300,9 @@ This makes you invaluable in uncertain environments. When requirements are uncle
 
     blindSpotExpanded: `Speed has costs.
 
-Your adaptability means you're always ready to change direction, but changing direction takes energy. Constant pivoting can exhaust teams and resources. At some point, commitment—staying with an approach long enough to see it through—produces more than continuous adaptation.
+Your adaptability means you’re always ready to change direction, but changing direction takes energy. Constant pivoting can exhaust teams and resources. At some point, commitment—staying with an approach long enough to see it through—produces more than continuous adaptation.
 
-There's also depth versus breadth. Your rapid iteration produces many versions but may not produce deep understanding of any. Sometimes the slower path that really explores one approach teaches more than the fast path that touches many.`,
+There’s also depth versus breadth. Your rapid iteration produces many versions but may not produce deep understanding of any. Sometimes the slower path that really explores one approach teaches more than the fast path that touches many.`,
 
     coreBeliefs: [
       'Building is thinking—you learn by making',
@@ -317,7 +317,7 @@ There's also depth versus breadth. Your rapid iteration produces many versions b
     alignsWith:
       'other Seekers—you share the fundamental openness to new information, the willingness to change based on what you learn',
     tensionWith:
-      "Settled types—their commitment to plans can feel like rigidity, like they're building what they decided to build rather than what needs to be built",
+      "Settled types—their commitment to plans can feel like rigidity, like they’re building what they decided to build rather than what needs to be built",
     growsWith:
       'Protective types—they help you recognize when to stop iterating and defend what you\'ve built',
 
@@ -364,7 +364,7 @@ There's also depth versus breadth. Your rapid iteration produces many versions b
       'Their utopia is full of prototypes. Every object is a question about what objects could be.',
 
     description:
-      "You build to explore. Each project is a question you're asking with your hands—what if this existed? What if it worked this way? Your curiosity drives you to make things that nobody asked for but everyone needed.",
+      "You build to explore. Each project is a question you’re asking with your hands—what if this existed? What if it worked this way? Your curiosity drives you to make things that nobody asked for but everyone needed.",
 
     pull: 'toward unexplored making',
     edge: 'you build things that ask interesting questions',
@@ -372,11 +372,11 @@ There's also depth versus breadth. Your rapid iteration produces many versions b
       'You build because building is how you explore—each project a question asked in material form.',
 
     superpower: 'exploratory making',
-    superpowerExpanded: `You don't build to requirements—you build to discover what the requirements should be.
+    superpowerExpanded: `You don’t build to requirements—you build to discover what the requirements should be.
 
-Your curiosity about what's possible drives you to make things that don't fit existing categories. You prototype ideas that might be useless but might be revolutionary. This willingness to build speculatively produces innovations that planning cannot anticipate.
+Your curiosity about what’s possible drives you to make things that don’t fit existing categories. You prototype ideas that might be useless but might be revolutionary. This willingness to build speculatively produces innovations that planning cannot anticipate.
 
-This makes you valuable as a scout. When teams need to understand what's possible, your curious building explores the frontier. Your prototypes become tangible questions that advance everyone's understanding of what could be built.`,
+This makes you valuable as a scout. When teams need to understand what’s possible, your curious building explores the frontier. Your prototypes become tangible questions that advance everyone’s understanding of what could be built.`,
 
     blindSpot:
       'Your exploratory building can lack follow-through. Interesting prototypes need to become useful products, and that requires a different kind of work.',
@@ -385,13 +385,13 @@ This makes you valuable as a scout. When teams need to understand what's possibl
 
 Your curiosity pulls you toward the next interesting question before the current one is fully answered. The prototype that could become a product gets abandoned for the next prototype. Your workshop fills with interesting beginnings that never became interesting ends.
 
-There's also the question of utility. Building that answers interesting questions is valuable, but at some point, building needs to serve someone beyond the builder. Your curious making can become self-indulgent—interesting to you but useful to no one.`,
+There’s also the question of utility. Building that answers interesting questions is valuable, but at some point, building needs to serve someone beyond the builder. Your curious making can become self-indulgent—interesting to you but useful to no one.`,
 
     coreBeliefs: [
       'The best way to predict the future is to build it',
       'Every prototype teaches something that planning cannot',
       'Curiosity is a productive force, not just a feeling',
-      "You don't know what you can build until you try building it",
+      "You don’t know what you can build until you try building it",
     ],
 
     howYouGotHere:
@@ -400,7 +400,7 @@ There's also the question of utility. Building that answers interesting question
     alignsWith:
       'other Curious types—you share the drive to explore, to ask questions through whatever medium you work in',
     tensionWith:
-      "Steady types—their consistency can feel like they've stopped asking what else they could build",
+      "Steady types—their consistency can feel like they’ve stopped asking what else they could build",
     growsWith:
       'Confident types—they help you commit to builds long enough to see them through, turning curious starts into finished works',
 
@@ -447,7 +447,7 @@ There's also the question of utility. Building that answers interesting question
       'Their utopia was built together. The makers share tools and teach each other.',
 
     description:
-      "You build with welcome—open to collaborators, open to suggestions, open to better ideas from any source. Your openness isn't weakness; it's the understanding that the best building happens when many hands and minds contribute.",
+      "You build with welcome—open to collaborators, open to suggestions, open to better ideas from any source. Your openness isn’t weakness; it’s the understanding that the best building happens when many hands and minds contribute.",
 
     pull: 'toward collective making',
     edge: 'you build in ways that others can join',
@@ -466,9 +466,9 @@ This makes you a catalyst for teams. Your openness creates psychological safety 
 
     blindSpotExpanded: `Collaboration has coordination costs.
 
-Your openness to contributions means managing many inputs, and not all inputs improve the build. Someone needs to maintain coherence, to say "this doesn't fit." Your welcoming nature can make that role uncomfortable, leading to builds that try to include everything and serve no one well.
+Your openness to contributions means managing many inputs, and not all inputs improve the build. Someone needs to maintain coherence, to say "this doesn’t fit." Your welcoming nature can make that role uncomfortable, leading to builds that try to include everything and serve no one well.
 
-There's also the question of vision. Open building can become building by committee, where the path of least resistance replaces the path of most excellence. Your openness needs a backbone—some core principles that hold even as everything else flexes.`,
+There’s also the question of vision. Open building can become building by committee, where the path of least resistance replaces the path of most excellence. Your openness needs a backbone—some core principles that hold even as everything else flexes.`,
 
     coreBeliefs: [
       'Many hands make light work—and better work',
@@ -534,7 +534,7 @@ There's also the question of vision. Open building can become building by commit
       'Their utopia repurposes everything. Nothing is waste; everything is material.',
 
     description:
-      "You make with whatever's at hand, adapting your craft to available materials and changing conditions. Your adaptability isn't lack of standards—it's the creative understanding that making works with constraints rather than against them.",
+      "You make with whatever’s at hand, adapting your craft to available materials and changing conditions. Your adaptability isn’t lack of standards—it’s the creative understanding that making works with constraints rather than against them.",
 
     pull: 'toward resourceful creation',
     edge: 'you make from whatever exists',
@@ -544,18 +544,18 @@ There's also the question of vision. Open building can become building by commit
     superpower: 'material flexibility',
     superpowerExpanded: `You can make with almost anything.
 
-Where other makers wait for perfect materials, you work with what's available. Your adaptability extends to process, tools, conditions—you reshape your making to fit circumstances rather than demanding circumstances fit your making.
+Where other makers wait for perfect materials, you work with what’s available. Your adaptability extends to process, tools, conditions—you reshape your making to fit circumstances rather than demanding circumstances fit your making.
 
-This makes you invaluable in resource-constrained environments. When the ideal materials aren't available, you find alternatives. When the usual tools break, you improvise. Your adaptive making produces results that more rigid makers cannot achieve because they cannot adapt.`,
+This makes you invaluable in resource-constrained environments. When the ideal materials aren’t available, you find alternatives. When the usual tools break, you improvise. Your adaptive making produces results that more rigid makers cannot achieve because they cannot adapt.`,
 
     blindSpot:
       'Your adaptability can lower your standards. Sometimes "making do" produces work that\'s not worth making.',
 
     blindSpotExpanded: `Constraints can become excuses.
 
-Your comfort working with less-than-ideal materials can normalize accepting less-than-ideal results. "Given the constraints, this is good enough" can justify work that doesn't deserve justification. Your adaptability should serve quality, not replace it.
+Your comfort working with less-than-ideal materials can normalize accepting less-than-ideal results. "Given the constraints, this is good enough" can justify work that doesn’t deserve justification. Your adaptability should serve quality, not replace it.
 
-There's also the question of when to insist on better conditions rather than adapting to poor ones. Your flexibility can enable dysfunction—if you'll always make do, there's no pressure to provide what you actually need. Sometimes the adaptive maker should be less adaptive.`,
+There’s also the question of when to insist on better conditions rather than adapting to poor ones. Your flexibility can enable dysfunction—if you’ll always make do, there’s no pressure to provide what you actually need. Sometimes the adaptive maker should be less adaptive.`,
 
     coreBeliefs: [
       'Constraints are creative catalysts, not obstacles',
@@ -565,12 +565,12 @@ There's also the question of when to insist on better conditions rather than ada
     ],
 
     howYouGotHere:
-      "Your answers showed a hands-on maker orientation combined with high adaptability. You create things, and you're remarkably flexible about how. This maps to the Adventurous Maker.",
+      "Your answers showed a hands-on maker orientation combined with high adaptability. You create things, and you’re remarkably flexible about how. This maps to the Adventurous Maker.",
 
     alignsWith:
       'other Seekers—you share the openness to changing conditions, the willingness to adjust based on circumstances',
     tensionWith:
-      "Settled types—their insistence on specific methods can feel like they've stopped seeing alternatives",
+      "Settled types—their insistence on specific methods can feel like they’ve stopped seeing alternatives",
     growsWith:
       'Confident types—they help you recognize when your adaptability should give way to insistence on what you actually need',
 
@@ -617,7 +617,7 @@ There's also the question of when to insist on better conditions rather than ada
       'Their utopia has makerspaces on every corner. Tools are shared; knowledge is free.',
 
     description:
-      "You make to explore—each project a question about what's possible with your hands and materials. Your curiosity drives you to try techniques you haven't mastered and materials you don't understand yet.",
+      "You make to explore—each project a question about what’s possible with your hands and materials. Your curiosity drives you to try techniques you haven’t mastered and materials you don’t understand yet.",
 
     pull: 'toward experimental craft',
     edge: 'you make things that teach you how to make',
@@ -627,18 +627,18 @@ There's also the question of when to insist on better conditions rather than ada
     superpower: 'craft exploration',
     superpowerExpanded: `You treat making as an ongoing investigation.
 
-Every project is a learning opportunity. You deliberately choose challenges that stretch your skills, materials you haven't worked with, techniques you haven't tried. This curiosity-driven making continuously expands what you're capable of.
+Every project is a learning opportunity. You deliberately choose challenges that stretch your skills, materials you haven’t worked with, techniques you haven’t tried. This curiosity-driven making continuously expands what you’re capable of.
 
 This makes you a perpetual student of your craft. While others settle into comfortable competence, you keep pushing into unfamiliar territory. Your willingness to be a beginner repeatedly produces a breadth of capability that specialists often lack.`,
 
     blindSpot:
-      "Your curiosity can prevent mastery. If you're always moving to the next technique, you may never deeply understand any.",
+      "Your curiosity can prevent mastery. If you’re always moving to the next technique, you may never deeply understand any.",
 
     blindSpotExpanded: `Breadth has costs.
 
 Your curious exploration of many approaches can come at the expense of deep expertise in any. The maker who has tried everything may be worse at specific tasks than the maker who has done one thing thousands of times. Curiosity keeps you learning, but mastery requires staying.
 
-There's also the question of finishing. Curious making often loses interest when the interesting learning is done but the project isn't. Your workshop may be full of 80%-complete projects—the last 20% wasn't interesting enough to hold your attention.`,
+There’s also the question of finishing. Curious making often loses interest when the interesting learning is done but the project isn’t. Your workshop may be full of 80%-complete projects—the last 20% wasn’t interesting enough to hold your attention.`,
 
     coreBeliefs: [
       'Every material has secrets; curiosity reveals them',
@@ -653,7 +653,7 @@ There's also the question of finishing. Curious making often loses interest when
     alignsWith:
       'other Curious types—you share the drive to explore, to ask questions through whatever medium you work in',
     tensionWith:
-      "Steady types—their consistency in methods can feel like they've stopped being curious about alternatives",
+      "Steady types—their consistency in methods can feel like they’ve stopped being curious about alternatives",
     growsWith:
       'Confident types—they help you commit to projects long enough to finish them, completing the learning cycle',
 
@@ -700,7 +700,7 @@ There's also the question of finishing. Curious making often loses interest when
       'Their utopia shares patterns freely. Knowledge multiplies when given away.',
 
     description:
-      "You make with openness—sharing your techniques, welcoming feedback, learning from other makers. Your openness isn't naivety; it's the understanding that craft improves through community and exchange.",
+      "You make with openness—sharing your techniques, welcoming feedback, learning from other makers. Your openness isn’t naivety; it’s the understanding that craft improves through community and exchange.",
 
     pull: 'toward shared craft',
     edge: 'you make in ways that others can learn from',
@@ -712,7 +712,7 @@ There's also the question of finishing. Curious making often loses interest when
 
 Your techniques, discoveries, and even mistakes become resources for other makers. This generosity creates community around your craft—people want to learn from you because you teach freely. And in teaching, you learn: explaining your process often reveals its hidden assumptions.
 
-This makes you a node in a network of makers. Your openness attracts connection. People bring you their questions and their discoveries, creating flows of knowledge that improve everyone's making—including yours.`,
+This makes you a node in a network of makers. Your openness attracts connection. People bring you their questions and their discoveries, creating flows of knowledge that improve everyone’s making—including yours.`,
 
     blindSpot:
       'Your openness can devalue your expertise. Not everyone deserves equal access to what you\'ve worked hard to learn.',
@@ -721,7 +721,7 @@ This makes you a node in a network of makers. Your openness attracts connection.
 
 Your willingness to share can be taken advantage of by those who take without reciprocating. The craft knowledge you developed through years of practice has value, and giving it away freely may not serve you or your craft.
 
-There's also the question of craft secrets. Some knowledge is protected for reasons—safety, tradition, respect for teachers. Your openness can transgress boundaries that exist for good reasons. Not everything needs to be shared with everyone.`,
+There’s also the question of craft secrets. Some knowledge is protected for reasons—safety, tradition, respect for teachers. Your openness can transgress boundaries that exist for good reasons. Not everything needs to be shared with everyone.`,
 
     coreBeliefs: [
       'Knowledge multiplies when shared',
@@ -787,7 +787,7 @@ There's also the question of craft secrets. Some knowledge is protected for reas
       'Their utopia evolves constantly. What worked yesterday is material for tomorrow.',
 
     description:
-      "You reshape what exists, adapting your approach to whatever the situation needs. Your adaptability isn't lack of direction—it's the sophisticated understanding that transformation must meet things where they are.",
+      "You reshape what exists, adapting your approach to whatever the situation needs. Your adaptability isn’t lack of direction—it’s the sophisticated understanding that transformation must meet things where they are.",
 
     pull: 'toward responsive transformation',
     edge: 'you shape what exists by working with its nature',
@@ -804,11 +804,11 @@ This makes your transformations stick. Because you work with rather than against
     blindSpot:
       'Your adaptive shaping can be too accommodating. Sometimes transformation requires imposing change, not just adapting to context.',
 
-    blindSpotExpanded: `There are times when working with isn't enough.
+    blindSpotExpanded: `There are times when working with isn’t enough.
 
 Your responsiveness to context can become a limitation when the context itself is the problem. If you only shape in ways the situation permits, you may never achieve the more radical transformations that are sometimes needed.
 
-There's also the question of direction. Adventurous shaping can become reactive—always responding to conditions rather than steering toward a vision. Your flexibility is a strength, but it needs the backbone of knowing what you're shaping toward.`,
+There’s also the question of direction. Adventurous shaping can become reactive—always responding to conditions rather than steering toward a vision. Your flexibility is a strength, but it needs the backbone of knowing what you’re shaping toward.`,
 
     coreBeliefs: [
       'Good transformation meets things where they are',
@@ -870,7 +870,7 @@ There's also the question of direction. Adventurous shaping can become reactive�
       'Their utopia experiments with its own form. Structure is hypothesis.',
 
     description:
-      "You reshape what exists as a form of inquiry—curious about what this could become, what that transformation might reveal. Your shaping isn't about arriving somewhere; it's about discovering what's possible.",
+      "You reshape what exists as a form of inquiry—curious about what this could become, what that transformation might reveal. Your shaping isn’t about arriving somewhere; it’s about discovering what’s possible.",
 
     pull: 'toward transformative discovery',
     edge: 'you reshape to find out what reshaping reveals',
@@ -882,20 +882,20 @@ There's also the question of direction. Adventurous shaping can become reactive�
 
 Your curiosity drives you to ask: what would happen if this changed? What could this become? You experiment with transformation, treating each change as information about possibilities. This inquiry-driven shaping produces discoveries that planning alone cannot achieve.
 
-This makes you valuable when change itself is the question. When organizations or systems need to evolve but don't know in what direction, your curious shaping explores the space of possibilities. You try things to find out what's worth trying.`,
+This makes you valuable when change itself is the question. When organizations or systems need to evolve but don’t know in what direction, your curious shaping explores the space of possibilities. You try things to find out what’s worth trying.`,
 
     blindSpot:
       'Your curious shaping can disrupt what was working. Not everything benefits from being transformed.',
 
     blindSpotExpanded: `Curiosity without caution can harm.
 
-Your drive to explore through transformation can ignore the value of stability. The system that was working fine gets reshaped because you were curious, and now it's worse. Your inquiry serves learning, but the thing being transformed may not want to be a laboratory.
+Your drive to explore through transformation can ignore the value of stability. The system that was working fine gets reshaped because you were curious, and now it’s worse. Your inquiry serves learning, but the thing being transformed may not want to be a laboratory.
 
-There's also the question of consent. Curious shaping often happens to people and systems who didn't ask to be experimented on. Your inquiry may be fascinating to you and disruptive to them.`,
+There’s also the question of consent. Curious shaping often happens to people and systems who didn’t ask to be experimented on. Your inquiry may be fascinating to you and disruptive to them.`,
 
     coreBeliefs: [
       'Transformation reveals what stasis conceals',
-      "Every shape is temporary; curiosity explores what's next",
+      "Every shape is temporary; curiosity explores what’s next",
       'Shaping is a form of asking questions',
       'The curious shaper learns from what changes and what resists',
     ],
@@ -953,7 +953,7 @@ There's also the question of consent. Curious shaping often happens to people an
       'Their utopia invites its citizens to reshape it. Transformation is participatory.',
 
     description:
-      "You reshape what exists in collaboration with others, open to input about both direction and method. Your openness isn't indecision; it's the understanding that the best transformations include many perspectives.",
+      "You reshape what exists in collaboration with others, open to input about both direction and method. Your openness isn’t indecision; it’s the understanding that the best transformations include many perspectives.",
 
     pull: 'toward collective transformation',
     edge: 'you shape in ways that include affected voices',
@@ -963,7 +963,7 @@ There's also the question of consent. Curious shaping often happens to people an
     superpower: 'participatory transformation',
     superpowerExpanded: `You make shaping a collective process.
 
-Rather than imposing your vision of how things should change, you invite participation. The people and systems being reshaped have voice in the shaping. This openness produces transformations that stick because they're owned by everyone involved.
+Rather than imposing your vision of how things should change, you invite participation. The people and systems being reshaped have voice in the shaping. This openness produces transformations that stick because they’re owned by everyone involved.
 
 This makes you effective at change that requires buy-in. When transformation needs to be adopted rather than just implemented, your participatory approach builds the ownership that makes adoption possible.`,
 
@@ -972,9 +972,9 @@ This makes you effective at change that requires buy-in. When transformation nee
 
     blindSpotExpanded: `Participation has costs.
 
-Including many voices takes time and energy. When change is urgent, your open process can delay it unacceptably. Sometimes the shaper needs to shape, and asking everyone's opinion is itself a failure of responsibility.
+Including many voices takes time and energy. When change is urgent, your open process can delay it unacceptably. Sometimes the shaper needs to shape, and asking everyone’s opinion is itself a failure of responsibility.
 
-There's also the question of expertise. Openness to all input can mean giving equal weight to uninformed opinions. Your welcoming stance can undervalue the expertise that knows what transformation is actually needed.`,
+There’s also the question of expertise. Openness to all input can mean giving equal weight to uninformed opinions. Your welcoming stance can undervalue the expertise that knows what transformation is actually needed.`,
 
     coreBeliefs: [
       'Those affected by change should shape it',
@@ -1040,7 +1040,7 @@ There's also the question of expertise. Openness to all input can mean giving eq
       'Their utopia has many vantage points. No single perspective is privileged.',
 
     description:
-      "You observe by adapting your perspective—moving from view to view, refusing to settle into one way of seeing. Your adaptability isn't restlessness; it's the understanding that different vantage points reveal different truths.",
+      "You observe by adapting your perspective—moving from view to view, refusing to settle into one way of seeing. Your adaptability isn’t restlessness; it’s the understanding that different vantage points reveal different truths.",
 
     pull: 'toward multiple perspectives',
     edge: 'you see from angles others don\'t think to try',
@@ -1052,16 +1052,16 @@ There's also the question of expertise. Openness to all input can mean giving eq
 
 Where others observe from fixed positions, you move. You try different perspectives, different frames, different assumptions. This mobility reveals aspects of reality that single-perspective observation misses.
 
-This makes you valuable as a translator between viewpoints. You can understand why people who see things differently are all partially right. Your adaptive observation builds bridges between perspectives that others can't even see are different.`,
+This makes you valuable as a translator between viewpoints. You can understand why people who see things differently are all partially right. Your adaptive observation builds bridges between perspectives that others can’t even see are different.`,
 
     blindSpot:
       'Your perspective mobility can prevent depth. Seeing from many angles is different from seeing deeply from any.',
 
     blindSpotExpanded: `Breadth of perspective can come at the cost of depth.
 
-Your constant moving between viewpoints means you don't stay long with any. The understanding that comes from sustained attention—from really sitting with one way of seeing—may elude you. You know many perspectives but may not know any deeply.
+Your constant moving between viewpoints means you don’t stay long with any. The understanding that comes from sustained attention—from really sitting with one way of seeing—may elude you. You know many perspectives but may not know any deeply.
 
-There's also the question of commitment. Adventurous observation can become a way of avoiding the responsibility that comes from taking a position. If you're always shifting perspective, you never have to defend any particular view.`,
+There’s also the question of commitment. Adventurous observation can become a way of avoiding the responsibility that comes from taking a position. If you’re always shifting perspective, you never have to defend any particular view.`,
 
     coreBeliefs: [
       'Every perspective reveals something and conceals something',
@@ -1135,16 +1135,16 @@ There's also the question of commitment. Adventurous observation can become a wa
 
 Where others see ordinary surfaces, your curious observation finds depths. You notice the thing behind the thing, the pattern within the pattern. This wonder-driven attention produces insights that incurious observation cannot achieve.
 
-This makes you a natural discoverer. Your curiosity drives you to look where others don't think to look, to ask questions others don't think to ask. The observations that seem obvious to you are revelations to those with less curious eyes.`,
+This makes you a natural discoverer. Your curiosity drives you to look where others don’t think to look, to ask questions others don’t think to ask. The observations that seem obvious to you are revelations to those with less curious eyes.`,
 
     blindSpot:
       'Your endless curiosity can prevent conclusion. At some point, you know enough—but there\'s always more to wonder about.',
 
     blindSpotExpanded: `Curiosity can become avoidance.
 
-Your drive to discover more can become a way of never having to conclude anything. There's always another question, another angle, another layer to explore. At some point, observation needs to yield to understanding, and understanding needs to yield to action.
+Your drive to discover more can become a way of never having to conclude anything. There’s always another question, another angle, another layer to explore. At some point, observation needs to yield to understanding, and understanding needs to yield to action.
 
-There's also the question of relevance. Not every curious investigation is worth pursuing. Your wonder can lead you down paths that are interesting but useless, fascinating but disconnected from anything that matters.`,
+There’s also the question of relevance. Not every curious investigation is worth pursuing. Your wonder can lead you down paths that are interesting but useless, fascinating but disconnected from anything that matters.`,
 
     coreBeliefs: [
       'Curiosity transforms ordinary into fascinating',
@@ -1206,7 +1206,7 @@ There's also the question of relevance. Not every curious investigation is worth
       'Their utopia makes space for different ways of seeing. Every perspective has standing.',
 
     description:
-      "You observe with radical openness—receptive to what you might see without predetermining it, letting reality surprise you. Your openness isn't passivity; it's the active choice to see without forcing what you see into familiar categories.",
+      "You observe with radical openness—receptive to what you might see without predetermining it, letting reality surprise you. Your openness isn’t passivity; it’s the active choice to see without forcing what you see into familiar categories.",
 
     pull: 'toward receptive seeing',
     edge: 'you observe what others filter out',
@@ -1216,7 +1216,7 @@ There's also the question of relevance. Not every curious investigation is worth
     superpower: 'unfiltered perception',
     superpowerExpanded: `You see without forcing.
 
-Where others observe through lenses of expectation and category, you try to let reality present itself unfiltered. This openness reveals aspects of what you're observing that more structured attention misses—the anomalies, the exceptions, the things that don't fit.
+Where others observe through lenses of expectation and category, you try to let reality present itself unfiltered. This openness reveals aspects of what you’re observing that more structured attention misses—the anomalies, the exceptions, the things that don’t fit.
 
 This makes you valuable when established frameworks are failing. When the standard ways of seeing stop producing insight, your open observation notices what more filtered attention cannot. You see the black swans that category-bound observers define away.`,
 
@@ -1227,7 +1227,7 @@ This makes you valuable when established frameworks are failing. When the standa
 
 Your commitment to unfiltered perception is itself a filter. And some filtering is necessary—without categories and frames, observation becomes chaos. Your openness needs enough structure to produce insight, not just impressions.
 
-There's also the question of integration. Open observation that never synthesizes produces experience without understanding. At some point, what you've openly received needs to be organized, interpreted, made meaningful.`,
+There’s also the question of integration. Open observation that never synthesizes produces experience without understanding. At some point, what you’ve openly received needs to be organized, interpreted, made meaningful.`,
 
     coreBeliefs: [
       'Expectations shape what we can see—question them',
@@ -1293,7 +1293,7 @@ There's also the question of integration. Open observation that never synthesize
       'Their utopia values peripheral vision. The edges matter as much as the center.',
 
     description:
-      "You notice by adapting your attention—following where significance leads, adjusting what you're looking for based on what you find. Your adaptability isn't distraction; it's responsiveness to what the situation is trying to show you.",
+      "You notice by adapting your attention—following where significance leads, adjusting what you’re looking for based on what you find. Your adaptability isn’t distraction; it’s responsiveness to what the situation is trying to show you.",
 
     pull: 'toward responsive noticing',
     edge: 'you notice what the situation is trying to reveal',
@@ -1303,18 +1303,18 @@ There's also the question of integration. Open observation that never synthesize
     superpower: 'responsive attention',
     superpowerExpanded: `Your noticing follows the signal.
 
-Where others notice according to predetermined priorities, you let significance guide you. Your attention adapts to what the situation offers, catching what it's trying to reveal rather than what you decided in advance to look for.
+Where others notice according to predetermined priorities, you let significance guide you. Your attention adapts to what the situation offers, catching what it’s trying to reveal rather than what you decided in advance to look for.
 
-This makes you excellent at finding the unexpected. Your adaptive noticing catches the things that weren't on anyone's list but turn out to matter most. The anomaly that reveals the pattern, the detail that changes everything—you notice these.`,
+This makes you excellent at finding the unexpected. Your adaptive noticing catches the things that weren’t on anyone’s list but turn out to matter most. The anomaly that reveals the pattern, the detail that changes everything—you notice these.`,
 
     blindSpot:
       'Your responsive noticing can be directionless. If you only follow what calls attention, you may miss what\'s important but quiet.',
 
     blindSpotExpanded: `Some things need to be looked for.
 
-Your adaptability means you notice what's salient—but not everything important is salient. The slow trend, the subtle shift, the thing that's significant precisely because it doesn't call attention to itself—these can escape your responsive attention.
+Your adaptability means you notice what’s salient—but not everything important is salient. The slow trend, the subtle shift, the thing that’s significant precisely because it doesn’t call attention to itself—these can escape your responsive attention.
 
-There's also the question of manipulation. Your attention follows what's calling it, but some things call attention precisely to distract from other things. Your adaptive noticing can be led.`,
+There’s also the question of manipulation. Your attention follows what’s calling it, but some things call attention precisely to distract from other things. Your adaptive noticing can be led.`,
 
     coreBeliefs: [
       'The situation knows what it wants to show you—follow it',
@@ -1376,7 +1376,7 @@ There's also the question of manipulation. Your attention follows what's calling
       'Their utopia is full of small wonders. Nothing is too ordinary to be interesting.',
 
     description:
-      "You notice with curiosity that makes the ordinary fascinating. The details others overlook become, in your attention, doorways to wonder. Your noticing isn't about surveillance; it's about appreciation.",
+      "You notice with curiosity that makes the ordinary fascinating. The details others overlook become, in your attention, doorways to wonder. Your noticing isn’t about surveillance; it’s about appreciation.",
 
     pull: 'toward small wonders',
     edge: 'you notice the miracle in the mundane',
@@ -1386,18 +1386,18 @@ There's also the question of manipulation. Your attention follows what's calling
     superpower: 'appreciative attention',
     superpowerExpanded: `Your curiosity makes details precious.
 
-Where others rush past the ordinary, your curious noticing finds it extraordinary. The pattern in the grain of wood, the rhythm of someone's speech, the particular quality of light at this hour—these details that others dismiss become, in your attention, sources of genuine wonder.
+Where others rush past the ordinary, your curious noticing finds it extraordinary. The pattern in the grain of wood, the rhythm of someone’s speech, the particular quality of light at this hour—these details that others dismiss become, in your attention, sources of genuine wonder.
 
 This makes you a guardian of significance. You notice and appreciate what would otherwise go unregarded. Your curious attention preserves and honors the small things that make life rich.`,
 
     blindSpot:
       'Your appreciative noticing can miss what\'s wrong. Wonder can become blindness to problems hiding in the details.',
 
-    blindSpotExpanded: `Appreciation isn't assessment.
+    blindSpotExpanded: `Appreciation isn’t assessment.
 
-Your tendency to find wonder in details can make you miss warning signs. The pattern that's beautiful is also the pattern that indicates decay. The detail that fascinates you is also the detail that signals danger. Curious noticing needs to include noticing what's wrong.
+Your tendency to find wonder in details can make you miss warning signs. The pattern that’s beautiful is also the pattern that indicates decay. The detail that fascinates you is also the detail that signals danger. Curious noticing needs to include noticing what’s wrong.
 
-There's also the question of action. Appreciating details isn't the same as doing something about them. Your curious noticing can become an end in itself, a form of aesthetic engagement that never translates into change.`,
+There’s also the question of action. Appreciating details isn’t the same as doing something about them. Your curious noticing can become an end in itself, a form of aesthetic engagement that never translates into change.`,
 
     coreBeliefs: [
       'Everything rewards close attention',
@@ -1459,7 +1459,7 @@ There's also the question of action. Appreciating details isn't the same as doin
       'Their utopia welcomes all kinds of seeing. There is no one right way to notice.',
 
     description:
-      "You notice with radical openness—receptive to whatever details present themselves, not filtering for particular kinds of significance. Your openness isn't lack of focus; it's the understanding that significance might come from anywhere.",
+      "You notice with radical openness—receptive to whatever details present themselves, not filtering for particular kinds of significance. Your openness isn’t lack of focus; it’s the understanding that significance might come from anywhere.",
 
     pull: 'toward receptive detail',
     edge: 'you notice what filters would exclude',
@@ -1467,11 +1467,11 @@ There's also the question of action. Appreciating details isn't the same as doin
       'You notice with openness that catches details others filter out before seeing.',
 
     superpower: 'unfilteted detail',
-    superpowerExpanded: `You notice without predetermining what's noticeable.
+    superpowerExpanded: `You notice without predetermining what’s noticeable.
 
-Your openness allows details to register that more filtered attention would exclude before awareness. The thing that doesn't fit the category, the anomaly that contradicts expectations, the detail that seems irrelevant—you notice these.
+Your openness allows details to register that more filtered attention would exclude before awareness. The thing that doesn’t fit the category, the anomaly that contradicts expectations, the detail that seems irrelevant—you notice these.
 
-This makes you valuable when established ways of noticing are missing something. Your unfiltered attention catches what structured attention can't see precisely because it's not looking for it.`,
+This makes you valuable when established ways of noticing are missing something. Your unfiltered attention catches what structured attention can’t see precisely because it’s not looking for it.`,
 
     blindSpot:
       'Your unfiltered noticing can overwhelm you. Without some filtering, every detail demands equal attention.',
@@ -1480,7 +1480,7 @@ This makes you valuable when established ways of noticing are missing something.
 
 Your commitment to noticing without filtering can become exhausting. Not every detail deserves attention, and some filtering is necessary to function. Your openness needs enough structure to remain sustainable.
 
-There's also the question of synthesis. Open noticing that never organizes produces a flood of details without pattern. At some point, what you've openly noticed needs to be made sense of.`,
+There’s also the question of synthesis. Open noticing that never organizes produces a flood of details without pattern. At some point, what you’ve openly noticed needs to be made sense of.`,
 
     coreBeliefs: [
       'Filters exclude before we know what\'s excluded',
@@ -1546,7 +1546,7 @@ There's also the question of synthesis. Open noticing that never organizes produ
       'Their utopia makes space for many kinds of presence. Witnessing takes many forms.',
 
     description:
-      "You bear witness by adapting—adjusting how you're present to what each situation needs. Your adaptability isn't lack of presence; it's the sophisticated understanding that different moments require different kinds of witnessing.",
+      "You bear witness by adapting—adjusting how you’re present to what each situation needs. Your adaptability isn’t lack of presence; it’s the sophisticated understanding that different moments require different kinds of witnessing.",
 
     pull: 'toward responsive presence',
     edge: 'you witness in whatever way the moment needs',
@@ -1554,9 +1554,9 @@ There's also the question of synthesis. Open noticing that never organizes produ
       'You witness by adapting your presence to what each situation requires, knowing that one way of attending cannot fit all.',
 
     superpower: 'versatile presence',
-    superpowerExpanded: `You show up differently based on what's needed.
+    superpowerExpanded: `You show up differently based on what’s needed.
 
-Your presence isn't one-size-fits-all. You read what's required—silent presence or active listening, physical nearness or respectful distance, bearing witness to pain or celebrating joy—and you adapt. This versatility means your witnessing actually serves what's being witnessed.
+Your presence isn’t one-size-fits-all. You read what’s required—silent presence or active listening, physical nearness or respectful distance, bearing witness to pain or celebrating joy—and you adapt. This versatility means your witnessing actually serves what’s being witnessed.
 
 This makes you valuable across contexts that need different kinds of presence. The dying person who needs silent company, the celebrating friend who needs enthusiastic witness, the traumatized survivor who needs careful attention—you can be present to all of them appropriately.`,
 
@@ -1565,9 +1565,9 @@ This makes you valuable across contexts that need different kinds of presence. T
 
     blindSpotExpanded: `Constant adaptation can erode self.
 
-Your commitment to being what each situation needs can mean never being simply yourself. Your presence becomes reactive, shaped entirely by external demands. But authentic witnessing requires you to bring something—not just absorb and reflect what's there.
+Your commitment to being what each situation needs can mean never being simply yourself. Your presence becomes reactive, shaped entirely by external demands. But authentic witnessing requires you to bring something—not just absorb and reflect what’s there.
 
-There's also the question of limits. Adventurous witnessing can mean never setting boundaries about what you're willing to witness. But some things cost too much to see; some presences take too much. Your adaptability needs limits to remain sustainable.`,
+There’s also the question of limits. Adventurous witnessing can mean never setting boundaries about what you’re willing to witness. But some things cost too much to see; some presences take too much. Your adaptability needs limits to remain sustainable.`,
 
     coreBeliefs: [
       'Different moments need different witnesses',
@@ -1629,7 +1629,7 @@ There's also the question of limits. Adventurous witnessing can mean never setti
       'Their utopia listens to every story. No experience is too ordinary to witness.',
 
     description:
-      "You bear witness with genuine curiosity—wanting to understand what you're seeing, not just see it. Your curiosity isn't intrusion; it's the desire to truly comprehend what you're being shown.",
+      "You bear witness with genuine curiosity—wanting to understand what you’re seeing, not just see it. Your curiosity isn’t intrusion; it’s the desire to truly comprehend what you’re being shown.",
 
     pull: 'toward understanding presence',
     edge: 'you witness with the depth that comes from wanting to understand',
@@ -1637,20 +1637,20 @@ There's also the question of limits. Adventurous witnessing can mean never setti
       'You witness with curiosity that deepens your presence, wanting to truly understand what you are privileged to see.',
 
     superpower: 'comprehending presence',
-    superpowerExpanded: `You don't just witness—you seek to understand.
+    superpowerExpanded: `You don’t just witness—you seek to understand.
 
-Your curiosity drives you beyond surface presence into genuine comprehension. You want to know what it's like, what it means, how it fits together. This understanding-seeking presence makes your witnessing more meaningful to both you and what you witness.
+Your curiosity drives you beyond surface presence into genuine comprehension. You want to know what it’s like, what it means, how it fits together. This understanding-seeking presence makes your witnessing more meaningful to both you and what you witness.
 
-This makes you a witness who truly holds what is witnessed. Because you've tried to understand, your witnessing has depth. The story you've heard doesn't just pass through you—you've genuinely received it.`,
+This makes you a witness who truly holds what is witnessed. Because you’ve tried to understand, your witnessing has depth. The story you’ve heard doesn’t just pass through you—you’ve genuinely received it.`,
 
     blindSpot:
       'Your curious witnessing can become intrusive. Sometimes presence doesn\'t need to understand—it just needs to be there.',
 
     blindSpotExpanded: `Curiosity can be a form of demand.
 
-Your desire to understand can make your witnessing feel like work for the person being witnessed. They have to explain, to help you comprehend. Sometimes that's welcome; sometimes it's burden. Your curiosity should serve the witnessed, not just your own understanding.
+Your desire to understand can make your witnessing feel like work for the person being witnessed. They have to explain, to help you comprehend. Sometimes that’s welcome; sometimes it’s burden. Your curiosity should serve the witnessed, not just your own understanding.
 
-There's also the question of limits. Not everything can or should be understood. Some experiences exceed comprehension; some stories resist explanation. Your curious drive to understand can become frustration when understanding isn't available.`,
+There’s also the question of limits. Not everything can or should be understood. Some experiences exceed comprehension; some stories resist explanation. Your curious drive to understand can become frustration when understanding isn’t available.`,
 
     coreBeliefs: [
       'Witnessing with understanding is witnessing fully',
@@ -1712,7 +1712,7 @@ There's also the question of limits. Not everything can or should be understood.
       'Their utopia is held by those willing to see. Every experience finds a witness.',
 
     description:
-      "You bear witness with radical openness—receptive to whatever you're shown, not filtering or judging what you see. Your openness isn't passivity; it's the active choice to receive without condition.",
+      "You bear witness with radical openness—receptive to whatever you’re shown, not filtering or judging what you see. Your openness isn’t passivity; it’s the active choice to receive without condition.",
 
     pull: 'toward unconditional presence',
     edge: 'you witness what others cannot bear to see',
@@ -1722,7 +1722,7 @@ There's also the question of limits. Not everything can or should be understood.
     superpower: 'unconditional reception',
     superpowerExpanded: `You receive without requiring.
 
-Your witnessing makes no demands on what is witnessed. You don't need it to be beautiful, or understandable, or justified. You simply receive it, holding space for whatever appears. This unconditional quality makes your presence a true gift.
+Your witnessing makes no demands on what is witnessed. You don’t need it to be beautiful, or understandable, or justified. You simply receive it, holding space for whatever appears. This unconditional quality makes your presence a true gift.
 
 This makes you invaluable for those who have things to share that usually get judged or rejected. The experiences too shameful to tell, the truths too ugly to admit, the realities too strange to be believed—you witness these with openness that allows them to be told.`,
 
@@ -1733,7 +1733,7 @@ This makes you invaluable for those who have things to share that usually get ju
 
 Your commitment to receiving whatever appears can overwhelm you. Not everything should be witnessed, at least not by you, at least not now. Your unconditional openness can be exploited by those who want a dumping ground rather than a true witness.
 
-There's also the question of discernment. Open witnessing that never judges can fail to distinguish between what needs to be held with compassion and what needs to be named as harmful. Some things, once witnessed, deserve response.`,
+There’s also the question of discernment. Open witnessing that never judges can fail to distinguish between what needs to be held with compassion and what needs to be named as harmful. Some things, once witnessed, deserve response.`,
 
     coreBeliefs: [
       'Everyone deserves to be witnessed',

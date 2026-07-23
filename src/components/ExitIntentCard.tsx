@@ -7,12 +7,12 @@ export default function ExitIntentCard() {
   const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
-    // Check if we've shown this in the past week
+    // Check if we’ve shown this in the past week
     const lastShown = localStorage.getItem("exitIntentLastShown");
     if (lastShown) {
       const weekAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
       if (parseInt(lastShown) > weekAgo) {
-        return; // Don't show if shown within the past week
+        return; // Don’t show if shown within the past week
       }
     }
 

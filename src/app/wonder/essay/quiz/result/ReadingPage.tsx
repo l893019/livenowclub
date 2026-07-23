@@ -182,7 +182,7 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
     }
   }, []);
 
-  // Create connection if came from someone's link
+  // Create connection if came from someone’s link
   useEffect(() => {
     const userId = localStorage.getItem("quiz-user-id");
 
@@ -202,7 +202,7 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
       const storedCompareUserId = sessionStorage.getItem("relationship-compare");
       if (storedCompareUserId) {
         compareUserIdToUse = storedCompareUserId;
-        // Clear it after reading so it doesn't persist
+        // Clear it after reading so it doesn’t persist
         sessionStorage.removeItem("relationship-compare");
       }
     }
@@ -211,7 +211,7 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
       // Update state to show comparison UI immediately
       setEffectiveCompareUserId(compareUserIdToUse);
 
-      // Create the connection (non-blocking - don't await)
+      // Create the connection (non-blocking - don’t await)
       fetch('/api/connections/create', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -221,7 +221,7 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
         }),
       }).catch((err) => {
         console.warn('Failed to create connection (non-critical):', err);
-        // Don't block the UI if this fails
+        // Don’t block the UI if this fails
       });
 
       // If we got the ID from sessionStorage, update the URL to show the comparison
@@ -619,7 +619,7 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
                   if (navigator.share) {
                     navigator.share({
                       title: `Join ${groupContext.utopiaName}`,
-                      text: `I'm ${identity.name}. What are you? Join my group and find out.`,
+                      text: `I’m ${identity.name}. What are you? Join my group and find out.`,
                       url: shareUrl,
                     });
                   } else {

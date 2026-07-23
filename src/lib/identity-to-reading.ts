@@ -10,7 +10,7 @@ import type { Identity } from './identities'
 import type { IndividualReading } from './reading-prompts'
 
 /**
- * Convert an identity's pre-generated content to reading format.
+ * Convert an identity’s pre-generated content to reading format.
  *
  * Mapping:
  * - pattern ← howYouGotHere (explains how answers led here)
@@ -26,7 +26,7 @@ export function identityToReading(identity: Identity): IndividualReading {
     : identity.superpowerExpanded
 
   // Combine description with movement hints for movement section
-  const movement = `${identity.description}\n\n${identity.pull}—that's where you'll find yourself returning. ${identity.edge}.`
+  const movement = `${identity.description}\n\n${identity.pull}—that’s where you’ll find yourself returning. ${identity.edge}.`
 
   // Condense blindSpotExpanded for tradeoff
   const tradeoffParagraphs = identity.blindSpotExpanded.split('\n\n')

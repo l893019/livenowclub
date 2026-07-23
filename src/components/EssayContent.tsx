@@ -147,7 +147,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
 
     // Detect PS section - capture meaningful PS notes
     if (/^PS\.?\s/i.test(line.trim())) {
-      // Check if it's a meaningful PS (thank you, personal note) vs CTA
+      // Check if it’s a meaningful PS (thank you, personal note) vs CTA
       const isMeaningfulPs = /thank you|thanks|love|<3|heart/i.test(line) &&
                             !/share|subscribe|pass along|leave.*heart/i.test(line);
       if (isMeaningfulPs) {
@@ -261,7 +261,7 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
     <>
       <ReadingProgress />
       <ExitIntentPopup enabled={true} />
-      {/* Hide once the reader reaches the footer's own Subscribe card */}
+      {/* Hide once the reader reaches the footer’s own Subscribe card */}
       <ScrollSlideIn enabled={true} scrollThreshold={60} suppressSelector=".essay-footer" />
 
       {/* Header */}

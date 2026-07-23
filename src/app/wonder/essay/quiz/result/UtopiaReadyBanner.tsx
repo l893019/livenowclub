@@ -16,7 +16,7 @@ export default function UtopiaReadyBanner() {
     if (stored) {
       try {
         setUtopia(JSON.parse(stored));
-        // Clear it so it doesn't show again on refresh
+        // Clear it so it doesn’t show again on refresh
         sessionStorage.removeItem("created-utopia");
       } catch (e) {
         console.error("Failed to parse created-utopia:", e);

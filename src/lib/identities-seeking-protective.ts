@@ -28,7 +28,7 @@ export const seekingProtectiveIdentities: Record<string, Identity> = {
       'Their utopia was built with margin for error. Every system has a fallback.',
 
     description:
-      "You design systems with extraordinary care, considering failure modes others overlook. Your questioning mind asks what could go wrong, and your protective instinct ensures you've built defenses. This isn't anxiety—it's architectural responsibility.",
+      "You design systems with extraordinary care, considering failure modes others overlook. Your questioning mind asks what could go wrong, and your protective instinct ensures you’ve built defenses. This isn’t anxiety—it’s architectural responsibility.",
 
     pull: 'toward resilient design',
     edge: 'you design for failure modes others never imagine',
@@ -43,13 +43,13 @@ While optimistic architects build for success, you build for both success and fa
 This makes you essential when stakes are high. Medical systems, financial infrastructure, safety-critical software—these need architects who ask the uncomfortable questions. Your care protects people from the confidence of less careful designers.`,
 
     blindSpot:
-      "Your care can become paralysis. At some point, you've considered enough failure modes—and need to ship.",
+      "Your care can become paralysis. At some point, you’ve considered enough failure modes—and need to ship.",
 
-    blindSpotExpanded: `There's always another thing that could go wrong.
+    blindSpotExpanded: `There’s always another thing that could go wrong.
 
 Your careful questioning never naturally concludes. Every design can be questioned further, every failure mode can suggest another. At some point, additional care has diminishing returns, and your caution delays systems that people need now, imperfect though they are.
 
-There's also the cost of excessive defensiveness. Systems optimized for failure can underperform in success. Your care for what could go wrong can steal resources from what could go right.`,
+There’s also the cost of excessive defensiveness. Systems optimized for failure can underperform in success. Your care for what could go wrong can steal resources from what could go right.`,
 
     coreBeliefs: [
       'Good architecture anticipates failure, not just success',
@@ -64,9 +64,9 @@ There's also the cost of excessive defensiveness. Systems optimized for failure 
     alignsWith:
       'other Protective types—you share the orientation toward what could go wrong, toward building safeguards and considering risks',
     tensionWith:
-      "Expansive types—their optimism can feel naive, like they haven't thought through what could fail",
+      "Expansive types—their optimism can feel naive, like they haven’t thought through what could fail",
     growsWith:
-      "Confident types—they push you to trust your careful designs enough to ship them, accepting that perfection isn't achievable",
+      "Confident types—they push you to trust your careful designs enough to ship them, accepting that perfection isn’t achievable",
 
     books: [
       {
@@ -111,7 +111,7 @@ There's also the cost of excessive defensiveness. Systems optimized for failure 
       'Their utopia learns from every near-miss. Caution is woven into the culture.',
 
     description:
-      "You design with eyes wide open to risk, balancing ambition with awareness of what could go wrong. Your caution isn't timidity—it's the mature understanding that good architecture requires thinking about both upsides and downsides.",
+      "You design with eyes wide open to risk, balancing ambition with awareness of what could go wrong. Your caution isn’t timidity—it’s the mature understanding that good architecture requires thinking about both upsides and downsides.",
 
     pull: 'toward risk-aware design',
     edge: 'you see the risks in systems that others overlook in their enthusiasm',
@@ -121,9 +121,9 @@ There's also the cost of excessive defensiveness. Systems optimized for failure 
     superpower: 'risk-aware design',
     superpowerExpanded: `You hold both possibility and risk in mind.
 
-Your architectural vision includes what could go wrong alongside what should go right. This dual awareness produces designs that are both ambitious and realistic. You don't let risk prevent progress, but you don't let enthusiasm blind you to danger.
+Your architectural vision includes what could go wrong alongside what should go right. This dual awareness produces designs that are both ambitious and realistic. You don’t let risk prevent progress, but you don’t let enthusiasm blind you to danger.
 
-This makes you valuable as a reality check. When teams get caught up in what they're building, you're the one asking the uncomfortable questions. Not to kill projects, but to make them better. Your caution serves the work by making it more resilient.`,
+This makes you valuable as a reality check. When teams get caught up in what they’re building, you’re the one asking the uncomfortable questions. Not to kill projects, but to make them better. Your caution serves the work by making it more resilient.`,
 
     blindSpot:
       'Your caution can dampen necessary boldness. Sometimes the biggest risk is not taking enough risk.',
@@ -132,7 +132,7 @@ This makes you valuable as a reality check. When teams get caught up in what the
 
 Your attention to what could go wrong can gradually shift from informing decisions to making them. Caution starts as useful input and becomes the deciding factor. But avoiding all risk means avoiding all opportunity.
 
-There's also the social cost. Being the person who always raises concerns can position you as the obstacle rather than the contributor. Your caution needs to be balanced with enthusiasm to remain welcome on ambitious teams.`,
+There’s also the social cost. Being the person who always raises concerns can position you as the obstacle rather than the contributor. Your caution needs to be balanced with enthusiasm to remain welcome on ambitious teams.`,
 
     coreBeliefs: [
       'Awareness of risk serves ambition by making it sustainable',
@@ -147,7 +147,7 @@ There's also the social cost. Being the person who always raises concerns can po
     alignsWith:
       'other Seeking types—you share the questioning orientation, the sense that assumptions need examination',
     tensionWith:
-      "Bold types—their willingness to move fast can feel like they haven't considered the downsides",
+      "Bold types—their willingness to move fast can feel like they haven’t considered the downsides",
     growsWith:
       'Assured types—they help you trust your judgment enough to move forward despite uncertainty',
 
@@ -211,11 +211,11 @@ This makes you reliable. Teams know your commitments will be met, your estimates
     blindSpot:
       "Your measured approach can become safe mediocrity. Sometimes breakthroughs require unmeasured commitment.",
 
-    blindSpotExpanded: `Thoughtful isn't always right.
+    blindSpotExpanded: `Thoughtful isn’t always right.
 
 Your balanced judgment serves you well in most contexts—but some achievements require imbalanced commitment. The project that changes everything might need unmeasured dedication. The breakthrough that defines a career might require throwing caution aside temporarily.
 
-There's also the risk of measured becoming comfortable. If measured means "what I'm sure I can handle," you might never discover what you're capable of when stretched.`,
+There’s also the risk of measured becoming comfortable. If measured means "what I’m sure I can handle," you might never discover what you’re capable of when stretched.`,
 
     coreBeliefs: [
       'Thoughtful progress is sustainable progress',
@@ -232,7 +232,7 @@ There's also the risk of measured becoming comfortable. If measured means "what 
     tensionWith:
       'Adaptive types—their rapid changes can feel like lack of commitment to any particular direction',
     growsWith:
-      "Bold types—they challenge you to occasionally exceed your measured limits, discovering you're capable of more",
+      "Bold types—they challenge you to occasionally exceed your measured limits, discovering you’re capable of more",
 
     books: [
       {
@@ -281,7 +281,7 @@ There's also the risk of measured becoming comfortable. If measured means "what 
       'Their utopia was built right the first time. Quality is non-negotiable.',
 
     description:
-      "You build with extraordinary attention to quality, questioning every step to ensure it's done right. Your care isn't perfectionism for its own sake—it's the understanding that careful construction prevents costly failures.",
+      "You build with extraordinary attention to quality, questioning every step to ensure it’s done right. Your care isn’t perfectionism for its own sake—it’s the understanding that careful construction prevents costly failures.",
 
     pull: 'toward quality construction',
     edge: 'you build things that work because you questioned every assumption along the way',
@@ -291,18 +291,18 @@ There's also the risk of measured becoming comfortable. If measured means "what 
     superpower: 'quality-driven building',
     superpowerExpanded: `You build things that work.
 
-Your careful approach means you question each step, verify each assumption, test each component. This isn't slow—it's efficient, because catching problems early is cheaper than fixing them later. The things you build don't have hidden flaws waiting to emerge.
+Your careful approach means you question each step, verify each assumption, test each component. This isn’t slow—it’s efficient, because catching problems early is cheaper than fixing them later. The things you build don’t have hidden flaws waiting to emerge.
 
-People trust your builds because your care is visible in the results. The construction that doesn't fail under load. The system that performs as specified. The work that stands up to scrutiny. Your careful building produces quality that speaks for itself.`,
+People trust your builds because your care is visible in the results. The construction that doesn’t fail under load. The system that performs as specified. The work that stands up to scrutiny. Your careful building produces quality that speaks for itself.`,
 
     blindSpot:
       'Your care can prevent completion. At some point, good enough is good enough.',
 
     blindSpotExpanded: `Perfect is the enemy of done.
 
-Your careful questioning can prevent you from ever declaring something finished. There's always more to check, another assumption to verify, another test to run. But at some point, the value of shipping exceeds the value of additional care.
+Your careful questioning can prevent you from ever declaring something finished. There’s always more to check, another assumption to verify, another test to run. But at some point, the value of shipping exceeds the value of additional care.
 
-There's also the opportunity cost. Time spent perfecting one build is time not spent starting the next. Your careful approach produces excellent individual results but may limit total output over time.`,
+There’s also the opportunity cost. Time spent perfecting one build is time not spent starting the next. Your careful approach produces excellent individual results but may limit total output over time.`,
 
     coreBeliefs: [
       'Quality in construction prevents crisis in operation',
@@ -317,7 +317,7 @@ There's also the opportunity cost. Time spent perfecting one build is time not s
     alignsWith:
       'other Watchful types—you share the deep attention to quality, the questioning of assumptions',
     tensionWith:
-      "Bold types—their speed can feel like carelessness, like they're creating problems for later",
+      "Bold types—their speed can feel like carelessness, like they’re creating problems for later",
     growsWith:
       'Confident types—they help you trust your careful work enough to ship it before it feels perfect',
 
@@ -374,7 +374,7 @@ There's also the opportunity cost. Time spent perfecting one build is time not s
     superpower: 'risk-informed building',
     superpowerExpanded: `You build with eyes open to what could fail.
 
-Your construction process includes risk awareness. You don't just think about how things should work; you think about how they could break. This dual awareness produces builds that are robust where they need to be, with appropriate margins for error.
+Your construction process includes risk awareness. You don’t just think about how things should work; you think about how they could break. This dual awareness produces builds that are robust where they need to be, with appropriate margins for error.
 
 This makes you trustworthy for important work. When something needs to not fail, people want a cautious builder—someone who has thought about the failure modes and built defenses against them.`,
 
@@ -383,9 +383,9 @@ This makes you trustworthy for important work. When something needs to not fail,
 
     blindSpotExpanded: `Caution has costs.
 
-Your risk-aware building produces robust results, but it also takes more time and resources. Not every build needs the same level of caution. Sometimes "good enough" really is good enough, and your caution is protecting against risks that don't matter.
+Your risk-aware building produces robust results, but it also takes more time and resources. Not every build needs the same level of caution. Sometimes "good enough" really is good enough, and your caution is protecting against risks that don’t matter.
 
-There's also the danger of caution creep. If one cautious step prevents one problem, maybe two cautious steps prevent two problems? This reasoning leads to ever-increasing overhead that eventually crushes the building itself.`,
+There’s also the danger of caution creep. If one cautious step prevents one problem, maybe two cautious steps prevent two problems? This reasoning leads to ever-increasing overhead that eventually crushes the building itself.`,
 
     coreBeliefs: [
       'Careful building is smart building—it accounts for reality',
@@ -400,7 +400,7 @@ There's also the danger of caution creep. If one cautious step prevents one prob
     alignsWith:
       'other Protective types—you share the orientation toward risk, toward building safeguards into what you create',
     tensionWith:
-      "Bold types—their confident building can feel like they're ignoring risks that matter",
+      "Bold types—their confident building can feel like they’re ignoring risks that matter",
     growsWith:
       'Open types—they help you distinguish between risks worth protecting against and risks you can accept',
 
@@ -457,18 +457,18 @@ There's also the danger of caution creep. If one cautious step prevents one prob
     superpower: 'reliable construction',
     superpowerExpanded: `You build at a pace you can sustain.
 
-Your measured approach means your builds progress steadily without burnout or collapse. You don't promise what you can't deliver, and you deliver what you promise. This reliability compounds over time into significant achievement.
+Your measured approach means your builds progress steadily without burnout or collapse. You don’t promise what you can’t deliver, and you deliver what you promise. This reliability compounds over time into significant achievement.
 
 Teams value your measured building because they can count on it. Your estimates are realistic, your progress is steady, your work is dependable. In a world of unreliable promises, your measured reliability is rare and valuable.`,
 
     blindSpot:
       'Your measured pace can become comfortable limitation. Sometimes construction needs to accelerate beyond sustainable pace.',
 
-    blindSpotExpanded: `Thoughtful isn't always appropriate.
+    blindSpotExpanded: `Thoughtful isn’t always appropriate.
 
-Your sustainable pace serves you well usually—but some situations require unsustainable bursts. The deadline that can't move. The opportunity with an expiration date. Your measured approach can be a liability when speed matters more than sustainability.
+Your sustainable pace serves you well usually—but some situations require unsustainable bursts. The deadline that can’t move. The opportunity with an expiration date. Your measured approach can be a liability when speed matters more than sustainability.
 
-There's also the question of what "measured" is measured against. If your baseline is conservative, your measured pace might be unnecessarily slow. Recalibrating occasionally ensures your measured approach stays appropriate.`,
+There’s also the question of what "measured" is measured against. If your baseline is conservative, your measured pace might be unnecessarily slow. Recalibrating occasionally ensures your measured approach stays appropriate.`,
 
     coreBeliefs: [
       'Sustainable building produces more than heroic sprints',
@@ -546,16 +546,16 @@ There's also the question of what "measured" is measured against. If your baseli
 
 Your care is visible in your work. The clean joints. The considered materials. The attention to details that nobody will consciously notice but everyone will unconsciously feel. This devotion to craft produces objects that matter.
 
-People seek your making because they can see the care in it. The gift that's more than its function. The object that says "someone cared about this." Your careful making imbues physical things with meaning.`,
+People seek your making because they can see the care in it. The gift that’s more than its function. The object that says "someone cared about this." Your careful making imbues physical things with meaning.`,
 
     blindSpot:
-      "Your care can become obsessive. At some point, additional attention doesn't improve the work—it just delays it.",
+      "Your care can become obsessive. At some point, additional attention doesn’t improve the work—it just delays it.",
 
     blindSpotExpanded: `Care has diminishing returns.
 
-Your deep attention to craft can extend indefinitely. There's always another detail to attend to, another way to improve. But at some point, the making needs to end. Your care can prevent the completion that allows your work to actually enter the world.
+Your deep attention to craft can extend indefinitely. There’s always another detail to attend to, another way to improve. But at some point, the making needs to end. Your care can prevent the completion that allows your work to actually enter the world.
 
-There's also the danger of care becoming control. Making with care is about serving the work. Making with too much care can become about serving your own need for control.`,
+There’s also the danger of care becoming control. Making with care is about serving the work. Making with too much care can become about serving your own need for control.`,
 
     coreBeliefs: [
       'Care in making shows in the made',
@@ -570,7 +570,7 @@ There's also the danger of care becoming control. Making with care is about serv
     alignsWith:
       'other Watchful types—you share the deep attention to quality, the commitment to doing work right',
     tensionWith:
-      "Bold types—their rapid making can feel careless, like they don't respect the craft",
+      "Bold types—their rapid making can feel careless, like they don’t respect the craft",
     growsWith:
       'Open types—they help you recognize when perfect becomes the enemy of done',
 
@@ -617,7 +617,7 @@ There's also the danger of care becoming control. Making with care is about serv
       'Their utopia values durability. Objects are made to last.',
 
     description:
-      "You make with awareness of risk and failure, creating objects that account for how things go wrong. Your caution isn't timidity—it's the maker's understanding that objects face stress, use, and time.",
+      "You make with awareness of risk and failure, creating objects that account for how things go wrong. Your caution isn’t timidity—it’s the maker’s understanding that objects face stress, use, and time.",
 
     pull: 'toward durable craft',
     edge: 'you make things that hold up because you thought about how they might not',
@@ -629,16 +629,16 @@ There's also the danger of care becoming control. Making with care is about serv
 
 Your cautious approach means you think about failure modes even as you craft. Where will this wear? What stress will this face? How might this break? This questioning produces objects that are robust in the places they need to be.
 
-People trust what you make because it doesn't fail unexpectedly. Your cautious making has anticipated the stresses and built appropriate strength into the design.`,
+People trust what you make because it doesn’t fail unexpectedly. Your cautious making has anticipated the stresses and built appropriate strength into the design.`,
 
     blindSpot:
       'Your caution can overengineer. Not every object needs maximum durability.',
 
-    blindSpotExpanded: `More robust isn't always better.
+    blindSpotExpanded: `More robust isn’t always better.
 
 Your attention to potential failures can lead you to overbuild—adding weight, complexity, and cost to protect against risks that may never materialize. Sometimes something that lasts two years is better than something that lasts twenty, if the context calls for it.
 
-There's also aesthetic cost. Robustness can conflict with elegance. Your cautious making might produce sturdy objects that lack the lightness or grace that less cautious makers achieve.`,
+There’s also aesthetic cost. Robustness can conflict with elegance. Your cautious making might produce sturdy objects that lack the lightness or grace that less cautious makers achieve.`,
 
     coreBeliefs: [
       'Made objects should account for the stresses they will face',
@@ -653,7 +653,7 @@ There's also aesthetic cost. Robustness can conflict with elegance. Your cautiou
     alignsWith:
       'other Careful types—you share the awareness of risk, the thinking about what could go wrong',
     tensionWith:
-      "Adaptive types—their experimental making can feel reckless, like they don't respect durability",
+      "Adaptive types—their experimental making can feel reckless, like they don’t respect durability",
     growsWith:
       'Confident types—they help you distinguish between necessary caution and excessive protection',
 
@@ -710,18 +710,18 @@ There's also aesthetic cost. Robustness can conflict with elegance. Your cautiou
     superpower: 'consistent making',
     superpowerExpanded: `Your making is reliably good.
 
-Your measured approach means your work maintains consistent quality. You don't oscillate between brilliance and failure; you produce dependable results. This consistency is valuable—people know what to expect from you.
+Your measured approach means your work maintains consistent quality. You don’t oscillate between brilliance and failure; you produce dependable results. This consistency is valuable—people know what to expect from you.
 
-Over time, consistent making compounds into significant achievement. The measured maker who produces reliably accumulates a body of work that inconsistent brilliant makers often don't.`,
+Over time, consistent making compounds into significant achievement. The measured maker who produces reliably accumulates a body of work that inconsistent brilliant makers often don’t.`,
 
     blindSpot:
       'Your consistency can become rut. Thoughtful making can miss the breakthrough that requires unmeasured commitment.',
 
-    blindSpotExpanded: `Reliable isn't always remarkable.
+    blindSpotExpanded: `Reliable isn’t always remarkable.
 
 Your consistent craft produces predictable quality—but remarkable often requires unpredictable. The breakthrough piece that defines a career might require abandoning your measured approach temporarily, risking failure for the chance at transcendence.
 
-There's also the question of growth. Thoughtful making can become comfortable making. If you're not occasionally stretching beyond your measured capacity, you might not be developing.`,
+There’s also the question of growth. Thoughtful making can become comfortable making. If you’re not occasionally stretching beyond your measured capacity, you might not be developing.`,
 
     coreBeliefs: [
       'Consistent making compounds into significant achievement',
@@ -787,7 +787,7 @@ There's also the question of growth. Thoughtful making can become comfortable ma
       'Their utopia was reshaped gradually. Change built on what worked.',
 
     description:
-      "You reshape what exists with extraordinary care, considering the risks of transformation before acting. Your questioning nature asks what could go wrong with proposed changes, while your protective instinct ensures you don't break what works.",
+      "You reshape what exists with extraordinary care, considering the risks of transformation before acting. Your questioning nature asks what could go wrong with proposed changes, while your protective instinct ensures you don’t break what works.",
 
     pull: 'toward safe transformation',
     edge: 'you reshape without breaking what deserves preservation',
@@ -797,9 +797,9 @@ There's also the question of growth. Thoughtful making can become comfortable ma
     superpower: 'protective transformation',
     superpowerExpanded: `You change things without breaking them.
 
-Your careful approach to reshaping means you understand what you're working with before you change it. You identify what must be preserved, what can be modified, and what should be transformed. This care produces change that sticks because it doesn't trigger unnecessary resistance.
+Your careful approach to reshaping means you understand what you’re working with before you change it. You identify what must be preserved, what can be modified, and what should be transformed. This care produces change that sticks because it doesn’t trigger unnecessary resistance.
 
-People trust you with things they value because you won't carelessly destroy what works. Your careful shaping enables transformation that protective stakeholders can accept.`,
+People trust you with things they value because you won’t carelessly destroy what works. Your careful shaping enables transformation that protective stakeholders can accept.`,
 
     blindSpot:
       'Your care can prevent necessary disruption. Sometimes transformation requires breaking things.',
@@ -808,7 +808,7 @@ People trust you with things they value because you won't carelessly destroy wha
 
 Your protective instinct can become over-protective. Sometimes what needs to happen is genuine disruption—breaking what exists to make space for what needs to come. Your careful shaping might be too careful, preserving things that should be let go.
 
-There's also the pace problem. Watchful transformation is slow transformation. When change needs to happen faster than your careful approach allows, your care becomes obstacle.`,
+There’s also the pace problem. Watchful transformation is slow transformation. When change needs to happen faster than your careful approach allows, your care becomes obstacle.`,
 
     coreBeliefs: [
       'Good transformation preserves what deserves preservation',
@@ -823,7 +823,7 @@ There's also the pace problem. Watchful transformation is slow transformation. W
     alignsWith:
       'other Protective types—you share the orientation toward preservation, toward not breaking what works',
     tensionWith:
-      "Bold types—their disruptive shaping can feel careless, like they don't value what they're breaking",
+      "Bold types—their disruptive shaping can feel careless, like they don’t value what they’re breaking",
     growsWith:
       'Confident types—they help you trust your shaping enough to move faster when needed',
 
@@ -853,7 +853,7 @@ There's also the pace problem. Watchful transformation is slow transformation. W
       fictional: [
         'Jean-Luc Picard (Star Trek)',
         'Mufasa (The Lion King)',
-        "T'Challa (Black Panther)",
+        "T’Challa (Black Panther)",
       ],
     },
   },
@@ -880,18 +880,18 @@ There's also the pace problem. Watchful transformation is slow transformation. W
     superpower: 'fail-safe transformation',
     superpowerExpanded: `You change things with fallbacks in place.
 
-Your cautious shaping includes contingency planning. If this transformation doesn't work, what's plan B? If this change causes problems, how do we reverse it? This risk-awareness produces change that's safer to attempt.
+Your cautious shaping includes contingency planning. If this transformation doesn’t work, what’s plan B? If this change causes problems, how do we reverse it? This risk-awareness produces change that’s safer to attempt.
 
 People are more willing to accept transformation when a cautious shaper is guiding it. Your awareness of risks and preparation for problems makes change feel less risky.`,
 
     blindSpot:
       'Your caution can shrink ambition. If you only attempt changes with clear fallbacks, you might miss transformations worth the risk.',
 
-    blindSpotExpanded: `Some changes can't be made safely.
+    blindSpotExpanded: `Some changes can’t be made safely.
 
-Your requirement for fallbacks can filter out transformations that don't have them. But some of the most important changes are one-way doors—you can't go back. Your caution might prevent you from attempting changes that are worth the irreversibility.
+Your requirement for fallbacks can filter out transformations that don’t have them. But some of the most important changes are one-way doors—you can’t go back. Your caution might prevent you from attempting changes that are worth the irreversibility.
 
-There's also the cost of preparation. Building fallbacks takes resources. Your cautious approach might spend so much on contingencies that the transformation itself is under-resourced.`,
+There’s also the cost of preparation. Building fallbacks takes resources. Your cautious approach might spend so much on contingencies that the transformation itself is under-resourced.`,
 
     coreBeliefs: [
       'Wise transformation accounts for potential failure',
@@ -953,7 +953,7 @@ There's also the cost of preparation. Building fallbacks takes resources. Your c
       'Their utopia changed at the pace it could absorb. Transformation was sustainable.',
 
     description:
-      "You reshape with balanced judgment, moving at the pace change can sustain. Your measured approach produces transformation that's neither too fast nor too slow—appropriate to what's being changed.",
+      "You reshape with balanced judgment, moving at the pace change can sustain. Your measured approach produces transformation that’s neither too fast nor too slow—appropriate to what’s being changed.",
 
     pull: 'toward sustainable change',
     edge: 'you shape transformation at the pace that produces lasting results',
@@ -965,16 +965,16 @@ There's also the cost of preparation. Building fallbacks takes resources. Your c
 
 Your measured approach calibrates the pace of transformation to the capacity for change. Too fast and you trigger resistance; too slow and you lose momentum. Your balanced judgment finds the sustainable pace.
 
-This makes your transformations stick. Because you didn't push faster than systems could absorb, the changes you make integrate rather than reject. Your measured shaping produces lasting change.`,
+This makes your transformations stick. Because you didn’t push faster than systems could absorb, the changes you make integrate rather than reject. Your measured shaping produces lasting change.`,
 
     blindSpot:
       'Your measured pace can be too slow. Sometimes transformation needs to outpace the sustainable speed.',
 
-    blindSpotExpanded: `Sustainable pace isn't always possible.
+    blindSpotExpanded: `Sustainable pace isn’t always possible.
 
-Your commitment to transformation at absorb-able speed assumes that speed is available. But sometimes circumstances demand faster change than systems can easily handle. Crisis, competition, opportunity windows—these don't wait for sustainable pace.
+Your commitment to transformation at absorb-able speed assumes that speed is available. But sometimes circumstances demand faster change than systems can easily handle. Crisis, competition, opportunity windows—these don’t wait for sustainable pace.
 
-There's also the question of what "sustainable" really means. If your baseline is conservative, your measured pace might be unnecessarily slow. Occasionally testing your assumptions about what pace is sustainable keeps your shaping appropriately calibrated.`,
+There’s also the question of what "sustainable" really means. If your baseline is conservative, your measured pace might be unnecessarily slow. Occasionally testing your assumptions about what pace is sustainable keeps your shaping appropriately calibrated.`,
 
     coreBeliefs: [
       'Sustainable transformation outlasts revolutionary disruption',
@@ -1050,9 +1050,9 @@ There's also the question of what "sustainable" really means. If your baseline i
     superpower: 'verified perception',
     superpowerExpanded: `You see things accurately.
 
-Your careful observation doesn't assume—it verifies. You question your first impressions, look again at what you thought you saw, check your observations against other evidence. This care produces perception you can trust.
+Your careful observation doesn’t assume—it verifies. You question your first impressions, look again at what you thought you saw, check your observations against other evidence. This care produces perception you can trust.
 
-People value your careful seeing because you don't report assumptions as observations. When you say you saw something, you actually saw it. This reliability makes your observations worth acting on.`,
+People value your careful seeing because you don’t report assumptions as observations. When you say you saw something, you actually saw it. This reliability makes your observations worth acting on.`,
 
     blindSpot:
       'Your careful observation can miss the big picture. Sometimes understanding requires stepping back from detailed verification.',
@@ -1061,7 +1061,7 @@ People value your careful seeing because you don't report assumptions as observa
 
 Your attention to accurate observation can focus you on trees while missing forests. The careful examination of each element might not add up to understanding of the whole. Sometimes less careful, more sweeping observation reveals what detailed scrutiny cannot.
 
-There's also the time cost. Watchful observation is slow observation. In situations that require rapid assessment, your careful approach might take longer than available.`,
+There’s also the time cost. Watchful observation is slow observation. In situations that require rapid assessment, your careful approach might take longer than available.`,
 
     coreBeliefs: [
       'Accurate observation requires verification, not assumption',
@@ -1076,7 +1076,7 @@ There's also the time cost. Watchful observation is slow observation. In situati
     alignsWith:
       'other Watchful types—you share the deep attention to accuracy, the questioning of assumptions',
     tensionWith:
-      "Bold types—their quick assessments can feel careless, like they haven't really looked",
+      "Bold types—their quick assessments can feel careless, like they haven’t really looked",
     growsWith:
       'Confident types—they help you trust your observations enough to act on them sooner',
 
@@ -1133,9 +1133,9 @@ There's also the time cost. Watchful observation is slow observation. In situati
     superpower: 'skeptical observation',
     superpowerExpanded: `You question what you observe.
 
-Your cautious observation includes awareness of perceptual limitations. You know that you might be seeing what you expect to see, might be missing what's actually there, might be interpreting through biased frames. This awareness produces more reliable observation.
+Your cautious observation includes awareness of perceptual limitations. You know that you might be seeing what you expect to see, might be missing what’s actually there, might be interpreting through biased frames. This awareness produces more reliable observation.
 
-People value your cautious seeing because you report uncertainty alongside observation. You don't just tell them what you saw—you tell them how confident you are in that seeing. This calibrated reporting enables better decisions.`,
+People value your cautious seeing because you report uncertainty alongside observation. You don’t just tell them what you saw—you tell them how confident you are in that seeing. This calibrated reporting enables better decisions.`,
 
     blindSpot:
       'Your caution about perception can become paralysis. At some point, you have to act on what you observe despite uncertainty.',
@@ -1144,7 +1144,7 @@ People value your cautious seeing because you report uncertainty alongside obser
 
 Your awareness of perceptual limitations can prevent you from trusting any observation enough to act on it. But perfect observation is impossible—at some point, you have to work with imperfect perception. Your caution can delay necessary action indefinitely.
 
-There's also the social cost. Constantly qualifying your observations with uncertainty can make you seem unreliable, even though the opposite is true. Learning to present cautious observations confidently is a skill worth developing.`,
+There’s also the social cost. Constantly qualifying your observations with uncertainty can make you seem unreliable, even though the opposite is true. Learning to present cautious observations confidently is a skill worth developing.`,
 
     coreBeliefs: [
       'Observation can deceive—approach it with appropriate skepticism',
@@ -1159,7 +1159,7 @@ There's also the social cost. Constantly qualifying your observations with uncer
     alignsWith:
       'other Careful types—you share the awareness of how things can go wrong, even in perception',
     tensionWith:
-      "Confident types—their certain observations can feel overconfident, like they haven't questioned their own seeing",
+      "Confident types—their certain observations can feel overconfident, like they haven’t questioned their own seeing",
     growsWith:
       'Assured types—they help you trust your observations enough to share them without excessive qualification',
 
@@ -1216,9 +1216,9 @@ There's also the social cost. Constantly qualifying your observations with uncer
     superpower: 'practical observation',
     superpowerExpanded: `You observe enough to decide.
 
-Your measured approach calibrates observation to decision needs. You don't observe more than necessary, but you don't observe less than required. This practical orientation produces observation that actually serves action.
+Your measured approach calibrates observation to decision needs. You don’t observe more than necessary, but you don’t observe less than required. This practical orientation produces observation that actually serves action.
 
-People value your measured observation because it's actionable. You don't give them endless data without synthesis or rush to conclusions without sufficient observation. You find the balance that serves practical needs.`,
+People value your measured observation because it’s actionable. You don’t give them endless data without synthesis or rush to conclusions without sufficient observation. You find the balance that serves practical needs.`,
 
     blindSpot:
       'Your practical orientation can miss insight that emerges from extended observation. Sometimes looking longer reveals what measured observation cannot.',
@@ -1227,7 +1227,7 @@ People value your measured observation because it's actionable. You don't give t
 
 Your calibration of observation to decision needs means you stop observing when you have "enough." But some understanding only emerges from observation that exceeds practical necessity. The insight that changes everything might require looking longer than your measured approach allows.
 
-There's also the question of what counts as "enough." If your baseline is conservative, you might systematically observe less than optimal. Occasionally extending observation beyond your measured limits can recalibrate your judgment.`,
+There’s also the question of what counts as "enough." If your baseline is conservative, you might systematically observe less than optimal. Occasionally extending observation beyond your measured limits can recalibrate your judgment.`,
 
     coreBeliefs: [
       'Observation should serve action, not postpone it indefinitely',
@@ -1293,7 +1293,7 @@ There's also the question of what counts as "enough." If your baseline is conser
       'Their utopia honors the overlooked. Small things receive the attention they deserve.',
 
     description:
-      "You notice with extraordinary care, catching small things that hasty attention misses. Your questioning nature examines what you notice, ensuring you're seeing accurately rather than projecting.",
+      "You notice with extraordinary care, catching small things that hasty attention misses. Your questioning nature examines what you notice, ensuring you’re seeing accurately rather than projecting.",
 
     pull: 'toward verified noticing',
     edge: 'you notice small things with care that confirms their reality',
@@ -1305,16 +1305,16 @@ There's also the question of what counts as "enough." If your baseline is conser
 
 Your careful attention catches small things and then checks them. Did I actually see that, or did I imagine it? Is that pattern real or am I creating it? This questioning produces noticing you can trust.
 
-People value your careful noticing because you don't report projections as perceptions. When you say you noticed something, you actually noticed it. This reliability makes your small observations worth attending to.`,
+People value your careful noticing because you don’t report projections as perceptions. When you say you noticed something, you actually noticed it. This reliability makes your small observations worth attending to.`,
 
     blindSpot:
       'Your careful noticing can become obsessive. Not every small thing deserves the attention you give it.',
 
     blindSpotExpanded: `Care has diminishing returns.
 
-Your deep attention to small things can extend indefinitely. There's always more to notice, always more to verify. But at some point, the noticing needs to mean something. Your careful attention can become an end in itself rather than a means to understanding.
+Your deep attention to small things can extend indefinitely. There’s always more to notice, always more to verify. But at some point, the noticing needs to mean something. Your careful attention can become an end in itself rather than a means to understanding.
 
-There's also the selectivity question. Noticing everything carefully is impossible. Your care for what you do notice might mean missing other things equally worthy of attention.`,
+There’s also the selectivity question. Noticing everything carefully is impossible. Your care for what you do notice might mean missing other things equally worthy of attention.`,
 
     coreBeliefs: [
       'Small things deserve careful attention',
@@ -1329,7 +1329,7 @@ There's also the selectivity question. Noticing everything carefully is impossib
     alignsWith:
       'other Watchful types—you share the deep attention to accuracy, the commitment to verified perception',
     tensionWith:
-      "Bold types—their quick attention can feel careless, like they aren't really noticing",
+      "Bold types—their quick attention can feel careless, like they aren’t really noticing",
     growsWith:
       'Open types—they help you notice more broadly, accepting some things without extensive verification',
 
@@ -1386,7 +1386,7 @@ There's also the selectivity question. Noticing everything carefully is impossib
     superpower: 'early warning detection',
     superpowerExpanded: `You notice what signals trouble.
 
-Your cautious attention is tuned to warning signs. The small change that might indicate a bigger shift. The subtle signal that something's wrong. The detail that doesn't fit the pattern. Your noticing catches these early warnings.
+Your cautious attention is tuned to warning signs. The small change that might indicate a bigger shift. The subtle signal that something’s wrong. The detail that doesn’t fit the pattern. Your noticing catches these early warnings.
 
 People value your cautious noticing because you catch problems early. What you notice today might prevent crisis tomorrow. Your attention to small warning signs serves larger protection.`,
 
@@ -1395,9 +1395,9 @@ People value your cautious noticing because you catch problems early. What you n
 
     blindSpotExpanded: `Warning-focused attention can find warnings everywhere.
 
-Your orientation toward catching problems can create them where they don't exist. If you're always looking for warning signs, you might start interpreting neutral signals as threats. This hypervigilance exhausts you and can exhaust others.
+Your orientation toward catching problems can create them where they don’t exist. If you’re always looking for warning signs, you might start interpreting neutral signals as threats. This hypervigilance exhausts you and can exhaust others.
 
-There's also the cost of negativity. Noticing primarily through a warning-sign lens can produce a skewed picture of reality—seeing dangers but missing delights.`,
+There’s also the cost of negativity. Noticing primarily through a warning-sign lens can produce a skewed picture of reality—seeing dangers but missing delights.`,
 
     coreBeliefs: [
       'Small signals often precede big changes—notice them early',
@@ -1412,7 +1412,7 @@ There's also the cost of negativity. Noticing primarily through a warning-sign l
     alignsWith:
       'other Protective types—you share the orientation toward risk, toward catching what could go wrong early',
     tensionWith:
-      "Expansive types—their optimistic attention can feel naive, like they're missing warning signs",
+      "Expansive types—their optimistic attention can feel naive, like they’re missing warning signs",
     growsWith:
       'Confident types—they help you trust that not everything small is a warning, allowing more relaxed noticing',
 
@@ -1459,7 +1459,7 @@ There's also the cost of negativity. Noticing primarily through a warning-sign l
       'Their utopia notices what matters. Attention is allocated wisely.',
 
     description:
-      "You notice with balanced judgment, neither catching everything nor missing what matters. Your measured attention goes where it serves, producing noticing that's useful rather than overwhelming.",
+      "You notice with balanced judgment, neither catching everything nor missing what matters. Your measured attention goes where it serves, producing noticing that’s useful rather than overwhelming.",
 
     pull: 'toward useful noticing',
     edge: 'you notice what you need to notice, without drowning in detail',
@@ -1469,18 +1469,18 @@ There's also the cost of negativity. Noticing primarily through a warning-sign l
     superpower: 'calibrated noticing',
     superpowerExpanded: `You notice appropriately.
 
-Your measured approach calibrates attention to purpose. You don't try to notice everything—you notice what serves your goals. This calibration produces noticing that's useful without being overwhelming.
+Your measured approach calibrates attention to purpose. You don’t try to notice everything—you notice what serves your goals. This calibration produces noticing that’s useful without being overwhelming.
 
-People value your measured noticing because it's actionable. You don't flood them with every small thing you noticed; you share what matters. Your calibrated attention serves practical needs.`,
+People value your measured noticing because it’s actionable. You don’t flood them with every small thing you noticed; you share what matters. Your calibrated attention serves practical needs.`,
 
     blindSpot:
       'Your measured noticing can miss surprises. What doesn\'t seem to matter might turn out to matter most.',
 
     blindSpotExpanded: `Calibration can become filter.
 
-Your measured approach decides what's worth noticing based on your current understanding. But sometimes the most important thing to notice is what you didn't expect—what your calibration filtered out. Your measured noticing might miss the surprise that changes everything.
+Your measured approach decides what’s worth noticing based on your current understanding. But sometimes the most important thing to notice is what you didn’t expect—what your calibration filtered out. Your measured noticing might miss the surprise that changes everything.
 
-There's also the recalibration question. Your sense of what matters comes from somewhere. If it's outdated or incomplete, your measured noticing will be miscalibrated. Regular reassessment keeps your attention well-tuned.`,
+There’s also the recalibration question. Your sense of what matters comes from somewhere. If it’s outdated or incomplete, your measured noticing will be miscalibrated. Regular reassessment keeps your attention well-tuned.`,
 
     coreBeliefs: [
       'Attention should go where it serves',
@@ -1546,7 +1546,7 @@ There's also the recalibration question. Your sense of what matters comes from s
       'Their utopia honors accurate memory. What was witnessed is remembered truly.',
 
     description:
-      "You bear witness with extraordinary care, ensuring your presence is accurate and honest. Your questioning nature examines your own witnessing, asking whether you're seeing clearly rather than projecting.",
+      "You bear witness with extraordinary care, ensuring your presence is accurate and honest. Your questioning nature examines your own witnessing, asking whether you’re seeing clearly rather than projecting.",
 
     pull: 'toward accurate witnessing',
     edge: 'you witness with care that honors the truth of what you see',
@@ -1565,9 +1565,9 @@ People value your careful witnessing because you take the responsibility of pres
 
     blindSpotExpanded: `Questioning presence can prevent presence.
 
-Your commitment to accurate witnessing can turn your attention inward—from what you're witnessing to how you're witnessing. But witnessing requires being present to what's witnessed, not present to your own process of witnessing. Your care can interfere with what it's trying to serve.
+Your commitment to accurate witnessing can turn your attention inward—from what you’re witnessing to how you’re witnessing. But witnessing requires being present to what’s witnessed, not present to your own process of witnessing. Your care can interfere with what it’s trying to serve.
 
-There's also the question of warmth. Careful, verified presence can feel clinical rather than compassionate. What's being witnessed might need presence that's simply there, not presence that's constantly examining itself.`,
+There’s also the question of warmth. Careful, verified presence can feel clinical rather than compassionate. What’s being witnessed might need presence that’s simply there, not presence that’s constantly examining itself.`,
 
     coreBeliefs: [
       'Witnessing is a responsibility that deserves care',
@@ -1582,7 +1582,7 @@ There's also the question of warmth. Careful, verified presence can feel clinica
     alignsWith:
       'other Watchful types—you share the deep attention to accuracy, the questioning of assumptions',
     tensionWith:
-      "Bold types—their quick presence can feel careless, like they aren't really witnessing",
+      "Bold types—their quick presence can feel careless, like they aren’t really witnessing",
     growsWith:
       "Open types—they help you simply be present without constant self-examination",
 
@@ -1629,7 +1629,7 @@ There's also the question of warmth. Careful, verified presence can feel clinica
       'Their utopia protects both witness and witnessed. Presence has appropriate boundaries.',
 
     description:
-      "You bear witness with awareness of risk—to yourself, to what you're witnessing, to what witnessing itself might change. Your caution produces presence that accounts for the complexity of being present.",
+      "You bear witness with awareness of risk—to yourself, to what you’re witnessing, to what witnessing itself might change. Your caution produces presence that accounts for the complexity of being present.",
 
     pull: 'toward protected presence',
     edge: 'you witness with boundaries that protect both you and what you witness',
@@ -1639,18 +1639,18 @@ There's also the question of warmth. Careful, verified presence can feel clinica
     superpower: 'boundaried witnessing',
     superpowerExpanded: `You witness with appropriate protection.
 
-Your cautious presence includes awareness of risk. What could go wrong with this witnessing? What boundaries serve both you and what you're witnessing? This awareness produces presence that's sustainable and safe.
+Your cautious presence includes awareness of risk. What could go wrong with this witnessing? What boundaries serve both you and what you’re witnessing? This awareness produces presence that’s sustainable and safe.
 
-People value your cautious witnessing because you don't burn out, don't transgress, don't harm. Your presence accounts for its own risks and manages them. This makes your witnessing sustainable rather than heroic and brief.`,
+People value your cautious witnessing because you don’t burn out, don’t transgress, don’t harm. Your presence accounts for its own risks and manages them. This makes your witnessing sustainable rather than heroic and brief.`,
 
     blindSpot:
       'Your cautious witnessing can be distant. Sometimes presence requires the risk of closeness.',
 
     blindSpotExpanded: `Protection can become distance.
 
-Your attention to the risks of presence can keep you at arm's length from what needs to be witnessed. But some things can only be witnessed up close—with vulnerability, with risk, without the protection your caution prefers. Your boundaries can become walls.
+Your attention to the risks of presence can keep you at arm’s length from what needs to be witnessed. But some things can only be witnessed up close—with vulnerability, with risk, without the protection your caution prefers. Your boundaries can become walls.
 
-There's also the question of whose protection matters most. Your cautiousness about protecting yourself might prevent witnessing that what's being witnessed truly needs, even if it costs you something.`,
+There’s also the question of whose protection matters most. Your cautiousness about protecting yourself might prevent witnessing that what’s being witnessed truly needs, even if it costs you something.`,
 
     coreBeliefs: [
       'Presence carries risks worth attending to',
@@ -1665,7 +1665,7 @@ There's also the question of whose protection matters most. Your cautiousness ab
     alignsWith:
       'other Protective types—you share the orientation toward risk, toward building safeguards into presence',
     tensionWith:
-      "Bold types—their unprotected presence can feel reckless, like they don't understand what witnessing costs",
+      "Bold types—their unprotected presence can feel reckless, like they don’t understand what witnessing costs",
     growsWith:
       'Confident types—they help you trust that some risks of presence are worth taking',
 
@@ -1712,7 +1712,7 @@ There's also the question of whose protection matters most. Your cautiousness ab
       'Their utopia values balanced presence. Witnessing is neither overwhelming nor insufficient.',
 
     description:
-      "You bear witness with balanced judgment, offering the presence that's appropriate to what's being witnessed. Your measured approach calibrates your witnessing to what serves.",
+      "You bear witness with balanced judgment, offering the presence that’s appropriate to what’s being witnessed. Your measured approach calibrates your witnessing to what serves.",
 
     pull: 'toward appropriate presence',
     edge: 'you witness with the balance that serves what needs to be seen',
@@ -1722,21 +1722,21 @@ There's also the question of whose protection matters most. Your cautiousness ab
     superpower: 'calibrated presence',
     superpowerExpanded: `You witness appropriately to each context.
 
-Your measured approach adjusts your presence to what's needed. Some moments need intense witnessing; some need lighter presence. Some things need to be witnessed at length; some are better witnessed briefly. You calibrate.
+Your measured approach adjusts your presence to what’s needed. Some moments need intense witnessing; some need lighter presence. Some things need to be witnessed at length; some are better witnessed briefly. You calibrate.
 
-People value your measured witnessing because it fits. You don't overwhelm with presence that isn't needed, and you don't disappear when presence is required. Your calibrated witnessing serves what's being witnessed.`,
+People value your measured witnessing because it fits. You don’t overwhelm with presence that isn’t needed, and you don’t disappear when presence is required. Your calibrated witnessing serves what’s being witnessed.`,
 
     blindSpot:
       'Your measured witnessing can miss what requires unmeasured presence. Some moments need everything, not calibration.',
 
-    blindSpotExpanded: `Thoughtful isn't always enough.
+    blindSpotExpanded: `Thoughtful isn’t always enough.
 
-Your balanced judgment about presence assumes that balance is appropriate. But some things need to be witnessed without measure—with everything you have, beyond what's calibrated. Your measured approach might be insufficient for moments that require unmeasured devotion.
+Your balanced judgment about presence assumes that balance is appropriate. But some things need to be witnessed without measure—with everything you have, beyond what’s calibrated. Your measured approach might be insufficient for moments that require unmeasured devotion.
 
-There's also the question of authenticity. Calibrated presence can feel calculated rather than genuine. What's being witnessed might need you fully present, not adjusting your presence to what seems appropriate.`,
+There’s also the question of authenticity. Calibrated presence can feel calculated rather than genuine. What’s being witnessed might need you fully present, not adjusting your presence to what seems appropriate.`,
 
     coreBeliefs: [
-      "Presence should fit what's being witnessed",
+      "Presence should fit what’s being witnessed",
       'Thoughtful witnessing serves without overwhelming or abandoning',
       'Calibration is a form of respect for what needs witnessing',
       'The measured witness offers what each moment needs',
