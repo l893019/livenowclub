@@ -19,7 +19,7 @@ which read as AI and should not be sent as-is):
 | Elephants and Tea | nick@elephantsandtea.org | Essay submission (AYA magazine, 750-1000 words; also Write For Us page) | Draft ready, awaiting Gmail auth |
 | Imerman Angels | info@imermanangels.org | Resource directory listing + Mentor Angel interest. Partnerships director: Jackie Herigodt | Draft ready, awaiting Gmail auth |
 | Stupid Cancer | contact@stupidcancer.org | AYA community resource + meetup/Campference contribution | Draft ready, awaiting Gmail auth |
-| Cervivor | info@cervivor.org | Cervical-specific community, Louise's exact diagnosis | Draft below, not yet in Gmail |
+| ~~Cervivor~~ | — | VETOED by Louise 2026-07-22: she does not want her story there. Do not pitch Cervivor. | Removed |
 
 Blockers requiring Louise: Gmail OAuth for creating drafts; macOS Keychain
 approval for the Search Console session. Search Console review (which guide
@@ -28,24 +28,10 @@ pages get impressions) still pending; do it before building more guide pages.
 Next waves: Tier 1/2 orgs listed below, plus oncology social workers (AOSW,
 aosw.org) for PDF distribution to infusion centers.
 
-### Wave 1 draft: Cervivor
+### Cervivor: do not contact
 
-Subject: From a fellow cervical cancer survivor
-
-Hi,
-
-I was diagnosed with cervical cancer at 34, stage III that became stage IV
-within months. I wrote through treatment to keep my sanity, and it became a
-free guide (livenowclub.com/navigate/cancer, printable PDF, no signup) plus
-essays at livenowclub.com.
-
-If any of it would be useful to the Cervivor community, I'd love to share it.
-I'm also happy to contribute my story wherever it helps.
-
-Thank you for building this.
-
-Louise Ireland
-livenowclub.com
+Louise vetoed Cervivor outreach on 2026-07-22 (dislikes the site, does not
+want her story there). The draft was deleted from Gmail. Do not re-add.
 
 ## Target Organizations
 
