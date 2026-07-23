@@ -171,7 +171,7 @@ export const PATHWAYS: Pathway[] = [
   {
     id: "grief-loss",
     title: "On Grief & Loss",
-    subtitle: "For when you're carrying something heavy.",
+    subtitle: "For when you’re carrying something heavy.",
     essays: [
       "the-other-side-of-grief", // Primary grief essay
       "a-dream-unborn", // Grief for infertility and unrealized motherhood
@@ -251,7 +251,7 @@ export const PATHWAYS: Pathway[] = [
   {
     id: "self-love",
     title: "Falling in Love with Yourself",
-    subtitle: "The most important relationship you'll ever have.",
+    subtitle: "The most important relationship you’ll ever have.",
     essays: [
       "i-love-lou", // The 10 Commandments of Lou
       "how-to-travel-alone",
@@ -414,6 +414,15 @@ function extractSubtitle(content: string): string | undefined {
   return match ? match[1] : undefined;
 }
 
+// The essays mix straight and curly quotes (different writing tools over the
+// years), so normalize to typographic punctuation at read time.
+export function smartPunctuation(s: string): string {
+  return s
+    .replace(/(\w)'(\w)/g, "$1’$2") // contractions and possessives: it's, Lou's
+    .replace(/(\w)'/g, "$1’") // trailing possessive: parents'
+    .replace(/"([^"\n]+)"/g, "“$1”"); // paired double quotes
+}
+
 export function getAllEssays(): Essay[] {
   if (!fs.existsSync(CONTENT_DIR)) {
     return [];
@@ -430,13 +439,13 @@ export function getAllEssays(): Essay[] {
 
     return {
       slug,
-      title,
-      subtitle: extractSubtitle(content),
+      title: smartPunctuation(title),
+      subtitle: smartPunctuation(extractSubtitle(content) || "") || undefined,
       date: extractDate(filename),
       type: detectType(title, content),
-      excerpt: extractExcerpt(content),
-      pullQuote: PULL_QUOTES[slug],
-      content,
+      excerpt: smartPunctuation(extractExcerpt(content)),
+      pullQuote: PULL_QUOTES[slug] ? smartPunctuation(PULL_QUOTES[slug]) : undefined,
+      content: smartPunctuation(content),
       image,
       substackUrl: `https://louiseireland.substack.com/p/${SUBSTACK_SLUG_OVERRIDES[slug] ?? slug}`,
       color: COLORS[index % COLORS.length],

@@ -59,7 +59,7 @@ export default function GuideShell({
         <article style={GS.wrap}>
           <p style={{ ...GS.p, fontSize: "0.9rem", color: "rgba(45, 42, 38, 0.55)", borderBottom: "1px solid rgba(45, 42, 38, 0.12)", paddingBottom: "16px" }}>
             This is a practical reference page, distilled from my essays into plain
-            language so it's easy to find and use. For the writing itself, start{" "}
+            language so it’s easy to find and use. For the writing itself, start{" "}
             <Link href="/read" style={GS.link}>here</Link>.
           </p>
 

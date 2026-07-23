@@ -217,7 +217,7 @@ export default function NavigateCancerPage() {
 
         {/* Hero */}
         <section className="navigate-hero">
-          <span className="navigate-label">Lou's Guide to Cancer</span>
+          <span className="navigate-label">Lou’s Guide to Cancer</span>
           <h1>Everything I Wish Someone Had Told Me</h1>
           <p>
             Writing through my cancer journey to keep my sanity. A mix of practical

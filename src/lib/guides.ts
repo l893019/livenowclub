@@ -36,7 +36,7 @@ export const GUIDES: GuideInfo[] = [
     shortTitle: "Preparing for Chemo",
     targetQuery: "how to prepare for chemotherapy",
     tagline:
-      "The practical checklist I wish I'd had: what to set up at home, what to wear, what to pack, and the decisions to make before your first infusion.",
+      "The practical checklist I wish I’d had: what to set up at home, what to wear, what to pack, and the decisions to make before your first infusion.",
     description:
       "How to prepare for chemotherapy, from a survivor of two rounds: setting up your home, the port decision, ice booties for neuropathy, preparing for hair loss, the ER go-bag, and the logistics that make treatment survivable.",
     datePublished: "2026-07-07",
@@ -48,7 +48,7 @@ export const GUIDES: GuideInfo[] = [
     shortTitle: "Just Diagnosed",
     targetQuery: "just diagnosed with cancer what to do",
     tagline:
-      "The first moves that matter: building your care team, protecting your mind from the internet, and setting up the support you'll need later.",
+      "The first moves that matter: building your care team, protecting your mind from the internet, and setting up the support you’ll need later.",
     description:
       "Just diagnosed with cancer and don't know where to start? A survivor's guide to the first steps: choosing your hospital, designating an advocate, second opinions, finding a mentor, and staying out of the Google rabbit hole.",
     datePublished: "2026-07-07",

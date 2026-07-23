@@ -266,10 +266,10 @@ export default function HomeClient({
           {/* Editor's Pick - larger */}
           <Link href={`/read/${EDITORS_PICK.slug}`} className="pick">
             <div className="pick-image">
-              <img src={EDITORS_PICK.image} alt={`Editor's Pick: ${EDITORS_PICK.title}`} />
+              <img src={EDITORS_PICK.image} alt={`Editor’s Pick: ${EDITORS_PICK.title}`} />
             </div>
             <div className="pick-content">
-              <span className="pick-label">✦ Editor's Pick</span>
+              <span className="pick-label">✦ Editor’s Pick</span>
               <h4>{EDITORS_PICK.title}</h4>
               <p>{EDITORS_PICK.excerpt}</p>
               <span className="text-link">Read →</span>
