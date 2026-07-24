@@ -8,7 +8,39 @@
   <meta name="description" content="What 200+ sci-fi books reveal about meaning.">
 
   <!-- Analytics -->
-  <script>(function(){fetch("/api/track",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({page:window.location.pathname,referrer:document.referrer})}).catch(function(){});})();</script>
+  <script>
+    // Pageview with session + acquisition, matching Analytics.tsx so journeys
+    // continue when a reader moves from this static page into the React site.
+    (function(){
+      var sessionId = '';
+      var acquisition = null;
+      try {
+        sessionId = sessionStorage.getItem('analytics-session-id');
+        if (!sessionId) {
+          sessionId = Date.now() + '-' + Math.random().toString(36).substring(2, 15);
+          sessionStorage.setItem('analytics-session-id', sessionId);
+        }
+        var params = new URLSearchParams(window.location.search);
+        var source = params.get('utm_source') || (params.get('gclid') ? 'google-ads' : null);
+        if (source && !sessionStorage.getItem('acquisition-source')) {
+          var campaign = params.get('utm_campaign');
+          sessionStorage.setItem('acquisition-source', campaign ? source + '/' + campaign : source);
+        }
+        acquisition = sessionStorage.getItem('acquisition-source');
+      } catch (e) {}
+      window.__lnc_session = sessionId;
+      fetch("/api/track", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          page: window.location.pathname,
+          referrer: document.referrer,
+          sessionId: sessionId || undefined,
+          acquisition: acquisition || undefined
+        })
+      }).catch(function(){});
+    })();
+  </script>
   <!-- Scroll Depth Tracking -->
   <script>
     (function() {
@@ -31,6 +63,7 @@
               body: JSON.stringify({
                 event: 'scroll_depth',
                 page: window.location.pathname,
+                sessionId: window.__lnc_session || undefined,
                 metadata: { depth: milestone }
               })
             }).catch(function(){});
