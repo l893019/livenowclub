@@ -1922,10 +1922,18 @@ p {
   padding: 0 var(--page-margin);
 }
 
+/* Reading text gets firmer leading and more ink than UI paragraphs;
+   long essays read on tired eyes need the contrast */
 .essay-content p {
   font-size: 1.15rem;
-  line-height: 1.9;
+  line-height: 1.72;
   margin-bottom: 1.5rem;
+  color: rgba(45, 42, 38, 0.88);
+}
+
+.essay-content li {
+  line-height: 1.72;
+  color: rgba(45, 42, 38, 0.88);
 }
 
 .essay-content p:first-of-type {
@@ -1943,6 +1951,7 @@ p {
   border-left: 3px solid var(--pink);
   padding-left: var(--space-md);
   margin: var(--space-md) 0;
+  color: rgba(45, 42, 38, 0.88);
 }
 
 .essay-content a {
