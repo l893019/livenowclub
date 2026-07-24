@@ -5,7 +5,7 @@ import Link from "next/link";
 import { CreateJoinStep } from "./steps/CreateJoinStep";
 import { DimensionSpectrum } from "./DimensionSpectrum";
 import { RelationshipComparison } from "./RelationshipComparison";
-import EmailCapture from "@/components/EmailCapture";
+import EmailMyReading from "@/components/EmailMyReading";
 import { arrayToQuizAnswers, calculateDimensions, type QuizAnswers, type Dimensions } from "@/lib/dimensions";
 import {
   identities,
@@ -548,14 +548,9 @@ export function ReadingPage({ answers, identityKey, onBack, groupContext, person
         </div>
       </section>
 
-      {/* Email Capture */}
+      {/* Email Capture: quiz finishers keep the reading they just made */}
       {!isViewingOther && (
-        <EmailCapture
-          identity={identity.name}
-          context="quiz-result"
-          title="Join the club"
-          description="One essay most weeks, on living like now is all we have."
-        />
+        <EmailMyReading identityKey={identityKey || identity.key} identityName={identity.name} />
       )}
 
       <div className={styles.divider} />
