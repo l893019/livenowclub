@@ -47,6 +47,8 @@ const PULL_QUOTES: Record<string, string> = {
     "I hope I can find the beauty. I pray to surrender in wonder and keep my eyes open to what life wants to show me. This, this heartbreaking, earth-shattering darkness, could be the moment everything becomes clear.",
   "lifes-masquerade":
     "I saw myself, but I also saw more, our lives a woven constellation of unique experiences, each star brightening the dark night.",
+  "a-dream-unborn":
+    "Mine is a child-shaped hole, but moreover, a loss of frame. A reckoning when the thing you had been hoping for will never come to fruition.",
 };
 
 // Map titles to images
@@ -559,6 +561,7 @@ export const CANCER_GUIDE: Pathway[] = [
     subtitle: "I wept from the strangeness of return.",
     essays: [
       "the-other-side-of-grief", // Post-treatment processing
+      "a-dream-unborn", // Grief for the life treatment took
       "life-is-not-empty", // Collapse, creation, recovery
       "the-starting-line",
     ],

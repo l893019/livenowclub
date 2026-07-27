@@ -40,6 +40,11 @@ const HERO_ROTATION: { slug: string; subtitle: string; excerpt: string }[] = [
     subtitle: "The practical guide",
     excerpt: "Everything I wish someone had told me at the start.",
   },
+  {
+    slug: "a-dream-unborn",
+    subtitle: "For a life that was never lived",
+    excerpt: "The hardest grief I have ever known is for a life that was never lived.",
+  },
 ];
 
 export default function HomePage() {
