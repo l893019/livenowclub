@@ -467,6 +467,48 @@ export function getEssaysByType(type: EssayType): Essay[] {
   return getAllEssays().filter((e) => e.type === type);
 }
 
+// The treatment arc as a walkable sequence. Subscribers re-open these emails
+// in order; this gives site readers the same path. Order approved by Louise.
+export const STORY_ARC: string[] = [
+  "embracing-free-fall",
+  "i-need-you-to-hold-my-hand",
+  "cancer-meditations",
+  "cancer-meditations-ii",
+  "cancer-meditations-iii",
+  "cancer-meditations-iv",
+  "cancer-meditations-v",
+  "cancer-meditations-vi",
+  "threads-of-survival",
+  "the-crack-is-where-the-light-enters",
+  "the-other-side-of-grief",
+];
+
+export type StoryArcRef = { slug: string; title: string };
+
+export type StoryArcPosition = {
+  part: number; // 1-based
+  total: number;
+  next: StoryArcRef | null;
+  first: StoryArcRef | null;
+};
+
+export function getStoryArcPosition(slug: string): StoryArcPosition | null {
+  const index = STORY_ARC.indexOf(slug);
+  if (index === -1) return null;
+  const all = getAllEssays();
+  const ref = (s: string | undefined): StoryArcRef | null => {
+    if (!s) return null;
+    const e = all.find((x) => x.slug === s);
+    return e ? { slug: e.slug, title: e.title } : null;
+  };
+  return {
+    part: index + 1,
+    total: STORY_ARC.length,
+    next: ref(STORY_ARC[index + 1]),
+    first: index > 0 ? ref(STORY_ARC[0]) : null,
+  };
+}
+
 export function getRelatedEssays(essay: Essay, limit = 3): Essay[] {
   const allEssays = getAllEssays().filter((e) => e.slug !== essay.slug);
 

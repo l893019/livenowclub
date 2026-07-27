@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getAllEssays, getEssayBySlug, getRelatedEssays } from "@/lib/essays";
+import { getAllEssays, getEssayBySlug, getRelatedEssays, getStoryArcPosition } from "@/lib/essays";
 import EssayContent from "@/components/EssayContent";
 
 type Props = {
@@ -71,7 +71,7 @@ export default async function EssayPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <EssayContent essay={essay} relatedEssays={relatedEssays} />
+      <EssayContent essay={essay} relatedEssays={relatedEssays} storyArc={getStoryArcPosition(essay.slug)} />
     </>
   );
 }

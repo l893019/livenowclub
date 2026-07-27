@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import type { Essay } from "@/lib/essays";
+import type { Essay, StoryArcPosition } from "@/lib/essays";
 import ReadingProgress from "./ReadingProgress";
 import ExitIntentPopup from "./ExitIntentPopup";
 import ScrollSlideIn from "./ScrollSlideIn";
@@ -13,6 +13,7 @@ import { trackEvent } from '@/lib/analytics';
 type EssayContentProps = {
   essay: Essay;
   relatedEssays?: Essay[];
+  storyArc?: StoryArcPosition | null;
 };
 
 // Calculate read time (roughly 200 words per minute)
@@ -21,7 +22,7 @@ function getReadTime(content: string): number {
   return Math.max(1, Math.ceil(words / 200));
 }
 
-export default function EssayContent({ essay, relatedEssays = [] }: EssayContentProps) {
+export default function EssayContent({ essay, relatedEssays = [], storyArc = null }: EssayContentProps) {
   const [copied, setCopied] = useState(false);
 
   // Analytics tracking
@@ -305,6 +306,32 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         {psContent.length > 0 && (
           <aside className="essay-ps">
             <p><strong>PS.</strong> {psContent.join(" ")}</p>
+          </aside>
+        )}
+
+        {/* My cancer story: walkable sequence */}
+        {storyArc && (
+          <aside className="story-arc">
+            <p className="story-arc-label">My cancer story &middot; Part {storyArc.part} of {storyArc.total}</p>
+            {storyArc.next ? (
+              <Link
+                href={`/read/${storyArc.next.slug}`}
+                className="story-arc-next"
+                onClick={() => trackEvent({ event: "story_arc_next_click", page: `/read/${essay.slug}` })}
+              >
+                Next: {storyArc.next.title} &rarr;
+              </Link>
+            ) : (
+              storyArc.first && (
+                <Link
+                  href={`/read/${storyArc.first.slug}`}
+                  className="story-arc-next"
+                  onClick={() => trackEvent({ event: "story_arc_next_click", page: `/read/${essay.slug}` })}
+                >
+                  Read it from the beginning: {storyArc.first.title} &rarr;
+                </Link>
+              )
+            )}
           </aside>
         )}
 
@@ -673,6 +700,35 @@ export default function EssayContent({ essay, relatedEssays = [] }: EssayContent
         }
 
         /* Essay Footer */
+        .story-arc {
+          max-width: 640px;
+          margin: 3rem auto 0;
+          padding: 1.5rem 1.25rem;
+          text-align: center;
+          border-top: 1px solid rgba(45, 42, 38, 0.12);
+          border-bottom: 1px solid rgba(45, 42, 38, 0.12);
+        }
+
+        .story-arc-label {
+          font-size: 0.78rem;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: rgba(45, 42, 38, 0.55);
+          margin: 0 0 0.6rem;
+        }
+
+        .story-arc :global(.story-arc-next) {
+          font-size: 1.25rem;
+          color: #2d2a26;
+          text-decoration: none;
+          border-bottom: 2px solid #e8178a;
+          padding-bottom: 2px;
+        }
+
+        .story-arc :global(.story-arc-next:hover) {
+          color: #e8178a;
+        }
+
         .essay-footer {
           max-width: 780px;
           margin: 32px auto 0;

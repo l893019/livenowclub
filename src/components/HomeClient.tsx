@@ -293,6 +293,7 @@ export default function HomeClient({
         </div>
         <div className="worth-reading-footer">
           <Link href="/read" className="text-link">Browse all writing →</Link>
+          <Link href="/read/embracing-free-fall" className="text-link">Or start from the diagnosis →</Link>
         </div>
       </section>
 

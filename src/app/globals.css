@@ -3816,6 +3816,10 @@ p {
 .worth-reading-footer {
   margin-top: var(--space-lg);
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 32px;
 }
 
 /* Manifesto Aside */
