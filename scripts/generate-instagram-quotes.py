@@ -117,6 +117,16 @@ QUOTES = [
         "quote": "What purpose is left when everything else is solved for?",
         "source": "Soul.md",
     },
+    {
+        "id": 16,
+        "quote": "The hardest grief I have ever known is for a life that was never lived.",
+        "source": "A Dream Unborn",
+    },
+    {
+        "id": 17,
+        "quote": "Any semblance of control I thought I had was an illusion to begin with.",
+        "source": "The Crack Is Where the Light Enters",
+    },
 ]
 
 # =============================================================================
