@@ -44,6 +44,57 @@ def arrow(cur, prev):
     return f" ({'+' if change >= 0 else ''}{change:.0f}%)"
 
 
+def substack_section():
+    """Public archive API: likes/comments per post, with deltas vs last run."""
+    state_file = HOME / "Documents/livenowclub-digests/.substack-state.json"
+    try:
+        req = urllib.request.Request(
+            "https://louiseireland.substack.com/api/v1/archive?sort=new&limit=25",
+            headers={"User-Agent": "Mozilla/5.0"},
+        )
+        posts = json.load(urllib.request.urlopen(req, timeout=30))
+    except Exception as e:
+        return f"<p style='font-size:13px;color:#888'>Substack data unavailable this week ({e})</p>"
+
+    prev = {}
+    if state_file.exists():
+        try:
+            prev = json.loads(state_file.read_text())
+        except Exception:
+            prev = {}
+
+    cutoff = (date.today() - timedelta(days=7)).isoformat()
+    rows, state = [], {}
+    for p in posts:
+        pid = str(p.get("id"))
+        likes = (p.get("reactions") or {}).get("❤", 0) or 0
+        comments = p.get("comment_count", 0) or 0
+        state[pid] = {"likes": likes, "comments": comments, "title": p.get("title", "")}
+        d_likes = likes - prev.get(pid, {}).get("likes", likes)
+        d_comments = comments - prev.get(pid, {}).get("comments", comments)
+        is_new = (p.get("post_date", "") or "")[:10] >= cutoff
+        if is_new or d_likes > 0 or d_comments > 0:
+            tag = "new this week" if is_new else "gained this week"
+            delta = ""
+            if not is_new:
+                bits = []
+                if d_likes: bits.append(f"+{d_likes} likes")
+                if d_comments: bits.append(f"+{d_comments} comments")
+                delta = " (" + ", ".join(bits) + ")"
+            rows.append(
+                f"<tr><td style='padding:3px 12px 3px 0'>{p.get('title','')}</td>"
+                f"<td align='right'>{likes} &hearts; / {comments} &#128172;</td>"
+                f"<td style='padding-left:10px;font-size:12px;color:#888'>{tag}{delta}</td></tr>"
+            )
+
+    state_file.parent.mkdir(parents=True, exist_ok=True)
+    state_file.write_text(json.dumps(state))
+
+    if not rows:
+        rows = ["<tr><td style='font-size:13px;color:#888'>No new posts or engagement changes this week</td></tr>"]
+    return "<table style='font-size:14px'>" + "".join(rows[:8]) + "</table>"
+
+
 def build_html():
     d = api("/api/stats?days=14")
     signups = api("/api/subscribe").get("signups", [])
@@ -97,6 +148,8 @@ def build_html():
     <tr><td style='padding:3px 12px 3px 0'>Story arc next-clicks</td><td align='right'>{ev.get('story_arc_next_click', 0)}</td></tr>
     <tr><td style='padding:3px 12px 3px 0'>Wonder read-next clicks</td><td align='right'>{ev.get('read_next_click', 0)}</td></tr>
   </table>
+  <h2 style="{h}">Substack</h2>
+  {substack_section()}
   <h2 style="{h}">Campaigns (utm, 14d)</h2>
   <table style="font-size:14px"><tr><td></td><td align='right'>views</td><td align='right'>signups</td></tr>{acq_rows or '<tr><td>none</td></tr>'}</table>
   <p style="margin-top: 28px; font-size: 12px; color: rgba(45,42,38,.5);">
