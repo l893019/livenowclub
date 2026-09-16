@@ -118,6 +118,7 @@ const IMAGE_MAP: Record<string, string> = {
   "what-is-true-now": "what-is-true-now-header.jpeg",
   "what-i-now-know": "what-i-now-know-header.jpeg",
   "what-are-you-waiting-for": "what-are-you-waiting-for-header.jpeg",
+  "i-go-to-burning-man-for-the-quiet": "i-go-to-burning-man-for-the-quiet-header.jpeg",
 };
 
 // Where the site slug differs from the actual Substack post slug
