@@ -451,7 +451,6 @@ export default function NavigateCancerPage() {
             <div className="guide-section-header">
               <span className="guide-section-number">Resources</span>
               <h2>Helpful Organizations & Tools</h2>
-              <p>What I actually used.</p>
             </div>
             <div className="resources-grid">
               <div className="resource-category">
