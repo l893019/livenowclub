@@ -16,6 +16,12 @@ const nextConfig: NextConfig = {
         destination: '/navigate/cancer',
         permanent: true,
       },
+      // Expecting the Unexpected now lives as chapters under /navigate/cancer/guide.
+      {
+        source: '/read/expecting-the-unexpected',
+        destination: '/navigate/cancer/guide',
+        permanent: true,
+      },
       // Retired practical guide pages (Oct 2026); send old links to the cancer guide.
       ...['what-to-say','how-to-prepare-for-chemo','just-diagnosed','how-to-help-someone-with-cancer'].map((slug) => ({
         source: `/navigate/cancer/${slug}`,

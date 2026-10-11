@@ -117,35 +117,35 @@ const jsonLd = {
         position: 1,
         name: "Before You Start Treatment",
         description: "Everything to prepare before beginning cancer treatment",
-        url: "https://livenowclub.com/read/expecting-the-unexpected#before-you-start-treatment",
+        url: "https://livenowclub.com/navigate/cancer/guide/before-you-start-treatment",
       },
       {
         "@type": "HowTo",
         position: 2,
         name: "During Treatment",
         description: "Chemotherapy, radiation, and getting through treatment",
-        url: "https://livenowclub.com/read/expecting-the-unexpected#treatment",
+        url: "https://livenowclub.com/navigate/cancer/guide/treatment",
       },
       {
         "@type": "HowTo",
         position: 3,
         name: "For Caregivers",
         description: "How to support someone you love through cancer treatment",
-        url: "https://livenowclub.com/read/expecting-the-unexpected#how-do-you-support-a-friend-with-cancer",
+        url: "https://livenowclub.com/navigate/cancer/guide/how-do-you-support-a-friend-with-cancer",
       },
       {
         "@type": "Article",
         position: 4,
         name: "Survivorship",
         description: "Life after cancer treatment and long-term healing",
-        url: "https://livenowclub.com/read/expecting-the-unexpected#survivorship",
+        url: "https://livenowclub.com/navigate/cancer/guide/survivorship",
       },
       {
         "@type": "Article",
         position: 5,
         name: "Core Principles",
         description: "The principles that got me through",
-        url: "https://livenowclub.com/read/expecting-the-unexpected#core-principles",
+        url: "https://livenowclub.com/navigate/cancer/guide/core-principles",
       },
     ],
   },
@@ -221,7 +221,7 @@ export default function NavigateCancerPage() {
           </p>
           <div style={{ marginTop: "24px", display: "flex", flexWrap: "wrap", gap: "12px", justifyContent: "center" }}>
             <Link
-              href="/read/expecting-the-unexpected"
+              href="/navigate/cancer/guide"
               className="btn btn--primary"
             >
               Read the Full Guide
@@ -247,11 +247,11 @@ export default function NavigateCancerPage() {
         <section className="navigate-quick-links">
           <div className="quick-links-grid">
             {[
-              { href: "/read/expecting-the-unexpected#before-you-start-treatment", num: "01", title: "Just Diagnosed", sub: "Start here" },
-              { href: "/read/expecting-the-unexpected#treatment", num: "02", title: "During Treatment", sub: "From the guide" },
-              { href: "/read/expecting-the-unexpected#how-do-you-support-a-friend-with-cancer", num: "03", title: "For Caregivers", sub: "Supporting someone" },
-              { href: "/read/expecting-the-unexpected#survivorship", num: "04", title: "Living with Uncertainty", sub: "Holding it loosely" },
-              { href: "/read/expecting-the-unexpected#core-principles", num: "05", title: "Core Principles", sub: "From the guide" },
+              { href: "/navigate/cancer/guide/before-you-start-treatment", num: "01", title: "Just Diagnosed", sub: "Start here" },
+              { href: "/navigate/cancer/guide/treatment", num: "02", title: "During Treatment", sub: "From the guide" },
+              { href: "/navigate/cancer/guide/how-do-you-support-a-friend-with-cancer", num: "03", title: "For Caregivers", sub: "Supporting someone" },
+              { href: "/navigate/cancer/guide/survivorship", num: "04", title: "Living with Uncertainty", sub: "Holding it loosely" },
+              { href: "/navigate/cancer/guide/core-principles", num: "05", title: "Core Principles", sub: "From the guide" },
             ].map((item) => (
               <Link key={item.href} href={item.href} className="quick-link-card">
                 <span className="quick-link-number">{item.num}</span>
