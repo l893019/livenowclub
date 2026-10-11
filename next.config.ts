@@ -16,6 +16,12 @@ const nextConfig: NextConfig = {
         destination: '/navigate/cancer',
         permanent: true,
       },
+      // Retired practical guide pages (Oct 2026); send old links to the cancer guide.
+      ...['what-to-say','how-to-prepare-for-chemo','just-diagnosed','how-to-help-someone-with-cancer'].map((slug) => ({
+        source: `/navigate/cancer/${slug}`,
+        destination: '/navigate/cancer',
+        permanent: true,
+      })),
       {
         source: '/navigate/life',
         destination: '/philosophy',

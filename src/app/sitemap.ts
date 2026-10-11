@@ -1,5 +1,4 @@
 import { getAllEssays } from "@/lib/essays";
-import { GUIDES } from "@/lib/guides";
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -18,12 +17,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/read`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
     { url: `${baseUrl}/navigate`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/navigate/cancer`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.95 },
-    ...GUIDES.map((g) => ({
-      url: `${baseUrl}/navigate/cancer/${g.slug}`,
-      lastModified: new Date(g.dateModified),
-      changeFrequency: "monthly" as const,
-      priority: 0.9,
-    })),
     { url: `${baseUrl}/wonder`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/connect`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
