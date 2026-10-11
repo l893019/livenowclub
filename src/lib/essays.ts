@@ -429,6 +429,12 @@ export function smartPunctuation(s: string): string {
     .replace(/"([^"\n]+)"/g, "“$1”"); // paired double quotes
 }
 
+// Card teaser overrides, in Louise's own words, for essays whose opening
+// line does not work as a teaser. Keyed by slug.
+const EXCERPT_OVERRIDES: Record<string, string> = {
+  "the-live-now-club": "I want to create a place where mortality and joy sit side by side.",
+};
+
 export function getAllEssays(): Essay[] {
   if (!fs.existsSync(CONTENT_DIR)) {
     return [];
@@ -449,7 +455,7 @@ export function getAllEssays(): Essay[] {
       subtitle: smartPunctuation(extractSubtitle(content) || "") || undefined,
       date: extractDate(filename),
       type: detectType(title, content),
-      excerpt: smartPunctuation(extractExcerpt(content)),
+      excerpt: smartPunctuation(EXCERPT_OVERRIDES[slug] ?? extractExcerpt(content)),
       pullQuote: PULL_QUOTES[slug] ? smartPunctuation(PULL_QUOTES[slug]) : undefined,
       content: smartPunctuation(content),
       image,
@@ -628,7 +634,7 @@ export const CANCER_GUIDE: Pathway[] = [
   {
     id: "finding-meaning",
     title: "Finding Meaning",
-    subtitle: "Ever so often, a sentence arrives that splits me open.",
+    subtitle: "Living to live, not living not to die.",
     essays: [
       "the-live-now-club", // The core philosophy
       "god-is-in-the-trees", // Transforming illness into art/spirituality
