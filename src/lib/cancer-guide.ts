@@ -2,7 +2,13 @@
 // Single source: the essay markdown in content/essays. This module splits
 // it on its top-level parts; nothing is duplicated.
 import { getEssayBySlug } from "./essays";
-import { headingId } from "./render-markdown";
+import { headingId, unescapeMarkdown } from "./render-markdown";
+
+/** "1. YOU NEED AN ADVOCATE" -> "1. You need an advocate" for nav lists. */
+function sentenceCase(s: string): string {
+  if (/[a-z]/.test(s)) return s;
+  return s.toLowerCase().replace(/^(\d+\.\s*)?([a-z])/, (_, n, c) => (n ?? "") + c.toUpperCase());
+}
 
 export const GUIDE_ESSAY_SLUG = "expecting-the-unexpected";
 export { GUIDE_BASE, GUIDE_PDF } from "./cancer-guide-paths";
@@ -63,6 +69,12 @@ export function getCancerGuide(): CancerGuide | null {
     if (line.startsWith("## ")) {
       const text = line.slice(3).trim();
       current.sections.push({ id: headingId(text), title: text });
+    } else {
+      const bold = line.trim().match(/^\*\*(.+?)\*\*$/);
+      if (bold) {
+        const text = unescapeMarkdown(bold[1]).trim();
+        if (/^\d+\.\s/.test(text)) current.sections.push({ id: headingId(text), title: sentenceCase(text) });
+      }
     }
     current.body += line + "\n";
   }

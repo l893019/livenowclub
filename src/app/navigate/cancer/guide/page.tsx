@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 export default function CancerGuideIndex() {
   const guide = getCancerGuide();
   if (!guide) notFound();
-  const { html } = renderEssayMarkdown(guide.intro, { detectPoem: false, headingIds: true });
+  const { html } = renderEssayMarkdown(guide.intro, { detectPoem: false, headingIds: true, guide: true });
   return (
     <CancerGuideShell
       page={GUIDE_BASE}
@@ -30,7 +30,6 @@ export default function CancerGuideIndex() {
       title={guide.title}
       bodyHtml={html}
       parts={guide.parts}
-      showContentsBlock
     />
   );
 }

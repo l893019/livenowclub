@@ -22,8 +22,13 @@ export function headingId(text: string): string {
     .replace(/^-|-$/g, "");
 }
 
+/** Substack exports escape punctuation ("1\\." ); undo that. */
+export function unescapeMarkdown(text: string): string {
+  return text.replace(/\\([.()#*_\-])/g, "$1");
+}
+
 export function processInlineFormatting(text: string): string {
-  return text
+  return unescapeMarkdown(text)
     .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" />')
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
     .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
@@ -38,6 +43,9 @@ export type RenderOptions = {
   headingIds?: boolean;
   /** Detect poems (short lines) and render stanza breaks. Default true. */
   detectPoem?: boolean;
+  /** Guide mode: all-caps lines become labels, whole-bold numbered lines become
+   *  headings, whole-italic lines become notes, "• • •" becomes a divider. */
+  guide?: boolean;
 };
 
 export type RenderResult = {
@@ -110,13 +118,13 @@ export function renderEssayMarkdown(content: string, opts: RenderOptions = {}): 
         /thank you|thanks|love|<3|heart/i.test(line) && !/share|subscribe|pass along|leave.*heart/i.test(line);
       if (isMeaningfulPs) {
         inPsSection = true;
-        psContent.push(line.replace(/^PS\.?\s*/i, "").trim());
+        psContent.push(unescapeMarkdown(line.replace(/^PS\.?\s*/i, "").trim()));
       }
       continue;
     }
     if (inPsSection) {
       if (trimmedLine === "") inPsSection = false;
-      else psContent.push(trimmedLine);
+      else psContent.push(unescapeMarkdown(trimmedLine));
       continue;
     }
 
@@ -145,6 +153,37 @@ export function renderEssayMarkdown(content: string, opts: RenderOptions = {}): 
     }
     flushBlockquote();
 
+    if (opts.guide) {
+      const boldLine = trimmedLine.match(/^\*\*(.+?)\*\*$/);
+      const italicLine = trimmedLine.match(/^(?:_(.+)_|\*([^*].*?)\*)$/);
+      if (trimmedLine === "• • •") {
+        flushList();
+        result.push('<hr class="g-dots" />');
+        continue;
+      }
+      if (boldLine) {
+        flushList();
+        const text = unescapeMarkdown(boldLine[1]).trim();
+        if (/^\d+\.\s/.test(text)) {
+          const id = opts.headingIds ? ` id="${headingId(text)}"` : "";
+          result.push(`<h3 class="g-principle"${id}>${processInlineFormatting(text)}</h3>`);
+        } else {
+          result.push(`<p class="g-label">${processInlineFormatting(text)}</p>`);
+        }
+        continue;
+      }
+      if (trimmedLine && !/[a-z]/.test(trimmedLine) && /[A-Z]{2,}/.test(trimmedLine) && trimmedLine.length < 80 && !/^[-*+]\s|^\d+\.\s/.test(trimmedLine)) {
+        flushList();
+        result.push(`<p class="g-label">${processInlineFormatting(trimmedLine)}</p>`);
+        continue;
+      }
+      if (italicLine) {
+        flushList();
+        result.push(`<p class="g-note">${processInlineFormatting(italicLine[1] ?? italicLine[2])}</p>`);
+        continue;
+      }
+    }
+
     const ulMatch = line.match(/^(\s*)[*\-+]\s+(.+)$/);
     if (ulMatch) {
       if (listType !== "ul") {
@@ -170,7 +209,7 @@ export function renderEssayMarkdown(content: string, opts: RenderOptions = {}): 
       continue;
     }
 
-    let processed = line
+    let processed = unescapeMarkdown(line)
       .replace(/\[!\[([^\]]*)\]\(([^)]+)\)\]\(([^)]+)\)/g, '<a href="$3" target="_blank"><img src="$2" alt="$1" /></a>')
       .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" />');
     processed = processed.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');

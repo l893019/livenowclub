@@ -31,7 +31,7 @@ export default async function CancerGuidePartPage({ params }: { params: Promise<
   const found = getGuidePart(slug);
   if (!found) notFound();
   const { guide, part, prev, next } = found;
-  const { html } = renderEssayMarkdown(part.body, { detectPoem: false, headingIds: true });
+  const { html } = renderEssayMarkdown(part.body, { detectPoem: false, headingIds: true, guide: true });
   return (
     <CancerGuideShell
       page={`${GUIDE_BASE}/${part.slug}`}
