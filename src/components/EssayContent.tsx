@@ -113,6 +113,8 @@ export default function EssayContent({ essay, relatedEssays = [], storyArc = nul
 
   const processInlineFormatting = (text: string) => {
     return text
+      .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" />')
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
       .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
       .replace(/\*(.+?)\*/g, "<em>$1</em>")
       .replace(/_([^_]+)_/g, "<em>$1</em>");
@@ -120,6 +122,10 @@ export default function EssayContent({ essay, relatedEssays = [], storyArc = nul
 
   for (const line of lines) {
     const trimmedLine = line.trim();
+
+    // The header image is already rendered as the hero; don't repeat it in the body
+    const soloImage = trimmedLine.match(/^!\[[^\]]*\]\(([^)]+)\)$/);
+    if (soloImage && essay.image && soloImage[1] === essay.image) continue;
 
     // Detect ORBITS section - stop processing main content
     // Match variations: "**ORBITS", "** ORBITS", "ORBITS", "**SIGNALS", "**RESONANCES", "**GROUNDS"

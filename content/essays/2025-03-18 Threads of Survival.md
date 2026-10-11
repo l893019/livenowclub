@@ -21,5 +21,3 @@ But as I start cancer treatments, I think about that spider’s resiliency. I th
 Every day, I return to this moment, wrestling with the humbling truth that binds us together - both small and scared, both fighting fiercely against the tide.
 
 And I wonder, from the depth of my core, as I gingerly stand up under the weight of treatments, what makes my life more precious than its own?
-
-Thanks for reading! I’m enjoying writing, so please subscribe (free!) to follow along <3

@@ -87,5 +87,3 @@ The blood transfusions brought color back to my cheeks. I can do this.
 ---
 
 Without the pauses, music is just noise. Without endings, nothing truly begins. Decay is the seed of life.
-
-Thank you for reading! I will continue to write through my cancer journey for my sanity. Subscribe for free to follow along.

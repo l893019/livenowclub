@@ -89,5 +89,3 @@ On one of my first hospital visits, I saw this painting. It looks eerily like me
 ---
 
 Peace is my crown, and no one may take it from me.
-
-Thank you for reading! I will continue to write through my cancer journey for my sanity. Subscribe for free to follow along.

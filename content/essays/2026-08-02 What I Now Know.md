@@ -30,17 +30,3 @@ He has spent a lifetime driving out the cold for me, my mother, my siblings, and
 
 In your seventieth year, Dad, what I now know is this.
 
----
-
-> Thank you for reading!
-
-> It makes my day to hear from you, so please let me know if this resonated with you or if there’s anything you’d like me to write about.
-
-> More of my writing can be found on my website [here](http://www.livenowclub.com/): www.livenowclub.com
-
-> Love,
-Lou
-
-> [Subscribe now](https://louiseireland.substack.com/subscribe?)
-
-> [Share](https://louiseireland.substack.com/p/what-i-now-know?utm_source=substack&utm_medium=email&utm_content=share&action=share)

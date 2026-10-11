@@ -42,10 +42,3 @@ I danced for both of them and for all the women I had yet to become, my heart op
 
 ![](/images/i-go-to-burning-man-for-the-quiet-2.png)
 
----
-
-❤️ Thank you for being here. If you liked this newsletter, clicking “like” helps more people discover my work. (Or leave a comment or pass along to friends - it truly makes my day.)
-
-If you enjoyed this, please check out some of my other posts. I have more cancer-specific resources on my website [here](https://www.livenowclub.com/) (https://www.livenowclub.com/)
-
-If you’re new here, please subscribe! I promise never to spam you, only to regale you with my random philosophical musings on living fully.

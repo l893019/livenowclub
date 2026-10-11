@@ -77,5 +77,3 @@ Too exhausted to exist, to connect, to think. Chemoradiation is a forced time-ou
 ---
 
 Every time I speak to another patient here, I am completely humbled. The body can learn to endure any suffering. Everything normalizes with time.
-
-Thank you for reading! I will continue to write through my cancer journey for my sanity. Subscribe for free to follow along.

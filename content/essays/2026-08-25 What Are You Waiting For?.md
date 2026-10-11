@@ -78,12 +78,6 @@ I don’t know where life will lead me, what still wants to move through me. But
 
 ---
 
-Thanks for reading! It makes my day to know that this resonated with someone. Please follow along (always for free) for a regular dose of whimsy and philosophical inquiry in your inbox.
-
-If you liked this, I would be extremely grateful if you shared it with anyone else who might enjoy it!
-
-[Share](https://louiseireland.substack.com/p/what-are-you-waiting-for?utm_source=substack&utm_medium=email&utm_content=share&action=share)
-
 I’ll open back up the chat - I’d love to hear if there’s anything you’ve always wanted to do, but have been afraid to start (or even a way of being!). Join here <3
 
 **PS. And finally, two related but unrelated announcements for you:**
@@ -91,5 +85,3 @@ I’ll open back up the chat - I’d love to hear if there’s anything you’ve
 I am over the moon to share that I will be having my first proper art show as (part of a group show) at the Heron Arts gallery in San Francisco from February until Easter. I’ll share more details when I have them, but I’d be thrilled if you paid me a visit. I’ll be showing more of my wood pieces. I have a bit of a backlog, but am slowly starting to take commissions too.
 
 I’ve decided to run an experiment and make my Instagram accounts public. Follow along at [@thelandofloulou](https://www.instagram.com/thelandofloulou/) for my artistic adventures and [@livenowclub](https://www.instagram.com/livenowclub)
-
-If you enjoyed this, you may like some of my other posts here:

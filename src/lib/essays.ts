@@ -366,6 +366,7 @@ function extractExcerpt(content: string): string {
       if (!l) return false;
       if (l.startsWith("#")) return false;
       if (l.startsWith(">")) return false; // Skip blockquotes/epigraphs
+      if (l.startsWith("![")) return false; // Skip header/inline images
       if (l.startsWith("*Originally")) return false;
       if (l === "---") return false;
       return true;

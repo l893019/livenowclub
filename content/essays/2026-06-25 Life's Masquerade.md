@@ -4,7 +4,9 @@
 
 ![Life's Masquerade](/images/lifes-masquerade-header.png)
 
-Last weekend, I introduced myself to myself at a party.She was dressed in one of my favorite Burning Man costumes, a neon intergalactic suit with an alien on one kimono wing and the earth on another that a friend had made for me in Brazil.
+Last weekend, I introduced myself to myself at a party.
+
+She was dressed in one of my favorite Burning Man costumes, a neon intergalactic suit with an alien on one kimono wing and the earth on another that a friend had made for me in Brazil.
 
 My height, my previous haircut.
 
@@ -16,7 +18,9 @@ A slow fade out of your life as other people slowly fade in, your home occupied 
 
 The walls painted.
 
-Your favorite tree cut down.And by the same lens, this is life at its most full.
+Your favorite tree cut down.
+
+And by the same lens, this is life at its most full.
 
 I had brought several clothing trunks to share with the birthday boy, Timo, and his wife, Samantha, who asked me for nothing but costumes.
 
@@ -30,7 +34,9 @@ My trunks overflowed with hot pink, butterflies, kimonos, headdresses, and wigs,
 
 I wore wigs for the first time since losing my hair and felt more like me than I have in months, a blonde Sailor Moon wig during the day and a red bob at night.
 
-We walked and danced and sang and snuggled, each of us another ripple moving outward.Life from that lens is nothing more than meeting different versions of yourself at a party, each introduction and connection a mirror angled to see a new dimension, a new door opening on who you could be and how you can show up in the world.
+We walked and danced and sang and snuggled, each of us another ripple moving outward.
+
+Life from that lens is nothing more than meeting different versions of yourself at a party, each introduction and connection a mirror angled to see a new dimension, a new door opening on who you could be and how you can show up in the world.
 
 We search for those who share our energy, those who wear our clothes.
 
@@ -42,7 +48,9 @@ In the end and in the beginning, we are all dust.On my drive down to Santa Barba
 
 I felt the deepest form of love, of recognition, as I did dancing with Samantha amid the rocks as she wore my butterfly pants and a sequin butterfly top.
 
-I saw myself, but I also saw more, our lives a woven constellation of unique experiences, each star brightening the dark night.For the last few weeks, my back, legs, and ankles have been in unrelenting pain.
+I saw myself, but I also saw more, our lives a woven constellation of unique experiences, each star brightening the dark night.
+
+For the last few weeks, my back, legs, and ankles have been in unrelenting pain.
 
 I’ve lost sensation in my feet from the chemotherapy, but to keep my strength up, I’ve been walking for miles a day. “The answer is obvious from the outside,” a friend who is a bodyworker said as he lined up my feet as I lay on a massage table. “Your toes are off the ground.
 

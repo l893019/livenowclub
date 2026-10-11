@@ -4,14 +4,6 @@
 
 Because I love to analyze the world and my brain inherently thinks in systems, I’ve been thinking a lot about friendship and how to know someone - and furthermore, how to know yourself. If you’ve spoken to me at all over the last few weeks, I probably went deep on my current theory of Inner Worlds (how can you most accurately capture the true essence of someone, how can you symbolically represent someone - the past, present, future version of themselves, the mythology of their life). My current theory is this: many of us don’t know ourselves, and thus, we make it difficult for others to connect with us fully.
 
-
-
-
-
-
-
-
-
 I’ve been exploring this in several ways: What does the inside of your mind look like? If we assume your psyche is a house, what are the various rooms, and how do they encapsulate your hopes and dreams? What is your hero’s journey? What is the fantasy-style map of your life? If your life were an RPG, what would it look like? 
 
 And perhaps, my silliest (but current favorite) question: If you were a couch, what couch would you be? What would it look like, what fabric, how many people could you sit, what setting would it be in? (Please indulge me and answer [here](https://wgo099zb0pk.typeform.com/to/SVIKUPWo)). 
@@ -54,8 +46,6 @@ I would love to learn more about you: what inspires you, what drives you, what m
 
 I’ve been thinking a lot about how to show up better for the people I care about. This isn’t a new thought - I care deeply about the people I surround myself with and love to give - but it’s something I haven’t always succeeded at due to my limitations. 
 
-Thanks for reading Komorebi! Subscribe for free to receive new posts and support my work.
-
 I suffered from depression and anxiety for years (finally, I am very free from that burden, but if you need help, I am 100000% there for you. Mental health is challenging, and there is no shame in feeling like you can’t do it all alone). If I’m being honest, for a lot of my life, I couldn’t be there for anyone, much less myself. 
 
 With my newfound happiness, I feel a tremendous responsibility to give back. I am here because of all of you - I love my friends and my community more deeply than I could ever say or put words to. You all shined a light when I was in darkness. I stand here in awe and gratitude to every one of you. As a result, my purpose in life is clear. I want to be a lighthouse for all those lost girls and boys who feel alone. I want to celebrate every facet of those I love (and those who are new friends) and reflect their amazingness to them. I want to fully see my friends for everything that they are - all of the sides to them that they previously were ashamed of, all of their traumas that they’ve hidden, all of the successes and missteps, and everything that is part of the human condition and part of life. I want to be vulnerable enough that I enable them to see me, support me, and give back to me in the same way. Friendship is a multi-dimensional dance of giving, receiving, supporting, loving, being. 
@@ -63,5 +53,3 @@ With my newfound happiness, I feel a tremendous responsibility to give back. I a
 I’ve had a quote from Rumi echoing in my head for the last few weeks, and I think it is profoundly true: “We are all just walking each other home.” 
 
 We are all walking towards a path of self-actualization and need friends to get us there.
-
-Thanks for reading Komorebi! Subscribe for free to receive new posts and support my work.

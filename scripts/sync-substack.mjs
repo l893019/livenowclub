@@ -80,6 +80,12 @@ const BOILERPLATE = [
   /^lou\s*$/i,
   /^love,\s*lou\s*$/i,
   /^---$/,
+  /^(❤️\s*)?thank you for being here/i,
+  /^thanks for reading/i,
+  /^it makes my day to hear from you/i,
+  /^if you liked this, i would be extremely grateful/i,
+  /^if you enjoyed this/i,
+  /^if you(’|')re new here, please subscribe/i,
 ];
 
 function htmlToBlocks(html) {
