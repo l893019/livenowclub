@@ -88,7 +88,7 @@ export function GroupReadingStep({
 
   const handleShare = async () => {
     const shareUrl = `${window.location.origin}/wonder/essay/quiz/utopia/${utopiaSlug}`;
-    const shareText = `${utopiaName} — A utopia of ${members.length} worldviews`;
+    const shareText = `${utopiaName}: A utopia of ${members.length} worldviews`;
 
     if (navigator.share) {
       try {

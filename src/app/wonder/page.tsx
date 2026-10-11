@@ -4,15 +4,15 @@ import { getPathwayEssays } from "@/lib/essays";
 
 export const metadata = {
   title: "Wonder | The Live Now Club",
-  description: "Explorations at the intersection of AI, humanity, and meaning. Join me as I spelunk down rabbit holes of my curiosity.",
+  description: "Essays and experiments on AI, meaning, and being human. Join me as I spelunk down rabbit holes of my curiosity.",
 };
 
 // Featured essay - interactive piece
 const FEATURED_ESSAY = {
   slug: "/wonder/essay",
   title: "When Purpose Is All We Have Left",
-  subtitle: "Discover your sci-fi worldview",
-  description: "An interactive exploration of how you orient toward a post-scarcity future.",
+  subtitle: "What do you do when you no longer have to do anything?",
+  description: "A reading of 208 sci-fi novels, and a quiz to find where you stand.",
   image: "/wonder/assets/landscapes/optimized/1.jpg",
   type: "interactive essay",
 };
@@ -31,7 +31,7 @@ export default function WonderPage() {
           <span className="wonder-label">Wonder</span>
           <h1>What happens when machines dream?</h1>
           <p>
-            Explorations at the intersection of AI, humanity, and meaning. Join me as I spelunk down rabbit holes of my curiosity.
+            Essays and experiments on AI, meaning, and being human. Join me as I spelunk down rabbit holes of my curiosity.
           </p>
         </section>
 
@@ -56,7 +56,7 @@ export default function WonderPage() {
 
         {/* Essays from Wonder pathway */}
         <section className="wonder-section">
-          <h2 className="wonder-section-title">Essays on Meaning, AI & the Bigger Questions</h2>
+          <h2 className="wonder-section-title">Essays on AI and meaning</h2>
           <div className="wonder-essays-list">
             {wonderEssays.map((essay) => (
               <Link key={essay.slug} href={`/read/${essay.slug}`} className="wonder-list-item">
@@ -77,7 +77,7 @@ export default function WonderPage() {
 
         {/* Coming Soon placeholder */}
         <section className="wonder-coming-soon">
-          <p>More explorations coming soon.</p>
+          <p>More to come.</p>
         </section>
       </div>
 

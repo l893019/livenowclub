@@ -45,9 +45,9 @@ export type GroupReading = {
 
 const QUESTION_TEXT: Record<string, string> = {
   q1: 'Due to technological innovations, every human on Earth now has free access to food, housing, healthcare, and education. What\'s your first question?',
-  q2: 'Everything that defined you—your work, your role, your daily structure—is gone. What do you do?',
+  q2: 'Everything that defined you, your work, your role, your daily structure, is gone. What do you do?',
   q3: 'A machine can now provide perfect companionship. Attentive, patient, never distracted, always available. What\'s your reaction?',
-  q4: 'You live in a society where everyone is cared for. No hunger, no homelessness, no preventable death. You recently learned this required giving something up — but no one will tell you what. What do you do?',
+  q4: 'You live in a society where everyone is cared for. No hunger, no homelessness, no preventable death. You recently learned this required giving something up, but no one will tell you what. What do you do?',
   q5: 'You are offered indefinite life. How do you respond?',
   q6: 'It\'s a Tuesday. Nothing is required of you. Nothing has been required of you for months. What does your day actually look like?',
   q7: 'A child asks you: \'Is the future going to be okay?\' What do you actually say?',
@@ -75,7 +75,7 @@ const ANSWER_TEXT: Record<string, Record<string, string>> = {
     B: 'This is the most dangerous invention in history',
     C: 'What if it lets us love each other better?',
     D: 'I wonder what we\'ll learn about ourselves',
-    E: 'Good—I don\'t need to perform for anyone',
+    E: 'Good, I don\'t need to perform for anyone',
   },
   q4: {
     A: 'I need to find out what was taken before I can live with this',
@@ -97,13 +97,13 @@ const ANSWER_TEXT: Record<string, Record<string, string>> = {
     A: 'I\'m in the middle of building something. I barely notice the time.',
     B: 'I\'m with family and friends. Not doing anything in particular.',
     C: 'Reading, thinking, asking questions I never had time for.',
-    D: 'Tending to things that matter—my garden, my rituals, my community\'s traditions.',
+    D: 'Tending to things that matter: my garden, my rituals, my community\'s traditions.',
     E: 'I don\'t know. I feel everything more intensely now. Today it\'s grief.',
     F: 'I\'m helping someone. That\'s what I do now.',
     G: 'I still don\'t know what to do with myself.',
   },
   q7: {
-    A: '\'We\'re going to build something amazing — your generation especially\'',
+    A: '\'We\'re going to build something amazing, your generation especially\'',
     B: '\'It will be, but only if we\'re careful about what we protect\'',
     C: '\'What matters most is being present, whatever happens\'',
     D: '\'I honestly don\'t know. But I think that\'s okay\'',
@@ -164,7 +164,7 @@ const WRITING_GUIDELINES = `
 **DO:**
 - Ground patterns in daily life ("At work...", "When a friend is spiraling...", "When you have a free Saturday...")
 - Describe observable behavior, not assumed psychology
-- Write directly — no hedging ("That said...", "Of course...")
+- Write directly, no hedging ("That said...", "Of course...")
 - Use "you" not "people like you"
 
 **DON’T:**
@@ -172,6 +172,7 @@ const WRITING_GUIDELINES = `
 - Add defensive qualifiers ("That’s not a flaw...")
 - Use AI-isms ("It’s worth noting...", "Interestingly...")
 - Write poetically when direct is clearer
+- Use em-dashes. Use commas, colons, or a new sentence instead
 `
 
 // =============================================================================
@@ -217,13 +218,13 @@ You’re optimizing for depth. One thing, done well, for a long time."
 The gifts of this orientation, grounded in daily life.
 
 Example:
-"At work, you’re the one who actually finishes things. When a friend is spiraling, you’re steady. When you have a free Saturday, you don’t wonder what to do — you already know."
+"At work, you’re the one who actually finishes things. When a friend is spiraling, you’re steady. When you have a free Saturday, you don’t wonder what to do. You already know."
 
 ### 3. How You’ll Move
 How this pattern engages with the future.
 
 Example:
-"You’ll build slowly and stay longer than most. You won’t pivot at the first sign of difficulty. The risk isn’t that you’ll quit too early — it’s that you’ll stay too long."
+"You’ll build slowly and stay longer than most. You won’t pivot at the first sign of difficulty. The risk is not that you’ll quit too early. It’s that you’ll stay too long."
 
 ${hasTradeoff ? `### 4. The Tradeoff
 What any strong version of this pattern trades away.
@@ -299,7 +300,7 @@ What emerges when these two patterns overlap. 2-3 sentences.
 Specific to this direction. What A provides that B needs or benefits from. 2-3 sentences.
 
 Example:
-"You give them permission to slow down. They’re always reaching — you remind them that where they are is also good."
+"You give them permission to slow down. They’re always reaching, and you remind them that where they are is also good."
 
 ### 3. What ${personB.name} Gives ${personA.name}
 Specific to this direction. What B provides that A needs or benefits from. 2-3 sentences.
@@ -387,13 +388,13 @@ Generate a reading with these five sections:
 What kind of group this is. What shows up consistently across the members. Reference specific members by name.
 
 Example:
-"You’re a group that trusts process over panic. When the world shifts, you don’t scramble — you settle into your different ways of responding. Sarah starts building immediately, Marcus finds his center, Priya tends what needs protecting."
+"You’re a group that trusts process over panic. When the world shifts, you don’t scramble. You settle into your different ways of responding. Sarah starts building immediately, Marcus finds his center, Priya tends what needs protecting."
 
 ### 2. Your Shared Strength
 What this combination of people is collectively good at. Where the group excels.
 
 Example:
-"When something breaks, everyone reaches for tools. No one sits with it — you fix. That means things actually get done."
+"When something breaks, everyone reaches for tools. No one sits with it. You fix. That means things actually get done."
 
 ### 3. How You’ll Move Together
 How this group makes decisions, navigates disagreements, and moves as a unit.

@@ -85,7 +85,7 @@ export function CombinedCard({ utopiaName, presentKeys, grouped }: CombinedCardP
               <span className={styles.missingName} style={{ color: voice.color }}>
                 {voice.name}
               </span>
-              <span className={styles.missingInsight}> — {voice.insight}</span>
+              <span className={styles.missingInsight}>: {voice.insight}</span>
             </div>
           ))}
         </div>

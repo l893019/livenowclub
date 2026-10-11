@@ -119,7 +119,7 @@ export function RelationshipStep({
     const shareUrl = `${window.location.origin}/wonder/essay/quiz/utopia/${utopiaSlug}?view=relationship&you=${you.id}&them=${them.id}`;
     const yourName = identityYou?.name || yourArchetype?.name;
     const theirName = identityThem?.name || theirArchetype?.name;
-    const shareText = `${yourName} × ${theirName} — What we’d build together`;
+    const shareText = `${yourName} × ${theirName}: What we’d build together`;
 
     if (navigator.share) {
       try {

@@ -27,8 +27,8 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
     if (youMember && themMember) {
       const yourArch = archetypes[youMember.archetype];
       const theirArch = archetypes[themMember.archetype];
-      const title = `${youMember.name || "You"} × ${themMember.name || "Them"} — Relationship`;
-      const description = `${yourArch?.name?.split(" ")[0]} × ${theirArch?.name?.split(" ")[0]} — See how these two worldviews interact.`;
+      const title = `${youMember.name || "You"} × ${themMember.name || "Them"}: Relationship`;
+      const description = `${yourArch?.name?.split(" ")[0]} × ${theirArch?.name?.split(" ")[0]}. See how these two worldviews interact.`;
       const ogImage = `https://livenowclub.com/api/og/relationship?arch1=${youMember.archetype}&arch2=${themMember.archetype}&name1=${encodeURIComponent(youMember.name || "You")}&name2=${encodeURIComponent(themMember.name || "Them")}`;
 
       return {
@@ -53,7 +53,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
 
   // Default utopia metadata
   const memberCount = room.members.length;
-  const title = `${room.name} — A Utopia of ${memberCount}`;
+  const title = `${room.name}: A Utopia of ${memberCount}`;
   const description = `Build a utopia with me. ${memberCount} ${memberCount === 1 ? "person has" : "people have"} joined ${room.name}.`;
   const ogImage = `https://livenowclub.com/api/og/utopia/${slug}`;
 

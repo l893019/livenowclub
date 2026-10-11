@@ -165,7 +165,7 @@ export function UtopiaPageClient({
     // Share text includes identity: "I’m a Curious Architect. What are you? Take the quiz and join my group."
     const shareText = me
       ? `I’m a ${myIdentityName}. What are you? Take the quiz and join my group.`
-      : `Join ${utopiaName} — a utopia of ${members.length}.`;
+      : `Join ${utopiaName}, a utopia of ${members.length}.`;
 
     if (navigator.share) {
       try {
@@ -278,7 +278,7 @@ export function UtopiaPageClient({
             <span className={styles.label}>You created</span>
             <h1 className={styles.soloTitle}>{utopiaName}</h1>
             <p className={styles.soloSubtitle}>
-              A utopia of one — for now.
+              A utopia of one, for now.
             </p>
           </div>
 

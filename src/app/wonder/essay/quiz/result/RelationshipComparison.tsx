@@ -219,7 +219,7 @@ export function RelationshipComparison({
           className={styles.shareButton}
           onClick={() => {
             const shareUrl = window.location.href;
-            const shareText = `${yourArchetype.name.split(" ")[0]} x ${theirArchetype.name.split(" ")[0]} — See our relationship`;
+            const shareText = `${yourArchetype.name.split(" ")[0]} x ${theirArchetype.name.split(" ")[0]}. See our relationship`;
 
             if (navigator.share) {
               navigator.share({

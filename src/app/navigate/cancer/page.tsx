@@ -27,9 +27,9 @@ function getYear(dateStr: string): string {
 }
 
 export const metadata = {
-  title: "Cancer Guide: Navigating Diagnosis, Treatment & Beyond | The Live Now Club",
+  title: "Lou’s Guide to Cancer: Everything I Wish Someone Had Told Me | The Live Now Club",
   description:
-    "A comprehensive, practical guide to navigating cancer from diagnosis through treatment and survivorship. Written by cervical cancer survivor Louise Ireland. Free PDF download available. Includes advice for newly diagnosed patients, those in treatment, caregivers, and support resources.",
+    "What I wish someone had told me about cancer: the first weeks, treatment, what to say, and life after. Written by cervical cancer survivor Louise Ireland. Free PDF.",
   keywords: [
     "cancer guide",
     "cancer diagnosis",
@@ -53,7 +53,7 @@ export const metadata = {
     "cancer guide pdf",
   ],
   openGraph: {
-    title: "Cancer Guide: Navigating Diagnosis, Treatment & Beyond",
+    title: "Lou’s Guide to Cancer: Everything I Wish Someone Had Told Me",
     description:
       "A comprehensive guide to navigating cancer, written by a survivor. Practical advice for newly diagnosed patients, those in treatment, and caregivers. Free PDF available.",
     type: "website",
@@ -70,8 +70,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cancer Guide: Navigating Diagnosis, Treatment & Beyond",
-    description: "Comprehensive cancer guide from diagnosis to survivorship. Written by survivor Louise Ireland. Free PDF download.",
+    title: "Lou’s Guide to Cancer: Everything I Wish Someone Had Told Me",
+    description: "Everything I wish someone had told me about cancer, from a survivor. Free PDF.",
     images: ["https://livenowclub.com/images/og-cancer-guide.png"],
   },
   alternates: {
@@ -83,7 +83,7 @@ export const metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "MedicalWebPage",
-  name: "Cancer Guide: Navigating Diagnosis, Treatment & Beyond",
+  name: "Lou’s Guide to Cancer: Everything I Wish Someone Had Told Me",
   description:
     "A comprehensive guide to navigating cancer, written by a cervical cancer survivor. Practical advice for newly diagnosed patients, those in treatment, caregivers, and anyone seeking meaning through illness.",
   url: "https://livenowclub.com/navigate/cancer",
@@ -124,7 +124,7 @@ const jsonLd = {
         "@type": "HowTo",
         position: 2,
         name: "During Treatment",
-        description: "Practical guidance for navigating chemotherapy, radiation, and other treatments",
+        description: "Chemotherapy, radiation, and getting through treatment",
         url: "https://livenowclub.com/read/expecting-the-unexpected#treatment",
       },
       {
@@ -145,7 +145,7 @@ const jsonLd = {
         "@type": "Article",
         position: 5,
         name: "Core Principles",
-        description: "Essential guidance for anyone going through cancer",
+        description: "The principles that got me through",
         url: "https://livenowclub.com/read/expecting-the-unexpected#core-principles",
       },
     ],
@@ -271,7 +271,7 @@ export default function NavigateCancerPage() {
           <div className="guide-section-inner">
             <div className="guide-section-header">
               <span className="guide-section-number">Practical Guides</span>
-              <h2>One Question, One Page</h2>
+              <h2>Plain answers, one page each.</h2>
             </div>
             <div className="quick-links-grid">
               {GUIDES.map((g) => (

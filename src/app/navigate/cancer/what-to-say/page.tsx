@@ -10,7 +10,7 @@ const FAQS: GuideFaq[] = [
   {
     question: "What is the best thing to say to someone diagnosed with cancer?",
     answer:
-      "Keep it simple and honest: “I love you. I’m here.” “I’m thinking of you every day.” “I don’t know what to say, but I want to be with you in this.” You are not trying to solve anything. You are keeping them company inside something that can’t be solved.",
+      "Keep it simple and honest: “I love you. I’m here.” “I’m thinking of you every day.” “I don’t know what to say, but I want to be with you in this.” You are not there to solve anything, only to keep them company.",
   },
   {
     question: "What should you not say to someone with cancer?",
@@ -71,13 +71,10 @@ export default function WhatToSayPage() {
 
       <h2 style={GS.h2}>First: you cannot fix this, and you don’t have to</h2>
       <p style={GS.p}>
-        Almost every problem in life rewards action. Someone is hungry, you feed them.
-        Someone is in pain, you find medicine. So when someone you love gets cancer,
-        every instinct says <em>do something, say the thing that makes it better</em>.
-        But serious illness is a different kind of problem, the unfixable kind, and
-        the usual calculus does not apply. That mismatch is why so many well-meant
-        words land wrong. They are attempts to fix something that cannot be fixed,
-        and the patient can feel the difference immediately.
+        Most problems reward action. So when someone you love gets cancer, every
+        instinct says <em>do something, say the thing that makes it better</em>.
+        Cancer cannot be fixed by the people around it, and most of the words that
+        land wrong are attempts to fix it anyway. The patient can feel the difference.
       </p>
       <blockquote style={GS.quote}>
         “There is nothing you can say that will solve it. But there is much you can
@@ -85,20 +82,20 @@ export default function WhatToSayPage() {
         <br />from <Link href="/read/fixing-the-unfixable" style={GS.link}>Fixing the Unfixable</Link>
       </blockquote>
       <p style={GS.p}>
-        Everything below follows from that. Your job is not to fix. Your job is company.
+        Everything below follows from that. You are there to keep them company, not to fix anything.
       </p>
 
       <h2 style={GS.h2}>What to say</h2>
       <ul style={{ paddingLeft: "20px" }}>
         <li style={GS.li}><span style={GS.say}>“I love you. I’m here.”</span></li>
         <li style={GS.li}><span style={GS.say}>“I’m thinking of you every day.”</span></li>
-        <li style={GS.li}><span style={GS.say}>“I don’t know what to say, but I want to be with you in this.”</span> Naming your own speechlessness is honest, and honesty is a relief.</li>
+        <li style={GS.li}><span style={GS.say}>“I don’t know what to say, but I want to be with you in this.”</span> Admitting you do not know what to say is honest, and that is a relief to hear.</li>
         <li style={GS.li}><span style={GS.say}>“I’m not going anywhere.”</span></li>
-        <li style={GS.li}><span style={GS.say}>“You don’t have to be strong with me.”</span> This gives the patient permission to stop performing. Almost no one else offers them that.</li>
+        <li style={GS.li}><span style={GS.say}>“You don’t have to be strong with me.”</span> This lets them stop performing. Almost no one else offers that.</li>
         <li style={GS.li}><span style={GS.say}>“Can I take something off your plate this week?”</span> Specific and answerable, unlike “let me know if you need anything.”</li>
         <li style={GS.li}><span style={GS.say}>“Do you want to talk about it, or should we talk about something else?”</span> Let them steer.</li>
         <li style={GS.li}>Something that will bring them joy. A photo from better times, a meme, a memory. It doesn’t have to be about the illness at all.</li>
-        <li style={GS.li}>Nothing. Sit with them and let them rest. Silence in good company is rest.</li>
+        <li style={GS.li}>Nothing. Sit with them and let them rest. Quiet company is rest.</li>
       </ul>
 
       <h2 style={GS.h2}>What not to say (and why)</h2>
@@ -118,15 +115,14 @@ export default function WhatToSayPage() {
         It was consistency. A couple of friends sent a weekly{" "}
         <span style={GS.say}>“thinking of you, no response needed”</span> text, sometimes
         with a photo of us in better times, and it made my day every single time.
-        The “no response needed” part matters. It delivers love without creating a debt.
+        The “no response needed” part matters. It asks nothing back.
       </p>
       <p style={GS.p}>
         Don’t be offended if you never get a reply. And don’t make them coordinate
         your help. Take a whole job off their plate instead: drive them to an
         appointment, set up the meal train, handle the pharmacy run. Be available
         for a visit without pushing for one, and follow their energy when you’re
-        there. They won’t have the capacity to entertain. What they need matters
-        more than what you need to give.
+        there. They won’t have the capacity to entertain.
       </p>
       <p style={GS.p}>
         Most of all, keep showing up after the crisis fades. There is a flood of

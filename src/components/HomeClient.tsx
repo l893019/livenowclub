@@ -131,8 +131,8 @@ const EDITORS_PICK = {
 const INTERACTIVE = {
   href: "/wonder/essay",
   title: "When Purpose Is All We Have Left",
-  subtitle: "What 200+ sci-fi books reveal about meaning",
-  description: "An interactive exploration of human purpose through the lens of sci-fi.",
+  subtitle: "What do you do when you no longer have to do anything?",
+  description: "A reading of 208 sci-fi novels, and a quiz to find where you stand.",
   image: "/wonder/assets/landscapes/optimized/1.jpg",
   quizHref: "/wonder/essay/quiz",
   quizLabel: "Take the quiz →",
@@ -217,7 +217,7 @@ export default function HomeClient({
           {QUOTES.map((item) => (
             <Link key={item.slug} href={`/read/${item.slug}`} className="carousel-card">
               <blockquote>"{item.quote}"</blockquote>
-              <cite>— {item.title}</cite>
+              <cite>from {item.title}</cite>
             </Link>
           ))}
         </div>
@@ -266,10 +266,10 @@ export default function HomeClient({
           {/* Editor’s Pick - larger */}
           <Link href={`/read/${EDITORS_PICK.slug}`} className="pick">
             <div className="pick-image">
-              <img src={EDITORS_PICK.image} alt={`Editor’s Pick: ${EDITORS_PICK.title}`} />
+              <img src={EDITORS_PICK.image} alt={EDITORS_PICK.title} />
             </div>
             <div className="pick-content">
-              <span className="pick-label">✦ Editor’s Pick</span>
+              <span className="pick-label">Start here</span>
               <h4>{EDITORS_PICK.title}</h4>
               <p>{EDITORS_PICK.excerpt}</p>
               <span className="text-link">Read →</span>

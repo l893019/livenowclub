@@ -194,7 +194,7 @@ export default function PhilosophyPage() {
             </div>
 
             <p className="life-source">
-              From "Now That You No Longer Have to Be Perfect, You Can Just Be Good" — {" "}
+              From "Now That You No Longer Have to Be Perfect, You Can Just Be Good".{" "}
               <Link href="/read/now-that-you-no-longer-have-to-be-perfect-you-can-just-be-good">
                 Read the full essay →
               </Link>
@@ -225,7 +225,7 @@ export default function PhilosophyPage() {
             </ol>
 
             <p className="life-source">
-              From "I Love Lou" — {" "}
+              From "I Love Lou".{" "}
               <Link href="/read/i-love-lou">Read the full essay →</Link>
             </p>
           </div>
@@ -252,7 +252,7 @@ export default function PhilosophyPage() {
             </ol>
 
             <p className="life-source">
-              From "All I Want for My Birthday Is Another Shot at Life" — {" "}
+              From "All I Want for My Birthday Is Another Shot at Life".{" "}
               <Link href="/read/all-i-want-for-my-birthday-is-another-shot-at-life">
                 Read the full essay →
               </Link>
@@ -288,7 +288,7 @@ export default function PhilosophyPage() {
             </div>
 
             <p className="life-source">
-              From "Things I’ve Learned Lately" — {" "}
+              From "Things I’ve Learned Lately".{" "}
               <Link href="/read/things-ive-learned-lately">Read the full essay →</Link>
             </p>
           </div>
@@ -315,7 +315,7 @@ export default function PhilosophyPage() {
             </ol>
 
             <p className="life-source">
-              From "Manifesto" — {" "}
+              From "Manifesto".{" "}
               <Link href="/read/manifesto">Read the full essay →</Link>
             </p>
           </div>

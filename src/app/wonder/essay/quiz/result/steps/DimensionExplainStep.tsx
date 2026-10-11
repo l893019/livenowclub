@@ -73,7 +73,7 @@ export function DimensionExplainStep({
     });
     const desc = dimensionDescriptions[mostExtreme.key as keyof typeof dimensionDescriptions];
     const side = mostExtreme.value > 0.5 ? desc.high : desc.low;
-    return `You lean ${side.toLowerCase()} — ${desc.description.toLowerCase()}.`;
+    return `You lean ${side.toLowerCase()}: ${desc.description.toLowerCase()}.`;
   };
 
   return (

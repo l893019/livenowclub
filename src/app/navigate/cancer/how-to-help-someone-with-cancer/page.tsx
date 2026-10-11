@@ -10,7 +10,7 @@ const FAQS: GuideFaq[] = [
   {
     question: "How do I offer help to someone with cancer?",
     answer:
-      "Make the offer specific and closed-ended: “Can I take something off your plate this week?” “I’m dropping soup on Thursday, leave a cooler out if you’re resting.” “I’ll drive you on the 12th.” Open-ended offers like “let me know if you need anything” put the work of coordinating back on the patient, and they will never cash them in.",
+      "Make the offer specific and closed-ended: “Can I take something off your plate this week?” “I’m dropping soup on Thursday, leave a cooler out if you’re resting.” “I’ll drive you on the 12th.” Open-ended offers like “let me know if you need anything” put the work of coordinating back on the patient, and they will not take you up on them.",
   },
   {
     question: "What should I bring or send someone going through chemo?",
@@ -25,7 +25,7 @@ const FAQS: GuideFaq[] = [
   {
     question: "What if they never respond to my messages?",
     answer:
-      "Keep sending them anyway, with no strings: “thinking of you, no response needed.” Silence is the treatment talking, not the friendship. Thoughtfulness and consistency mean the world even when there’s no reply.",
+      "Keep sending them anyway, with no strings: “thinking of you, no response needed.” Silence means they are exhausted, not that the friendship has changed. Thoughtfulness and consistency mean the world even when there’s no reply.",
   },
 ];
 
@@ -62,10 +62,10 @@ export default function HowToHelpPage() {
 
       <h2 style={GS.h2}>The one rule: don’t make them coordinate you</h2>
       <p style={GS.p}>
-        “Let me know if you need anything” is kind, and useless. It hands the patient
-        a job: figure out what you can do, decide if it’s too much to ask, and manage
-        the logistics of your help. They won’t. Flip it. Make offers that can be
-        answered yes or no:
+        “Let me know if you need anything” is kind, but it does not help. It hands the
+        patient a job: work out what you can do, decide if it’s too much to ask, and
+        manage the logistics of your help. They will not do that work. Make offers
+        they can answer yes or no to:
       </p>
       <ul style={{ paddingLeft: "20px" }}>
         <li style={GS.li}><span style={GS.say}>“Can I take something off your plate this week?”</span></li>
@@ -80,7 +80,7 @@ export default function HowToHelpPage() {
         <span style={GS.say}>“thinking of you, no response needed”</span>, perhaps with
         a photo of you two in better times or something you think they’d enjoy.
         A couple of friends did this for me weekly, and it made my day every time.
-        The design matters: it delivers love without creating a debt. And please
+        It asks nothing back, which is the point. And please
         don’t feel offended if you don’t receive a reply. Thoughtfulness and
         consistency mean the world.
       </p>
@@ -98,7 +98,7 @@ export default function HowToHelpPage() {
         <li style={GS.li}><strong>Errands:</strong> pharmacy runs, laundry, dog walks, the small recurring things that don’t pause for cancer.</li>
       </ul>
 
-      <h2 style={GS.h2}>Show up late, on purpose</h2>
+      <h2 style={GS.h2}>Keep showing up after month one</h2>
       <p style={GS.p}>
         A lot of people will show up at the start of treatment. Fewer at the midpoint,
         when it’s hardest. It’s not that people don’t care; they just get busy with
@@ -118,12 +118,12 @@ export default function HowToHelpPage() {
         quietly in the same room while they rest.
       </p>
 
-      <h2 style={GS.h2}>If you feel useless, you’re doing it right</h2>
+      <h2 style={GS.h2}>Feeling useless is part of it</h2>
       <p style={GS.p}>
         You cannot fix this, and standing next to something unfixable feels terrible.
         But helping helps the helper too: showing up gives you a way to be close and
-        a sense of purpose at a time when everyone feels powerless. You don’t need to
-        make it better. You need to make it less alone. If you’re stuck on the words
+        a sense of purpose at a time when everyone feels powerless. You cannot make it
+        better, but you can make it less lonely. If you’re stuck on the words
         part, that’s its own page:{" "}
         <Link href="/navigate/cancer/what-to-say" style={GS.link}>What to Say to Someone With Cancer</Link>.
       </p>

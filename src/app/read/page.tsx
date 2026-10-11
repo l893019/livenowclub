@@ -69,7 +69,7 @@ export default function ReadPage() {
         {/* Cancer Guide Callout */}
         <div className="read-callout">
           <p>Looking for the cancer guide?</p>
-          <Link href="/navigate" className="read-callout-link">Navigate the journey →</Link>
+          <Link href="/navigate" className="read-callout-link">Go to the cancer guide →</Link>
         </div>
 
         {/* Start Here */}
@@ -172,7 +172,7 @@ export default function ReadPage() {
         <section id="beautiful" className="read-section">
           <div className="read-section-header">
             <h2>Poems</h2>
-            <p>Brief meditations. Beauty in a breath.</p>
+            <p>Short poems and meditations.</p>
           </div>
           <div className="read-poems-grid">
             {poems.map((poem) => (
@@ -188,7 +188,7 @@ export default function ReadPage() {
         <section id="self-love" className="read-section">
           <div className="read-section-header">
             <h2>Falling in Love with Yourself</h2>
-            <p>The most important relationship you’ll ever have.</p>
+            <p>On marrying yourself.</p>
           </div>
           <div className="read-list">
             {selfLove.map((essay) => (

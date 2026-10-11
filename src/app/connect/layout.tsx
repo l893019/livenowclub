@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Connect | The Live Now Club",
-  description: "Share your story or reach out. A space for real connection.",
+  description: "Write to me. I read everything.",
 };
 
 export default function ConnectLayout({

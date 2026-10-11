@@ -24,9 +24,9 @@ export const GUIDES: GuideInfo[] = [
     shortTitle: "What to Say",
     targetQuery: "what to say to someone with cancer",
     tagline:
-      "The phrases that help, the ones that hurt, and what to do when there are no words. From someone who has been on the receiving end of all of them.",
+      "What helped, what hurt, and what to do when you have no words. I heard all of it during treatment.",
     description:
-      "What to say to someone with cancer, what not to say, and what to do when words fail. Practical guidance from a cancer survivor: real phrases that help, the common sayings that hurt, and why showing up matters more than finding perfect words.",
+      "What to say to someone with cancer, what not to say, and what to do when words fail, from a cancer survivor who heard all of it.",
     datePublished: "2026-07-07",
     dateModified: "2026-07-07",
   },
@@ -48,7 +48,7 @@ export const GUIDES: GuideInfo[] = [
     shortTitle: "Just Diagnosed",
     targetQuery: "just diagnosed with cancer what to do",
     tagline:
-      "The first moves that matter: building your care team, protecting your mind from the internet, and setting up the support you’ll need later.",
+      "What to do in the first weeks: choose your care team, stay off Google, and set up the help you will need.",
     description:
       "Just diagnosed with cancer and don’t know where to start? A survivor’s guide to the first steps: choosing your hospital, designating an advocate, second opinions, finding a mentor, and staying out of the Google rabbit hole.",
     datePublished: "2026-07-07",
@@ -60,7 +60,7 @@ export const GUIDES: GuideInfo[] = [
     shortTitle: "How to Help",
     targetQuery: "how to help someone with cancer",
     tagline:
-      "What actually helps, from someone on the receiving end: specific offers, consistency over grand gestures, and showing up after everyone else moves on.",
+      "What helped me, from the receiving end: specific offers, a weekly text, and still being there months later.",
     description:
       "How to help someone with cancer: what a patient actually needs from friends and family. Specific offers instead of open-ended ones, meal trains, rides, the weekly no-response-needed text, and support that lasts past the diagnosis.",
     datePublished: "2026-07-07",

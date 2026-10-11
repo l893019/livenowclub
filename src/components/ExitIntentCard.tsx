@@ -44,8 +44,8 @@ export default function ExitIntentCard() {
             <line x1="6" y1="6" x2="18" y2="18" />
           </svg>
         </button>
-        <p className="exit-card-text">Before you go...</p>
-        <p className="exit-card-subtext">Join me on this journey?</p>
+        <p className="exit-card-text">Before you go</p>
+        <p className="exit-card-subtext">One essay most weeks, on living like now is all we have.</p>
         <a
           href="https://louiseireland.substack.com/subscribe"
           target="_blank"

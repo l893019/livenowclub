@@ -397,10 +397,9 @@ export default function EssayContent({ essay, relatedEssays = [], storyArc = nul
         {essay.tags.includes("cancer") && (
           <aside className="essay-guide-callout">
             <p>
-              Navigating cancer, or supporting someone who is?{" "}
+              Going through cancer, or helping someone who is?{" "}
               <Link href="/navigate/cancer">Start with the cancer guide</Link>
-              . Everything I wish someone had told me, from diagnosis through
-              treatment and beyond.
+              . Everything I wish someone had told me.
             </p>
           </aside>
         )}

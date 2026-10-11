@@ -58,8 +58,8 @@ export default function GuideShell({
 
         <article style={GS.wrap}>
           <p style={{ ...GS.p, fontSize: "0.9rem", color: "rgba(45, 42, 38, 0.55)", borderBottom: "1px solid rgba(45, 42, 38, 0.12)", paddingBottom: "16px" }}>
-            This is a practical reference page, distilled from my essays into plain
-            language so it’s easy to find and use. For the writing itself, start{" "}
+            A short reference page, pulled from my essays and written plainly so it is
+            easy to find. The essays themselves are{" "}
             <Link href="/read" style={GS.link}>here</Link>.
           </p>
 
@@ -83,8 +83,8 @@ export default function GuideShell({
           <ul style={{ paddingLeft: "20px" }}>{goDeeper}</ul>
 
           <p style={{ ...GS.p, marginTop: "36px", fontStyle: "italic", color: "rgba(45, 42, 38, 0.6)" }}>
-            This page is lived experience, not medical advice. I’m a survivor, not a
-            doctor. For medical decisions, lean on your care team.
+            This is my experience, not medical advice. I’m a survivor, not a doctor.
+            Ask your care team before making medical decisions.
           </p>
         </article>
       </div>

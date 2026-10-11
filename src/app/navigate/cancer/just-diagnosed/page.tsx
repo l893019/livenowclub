@@ -68,8 +68,8 @@ export default function JustDiagnosedPage() {
       <h2 style={GS.h2}>1. Build your care team</h2>
       <p style={GS.p}>
         Cancer staging and protocols are universal, but doctors take small, and
-        life-changing, liberties through the treatment process. It’s an art, not just
-        a science. So start where you’d want to end up: the best possible hospital and
+        life-changing, liberties through the treatment process. It is as much art as
+        science. So start where you’d want to end up: the best possible hospital and
         doctors for your specific cancer. We moved cities for mine. You may not need
         to go that far, but take the choice seriously.
       </p>
@@ -103,8 +103,7 @@ export default function JustDiagnosedPage() {
       <h2 style={GS.h2}>4. Reduce the information coming in</h2>
       <p style={GS.p}>
         There is a LOT of noise out there: alternative treatments, miracle cures,
-        terrifying statistics. Protect your mind like it’s part of the treatment plan,
-        because it is.
+        terrifying statistics. Protecting your mind is part of the treatment plan.
       </p>
       <ul style={{ paddingLeft: "20px" }}>
         <li style={GS.li}>Do not go down a Google rabbit hole, and do not look at statistics. You are not a number.</li>
@@ -116,7 +115,7 @@ export default function JustDiagnosedPage() {
       <h2 style={GS.h2}>5. Plan how information flows out</h2>
       <p style={GS.p}>
         My first instinct was to handle it alone. I’m strong enough, I’ve been sick
-        before, I can handle this. Here’s what I learned instead: it could be much
+        before, I can handle this. What I learned: it could be much
         harder than you expect, people don’t know how to show up for you if you don’t
         tell them, and helping helps the helper. Letting people in gives them purpose
         at a time when everyone around you feels powerless.
@@ -136,7 +135,7 @@ export default function JustDiagnosedPage() {
         You don’t have to understand your whole prognosis, respond to every message,
         decide how brave you’re going to be, or have a philosophy about any of this.
         Those come later, if at all. Build the team, protect your head, set up the
-        support. That’s the whole first assignment.
+        support. That is enough for now.
       </p>
     </GuideShell>
   );

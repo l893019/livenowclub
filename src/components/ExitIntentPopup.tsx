@@ -88,7 +88,7 @@ export default function ExitIntentPopup({ enabled = true }: ExitIntentPopupProps
           ×
         </button>
         <div className={styles.content}>
-          <h2 className={styles.title}>Wait — don’t go yet</h2>
+          <h2 className={styles.title}>Before you go</h2>
           <p className={styles.subtitle}>
             If this essay resonated, there’s more where it came from.
           </p>
