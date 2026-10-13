@@ -234,12 +234,6 @@ export default function NavigateCancerPage() {
             >
               Download the Free PDF
             </a>
-            <a
-              href={`mailto:?subject=${encodeURIComponent("A cancer guide that actually helps")}&body=${encodeURIComponent("Thought of you. This guide was written by someone who’s been through it. Practical help for diagnosis, treatment, and everything after:\n\nhttps://livenowclub.com/navigate/cancer")}`}
-              className="btn btn--secondary"
-            >
-              Send This to Someone
-            </a>
           </div>
         </section>
 
